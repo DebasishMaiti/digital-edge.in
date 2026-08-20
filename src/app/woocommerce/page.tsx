@@ -26,14 +26,64 @@ export default function WooCommerce() {
     <>
       <link rel="canonical" href="https://digitaledge360.com/woocommerce" />
       <div className="w-full bg-[#fafbfc] min-h-screen pb-24 text-slate-800">
-        {/* Hero Section with Grid Background */}
-        <section className="relative w-full pt-[160px] pb-24 px-6 sm:px-8 lg:px-12 flex flex-col justify-center items-center border-b border-slate-100/80">
-          <div
-            className="absolute inset-0 z-0 pointer-events-none"
-            style={gridBackgroundStyle}
+        {/* Hero Section with custom Blue light mode gradient */}
+        <section className="relative w-full pt-[160px] pb-24 px-6 sm:px-8 lg:px-12 flex flex-col justify-center items-center bg-gradient-to-b from-[#e0f2fe] via-[#bae6fd]/30 to-[#fafbfc] border-b border-slate-100/80 overflow-hidden">
+          {/* Light Grid Scrolling Background */}
+          <div 
+            className="animate-grid-scroll opacity-60 pointer-events-none z-0" 
+            style={{
+              backgroundImage: `
+                linear-gradient(to right, rgba(14, 165, 233, 0.12) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(14, 165, 233, 0.12) 1px, transparent 1px)
+              `
+            }}
           />
+
           {/* Glow backdrop */}
-          <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] sm:w-[700px] h-[400px] sm:h-[700px] rounded-full bg-gradient-to-br from-[#0a8bc7]/10 via-[#40159e]/10 to-transparent blur-[100px] sm:blur-[140px] pointer-events-none z-0" />
+          <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+            <div className="absolute top-[10%] left-[10%] w-[35%] aspect-square rounded-full bg-gradient-to-br from-[#0ea5e9]/8 via-[#2563eb]/6 to-transparent blur-[80px]" />
+            <div className="absolute bottom-[10%] right-[10%] w-[40%] aspect-square rounded-full bg-gradient-to-br from-[#60a5fa]/10 via-transparent to-transparent blur-[90px]" />
+          </div>
+
+          {/* SVG Custom Graphics - Fluid Shop Waves, Offset grids & Cart Outline */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-0 opacity-40">
+            <svg className="w-full h-full min-w-[1000px] min-h-[500px]" viewBox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg">
+              {/* Fluid curves representing checkout flow */}
+              <path d="M100,300 C300,100 500,450 700,300 C900,150 1000,350 1100,300" fill="none" stroke="rgba(14, 165, 233, 0.22)" strokeWidth="3" />
+              <path d="M100,320 C300,120 500,470 700,320 C900,170 1000,370 1100,320" fill="none" stroke="rgba(37, 99, 235, 0.15)" strokeWidth="1.5" strokeDasharray="6 6" />
+              <path d="M100,280 C300,80 500,430 700,280 C900,130 1000,330 1100,280" fill="none" stroke="rgba(37, 99, 235, 0.1)" strokeWidth="1.5" />
+
+              {/* Offset grid arrays */}
+              <g transform="translate(900, 80) rotate(12)">
+                <rect x="0" y="0" width="100" height="100" fill="none" stroke="rgba(14, 165, 233, 0.2)" strokeWidth="1.5" />
+                <line x1="50" y1="0" x2="50" y2="100" stroke="rgba(14, 165, 233, 0.1)" strokeWidth="1" />
+                <line x1="0" y1="50" x2="100" y2="50" stroke="rgba(14, 165, 233, 0.1)" strokeWidth="1" />
+              </g>
+
+              {/* Shopping Cart Icon outline */}
+              <g transform="translate(150, 120) rotate(-15)" stroke="rgba(14, 165, 233, 0.25)" strokeWidth="2" fill="none">
+                <path d="M0,0 L20,0 L35,40 L90,40 L105,10 L30,10" />
+                <circle cx="45" cy="50" r="6" stroke="rgb(14, 165, 233)" />
+                <circle cx="85" cy="50" r="6" stroke="rgb(14, 165, 233)" />
+              </g>
+
+              {/* Precise dot arrays */}
+              <g transform="translate(540, 100)">
+                {Array.from({ length: 4 }).map((_, r) =>
+                  Array.from({ length: 8 }).map((_, c) => (
+                    <circle
+                      key={`woo-dot-${r}-${c}`}
+                      cx={c * 18}
+                      cy={r * 18}
+                      r={1.5}
+                      fill="rgb(14, 165, 233)"
+                      opacity={0.2}
+                    />
+                  ))
+                )}
+              </g>
+            </svg>
+          </div>
 
           <div className="relative z-10 max-w-[1600px] w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 

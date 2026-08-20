@@ -20,58 +20,116 @@ export default function About() {
       <link rel="canonical" href="https://digitaledge360.com/about" />
       <div className="w-full bg-[#fafbfc] min-h-screen pb-24 text-slate-800 relative overflow-hidden">
         
-        {/* Grid Background decoration */}
-        <div
-          className="absolute inset-0 z-0 pointer-events-none"
-          style={gridBackgroundStyle}
-        />
-        
-        {/* Glow Spheres */}
-        <div className="absolute top-[200px] left-[-10%] w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle_at_center,rgba(36,67,171,0.04)_0%,transparent_70%)] pointer-events-none blur-[40px]" />
-        <div className="absolute top-[400px] right-[-10%] w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle_at_center,rgba(10,139,199,0.04)_0%,transparent_70%)] pointer-events-none blur-[50px]" />
+        {/* Hero Section Container with custom light blue-slate gradient (1 shade deeper) */}
+        <section className="relative z-10 w-full pt-[180px] pb-24 text-center bg-gradient-to-b from-[#e0f2fe] via-[#bae6fd] to-[#fafbfc] border-b border-slate-200/60 overflow-hidden">
+          {/* Light Grid Scrolling Background */}
+          <div 
+            className="animate-grid-scroll opacity-70 pointer-events-none z-0" 
+            style={{
+              backgroundImage: `
+                linear-gradient(to right, rgba(14, 165, 233, 0.18) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(14, 165, 233, 0.18) 1px, transparent 1px)
+              `
+            }}
+          />
 
-        {/* 1. Hero Section */}
-        <section className="relative z-10 mx-auto max-w-[1300px] px-6 sm:px-8 lg:px-12 pt-[180px] pb-24 text-center">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="max-w-4xl mx-auto space-y-6 flex flex-col items-center justify-center"
-          >
-            {/* Badge */}
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-4 py-2 text-[10px] sm:text-xs font-black tracking-[0.2em] text-[#2443ab] uppercase shadow-sm">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#2443ab] animate-pulse" />
-              ABOUT US — DIGITAL EDGE 360
-            </span>
+          {/* Ambient Glows */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+            <div className="absolute top-[10%] left-[5%] w-[45%] aspect-square rounded-full bg-gradient-to-br from-[#0a8bc7]/15 via-[#2443ab]/12 to-transparent blur-[80px]" />
+            <div className="absolute top-[20%] right-[5%] w-[40%] aspect-square rounded-full bg-gradient-to-br from-[#40159e]/8 via-[#2443ab]/8 to-transparent blur-[70px]" />
+          </div>
 
-            {/* Title */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-[#0d1b3e] tracking-tight leading-[1.1] max-w-3xl mx-auto">
-              We Build Digital Products That <span className="bg-gradient-to-r from-[#0a8bc7] via-[#2443ab] to-[#40159e] bg-clip-text text-transparent">Actually Work</span> — Not Just Launch
-            </h1>
+          {/* Custom SVG Graphics - Concentric Circles & Grid Arrays representing Scale/Growth */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-0 opacity-50">
+            <svg className="w-full h-full min-w-[1000px] min-h-[600px]" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+              {/* Soft Radial Center Glow */}
+              <defs>
+                <radialGradient id="about-glow" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stopColor="rgba(36, 67, 171, 0.12)" />
+                  <stop offset="100%" stopColor="rgba(255, 255, 255, 0)" />
+                </radialGradient>
+              </defs>
+              <rect x="0" y="0" width="1200" height="600" fill="url(#about-glow)" />
 
-            {/* Description */}
-            <p className="text-slate-500 font-semibold text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
-              Digital Edge 360 started with a simple frustration: too many businesses were paying for websites, apps, and marketing that looked polished in a proposal deck and did nothing for the business once it went live. Seven years and 75+ projects later, that’s still the thing we care about most — not whether something ships, but whether it actually moves the needle for the people who hired us.
-            </p>
+              {/* Concentric rings at Left */}
+              <circle cx="150" cy="300" r="220" fill="none" stroke="rgba(36, 67, 171, 0.06)" strokeWidth="1" />
+              <circle cx="150" cy="300" r="180" fill="none" stroke="rgba(36, 67, 171, 0.12)" strokeWidth="6" />
+              <circle cx="150" cy="300" r="140" fill="none" stroke="rgba(36, 67, 171, 0.08)" strokeWidth="2" strokeDasharray="6 6" />
+              <circle cx="150" cy="300" r="100" fill="none" stroke="rgba(10, 139, 199, 0.1)" strokeWidth="4" />
+              <circle cx="150" cy="300" r="60" fill="none" stroke="rgba(10, 139, 199, 0.06)" strokeWidth="1.5" />
 
-            <p className="text-slate-400 font-semibold text-sm leading-relaxed max-w-xl mx-auto">
-              We work across ecommerce web development, app development, and digital marketing — building products that are designed to perform, not just launch.
-            </p>
+              {/* Connected growth dots at Right */}
+              <g transform="translate(900, 150)">
+                <line x1="0" y1="0" x2="150" y2="150" stroke="rgba(36, 67, 171, 0.2)" strokeWidth="2" />
+                <line x1="150" y1="150" x2="250" y2="50" stroke="rgba(10, 139, 199, 0.18)" strokeWidth="2" strokeDasharray="4 4" />
+                <line x1="250" y1="50" x2="320" y2="180" stroke="rgba(64, 21, 158, 0.15)" strokeWidth="1.5" />
+                <circle cx="0" cy="0" r="8" fill="rgba(36, 67, 171, 0.2)" />
+                <circle cx="150" cy="150" r="14" fill="rgba(10, 139, 199, 0.25)" />
+                <circle cx="250" cy="50" r="8" fill="rgba(64, 21, 158, 0.15)" />
+                <circle cx="320" cy="180" r="5" fill="rgba(36, 67, 171, 0.1)" />
+              </g>
 
-            {/* Two CTA Buttons */}
-            <div className="pt-4 flex flex-wrap gap-4 justify-center">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#0a8bc7] via-[#2443ab] to-[#40159e] px-8 py-4 text-xs font-black text-white uppercase tracking-wider shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
-              >
-                <span>Work With Us</span>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                </svg>
-              </Link>
-            </div>
-          </motion.div>
+              {/* Small Precise dot grid */}
+              <g transform="translate(480, 80)">
+                {Array.from({ length: 5 }).map((_, r) =>
+                  Array.from({ length: 15 }).map((_, c) => (
+                    <circle
+                      key={`grid-${r}-${c}`}
+                      cx={c * 20}
+                      cy={r * 20}
+                      r={1.5}
+                      fill="rgba(36, 67, 171, 0.3)"
+                      opacity={0.35}
+                    />
+                  ))
+                )}
+              </g>
+            </svg>
+          </div>
+
+          <div className="relative z-10 mx-auto max-w-[1300px] px-6 sm:px-8 lg:px-12">
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="max-w-4xl mx-auto space-y-6 flex flex-col items-center justify-center"
+            >
+              {/* Badge */}
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-4 py-2 text-[10px] sm:text-xs font-black tracking-[0.2em] text-[#2443ab] uppercase shadow-sm">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#2443ab] animate-pulse" />
+                ABOUT US — DIGITAL EDGE 360
+              </span>
+
+              {/* Title */}
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-[#0d1b3e] tracking-tight leading-[1.1] max-w-3xl mx-auto">
+                We Build Digital Products That <span className="bg-gradient-to-r from-[#0a8bc7] via-[#2443ab] to-[#40159e] bg-clip-text text-transparent">Actually Work</span> — Not Just Launch
+              </h1>
+
+              {/* Description */}
+              <p className="text-slate-500 font-semibold text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
+                Digital Edge 360 started with a simple frustration: too many businesses were paying for websites, apps, and marketing that looked polished in a proposal deck and did nothing for the business once it went live. Seven years and 75+ projects later, that’s still the thing we care about most — not whether something ships, but whether it actually moves the needle for the people who hired us.
+              </p>
+
+              <p className="text-slate-400 font-semibold text-sm leading-relaxed max-w-xl mx-auto">
+                We work across ecommerce web development, app development, and digital marketing — building products that are designed to perform, not just launch.
+              </p>
+
+              {/* Two CTA Buttons */}
+              <div className="pt-4 flex flex-wrap gap-4 justify-center">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#0a8bc7] via-[#2443ab] to-[#40159e] px-8 py-4 text-xs font-black text-white uppercase tracking-wider shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
+                >
+                  <span>Work With Us</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                  </svg>
+                </Link>
+              </div>
+            </motion.div>
+          </div>
         </section>
+
 
         {/* 2. Our Impact Section */}
         <section className="relative z-10 mx-auto max-w-[1300px] px-6 sm:px-8 lg:px-12 py-10">

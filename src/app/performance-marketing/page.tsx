@@ -26,16 +26,77 @@ export default function PerformanceMarketing() {
     <>
     <link rel="canonical" href="https://digitaledge360.com/performance-marketing" />
       <div className="w-full bg-[#fafbfc] min-h-screen pb-24 text-slate-800">
-        {/* Hero Section with Grid Background */}
-        <section className="relative w-full pt-[160px] pb-24 px-6 sm:px-8 lg:px-12 flex flex-col justify-center items-center border-b border-slate-100/80">
-        <div
-          className="absolute inset-0 z-0 pointer-events-none"
-          style={gridBackgroundStyle}
-        />
-        {/* Glow backdrop */}
-        <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] sm:w-[700px] h-[400px] sm:h-[700px] rounded-full bg-gradient-to-br from-[#f43f5e]/10 via-[#2443ab]/10 to-transparent blur-[100px] sm:blur-[140px] pointer-events-none z-0" />
+        {/* Hero Section with custom Blue light mode gradient */}
+        <section className="relative w-full pt-[160px] pb-24 px-6 sm:px-8 lg:px-12 flex flex-col justify-center items-center bg-gradient-to-b from-[#e0f2fe] via-[#bae6fd]/30 to-[#fafbfc] border-b border-slate-100/80 overflow-hidden">
+          {/* Light Grid Scrolling Background */}
+          <div 
+            className="animate-grid-scroll opacity-60 pointer-events-none z-0" 
+            style={{
+              backgroundImage: `
+                linear-gradient(to right, rgba(14, 165, 233, 0.12) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(14, 165, 233, 0.12) 1px, transparent 1px)
+              `
+            }}
+          />
 
-        <div className="relative z-10 max-w-[1600px] w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          {/* Glow backdrop */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+            <div className="absolute top-[10%] left-[10%] w-[35%] aspect-square rounded-full bg-gradient-to-br from-[#0ea5e9]/8 via-[#2563eb]/6 to-transparent blur-[80px]" />
+            <div className="absolute bottom-[10%] right-[10%] w-[40%] aspect-square rounded-full bg-gradient-to-br from-[#60a5fa]/10 via-transparent to-transparent blur-[90px]" />
+          </div>
+
+          {/* SVG Custom Graphics - Helix Waves, Speed lines & Growth Chart */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-0 opacity-40">
+            <svg className="w-full h-full min-w-[1000px] min-h-[500px]" viewBox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg">
+              {/* Double helix ray curves */}
+              <path d="M100,200 Q250,50 400,200 T700,200 T1000,200" fill="none" stroke="rgba(14, 165, 233, 0.25)" strokeWidth="3" />
+              <path d="M100,200 Q250,350 400,200 T700,200 T1000,200" fill="none" stroke="rgba(37, 99, 235, 0.15)" strokeWidth="1.5" strokeDasharray="4 4" />
+              
+              <path d="M100,220 Q250,70 400,220 T700,220 T1000,220" fill="none" stroke="rgba(37, 99, 235, 0.1)" strokeWidth="2.5" />
+              <path d="M100,240 Q250,390 400,240 T700,240 T1000,240" fill="none" stroke="rgba(14, 165, 233, 0.08)" strokeWidth="1" strokeDasharray="3 3" />
+
+              {/* Upward Analytics Graph Line representing ROI acceleration */}
+              <g transform="translate(480, 100)" stroke="rgba(14, 165, 233, 0.15)" strokeWidth="2" fill="none">
+                <line x1="0" y1="150" x2="200" y2="150" />
+                <line x1="0" y1="0" x2="0" y2="150" />
+                <path d="M0,150 L50,120 L100,70 L150,80 L200,20" stroke="rgb(14, 165, 233)" strokeWidth="3" />
+                <circle cx="200" cy="20" r="5" fill="rgb(37, 99, 235)" />
+              </g>
+
+              {/* Scattered particle matrices */}
+              <g transform="translate(920, 80)">
+                {Array.from({ length: 6 }).map((_, r) =>
+                  Array.from({ length: 8 }).map((_, c) => (
+                    <circle
+                      key={`perfmark-dot-r-${r}-${c}`}
+                      cx={c * 22}
+                      cy={r * 18}
+                      r={2}
+                      fill="rgb(14, 165, 233)"
+                      opacity={0.15}
+                    />
+                  ))
+                )}
+              </g>
+
+              <g transform="translate(80, 260)">
+                {Array.from({ length: 4 }).map((_, r) =>
+                  Array.from({ length: 12 }).map((_, c) => (
+                    <circle
+                      key={`perfmark-dot-l-${r}-${c}`}
+                      cx={c * 15}
+                      cy={r * 15}
+                      r={1.5}
+                      fill="rgb(37, 99, 235)"
+                      opacity={0.2}
+                    />
+                  ))
+                )}
+              </g>
+            </svg>
+          </div>
+
+          <div className="relative z-10 max-w-[1600px] w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
           {/* Left Column */}
           <div className="lg:col-span-6 flex flex-col items-start text-left">

@@ -103,20 +103,63 @@ export default function Solutions() {
     <link rel="canonical" href="https://digitaledge360.com/solutions" />
       <div className="relative w-full bg-[#fafbfc] min-h-screen pb-24 text-slate-800 overflow-hidden">
 
-        {/* Grid container wrapping Hero */}
-        <div className="relative w-full pb-10">
-        {/* Full-page Grid Background */}
-        <div
-          className="absolute inset-0 z-0 pointer-events-none"
-          style={gridBackgroundStyle}
-        />
+        {/* Hero Section with custom pearl/platinum light mode gradient */}
+        <section className="relative z-10 w-full pt-[180px] pb-16 flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#fafbfc] via-[#f1f5f9] to-[#fafbfc] border-b border-slate-100/60 overflow-hidden">
+          {/* Light Grid Scrolling Background */}
+          <div 
+            className="animate-grid-scroll opacity-60 pointer-events-none z-0" 
+            style={{
+              backgroundImage: `
+                linear-gradient(to right, rgba(99, 102, 241, 0.1) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(99, 102, 241, 0.1) 1px, transparent 1px)
+              `
+            }}
+          />
 
-        {/* Ambient Glow */}
-        <div className="absolute top-[350px] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[600px] h-[350px] sm:h-[600px] rounded-full bg-gradient-to-br from-[#84a93c]/20 via-[#b2d95b]/15 to-transparent blur-[80px] sm:blur-[130px] pointer-events-none z-0" />
+          {/* Glow backdrop */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+            <div className="absolute top-[10%] left-[10%] w-[35%] aspect-square rounded-full bg-gradient-to-br from-[#94a3b8]/8 via-[#6366f1]/5 to-transparent blur-[80px]" />
+            <div className="absolute bottom-[10%] right-[10%] w-[40%] aspect-square rounded-full bg-gradient-to-br from-[#e2e8f0]/10 via-transparent to-transparent blur-[90px]" />
+          </div>
 
-        {/* Hero Section */}
-        <section className="relative z-10 w-full pt-[200px] pb-10 flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mx-auto space-y-6">
+          {/* SVG Custom Graphics - Corporate Grid Lines & Intersections */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-0 opacity-40">
+            <svg className="w-full h-full min-w-[1000px] min-h-[500px]" viewBox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg">
+              {/* Bold structural rectangles representing scale */}
+              <rect x="100" y="80" width="180" height="120" rx="10" fill="none" stroke="rgba(99, 102, 241, 0.1)" strokeWidth="1.5" />
+              <rect x="220" y="140" width="180" height="120" rx="10" fill="rgba(148, 163, 184, 0.03)" stroke="rgba(148, 163, 184, 0.12)" strokeWidth="1.5" />
+
+              {/* Intersecting alignment grids */}
+              <g stroke="rgba(148, 163, 184, 0.15)" strokeWidth="1">
+                <line x1="900" y1="50" x2="900" y2="400" />
+                <line x1="1050" y1="50" x2="1050" y2="400" />
+                <line x1="800" y1="180" x2="1150" y2="180" />
+                <line x1="800" y1="280" x2="1150" y2="280" />
+              </g>
+
+              {/* Precise target junction dots */}
+              <circle cx="900" cy="180" r="4" fill="rgb(99, 102, 241)" />
+              <circle cx="1050" cy="280" r="4" fill="rgb(148, 163, 184)" />
+
+              {/* Scattered background dot matrices */}
+              <g transform="translate(500, 360)">
+                {Array.from({ length: 3 }).map((_, r) =>
+                  Array.from({ length: 10 }).map((_, c) => (
+                    <circle
+                      key={`sol-dot-${r}-${c}`}
+                      cx={c * 20}
+                      cy={r * 20}
+                      r={1.5}
+                      fill="rgb(99, 102, 241)"
+                      opacity={0.15}
+                    />
+                  ))
+                )}
+              </g>
+            </svg>
+          </div>
+
+          <div className="relative z-10 max-w-5xl mx-auto space-y-6">
             <span className="inline-flex items-center rounded-full border border-slate-200/80 bg-white px-4 py-1.5 text-[10px] font-extrabold tracking-[0.2em] text-slate-500 uppercase shadow-sm select-none">
               <AnimatedWords text="Our Expertise" />
             </span>
@@ -129,7 +172,6 @@ export default function Solutions() {
             </p>
           </div>
         </section>
-      </div>
 
       {/* Solutions Cards Section */}
       <section className="relative z-10 mx-auto max-w-[1500px] px-6 sm:px-8 lg:px-12 mt-12 sm:mt-16 pb-20">

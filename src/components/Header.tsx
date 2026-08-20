@@ -223,8 +223,8 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 w-full px-6 py-3 sm:py-3.5 lg:py-4 bg-transparent transition-all duration-300 ease-in-out ${isVisible || isMobileMenuOpen
-          ? "translate-y-0 opacity-100"
-          : "-translate-y-full opacity-0 pointer-events-none"
+        ? "translate-y-0 opacity-100"
+        : "-translate-y-full opacity-0 pointer-events-none"
         }`}
     >
       <div className="relative mx-auto flex h-14 sm:h-16 lg:h-20 max-w-7xl lg:max-w-[90rem] items-center justify-between rounded-full border border-slate-200/50 bg-white/60 px-4 xl:px-8 shadow-[0_10px_30px_rgba(0,0,0,0.05)] backdrop-blur-lg">
@@ -263,8 +263,8 @@ export default function Header() {
                   <button
                     onClick={() => setIsInsightsOpen((v) => !v)}
                     className={`flex items-center gap-1 xl:gap-1.5 rounded-full border px-3 py-2 xl:px-[18px] xl:py-2.5 text-xs xl:text-sm font-bold transition-all duration-200 ${isActive
-                        ? "border-slate-200 bg-white text-[#2443ab] shadow-sm"
-                        : "border-transparent text-slate-650 hover:bg-white/60 hover:text-[#2443ab]"
+                      ? "border-slate-200 bg-white text-[#2443ab] shadow-sm"
+                      : "border-transparent text-slate-650 hover:bg-white/60 hover:text-[#2443ab]"
                       }`}
                     aria-expanded={isInsightsOpen}
                     aria-haspopup="true"
@@ -288,8 +288,8 @@ export default function Header() {
                   {/* Desktop Dropdown Panel for Insights */}
                   <div
                     className={`absolute top-[calc(100%+14px)] left-1/2 -translate-x-1/2 w-[340px] transition-all duration-200 origin-top ${isInsightsOpen
-                        ? "opacity-100 scale-100 pointer-events-auto"
-                        : "opacity-0 scale-95 pointer-events-none"
+                      ? "opacity-100 scale-100 pointer-events-auto"
+                      : "opacity-0 scale-95 pointer-events-none"
                       }`}
                     onMouseEnter={handleInsightsMouseEnter}
                     onMouseLeave={handleInsightsMouseLeave}
@@ -342,8 +342,8 @@ export default function Header() {
                   <button
                     onClick={() => setIsSolutionsOpen((v) => !v)}
                     className={`flex items-center gap-1 xl:gap-1.5 rounded-full border px-3 py-2 xl:px-[18px] xl:py-2.5 text-xs xl:text-sm font-bold transition-all duration-200 ${isActive
-                        ? "border-slate-200 bg-white text-[#2443ab] shadow-sm"
-                        : "border-transparent text-slate-650 hover:bg-white/60 hover:text-[#2443ab]"
+                      ? "border-slate-200 bg-white text-[#2443ab] shadow-sm"
+                      : "border-transparent text-slate-650 hover:bg-white/60 hover:text-[#2443ab]"
                       }`}
                     aria-expanded={isSolutionsOpen}
                     aria-haspopup="true"
@@ -367,8 +367,8 @@ export default function Header() {
                   {/* Desktop Dropdown Panel */}
                   <div
                     className={`absolute top-[calc(100%+14px)] left-1/2 -translate-x-1/2 w-[520px] transition-all duration-200 origin-top ${isSolutionsOpen
-                        ? "opacity-100 scale-100 pointer-events-auto"
-                        : "opacity-0 scale-95 pointer-events-none"
+                      ? "opacity-100 scale-100 pointer-events-auto"
+                      : "opacity-0 scale-95 pointer-events-none"
                       }`}
                     onMouseEnter={handleSolutionsMouseEnter}
                     onMouseLeave={handleSolutionsMouseLeave}
@@ -403,34 +403,19 @@ export default function Header() {
                           </Link>
                         ))}
                       </div>
-                      {/* Footer CTA */}
-                      <div className="mt-3 pt-3 border-t border-white/5 px-2">
-                        <Link
-                          href="/solutions"
-                          onClick={() => setIsSolutionsOpen(false)}
-                          className="flex items-center justify-between w-full text-xs font-semibold text-cyan-400 hover:text-white transition-colors group"
-                        >
-                          <span>View all solutions</span>
-                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                          </svg>
-                        </Link>
-                      </div>
                     </div>
                   </div>
                 </div>
               );
             }
 
-
-
             return (
               <Link
                 key={link.href}
                 href={link.href}
                 className={`flex items-center gap-1 xl:gap-1.5 rounded-full border px-3 py-2 xl:px-[18px] xl:py-2.5 text-xs xl:text-sm font-bold transition-all duration-200 ${isActive
-                    ? "border-slate-200 bg-white text-[#2443ab] shadow-sm"
-                    : "border-transparent text-slate-650 hover:bg-white/60 hover:text-[#2443ab]"
+                  ? "border-slate-200 bg-white text-[#2443ab] shadow-sm"
+                  : "border-transparent text-slate-650 hover:bg-white/60 hover:text-[#2443ab]"
                   }`}
               >
                 <span>{link.name}</span>

@@ -26,16 +26,61 @@ export default function AiIntegration() {
     <>
       <link rel="canonical" href="https://digitaledge360.com/ai-integration" />
       <div className="w-full bg-[#fafbfc] min-h-screen pb-24 text-slate-800">
-        {/* Hero Section with Grid Background */}
-        <section className="relative w-full pt-[160px] pb-24 px-6 sm:px-8 lg:px-12 flex flex-col justify-center items-center border-b border-slate-100/80">
-        <div
-          className="absolute inset-0 z-0 pointer-events-none"
-          style={gridBackgroundStyle}
-        />
-        {/* Glow backdrop */}
-        <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] sm:w-[700px] h-[400px] sm:h-[700px] rounded-full bg-gradient-to-br from-[#8b5cf6]/10 via-[#2443ab]/10 to-transparent blur-[100px] sm:blur-[140px] pointer-events-none z-0" />
+        {/* Hero Section with custom Lavender/Violet light mode gradient (1 shade deeper) */}
+        <section className="relative w-full pt-[160px] pb-24 px-6 sm:px-8 lg:px-12 flex flex-col justify-center items-center bg-gradient-to-b from-[#ede9fe] via-[#ddd6fe] to-[#fafbfc] border-b border-slate-200 overflow-hidden">
+          {/* Light Grid Scrolling Background */}
+          <div 
+            className="animate-grid-scroll opacity-70 pointer-events-none z-0" 
+            style={{
+              backgroundImage: `
+                linear-gradient(to right, rgba(139, 92, 246, 0.16) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(139, 92, 246, 0.16) 1px, transparent 1px)
+              `
+            }}
+          />
 
-        <div className="relative z-10 max-w-[1600px] w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          {/* Glow backdrop */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+            <div className="absolute top-[10%] left-[10%] w-[40%] aspect-square rounded-full bg-gradient-to-br from-[#8b5cf6]/12 via-[#6366f1]/8 to-transparent blur-[80px]" />
+            <div className="absolute bottom-[10%] right-[10%] w-[45%] aspect-square rounded-full bg-gradient-to-br from-[#a78bfa]/10 via-transparent to-transparent blur-[90px]" />
+          </div>
+
+          {/* SVG Custom Graphics - Neural Network Nodes & Glowing Stars */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-0 opacity-50">
+            <svg className="w-full h-full min-w-[1000px] min-h-[500px]" viewBox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg">
+              {/* Connected node network line links */}
+              <g stroke="rgba(139, 92, 246, 0.22)" strokeWidth="1.5">
+                <line x1="150" y1="100" x2="250" y2="220" />
+                <line x1="250" y1="220" x2="180" y2="380" />
+                <line x1="250" y1="220" x2="380" y2="180" />
+                <line x1="380" y1="180" x2="480" y2="280" />
+                <line x1="150" y1="100" x2="380" y2="180" strokeDasharray="3 3" />
+                <line x1="180" y1="380" x2="480" y2="280" />
+
+                <line x1="900" y1="150" x2="1050" y2="250" />
+                <line x1="1050" y1="250" x2="950" y2="400" />
+                <line x1="900" y1="150" x2="950" y2="400" strokeDasharray="4 4" />
+              </g>
+
+              {/* Node points */}
+              <circle cx="150" cy="100" r="6" fill="rgb(139, 92, 246)" />
+              <circle cx="250" cy="220" r="9" fill="rgb(99, 102, 241)" />
+              <circle cx="180" cy="380" r="7" fill="rgb(139, 92, 246)" />
+              <circle cx="380" cy="180" r="8" fill="rgb(167, 139, 250)" />
+              <circle cx="480" cy="280" r="6" fill="rgb(99, 102, 241)" />
+
+              <circle cx="900" cy="150" r="7" fill="rgb(139, 92, 246)" />
+              <circle cx="1050" cy="250" r="10" fill="rgb(167, 139, 250)" />
+              <circle cx="950" cy="400" r="6" fill="rgb(99, 102, 241)" />
+
+              {/* Central glowing pulses */}
+              <circle cx="600" cy="120" r="15" fill="none" stroke="rgba(139, 92, 246, 0.2)" strokeWidth="2" className="animate-pulse" />
+              <circle cx="650" cy="380" r="22" fill="none" stroke="rgba(99, 102, 241, 0.15)" strokeWidth="1.5" />
+              <circle cx="550" cy="250" r="30" fill="none" stroke="rgba(139, 92, 246, 0.08)" strokeWidth="1" strokeDasharray="5 5" />
+            </svg>
+          </div>
+
+          <div className="relative z-10 max-w-[1600px] w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
           {/* Left Column */}
           <div className="lg:col-span-6 flex flex-col items-start text-left">

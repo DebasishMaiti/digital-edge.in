@@ -3,10 +3,10 @@
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { brandLogos, portfolioItems, services, testimonials, faqItems, deliversFeatures } from "@/data";
 import { motion } from "framer-motion";
 import LeadForm from "@/components/LeadForm";
-import { section } from "framer-motion/client";
+import { Users, Shield, ShoppingCart, MessageSquare, BarChart3, Clock, AlertCircle, FileText, LayoutDashboard, MessageCircle, TrendingUp, Gauge, ShieldAlert, Receipt, Target } from "lucide-react";
+import { brandLogos, portfolioItems, services, testimonials, faqItems, deliversFeatures } from "@/data";
 
 export default function Home() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
@@ -122,14 +122,203 @@ export default function Home() {
         {/* Hero Section Container */}
         <section className="relative z-10 w-full min-h-screen lg:min-h-[950px] flex flex-col items-stretch justify-between overflow-hidden bg-[linear-gradient(135deg,_#0f358a_0%,_#1a265c_50%,_#2a1768_100%)] text-white">
           {/* Moving Grid Background Layer */}
-          <div className="absolute inset-0 animate-grid-scroll opacity-30 pointer-events-none z-0" />
+          <div className="animate-grid-scroll opacity-70 pointer-events-none z-0" />
+
+          {/* Background graphics (glowing circles, rings, diagonal rays) */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+            {/* Top-Left Glowing Ambient Circle */}
+            <div className="absolute top-[-15%] left-[-10%] w-[55%] aspect-square rounded-full bg-gradient-to-br from-cyan-500/20 via-blue-500/15 to-purple-600/10 blur-[100px]" />
+
+            {/* Large Cyan Ring at Top-Left */}
+            <div className="absolute top-[8%] left-[-120px] sm:left-[-80px] w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] rounded-full border border-cyan-400/20 shadow-[0_0_40px_rgba(6,182,212,0.05)] flex items-center justify-center">
+              <div className="w-[85%] h-[85%] rounded-full border border-dashed border-cyan-400/10" />
+            </div>
+
+            {/* Glowing Ring on Left-Middle */}
+            <div className="absolute top-[40%] left-[6%] w-10 h-10 rounded-full border border-cyan-400/30 bg-cyan-400/5 shadow-[0_0_15px_rgba(6,182,212,0.15)] animate-pulse" />
+
+            {/* Glowing Ring on Center-Bottom */}
+            <div className="absolute bottom-[22%] left-[45%] w-14 h-14 rounded-full border border-blue-400/25 bg-blue-500/5 shadow-[0_0_20px_rgba(59,130,246,0.1)]" />
+
+            {/* Diagonal Lines and Rays SVG */}
+            <svg className="absolute inset-0 w-full h-full opacity-35" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="diagonal-ray-1" x1="0%" y1="100%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="rgba(6, 182, 212, 0)" />
+                  <stop offset="30%" stopColor="rgba(6, 182, 212, 0.25)" />
+                  <stop offset="70%" stopColor="rgba(59, 130, 246, 0.25)" />
+                  <stop offset="100%" stopColor="rgba(59, 130, 246, 0)" />
+                </linearGradient>
+                <linearGradient id="diagonal-ray-2" x1="0%" y1="100%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="rgba(147, 51, 234, 0)" />
+                  <stop offset="50%" stopColor="rgba(6, 182, 212, 0.2)" />
+                  <stop offset="100%" stopColor="rgba(6, 182, 212, 0)" />
+                </linearGradient>
+              </defs>
+
+              {/* Parallel Slanted Lines Left-Bottom */}
+              <g stroke="rgba(34, 211, 238, 0.2)" strokeWidth="1">
+                <line x1="-150" y1="650" x2="350" y2="150" strokeWidth="1.5" />
+                <line x1="-120" y1="680" x2="380" y2="180" />
+                <line x1="-90" y1="710" x2="410" y2="210" />
+                <line x1="-60" y1="740" x2="440" y2="240" strokeDasharray="4 4" />
+              </g>
+
+              {/* Parallel Slanted Lines Right-Top */}
+              <g stroke="rgba(59, 130, 246, 0.15)" strokeWidth="1">
+                <line x1="750" y1="850" x2="1350" y2="250" strokeWidth="1.5" />
+                <line x1="780" y1="880" x2="1380" y2="280" />
+                <line x1="810" y1="910" x2="1410" y2="310" />
+                <line x1="720" y1="820" x2="1320" y2="220" strokeDasharray="6 6" />
+              </g>
+
+              {/* Broad Light Rays */}
+              <line x1="-100" y1="900" x2="900" y2="-100" stroke="url(#diagonal-ray-1)" strokeWidth="60" />
+              <line x1="200" y1="1100" x2="1200" y2="100" stroke="url(#diagonal-ray-2)" strokeWidth="100" />
+            </svg>
+          </div>
 
           {/* Left and Right Columns Wrapper */}
           <div className="w-full flex flex-col xl:flex-row items-stretch flex-grow z-10">
             {/* Left Column: Content */}
             <div className="w-full xl:w-[48%] relative flex flex-col justify-center items-center xl:items-start text-center xl:text-left px-6 sm:px-12 xl:pl-16 xl:pr-8 pt-32 pb-12 xl:pt-40 xl:pb-16 z-40">
+
+              {/* Exact background graphic matching user uploaded reference */}
+              <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-0 opacity-85">
+                <svg className="w-full h-full min-w-[600px] min-h-[800px]" viewBox="0 0 800 900" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <radialGradient id="left-glow" cx="0%" cy="100%" r="100%">
+                      <stop offset="0%" stopColor="rgba(6, 182, 212, 0.4)" />
+                      <stop offset="50%" stopColor="rgba(59, 130, 246, 0.15)" />
+                      <stop offset="100%" stopColor="rgba(15, 23, 42, 0)" />
+                    </radialGradient>
+                    <radialGradient id="center-glow" cx="40%" cy="45%" r="60%">
+                      <stop offset="0%" stopColor="rgba(6, 182, 212, 0.25)" />
+                      <stop offset="60%" stopColor="rgba(59, 130, 246, 0.15)" />
+                      <stop offset="100%" stopColor="rgba(15, 23, 42, 0)" />
+                    </radialGradient>
+                    <linearGradient id="purple-circle-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="rgba(99, 102, 241, 0.85)" />
+                      <stop offset="100%" stopColor="rgba(49, 46, 129, 0.3)" />
+                    </linearGradient>
+                    <linearGradient id="pill-grad-1" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="rgba(37, 99, 235, 0.35)" />
+                      <stop offset="100%" stopColor="rgba(29, 78, 216, 0.1)" />
+                    </linearGradient>
+                    <linearGradient id="pill-grad-2" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="rgba(6, 182, 212, 0.3)" />
+                      <stop offset="100%" stopColor="rgba(8, 145, 178, 0.08)" />
+                    </linearGradient>
+                  </defs>
+
+                  {/* Ambient Glows */}
+                  <rect x="0" y="0" width="800" height="900" fill="url(#center-glow)" opacity="0.8" />
+                  <circle cx="0" cy="900" r="450" fill="url(#left-glow)" />
+
+                  {/* Solid Purple/Blue Circle (Top-Left) */}
+                  <circle cx="240" cy="110" r="90" fill="url(#purple-circle-grad)" />
+
+                  {/* Cyan Ring (Left Edge) */}
+                  <circle cx="-30" cy="270" r="160" fill="none" stroke="rgb(6, 182, 212)" strokeWidth="18" opacity="0.8" />
+                  <circle cx="-30" cy="270" r="130" fill="none" stroke="rgba(6, 182, 212, 0.15)" strokeWidth="4" />
+
+                  {/* Sharp Diagonal Lines */}
+                  {/* Cyan sharp line */}
+                  <line x1="-150" y1="850" x2="350" y2="350" stroke="rgb(34, 211, 238)" strokeWidth="2.5" opacity="0.8" />
+                  {/* Purple/Indigo sharp line (No red/pink) */}
+                  <line x1="-50" y1="910" x2="450" y2="410" stroke="rgb(139, 92, 246)" strokeWidth="2" opacity="0.75" />
+                  <circle cx="180" cy="520" r="5" fill="#ffffff" opacity="0.9" className="animate-pulse" />
+
+                  {/* Rotated Capsules Group */}
+                  <g transform="rotate(-45 400 450)">
+                    {/* Big primary capsule */}
+                    <rect x="80" y="440" width="360" height="40" rx="20" fill="url(#pill-grad-1)" />
+                    {/* Cyan secondary capsule */}
+                    <rect x="300" y="240" width="220" height="30" rx="15" fill="url(#pill-grad-2)" />
+                    {/* Indigo smaller capsule */}
+                    <rect x="420" y="620" width="110" height="18" rx="9" fill="rgba(99, 102, 241, 0.25)" />
+                  </g>
+
+                  {/* Dot Grids (Oriented Diagonally) */}
+                  {/* Central Diamond Dot Grid (Transiting to Purple, no red color) */}
+                  <g transform="translate(160, 240) rotate(-45)">
+                    {Array.from({ length: 15 }).map((_, r) =>
+                      Array.from({ length: 15 }).map((_, c) => {
+                        const dist = Math.sqrt(Math.pow(r - 7.5, 2) + Math.pow(c - 7.5, 2));
+                        if (dist > 7.5) return null;
+                        const opacity = Math.max(0.05, 1 - dist / 8.5) * 0.8;
+                        const fill = r + c > 14 ? "rgb(139, 92, 246)" : "rgb(6, 182, 212)";
+                        return (
+                          <circle
+                            key={`central-dot-${r}-${c}`}
+                            cx={c * 15}
+                            cy={r * 15}
+                            r={2.5}
+                            fill={fill}
+                            opacity={opacity}
+                          />
+                        );
+                      })
+                    )}
+                  </g>
+
+                  {/* Left Bottom Dot Matrix */}
+                  <g transform="translate(50, 560) rotate(-45)">
+                    {Array.from({ length: 5 }).map((_, r) =>
+                      Array.from({ length: 12 }).map((_, c) => (
+                        <circle
+                          key={`lb-dot-${r}-${c}`}
+                          cx={c * 12}
+                          cy={r * 12}
+                          r={1.5}
+                          fill="rgb(6, 182, 212)"
+                          opacity={0.35 - r * 0.05}
+                        />
+                      ))
+                    )}
+                  </g>
+
+                  {/* Top Left Small Dot Matrix */}
+                  <g transform="translate(100, 20) rotate(-45)">
+                    {Array.from({ length: 4 }).map((_, r) =>
+                      Array.from({ length: 8 }).map((_, c) => (
+                        <circle
+                          key={`tl-dot-${r}-${c}`}
+                          cx={c * 11}
+                          cy={r * 11}
+                          r={1.5}
+                          fill="rgb(59, 130, 246)"
+                          opacity={0.25}
+                        />
+                      ))
+                    )}
+                  </g>
+
+                  {/* Middle Right Small Dot Grid */}
+                  <g transform="translate(540, 220) rotate(-45)">
+                    {Array.from({ length: 6 }).map((_, r) =>
+                      Array.from({ length: 12 }).map((_, c) => (
+                        <circle
+                          key={`mr-dot-${r}-${c}`}
+                          cx={c * 12}
+                          cy={r * 12}
+                          r={1.5}
+                          fill="rgb(59, 130, 246)"
+                          opacity={0.3}
+                        />
+                      ))
+                    )}
+                  </g>
+
+                  {/* Bottom Center Ring */}
+                  <circle cx="420" cy="800" r="15" fill="none" stroke="rgba(59, 130, 246, 0.4)" strokeWidth="2" />
+                  <circle cx="80" cy="520" r="14" fill="rgb(6, 182, 212)" opacity="0.6" />
+
+                </svg>
+              </div>
+
               <motion.div
-                className="w-full max-w-[620px] flex flex-col items-center xl:items-start"
+                className="w-full max-w-[620px] flex flex-col items-center xl:items-start relative z-10"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], staggerChildren: 0.12 }}
@@ -152,31 +341,28 @@ export default function Home() {
                   transition={{ duration: 0.7, delay: 0.2 }}
                   className="text-4xl sm:text-5xl xl:text-[56px] font-black text-white leading-[1.1] tracking-tight mb-6"
                 >
-                  Engineered Growth for
+                  Turn Your Marketing Spend Into
                   <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-[#00c2eb] via-[#00e5ff] to-[#00a3c4]">
-                    DTC, Shopify & Retail Brands
+                    Predictable Revenue
                   </span>
                 </motion.h1>
 
                 {/* Description */}
-                {/* <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mb-8 font-normal">
-                  Digital Edge 360° is a full-stack e-commerce marketing agency built by performance marketers and developers - not just strategists. For 7+ years, we’ve helped 75+ online stores turn their vision into reality. From storefront development to SEO, paid marketing to conversion rate optimization, and app development, we run every growth lever under one roof — backed by real attribution data. So your success isn’t just measurable at the finish line, but visible and trackable at every stage of your e-commerce branding journey.
-                </p> */}
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.7, delay: 0.3 }}
-                  className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mb-2 font-medium font-mono mx-auto xl:mx-0"
+                  className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mb-4 font-medium mx-auto xl:mx-0"
                 >
-                  Digital Edge 360° is a full-stack e-commerce marketing agency built by performance marketers and developers - not just strategists. For 7+ years, we’ve helped 75+ online stores turn their vision into reality.
+                  We help ambitious businesses generate more qualified leads, convert more customers, and increase revenue through one integrated growth system.
                 </motion.p>
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.7, delay: 0.35 }}
-                  className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mb-8 font-medium font-mono mx-auto xl:mx-0"
+                  className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mb-8 font-medium mx-auto xl:mx-0"
                 >
-                  From storefront development to SEO, paid marketing to conversion rate optimization, and app development, we run every growth lever under one roof — backed by real attribution data. So your success isn’t just measurable at the finish line, but visible and trackable at every stage of your e-commerce branding journey.
+                  No more managing 5 different vendors. One team responsible for the growth engine.
                 </motion.p>
 
                 {/* Call to Action Button */}
@@ -189,7 +375,7 @@ export default function Home() {
                     href="/contact"
                     className="inline-flex items-center justify-center gap-2.5 px-10 py-5 bg-[#00a3c4] hover:bg-[#008ba8] text-white text-sm font-extrabold rounded-full transition-all duration-300 shadow-[0_10px_25px_rgba(0,163,196,0.35)] hover:shadow-[0_15px_30px_rgba(0,163,196,0.5)] hover:-translate-y-0.5 uppercase tracking-wider"
                   >
-                    <span>Book a Strategy Call</span>
+                    <span>Book a Free Growth Audit</span>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="w-4 h-4">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                     </svg>
@@ -220,11 +406,10 @@ export default function Home() {
                 className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-[#1d4ed8]/15 rounded-full blur-[120px] pointer-events-none"
               />
 
-              {/* Video Player styled like a Safari window */}
               <motion.div
-                initial={{ opacity: 0, scale: 0.95, y: 40 }}
-                animate={{ opacity: 1, scale: 1, y: 24 }}
-                whileHover={{ y: 16, scale: 1.015 }}
+                initial={{ opacity: 0, scale: 0.95, y: 80 }}
+                animate={{ opacity: 1, scale: 1, y: 64 }}
+                whileHover={{ y: 56, scale: 1.015 }}
                 transition={{ duration: 1.2, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
                 className="relative w-full max-w-[940px] lg:max-w-[calc(100dvh-200px)] aspect-square rounded-2xl bg-slate-900/90 border border-slate-700/60 shadow-[0_30px_80px_rgba(0,0,0,0.6)] backdrop-blur-md overflow-hidden cursor-pointer"
               >
@@ -257,8 +442,8 @@ export default function Home() {
           </div>
 
           {/* Partner Logos Marquee - Full Width Center Bottom */}
-          <div className="w-full relative z-40 pb-16 pt-8 px-6 sm:px-12 flex flex-col items-center justify-center text-center">
-            <p className="text-xs uppercase tracking-[0.25em] text-slate-400 font-black mb-5">Our Partners & Accreditations</p>
+          <div className="w-full relative z-40 pb-16 pt-8 px-6 mt-4 sm:px-12 flex flex-col items-center justify-center text-center">
+           
             <div className="relative w-full max-w-[960px] overflow-hidden flex [mask-image:_linear-gradient(to_right,_transparent_0%,_black_10%,_black_90%,_transparent_100%)] flex-row">
               <div className="flex gap-12 items-center animate-marquee-infinite py-4 pr-12">
                 {[
@@ -295,6 +480,7 @@ export default function Home() {
                 ))}
               </div>
             </div>
+             <p className="text-xs uppercase tracking-[0.25em] text-slate-400 font-black mt-3">Our Partners & Accreditations</p>
           </div>
         </section>
 
@@ -552,7 +738,7 @@ export default function Home() {
               BEYOND
             </h3>
             <h4 className="text-[13.5vw] sm:text-[11.5vw] md:text-[9.5vw] lg:text-[8.5vw] xl:text-[7.5vw] 2xl:text-[130px] font-black bg-gradient-to-r from-[#0a8bc7] via-[#2443ab] to-[#40159e] bg-clip-text text-transparent leading-none tracking-tighter select-none mt-[-2vw] sm:mt-[-1.5vw] md:mt-[-2vw] lg:mt-[-1.5vw] 2xl:mt-[-30px] pb-2">
-              TRADITION.
+              BOUNDARIES.
             </h4>
 
             {/* Subtext Quote Box */}
@@ -567,6 +753,92 @@ export default function Home() {
                 </p>
                 <div className="w-12 sm:w-16 h-[3.5px] bg-gradient-to-r from-[#0a8bc7] via-[#2443ab] to-[#40159e] mx-auto mt-4 sm:mt-5 rounded-full shadow-sm" />
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* What We Do - Full-Stack Growth & Digital Architecture Section */}
+        <section className="relative z-10 w-full py-24 bg-gradient-to-br from-indigo-100/40 via-purple-100/40 to-indigo-50/40 border-y border-slate-200/60 overflow-hidden">
+          <div className="mx-auto max-w-[1500px] px-6 sm:px-8 lg:px-12">
+
+            {/* Header container */}
+            <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8">
+              <div className="text-left max-w-2xl">
+                {/* Badge */}
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-900 bg-white px-5 py-2.5 text-xs sm:text-sm font-extrabold tracking-[0.2em] text-slate-800 uppercase shadow-sm mb-3">
+                  <span>WHAT WE OFFER</span>
+                </span>
+                <h2 className="text-3xl sm:text-5xl font-black text-[#0d1b3e] tracking-tight leading-[1.1]">
+                  Full-Stack E-Commerce Growth, Engineered Under One Roof
+                </h2>
+              </div>
+              <div className="lg:max-w-[280px] text-left lg:text-right mb-2">
+                <p className="text-base sm:text-lg text-slate-500 font-semibold leading-relaxed">
+                  From storefront builds to performance marketing — every lever that drives your online revenue, handled by one team.              </p>
+              </div>
+            </div>
+
+            {/* Bento Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-[minmax(280px,_auto)]">
+              {services.map((service, index) => {
+                let gridClass = "";
+                let cardBg = "bg-white";
+                let isSolidBrand = false;
+
+                if (index === 0) {
+                  // Web Dev: 1x1 Square Image
+                  gridClass = "lg:col-start-1 lg:row-start-1 lg:col-span-1 lg:row-span-1 min-h-[260px]";
+                } else if (index === 1) {
+                  // WooCommerce: 1x1 Solid Blue Card
+                  gridClass = "lg:col-start-2 lg:row-start-1 lg:col-span-1 lg:row-span-1 min-h-[260px]";
+                  isSolidBrand = false;
+                } else if (index === 2) {
+                  // App Dev: 2x1 Wide Image Card
+                  gridClass = "lg:col-start-3 lg:row-start-1 lg:col-span-2 lg:row-span-1 min-h-[310px]";
+                } else if (index === 3) {
+                  // Performance Ads: 1x2 Tall Vertical Card
+                  gridClass = "lg:col-start-1 lg:row-start-2 lg:col-span-1 lg:row-span-2 min-h-[500px]";
+                } else if (index === 4) {
+                  // SEO: 2x1 Wide Dark Card
+                  gridClass = "lg:col-start-2 lg:row-start-2 lg:col-span-2 lg:row-span-1 min-h-[310px]";
+                } else if (index === 5) {
+                  // Marketplace: 1x1 Square Image
+                  gridClass = "lg:col-start-4 lg:row-start-2 lg:col-span-1 lg:row-span-1 min-h-[240px]";
+                } else if (index === 6) {
+                  // AI Integration: 2x1 Wide Image Card
+                  gridClass = "lg:col-start-2 lg:row-start-3 lg:col-span-2 lg:row-span-1 min-h-[310px]";
+                } else if (index === 7) {
+                  // Creative Studio: 1x1 Solid Purple Card
+                  gridClass = "lg:col-start-4 lg:row-start-3 lg:col-span-1 lg:row-span-1 min-h-[240px]";
+                  isSolidBrand = false;
+                }
+
+                return (
+                  <Link
+                    key={index}
+                    href={service.href}
+                    className={`rounded-[32px] p-6 pb-1 border border-slate-100 shadow-lg hover:shadow-2xl hover:border-slate-200/80 transition-all duration-500 ease-out flex flex-col justify-between group relative overflow-hidden cursor-pointer transform-gpu will-change-transform text-left ${cardBg} ${gridClass}`}
+                  >
+                    {/* Image Background */}
+                    <div
+                      className="absolute inset-0 bg-[length:100%_100%] bg-center bg-no-repeat transition-transform duration-700 ease-out z-0 group-hover:scale-105 after:content-[''] after:absolute after:inset-0"
+                      style={{ backgroundImage: `url('${service.bgImage}')` }}
+                    />
+
+                    {/* Content Wrapper */}
+                    <div className="relative z-10 flex flex-col justify-end h-full w-full transform transition-transform duration-500 ease-out will-change-transform">
+
+                      {/* Bottom Explore Topic button */}
+                      <div className="mb-3">
+                        <span className="inline-flex items-center gap-1.5 text-xs font-black text-slate-800 bg-white/95 backdrop-blur-sm border border-slate-200/80 px-4 py-2 rounded-lg shadow-md group-hover:bg-[#0210d9] group-hover:text-white group-hover:border-[#0210d9] transition-all duration-300">
+                          Explore Topic <span className="inline-block transform group-hover:translate-x-1 transition-transform duration-300">→</span>
+                        </span>
+                      </div>
+
+                    </div>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -602,9 +874,7 @@ export default function Home() {
                   title: "Siloed Communication",
                   text: "Your SEO agency, ad manager, creative team, and dev team don’t talk to each other. So nobody actually owns your results, and you’re stuck playing translator between four different Slack channels.",
                   icon: (
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5 text-white">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641l-.318 1.235c-.083.323.238.614.545.506l1.235-.432c.504-.176.999-.085 1.488.132A8.96 8.96 0 0 0 12 20.25Z" />
-                    </svg>
+                    <MessageSquare className="w-5 h-5 text-white" strokeWidth={2.5} />
                   ),
                   circleBg: "bg-gradient-to-br from-pink-400 to-rose-600 shadow-[0_6px_20px_rgba(244,63,94,0.35)]",
                   lineColor: "bg-rose-500",
@@ -612,44 +882,13 @@ export default function Home() {
                   borderColor: "border-rose-100",
                   step: "Step 01",
                   slideLeft: true,
-                  illustration: (
-                    <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-28 h-28 pointer-events-none select-none">
-                      <defs>
-                        <linearGradient id="bubbleGrad1" x1="25" y1="25" x2="95" y2="80" gradientUnits="userSpaceOnUse">
-                          <stop offset="0%" stopColor="#ffb3c6" />
-                          <stop offset="40%" stopColor="#ff7096" />
-                          <stop offset="100%" stopColor="#ff477e" />
-                        </linearGradient>
-                        <linearGradient id="bubbleGrad2" x1="60" y1="60" x2="110" y2="110" gradientUnits="userSpaceOnUse">
-                          <stop offset="0%" stopColor="#ff85a2" />
-                          <stop offset="100%" stopColor="#ff0a54" />
-                        </linearGradient>
-                        <filter id="shadowBubble" x="-10" y="-10" width="140" height="140" filterUnits="userSpaceOnUse">
-                          <feDropShadow dx="2" dy="8" stdDeviation="6" floodColor="#ff0a54" floodOpacity="0.25" />
-                        </filter>
-                      </defs>
-                      <g filter="url(#shadowBubble)">
-                        <circle cx="95" cy="85" r="18" fill="url(#bubbleGrad2)" />
-                        <path d="M95 100 L88 108 L100 102 Z" fill="url(#bubbleGrad2)" />
-                        <circle cx="89" cy="85" r="2" fill="white" opacity="0.9" />
-                        <circle cx="95" cy="85" r="2" fill="white" opacity="0.9" />
-                        <circle cx="101" cy="85" r="2" fill="white" opacity="0.9" />
-                        <rect x="25" y="25" width="70" height="55" rx="24" fill="url(#bubbleGrad1)" />
-                        <path d="M75 78 L85 92 L65 80 Z" fill="url(#bubbleGrad1)" />
-                        <circle cx="45" cy="52" r="4.5" fill="white" opacity="0.95" />
-                        <circle cx="60" cy="52" r="4.5" fill="white" opacity="0.95" />
-                        <circle cx="75" cy="52" r="4.5" fill="white" opacity="0.95" />
-                      </g>
-                    </svg>
-                  )
+                  image: "https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?auto=format&fit=crop&w=800&q=80"
                 },
                 {
                   title: "Vanity Metrics",
                   text: "Your monthly reports are packed with impressions and click-through rates - but nobody can tell you how much actual revenue any of it produced.",
                   icon: (
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5 text-white">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" />
-                    </svg>
+                    <BarChart3 className="w-5 h-5 text-white" strokeWidth={2.5} />
                   ),
                   circleBg: "bg-gradient-to-br from-amber-400 to-orange-500 shadow-[0_6px_20px_rgba(249,115,22,0.35)]",
                   lineColor: "bg-orange-500",
@@ -657,42 +896,13 @@ export default function Home() {
                   borderColor: "border-orange-100",
                   step: "Step 02",
                   slideLeft: false,
-                  illustration: (
-                    <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-28 h-28 pointer-events-none select-none">
-                      <defs>
-                        <linearGradient id="chartBarGrad" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="0%" stopColor="#ffcc80" />
-                          <stop offset="100%" stopColor="#ff8f00" />
-                        </linearGradient>
-                        <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
-                          <stop offset="0%" stopColor="#ffe082" />
-                          <stop offset="100%" stopColor="#ffb300" />
-                        </linearGradient>
-                        <filter id="shadowChart" x="-10" y="-10" width="140" height="140" filterUnits="userSpaceOnUse">
-                          <feDropShadow dx="2" dy="8" stdDeviation="6" floodColor="#ff8f00" floodOpacity="0.25" />
-                        </filter>
-                      </defs>
-                      <g filter="url(#shadowChart)">
-                        <rect x="40" y="70" width="10" height="25" rx="5" fill="url(#chartBarGrad)" />
-                        <rect x="60" y="50" width="10" height="45" rx="5" fill="url(#chartBarGrad)" />
-                        <rect x="80" y="35" width="10" height="60" rx="5" fill="url(#chartBarGrad)" />
-                        <rect x="100" y="60" width="10" height="35" rx="5" fill="url(#chartBarGrad)" />
-                        <path d="M45 65 L65 45 L85 30 L105 55" stroke="url(#lineGrad)" strokeWidth="5" strokeLinecap="round" />
-                        <circle cx="45" cy="65" r="4.5" fill="white" stroke="#ff8f00" strokeWidth="2.5" />
-                        <circle cx="65" cy="45" r="4.5" fill="white" stroke="#ff8f00" strokeWidth="2.5" />
-                        <circle cx="85" cy="30" r="4.5" fill="white" stroke="#ff8f00" strokeWidth="2.5" />
-                        <circle cx="105" cy="55" r="4.5" fill="white" stroke="#ff8f00" strokeWidth="2.5" />
-                      </g>
-                    </svg>
-                  )
+                  image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
                 },
                 {
                   title: "Slow Loading Times",
                   text: "Your website takes 6+ seconds to load - which means half your ad spend is bringing shoppers to a storefront that loses them before they even see your product.",
                   icon: (
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5 text-white">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                    </svg>
+                    <Clock className="w-5 h-5 text-white" strokeWidth={2.5} />
                   ),
                   circleBg: "bg-gradient-to-br from-red-400 to-rose-600 shadow-[0_6px_20px_rgba(244,63,94,0.35)]",
                   lineColor: "bg-rose-500",
@@ -700,32 +910,13 @@ export default function Home() {
                   borderColor: "border-rose-100",
                   step: "Step 03",
                   slideLeft: true,
-                  illustration: (
-                    <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-28 h-28 pointer-events-none select-none">
-                      <defs>
-                        <linearGradient id="speedBg" x1="0" y1="0" x2="1" y2="1">
-                          <stop offset="0%" stopColor="#ffb3c6" />
-                          <stop offset="100%" stopColor="#ff477e" />
-                        </linearGradient>
-                        <filter id="shadowSpeed" x="-10" y="-10" width="140" height="140" filterUnits="userSpaceOnUse">
-                          <feDropShadow dx="2" dy="8" stdDeviation="6" floodColor="#ff477e" floodOpacity="0.25" />
-                        </filter>
-                      </defs>
-                      <g filter="url(#shadowSpeed)">
-                        <circle cx="75" cy="75" r="35" stroke="url(#speedBg)" strokeWidth="6" strokeDasharray="140 280" strokeLinecap="round" transform="rotate(-90 75 75)" fill="none" />
-                        <path d="M75 75 L95 55" stroke="#ff477e" strokeWidth="5" strokeLinecap="round" />
-                        <circle cx="75" cy="75" r="6" fill="#0d1b3e" />
-                      </g>
-                    </svg>
-                  )
+                  image: "https://images.unsplash.com/photo-1508962914676-134849a727f0?auto=format&fit=crop&w=800&q=80"
                 },
                 {
                   title: "Blame Game",
                   text: "Every agency blames someone else when growth stalls- the SEO team blames the site speed, the dev team blames the ad targeting, and you’re left with no clear answer.",
                   icon: (
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5 text-white">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286Zm0 13.036h.008v.008H12v-.008Z" />
-                    </svg>
+                    <AlertCircle className="w-5 h-5 text-white" strokeWidth={2.5} />
                   ),
                   circleBg: "bg-gradient-to-br from-yellow-400 to-amber-500 shadow-[0_6px_20px_rgba(234,179,8,0.35)]",
                   lineColor: "bg-yellow-500",
@@ -733,32 +924,13 @@ export default function Home() {
                   borderColor: "border-yellow-100",
                   step: "Step 04",
                   slideLeft: false,
-                  illustration: (
-                    <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-28 h-28 pointer-events-none select-none">
-                      <defs>
-                        <linearGradient id="shieldBg" x1="0" y1="0" x2="1" y2="1">
-                          <stop offset="0%" stopColor="#ffe082" />
-                          <stop offset="100%" stopColor="#ffb300" />
-                        </linearGradient>
-                        <filter id="shadowShield" x="-10" y="-10" width="140" height="140" filterUnits="userSpaceOnUse">
-                          <feDropShadow dx="2" dy="8" stdDeviation="6" floodColor="#ffb300" floodOpacity="0.25" />
-                        </filter>
-                      </defs>
-                      <g filter="url(#shadowShield)">
-                        <path d="M75 35 C90 35 98 40 98 40 C98 40 98 75 75 95 C52 75 52 40 52 40 C52 40 60 35 75 35 Z" fill="url(#shieldBg)" />
-                        <circle cx="75" cy="58" r="4.5" fill="white" />
-                        <path d="M75 66 L75 78" stroke="white" strokeWidth="4.5" strokeLinecap="round" />
-                      </g>
-                    </svg>
-                  )
+                  image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80"
                 },
                 {
                   title: "Fragmented Invoices",
                   text: "You’re paying five separate invoices for tools and services that should be working as one system - not five disconnected pieces pretending to be a strategy.",
                   icon: (
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5 text-white">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5h16.5c.621 0 1.125.504 1.125 1.125v12.75c0 .621-.504 1.125-1.125 1.125H3.75A1.125 1.125 0 0 1 2.25 17.25V5.625C2.25 5.004 2.754 4.5 3.75 4.5Z" />
-                    </svg>
+                    <FileText className="w-5 h-5 text-white" strokeWidth={2.5} />
                   ),
                   circleBg: "bg-gradient-to-br from-pink-400 to-rose-600 shadow-[0_6px_20px_rgba(244,63,94,0.35)]",
                   lineColor: "bg-rose-500",
@@ -766,34 +938,13 @@ export default function Home() {
                   borderColor: "border-rose-100",
                   step: "Step 05",
                   slideLeft: true,
-                  illustration: (
-                    <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-28 h-28 pointer-events-none select-none">
-                      <defs>
-                        <linearGradient id="invGrad" x1="0" y1="0" x2="1" y2="1">
-                          <stop offset="0%" stopColor="#ffb3c6" />
-                          <stop offset="100%" stopColor="#ff477e" />
-                        </linearGradient>
-                        <filter id="shadowInv" x="-10" y="-10" width="140" height="140" filterUnits="userSpaceOnUse">
-                          <feDropShadow dx="2" dy="8" stdDeviation="6" floodColor="#ff477e" floodOpacity="0.25" />
-                        </filter>
-                      </defs>
-                      <g filter="url(#shadowInv)">
-                        <rect x="50" y="35" width="45" height="60" rx="8" fill="white" stroke="url(#invGrad)" strokeWidth="3" />
-                        <line x1="58" y1="48" x2="87" y2="48" stroke="url(#invGrad)" strokeWidth="3" strokeLinecap="round" />
-                        <line x1="58" y1="58" x2="77" y2="58" stroke="url(#invGrad)" strokeWidth="3" strokeLinecap="round" />
-                        <line x1="58" y1="68" x2="87" y2="68" stroke="url(#invGrad)" strokeWidth="3" strokeLinecap="round" />
-                        <text x="75" y="86" fill="#ff477e" fontSize="14" fontWeight="900" fontFamily="sans-serif">$</text>
-                      </g>
-                    </svg>
-                  )
+                  image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80"
                 },
                 {
                   title: "One Team. One Dashboard. One Line of Accountability.",
                   text: "That’s exactly why we built Digital Edge 360 differently - one team, one dashboard, one clear line of accountability from click to conversion.",
                   icon: (
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5 text-white">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v1.75a3 3 0 0 0 3 3h1.75M9 9h.01M12 12h.01M15 15h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                    </svg>
+                    <LayoutDashboard className="w-5 h-5 text-white" strokeWidth={2.5} />
                   ),
                   circleBg: "bg-gradient-to-br from-blue-500 to-indigo-600 shadow-[0_6px_20px_rgba(37,99,235,0.35)]",
                   lineColor: "bg-blue-500",
@@ -801,26 +952,7 @@ export default function Home() {
                   borderColor: "border-blue-100",
                   step: "Step 06",
                   slideLeft: false,
-                  illustration: (
-                    <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-28 h-28 pointer-events-none select-none">
-                      <defs>
-                        <linearGradient id="targetInnerGrad" x1="0" y1="0" x2="1" y2="1">
-                          <stop offset="0%" stopColor="#809cff" />
-                          <stop offset="100%" stopColor="#1a4bff" />
-                        </linearGradient>
-                        <filter id="shadowTarget" x="-10" y="-10" width="140" height="140" filterUnits="userSpaceOnUse">
-                          <feDropShadow dx="2" dy="8" stdDeviation="6" floodColor="#1a4bff" floodOpacity="0.3" />
-                        </filter>
-                      </defs>
-                      <g filter="url(#shadowTarget)">
-                        <circle cx="70" cy="70" r="32" stroke="white" strokeWidth="3" fill="url(#targetInnerGrad)" />
-                        <circle cx="70" cy="70" r="22" stroke="white" strokeWidth="3" />
-                        <circle cx="70" cy="70" r="12" stroke="white" strokeWidth="3" fill="#ff4d4d" />
-                        <path d="M95 45 L72 68" stroke="white" strokeWidth="4.5" strokeLinecap="round" />
-                        <path d="M95 45 L85 45 M95 45 L95 55" stroke="white" strokeWidth="4.5" strokeLinecap="round" />
-                      </g>
-                    </svg>
-                  )
+                  image: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80"
                 }
               ].map((item, idx) => {
                 const isLeft = idx % 2 === 0;
@@ -884,9 +1016,16 @@ export default function Home() {
                       <motion.div
                         animate={{ y: [0, -8, 0] }}
                         transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-                        className="p-8 rounded-[32px] bg-gradient-to-br from-white/90 to-slate-50/50 border border-slate-100/80 shadow-[0_15px_40px_rgba(0,0,0,0.02)] hover:shadow-md transition-all duration-500 flex items-center justify-center overflow-hidden"
+                        className="relative w-full aspect-[4/3] max-w-[420px] rounded-[24px] overflow-hidden border border-slate-100 shadow-[0_12px_32px_rgba(0,0,0,0.06)] hover:shadow-lg transition-all duration-500 bg-slate-50"
                       >
-                        {item.illustration}
+                        <Image
+                          src={item.image}
+                          alt={item.title}
+                          fill
+                          sizes="(max-width: 1024px) 100vw, 420px"
+                          className="object-cover transition-transform duration-500 hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/20 via-transparent to-transparent pointer-events-none" />
                       </motion.div>
                     </motion.div>
                   </div>
@@ -968,94 +1107,143 @@ export default function Home() {
 
         {/* our works Section */}
         <section ref={mobileSectionRef} className="relative z-10 mx-auto max-w-[1500px] px-6 sm:px-8 lg:px-12 py-16">
-
           {/* What Makes Us Different Section */}
           <div className="mb-24">
-            <div className="text-center mb-16">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-[10px] font-extrabold tracking-[0.25em] text-[#2443ab] uppercase shadow-sm mb-4">
+            <div className="text-center mb-20 max-w-3xl mx-auto">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-100 bg-blue-50/50 px-4 py-2 text-[10px] font-extrabold tracking-[0.25em] text-[#2443ab] uppercase shadow-sm mb-4">
                 WHY WORK WITH US
               </span>
               <h3 className="text-3xl sm:text-5xl font-black text-[#0d1b3e] tracking-tight mt-2">
                 What Makes Us Different
               </h3>
+              <p className="text-slate-500 font-bold text-xs sm:text-[14px] leading-relaxed mt-4">
+                We combine performance marketing, e-commerce expertise, and enterprise-grade development to drive measurable growth for your brand.
+              </p>
             </div>
 
-            {/* Editorial Row Layout - Stairs Style */}
-            <div className="space-y-6">
+            {/* Editorial Row Layout - Stairs Card Style */}
+            <div className="space-y-16 max-w-6xl mx-auto">
+              
               {/* Row 1 */}
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-12 py-10 items-start group bg-indigo-100/60 border border-indigo-100/50 hover:bg-indigo-100 transition-all duration-300 px-8 rounded-[24px] text-left lg:max-w-[85%] shadow-sm">
-                <div className="lg:col-span-2 text-3xl sm:text-5xl font-black text-indigo-500 group-hover:text-indigo-700 transition-colors duration-300">
-                  01
-                </div>
-                <div className="lg:col-span-4 text-xl sm:text-2xl font-black text-[#0d1b3e] leading-tight transition-colors duration-300 group-hover:text-indigo-900">
-                  One team, one accountability chain.
-                </div>
-                <div className="lg:col-span-6 text-slate-600 font-semibold text-sm sm:text-[15px] leading-relaxed">
-                  <div className="mb-3">
-                    <span className="text-[#0d1b3e] font-bold">Zero handoffs</span> between dev and marketing. The team that <span className="underline decoration-indigo-500/60 decoration-2 font-bold text-slate-800">builds your storefront</span> sits in the exact same room as the specialists <span className="underline decoration-indigo-500/60 decoration-2 font-bold text-slate-800">optimizing your ads</span>.
+              <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16">
+                {/* Left Card */}
+                <div className="w-full lg:w-[45%] aspect-[1.8/1] rounded-[24px] bg-gradient-to-br from-white to-blue-50/40 border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.03)] flex items-center justify-center p-8 relative overflow-hidden group hover:shadow-[0_30px_60px_rgba(37,99,235,0.08)] transition-all duration-300">
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-blue-400/10 rounded-full blur-3xl pointer-events-none" />
+                  <div className="relative w-36 h-36 rounded-full border border-blue-100 flex items-center justify-center shadow-[inset_0_0_20px_rgba(37,99,235,0.02)]">
+                    <div className="w-[84%] h-[84%] rounded-full border border-dashed border-blue-200/60 flex items-center justify-center">
+                      <div className="w-[76%] h-[76%] rounded-full bg-white border border-blue-100 flex items-center justify-center shadow-lg shadow-blue-500/5 relative z-10 text-blue-600">
+                        <Users className="w-10 h-10" strokeWidth={1.5} />
+                      </div>
+                    </div>
                   </div>
-                  <div className="flex flex-wrap gap-2 mt-4">
-                    <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-black bg-indigo-200/50 text-indigo-800 border border-indigo-300/40">
-                      🤝 Dev + Marketing Aligned
-                    </span>
-                    <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-black bg-indigo-50/60 text-indigo-700 border border-indigo-200/40">
-                      ⚡ Direct Accountability
-                    </span>
+                </div>
+                {/* Right Text */}
+                <div className="w-full lg:w-[50%] flex items-start gap-5 text-left">
+                  <div className="flex items-center gap-4 shrink-0 mt-1">
+                    <span className="text-4xl sm:text-5xl font-black text-blue-600 tracking-tight leading-none">01</span>
+                    <div className="w-[1.5px] h-12 bg-slate-200" />
+                  </div>
+                  <div className="flex-grow">
+                    <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] leading-tight mb-3">
+                      One team, one accountability chain.
+                    </h4>
+                    <p className="text-slate-500 font-semibold text-xs sm:text-[14px] leading-relaxed mb-4">
+                      Zero handoffs between dev and marketing. The team that <span className="text-blue-600 font-extrabold">builds your storefront</span> sits in the exact same room as the specialists <span className="text-blue-600 font-extrabold">optimizing your ads</span>.
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-[10px] font-black bg-blue-50 text-blue-700 border border-blue-100 shadow-sm">
+                        💛 Dev + Marketing Aligned
+                      </span>
+                      <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-[10px] font-black bg-blue-50 text-blue-700 border border-blue-100 shadow-sm">
+                        ⚡ Direct Accountability
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
 
               {/* Row 2 */}
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-12 py-10 items-start group bg-purple-100/60 border border-purple-100/50 hover:bg-purple-100 transition-all duration-300 px-8 rounded-[24px] text-left lg:max-w-[85%] lg:ml-[7.5%] shadow-sm">
-                <div className="lg:col-span-2 text-3xl sm:text-5xl font-black text-purple-500 group-hover:text-purple-700 transition-colors duration-300">
-                  02
-                </div>
-                <div className="lg:col-span-4 text-xl sm:text-2xl font-black text-[#0d1b3e] leading-tight transition-colors duration-300 group-hover:text-purple-900">
-                  Certified across the platforms that matter.
-                </div>
-                <div className="lg:col-span-6 text-slate-600 font-semibold text-sm sm:text-[15px] leading-relaxed">
-                  <div className="mb-3">
-                    Enterprise-grade execution built for brands demanding absolute security, strict compliance standards, and scaling speed.
+              <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-8 lg:gap-16">
+                {/* Left Text */}
+                <div className="w-full lg:w-[50%] flex items-start gap-5 text-left">
+                  <div className="flex items-center gap-4 shrink-0 mt-1">
+                    <span className="text-4xl sm:text-5xl font-black text-purple-600 tracking-tight leading-none">02</span>
+                    <div className="w-[1.5px] h-12 bg-slate-200" />
                   </div>
-                  <div className="flex flex-wrap gap-1.5 mt-4">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-black bg-purple-200/50 text-purple-800 border border-purple-300/40">
-                      Shopify Plus
-                    </span>
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-black bg-purple-200/50 text-purple-800 border border-purple-300/40">
-                      Google & Meta Premier
-                    </span>
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-black bg-purple-200/50 text-purple-800 border border-purple-300/40">
-                      Adobe
-                    </span>
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-black bg-emerald-100 text-emerald-800 border border-emerald-200">
-                      🔒 ISO 27001 Security
-                    </span>
+                  <div className="flex-grow">
+                    <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] leading-tight mb-3">
+                      Certified across the platforms that matter.
+                    </h4>
+                    <p className="text-slate-500 font-semibold text-xs sm:text-[14px] leading-relaxed mb-4">
+                      Enterprise-grade execution built for brands demanding absolute security, strict compliance standards, and scaling speed.
+                    </p>
+                    <div className="flex flex-wrap gap-1.5">
+                      <span className="inline-flex items-center px-3 py-1.5 rounded-full text-[10px] font-black bg-purple-50 text-purple-700 border border-purple-100 shadow-sm">
+                        Shopify Plus
+                      </span>
+                      <span className="inline-flex items-center px-3 py-1.5 rounded-full text-[10px] font-black bg-purple-50 text-purple-700 border border-purple-100 shadow-sm">
+                        Google & Meta Premier
+                      </span>
+                      <span className="inline-flex items-center px-3 py-1.5 rounded-full text-[10px] font-black bg-purple-50 text-purple-700 border border-purple-100 shadow-sm">
+                        Adobe
+                      </span>
+                      <span className="inline-flex items-center px-3 py-1.5 rounded-full text-[10px] font-black bg-emerald-50 text-emerald-700 border border-emerald-100 shadow-sm">
+                        🔒 ISO 27001 Security
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                {/* Right Card */}
+                <div className="w-full lg:w-[45%] aspect-[1.8/1] rounded-[24px] bg-gradient-to-br from-white to-purple-50/40 border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.03)] flex items-center justify-center p-8 relative overflow-hidden group hover:shadow-[0_30px_60px_rgba(139,92,246,0.08)] transition-all duration-300">
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-purple-400/10 rounded-full blur-3xl pointer-events-none" />
+                  <div className="relative w-36 h-36 rounded-full border border-purple-100 flex items-center justify-center shadow-[inset_0_0_20px_rgba(139,92,246,0.02)]">
+                    <div className="w-[84%] h-[84%] rounded-full border border-dashed border-purple-200/60 flex items-center justify-center">
+                      <div className="w-[76%] h-[76%] rounded-full bg-white border border-purple-100 flex items-center justify-center shadow-lg shadow-purple-500/5 relative z-10 text-purple-600">
+                        <Shield className="w-10 h-10" strokeWidth={1.5} />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
 
               {/* Row 3 */}
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-12 py-10 items-start group bg-amber-100/60 border border-amber-100/40 hover:bg-amber-100 transition-all duration-300 px-8 rounded-[24px] text-left lg:max-w-[85%] lg:ml-[15%] shadow-sm">
-                <div className="lg:col-span-2 text-3xl sm:text-5xl font-black text-amber-500 group-hover:text-amber-700 transition-colors duration-300">
-                  03
-                </div>
-                <div className="lg:col-span-4 text-xl sm:text-2xl font-black text-[#0d1b3e] leading-tight transition-colors duration-300 group-hover:text-amber-900">
-                  Built for e-commerce only.
-                </div>
-                <div className="lg:col-span-6 text-slate-600 font-semibold text-sm sm:text-[15px] leading-relaxed">
-                  <div className="mb-3">
-                    We focus <span className="text-amber-700 font-bold">100% on online retail</span>. No wasted onboarding or generic strategies. Our team understands how to move your needle.
+              <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16">
+                {/* Left Card */}
+                <div className="w-full lg:w-[45%] aspect-[1.8/1] rounded-[24px] bg-gradient-to-br from-white to-amber-50/40 border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.03)] flex items-center justify-center p-8 relative overflow-hidden group hover:shadow-[0_30px_60px_rgba(245,158,11,0.08)] transition-all duration-300">
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-amber-400/10 rounded-full blur-3xl pointer-events-none" />
+                  <div className="relative w-36 h-36 rounded-full border border-amber-100 flex items-center justify-center shadow-[inset_0_0_20px_rgba(245,158,11,0.02)]">
+                    <div className="w-[84%] h-[84%] rounded-full border border-dashed border-amber-200/60 flex items-center justify-center">
+                      <div className="w-[76%] h-[76%] rounded-full bg-white border border-amber-100 flex items-center justify-center shadow-lg shadow-amber-500/5 relative z-10 text-amber-600">
+                        <ShoppingCart className="w-10 h-10" strokeWidth={1.5} />
+                      </div>
+                    </div>
                   </div>
-                  <div className="flex flex-wrap gap-2 mt-4">
-                    <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-black bg-amber-200/50 text-amber-800 border border-amber-300/40">
-                      📈 Margin Economics
-                    </span>
-                    <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-black bg-amber-50/60 text-amber-700 border border-amber-200/40">
-                      🎯 Funnel Optimization
-                    </span>
+                </div>
+                {/* Right Text */}
+                <div className="w-full lg:w-[50%] flex items-start gap-5 text-left">
+                  <div className="flex items-center gap-4 shrink-0 mt-1">
+                    <span className="text-4xl sm:text-5xl font-black text-amber-600 tracking-tight leading-none">03</span>
+                    <div className="w-[1.5px] h-12 bg-slate-200" />
+                  </div>
+                  <div className="flex-grow">
+                    <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] leading-tight mb-3">
+                      Built for e-commerce only.
+                    </h4>
+                    <p className="text-slate-500 font-semibold text-xs sm:text-[14px] leading-relaxed mb-4">
+                      We focus <span className="text-amber-600 font-extrabold">100% on online retail</span>. No wasted onboarding or generic strategies. Our team understands how to move your needle.
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-[10px] font-black bg-amber-50 text-amber-700 border border-amber-100 shadow-sm">
+                        📈 Margin Economics
+                      </span>
+                      <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-[10px] font-black bg-amber-50 text-amber-700 border border-amber-100 shadow-sm">
+                        🎯 Funnel Optimization
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
         </section>
@@ -1200,92 +1388,6 @@ export default function Home() {
 
             </div>
 
-          </div>
-        </section>
-
-        {/* What We Do - Full-Stack Growth & Digital Architecture Section */}
-        <section className="relative z-10 w-full py-24 bg-gradient-to-br from-indigo-100/40 via-purple-100/40 to-indigo-50/40 border-y border-slate-200/60 overflow-hidden">
-          <div className="mx-auto max-w-[1500px] px-6 sm:px-8 lg:px-12">
-
-            {/* Header container */}
-            <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8">
-              <div className="text-left max-w-2xl">
-                {/* Badge */}
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-900 bg-white px-5 py-2.5 text-xs sm:text-sm font-extrabold tracking-[0.2em] text-slate-800 uppercase shadow-sm mb-3">
-                  <span>WHAT WE OFFER</span>
-                </span>
-                <h2 className="text-3xl sm:text-5xl font-black text-[#0d1b3e] tracking-tight leading-[1.1]">
-                  Full-Stack E-Commerce Growth, Engineered Under One Roof
-                </h2>
-              </div>
-              <div className="lg:max-w-[280px] text-left lg:text-right mb-2">
-                <p className="text-base sm:text-lg text-slate-500 font-semibold leading-relaxed">
-                  From storefront builds to performance marketing — every lever that drives your online revenue, handled by one team.              </p>
-              </div>
-            </div>
-
-            {/* Bento Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-[minmax(280px,_auto)]">
-              {services.map((service, index) => {
-                let gridClass = "";
-                let cardBg = "bg-white";
-                let isSolidBrand = false;
-
-                if (index === 0) {
-                  // Web Dev: 1x1 Square Image
-                  gridClass = "lg:col-start-1 lg:row-start-1 lg:col-span-1 lg:row-span-1 min-h-[260px]";
-                } else if (index === 1) {
-                  // WooCommerce: 1x1 Solid Blue Card
-                  gridClass = "lg:col-start-2 lg:row-start-1 lg:col-span-1 lg:row-span-1 min-h-[260px]";
-                  isSolidBrand = false;
-                } else if (index === 2) {
-                  // App Dev: 2x1 Wide Image Card
-                  gridClass = "lg:col-start-3 lg:row-start-1 lg:col-span-2 lg:row-span-1 min-h-[310px]";
-                } else if (index === 3) {
-                  // Performance Ads: 1x2 Tall Vertical Card
-                  gridClass = "lg:col-start-1 lg:row-start-2 lg:col-span-1 lg:row-span-2 min-h-[500px]";
-                } else if (index === 4) {
-                  // SEO: 2x1 Wide Dark Card
-                  gridClass = "lg:col-start-2 lg:row-start-2 lg:col-span-2 lg:row-span-1 min-h-[310px]";
-                } else if (index === 5) {
-                  // Marketplace: 1x1 Square Image
-                  gridClass = "lg:col-start-4 lg:row-start-2 lg:col-span-1 lg:row-span-1 min-h-[240px]";
-                } else if (index === 6) {
-                  // AI Integration: 2x1 Wide Image Card
-                  gridClass = "lg:col-start-2 lg:row-start-3 lg:col-span-2 lg:row-span-1 min-h-[310px]";
-                } else if (index === 7) {
-                  // Creative Studio: 1x1 Solid Purple Card
-                  gridClass = "lg:col-start-4 lg:row-start-3 lg:col-span-1 lg:row-span-1 min-h-[240px]";
-                  isSolidBrand = false;
-                }
-
-                return (
-                  <Link
-                    key={index}
-                    href={service.href}
-                    className={`rounded-[32px] p-6 pb-1 border border-slate-100 shadow-lg hover:shadow-2xl hover:border-slate-200/80 transition-all duration-500 ease-out flex flex-col justify-between group relative overflow-hidden cursor-pointer transform-gpu will-change-transform text-left ${cardBg} ${gridClass}`}
-                  >
-                    {/* Image Background */}
-                    <div
-                      className="absolute inset-0 bg-[length:100%_100%] bg-center bg-no-repeat transition-transform duration-700 ease-out z-0 group-hover:scale-105 after:content-[''] after:absolute after:inset-0"
-                      style={{ backgroundImage: `url('${service.bgImage}')` }}
-                    />
-
-                    {/* Content Wrapper */}
-                    <div className="relative z-10 flex flex-col justify-end h-full w-full transform transition-transform duration-500 ease-out will-change-transform">
-
-                      {/* Bottom Explore Topic button */}
-                      <div className="mb-3">
-                        <span className="inline-flex items-center gap-1.5 text-xs font-black text-slate-800 bg-white/95 backdrop-blur-sm border border-slate-200/80 px-4 py-2 rounded-lg shadow-md group-hover:bg-[#0210d9] group-hover:text-white group-hover:border-[#0210d9] transition-all duration-300">
-                          Explore Topic <span className="inline-block transform group-hover:translate-x-1 transition-transform duration-300">→</span>
-                        </span>
-                      </div>
-
-                    </div>
-                  </Link>
-                );
-              })}
-            </div>
           </div>
         </section>
 

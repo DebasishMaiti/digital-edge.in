@@ -71,11 +71,58 @@ export default function AppDevelopment() {
       <div className="w-full bg-[#fafbfc] min-h-screen pb-24 text-slate-800">
         
         {/* Hero Section */}
-        <section className="relative w-full pt-[160px] pb-24 px-6 sm:px-8 lg:px-12 flex flex-col justify-center items-center border-b border-slate-100/80">
-          <div className="absolute inset-0 z-0 pointer-events-none" style={gridBackgroundStyle} />
+        <section className="relative w-full pt-[160px] pb-24 px-6 sm:px-8 lg:px-12 flex flex-col justify-center items-center bg-gradient-to-b from-[#e0f2fe] via-[#bae6fd]/30 to-[#fafbfc] border-b border-slate-100/80 overflow-hidden">
+          {/* Light Grid Scrolling Background */}
+          <div 
+            className="animate-grid-scroll opacity-60 pointer-events-none z-0" 
+            style={{
+              backgroundImage: `
+                linear-gradient(to right, rgba(14, 165, 233, 0.12) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(14, 165, 233, 0.12) 1px, transparent 1px)
+              `
+            }}
+          />
           
           {/* Glow backdrop */}
-          <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] sm:w-[700px] h-[400px] sm:h-[700px] rounded-full bg-gradient-to-br from-[#a855f7]/10 via-[#2443ab]/10 to-transparent blur-[100px] sm:blur-[140px] pointer-events-none z-0" />
+          <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+            <div className="absolute top-[10%] left-[10%] w-[35%] aspect-square rounded-full bg-gradient-to-br from-[#0ea5e9]/8 via-[#3b82f6]/6 to-transparent blur-[80px]" />
+            <div className="absolute bottom-[10%] right-[10%] w-[40%] aspect-square rounded-full bg-gradient-to-br from-[#60a5fa]/8 via-transparent to-transparent blur-[90px]" />
+          </div>
+
+          {/* SVG Custom Graphics - Isometric smartphone structures & diagonal dots */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-0 opacity-45">
+            <svg className="w-full h-full min-w-[1000px] min-h-[500px]" viewBox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg">
+              {/* Isometric phone card 1 */}
+              <g transform="translate(150, 100) rotate(15)">
+                <rect x="0" y="0" width="120" height="220" rx="18" fill="none" stroke="rgba(14, 165, 233, 0.2)" strokeWidth="3" />
+                <rect x="10" y="10" width="100" height="170" rx="10" fill="none" stroke="rgba(59, 130, 246, 0.12)" strokeWidth="1.5" />
+                <circle cx="60" cy="195" r="8" fill="none" stroke="rgba(14, 165, 233, 0.2)" strokeWidth="2" />
+              </g>
+
+              {/* Isometric phone card 2 */}
+              <g transform="translate(950, 180) rotate(-15)">
+                <rect x="0" y="0" width="110" height="200" rx="16" fill="none" stroke="rgba(59, 130, 246, 0.2)" strokeWidth="2.5" />
+                <rect x="8" y="8" width="94" height="150" rx="8" fill="rgba(14, 165, 233, 0.03)" />
+                <line x1="40" y1="175" x2="70" y2="175" stroke="rgba(59, 130, 246, 0.2)" strokeWidth="3" strokeLinecap="round" />
+              </g>
+
+              {/* Scattered dot arrays */}
+              <g transform="translate(450, 60) rotate(30)">
+                {Array.from({ length: 4 }).map((_, r) =>
+                  Array.from({ length: 10 }).map((_, c) => (
+                    <circle
+                      key={`appdev-dot-${r}-${c}`}
+                      cx={c * 15}
+                      cy={r * 15}
+                      r={1.5}
+                      fill="rgb(14, 165, 233)"
+                      opacity={0.15}
+                    />
+                  ))
+                )}
+              </g>
+            </svg>
+          </div>
 
           <div className="relative z-10 max-w-[1600px] w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             

@@ -20,27 +20,66 @@ export default function TermsOfService() {
     <>
     <link rel="canonical" href="https://digitaledge360.com/terms" />
     <div className="w-full bg-[#fafbfc] min-h-screen pb-24 text-slate-800">
-        {/* Hero Section with Grid Background */}
-        <section className="relative w-full pt-[160px] pb-20 overflow-hidden flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8 border-b border-slate-100">
-        <div
-          className="absolute inset-0 z-0 pointer-events-none"
-          style={gridBackgroundStyle}
-        />
+        {/* Minimal light gray terms hero wrapper (1 shade deeper) */}
+        <section className="relative w-full pt-[160px] pb-20 overflow-hidden flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#f5f5f5] via-[#e5e5e5] to-[#fafbfc] border-b border-slate-200">
+          {/* Light Grid Scrolling Background */}
+          <div 
+            className="animate-grid-scroll opacity-65 pointer-events-none z-0" 
+            style={{
+              backgroundImage: `
+                linear-gradient(to right, rgba(148, 163, 184, 0.16) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(148, 163, 184, 0.16) 1px, transparent 1px)
+              `
+            }}
+          />
 
-        <div className="absolute top-[55%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[500px] h-[350px] sm:h-[500px] rounded-full bg-gradient-to-br from-[#0a8bc7]/10 via-[#40159e]/10 to-transparent blur-[80px] sm:blur-[120px] pointer-events-none z-0" />
+          {/* Minimal ambient glow */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+            <div className="absolute top-[10%] right-[15%] w-[35%] aspect-square rounded-full bg-gradient-to-br from-[#94a3b8]/10 via-[#cbd5e1]/6 to-transparent blur-[70px]" />
+          </div>
 
-        <div className="relative z-10 max-w-4xl mx-auto space-y-6">
-          <span className="text-xs font-extrabold tracking-[0.25em] text-[#2443ab] uppercase">
-            Legal Information
-          </span>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-[#0d1b3e] tracking-tight leading-[1.15]">
-            Terms of Service
-          </h1>
-          <p className="mx-auto max-w-2xl text-xs sm:text-sm text-slate-400 font-bold uppercase tracking-wider">
-            Last Updated: {currentDate}
-          </p>
-        </div>
-      </section>
+          {/* SVG Custom Graphics - Offset parallel lines and quiet grids */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-0 opacity-40">
+            <svg className="w-full h-full min-w-[1000px] min-h-[400px]" viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
+              <g stroke="rgba(148, 163, 184, 0.22)" strokeWidth="1">
+                <line x1="900" y1="120" x2="1100" y2="120" />
+                <line x1="900" y1="140" x2="1100" y2="140" strokeDasharray="3 3" />
+                <line x1="900" y1="160" x2="1100" y2="160" />
+                <line x1="100" y1="240" x2="300" y2="240" strokeDasharray="4 4" />
+                <line x1="100" y1="260" x2="300" y2="260" />
+                <line x1="100" y1="280" x2="300" y2="280" />
+              </g>
+
+              {/* Quiet dot grid */}
+              <g transform="translate(540, 240)">
+                {Array.from({ length: 4 }).map((_, r) =>
+                  Array.from({ length: 10 }).map((_, c) => (
+                    <circle
+                      key={`terms-dot-${r}-${c}`}
+                      cx={c * 20}
+                      cy={r * 20}
+                      r={1.5}
+                      fill="rgb(148, 163, 184)"
+                      opacity={0.3}
+                    />
+                  ))
+                )}
+              </g>
+            </svg>
+          </div>
+
+          <div className="relative z-10 max-w-4xl mx-auto space-y-6">
+            <span className="text-xs font-extrabold tracking-[0.25em] text-[#94a3b8] uppercase">
+              Legal Information
+            </span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-[#0d1b3e] tracking-tight leading-[1.15]">
+              Terms of Service
+            </h1>
+            <p className="mx-auto max-w-2xl text-xs sm:text-sm text-slate-400 font-bold uppercase tracking-wider">
+              Last Updated: {currentDate}
+            </p>
+          </div>
+        </section>
 
       {/* Main Content Section */}
       <section className="mx-auto max-w-4xl px-6 sm:px-8 lg:px-12 mt-16 relative z-10">

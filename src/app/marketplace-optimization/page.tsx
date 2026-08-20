@@ -26,16 +26,70 @@ export default function MarketplaceOptimization() {
     <>
     <link rel="canonical" href="https://digitaledge360.com/marketplace-optimization" />
       <div className="w-full bg-[#fafbfc] min-h-screen pb-24 text-slate-800">
-        {/* Hero Section with Grid Background */}
-        <section className="relative w-full pt-[160px] pb-24 px-6 sm:px-8 lg:px-12 flex flex-col justify-center items-center border-b border-slate-100/80">
-        <div
-          className="absolute inset-0 z-0 pointer-events-none"
-          style={gridBackgroundStyle}
-        />
-        {/* Glow backdrop */}
-        <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] sm:w-[700px] h-[400px] sm:h-[700px] rounded-full bg-gradient-to-br from-[#f97316]/10 via-[#2443ab]/10 to-transparent blur-[100px] sm:blur-[140px] pointer-events-none z-0" />
+        {/* Hero Section with custom Sage/Teal light mode gradient (1 shade deeper) */}
+        <section className="relative w-full pt-[160px] pb-24 px-6 sm:px-8 lg:px-12 flex flex-col justify-center items-center bg-gradient-to-b from-[#cffafe] via-[#a5f3fc] to-[#fafbfc] border-b border-slate-200 overflow-hidden">
+          {/* Light Grid Scrolling Background */}
+          <div 
+            className="animate-grid-scroll opacity-70 pointer-events-none z-0" 
+            style={{
+              backgroundImage: `
+                linear-gradient(to right, rgba(6, 182, 212, 0.16) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(6, 182, 212, 0.16) 1px, transparent 1px)
+              `
+            }}
+          />
 
-        <div className="relative z-10 max-w-[1600px] w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          {/* Glow backdrop */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+            <div className="absolute top-[10%] left-[10%] w-[40%] aspect-square rounded-full bg-gradient-to-br from-[#06b6d4]/12 via-[#0891b2]/8 to-transparent blur-[80px]" />
+            <div className="absolute bottom-[10%] right-[10%] w-[45%] aspect-square rounded-full bg-gradient-to-br from-[#22d3ee]/10 via-transparent to-transparent blur-[90px]" />
+          </div>
+
+          {/* SVG Custom Graphics - Nested Box Outlines, Growth curves, Tags & Cascading grids */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-0 opacity-50">
+            <svg className="w-full h-full min-w-[1000px] min-h-[500px]" viewBox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg">
+              {/* Nested Box contours (Product Card representations) */}
+              <g transform="translate(120, 120) rotate(10)">
+                <rect x="0" y="0" width="100" height="100" fill="none" stroke="rgba(6, 182, 212, 0.25)" strokeWidth="2" />
+                <rect x="25" y="25" width="50" height="50" fill="none" stroke="rgba(8, 145, 178, 0.15)" strokeWidth="1" strokeDasharray="3 3" />
+              </g>
+
+              {/* Shopping tag (Left) */}
+              <g transform="translate(180, 260) rotate(-15)" stroke="rgba(6, 182, 212, 0.25)" strokeWidth="2" fill="none">
+                <path d="M0,20 L40,0 L80,0 L80,50 L0,50 Z" />
+                <circle cx="60" cy="25" r="4" fill="rgb(6, 182, 212)" />
+              </g>
+
+              {/* Upward Growth line graph (representing Marketplace scaling) */}
+              <path d="M300,380 L450,280 L600,310 L800,180 L1000,200" fill="none" stroke="rgba(8, 145, 178, 0.2)" strokeWidth="3.5" strokeLinecap="round" />
+              <circle cx="800" cy="180" r="4" fill="rgb(8, 145, 178)" />
+
+              <g transform="translate(980, 160) rotate(-10)">
+                <rect x="0" y="0" width="120" height="120" rx="6" fill="none" stroke="rgba(8, 145, 178, 0.22)" strokeWidth="2" />
+                <line x1="10" y1="20" x2="110" y2="20" stroke="rgba(8, 145, 178, 0.15)" strokeWidth="1" />
+                <line x1="10" y1="40" x2="110" y2="40" stroke="rgba(8, 145, 178, 0.15)" strokeWidth="1" />
+                <line x1="10" y1="60" x2="80" y2="60" stroke="rgba(6, 182, 212, 0.15)" strokeWidth="1" strokeDasharray="2 2" />
+              </g>
+
+              {/* Precise dot arrays */}
+              <g transform="translate(520, 80)">
+                {Array.from({ length: 4 }).map((_, r) =>
+                  Array.from({ length: 12 }).map((_, c) => (
+                    <circle
+                      key={`market-dot-${r}-${c}`}
+                      cx={c * 20}
+                      cy={r * 20}
+                      r={1.5}
+                      fill="rgb(6, 182, 212)"
+                      opacity={0.25}
+                    />
+                  ))
+                )}
+              </g>
+            </svg>
+          </div>
+
+          <div className="relative z-10 max-w-[1600px] w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
           {/* Left Column */}
           <div className="lg:col-span-6 flex flex-col items-start text-left">

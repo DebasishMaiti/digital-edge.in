@@ -91,19 +91,78 @@ export default function WebDevelopment() {
     <>
     <link rel="canonical" href="https://digitaledge360.com/web-development" />
       <div className="relative w-full bg-[#fafbfc] min-h-screen text-slate-800 overflow-hidden">
-        {/* Grid container wrapping Hero */}
-        <div className="relative w-full pb-10">
-          {/* Full-page Grid Background */}
-          <div
-            className="absolute inset-0 z-0 pointer-events-none"
-            style={gridBackgroundStyle}
+        
+        {/* Hero Background Layer with Ice Mint to Emerald gradient (1 shade deeper) */}
+        <section className="relative z-10 w-full pt-[160px] pb-12 bg-gradient-to-b from-[#d1fae5] via-[#a7f3d0] to-[#fafbfc] border-b border-slate-200 overflow-hidden">
+          {/* Light Grid Scrolling Background */}
+          <div 
+            className="animate-grid-scroll opacity-70 pointer-events-none z-0" 
+            style={{
+              backgroundImage: `
+                linear-gradient(to right, rgba(16, 185, 129, 0.16) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(16, 185, 129, 0.16) 1px, transparent 1px)
+              `
+            }}
           />
 
-          {/* Ambient Glow */}
-          <div className="absolute top-[350px] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[600px] h-[350px] sm:h-[600px] rounded-full bg-gradient-to-br from-[#0a8bc7]/10 via-[#40159e]/10 to-transparent blur-[80px] sm:blur-[130px] pointer-events-none z-0" />
+          {/* Ambient Glows */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+            <div className="absolute top-[10%] left-[10%] w-[40%] aspect-square rounded-full bg-gradient-to-br from-[#10b981]/12 via-[#14b8a6]/8 to-transparent blur-[80px]" />
+            <div className="absolute bottom-[10%] right-[10%] w-[45%] aspect-square rounded-full bg-gradient-to-br from-[#06b6d4]/10 via-transparent to-transparent blur-[90px]" />
+          </div>
 
-          {/* Hero Two-Column Layout */}
-          <section className="relative z-10 mx-auto w-full px-6 sm:px-8 lg:px-12 pt-[180px] pb-10">
+          {/* SVG Custom Graphics - Rotated Technical Capsules & Matrix dots */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-0 opacity-50">
+            <svg className="w-full h-full min-w-[1000px] min-h-[500px]" viewBox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="mint-capsule-1" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="rgba(16, 185, 129, 0.35)" />
+                  <stop offset="100%" stopColor="rgba(20, 184, 166, 0.08)" />
+                </linearGradient>
+              </defs>
+
+              {/* Rotated capsules */}
+              <g transform="rotate(-30 600 250)">
+                <rect x="200" y="100" width="300" height="35" rx="17.5" fill="url(#mint-capsule-1)" />
+                <rect x="550" y="200" width="220" height="25" rx="12.5" fill="rgba(6, 182, 212, 0.22)" />
+                <rect x="350" y="320" width="180" height="20" rx="10" fill="rgba(16, 185, 129, 0.2)" />
+                <rect x="750" y="50" width="180" height="20" rx="10" fill="rgba(16, 185, 129, 0.12)" />
+              </g>
+
+              {/* Binary-like square dot grids on the sides */}
+              <g transform="translate(80, 150)">
+                {Array.from({ length: 6 }).map((_, r) =>
+                  Array.from({ length: 8 }).map((_, c) => (
+                    <circle
+                      key={`webdev-dot-l-${r}-${c}`}
+                      cx={c * 18}
+                      cy={r * 18}
+                      r={1.5}
+                      fill="rgb(16, 185, 129)"
+                      opacity={0.25}
+                    />
+                  ))
+                )}
+              </g>
+
+              <g transform="translate(1020, 80)">
+                {Array.from({ length: 8 }).map((_, r) =>
+                  Array.from({ length: 4 }).map((_, c) => (
+                    <circle
+                      key={`webdev-dot-r-${r}-${c}`}
+                      cx={c * 20}
+                      cy={r * 20}
+                      r={1.5}
+                      fill="rgb(6, 182, 212)"
+                      opacity={0.2}
+                    />
+                  ))
+                )}
+              </g>
+            </svg>
+          </div>
+
+          <div className="relative z-10 mx-auto w-full px-6 sm:px-8 lg:px-12">
             <div className="mx-auto max-w-[1600px] w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
               {/* Left Column */}
@@ -170,8 +229,8 @@ export default function WebDevelopment() {
                 <LeadForm showDecorations={false} />
               </div>
             </div>
-          </section>
-        </div>
+          </div>
+        </section>
 
       {/* Premium Web Showcases Slider */}
       <section className="relative z-10 w-full py-16 bg-[#fafbfc] border-b border-slate-100 overflow-hidden">

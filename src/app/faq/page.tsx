@@ -194,37 +194,74 @@ export default function FAQPage() {
     <>
       <link rel="canonical" href="https://digitaledge360.com/faq" />
       
-      <div className="w-full bg-[#fafbfc] min-h-screen pb-24 text-slate-800 relative overflow-hidden">
-        {/* Ambient Grid Backdrop */}
-        <div 
-          className="absolute inset-0 z-0 pointer-events-none" 
-          style={gridBackgroundStyle}
-        />
+      <div className="relative w-full bg-[#fafbfc] min-h-screen pb-24 text-slate-800 overflow-hidden">
         
-        {/* Glowing Ambient Orbs */}
-        <div className="absolute top-[20%] left-1/4 -translate-x-1/2 w-[350px] sm:w-[600px] h-[350px] sm:h-[600px] rounded-full bg-gradient-to-br from-[#0a8bc7]/10 via-transparent to-transparent blur-[120px] pointer-events-none z-0" />
-        <div className="absolute top-[60%] right-1/4 translate-x-1/2 w-[400px] sm:w-[700px] h-[400px] sm:h-[700px] rounded-full bg-gradient-to-br from-[#40159e]/10 via-transparent to-transparent blur-[150px] pointer-events-none z-0" />
+        {/* FAQ Hero Wrapper with custom azure-cream light mode gradient */}
+        <section className="relative z-10 w-full pt-[160px] pb-12 flex flex-col justify-center items-center text-center px-6 sm:px-8 bg-gradient-to-b from-[#f0fdfa] via-[#ccfbf1]/40 to-[#fafbfc] border-b border-slate-100/60 overflow-hidden">
+          {/* Light Grid Scrolling Background */}
+          <div 
+            className="animate-grid-scroll opacity-65 pointer-events-none z-0" 
+            style={{
+              backgroundImage: `
+                linear-gradient(to right, rgba(20, 184, 166, 0.12) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(20, 184, 166, 0.12) 1px, transparent 1px)
+              `
+            }}
+          />
 
-        {/* Hero Section */}
-        <section className="relative z-10 w-full pt-[160px] pb-12 flex flex-col justify-center items-center text-center px-6 sm:px-8">
-          <div className="max-w-6xl mx-auto space-y-6">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-gray-600 bg-white px-5 py-2.5 text-[10px] sm:text-xs font-extrabold tracking-[0.2em] text-gray-600 uppercase shadow-sm">
+          {/* Glowing Ambient Orbs */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+            <div className="absolute top-[10%] left-[10%] w-[35%] aspect-square rounded-full bg-gradient-to-br from-[#0d9488]/8 via-[#06b6d4]/5 to-transparent blur-[80px]" />
+            <div className="absolute bottom-[10%] right-[10%] w-[40%] aspect-square rounded-full bg-gradient-to-br from-[#99f6e4]/8 via-transparent to-transparent blur-[90px]" />
+          </div>
+
+          {/* SVG Custom Graphics - Layered Circular Bubbles representing clarity & questions */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-0 opacity-40">
+            <svg className="w-full h-full min-w-[1000px] min-h-[500px]" viewBox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg">
+              {/* Circular clean bubbles */}
+              <circle cx="160" cy="180" r="45" fill="none" stroke="rgba(20, 184, 166, 0.2)" strokeWidth="2.5" />
+              <circle cx="210" cy="220" r="30" fill="none" stroke="rgba(6, 182, 212, 0.15)" strokeWidth="1.5" strokeDasharray="4 4" />
+              <circle cx="120" cy="240" r="20" fill="rgba(20, 184, 166, 0.04)" />
+
+              <circle cx="1020" cy="200" r="70" fill="none" stroke="rgba(20, 184, 166, 0.15)" strokeWidth="2" />
+              <circle cx="980" cy="240" r="40" fill="none" stroke="rgba(6, 182, 212, 0.18)" strokeWidth="1.5" />
+
+              {/* Clean structured query matrices */}
+              <g transform="translate(540, 60)">
+                {Array.from({ length: 4 }).map((_, r) =>
+                  Array.from({ length: 8 }).map((_, c) => (
+                    <circle
+                      key={`faq-dot-${r}-${c}`}
+                      cx={c * 18}
+                      cy={r * 18}
+                      r={1.5}
+                      fill="rgb(20, 184, 166)"
+                      opacity={0.2}
+                    />
+                  ))
+                )}
+              </g>
+            </svg>
+          </div>
+
+          <div className="max-w-6xl mx-auto space-y-6 relative z-10">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-gray-650 bg-white px-5 py-2.5 text-[10px] sm:text-xs font-extrabold tracking-[0.2em] text-gray-500 uppercase shadow-sm">
               STRAIGHT ANSWERS
             </span>
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black text-[#0d1b3e] tracking-tight leading-[1.05] flex flex-col items-center">
               <AnimatedWords text="Frequently Asked" />
-              <span className="bg-gradient-to-r from-[#0a8bc7] via-[#2443ab] to-[#40159e] bg-clip-text text-transparent py-1">
+              <span className="bg-gradient-to-r from-[#0d9488] via-[#06b6d4] to-[#0891b2] bg-clip-text text-transparent py-1">
                 <AnimatedWords text="Questions" delay={0.2} />
               </span>
             </h1>
-            <p className="mx-auto max-w-3xl text-sm sm:text-base text-slate-650 font-semibold leading-relaxed pt-2">
+            <p className="mx-auto max-w-3xl text-sm sm:text-base text-slate-600 font-semibold leading-relaxed pt-2">
               Straight answers about who Digital Edge 360° works with, how engagements run, and what to expect — for ecommerce brands building their digital presence, and for agencies exploring a white-label partnership.
             </p>
           </div>
         </section>
 
         {/* Navigation Tabs (Desktop & Mobile Scroll) */}
-        <section className="relative z-10 mx-auto max-w-6xl px-6 mb-16">
+        <section className="relative z-10 mx-auto max-w-6xl px-6 mb-16 mt-12">
           <div className="flex gap-2 overflow-x-auto pb-4 scrollbar-none justify-start lg:justify-center border-b border-slate-200/60">
             {tabs.map((tab) => (
               <button

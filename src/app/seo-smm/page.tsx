@@ -26,16 +26,59 @@ export default function SeoSmm() {
     <>
     <link rel="canonical" href="https://digitaledge360.com/seo-smm" />
       <div className="w-full bg-[#fafbfc] min-h-screen pb-24 text-slate-800">
-        {/* Hero Section with Grid Background */}
-        <section className="relative w-full pt-[160px] pb-24 px-6 sm:px-8 lg:px-12 flex flex-col justify-center items-center border-b border-slate-100/80">
-        <div
-          className="absolute inset-0 z-0 pointer-events-none"
-          style={gridBackgroundStyle}
-        />
-        {/* Glow backdrop */}
-        <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] sm:w-[700px] h-[400px] sm:h-[700px] rounded-full bg-gradient-to-br from-[#10b981]/10 via-[#2443ab]/10 to-transparent blur-[100px] sm:blur-[140px] pointer-events-none z-0" />
+        {/* Hero Section with custom Gold/Sunshine light mode gradient */}
+        <section className="relative w-full pt-[160px] pb-24 px-6 sm:px-8 lg:px-12 flex flex-col justify-center items-center bg-gradient-to-b from-[rgba(46,89,242,0.15)] via-[rgba(46,89,242,0.06)] to-[#fafbfc] border-b border-slate-100/80 overflow-hidden">
+          {/* Light Grid Scrolling Background */}
+          <div 
+            className="animate-grid-scroll opacity-60 pointer-events-none z-0" 
+            style={{
+              backgroundImage: `
+                linear-gradient(to right, rgba(46, 89, 242, 0.12) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(46, 89, 242, 0.12) 1px, transparent 1px)
+              `
+            }}
+          />
 
-        <div className="relative z-10 max-w-[1600px] w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          {/* Glow backdrop */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+            <div className="absolute top-[10%] left-[10%] w-[35%] aspect-square rounded-full bg-gradient-to-br from-[#2e59f2]/8 via-[#60a5fa]/5 to-transparent blur-[80px]" />
+            <div className="absolute bottom-[10%] right-[10%] w-[40%] aspect-square rounded-full bg-gradient-to-br from-[#2e59f2]/6 via-transparent to-transparent blur-[90px]" />
+          </div>
+
+          {/* SVG Custom Graphics - Upward Trending Rays & Concentric Target Circles */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-0 opacity-40">
+            <svg className="w-full h-full min-w-[1000px] min-h-[500px]" viewBox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg">
+              {/* Upward trend lines */}
+              <g stroke="rgba(46, 89, 242, 0.2)" strokeWidth="2">
+                <line x1="-50" y1="450" x2="450" y2="150" strokeWidth="3" />
+                <line x1="-20" y1="480" x2="480" y2="180" />
+                <line x1="10" y1="510" x2="510" y2="210" strokeDasharray="5 5" />
+              </g>
+
+              {/* Target rings */}
+              <circle cx="950" cy="200" r="140" fill="none" stroke="rgba(46, 89, 242, 0.15)" strokeWidth="2" />
+              <circle cx="950" cy="200" r="100" fill="none" stroke="rgba(46, 89, 242, 0.08)" strokeWidth="1.5" strokeDasharray="4 4" />
+              <circle cx="950" cy="200" r="60" fill="none" stroke="rgba(46, 89, 242, 0.12)" strokeWidth="2.5" />
+
+              {/* Little stats dots */}
+              <g transform="translate(680, 80)">
+                {Array.from({ length: 4 }).map((_, r) =>
+                  Array.from({ length: 8 }).map((_, c) => (
+                    <circle
+                      key={`seo-dot-${r}-${c}`}
+                      cx={c * 18}
+                      cy={r * 18}
+                      r={1.5}
+                      fill="rgb(46, 89, 242)"
+                      opacity={0.15}
+                    />
+                  ))
+                )}
+              </g>
+            </svg>
+          </div>
+
+          <div className="relative z-10 max-w-[1600px] w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
           {/* Left Column */}
           <div className="lg:col-span-6 flex flex-col items-start text-left">

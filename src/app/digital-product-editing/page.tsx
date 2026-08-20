@@ -26,16 +26,61 @@ export default function DigitalProductEditing() {
     <>
     <link rel="canonical" href="https://digitaledge360.com/digital-product-editing" />
       <div className="w-full bg-[#fafbfc] min-h-screen pb-24 text-slate-800">
-        {/* Hero Section with Grid Background */}
-        <section className="relative w-full pt-[160px] pb-24 px-6 sm:px-8 lg:px-12 flex flex-col justify-center items-center border-b border-slate-100/80">
-        <div
-          className="absolute inset-0 z-0 pointer-events-none"
-          style={gridBackgroundStyle}
-        />
-        {/* Glow backdrop */}
-        <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] sm:w-[700px] h-[400px] sm:h-[700px] rounded-full bg-gradient-to-br from-[#db2777]/10 via-[#2443ab]/10 to-transparent blur-[100px] sm:blur-[140px] pointer-events-none z-0" />
+        {/* Hero Section with custom Sky Blue light mode gradient (1 shade deeper) */}
+        <section className="relative w-full pt-[160px] pb-24 px-6 sm:px-8 lg:px-12 flex flex-col justify-center items-center bg-gradient-to-b from-[#e0f2fe] via-[#bae6fd] to-[#fafbfc] border-b border-slate-200 overflow-hidden">
+          {/* Light Grid Scrolling Background */}
+          <div 
+            className="animate-grid-scroll opacity-70 pointer-events-none z-0" 
+            style={{
+              backgroundImage: `
+                linear-gradient(to right, rgba(14, 165, 233, 0.16) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(14, 165, 233, 0.16) 1px, transparent 1px)
+              `
+            }}
+          />
 
-        <div className="relative z-10 max-w-[1600px] w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          {/* Glow backdrop */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+            <div className="absolute top-[10%] left-[10%] w-[40%] aspect-square rounded-full bg-gradient-to-br from-[#0ea5e9]/12 via-[#3b82f6]/8 to-transparent blur-[80px]" />
+            <div className="absolute bottom-[10%] right-[10%] w-[45%] aspect-square rounded-full bg-gradient-to-br from-[#60a5fa]/12 via-transparent to-transparent blur-[90px]" />
+          </div>
+
+          {/* SVG Custom Graphics - Edit Crosshairs & Color Wheel overlaps */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-0 opacity-50">
+            <svg className="w-full h-full min-w-[1000px] min-h-[500px]" viewBox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg">
+              {/* Overlapping translucent creative circles */}
+              <circle cx="180" cy="200" r="110" fill="rgba(14, 165, 233, 0.2)" />
+              <circle cx="280" cy="200" r="110" fill="rgba(37, 99, 235, 0.15)" />
+              <circle cx="230" cy="110" r="70" fill="rgba(56, 189, 248, 0.06)" />
+              
+              {/* Visual crosshairs representing precise editing */}
+              <g stroke="rgba(14, 165, 233, 0.3)" strokeWidth="1.5">
+                <line x1="950" y1="120" x2="950" y2="280" />
+                <line x1="870" y1="200" x2="1030" y2="200" />
+                <circle cx="950" cy="200" r="40" fill="none" strokeWidth="1" strokeDasharray="3 3" />
+                <circle cx="950" cy="200" r="70" fill="none" strokeWidth="1.5" />
+                <circle cx="950" cy="200" r="95" fill="none" strokeWidth="1" strokeDasharray="6 6" />
+              </g>
+
+              {/* Precise dot array */}
+              <g transform="translate(540, 320)">
+                {Array.from({ length: 4 }).map((_, r) =>
+                  Array.from({ length: 12 }).map((_, c) => (
+                    <circle
+                      key={`edit-dot-${r}-${c}`}
+                      cx={c * 20}
+                      cy={r * 20}
+                      r={1.5}
+                      fill="rgb(14, 165, 233)"
+                      opacity={0.25}
+                    />
+                  ))
+                )}
+              </g>
+            </svg>
+          </div>
+
+          <div className="relative z-10 max-w-[1600px] w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
           {/* Left Column */}
           <div className="lg:col-span-6 flex flex-col items-start text-left">
