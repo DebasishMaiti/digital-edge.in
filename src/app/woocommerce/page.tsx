@@ -45,39 +45,105 @@ export default function WooCommerce() {
             <div className="absolute bottom-[10%] right-[10%] w-[40%] aspect-square rounded-full bg-gradient-to-br from-[#60a5fa]/10 via-transparent to-transparent blur-[90px]" />
           </div>
 
-          {/* SVG Custom Graphics - Fluid Shop Waves, Offset grids & Cart Outline */}
-          <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-0 opacity-40">
+          {/* SVG Custom Graphics - WooCommerce & CMS Themed (Product Cards, Checkout Mockups, Payment/Price Tags - No Letters) */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-0 opacity-45">
             <svg className="w-full h-full min-w-[1000px] min-h-[500px]" viewBox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg">
-              {/* Fluid curves representing checkout flow */}
-              <path d="M100,300 C300,100 500,450 700,300 C900,150 1000,350 1100,300" fill="none" stroke="rgba(14, 165, 233, 0.22)" strokeWidth="3" />
-              <path d="M100,320 C300,120 500,470 700,320 C900,170 1000,370 1100,320" fill="none" stroke="rgba(37, 99, 235, 0.15)" strokeWidth="1.5" strokeDasharray="6 6" />
-              <path d="M100,280 C300,80 500,430 700,280 C900,130 1000,330 1100,280" fill="none" stroke="rgba(37, 99, 235, 0.1)" strokeWidth="1.5" />
-
-              {/* Offset grid arrays */}
-              <g transform="translate(900, 80) rotate(12)">
-                <rect x="0" y="0" width="100" height="100" fill="none" stroke="rgba(14, 165, 233, 0.2)" strokeWidth="1.5" />
-                <line x1="50" y1="0" x2="50" y2="100" stroke="rgba(14, 165, 233, 0.1)" strokeWidth="1" />
-                <line x1="0" y1="50" x2="100" y2="50" stroke="rgba(14, 165, 233, 0.1)" strokeWidth="1" />
+              
+              {/* Product Detail Card Mockup Left */}
+              <g transform="translate(60, 60) rotate(-6)" opacity="0.55">
+                <rect width="210" height="150" rx="12" fill="white" stroke="#3b82f6" strokeWidth="1.5" />
+                {/* Product Image placeholder inside card */}
+                <rect x="15" y="15" width="180" height="70" rx="8" fill="#eff6ff" stroke="#3b82f6" strokeWidth="1" strokeDasharray="3 3" />
+                <path d="M 90,35 L 75,60 L 105,60 Z" fill="#3b82f6" opacity="0.3" />
+                <circle cx="115" cy="45" r="5" fill="#3b82f6" opacity="0.3" />
+                
+                {/* Product description placeholders */}
+                <rect x="15" y="100" width="100" height="8" rx="4" fill="#1e293b" opacity="0.25" />
+                <rect x="15" y="114" width="70" height="8" rx="4" fill="#1e293b" opacity="0.15" />
+                <rect x="15" y="128" width="50" height="8" rx="4" fill="#3b82f6" opacity="0.8" />
+                
+                {/* Visual Add-to-cart button placeholder */}
+                <rect x="145" y="122" width="50" height="18" rx="9" fill="#3b82f6" opacity="0.15" />
+                <circle cx="170" cy="131" r="3.5" fill="#3b82f6" />
               </g>
 
-              {/* Shopping Cart Icon outline */}
-              <g transform="translate(150, 120) rotate(-15)" stroke="rgba(14, 165, 233, 0.25)" strokeWidth="2" fill="none">
-                <path d="M0,0 L20,0 L35,40 L90,40 L105,10 L30,10" />
-                <circle cx="45" cy="50" r="6" stroke="rgb(14, 165, 233)" />
-                <circle cx="85" cy="50" r="6" stroke="rgb(14, 165, 233)" />
+              {/* Checkout Bill/Summary List Mockup Right */}
+              <g transform="translate(940, 110) rotate(4)" opacity="0.55">
+                <rect width="220" height="160" rx="12" fill="white" stroke="#bae6fd" strokeWidth="1.5" />
+                <rect width="220" height="24" rx="12" fill="#f8fafc" />
+                <line x1="0" y1="24" x2="220" y2="24" stroke="#bae6fd" strokeWidth="1" />
+                
+                {/* Window Dots */}
+                <circle cx="15" cy="12" r="3" fill="#ef4444" opacity="0.85" />
+                <circle cx="27" cy="12" r="3" fill="#eab308" opacity="0.85" />
+                <circle cx="39" cy="12" r="3" fill="#22c55e" opacity="0.85" />
+                
+                {/* Checkout items lists */}
+                <circle cx="25" cy="50" r="10" fill="#3b82f6" opacity="0.1" />
+                <rect x="45" y="46" width="90" height="8" rx="4" fill="#475569" opacity="0.3" />
+                <rect x="175" y="46" width="30" height="8" rx="4" fill="#10b981" opacity="0.4" />
+                
+                <circle cx="25" cy="80" r="10" fill="#3b82f6" opacity="0.1" />
+                <rect x="45" y="76" width="70" height="8" rx="4" fill="#475569" opacity="0.3" />
+                <rect x="175" y="76" width="30" height="8" rx="4" fill="#10b981" opacity="0.4" />
+                
+                <circle cx="25" cy="110" r="10" fill="#3b82f6" opacity="0.1" />
+                <rect x="45" y="106" width="100" height="8" rx="4" fill="#475569" opacity="0.3" />
+                <rect x="175" y="106" width="30" height="8" rx="4" fill="#10b981" opacity="0.4" />
+                
+                {/* Total divider line */}
+                <line x1="15" y1="134" x2="205" y2="134" stroke="#e2e8f0" strokeWidth="1" strokeDasharray="3 3" />
+                <rect x="145" y="142" width="60" height="10" rx="5" fill="#3b82f6" opacity="0.75" />
               </g>
 
-              {/* Precise dot arrays */}
-              <g transform="translate(540, 100)">
+              {/* Floating Credit Card (Payment Theme) */}
+              <g transform="translate(180, 260) rotate(8)" opacity="0.45">
+                <rect width="90" height="56" rx="8" fill="#3b82f6" opacity="0.1" stroke="#3b82f6" strokeWidth="1" />
+                <rect x="10" y="10" width="22" height="16" rx="3" fill="#eab308" opacity="0.6" />
+                <rect x="10" y="36" width="40" height="6" rx="3" fill="#3b82f6" opacity="0.4" />
+                <circle cx="75" cy="40" r="6" fill="#ef4444" opacity="0.6" />
+                <circle cx="68" cy="40" r="6" fill="#eab308" opacity="0.6" />
+              </g>
+
+              {/* Floating Price Tag */}
+              <g transform="translate(860, 310) rotate(-12)" opacity="0.45">
+                <path d="M10,25 L35,10 L75,10 L75,40 L35,40 Z" fill="#10b981" opacity="0.1" stroke="#10b981" strokeWidth="1" />
+                <circle cx="22" cy="25" r="3.5" fill="white" stroke="#10b981" strokeWidth="1" />
+                <rect x="40" y="21" width="25" height="8" rx="4" fill="#10b981" opacity="0.4" />
+              </g>
+
+              {/* Floating Shopping Bag */}
+              <g transform="translate(540, 40) rotate(10)" opacity="0.35">
+                <path d="M15,20 L45,20 L50,60 L10,60 Z" fill="none" stroke="#6366f1" strokeWidth="1.5" />
+                <path d="M22,20 C22,10 38,10 38,20" fill="none" stroke="#6366f1" strokeWidth="1.5" />
+              </g>
+
+              {/* Dot array grids */}
+              <g transform="translate(70, 250)">
                 {Array.from({ length: 4 }).map((_, r) =>
-                  Array.from({ length: 8 }).map((_, c) => (
+                  Array.from({ length: 5 }).map((_, c) => (
                     <circle
-                      key={`woo-dot-${r}-${c}`}
+                      key={`woo-dot-l-${r}-${c}`}
                       cx={c * 18}
                       cy={r * 18}
                       r={1.5}
                       fill="rgb(14, 165, 233)"
                       opacity={0.2}
+                    />
+                  ))
+                )}
+              </g>
+
+              <g transform="translate(1080, 40)">
+                {Array.from({ length: 6 }).map((_, r) =>
+                  Array.from({ length: 3 }).map((_, c) => (
+                    <circle
+                      key={`woo-dot-r-${r}-${c}`}
+                      cx={c * 20}
+                      cy={r * 20}
+                      r={1.5}
+                      fill="rgb(99, 102, 241)"
+                      opacity={0.18}
                     />
                   ))
                 )}

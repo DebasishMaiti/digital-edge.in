@@ -3,13 +3,164 @@
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import LeadForm from "@/components/LeadForm";
-import { Users, Shield, ShoppingCart, MessageSquare, BarChart3, Clock, AlertCircle, FileText, LayoutDashboard, MessageCircle, TrendingUp, Gauge, ShieldAlert, Receipt, Target } from "lucide-react";
+import { Users, Shield, ShoppingCart, MessageSquare, BarChart3, Clock, AlertCircle, FileText, LayoutDashboard, MessageCircle, TrendingUp, Gauge, ShieldAlert, Receipt, Target, Rocket, Trophy, ChevronLeft, ChevronRight } from "lucide-react";
 import { brandLogos, portfolioItems, services, testimonials, faqItems, deliversFeatures } from "@/data";
+
+const brandShowcases = [
+  {
+    name: "Aarogya Vidhaan",
+    link: "/company-details/aarogya-vidhaan",
+    image: "https://images.unsplash.com/photo-1544256718-3bcf237f3974?q=80&w=600&auto=format&fit=crop",
+    logo: (
+      <div className="flex items-center gap-2">
+        <svg className="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="5" />
+          <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" strokeWidth="2" />
+        </svg>
+        <span className="font-extrabold text-[13px] text-slate-800 tracking-tight uppercase">Aarogya <span className="text-amber-500">Vidhaan</span></span>
+      </div>
+    )
+  },
+  {
+    name: "Dooli",
+    link: "/company-details/dooli",
+    image: "https://images.unsplash.com/photo-1549060263-af5c3f3b9fb6?q=80&w=600&auto=format&fit=crop",
+    logo: (
+      <div className="flex items-center gap-1.5">
+        <span className="font-black text-xl text-blue-600 font-sans">D</span>
+        <span className="font-extrabold text-[15px] text-slate-800 tracking-tight -ml-0.5">ooli</span>
+      </div>
+    )
+  },
+  {
+    name: "EdgeRing",
+    link: "/company-details/edgering",
+    image: "https://images.unsplash.com/photo-1616348436168-de43ad0db179?q=80&w=600&auto=format&fit=crop",
+    logo: (
+      <div className="flex items-center gap-2 text-left">
+        <div className="w-5 h-5 rounded-full border-4 border-rose-500 border-t-transparent animate-spin-slow shrink-0" />
+        <div>
+          <span className="block font-extrabold text-[12px] text-slate-800 leading-none">EdgeRing</span>
+          <span className="block text-[8px] font-bold text-slate-400 mt-0.5">Mobile Accessories</span>
+        </div>
+      </div>
+    )
+  },
+  {
+    name: "Priyanka Khaitan",
+    link: "/company-details/priyanka-khaitan",
+    image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=600&auto=format&fit=crop",
+    logo: (
+      <div className="flex items-center gap-2">
+        <div className="w-5 h-5 rounded-full bg-slate-900 border border-amber-450 flex items-center justify-center text-[10px] font-bold text-amber-400">PK</div>
+        <span className="font-extrabold text-[11px] text-slate-800 tracking-wider uppercase">Priyanka Khaitan</span>
+      </div>
+    ),
+    metric: "305%",
+    metricLabel: "Growth in 1st Time Sales",
+    metricColor: "text-purple-600"
+  },
+  {
+    name: "Creative Ecotech",
+    link: "/company-details/creative-ecotech",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop",
+    logo: (
+      <div className="flex items-center gap-2">
+        <svg className="w-5 h-5 text-emerald-500" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v18M3 12h18M12 3l9 9-9 9M12 3L3 12l9 9" />
+        </svg>
+        <span className="font-extrabold text-[12px] text-slate-855 tracking-wider uppercase">Creative <span className="text-emerald-600">Ecotech</span></span>
+      </div>
+    ),
+    metric: "90%",
+    metricLabel: "Growth in Organic Traffic",
+    metricColor: "text-emerald-600"
+  },
+  {
+    name: "Truboy BBQ",
+    link: "/company-details/truboy-bbq",
+    image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=600&auto=format&fit=crop",
+    logo: (
+      <div className="flex items-center gap-2">
+        <span className="text-xl shrink-0">🔥</span>
+        <span className="font-black text-[13px] text-slate-900 uppercase tracking-tight">Truboy <span className="text-red-500">BBQ</span></span>
+      </div>
+    ),
+    metric: "200%",
+    metricLabel: "Increase in ACV",
+    metricColor: "text-red-500"
+  },
+  {
+    name: "JIVA",
+    link: "/company-details/jiva",
+    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=600&auto=format&fit=crop",
+    logo: (
+      <div className="flex items-center gap-1.5">
+        <svg className="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fillRule="evenodd" d="M4.083 9h1.946c.089-1.546.383-2.97.837-4.118A8.004 8.004 0 004.083 9zM10 2a8 8 0 100 16 8 8 0 000-16zm1.09 14.507a7.925 7.925 0 01-2.18 0 7.227 7.227 0 01-.005-13.014 7.925 7.925 0 012.185 0 7.226 7.226 0 010 13.014z" clipRule="evenodd" />
+        </svg>
+        <span className="font-extrabold text-[14px] text-slate-800 tracking-widest uppercase">JIVA</span>
+      </div>
+    )
+  },
+  {
+    name: "Ducati",
+    link: "/company-details/ducati",
+    image: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?q=80&w=600&auto=format&fit=crop",
+    logo: (
+      <div className="flex items-center gap-2">
+        <div className="w-5 h-6 bg-red-600 rounded-b-md flex items-center justify-center text-[10px] font-black text-white shadow-sm shrink-0">D</div>
+        <span className="font-extrabold text-[13px] text-slate-900 tracking-widest uppercase">Ducati</span>
+      </div>
+    )
+  },
+  {
+    name: "EdefyHome",
+    link: "/company-details/edefyhome",
+    image: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=600&auto=format&fit=crop",
+    logo: (
+      <div className="flex items-center gap-1.5">
+        <svg className="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+        </svg>
+        <span className="font-extrabold text-[12px] text-slate-800 tracking-tight">EdefyHome</span>
+      </div>
+    )
+  },
+  {
+    name: "Tom Ford Eyewear",
+    link: "/company-details/tom-ford-eyewear",
+    image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?q=80&w=600&auto=format&fit=crop",
+    logo: (
+      <div className="flex flex-col text-left leading-none">
+        <span className="font-black text-[12px] text-slate-955 tracking-wider">TOM FORD</span>
+        <span className="text-[7px] font-bold text-slate-400 tracking-widest uppercase mt-0.5">Eyewear</span>
+      </div>
+    )
+  },
+  {
+    name: "Earthy Line",
+    link: "/company-details/earthy-line",
+    image: "https://images.unsplash.com/photo-1610030470298-40b8a1c24d3c?q=80&w=600&auto=format&fit=crop",
+    logo: (
+      <span className="font-extrabold text-[14px] text-[#2c5e43] font-serif italic tracking-wide">EarthyLine</span>
+    )
+  },
+  {
+    name: "Blossom Clinic",
+    link: "/company-details/blossom-clinic",
+    image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=600&auto=format&fit=crop",
+    logo: (
+      <span className="font-extrabold text-[13px] text-blue-700 tracking-tight">Blossom Clinic</span>
+    )
+  }
+];
 
 export default function Home() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+  const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
   const toggleFaq = (idx: number) => {
     setOpenFaqIndex(openFaqIndex === idx ? null : idx);
@@ -62,6 +213,13 @@ export default function Home() {
       setActiveSection(prev => (prev === "elite" ? "luxury" : "elite"));
     }, 7000);
     return () => clearInterval(sectionInterval);
+  }, []);
+
+  useEffect(() => {
+    const testimonialInterval = setInterval(() => {
+      setCurrentTestimonial(prev => (prev + 1) % testimonials.length);
+    }, 6000);
+    return () => clearInterval(testimonialInterval);
   }, []);
 
   useEffect(() => {
@@ -443,7 +601,7 @@ export default function Home() {
 
           {/* Partner Logos Marquee - Full Width Center Bottom */}
           <div className="w-full relative z-40 pb-16 pt-8 px-6 mt-4 sm:px-12 flex flex-col items-center justify-center text-center">
-           
+
             <div className="relative w-full max-w-[960px] overflow-hidden flex [mask-image:_linear-gradient(to_right,_transparent_0%,_black_10%,_black_90%,_transparent_100%)] flex-row">
               <div className="flex gap-12 items-center animate-marquee-infinite py-4 pr-12">
                 {[
@@ -480,7 +638,7 @@ export default function Home() {
                 ))}
               </div>
             </div>
-             <p className="text-xs uppercase tracking-[0.25em] text-slate-400 font-black mt-3">Our Partners & Accreditations</p>
+            <p className="text-xs uppercase tracking-[0.25em] text-slate-400 font-black mt-3">Our Partners & Accreditations</p>
           </div>
         </section>
 
@@ -843,6 +1001,86 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Brand Showcase Grid Section */}
+        <section className="relative z-10 py-24 bg-gradient-to-b from-[#fafbfc] to-white overflow-hidden border-t border-slate-100">
+          <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+
+            {/* Header */}
+            <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-purple-250 bg-purple-50/80 px-4 py-2 text-[10px] sm:text-xs font-black tracking-[0.2em] text-purple-700 uppercase shadow-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 text-purple-600">
+                  <path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192L12 .587z" />
+                </svg>
+                <span>Brands Thrive with Digital Edge</span>
+              </span>
+              <h2 className="text-3xl sm:text-5xl font-black text-[#0d1b3e] tracking-tight mt-4">
+                Increase Growth for Ambitious Brands
+              </h2>
+              {/* Short styled underline line */}
+              <div className="w-16 h-1 bg-gradient-to-r from-purple-500 to-indigo-600 mx-auto rounded-full mt-2" />
+            </div>
+
+            {/* Grid Layout */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {brandShowcases.map((brand, idx) => (
+                <Link href={brand.link || "/contact"} key={idx} className="block w-full">
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0,0,0,0.06)" }}
+                    transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                    className="bg-white rounded-[24px] overflow-hidden shadow-sm border border-slate-100/80 flex flex-col justify-between group transition-all duration-300 cursor-pointer h-full"
+                  >
+                    {/* Top Image wrapper */}
+                    <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-50">
+                      <img
+                        src={brand.image}
+                        alt={brand.name}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                    </div>
+
+                    {/* Bottom details block */}
+                    <div className="p-6 flex items-center justify-between min-h-[90px]">
+                      <div className="flex-grow text-left flex flex-col justify-center">
+                        <div className="mb-1.5">{brand.logo}</div>
+                        {brand.metric && (
+                          <div className="flex flex-col text-left leading-none mt-2">
+                            <span className={`text-2xl font-black ${brand.metricColor} leading-none`}>{brand.metric}</span>
+                            <span className="text-[10px] font-bold text-slate-400 tracking-wider uppercase mt-1">{brand.metricLabel}</span>
+                          </div>
+                        )}
+                      </div>
+                      {/* Circle Chevron Indicator Button */}
+                      <button className="w-10 h-10 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-650 group-hover:bg-[#2443ab] group-hover:text-white group-hover:border-[#2443ab] transition-all duration-300 shrink-0 ml-4 shadow-sm">
+                        <ChevronRight className="w-5 h-5 transform group-hover:translate-x-0.5 transition-transform duration-300" />
+                      </button>
+                    </div>
+                  </motion.div>
+                </Link>
+              ))}
+            </div>
+
+            {/* Bottom CTA Button */}
+            <div className="flex justify-center mt-16">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2.5 px-8 py-4 border border-purple-200 hover:border-purple-300 bg-purple-50/20 hover:bg-purple-50/40 text-purple-700 text-sm font-extrabold rounded-full transition-all duration-300 shadow-sm"
+              >
+                {/* 4 squares Grid Icon */}
+                <svg className="w-4 h-4 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                </svg>
+                <span>Explore More Success Stories</span>
+              </Link>
+            </div>
+
+          </div>
+        </section>
+
+
         {/* Five Vendors & Growth Help Section */}
         <section className="relative z-10 py-24 bg-gradient-to-b from-[#fafbfc] via-white to-[#fafbfc] border-t border-b border-slate-100 overflow-hidden">
           {/* Decorative shapes */}
@@ -1105,144 +1343,229 @@ export default function Home() {
           </div>
         </section>
 
-        {/* our works Section */}
-        <section ref={mobileSectionRef} className="relative z-10 mx-auto max-w-[1500px] px-6 sm:px-8 lg:px-12 py-16">
-          {/* What Makes Us Different Section */}
-          <div className="mb-24">
-            <div className="text-center mb-20 max-w-3xl mx-auto">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-100 bg-blue-50/50 px-4 py-2 text-[10px] font-extrabold tracking-[0.25em] text-[#2443ab] uppercase shadow-sm mb-4">
+        {/* what makes us different Section */}
+        <section ref={mobileSectionRef} className="relative z-10 w-full overflow-hidden">
+          {/* Dark Header Part */}
+          <div className="bg-gradient-to-b from-[#060b24] via-[#09102c] to-[#040818] text-white pt-24 pb-36 relative overflow-hidden">
+            {/* Background elements */}
+            <div className="absolute top-1/2 left-8 -translate-y-1/2 opacity-20 pointer-events-none">
+              {/* Dot pattern */}
+              <svg width="100" height="200" fill="currentColor" className="text-blue-500">
+                <defs>
+                  <pattern id="header-dots" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1.5" />
+                  </pattern>
+                </defs>
+                <rect width="100" height="200" fill="url(#header-dots)" />
+              </svg>
+            </div>
+
+            <div className="absolute top-1/3 right-8 -translate-y-1/2 opacity-20 pointer-events-none">
+              {/* Wavy line pattern */}
+              <svg width="200" height="200" viewBox="0 0 200 200" fill="none" stroke="currentColor" className="text-blue-400">
+                <path d="M 0,20 Q 50,40 100,20 T 200,20 M 0,50 Q 50,70 100,50 T 200,50 M 0,80 Q 50,100 100,80 T 200,80 M 0,110 Q 50,130 100,110 T 200,110 M 0,140 Q 50,160 100,140 T 200,140" strokeWidth="1" />
+              </svg>
+            </div>
+
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-500/10 rounded-full blur-[120px] pointer-events-none" />
+
+            <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-500/30 bg-blue-950/40 px-4 py-2 text-[10px] font-extrabold tracking-[0.25em] text-[#38bdf8] uppercase shadow-sm mb-6">
                 WHY WORK WITH US
               </span>
-              <h3 className="text-3xl sm:text-5xl font-black text-[#0d1b3e] tracking-tight mt-2">
-                What Makes Us Different
+              <h3 className="text-4xl sm:text-6xl font-black text-white tracking-tight leading-tight mt-2">
+                What Makes <br /> Us <span className="bg-gradient-to-r from-blue-400 to-[#a855f7] bg-clip-text text-transparent">Different</span>
               </h3>
-              <p className="text-slate-500 font-bold text-xs sm:text-[14px] leading-relaxed mt-4">
+              <p className="text-slate-400 font-semibold text-sm sm:text-base leading-relaxed max-w-2xl mx-auto mt-6">
                 We combine performance marketing, e-commerce expertise, and enterprise-grade development to drive measurable growth for your brand.
               </p>
             </div>
 
-            {/* Editorial Row Layout - Stairs Card Style */}
-            <div className="space-y-16 max-w-6xl mx-auto">
-              
+            {/* Elegant slanted background separator */}
+            <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none translate-y-[1px]">
+              <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px] text-white fill-current">
+                <path d="M0,0 C150,90 350,120 600,100 C850,80 1050,30 1200,0 L1200,120 L0,120 Z"></path>
+              </svg>
+            </div>
+          </div>
+
+          {/* Light Cards Part */}
+          <div className="bg-white py-24 relative">
+            <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 space-y-24">
+
               {/* Row 1 */}
-              <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16">
-                {/* Left Card */}
-                <div className="w-full lg:w-[45%] aspect-[1.8/1] rounded-[24px] bg-gradient-to-br from-white to-blue-50/40 border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.03)] flex items-center justify-center p-8 relative overflow-hidden group hover:shadow-[0_30px_60px_rgba(37,99,235,0.08)] transition-all duration-300">
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-blue-400/10 rounded-full blur-3xl pointer-events-none" />
-                  <div className="relative w-36 h-36 rounded-full border border-blue-100 flex items-center justify-center shadow-[inset_0_0_20px_rgba(37,99,235,0.02)]">
-                    <div className="w-[84%] h-[84%] rounded-full border border-dashed border-blue-200/60 flex items-center justify-center">
-                      <div className="w-[76%] h-[76%] rounded-full bg-white border border-blue-100 flex items-center justify-center shadow-lg shadow-blue-500/5 relative z-10 text-blue-600">
-                        <Users className="w-10 h-10" strokeWidth={1.5} />
-                      </div>
-                    </div>
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                className="flex flex-col lg:flex-row items-center justify-between gap-12 relative"
+              >
+                {/* Left section: Number & line */}
+                <div className="flex items-center gap-8 shrink-0 w-full lg:w-auto">
+                  <span className="text-[7rem] sm:text-[8rem] font-black text-blue-600 tracking-tighter leading-none select-none w-36 text-left">
+                    01
+                  </span>
+                  {/* Vertical line with dot */}
+                  <div className="hidden lg:flex flex-col items-center h-24 relative">
+                    <div className="w-[1.5px] h-full bg-slate-200" />
+                    <div className="absolute top-1/2 -translate-y-1/2 w-2.5 h-2.5 rounded-full bg-blue-600" />
                   </div>
                 </div>
-                {/* Right Text */}
-                <div className="w-full lg:w-[50%] flex items-start gap-5 text-left">
-                  <div className="flex items-center gap-4 shrink-0 mt-1">
-                    <span className="text-4xl sm:text-5xl font-black text-blue-600 tracking-tight leading-none">01</span>
-                    <div className="w-[1.5px] h-12 bg-slate-200" />
-                  </div>
-                  <div className="flex-grow">
-                    <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] leading-tight mb-3">
-                      One team, one accountability chain.
-                    </h4>
-                    <p className="text-slate-500 font-semibold text-xs sm:text-[14px] leading-relaxed mb-4">
-                      Zero handoffs between dev and marketing. The team that <span className="text-blue-600 font-extrabold">builds your storefront</span> sits in the exact same room as the specialists <span className="text-blue-600 font-extrabold">optimizing your ads</span>.
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-[10px] font-black bg-blue-50 text-blue-700 border border-blue-100 shadow-sm">
-                        💛 Dev + Marketing Aligned
-                      </span>
-                      <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-[10px] font-black bg-blue-50 text-blue-700 border border-blue-100 shadow-sm">
-                        ⚡ Direct Accountability
-                      </span>
-                    </div>
+
+                {/* Content */}
+                <div className="flex-grow max-w-2xl text-left">
+                  <h4 className="text-2xl sm:text-3xl font-black text-[#0d1b3e] leading-tight mb-4">
+                    One team, one accountability chain.
+                  </h4>
+                  <p className="text-slate-500 font-semibold text-sm sm:text-base leading-relaxed mb-6">
+                    Zero handoffs between dev and marketing. The team that <span className="text-blue-600 font-extrabold">builds your storefront</span> sits in the exact same room as the specialists <span className="text-blue-600 font-extrabold">optimizing your ads</span>.
+                  </p>
+                  <div className="flex flex-wrap gap-3">
+                    <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-black bg-blue-50 text-blue-700 border border-blue-100 shadow-sm">
+                      <span className="text-blue-500 text-sm">✓</span> Dev + Marketing Aligned
+                    </span>
+                    <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-black bg-blue-50 text-blue-700 border border-blue-100 shadow-sm">
+                      <span className="text-blue-500 text-sm">✓</span> Direct Accountability
+                    </span>
                   </div>
                 </div>
-              </div>
+
+                {/* Right Decorative Graphic */}
+                <div className="hidden lg:block relative w-48 h-48 shrink-0">
+                  {/* Dot Grid */}
+                  <div className="absolute inset-0 opacity-20 text-blue-300">
+                    <svg width="100%" height="100%" fill="currentColor">
+                      <defs>
+                        <pattern id="dot-grid-1" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
+                          <circle cx="2" cy="2" r="1.5" />
+                        </pattern>
+                      </defs>
+                      <rect width="100%" height="100%" fill="url(#dot-grid-1)" />
+                    </svg>
+                  </div>
+                  {/* Floating sphere */}
+                  <div className="absolute top-1/2 right-0 -translate-y-1/2 w-28 h-28 rounded-full bg-gradient-to-br from-blue-300 to-blue-500/20 shadow-lg shadow-blue-500/10 blur-[1px]" />
+                </div>
+              </motion.div>
 
               {/* Row 2 */}
-              <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-8 lg:gap-16">
-                {/* Left Text */}
-                <div className="w-full lg:w-[50%] flex items-start gap-5 text-left">
-                  <div className="flex items-center gap-4 shrink-0 mt-1">
-                    <span className="text-4xl sm:text-5xl font-black text-purple-600 tracking-tight leading-none">02</span>
-                    <div className="w-[1.5px] h-12 bg-slate-200" />
-                  </div>
-                  <div className="flex-grow">
-                    <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] leading-tight mb-3">
-                      Certified across the platforms that matter.
-                    </h4>
-                    <p className="text-slate-500 font-semibold text-xs sm:text-[14px] leading-relaxed mb-4">
-                      Enterprise-grade execution built for brands demanding absolute security, strict compliance standards, and scaling speed.
-                    </p>
-                    <div className="flex flex-wrap gap-1.5">
-                      <span className="inline-flex items-center px-3 py-1.5 rounded-full text-[10px] font-black bg-purple-50 text-purple-700 border border-purple-100 shadow-sm">
-                        Shopify Plus
-                      </span>
-                      <span className="inline-flex items-center px-3 py-1.5 rounded-full text-[10px] font-black bg-purple-50 text-purple-700 border border-purple-100 shadow-sm">
-                        Google & Meta Premier
-                      </span>
-                      <span className="inline-flex items-center px-3 py-1.5 rounded-full text-[10px] font-black bg-purple-50 text-purple-700 border border-purple-100 shadow-sm">
-                        Adobe
-                      </span>
-                      <span className="inline-flex items-center px-3 py-1.5 rounded-full text-[10px] font-black bg-emerald-50 text-emerald-700 border border-emerald-100 shadow-sm">
-                        🔒 ISO 27001 Security
-                      </span>
-                    </div>
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                className="flex flex-col lg:flex-row items-center justify-between gap-12 relative pt-8 border-t border-slate-100"
+              >
+                {/* Left section: Number & line */}
+                <div className="flex items-center gap-8 shrink-0 w-full lg:w-auto">
+                  <span className="text-[7rem] sm:text-[8rem] font-black text-purple-600 tracking-tighter leading-none select-none w-36 text-left">
+                    02
+                  </span>
+                  {/* Vertical line with dot */}
+                  <div className="hidden lg:flex flex-col items-center h-24 relative">
+                    <div className="w-[1.5px] h-full bg-slate-200" />
+                    <div className="absolute top-1/2 -translate-y-1/2 w-2.5 h-2.5 rounded-full bg-purple-600" />
                   </div>
                 </div>
-                {/* Right Card */}
-                <div className="w-full lg:w-[45%] aspect-[1.8/1] rounded-[24px] bg-gradient-to-br from-white to-purple-50/40 border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.03)] flex items-center justify-center p-8 relative overflow-hidden group hover:shadow-[0_30px_60px_rgba(139,92,246,0.08)] transition-all duration-300">
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-purple-400/10 rounded-full blur-3xl pointer-events-none" />
-                  <div className="relative w-36 h-36 rounded-full border border-purple-100 flex items-center justify-center shadow-[inset_0_0_20px_rgba(139,92,246,0.02)]">
-                    <div className="w-[84%] h-[84%] rounded-full border border-dashed border-purple-200/60 flex items-center justify-center">
-                      <div className="w-[76%] h-[76%] rounded-full bg-white border border-purple-100 flex items-center justify-center shadow-lg shadow-purple-500/5 relative z-10 text-purple-600">
-                        <Shield className="w-10 h-10" strokeWidth={1.5} />
-                      </div>
-                    </div>
+
+                {/* Content */}
+                <div className="flex-grow max-w-2xl text-left">
+                  <h4 className="text-2xl sm:text-3xl font-black text-[#0d1b3e] leading-tight mb-4">
+                    Certified across the platforms that matter.
+                  </h4>
+                  <p className="text-slate-500 font-semibold text-sm sm:text-base leading-relaxed mb-6">
+                    Enterprise-grade execution built for brands demanding absolute <span className="text-purple-600 font-extrabold">security</span>, strict <span className="text-purple-600 font-extrabold">compliance</span> standards, and <span className="text-purple-600 font-extrabold">scaling</span> speed.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="inline-flex items-center px-4 py-2 rounded-full text-xs font-black bg-purple-50 text-purple-700 border border-purple-100 shadow-sm">
+                      Shopify Plus
+                    </span>
+                    <span className="inline-flex items-center px-4 py-2 rounded-full text-xs font-black bg-purple-50 text-purple-700 border border-purple-100 shadow-sm">
+                      Google & Meta Premier
+                    </span>
+                    <span className="inline-flex items-center px-4 py-2 rounded-full text-xs font-black bg-purple-50 text-purple-700 border border-purple-100 shadow-sm">
+                      Adobe
+                    </span>
+                    <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-black bg-emerald-50 text-emerald-700 border border-emerald-100 shadow-sm">
+                      🔒 ISO 27001 Security
+                    </span>
                   </div>
                 </div>
-              </div>
+
+                {/* Right Decorative Graphic */}
+                <div className="hidden lg:block relative w-48 h-48 shrink-0 overflow-hidden">
+                  {/* Dot Grid */}
+                  <div className="absolute inset-0 opacity-20 text-purple-300">
+                    <svg width="100%" height="100%" fill="currentColor">
+                      <defs>
+                        <pattern id="dot-grid-2" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
+                          <circle cx="2" cy="2" r="1.5" />
+                        </pattern>
+                      </defs>
+                      <rect width="100%" height="100%" fill="url(#dot-grid-2)" />
+                    </svg>
+                  </div>
+                  {/* Floating sphere peeking */}
+                  <div className="absolute top-1/2 -right-16 -translate-y-1/2 w-32 h-32 rounded-full bg-gradient-to-br from-purple-300 to-purple-500/20 shadow-lg shadow-purple-500/10 blur-[1px]" />
+                </div>
+              </motion.div>
 
               {/* Row 3 */}
-              <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16">
-                {/* Left Card */}
-                <div className="w-full lg:w-[45%] aspect-[1.8/1] rounded-[24px] bg-gradient-to-br from-white to-amber-50/40 border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.03)] flex items-center justify-center p-8 relative overflow-hidden group hover:shadow-[0_30px_60px_rgba(245,158,11,0.08)] transition-all duration-300">
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-amber-400/10 rounded-full blur-3xl pointer-events-none" />
-                  <div className="relative w-36 h-36 rounded-full border border-amber-100 flex items-center justify-center shadow-[inset_0_0_20px_rgba(245,158,11,0.02)]">
-                    <div className="w-[84%] h-[84%] rounded-full border border-dashed border-amber-200/60 flex items-center justify-center">
-                      <div className="w-[76%] h-[76%] rounded-full bg-white border border-amber-100 flex items-center justify-center shadow-lg shadow-amber-500/5 relative z-10 text-amber-600">
-                        <ShoppingCart className="w-10 h-10" strokeWidth={1.5} />
-                      </div>
-                    </div>
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                className="flex flex-col lg:flex-row items-center justify-between gap-12 relative pt-8 border-t border-slate-100"
+              >
+                {/* Left section: Number & line */}
+                <div className="flex items-center gap-8 shrink-0 w-full lg:w-auto">
+                  <span className="text-[7rem] sm:text-[8rem] font-black text-amber-600 tracking-tighter leading-none select-none w-36 text-left">
+                    03
+                  </span>
+                  {/* Vertical line with dot */}
+                  <div className="hidden lg:flex flex-col items-center h-24 relative">
+                    <div className="w-[1.5px] h-full bg-slate-200" />
+                    <div className="absolute top-1/2 -translate-y-1/2 w-2.5 h-2.5 rounded-full bg-amber-600" />
                   </div>
                 </div>
-                {/* Right Text */}
-                <div className="w-full lg:w-[50%] flex items-start gap-5 text-left">
-                  <div className="flex items-center gap-4 shrink-0 mt-1">
-                    <span className="text-4xl sm:text-5xl font-black text-amber-600 tracking-tight leading-none">03</span>
-                    <div className="w-[1.5px] h-12 bg-slate-200" />
-                  </div>
-                  <div className="flex-grow">
-                    <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] leading-tight mb-3">
-                      Built for e-commerce only.
-                    </h4>
-                    <p className="text-slate-500 font-semibold text-xs sm:text-[14px] leading-relaxed mb-4">
-                      We focus <span className="text-amber-600 font-extrabold">100% on online retail</span>. No wasted onboarding or generic strategies. Our team understands how to move your needle.
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-[10px] font-black bg-amber-50 text-amber-700 border border-amber-100 shadow-sm">
-                        📈 Margin Economics
-                      </span>
-                      <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-[10px] font-black bg-amber-50 text-amber-700 border border-amber-100 shadow-sm">
-                        🎯 Funnel Optimization
-                      </span>
-                    </div>
+
+                {/* Content */}
+                <div className="flex-grow max-w-2xl text-left">
+                  <h4 className="text-2xl sm:text-3xl font-black text-[#0d1b3e] leading-tight mb-4">
+                    Built for e-commerce only.
+                  </h4>
+                  <p className="text-slate-500 font-semibold text-sm sm:text-base leading-relaxed mb-6">
+                    We focus <span className="text-amber-600 font-extrabold">100% on online retail</span>. No wasted onboarding or generic strategies. Our team understands how to move your needle.
+                  </p>
+                  <div className="flex flex-wrap gap-3">
+                    <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-black bg-amber-50 text-amber-700 border border-amber-100 shadow-sm">
+                      <span className="text-amber-500 text-sm">✓</span> Margin Economics
+                    </span>
+                    <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-black bg-amber-50 text-amber-700 border border-amber-100 shadow-sm">
+                      <span className="text-amber-500 text-sm">✓</span> Funnel Optimization
+                    </span>
                   </div>
                 </div>
-              </div>
+
+                {/* Right Decorative Graphic */}
+                <div className="hidden lg:block relative w-48 h-48 shrink-0 overflow-hidden">
+                  {/* Dot Grid */}
+                  <div className="absolute inset-0 opacity-20 text-amber-300">
+                    <svg width="100%" height="100%" fill="currentColor">
+                      <defs>
+                        <pattern id="dot-grid-3" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
+                          <circle cx="2" cy="2" r="1.5" />
+                        </pattern>
+                      </defs>
+                      <rect width="100%" height="100%" fill="url(#dot-grid-3)" />
+                    </svg>
+                  </div>
+                  {/* Floating sphere peeking from bottom right corner */}
+                  <div className="absolute bottom-[-40px] right-[-40px] w-36 h-36 rounded-full bg-gradient-to-br from-amber-300 to-amber-500/20 shadow-lg shadow-amber-500/10 blur-[1px]" />
+                </div>
+              </motion.div>
 
             </div>
           </div>
@@ -2080,80 +2403,175 @@ export default function Home() {
                   Founders & CMOs<br />Love Us.
                 </h2>
               </div>
+            </div>
+          </div>
 
+          {/* Testimonials Carousel */}
+          <div className="relative z-10 mx-auto max-w-[1100px] px-6 sm:px-8 lg:px-12 mt-12">
+            <div className="relative flex items-center justify-between">
+              {/* Prev Button */}
+              <button
+                onClick={() => setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length)}
+                className="absolute left-[-20px] lg:left-[-70px] z-20 w-12 h-12 rounded-full bg-white border border-slate-200/80 shadow-md flex items-center justify-center text-slate-600 hover:text-slate-900 hover:shadow-lg hover:scale-105 transition-all duration-300 group"
+              >
+                <ChevronLeft className="w-5 h-5 group-hover:-translate-x-0.5 transition-transform duration-300" />
+              </button>
+
+              <div className="w-full overflow-hidden py-4 px-1">
+                <AnimatePresence mode="popLayout">
+                  {(() => {
+                    const t = testimonials[currentTestimonial];
+                    const accent = [
+                      {
+                        borderGradient: "from-[#3b82f6] to-[#06b6d4]",
+                        gradient: "from-blue-400 to-indigo-600",
+                        metricBg: "bg-blue-50/80 text-blue-600 border-blue-100",
+                        metricIcon: <TrendingUp className="w-4 h-4" />,
+                        quoteColor: "text-blue-500",
+                        activeDot: "bg-blue-500",
+                        lineBg: "bg-blue-500",
+                        glowBg: "from-blue-500/10 to-transparent",
+                      },
+                      {
+                        borderGradient: "from-[#a855f7] to-[#d946ef]",
+                        gradient: "from-purple-400 to-violet-600",
+                        metricBg: "bg-purple-50/80 text-purple-600 border-purple-100",
+                        metricIcon: <Target className="w-4 h-4" />,
+                        quoteColor: "text-purple-500",
+                        activeDot: "bg-purple-500",
+                        lineBg: "bg-purple-500",
+                        glowBg: "from-purple-500/10 to-transparent",
+                      },
+                      {
+                        borderGradient: "from-[#10b981] to-[#14b8a6]",
+                        gradient: "from-teal-400 to-cyan-600",
+                        metricBg: "bg-emerald-50/80 text-emerald-600 border-emerald-100",
+                        metricIcon: <Rocket className="w-4 h-4" />,
+                        quoteColor: "text-emerald-500",
+                        activeDot: "bg-emerald-500",
+                        lineBg: "bg-emerald-500",
+                        glowBg: "from-emerald-500/10 to-transparent",
+                      },
+                      {
+                        borderGradient: "from-[#f43f5e] to-[#ec4899]",
+                        gradient: "from-rose-400 to-pink-600",
+                        metricBg: "bg-rose-50/80 text-rose-600 border-rose-100",
+                        metricIcon: <Trophy className="w-4 h-4" />,
+                        quoteColor: "text-rose-500",
+                        activeDot: "bg-rose-500",
+                        lineBg: "bg-rose-500",
+                        glowBg: "from-rose-500/10 to-transparent",
+                      }
+                    ][currentTestimonial % 4];
+
+                    return (
+                      <motion.div
+                        key={currentTestimonial}
+                        initial={{ opacity: 0, x: 80, scale: 0.96 }}
+                        animate={{ opacity: 1, x: 0, scale: 1 }}
+                        exit={{ opacity: 0, x: -80, scale: 0.96 }}
+                        transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+                        className={`p-[3px] bg-gradient-to-br ${accent.borderGradient} rounded-[32px] shadow-[0_20px_50px_rgba(0,0,0,0.04)] flex flex-col justify-between text-left relative overflow-hidden group w-full`}
+                      >
+                        <div className="bg-white rounded-[29px] p-8 sm:p-12 flex flex-col md:flex-row gap-8 md:gap-12 items-center text-left relative overflow-hidden w-full h-full">
+                          {/* Hover Top-Right Glow */}
+                          <div className={`absolute top-0 right-0 w-80 h-80 bg-gradient-to-bl ${accent.glowBg} rounded-bl-[200px] pointer-events-none opacity-40 group-hover:opacity-60 transition-all duration-500 z-0`} />
+
+                          {/* Left side: Extremely Large Profile Image */}
+                          <div className="relative w-48 h-48 sm:w-60 sm:h-60 md:w-72 md:h-72 rounded-[32px] overflow-hidden shadow-lg ring-4 ring-slate-100 shrink-0 bg-slate-50 flex items-center justify-center z-10 transition-transform duration-500 group-hover:scale-[1.02]">
+                            {t.image ? (
+                              <Image
+                                src={t.image}
+                                alt={t.author}
+                                fill
+                                sizes="(max-width: 768px) 192px, 288px"
+                                className="object-cover"
+                                priority
+                              />
+                            ) : (
+                              <div className={`w-full h-full bg-gradient-to-br ${accent.gradient} flex items-center justify-center text-3xl font-bold text-white`}>
+                                {t.avatarText}
+                              </div>
+                            )}
+                          </div>
+
+                          {/* Right side: details */}
+                          <div className="flex-grow flex flex-col justify-between h-full relative z-10">
+                            <div>
+                              {/* Rating & Metric Header */}
+                              <div className="flex flex-wrap items-center justify-between gap-4">
+                                {/* Rating Pill */}
+                                <div className="inline-flex items-center gap-0.5 px-3 py-1.5 rounded-full bg-amber-500/5 border border-amber-500/10">
+                                  {Array.from({ length: t.stars }).map((_, i) => (
+                                    <span key={i} className="text-amber-500 text-sm sm:text-base font-bold">★</span>
+                                  ))}
+                                </div>
+                                {/* Metric Pill */}
+                                {t.metric && (
+                                  <div className={`flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-wider border shadow-sm ${accent.metricBg}`}>
+                                    {accent.metricIcon}
+                                    {t.metric}
+                                  </div>
+                                )}
+                              </div>
+                              {/* Quote */}
+                              <p className="text-[15px] sm:text-[17px] text-slate-600 font-semibold leading-[1.8] mt-6 italic relative pl-4">
+                                <span className={`absolute left-0 top-0 text-3xl font-serif font-black ${accent.quoteColor} leading-none`}>“</span>
+                                {t.quote}
+                                <span className={`text-xl font-serif font-black ${accent.quoteColor} ml-1`}>”</span>
+                              </p>
+                            </div>
+
+                            {/* Profile Handoff */}
+                            <div className="mt-8 pt-6 border-t border-slate-100">
+                              <div className="flex items-center gap-4">
+                                <div className={`h-10 w-[3px] rounded-full ${accent.lineBg}`} />
+                                <div>
+                                  <h4 className="text-[17px] font-black text-[#0d1b3e] tracking-tight">{t.author}</h4>
+                                  <span className="block text-[12px] font-bold text-slate-400 mt-0.5">{t.role}</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </motion.div>
+                    );
+                  })()}
+                </AnimatePresence>
+              </div>
+
+              {/* Next Button */}
+              <button
+                onClick={() => setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)}
+                className="absolute right-[-20px] lg:right-[-70px] z-20 w-12 h-12 rounded-full bg-white border border-slate-200/80 shadow-md flex items-center justify-center text-slate-600 hover:text-slate-900 hover:shadow-lg hover:scale-105 transition-all duration-300 group"
+              >
+                <ChevronRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform duration-300" />
+              </button>
 
             </div>
 
-          </div>
-
-          {/* Testimonials Grid */}
-          <div className="relative z-10 mx-auto max-w-[1700px] px-6 sm:px-8 lg:px-12 mt-12">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8">
-              {testimonials.map((t, idx) => {
-                const accent = [
-                  { cardBorder: "border-blue-200/80 border-t-[4px] border-t-blue-500", gradient: "from-blue-400 to-indigo-600", quoteColor: "text-blue-500/10", glowColor: "from-blue-500/40 via-blue-50/10 to-white" },
-                  { cardBorder: "border-purple-200/80 border-t-[4px] border-t-purple-500", gradient: "from-purple-400 to-violet-600", quoteColor: "text-purple-500/10", glowColor: "from-purple-500/40 via-purple-50/10 to-white" },
-                  { cardBorder: "border-teal-200/80 border-t-[4px] border-t-teal-500", gradient: "from-teal-400 to-cyan-600", quoteColor: "text-teal-500/10", glowColor: "from-teal-500/40 via-teal-50/10 to-white" },
-                  { cardBorder: "border-rose-200/80 border-t-[4px] border-t-rose-500", gradient: "from-rose-400 to-pink-600", quoteColor: "text-rose-500/10", glowColor: "from-rose-500/40 via-rose-50/10 to-white" }
-                ][idx % 4];
+            {/* Pagination indicator dots below */}
+            <div className="flex justify-center gap-2 mt-8">
+              {testimonials.map((_, dotIdx) => {
+                const isActive = dotIdx === currentTestimonial;
+                const dotColor = [
+                  "bg-blue-500",
+                  "bg-purple-500",
+                  "bg-emerald-500",
+                  "bg-rose-500"
+                ][dotIdx % 4];
 
                 return (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-80px" }}
-                    whileHover={{ y: -6, boxShadow: "0 25px 50px rgba(36,67,171,0.06)" }}
-                    transition={{ duration: 0.5, delay: idx * 0.1 }}
-                    className={`bg-white rounded-[28px] p-6 sm:p-8 border shadow-[0_8px_30px_rgba(0,0,0,0.03)] flex flex-col justify-between text-left transition-all duration-500 hover:border-slate-300 relative overflow-hidden group ${accent.cardBorder}`}
-                  >
-                    {/* Hover Top-Right Glow */}
-                    <div className={`absolute top-0 right-0 w-56 h-56 bg-gradient-to-bl ${accent.glowColor} rounded-bl-[160px] pointer-events-none opacity-0 group-hover:opacity-100 transition-all duration-500 z-0`} />
-
-                    {/* Oversized Quote Mark Background */}
-                    <span className="absolute -top-1 right-4 text-[9rem] font-black select-none pointer-events-none leading-none opacity-[0.06] text-slate-400 font-serif z-0">
-                      “
-                    </span>
-
-                    <div className="flex-grow flex flex-col justify-between relative z-10">
-                      <div>
-                        {/* Rating & Metric Header */}
-                        <div className="flex items-center justify-between gap-4">
-                          {/* Rating Pill */}
-                          <div className="inline-flex items-center gap-0.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-100/60 shadow-[0_1px_2px_rgba(0,0,0,0.02)]">
-                            {Array.from({ length: t.stars }).map((_, i) => (
-                              <span key={i} className="text-amber-500 text-xs sm:text-sm font-bold">★</span>
-                            ))}
-                          </div>
-                          {/* Metric Pill */}
-                          {t.metric && (
-                            <div className={`px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider border ${t.metricColor} shadow-[0_1px_2px_rgba(0,0,0,0.02)]`}>
-                              {t.metric}
-                            </div>
-                          )}
-                        </div>
-                        {/* Quote */}
-                        <p className="text-[14px] sm:text-[15px] text-slate-700 font-medium leading-[1.7] mt-6 italic">
-                          "{t.quote}"
-                        </p>
-                      </div>
-
-                      {/* Profile Handoff */}
-                      <div className="flex items-center gap-4 mt-8 pt-5 border-t border-slate-100/80">
-                        {/* Refined gradient avatar with white border ring */}
-                        <div className={`w-11 h-11 rounded-full bg-gradient-to-br ${accent.gradient} flex items-center justify-center text-sm font-bold text-white shadow-md ring-2 ring-white`}>
-                          {t.avatarText}
-                        </div>
-                        <div>
-                          <h4 className="text-[14px] font-extrabold text-[#0d1b3e] tracking-tight">{t.author}</h4>
-                          <span className="block text-[11px] font-semibold text-slate-400 mt-0.5">{t.role}</span>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
+                  <button
+                    key={dotIdx}
+                    onClick={() => setCurrentTestimonial(dotIdx)}
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${isActive ? `${dotColor} w-6` : "bg-slate-250 hover:bg-slate-350"}`}
+                    aria-label={`Go to slide ${dotIdx + 1}`}
+                  />
                 );
               })}
             </div>
+
           </div>
         </section>
 

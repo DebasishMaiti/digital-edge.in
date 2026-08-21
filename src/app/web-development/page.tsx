@@ -92,69 +92,112 @@ export default function WebDevelopment() {
     <link rel="canonical" href="https://digitaledge360.com/web-development" />
       <div className="relative w-full bg-[#fafbfc] min-h-screen text-slate-800 overflow-hidden">
         
-        {/* Hero Background Layer with Ice Mint to Emerald gradient (1 shade deeper) */}
-        <section className="relative z-10 w-full pt-[160px] pb-12 bg-gradient-to-b from-[#d1fae5] via-[#a7f3d0] to-[#fafbfc] border-b border-slate-200 overflow-hidden">
+        {/* Hero Background Layer with Sky Blue gradient */}
+        <section className="relative z-10 w-full pt-[160px] pb-12 bg-gradient-to-b from-[#e0f2fe] via-[#bae6fd] to-[#fafbfc] border-b border-slate-200 overflow-hidden">
           {/* Light Grid Scrolling Background */}
           <div 
             className="animate-grid-scroll opacity-70 pointer-events-none z-0" 
             style={{
               backgroundImage: `
-                linear-gradient(to right, rgba(16, 185, 129, 0.16) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(16, 185, 129, 0.16) 1px, transparent 1px)
+                linear-gradient(to right, rgba(14, 165, 233, 0.12) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(14, 165, 233, 0.12) 1px, transparent 1px)
               `
             }}
           />
 
           {/* Ambient Glows */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-            <div className="absolute top-[10%] left-[10%] w-[40%] aspect-square rounded-full bg-gradient-to-br from-[#10b981]/12 via-[#14b8a6]/8 to-transparent blur-[80px]" />
-            <div className="absolute bottom-[10%] right-[10%] w-[45%] aspect-square rounded-full bg-gradient-to-br from-[#06b6d4]/10 via-transparent to-transparent blur-[90px]" />
+            <div className="absolute top-[10%] left-[10%] w-[40%] aspect-square rounded-full bg-gradient-to-br from-[#0ea5e9]/15 via-[#3b82f6]/10 to-transparent blur-[80px]" />
+            <div className="absolute bottom-[10%] right-[10%] w-[45%] aspect-square rounded-full bg-gradient-to-br from-[#818cf8]/10 via-transparent to-transparent blur-[90px]" />
           </div>
 
-          {/* SVG Custom Graphics - Rotated Technical Capsules & Matrix dots */}
-          <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-0 opacity-50">
+          {/* SVG Custom Graphics - Web Development/Coding Themed Graphics */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-0 opacity-60">
             <svg className="w-full h-full min-w-[1000px] min-h-[500px]" viewBox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg">
               <defs>
-                <linearGradient id="mint-capsule-1" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="rgba(16, 185, 129, 0.35)" />
-                  <stop offset="100%" stopColor="rgba(20, 184, 166, 0.08)" />
+                <linearGradient id="sky-capsule-1" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="rgba(14, 165, 233, 0.25)" />
+                  <stop offset="100%" stopColor="rgba(59, 130, 246, 0.05)" />
                 </linearGradient>
               </defs>
 
-              {/* Rotated capsules */}
-              <g transform="rotate(-30 600 250)">
-                <rect x="200" y="100" width="300" height="35" rx="17.5" fill="url(#mint-capsule-1)" />
-                <rect x="550" y="200" width="220" height="25" rx="12.5" fill="rgba(6, 182, 212, 0.22)" />
-                <rect x="350" y="320" width="180" height="20" rx="10" fill="rgba(16, 185, 129, 0.2)" />
-                <rect x="750" y="50" width="180" height="20" rx="10" fill="rgba(16, 185, 129, 0.12)" />
+              {/* Floating Code Editor Graphic Left */}
+              <g transform="translate(40, 70) rotate(-5)" opacity="0.45">
+                <rect width="220" height="140" rx="8" fill="white" stroke="#bae6fd" strokeWidth="1.5" />
+                <rect width="220" height="24" rx="8" fill="#f8fafc" />
+                <line x1="0" y1="24" x2="220" y2="24" stroke="#bae6fd" strokeWidth="1" />
+                {/* Window Dots */}
+                <circle cx="12" cy="12" r="3" fill="#ef4444" />
+                <circle cx="22" cy="12" r="3" fill="#eab308" />
+                <circle cx="32" cy="12" r="3" fill="#22c55e" />
+                
+                {/* Code wireframe lines */}
+                <rect x="15" y="38" width="60" height="6" rx="3" fill="#0ea5e9" opacity="0.7" />
+                <rect x="80" y="38" width="100" height="6" rx="3" fill="#94a3b8" opacity="0.4" />
+                <rect x="15" y="52" width="120" height="6" rx="3" fill="#6366f1" opacity="0.6" />
+                <rect x="15" y="66" width="40" height="6" rx="3" fill="#3b82f6" opacity="0.7" />
+                <rect x="60" y="66" width="90" height="6" rx="3" fill="#94a3b8" opacity="0.4" />
+                <rect x="30" y="80" width="150" height="6" rx="3" fill="#06b6d4" opacity="0.5" />
+                <rect x="30" y="94" width="80" height="6" rx="3" fill="#94a3b8" opacity="0.4" />
+                <rect x="15" y="108" width="50" height="6" rx="3" fill="#10b981" opacity="0.6" />
+              </g>
+
+              {/* Floating Layout Grid Graphic Right */}
+              <g transform="translate(940, 120) rotate(5)" opacity="0.4">
+                <rect width="240" height="150" rx="10" fill="white" stroke="#bae6fd" strokeWidth="2" />
+                <line x1="0" y1="25" x2="240" y2="25" stroke="#bae6fd" strokeWidth="1" />
+                <circle cx="12" cy="12" r="3" fill="#3b82f6" />
+                {/* Grid layout representation */}
+                <rect x="15" y="38" width="60" height="40" rx="4" fill="#3b82f6" opacity="0.08" stroke="#3b82f6" strokeWidth="1" strokeDasharray="2 2" />
+                <rect x="85" y="38" width="60" height="40" rx="4" fill="#3b82f6" opacity="0.08" stroke="#3b82f6" strokeWidth="1" strokeDasharray="2 2" />
+                <rect x="155" y="38" width="70" height="40" rx="4" fill="#3b82f6" opacity="0.08" stroke="#3b82f6" strokeWidth="1" strokeDasharray="2 2" />
+                
+                <rect x="15" y="90" width="130" height="8" rx="4" fill="#3b82f6" opacity="0.4" />
+                <rect x="15" y="104" width="210" height="6" rx="3" fill="#94a3b8" opacity="0.3" />
+                <rect x="15" y="115" width="170" height="6" rx="3" fill="#94a3b8" opacity="0.3" />
+                
+                <circle cx="205" cy="94" r="10" fill="#3b82f6" opacity="0.2" />
+              </g>
+
+              {/* Giant tag </ > in background */}
+              <text x="260" y="380" fill="#0ea5e9" fontSize="160" fontFamily="monospace" fontWeight="900" opacity="0.06" transform="rotate(-12)">&lt;/&gt;</text>
+              
+              {/* Giant brackets { } in background */}
+              <text x="820" y="180" fill="#6366f1" fontSize="190" fontFamily="monospace" fontWeight="900" opacity="0.05" transform="rotate(12)">{"{"}{"}"}</text>
+
+              {/* Rotated technical capsules */}
+              <g transform="rotate(-25 600 250)" opacity="0.8">
+                <rect x="250" y="80" width="260" height="24" rx="12" fill="url(#sky-capsule-1)" />
+                <rect x="580" y="160" width="200" height="20" rx="10" fill="rgba(14, 165, 233, 0.15)" />
+                <rect x="400" y="280" width="150" height="16" rx="8" fill="rgba(99, 102, 241, 0.12)" />
               </g>
 
               {/* Binary-like square dot grids on the sides */}
-              <g transform="translate(80, 150)">
-                {Array.from({ length: 6 }).map((_, r) =>
-                  Array.from({ length: 8 }).map((_, c) => (
+              <g transform="translate(60, 260)">
+                {Array.from({ length: 5 }).map((_, r) =>
+                  Array.from({ length: 6 }).map((_, c) => (
                     <circle
                       key={`webdev-dot-l-${r}-${c}`}
-                      cx={c * 18}
-                      cy={r * 18}
+                      cx={c * 16}
+                      cy={r * 16}
                       r={1.5}
-                      fill="rgb(16, 185, 129)"
-                      opacity={0.25}
+                      fill="rgb(14, 165, 233)"
+                      opacity={0.3}
                     />
                   ))
                 )}
               </g>
 
-              <g transform="translate(1020, 80)">
-                {Array.from({ length: 8 }).map((_, r) =>
-                  Array.from({ length: 4 }).map((_, c) => (
+              <g transform="translate(1060, 60)">
+                {Array.from({ length: 7 }).map((_, r) =>
+                  Array.from({ length: 5 }).map((_, c) => (
                     <circle
                       key={`webdev-dot-r-${r}-${c}`}
-                      cx={c * 20}
-                      cy={r * 20}
+                      cx={c * 18}
+                      cy={r * 18}
                       r={1.5}
-                      fill="rgb(6, 182, 212)"
-                      opacity={0.2}
+                      fill="rgb(99, 102, 241)"
+                      opacity={0.25}
                     />
                   ))
                 )}

@@ -106,7 +106,6 @@ export default function Footer() {
                 { label: "WooCommerce Builds", href: "/woocommerce" },
                 { label: "Performance Marketing", href: "/performance-marketing" },
                 { label: "SEO & Content Strategy", href: "/seo-smm" },
-                { label: "AI Integration", href: "/ai-integration" },
                 { label: "Creative Studio", href: "/digital-product-editing" }
               ].map((link, idx) => (
                 <li key={idx}>

@@ -147,7 +147,8 @@ export const testimonials = [
     author: "Jeris Khawaja",
     role: "TruBoy BBQ",
     avatarText: "JK",
-    avatarColor: "bg-pink-100 text-pink-600"
+    avatarColor: "bg-pink-100 text-pink-600",
+    image: "/testimonial-img/Trueboy-BBQ-owner.png"
   },
   {
     stars: 5,
@@ -157,7 +158,8 @@ export const testimonials = [
     author: "Poonam Ahlawat",
     role: "Nayantara",
     avatarText: "PA",
-    avatarColor: "bg-purple-100 text-purple-600"
+    avatarColor: "bg-purple-100 text-purple-600",
+    image: "/testimonial-img/Nayantara_owner.png"
   },
   {
     stars: 5,
@@ -167,7 +169,8 @@ export const testimonials = [
     author: "Gaurav Bajaj",
     role: "Ducati",
     avatarText: "GB",
-    avatarColor: "bg-blue-100 text-blue-600"
+    avatarColor: "bg-blue-100 text-blue-600",
+    image: "/testimonial-img/Ducati_owner.png"
   },
   {
     stars: 5,
@@ -177,7 +180,8 @@ export const testimonials = [
     author: "Tarun Kumar Banerjee",
     role: "Jet Choice",
     avatarText: "TB",
-    avatarColor: "bg-indigo-100 text-indigo-600"
+    avatarColor: "bg-indigo-100 text-indigo-600",
+    image: "/testimonial-img/Jet-Choice-owner.png"
   }
 ];
 

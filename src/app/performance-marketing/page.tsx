@@ -45,50 +45,101 @@ export default function PerformanceMarketing() {
             <div className="absolute bottom-[10%] right-[10%] w-[40%] aspect-square rounded-full bg-gradient-to-br from-[#60a5fa]/10 via-transparent to-transparent blur-[90px]" />
           </div>
 
-          {/* SVG Custom Graphics - Helix Waves, Speed lines & Growth Chart */}
-          <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-0 opacity-40">
+          {/* SVG Custom Graphics - Performance Marketing Themed (Ad posts, Conversion Funnels, ROI targets - No Letters) */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-0 opacity-45">
             <svg className="w-full h-full min-w-[1000px] min-h-[500px]" viewBox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg">
-              {/* Double helix ray curves */}
-              <path d="M100,200 Q250,50 400,200 T700,200 T1000,200" fill="none" stroke="rgba(14, 165, 233, 0.25)" strokeWidth="3" />
-              <path d="M100,200 Q250,350 400,200 T700,200 T1000,200" fill="none" stroke="rgba(37, 99, 235, 0.15)" strokeWidth="1.5" strokeDasharray="4 4" />
               
-              <path d="M100,220 Q250,70 400,220 T700,220 T1000,220" fill="none" stroke="rgba(37, 99, 235, 0.1)" strokeWidth="2.5" />
-              <path d="M100,240 Q250,390 400,240 T700,240 T1000,240" fill="none" stroke="rgba(14, 165, 233, 0.08)" strokeWidth="1" strokeDasharray="3 3" />
-
-              {/* Upward Analytics Graph Line representing ROI acceleration */}
-              <g transform="translate(480, 100)" stroke="rgba(14, 165, 233, 0.15)" strokeWidth="2" fill="none">
-                <line x1="0" y1="150" x2="200" y2="150" />
-                <line x1="0" y1="0" x2="0" y2="150" />
-                <path d="M0,150 L50,120 L100,70 L150,80 L200,20" stroke="rgb(14, 165, 233)" strokeWidth="3" />
-                <circle cx="200" cy="20" r="5" fill="rgb(37, 99, 235)" />
+              {/* Ad Campaign Mockup Card Left */}
+              <g transform="translate(60, 60) rotate(-5)" opacity="0.55">
+                <rect width="220" height="150" rx="10" fill="white" stroke="#3b82f6" strokeWidth="1.5" />
+                <rect width="220" height="24" rx="10" fill="#f8fafc" />
+                <circle cx="15" cy="12" r="3" fill="#ef4444" />
+                <circle cx="25" cy="12" r="3" fill="#eab308" />
+                <circle cx="35" cy="12" r="3" fill="#22c55e" />
+                
+                {/* Ad creative visual placeholder */}
+                <rect x="15" y="38" width="190" height="60" rx="6" fill="#eff6ff" stroke="#3b82f6" strokeWidth="1" strokeDasharray="3 3" />
+                <path d="M 50,75 C 90,45 130,95 170,55" fill="none" stroke="#3b82f6" strokeWidth="2.5" />
+                <circle cx="170" cy="55" r="4" fill="#3b82f6" />
+                
+                {/* Sponsored text line placeholder */}
+                <rect x="15" y="112" width="90" height="6" rx="3" fill="#64748b" opacity="0.4" />
+                <rect x="15" y="126" width="130" height="6" rx="3" fill="#64748b" opacity="0.25" />
+                
+                {/* CTR Action button */}
+                <rect x="155" y="114" width="50" height="20" rx="10" fill="#3b82f6" opacity="0.9" />
               </g>
 
-              {/* Scattered particle matrices */}
-              <g transform="translate(920, 80)">
-                {Array.from({ length: 6 }).map((_, r) =>
-                  Array.from({ length: 8 }).map((_, c) => (
+              {/* Conversion Funnel Mockup Right */}
+              <g transform="translate(940, 110) rotate(4)" opacity="0.55">
+                <rect width="210" height="170" rx="12" fill="white" stroke="#bae6fd" strokeWidth="1.5" />
+                
+                {/* Funnel Level 1 (Top - Awareness) */}
+                <polygon points="25,35 185,35 155,70 55,70" fill="#3b82f6" opacity="0.15" stroke="#3b82f6" strokeWidth="1" />
+                <line x1="105" y1="35" x2="105" y2="70" stroke="#3b82f6" strokeWidth="1" opacity="0.3" />
+
+                {/* Funnel Level 2 (Middle - Consideration) */}
+                <polygon points="57,75 153,75 133,110 77,110" fill="#3b82f6" opacity="0.4" stroke="#3b82f6" strokeWidth="1" />
+                <line x1="105" y1="75" x2="105" y2="110" stroke="#3b82f6" strokeWidth="1" opacity="0.3" />
+
+                {/* Funnel Level 3 (Bottom - Conversion) */}
+                <polygon points="79,115 131,115 116,145 94,145" fill="#2563eb" stroke="#2563eb" strokeWidth="1" />
+                <line x1="105" y1="115" x2="105" y2="145" stroke="#2563eb" strokeWidth="1" opacity="0.3" />
+                
+                {/* Downward conversion arrow */}
+                <path d="M 105,150 L 105,160 M 101,156 L 105,160 L 109,156" fill="none" stroke="#10b981" strokeWidth="2" strokeLinecap="round" />
+              </g>
+
+              {/* Floating Megaphone (Ad reach) */}
+              <g transform="translate(540, 40) rotate(12)" opacity="0.3">
+                <path d="M15,30 L30,25 L45,15 L50,15 L50,45 L45,45 L30,35 Z" fill="none" stroke="#6366f1" strokeWidth="1.8" />
+                <path d="M15,30 L10,32 L10,38 L15,36" fill="none" stroke="#6366f1" strokeWidth="1.8" />
+                <path d="M30,35 L30,45 L25,45 L25,37" fill="none" stroke="#6366f1" strokeWidth="1.8" />
+              </g>
+
+              {/* Floating Bullseye Target */}
+              <g transform="translate(180, 260) rotate(8)" opacity="0.45">
+                <circle cx="25" cy="25" r="20" fill="none" stroke="#10b981" strokeWidth="1.5" />
+                <circle cx="25" cy="25" r="14" fill="none" stroke="#10b981" strokeWidth="1.5" strokeDasharray="3 3" />
+                <circle cx="25" cy="25" r="8" fill="none" stroke="#10b981" strokeWidth="2" />
+                {/* Arrow */}
+                <line x1="5" y1="45" x2="22" y2="28" stroke="#ef4444" strokeWidth="2" strokeLinecap="round" />
+                <polygon points="22,28 17,29 21,33" fill="#ef4444" />
+              </g>
+
+              {/* Floating ROI Spurge line */}
+              <g transform="translate(860, 310) rotate(-8)" opacity="0.45">
+                <rect width="90" height="40" rx="8" fill="#10b981" opacity="0.1" stroke="#10b981" strokeWidth="1" />
+                <path d="M10,30 L30,25 L50,32 L80,10" fill="none" stroke="#10b981" strokeWidth="2" strokeLinecap="round" />
+                <circle cx="80" cy="10" r="3" fill="#10b981" />
+              </g>
+
+              {/* Scatter particle matrix */}
+              <g transform="translate(70, 240)">
+                {Array.from({ length: 4 }).map((_, r) =>
+                  Array.from({ length: 5 }).map((_, c) => (
                     <circle
-                      key={`perfmark-dot-r-${r}-${c}`}
-                      cx={c * 22}
+                      key={`perf-dot-l-${r}-${c}`}
+                      cx={c * 18}
                       cy={r * 18}
-                      r={2}
+                      r={1.5}
                       fill="rgb(14, 165, 233)"
-                      opacity={0.15}
+                      opacity={0.2}
                     />
                   ))
                 )}
               </g>
 
-              <g transform="translate(80, 260)">
-                {Array.from({ length: 4 }).map((_, r) =>
-                  Array.from({ length: 12 }).map((_, c) => (
+              <g transform="translate(1080, 40)">
+                {Array.from({ length: 6 }).map((_, r) =>
+                  Array.from({ length: 3 }).map((_, c) => (
                     <circle
-                      key={`perfmark-dot-l-${r}-${c}`}
-                      cx={c * 15}
-                      cy={r * 15}
+                      key={`perf-dot-r-${r}-${c}`}
+                      cx={c * 20}
+                      cy={r * 20}
                       r={1.5}
-                      fill="rgb(37, 99, 235)"
-                      opacity={0.2}
+                      fill="rgb(99, 102, 241)"
+                      opacity={0.18}
                     />
                   ))
                 )}

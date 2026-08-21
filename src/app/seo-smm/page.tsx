@@ -45,32 +45,66 @@ export default function SeoSmm() {
             <div className="absolute bottom-[10%] right-[10%] w-[40%] aspect-square rounded-full bg-gradient-to-br from-[#2e59f2]/6 via-transparent to-transparent blur-[90px]" />
           </div>
 
-          {/* SVG Custom Graphics - Upward Trending Rays & Concentric Target Circles */}
+          {/* SVG Custom Graphics - Single Organic Growth Chart in Background (No Letters) */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-0 opacity-40">
             <svg className="w-full h-full min-w-[1000px] min-h-[500px]" viewBox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg">
-              {/* Upward trend lines */}
-              <g stroke="rgba(46, 89, 242, 0.2)" strokeWidth="2">
-                <line x1="-50" y1="450" x2="450" y2="150" strokeWidth="3" />
-                <line x1="-20" y1="480" x2="480" y2="180" />
-                <line x1="10" y1="510" x2="510" y2="210" strokeDasharray="5 5" />
+              <defs>
+                <linearGradient id="chart-area-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stopColor="rgba(46, 89, 242, 0.22)" />
+                  <stop offset="100%" stopColor="rgba(46, 89, 242, 0.0)" />
+                </linearGradient>
+              </defs>
+
+              {/* Coordinate Grid Lines */}
+              <g stroke="rgba(46, 89, 242, 0.06)" strokeWidth="1">
+                <line x1="0" y1="100" x2="1200" y2="100" />
+                <line x1="0" y1="200" x2="1200" y2="200" />
+                <line x1="0" y1="300" x2="1200" y2="300" />
+                <line x1="0" y1="400" x2="1200" y2="400" />
+                
+                <line x1="200" y1="0" x2="200" y2="500" />
+                <line x1="400" y1="0" x2="400" y2="500" />
+                <line x1="600" y1="0" x2="600" y2="500" />
+                <line x1="800" y1="0" x2="800" y2="500" />
+                <line x1="1000" y1="0" x2="1000" y2="500" />
               </g>
 
-              {/* Target rings */}
-              <circle cx="950" cy="200" r="140" fill="none" stroke="rgba(46, 89, 242, 0.15)" strokeWidth="2" />
-              <circle cx="950" cy="200" r="100" fill="none" stroke="rgba(46, 89, 242, 0.08)" strokeWidth="1.5" strokeDasharray="4 4" />
-              <circle cx="950" cy="200" r="60" fill="none" stroke="rgba(46, 89, 242, 0.12)" strokeWidth="2.5" />
+              {/* Chart Path Area (Gradient Fill) */}
+              <path 
+                d="M 0,380 C 150,390 250,300 400,320 C 550,340 650,220 800,240 C 950,260 1050,110 1200,120 L 1200,500 L 0,500 Z" 
+                fill="url(#chart-area-grad)" 
+              />
 
-              {/* Little stats dots */}
-              <g transform="translate(680, 80)">
-                {Array.from({ length: 4 }).map((_, r) =>
+              {/* Chart Line */}
+              <path 
+                d="M 0,380 C 150,390 250,300 400,320 C 550,340 650,220 800,240 C 950,260 1050,110 1200,120" 
+                fill="none" 
+                stroke="#2e59f2" 
+                strokeWidth="3.5" 
+                strokeLinecap="round"
+                opacity="0.75"
+              />
+
+              {/* Data points with pulse/glow effects */}
+              <circle cx="400" cy="320" r="5" fill="#2e59f2" />
+              <circle cx="400" cy="320" r="10" fill="none" stroke="#2e59f2" strokeWidth="1.5" opacity="0.3" />
+
+              <circle cx="800" cy="240" r="5" fill="#2e59f2" />
+              <circle cx="800" cy="240" r="10" fill="none" stroke="#2e59f2" strokeWidth="1.5" opacity="0.3" />
+
+              <circle cx="1200" cy="120" r="6" fill="#10b981" />
+              <circle cx="1200" cy="120" r="12" fill="none" stroke="#10b981" strokeWidth="1.5" opacity="0.4" />
+
+              {/* Tiny dotted grids for technical layout styling */}
+              <g transform="translate(80, 80)" opacity="0.2">
+                {Array.from({ length: 5 }).map((_, r) =>
                   Array.from({ length: 8 }).map((_, c) => (
                     <circle
-                      key={`seo-dot-${r}-${c}`}
-                      cx={c * 18}
-                      cy={r * 18}
+                      key={`chart-dot-${r}-${c}`}
+                      cx={c * 20}
+                      cy={r * 20}
                       r={1.5}
                       fill="rgb(46, 89, 242)"
-                      opacity={0.15}
                     />
                   ))
                 )}
