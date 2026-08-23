@@ -35,15 +35,15 @@ const brandShowcases = [
     )
   },
   {
-    name: "EdgeRing",
-    link: "/company-details/edgering",
+    name: "Edge Ringtones",
+    link: "/company-details/edgeringtone",
     image: "https://images.unsplash.com/photo-1616348436168-de43ad0db179?q=80&w=600&auto=format&fit=crop",
     logo: (
       <div className="flex items-center gap-2 text-left">
-        <div className="w-5 h-5 rounded-full border-4 border-rose-500 border-t-transparent animate-spin-slow shrink-0" />
+        <span className="text-xl shrink-0">🎵</span>
         <div>
-          <span className="block font-extrabold text-[12px] text-slate-800 leading-none">EdgeRing</span>
-          <span className="block text-[8px] font-bold text-slate-400 mt-0.5">Mobile Accessories</span>
+          <span className="block font-extrabold text-[12px] text-slate-800 leading-none">Edge Ringtones</span>
+          <span className="block text-[8px] font-bold text-slate-400 mt-0.5">Premium Custom Sound App</span>
         </div>
       </div>
     )
@@ -130,13 +130,13 @@ const brandShowcases = [
     )
   },
   {
-    name: "Tom Ford Eyewear",
-    link: "/company-details/tom-ford-eyewear",
+    name: "OmniAstra",
+    link: "/company-details/omniastra",
     image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?q=80&w=600&auto=format&fit=crop",
     logo: (
       <div className="flex flex-col text-left leading-none">
-        <span className="font-black text-[12px] text-slate-955 tracking-wider">TOM FORD</span>
-        <span className="text-[7px] font-bold text-slate-400 tracking-widest uppercase mt-0.5">Eyewear</span>
+        <span className="font-black text-[12px] text-slate-955 tracking-wider">OMNI ASTRA</span>
+        <span className="text-[7px] font-bold text-slate-400 tracking-widest uppercase mt-0.5">Luxury Eyewear</span>
       </div>
     )
   },
@@ -149,11 +149,73 @@ const brandShowcases = [
     )
   },
   {
-    name: "Blossom Clinic",
-    link: "/company-details/blossom-clinic",
+    name: "Likeson",
+    link: "/company-details/likeson",
     image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=600&auto=format&fit=crop",
     logo: (
-      <span className="font-extrabold text-[13px] text-blue-700 tracking-tight">Blossom Clinic</span>
+      <div className="flex items-center gap-1.5">
+        <span className="font-extrabold text-[13px] text-blue-600 tracking-wider uppercase">Likeson</span>
+      </div>
+    )
+  },
+  {
+    name: "Nayantara",
+    link: "/company-details/nayantara",
+    image: "https://images.unsplash.com/photo-1608748010899-18f300247112?q=80&w=600&auto=format&fit=crop",
+    logo: (
+      <div className="flex items-center gap-1.5">
+        <span className="font-extrabold text-[13px] text-slate-800 tracking-wider uppercase">Nayantara</span>
+      </div>
+    )
+  },
+  {
+    name: "EarthBags",
+    link: "/company-details/earthbags",
+    image: "https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=600&auto=format&fit=crop",
+    logo: (
+      <div className="flex items-center gap-1.5">
+        <span className="font-extrabold text-[13px] text-emerald-800 tracking-wider uppercase">EarthBags</span>
+      </div>
+    )
+  },
+  {
+    name: "RougHells",
+    link: "/company-details/roughells",
+    image: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=600&auto=format&fit=crop",
+    logo: (
+      <div className="flex items-center gap-1.5">
+        <span className="font-extrabold text-[13px] text-slate-900 tracking-wider uppercase">RougHells</span>
+      </div>
+    )
+  },
+  {
+    name: "JetChoice",
+    link: "/company-details/jetchoice",
+    image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=600&auto=format&fit=crop",
+    logo: (
+      <div className="flex items-center gap-1.5">
+        <span className="font-extrabold text-[13px] text-blue-600 tracking-wider uppercase">JetChoice</span>
+      </div>
+    )
+  },
+  {
+    name: "Sacred Suta",
+    link: "/company-details/sacred-suta",
+    image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=600&auto=format&fit=crop",
+    logo: (
+      <div className="flex items-center gap-1.5">
+        <span className="font-extrabold text-[13px] text-slate-800 tracking-wider uppercase">Sacred Suta</span>
+      </div>
+    )
+  },
+  {
+    name: "Sree Vedics",
+    link: "/company-details/sree-vedics",
+    image: "https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?q=80&w=600&auto=format&fit=crop",
+    logo: (
+      <div className="flex items-center gap-1.5">
+        <span className="font-extrabold text-[13px] text-teal-800 tracking-wider uppercase">Sree Vedics</span>
+      </div>
     )
   }
 ];

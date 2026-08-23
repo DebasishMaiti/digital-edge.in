@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import LeadForm from "@/components/LeadForm";
 import AnimatedWords from "@/components/AnimatedWords";
 import Marquee from "react-fast-marquee";
+import ArchitectureTimeline from "@/components/ArchitectureTimeline";
 
 export default function AppDevelopment() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -432,6 +433,102 @@ export default function AppDevelopment() {
             </div>
           </div>
         </section>
+
+        <ArchitectureTimeline
+          title="The Architecture"
+          subtitle="How We Engineer The Solution."
+          tagline="A proven process. Relentless quality. Built for mobile performance, designed to scale."
+          codeFile="src/app/mobile-pipeline.ts"
+          codeLines={[
+            "import { iOSNative, AndroidNative, CrossPlatform } from 'digital-edge';",
+            "// Bespoke E-Commerce Mobile App Pipeline",
+            "export default async function AppPipeline() {",
+            "  const sync = await initInventorySync();",
+            "  return (",
+            "    <CrossPlatform framework='React Native' hotReload={true}>",
+            "      <iOSNative build='SwiftUI' pushAlerts={true} />",
+            "      <AndroidNative build='Jetpack Compose' biometrics={true} />",
+            "      <RealTimeSync cache={true} data={sync} />",
+            "    </CrossPlatform>",
+            "  );",
+            "}"
+          ]}
+          floatingBadge1Text="App Startup"
+          floatingBadge1Sub="GPU-Rendered Threading"
+          floatingBadge1Value="1.2s"
+          floatingBadge2Text="Sync Frequency"
+          floatingBadge2Sub="Instant Database State Sync"
+          floatingBadge2Icon="Zap"
+          phases={[
+            {
+              num: "01",
+              phase: "PHASE 01",
+              text: "Every app we build is structured around how your specific customers browse and buy — product discovery, cart flow, checkout, and post-purchase experience are all mapped out before a single screen gets designed.",
+              borderCol: "border-l-[#2443ab]",
+              dotCol: "border-blue-500 bg-white",
+              shadowCol: "shadow-blue-500/5",
+              iconColor: "text-blue-600 bg-blue-50 border-blue-100",
+              iconAlign: "left",
+              iconName: "Compass"
+            },
+            {
+              num: "02",
+              phase: "PHASE 02",
+              text: "Native iOS & Android development gives the smoothest possible performance and full access to platform features such as Apple Pay, Google Pay, and biometric security systems.",
+              borderCol: "border-l-[#a855f7]",
+              dotCol: "border-purple-500 bg-white",
+              shadowCol: "shadow-purple-500/5",
+              iconColor: "text-purple-600 bg-purple-50 border-purple-100",
+              iconAlign: "right",
+              iconName: "Smartphone"
+            },
+            {
+              num: "03",
+              phase: "PHASE 03",
+              text: "For most ecommerce apps, cross-platform frameworks like React Native or Flutter make more sense — one codebase, both platforms, faster to build and easier to maintain long-term.",
+              borderCol: "border-l-[#ec4899]",
+              dotCol: "border-pink-500 bg-white",
+              shadowCol: "shadow-pink-500/5",
+              iconColor: "text-pink-600 bg-pink-50 border-pink-100",
+              iconAlign: "left",
+              iconName: "Layers"
+            },
+            {
+              num: "04",
+              phase: "PHASE 04",
+              text: "Push notification retention triggers. We set up automated campaigns for abandoned carts, product restocks, and custom tailored discount codes.",
+              borderCol: "border-l-[#f97316]",
+              dotCol: "border-orange-500 bg-white",
+              shadowCol: "shadow-orange-500/5",
+              iconColor: "text-orange-600 bg-orange-50 border-orange-100",
+              iconAlign: "right",
+              iconName: "Bell"
+            },
+            {
+              num: "05",
+              phase: "PHASE 05",
+              text: "Blazing fast checkout flow. Storing user addresses, biometrics, and secure tokenized payment integrations on-device to reduce cart abandonment.",
+              borderCol: "border-l-[#10b981]",
+              dotCol: "border-emerald-500 bg-white",
+              shadowCol: "shadow-emerald-500/5",
+              iconColor: "text-emerald-600 bg-emerald-50 border-emerald-100",
+              iconAlign: "left",
+              iconName: "ShieldAlert"
+            },
+            {
+              num: "06",
+              phase: "PHASE 06",
+              text: "Full App lifecycle support. We manage the entire store compliance process, submitting your build to the Apple App Store and Google Play Store.",
+              borderCol: "border-l-[#6366f1]",
+              dotCol: "border-indigo-500 bg-white",
+              shadowCol: "shadow-indigo-500/5",
+              iconColor: "text-indigo-600 bg-indigo-50 border-indigo-100",
+              iconAlign: "right",
+              iconName: "Globe"
+            }
+          ]}
+        />
+
 
 
         {/* Full-Stack Deliverable & Support */}

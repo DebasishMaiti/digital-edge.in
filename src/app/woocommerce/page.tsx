@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import LeadForm from "@/components/LeadForm";
 import AnimatedWords from "@/components/AnimatedWords";
 import Marquee from "react-fast-marquee";
+import ArchitectureTimeline from "@/components/ArchitectureTimeline";
 
 export default function WooCommerce() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -229,113 +230,99 @@ export default function WooCommerce() {
           </div>
         </section>
 
-        {/* The Architecture Section */}
-        <section className="relative z-10 mx-auto max-w-[1400px] px-6 sm:px-8 lg:px-12 py-24 sm:py-32 bg-[#fafbfc]">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-
-            {/* Left Column: Sticky Header */}
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="relative lg:col-span-4 lg:sticky lg:top-32 h-fit text-left space-y-4"
-            >
-              <span className="block text-sm sm:text-base font-extrabold tracking-[0.25em] text-[#2443ab] uppercase">
-                The Architecture
-              </span>
-              <motion.h2
-                animate={{
-                  color: ["#0d1b3e", "#2443ab", "#40159e", "#0a8bc7", "#0d1b3e"],
-                  y: [0, -6, 0]
-                }}
-                transition={{
-                  repeat: Infinity,
-                  duration: 6,
-                  ease: "easeInOut"
-                }}
-                className="text-3xl sm:text-5xl font-black tracking-tight leading-[1.1] max-w-sm"
-              >
-                How We Engineer The Solution.
-              </motion.h2>
-            </motion.div>
-
-            {/* Right Column: Numbered List Cards Grid */}
-            <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-8 text-left">
-              {[
-                {
-                  num: "01",
-                  text: "We approach WooCommerce with an 'un-WordPress' mindset. We eliminate the bloat, bypass generic themes, and build high-performance child themes from scratch.",
-                  grad: "from-blue-50 to-indigo-100/50 border-blue-100/60 hover:border-blue-300",
-                  textCol: "text-[#2443ab]",
-                  slideLeft: true
-                },
-                {
-                  num: "02",
-                  text: "Security is paramount. We implement military-grade hardening, immutable backups, and continuous monitoring to protect your customer data and brand reputation.",
-                  grad: "from-purple-50 to-violet-100/50 border-purple-100/60 hover:border-purple-300",
-                  textCol: "text-purple-600",
-                  slideLeft: false
-                },
-                {
-                  num: "03",
-                  text: "Our custom checkout flows are designed to destroy cart abandonment. We rebuild the checkout experience from the ground up to be frictionless and mobile-first.",
-                  grad: "from-pink-50 to-rose-100/50 border-pink-100/60 hover:border-pink-300",
-                  textCol: "text-rose-500",
-                  slideLeft: true
-                },
-                {
-                  num: "04",
-                  text: "API integrations are our specialty. Whether it's ERP, CRM, or custom inventory sync, we ensure your store communicates perfectly with your entire business ecosystem.",
-                  grad: "from-amber-50 to-orange-100/50 border-amber-100/60 hover:border-amber-300",
-                  textCol: "text-amber-600",
-                  slideLeft: false
-                },
-                {
-                  num: "05",
-                  text: "Scalability is built-in. We architect our Woo solutions to handle massive traffic spikes during sales events without breaking a sweat.",
-                  grad: "from-emerald-50 to-teal-100/50 border-emerald-100/60 hover:border-emerald-300",
-                  textCol: "text-emerald-600",
-                  slideLeft: true
-                },
-                {
-                  num: "06",
-                  text: "Full ownership. Unlike proprietary platforms, your WooCommerce store is 100% yours. Your code, your data, your rules.",
-                  grad: "from-indigo-50 to-slate-200/50 border-indigo-100/60 hover:border-indigo-300",
-                  textCol: "text-indigo-600",
-                  slideLeft: false
-                }
-              ].map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: item.slideLeft ? -40 : 40 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                  whileHover={{ y: -6, scale: 1.02 }}
-                  className={`rounded-[32px] p-8 border bg-gradient-to-br ${item.grad} shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between relative overflow-hidden min-h-[220px] ${
-                    index % 2 !== 0 ? "lg:translate-y-8" : ""
-                  }`}
-                >
-                  {/* Huge Background Number */}
-                  <div className={`absolute right-4 bottom-2 text-[6rem] font-black opacity-10 select-none pointer-events-none ${item.textCol}`}>
-                    {item.num}
-                  </div>
-
-                  <div className="relative z-10 flex flex-col justify-between h-full">
-                    <span className={`text-xs font-black uppercase tracking-wider ${item.textCol}`}>
-                      Phase {item.num}
-                    </span>
-                    <p className="text-sm sm:text-base text-slate-600 font-semibold leading-relaxed mt-4">
-                      {item.text}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
-          </div>
-        </section>
+        <ArchitectureTimeline
+          title="The Architecture"
+          subtitle="How We Engineer The Solution."
+          tagline="A proven process. Relentless quality. Built for WooCommerce, designed to scale."
+          codeFile="src/app/woocommerce.tsx"
+          codeLines={[
+            "import { WooStore, Checkout } from 'digital-edge';",
+            "// Bespoke E-Commerce Architecture",
+            "export default async function ShopifyKiller() {",
+            "  const security = await loadFirewall();",
+            "  return (",
+            "    <WooStore performance='100%' cache={true}>",
+            "      <Checkout customFlow={true} frictionless />",
+            "      <Security ImmutableBackups monitor={security} />",
+            "    </WooStore>",
+            "  );",
+            "}"
+          ]}
+          floatingBadge1Text="Speed Index"
+          floatingBadge1Sub="Frictionless Checkout Flow"
+          floatingBadge1Value="0.8s"
+          floatingBadge2Text="Woo Security"
+          floatingBadge2Sub="Military-Grade Hardening"
+          floatingBadge2Icon="Shield"
+          phases={[
+            {
+              num: "01",
+              phase: "PHASE 01",
+              text: "We approach WooCommerce with an 'un-WordPress' mindset. We eliminate the bloat, bypass generic themes, and build high-performance child themes from scratch.",
+              borderCol: "border-l-[#2443ab]",
+              dotCol: "border-blue-500 bg-white",
+              shadowCol: "shadow-blue-500/5",
+              iconColor: "text-blue-600 bg-blue-50 border-blue-100",
+              iconAlign: "left",
+              iconName: "Rocket"
+            },
+            {
+              num: "02",
+              phase: "PHASE 02",
+              text: "Security is paramount. We implement military-grade hardening, immutable backups, and continuous monitoring to protect your customer data and brand reputation.",
+              borderCol: "border-l-[#a855f7]",
+              dotCol: "border-purple-500 bg-white",
+              shadowCol: "shadow-purple-500/5",
+              iconColor: "text-purple-600 bg-purple-50 border-purple-100",
+              iconAlign: "right",
+              iconName: "Shield"
+            },
+            {
+              num: "03",
+              phase: "PHASE 03",
+              text: "Our custom checkout flows are designed to destroy cart abandonment. We rebuild the checkout experience from the ground up to be frictionless and mobile-first.",
+              borderCol: "border-l-[#ec4899]",
+              dotCol: "border-pink-500 bg-white",
+              shadowCol: "shadow-pink-500/5",
+              iconColor: "text-pink-600 bg-pink-50 border-pink-100",
+              iconAlign: "left",
+              iconName: "ShoppingCart"
+            },
+            {
+              num: "04",
+              phase: "PHASE 04",
+              text: "API integrations are our specialty. Whether it's ERP, CRM, or custom inventory sync, we ensure your store communicates perfectly with your entire business ecosystem.",
+              borderCol: "border-l-[#f97316]",
+              dotCol: "border-orange-500 bg-white",
+              shadowCol: "shadow-orange-500/5",
+              iconColor: "text-orange-600 bg-orange-50 border-orange-100",
+              iconAlign: "right",
+              iconName: "Zap"
+            },
+            {
+              num: "05",
+              phase: "PHASE 05",
+              text: "Scalability is built-in. We architect our Woo solutions to handle massive traffic spikes during sales events without breaking a sweat.",
+              borderCol: "border-l-[#10b981]",
+              dotCol: "border-emerald-500 bg-white",
+              shadowCol: "shadow-emerald-500/5",
+              iconColor: "text-emerald-600 bg-emerald-50 border-emerald-100",
+              iconAlign: "left",
+              iconName: "TrendingUp"
+            },
+            {
+              num: "06",
+              phase: "PHASE 06",
+              text: "Full ownership. Unlike proprietary platforms, your WooCommerce store is 100% yours. Your code, your data, your rules.",
+              borderCol: "border-l-[#6366f1]",
+              dotCol: "border-indigo-500 bg-white",
+              shadowCol: "shadow-indigo-500/5",
+              iconColor: "text-indigo-600 bg-indigo-50 border-indigo-100",
+              iconAlign: "right",
+              iconName: "Globe"
+            }
+          ]}
+        />
 
         <section className="relative z-10 w-full py-24 sm:py-32 bg-[#fafbfc] text-slate-800 overflow-hidden text-center px-6 sm:px-8 lg:px-12 border-b border-slate-100">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(36,67,171,0.02)_0%,transparent_70%)] pointer-events-none" />
