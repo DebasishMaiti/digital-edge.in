@@ -74,7 +74,7 @@ export const services = [
   },
   {
     title: "Creative Studio",
-    href: "/digital-product-editing",
+    href: "/creative-studio",
     bgImage: "/home-bentogrid/video-marketing.png",
 
   }

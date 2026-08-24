@@ -8,8 +8,143 @@ import { motion } from "framer-motion";
 import LeadForm from "@/components/LeadForm";
 import AnimatedWords from "@/components/AnimatedWords";
 import Marquee from "react-fast-marquee";
-import { Rocket, Search, Puzzle, Zap, Code, Shield } from "lucide-react";
+import { Rocket, Search, Puzzle, Zap, Code, Shield, ChevronRight, Globe, Layers, Settings, Sparkles, Smartphone, Cpu } from "lucide-react";
 import ArchitectureTimeline from "@/components/ArchitectureTimeline";
+
+const webDevShowcases = [
+  {
+    name: "Nayantara",
+    link: "/company-details/nayantara",
+    image: "https://images.unsplash.com/photo-1608748010899-18f300247112?q=80&w=600&auto=format&fit=crop",
+    logo: (
+      <div className="flex items-center gap-1.5 text-left">
+        <span className="font-extrabold text-[13px] text-slate-800 tracking-wider uppercase">Nayantara</span>
+      </div>
+    )
+  },
+  {
+    name: "EdefyHome",
+    link: "/company-details/edefyhome",
+    image: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=600&auto=format&fit=crop",
+    logo: (
+      <div className="flex items-center gap-1.5 text-left">
+        <svg className="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+        </svg>
+        <span className="font-extrabold text-[12px] text-slate-800 tracking-tight">EdefyHome</span>
+      </div>
+    )
+  },
+  {
+    name: "EarthBags",
+    link: "/company-details/earthbags",
+    image: "https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=600&auto=format&fit=crop",
+    logo: (
+      <div className="flex items-center gap-1.5 text-left">
+        <span className="font-extrabold text-[13px] text-emerald-800 tracking-wider uppercase">EarthBags</span>
+      </div>
+    )
+  },
+  {
+    name: "Truboy BBQ",
+    link: "/company-details/truboy-bbq",
+    image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=600&auto=format&fit=crop",
+    logo: (
+      <div className="flex items-center gap-2 text-left">
+        <span className="text-xl shrink-0">🔥</span>
+        <span className="font-black text-[13px] text-slate-900 uppercase tracking-tight">Truboy <span className="text-red-500">BBQ</span></span>
+      </div>
+    ),
+    metric: "200%",
+    metricLabel: "Increase in ACV",
+    metricColor: "text-red-500"
+  },
+  {
+    name: "RougHells",
+    link: "/company-details/roughells",
+    image: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=600&auto=format&fit=crop",
+    logo: (
+      <div className="flex items-center gap-1.5 text-left">
+        <span className="font-extrabold text-[13px] text-slate-900 tracking-wider uppercase">RougHells</span>
+      </div>
+    )
+  },
+  {
+    name: "JetChoice",
+    link: "/company-details/jetchoice",
+    image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=600&auto=format&fit=crop",
+    logo: (
+      <div className="flex items-center gap-1.5 text-left">
+        <span className="font-extrabold text-[13px] text-blue-600 tracking-wider uppercase">JetChoice</span>
+      </div>
+    )
+  },
+  {
+    name: "Creative Ecotech",
+    link: "/company-details/creative-ecotech",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop",
+    logo: (
+      <div className="flex items-center gap-2 text-left">
+        <svg className="w-5 h-5 text-emerald-500" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v18M3 12h18M12 3l9 9-9 9M12 3L3 12l9 9" />
+        </svg>
+        <span className="font-extrabold text-[12px] text-slate-855 tracking-wider uppercase">Creative <span className="text-emerald-600">Ecotech</span></span>
+      </div>
+    ),
+    metric: "90%",
+    metricLabel: "Growth in Organic Traffic",
+    metricColor: "text-emerald-600"
+  },
+  {
+    name: "Sacred Suta",
+    link: "/company-details/sacred-suta",
+    image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=600&auto=format&fit=crop",
+    logo: (
+      <div className="flex items-center gap-1.5 text-left">
+        <span className="font-extrabold text-[13px] text-slate-800 tracking-wider uppercase">Sacred Suta</span>
+      </div>
+    )
+  },
+  {
+    name: "OmniAstra",
+    link: "/company-details/omniastra",
+    image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?q=80&w=600&auto=format&fit=crop",
+    logo: (
+      <div className="flex flex-col text-left leading-none">
+        <span className="font-black text-[12px] text-slate-955 tracking-wider">OMNI ASTRA</span>
+        <span className="text-[7px] font-bold text-slate-400 tracking-widest uppercase mt-0.5">Luxury Eyewear</span>
+      </div>
+    )
+  },
+  {
+    name: "Earthy Line",
+    link: "/company-details/earthy-line",
+    image: "https://images.unsplash.com/photo-1610030470298-40b8a1c24d3c?q=80&w=600&auto=format&fit=crop",
+    logo: (
+      <span className="font-extrabold text-[14px] text-[#2c5e43] font-serif italic tracking-wide text-left">EarthyLine</span>
+    )
+  },
+  {
+    name: "Likeson",
+    link: "/company-details/likeson",
+    image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=600&auto=format&fit=crop",
+    logo: (
+      <div className="flex items-center gap-1.5 text-left">
+        <span className="font-extrabold text-[13px] text-blue-600 tracking-wider uppercase">Likeson</span>
+      </div>
+    )
+  },
+  {
+    name: "Sree Vedics",
+    link: "/company-details/sree-vedics",
+    image: "https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?q=80&w=600&auto=format&fit=crop",
+    logo: (
+      <div className="flex items-center gap-1.5 text-left">
+        <span className="font-extrabold text-[13px] text-teal-800 tracking-wider uppercase">Sree Vedics</span>
+      </div>
+    )
+  }
+];
 
 export default function WebDevelopment() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -214,22 +349,17 @@ export default function WebDevelopment() {
               <div className="lg:col-span-6 flex flex-col items-start text-left">
                 {/* Pill Badge */}
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-gray-600 bg-white px-6 py-3.5 text-sm sm:text-base md:text-sm font-extrabold tracking-[0.2em] text-gray-600 uppercase shadow-sm mb-6">
-                  Web Development Solution
+                  Website & Ecommerce Development
                 </span>
 
                 {/* Title */}
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#0d1b3e] tracking-tight leading-[1.1] mb-6 flex flex-col items-start">
-                  Web Development Company
+                  Website Development Company Built to Turn Visitors Into Customers
                 </h1>
 
-                {/* Subtitle */}
-                <p className="text-lg sm:text-xl text-slate-500 font-bold leading-relaxed mb-4 max-w-2xl">
-                  Custom websites and web applications built on the right stack for your business — from content-driven sites to complex web apps, with real projects already live.
-                </p>
-
-                {/* Description */}
-                <p className="text-base text-slate-500 leading-relaxed mb-8 max-w-2xl">
-                  A web development company designs, builds, and maintains websites and web applications — covering everything from UI/UX design and CMS setup to custom functionality, API integrations, and ongoing maintenance. The right platform depends on the business: a content site, an ecommerce store, and a custom web app all need different foundations, and we build around what the project actually requires.
+                {/* Subheadline */}
+                <p className="text-lg sm:text-xl text-slate-500 font-bold leading-relaxed mb-6 max-w-2xl">
+                  Expert WordPress, Shopify, and custom website development for businesses across India — from local service brands to D2C stores to growing SaaS companies. We design and build websites that don’t just look good; they generate leads and sales.
                 </p>
 
                 {/* Full Width Line Divider */}
@@ -240,7 +370,7 @@ export default function WebDevelopment() {
                     href="/contact"
                     className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[#0a8bc7] via-[#2443ab] to-[#40159e] text-white text-xs font-extrabold rounded-full transition-all duration-300 shadow-[0_8px_20px_rgba(36,67,171,0.25)] hover:shadow-[0_10px_24px_rgba(64,21,158,0.4)] hover:opacity-95 flex items-center justify-center gap-2 flex-shrink-0 uppercase tracking-wider mt-4"
                   >
-                    <span>Book a Strategy Call</span>
+                    <span>Book a Free Website Audit</span>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-3.5 h-3.5">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                     </svg>
@@ -370,7 +500,7 @@ export default function WebDevelopment() {
 
         {/* Current Reality Section */}
         <section
-          className="relative z-10 w-full py-28 sm:py-36 overflow-hidden text-center px-6 sm:px-8 lg:px-12 bg-gradient-to-br from-slate-100 via-slate-50 to-blue-100/40"
+          className="relative min-h-[500px] z-10 w-full py-28 sm:py-36 overflow-hidden text-center px-6 sm:px-8 lg:px-12 bg-gradient-to-br from-slate-100 via-slate-50 to-blue-100/40"
         >
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(10,139,199,0.06)_0%,transparent_70%)] pointer-events-none" />
 
@@ -382,17 +512,81 @@ export default function WebDevelopment() {
             {/* Quote text */}
             <p className="font-elms text-3xl sm:text-5xl md:text-[3.5rem] text-center leading-relaxed text-[#0d1b3e]/85">
               <AnimatedWords
-                text="&quot;Most websites are built using bloated builders that kill performance and SEO. They look generic, load slowly on mobile, and fail to turn visitors into customers. In a digital-first economy, a mediocre website is a massive liability that actively pushes your prospects toward competitors.&quot;"
+                text="&quot;Most businesses treat their website as a one-time task — build it, launch it, forget it. Meanwhile, it’s slowly costing them customers: slow load times drive visitors away before the page even finishes loading, confusing navigation buries the one thing a visitor came to find, and a design that doesn’t build trust sends leads straight to a competitor. Your website should be your hardest-working salesperson, available 24 hours a day. If it isn’t converting visitors into leads or customers, it isn’t doing its job — no matter how good it looks.&quot;"
                 delay={0.25}
               />
             </p>
           </div>
         </section>
 
+        {/* Brand Showcase Grid Section */}
+        <section className="relative z-10 py-24 bg-gradient-to-b from-[#fafbfc] to-white overflow-hidden border-t border-slate-100">
+          <div className="w-full mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+
+            {/* Header */}
+            <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-purple-250 bg-purple-50/80 px-4 py-2 text-[10px] sm:text-xs font-black tracking-[0.2em] text-purple-700 uppercase shadow-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 text-purple-600">
+                  <path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192L12 .587z" />
+                </svg>
+                <span>Brands Thrive with Digital Edge</span>
+              </span>
+              <h2 className="text-3xl sm:text-5xl font-black text-[#0d1b3e] tracking-tight mt-4">
+                Bespoke Digital Success Stories
+              </h2>
+              {/* Short styled underline line */}
+              <div className="w-16 h-1 bg-gradient-to-r from-purple-500 to-indigo-600 mx-auto rounded-full mt-2" />
+            </div>
+
+            {/* Grid Layout */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+              {webDevShowcases.map((brand, idx) => (
+                <Link href={brand.link || "/contact"} key={idx} className="block w-full">
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0,0,0,0.06)" }}
+                    transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                    className="bg-white rounded-[24px] overflow-hidden shadow-sm border border-slate-100/80 flex flex-col justify-between group transition-all duration-300 cursor-pointer h-full"
+                  >
+                    {/* Top Image wrapper */}
+                    <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-50">
+                      <img
+                        src={brand.image}
+                        alt={brand.name}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                    </div>
+
+                    {/* Bottom details block */}
+                    <div className="p-6 flex items-center justify-between min-h-[90px]">
+                      <div className="flex-grow text-left flex flex-col justify-center">
+                        <div className="mb-1.5">{brand.logo}</div>
+                        {brand.metric && (
+                          <div className="flex flex-col text-left leading-none mt-2">
+                            <span className={`text-2xl font-black ${brand.metricColor} leading-none`}>{brand.metric}</span>
+                            <span className="text-[10px] font-bold text-slate-400 tracking-wider uppercase mt-1">{brand.metricLabel}</span>
+                          </div>
+                        )}
+                      </div>
+                      {/* Circle Chevron Indicator Button */}
+                      <button className="w-10 h-10 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-650 group-hover:bg-[#2443ab] group-hover:text-white group-hover:border-[#2443ab] transition-all duration-300 shrink-0 ml-4 shadow-sm">
+                        <ChevronRight className="w-5 h-5 transform group-hover:translate-x-0.5 transition-transform duration-300" />
+                      </button>
+                    </div>
+                  </motion.div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <ArchitectureTimeline
-          title="The Architecture"
-          subtitle="How We Engineer The Solution."
-          tagline="A proven process. Relentless quality. Built for performance, designed to scale."
+          title="The Framework"
+          subtitle="How We Engineer Your Website"
+          tagline="“The System” — How We Build Websites That Convert"
           codeFile="src/app/architecture.tsx"
           codeLines={[
             "import { NextApp, Optimize } from 'digital-edge';",
@@ -417,8 +611,8 @@ export default function WebDevelopment() {
           phases={[
             {
               num: "01",
-              phase: "PHASE 01",
-              text: "We are a top-tier development agency recognized for pushing the boundaries of what's possible on the modern web. Our technical stack — primarily Next.js, React, and Tailwind CSS — is selected for one reason: pure, unadulterated performance.",
+              phase: "Phase 01 — Website Strategy",
+              text: "Before a single page is designed, we map out a strategy tied to your actual business goals — whether that’s generating leads, selling products, or building brand credibility — so your website has a clear job to do from day one.",
               borderCol: "border-l-[#2443ab]",
               dotCol: "border-blue-500 bg-white",
               shadowCol: "shadow-blue-500/5",
@@ -428,8 +622,8 @@ export default function WebDevelopment() {
             },
             {
               num: "02",
-              phase: "PHASE 02",
-              text: "Our process begins with an exhaustive performance audit. We analyze your existing site's core web vitals, accessibility scores, and conversion bottlenecks to create a roadmap for total digital dominance.",
+              phase: "Phase 02 — UI/UX Design",
+              text: "We design around how your real visitors think and behave, not just what looks trendy — making sure every page guides someone naturally toward the action you want them to take.",
               borderCol: "border-l-[#a855f7]",
               dotCol: "border-purple-500 bg-white",
               shadowCol: "shadow-purple-500/5",
@@ -439,8 +633,8 @@ export default function WebDevelopment() {
             },
             {
               num: "03",
-              phase: "PHASE 03",
-              text: "Custom architecture is non-negotiable. We don't use templates. We build bespoke UI component libraries that are lightweight, pixel-perfect, and fully aligned with your brand's unique identity.",
+              phase: "Phase 03 — Wireframing",
+              text: "We map the skeletal structure of every page before visual design begins, defining exactly what appears where and why — so nothing on your site is there by accident.",
               borderCol: "border-l-[#ec4899]",
               dotCol: "border-pink-500 bg-white",
               shadowCol: "shadow-pink-500/5",
@@ -450,8 +644,8 @@ export default function WebDevelopment() {
             },
             {
               num: "04",
-              phase: "PHASE 04",
-              text: "Speed is our obsession. We target 95+ Lighthouse scores across the board. Every image, script, and stylesheet is optimized to ensure the fastest possible First Contentful Paint, keeping users engaged.",
+              phase: "Phase 04 — Prototyping",
+              text: "We build working prototypes from the wireframes so you and real users can interact with the site before development starts, catching usability issues early instead of after launch.",
               borderCol: "border-l-[#f97316]",
               dotCol: "border-orange-500 bg-white",
               shadowCol: "shadow-orange-500/5",
@@ -461,8 +655,8 @@ export default function WebDevelopment() {
             },
             {
               num: "05",
-              phase: "PHASE 05",
-              text: "Beyond aesthetics, we focus on engineering logic. Whether it's complex API integrations, custom CMS headless setups, or real-time data visualizations, our code is clean, documented, and built to scale.",
+              phase: "Phase 05 — Development",
+              text: "Whether it’s WordPress, Shopify, or a fully custom build, we handle complete backend and frontend development — clean code, proper structure, and a site built to perform, not just exist.",
               borderCol: "border-l-[#10b981]",
               dotCol: "border-emerald-500 bg-white",
               shadowCol: "shadow-emerald-500/5",
@@ -472,8 +666,8 @@ export default function WebDevelopment() {
             },
             {
               num: "06",
-              phase: "PHASE 06",
-              text: "Security and reliability are baked into the DNA of every build. We deploy on enterprise-grade infrastructure like Vercel and AWS, ensuring 99.9% uptime and military-grade protection for your data.",
+              phase: "Phase 06 — Support & Maintenance",
+              text: "Launch isn’t the finish line. We provide ongoing updates, security monitoring, and performance checks so your website keeps working as hard as it did on day one.",
               borderCol: "border-l-[#6366f1]",
               dotCol: "border-indigo-500 bg-white",
               shadowCol: "shadow-indigo-500/5",
@@ -483,6 +677,119 @@ export default function WebDevelopment() {
             }
           ]}
         />
+
+        {/* Services Section */}
+        <section className="relative z-10 py-24 bg-gradient-to-b from-white via-slate-50/40 to-[#fafbfc] border-t border-slate-100 overflow-hidden">
+          {/* Ambient Glow Backdrops */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+            <div className="absolute top-[20%] left-[-10%] w-[35%] aspect-square rounded-full bg-gradient-to-tr from-blue-500/5 to-indigo-500/5 blur-[120px]" />
+            <div className="absolute bottom-[20%] right-[-10%] w-[35%] aspect-square rounded-full bg-gradient-to-tr from-purple-500/5 to-pink-500/5 blur-[120px]" />
+          </div>
+
+          <div className="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+            {/* Header */}
+            <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-200 bg-blue-50/60 px-4 py-2 text-[10px] sm:text-xs font-black tracking-[0.2em] text-[#2443ab] uppercase shadow-sm">
+                What We Build
+              </span>
+              <h2 className="text-3xl sm:text-5xl font-black text-[#0d1b3e] tracking-tight mt-4">
+                Website Development Services
+              </h2>
+              {/* Short styled underline line */}
+              <div className="w-16 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto rounded-full mt-2" />
+            </div>
+
+            {/* Services Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+              {[
+                {
+                  title: "WordPress Development",
+                  desc: "Custom-built or theme-based WordPress websites with complete wireframing, design, backend, and frontend development — built for businesses that need flexibility, easy content management, and strong SEO foundations.",
+                  icon: <Globe className="w-6 h-6 text-blue-600" />,
+                  accent: "bg-blue-500",
+                  bgGlow: "group-hover:bg-blue-50",
+                  borderCol: "hover:border-blue-400/80 hover:shadow-[0_20px_40px_rgba(59,130,246,0.08)]"
+                },
+                {
+                  title: "Shopify Development",
+                  desc: "Shopify stores designed and built for conversion, from theme customization to app integrations and custom features — ideal for D2C and product-based businesses that want a fast, reliable ecommerce platform.",
+                  icon: <Sparkles className="w-6 h-6 text-emerald-600" />,
+                  accent: "bg-emerald-500",
+                  bgGlow: "group-hover:bg-emerald-50",
+                  borderCol: "hover:border-emerald-400/80 hover:shadow-[0_20px_40px_rgba(16,185,129,0.08)]"
+                },
+                {
+                  title: "Ecommerce Websites",
+                  desc: "Full ecommerce builds across WooCommerce, Shopify, or custom platforms — designed around smooth checkout flows, product discovery, and mobile-first shopping experiences that turn browsers into buyers.",
+                  icon: <Layers className="w-6 h-6 text-indigo-600" />,
+                  accent: "bg-indigo-500",
+                  bgGlow: "group-hover:bg-indigo-50",
+                  borderCol: "hover:border-indigo-400/80 hover:shadow-[0_20px_40px_rgba(99,102,241,0.08)]"
+                },
+                {
+                  title: "Custom Website Development",
+                  desc: "For businesses with specific needs a template can’t solve — custom-coded websites and web applications built exactly around your workflow, integrations, and growth plans.",
+                  icon: <Code className="w-6 h-6 text-purple-600" />,
+                  accent: "bg-purple-500",
+                  bgGlow: "group-hover:bg-purple-50",
+                  borderCol: "hover:border-purple-400/80 hover:shadow-[0_20px_40px_rgba(168,85,247,0.08)]"
+                },
+                {
+                  title: "Business & Corporate Websites",
+                  desc: "Professional websites for service businesses, agencies, and corporates — built to establish credibility, explain your offering clearly, and convert inquiries into client conversations.",
+                  icon: <Cpu className="w-6 h-6 text-sky-600" />,
+                  accent: "bg-sky-500",
+                  bgGlow: "group-hover:bg-sky-50",
+                  borderCol: "hover:border-sky-400/80 hover:shadow-[0_20px_40px_rgba(14,165,233,0.08)]"
+                },
+                {
+                  title: "Landing Pages & Microsites",
+                  desc: "Focused, high-conversion landing pages for campaigns, product launches, or lead generation — built fast and optimized specifically around a single goal.",
+                  icon: <Zap className="w-6 h-6 text-amber-600" />,
+                  accent: "bg-amber-500",
+                  bgGlow: "group-hover:bg-amber-50",
+                  borderCol: "hover:border-amber-400/80 hover:shadow-[0_20px_40px_rgba(245,158,11,0.08)]"
+                },
+                {
+                  title: "Support & Maintenance",
+                  desc: "Ongoing website care — security updates, performance monitoring, bug fixes, and content updates — so your site stays fast, safe, and current without you having to think about it.",
+                  icon: <Settings className="w-6 h-6 text-rose-600" />,
+                  accent: "bg-rose-500",
+                  bgGlow: "group-hover:bg-rose-50",
+                  borderCol: "hover:border-rose-400/80 hover:shadow-[0_20px_40px_rgba(244,63,94,0.08)]"
+                }
+              ].map((service, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5, delay: idx * 0.05 }}
+                  className={`bg-white rounded-[24px] p-8 border border-slate-100/85 shadow-sm flex flex-col justify-between group transition-all duration-500 cursor-default relative overflow-hidden ${service.borderCol}`}
+                >
+                  {/* Top Color Accent Line */}
+                  <div className={`absolute top-0 left-0 right-0 h-[3px] ${service.accent} opacity-60 group-hover:opacity-100 transition-opacity duration-300`} />
+
+                  <div className="space-y-6">
+                    {/* Icon container */}
+                    <div className={`w-12 h-12 rounded-2xl bg-slate-50/80 flex items-center justify-center transition-all duration-300 ${service.bgGlow} group-hover:scale-110 group-hover:rotate-3 shadow-sm border border-slate-100`}>
+                      {service.icon}
+                    </div>
+                    {/* Content */}
+                    <div className="space-y-3">
+                      <h3 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight text-left group-hover:translate-x-0.5 transition-transform duration-300">
+                        {service.title}
+                      </h3>
+                      <p className="text-sm sm:text-base text-slate-500 font-semibold leading-relaxed text-left">
+                        {service.desc}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* Tools & Technologies Section */}
         <section className="relative z-10 py-24 bg-white border-t border-b border-slate-100/80 overflow-hidden">
@@ -566,9 +873,9 @@ export default function WebDevelopment() {
                     </div>
                     <span className="text-sm font-black text-blue-600 tracking-wider">01</span>
                   </div>
-                  <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight group-hover:text-blue-600 transition-colors duration-300">Next-Gen Performance</h4>
+                  <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight group-hover:text-blue-600 transition-colors duration-300">Built for Business Goals</h4>
                   <p className="text-base text-slate-500 font-semibold leading-relaxed">
-                    Sub-second load times and perfect Core Web Vitals to maximize user retention and SEO.
+                    Every design and development decision tied back to what you actually need the site to achieve — leads, sales, or brand credibility.
                   </p>
                 </motion.div>
 
@@ -583,14 +890,14 @@ export default function WebDevelopment() {
                   <div className="flex lg:flex-row-reverse items-center gap-3 justify-start lg:justify-start">
                     <div className="w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center text-purple-600 group-hover:scale-110 transition-transform duration-300">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0110 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0114 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
                       </svg>
                     </div>
                     <span className="text-sm font-black text-blue-600 tracking-wider">03</span>
                   </div>
-                  <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight group-hover:text-purple-600 transition-colors duration-300">Headless & Scalable</h4>
+                  <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight group-hover:text-purple-600 transition-colors duration-300">Design That Builds Trust</h4>
                   <p className="text-base text-slate-500 font-semibold leading-relaxed">
-                    Decoupled architectures that allow for infinite flexibility and future-proof scaling.
+                    Visual design and user experience crafted to make visitors feel confident doing business with you.
                   </p>
                 </motion.div>
 
@@ -605,14 +912,14 @@ export default function WebDevelopment() {
                   <div className="flex lg:flex-row-reverse items-center gap-3 justify-start lg:justify-start">
                     <div className="w-10 h-10 rounded-full bg-teal-50 flex items-center justify-center text-teal-600 group-hover:scale-110 transition-transform duration-300">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9s2.015-9 4.5-9m0 0a9.003 9.003 0 017.2 3.6M12 3a9.003 9.003 0 00-7.2 3.6" />
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 18h.008v.008H12V18zm0-3h.008v.008H12V15zm0-3h.008v.008H12V12zm0-3h.008v.008H12V9zm0-3h.008v.008H12V6zm0-3h.008v.008H12V3zm0 18a9 9 0 110-18 9 9 0 010 18z" />
                       </svg>
                     </div>
                     <span className="text-sm font-black text-blue-600 tracking-wider">05</span>
                   </div>
-                  <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight group-hover:text-teal-600 transition-colors duration-300">Enterprise Reliability</h4>
+                  <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight group-hover:text-teal-600 transition-colors duration-300">Mobile-First Experience</h4>
                   <p className="text-base text-slate-500 font-semibold leading-relaxed">
-                    Secure, robust code deployed on the world's most reliable cloud infrastructures.
+                    Every build is designed to work flawlessly on phones first, since that’s where most of your visitors are coming from.
                   </p>
                 </motion.div>
               </div>
@@ -659,9 +966,9 @@ export default function WebDevelopment() {
                   transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
                   className="w-[240px] h-[240px] rounded-full bg-white flex flex-col items-center justify-center p-6 relative z-10 shadow-lg"
                 >
-                  <span className="text-[10px] font-black tracking-[0.2em] text-[#0d1b3e]/60 uppercase mb-2">WHY WE BUILD</span>
+                  <span className="text-[10px] font-black tracking-[0.2em] text-[#0d1b3e]/60 uppercase mb-2">Why Businesses Choose Us</span>
                   <h3 className="text-2xl font-black text-[#0d1b3e] tracking-tight text-center leading-tight">
-                    The Tangible<br />Output<span className="text-blue-600">.</span>
+                    What You<br />Actually Get<span className="text-blue-600">.</span>
                   </h3>
                   <motion.div
                     animate={{
@@ -696,9 +1003,9 @@ export default function WebDevelopment() {
                     </div>
                     <span className="text-sm font-black text-blue-600 tracking-wider">02</span>
                   </div>
-                  <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight group-hover:text-emerald-600 transition-colors duration-300">Bespoke Modern Design</h4>
+                  <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight group-hover:text-emerald-600 transition-colors duration-300">Fast, Reliable Performance</h4>
                   <p className="text-base text-slate-500 font-semibold leading-relaxed">
-                    No templates. Every pixel is custom-crafted to reflect your brand's premium identity.
+                    Clean code and proper optimization so your site loads quickly and works smoothly across devices, not just on launch day.
                   </p>
                 </motion.div>
 
@@ -718,9 +1025,9 @@ export default function WebDevelopment() {
                     </div>
                     <span className="text-sm font-black text-blue-600 tracking-wider">04</span>
                   </div>
-                  <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight group-hover:text-orange-500 transition-colors duration-300">Conversion-First UX</h4>
+                  <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight group-hover:text-orange-500 transition-colors duration-300">SEO-Ready Foundations</h4>
                   <p className="text-base text-slate-500 font-semibold leading-relaxed">
-                    Data-driven interface design that guides users effortlessly toward your primary business goals.
+                    Sites structured cleanly from the ground up, so you’re not fighting technical issues later when you invest in SEO.
                   </p>
                 </motion.div>
 
@@ -735,14 +1042,14 @@ export default function WebDevelopment() {
                   <div className="flex items-center gap-3 justify-start">
                     <div className="w-10 h-10 rounded-full bg-rose-50 flex items-center justify-center text-rose-500 group-hover:scale-110 transition-transform duration-300">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0110 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0114 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
                       </svg>
                     </div>
                     <span className="text-sm font-black text-blue-600 tracking-wider">06</span>
                   </div>
-                  <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight group-hover:text-rose-500 transition-colors duration-300">SEO-Ready Core</h4>
+                  <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight group-hover:text-rose-500 transition-colors duration-300">Ongoing Support</h4>
                   <p className="text-base text-slate-500 font-semibold leading-relaxed">
-                    Technical SEO built into the foundation, ensuring your site is ready to rank from day one.
+                    A team that stays available after launch, so small issues get fixed before they become bigger problems.
                   </p>
                 </motion.div>
               </div>
@@ -760,14 +1067,11 @@ export default function WebDevelopment() {
             {/* Header */}
             <div className="space-y-4 max-w-2xl mx-auto">
               <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-200 bg-blue-50/50 px-4 py-2 text-[10px] sm:text-xs font-black tracking-[0.2em] text-blue-600 uppercase shadow-sm">
-                <span>OUR WORKFLOW</span>
+                <span>How We Work</span>
               </span>
               <h2 className="text-4xl sm:text-6xl font-black text-[#0d1b3e] tracking-tight">
-                The Blueprint.
+                Our Website Build Roadmap
               </h2>
-              <p className="text-slate-500 font-semibold text-sm sm:text-base leading-relaxed">
-                Our proven step-by-step engineering journey to transform your concept into a high-performance digital asset.
-              </p>
             </div>
 
             {/* Timeline Journey Wrapper */}
@@ -778,8 +1082,8 @@ export default function WebDevelopment() {
               {[
                 {
                   num: "01",
-                  title: "Discovery & Audit",
-                  desc: "Technical forensic analysis of your current stack and deep research into your market benchmarks.",
+                  title: "Discovery & Strategy",
+                  desc: "Understanding your business, goals, and audience to shape a website strategy that actually supports how you grow.",
                   circleBg: "bg-gradient-to-br from-blue-400 to-indigo-600 shadow-[0_6px_20px_rgba(59,130,246,0.35)]",
                   lineColor: "bg-blue-500",
                   textColor: "text-blue-500",
@@ -789,8 +1093,8 @@ export default function WebDevelopment() {
                 },
                 {
                   num: "02",
-                  title: "Architecture & UI/UX",
-                  desc: "Prototyping high-fidelity, interactive designs and mapping out the technical system architecture.",
+                  title: "Design & Wireframing",
+                  desc: "Mapping out the structure and designing the look and feel of every page before development begins.",
                   circleBg: "bg-gradient-to-br from-purple-400 to-violet-600 shadow-[0_6px_20px_rgba(139,92,246,0.35)]",
                   lineColor: "bg-purple-500",
                   textColor: "text-purple-600",
@@ -800,8 +1104,8 @@ export default function WebDevelopment() {
                 },
                 {
                   num: "03",
-                  title: "Engineering & Dev",
-                  desc: "Pixel-perfect frontend execution and robust backend integration by our senior engineers.",
+                  title: "Prototyping & Review",
+                  desc: "Building interactive prototypes so you can review and refine the experience before a single line of final code is written.",
                   circleBg: "bg-gradient-to-br from-pink-400 to-rose-600 shadow-[0_6px_20px_rgba(244,63,94,0.35)]",
                   lineColor: "bg-rose-500",
                   textColor: "text-rose-500",
@@ -811,8 +1115,8 @@ export default function WebDevelopment() {
                 },
                 {
                   num: "04",
-                  title: "Quality Assurance",
-                  desc: "Exhaustive cross-device testing, load profiling, and security hardening before launch.",
+                  title: "Development",
+                  desc: "Writing clean, structured code — whether WordPress, Shopify, or custom — to bring the approved design to life.",
                   circleBg: "bg-gradient-to-br from-amber-400 to-orange-500 shadow-[0_6px_20px_rgba(249,115,22,0.35)]",
                   lineColor: "bg-orange-500",
                   textColor: "text-orange-500",
@@ -822,14 +1126,25 @@ export default function WebDevelopment() {
                 },
                 {
                   num: "05",
-                  title: "Launch & Support",
-                  desc: "Meticulously managed rollout and ongoing technical optimization to ensure continued dominance.",
+                  title: "Testing & Launch",
+                  desc: "Thoroughly testing across devices and browsers before going live, so your launch day is smooth, not stressful.",
                   circleBg: "bg-gradient-to-br from-emerald-400 to-teal-600 shadow-[0_6px_20px_rgba(16,185,129,0.35)]",
                   lineColor: "bg-emerald-500",
                   textColor: "text-emerald-500",
                   borderColor: "border-emerald-100 hover:border-emerald-300",
                   hoverGlow: "hover:shadow-[0_20px_50px_rgba(16,185,129,0.08)]",
                   grad: "from-white via-white to-emerald-50/10"
+                },
+                {
+                  num: "06",
+                  title: "Support & Growth",
+                  desc: "Ongoing maintenance and improvements post-launch, so your website keeps evolving alongside your business.",
+                  circleBg: "bg-gradient-to-br from-indigo-400 to-blue-600 shadow-[0_6px_20px_rgba(79,70,229,0.35)]",
+                  lineColor: "bg-indigo-500",
+                  textColor: "text-indigo-650",
+                  borderColor: "border-indigo-100 hover:border-indigo-300",
+                  hoverGlow: "hover:shadow-[0_20px_50px_rgba(79,70,229,0.08)]",
+                  grad: "from-white via-white to-indigo-50/10"
                 }
               ].map((step, idx) => {
                 const isLeft = idx % 2 === 0;
@@ -894,43 +1209,52 @@ export default function WebDevelopment() {
             {/* Header */}
             <div className="space-y-4">
               <h2 className="text-4xl sm:text-6xl font-black text-[#0d1b3e] tracking-tight">
-                Absolute Clarity.
+                Common Questions
               </h2>
-              <p className="text-slate-500 text-base sm:text-lg font-semibold tracking-wide">
-                You have highly specific questions. We have exact answers.
-              </p>
             </div>
 
             {/* Accordion Container */}
             <div className="max-w-5xl mx-auto bg-white rounded-[32px] border border-slate-100/80 shadow-[0_10px_45px_rgba(0,0,0,0.02)] p-6 sm:p-10 text-left">
               {[
                 {
-                  q: "How much does web development cost?",
-                  a: "Cost depends on whether the site is CMS-based, custom-built, or a full web application, along with the complexity of design, functionality, and integrations required. A proper estimate comes after a scoping call, not a flat rate."
-                },
-                {
-                  q: "How do I hire a web developer?",
-                  a: "Start with a discovery call to walk through the business goals, existing systems, and what the site needs to do. A development team should scope the project — platform, design, development, and timeline — before any commitment is made."
-                },
-                {
-                  q: "Should I use WordPress or a custom-built website?",
-                  a: "WordPress and similar CMS platforms are strong choices for content-heavy sites that need to be easy to manage without ongoing developer involvement. A custom build makes more sense when the site needs unique functionality, tighter performance, or doesn’t fit a standard CMS structure."
+                  q: "How much does a website cost?",
+                  a: "It depends on complexity — a business website, an ecommerce store, and a fully custom web application all have very different scopes. We’ll give you a clear, honest quote after understanding your requirements on the free strategy call, with no hidden costs added later."
                 },
                 {
                   q: "How long does it take to build a website?",
-                  a: "Timeline depends on scope and platform. A standard CMS-based site typically takes less time than a custom-built site or a full web application with complex functionality."
+                  a: "A standard business website typically takes 3–5 weeks. Ecommerce builds usually take 5–8 weeks depending on catalog size and features. Fully custom web applications can take longer depending on complexity — we’ll give you a realistic timeline upfront."
                 },
                 {
-                  q: "Can you redesign or migrate my existing website?",
-                  a: "Yes — website redesigns and platform migrations are available for businesses moving between CMS platforms or upgrading an underperforming site, with a focus on preserving SEO rankings and existing content during the transition."
+                  q: "Should I choose WordPress, Shopify, or a custom build?",
+                  a: "It depends on your business type and goals. WordPress works well for content-heavy sites and businesses that want flexibility and easy content management. Shopify is built specifically for ecommerce and works well for product-based businesses that want a fast, reliable store. Custom development makes sense when your needs go beyond what either platform offers out of the box. We’ll recommend honestly based on your business, not push whichever platform is easiest for us."
                 },
                 {
-                  q: "Do you build custom web applications, not just websites?",
-                  a: "Yes — for functionality that doesn’t fit into a standard website (customer portals, internal tools, booking systems, dashboards), we build custom web applications rather than trying to force it into a CMS."
+                  q: "Will my website work well on mobile phones?",
+                  a: "Yes. Every website we build is designed mobile-first, since the majority of visitors to most Indian websites come from phones, not desktops. We test thoroughly across screen sizes before launch."
                 },
                 {
-                  q: "Do you handle ongoing website maintenance after launch?",
-                  a: "Yes — maintenance, security updates, performance monitoring, and feature additions after launch are part of the standard engagement, not a separate afterthought."
+                  q: "Is my website going to be SEO-friendly?",
+                  a: "Yes. We build every site on clean, technically sound foundations — proper page structure, fast load times, and mobile responsiveness — so it’s ready to rank well and doesn’t create obstacles for your future SEO efforts."
+                },
+                {
+                  q: "Can I update the website content myself after launch?",
+                  a: "Yes. We build on content management systems like WordPress and Shopify specifically so your team can update text, images, and products without needing a developer for every small change. We’ll also walk you through how to use it."
+                },
+                {
+                  q: "Do you provide ongoing support after the website goes live?",
+                  a: "Yes. We offer maintenance plans covering security updates, performance monitoring, bug fixes, and content support, so your website stays reliable long after launch, not just on day one."
+                },
+                {
+                  q: "Can you redesign my existing website instead of building from scratch?",
+                  a: "Yes. Many projects start as a redesign rather than a rebuild. We’ll audit your current site first and tell you honestly whether a redesign, a partial rebuild, or a full rebuild makes the most sense for your situation and budget."
+                },
+                {
+                  q: "Do you only work with ecommerce businesses?",
+                  a: "No. We build for businesses across industries — service providers, D2C brands, SaaS companies, local businesses, and more. Every website is designed around your specific business model and goals, not a one-size-fits-all template."
+                },
+                {
+                  q: "What’s included in the free website audit?",
+                  a: "A live review of your current website’s speed, design, usability, and SEO foundation (or a discovery conversation if you don’t have a site yet), plus 2–3 specific recommendations we spot immediately — no generic slide deck, no pressure to sign anything."
                 }
               ].map((faq, index) => {
                 const isOpen = openFaq === index;
@@ -986,11 +1310,11 @@ export default function WebDevelopment() {
             </span>
             {/* Header */}
             <h2 className="text-4xl sm:text-6xl font-black text-[#0d1b3e] tracking-tight leading-[1.1] max-w-5xl">
-              Ready to Build a Website?
+              Ready for a Website That Actually Works for Your Business?
             </h2>
             {/* Description */}
             <p className="text-slate-500 text-base sm:text-lg font-semibold tracking-wide max-w-3xl leading-relaxed">
-              We build websites and web applications engineered around real business goals — performance, scalability, and long-term maintainability — not just a launch date.
+              Book your free, no-obligation 30-minute website audit. No generic slide decks — just a clear look at what’s holding your website back and how to fix it.
             </p>
 
             {/* Button Links */}
@@ -999,16 +1323,10 @@ export default function WebDevelopment() {
                 href="/contact"
                 className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#0a8bc7] via-[#2443ab] to-[#40159e] px-8 py-4 text-xs font-black text-white uppercase tracking-wider shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group whitespace-nowrap"
               >
-                <span>Get a Free Quote</span>
+                <span>Schedule Free Strategy Call</span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1 flex-shrink-0">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                 </svg>
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 rounded-full border-2 border-[#2443ab] bg-transparent hover:bg-[#2443ab]/5 px-8 py-3.5 text-xs font-black text-[#2443ab] uppercase tracking-wider transition-all duration-300 hover:scale-105 whitespace-nowrap"
-              >
-                <span>Book a Discovery Call</span>
               </Link>
             </div>
           </div>

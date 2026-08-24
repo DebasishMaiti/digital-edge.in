@@ -9,6 +9,80 @@ import LeadForm from "@/components/LeadForm";
 import AnimatedWords from "@/components/AnimatedWords";
 import Marquee from "react-fast-marquee";
 import ArchitectureTimeline from "@/components/ArchitectureTimeline";
+import { ChevronRight } from "lucide-react";
+
+const appDevShowcases = [
+  {
+    name: "Publix",
+    link: "/company-details/publix",
+    image: "https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=800&auto=format&fit=crop",
+    logo: (
+      <div className="flex items-center gap-1.5 text-left">
+        <span className="text-xl shrink-0">🛒</span>
+        <span className="font-extrabold text-[13px] text-emerald-750 tracking-wider uppercase">Publix</span>
+      </div>
+    ),
+    metric: "300%",
+    metricLabel: "Traffic Spike Handled",
+    metricColor: "text-emerald-600"
+  },
+  {
+    name: "Recipe Keeper",
+    link: "/company-details/recipe-keeper",
+    image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=800&auto=format&fit=crop",
+    logo: (
+      <div className="flex items-center gap-1.5 text-left">
+        <span className="text-xl shrink-0">🍳</span>
+        <span className="font-extrabold text-[13px] text-slate-800 tracking-wider uppercase">Recipe Keeper</span>
+      </div>
+    ),
+    metric: "300%",
+    metricLabel: "Traffic Spike Handled",
+    metricColor: "text-blue-600"
+  },
+  {
+    name: "Momentum",
+    link: "/company-details/momentum",
+    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop",
+    logo: (
+      <div className="flex items-center gap-1.5 text-left">
+        <span className="text-xl shrink-0">🎯</span>
+        <span className="font-extrabold text-[13px] text-indigo-750 tracking-wider uppercase">Momentum</span>
+      </div>
+    ),
+    metric: "300%",
+    metricLabel: "Traffic Spikes",
+    metricColor: "text-indigo-600"
+  },
+  {
+    name: "HubFit",
+    link: "/company-details/hubfit",
+    image: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=800&auto=format&fit=crop",
+    logo: (
+      <div className="flex items-center gap-1.5 text-left">
+        <span className="text-xl shrink-0">💪</span>
+        <span className="font-extrabold text-[13px] text-[#2443ab] tracking-wider uppercase">HubFit</span>
+      </div>
+    ),
+    metric: "305%",
+    metricLabel: "Users Growth",
+    metricColor: "text-[#2443ab]"
+  },
+  {
+    name: "Ring My Stylist",
+    link: "/company-details/ring-my-stylist",
+    image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=800&auto=format&fit=crop",
+    logo: (
+      <div className="flex items-center gap-1.5 text-left">
+        <span className="text-xl shrink-0">💇‍♀️</span>
+        <span className="font-extrabold text-[13px] text-rose-750 tracking-wider uppercase">Ring My Stylist</span>
+      </div>
+    ),
+    metric: "300%",
+    metricLabel: "Traffic Spikes",
+    metricColor: "text-rose-500"
+  }
+];
 
 export default function AppDevelopment() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -37,32 +111,44 @@ export default function AppDevelopment() {
 
   const faqs = [
     {
-      q: "How much does ecommerce app development cost?",
-      a: "Cost depends on whether the app is native or cross-platform, the size of the product catalog, and which custom features are included. Cross-platform builds using React Native or Flutter are generally faster and less expensive than fully native iOS and Android apps built separately."
+      q: "How much does it cost to build a mobile app?",
+      a: "It depends on complexity — a simple single-platform app, a feature-rich cross-platform app, and an enterprise-grade native build all have very different scopes and costs. We’ll give you a clear, honest estimate after understanding your requirements on the free strategy call, with no hidden costs added later."
     },
     {
-      q: "How do I hire an ecommerce app developer?",
-      a: "Start with a discovery call to walk through your business goals, product catalog, and whether you need native or cross-platform development. A development team should scope the project — design, build, app store submission, and timeline — before any commitment is made."
+      q: "How long does it take to build an app?",
+      a: "A straightforward app typically takes 8–12 weeks from discovery to launch. More complex apps with custom features, integrations, or AI/ML components can take longer — we’ll give you a realistic timeline upfront based on your specific requirements."
     },
     {
-      q: "Should I build a native app or a cross-platform app?",
-      a: "Native apps (built separately for iOS and Android) offer the best performance and deepest platform integration, but cost more and take longer. Cross-platform frameworks like React Native or Flutter let you launch on both platforms from a single codebase, which is usually faster and more cost-effective for most ecommerce apps."
+      q: "Should I build for iOS, Android, or both?",
+      a: "It depends on where your target users actually are. If budget allows, launching on both platforms via a cross-platform framework like Flutter or React Native is usually the most efficient path. If you need to launch faster or your audience skews heavily to one platform, starting native on that one platform can make more sense. We’ll recommend honestly based on your specific business and audience."
     },
     {
-      q: "How long does it take to build an ecommerce app?",
-      a: "Timeline depends on platform choice and feature complexity. Cross-platform apps with standard ecommerce functionality typically take less time than fully native builds or apps with custom features like multi-vendor marketplace support."
+      q: "What’s the difference between native and cross-platform development?",
+      a: "Native development (Swift for iOS, Kotlin/Java for Android) builds separately for each platform, giving you the best possible performance and access to every platform feature. Cross-platform development (Flutter, React Native) uses one shared codebase for both platforms, which is usually faster and more cost-effective, with a small trade-off in access to certain native-only features. Most businesses do well with cross-platform unless they have very specific performance or hardware needs."
     },
     {
-      q: "Do you handle app store submission for iOS and Android?",
-      a: "Yes — submitting to the App Store and Google Play, and handling each platform’s review and compliance requirements, is part of the standard ecommerce app development process."
+      q: "Do you build the backend too, or just the app itself?",
+      a: "We handle both. Most apps need a backend to manage data, user accounts, and business logic, and we build that alongside the app itself so everything works together as one system."
     },
     {
-      q: "Can you add push notifications and loyalty features to my ecommerce app?",
-      a: "Yes — push notifications, loyalty programs, saved payment methods, and other engagement features are common additions built into ecommerce apps to improve repeat purchase rates."
+      q: "Will you help me publish the app on the App Store and Play Store?",
+      a: "Yes. We manage the entire submission process for both stores, including preparing your listing, screenshots, and description in a way that’s optimized for approval and discoverability."
     },
     {
-      q: "Can you redesign or migrate my existing ecommerce app?",
-      a: "Yes — app redesigns and framework migrations (for example, moving from native to cross-platform to reduce long-term maintenance costs) are available, with a focus on preserving existing user data and app store rankings built up over time."
+      q: "What happens after my app is launched?",
+      a: "We offer ongoing support plans covering bug fixes, performance monitoring, OS compatibility updates, and new feature development, so your app keeps working well and evolving as your business grows."
+    },
+    {
+      q: "Can you add features to my existing app instead of building a new one?",
+      a: "Yes. We regularly take over existing apps to add features, fix performance issues, or modernize outdated code, after first auditing the current codebase to understand what we’re working with."
+    },
+    {
+      q: "Do you only build apps for ecommerce businesses?",
+      a: "No. We build apps across industries — fitness, wellness, on-demand services, productivity, astrology, food, and more. Every app is designed around your specific business model and users, not a one-size-fits-all template."
+    },
+    {
+      q: "What’s included in the free app strategy call?",
+      a: "A live discussion of your app idea or existing app, platform recommendations, a rough scope and timeline, plus 2–3 specific suggestions we spot immediately — no generic slide deck, no pressure to sign anything."
     }
   ];
 
@@ -70,12 +156,12 @@ export default function AppDevelopment() {
     <>
       <link rel="canonical" href="https://digitaledge360.com/app-development" />
       <div className="w-full bg-[#fafbfc] min-h-screen pb-24 text-slate-800">
-        
+
         {/* Hero Section */}
         <section className="relative w-full pt-[160px] pb-24 px-6 sm:px-8 lg:px-12 flex flex-col justify-center items-center bg-gradient-to-b from-[#e0f2fe] via-[#bae6fd]/30 to-[#fafbfc] border-b border-slate-100/80 overflow-hidden">
           {/* Light Grid Scrolling Background */}
-          <div 
-            className="animate-grid-scroll opacity-60 pointer-events-none z-0" 
+          <div
+            className="animate-grid-scroll opacity-60 pointer-events-none z-0"
             style={{
               backgroundImage: `
                 linear-gradient(to right, rgba(14, 165, 233, 0.12) 1px, transparent 1px),
@@ -83,7 +169,7 @@ export default function AppDevelopment() {
               `
             }}
           />
-          
+
           {/* Glow backdrop */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
             <div className="absolute top-[10%] left-[10%] w-[35%] aspect-square rounded-full bg-gradient-to-br from-[#0ea5e9]/8 via-[#3b82f6]/6 to-transparent blur-[80px]" />
@@ -126,23 +212,23 @@ export default function AppDevelopment() {
           </div>
 
           <div className="relative z-10 max-w-[1600px] w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            
+
             {/* Left Column */}
             <div className="lg:col-span-6 flex flex-col items-start text-left">
               <h1 className="inline-flex items-center gap-1.5 rounded-full border border-gray-600 bg-white px-6 py-3.5 text-sm sm:text-base md:text-sm font-extrabold tracking-[0.2em] text-gray-600 uppercase shadow-sm mb-6">
-                Ecommerce App Development Company
+                iOS & Android App Development
               </h1>
-              
+
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#0d1b3e] tracking-tight leading-[1.1] mb-6 flex flex-col items-start">
-                Ecommerce App Development
+                Mobile App Development Company Built to Turn Downloads Into Customers
               </h2>
-              
+
               <p className="text-lg sm:text-xl text-slate-600 font-medium leading-relaxed mb-6 max-w-2xl">
-                Native and cross-platform ecommerce apps for growing businesses, with live apps already running on the App Store and Google Play.
+                From concept to launch, we design and build iOS, Android, and cross-platform apps for businesses across India — startups, SMEs, and enterprises alike.
               </p>
-              
+
               <p className="text-base text-slate-500 leading-relaxed mb-8 max-w-2xl">
-                An ecommerce app development company builds shopping apps for iOS and Android — covering everything from UI/UX design and payment gateway integration to app store deployment and post-launch support. We build using both native and cross-platform frameworks, so the app matches your budget, timeline, and long-term scaling plans rather than a one-size-fits-all approach.
+                Apps built not just to look good, but to drive real engagement, retention, and revenue. We handle the entire lifecycle including planning, UI/UX prototyping, backend integration, App Store/Play Store deployment, and post-launch support.
               </p>
 
               {/* Full Width Line Divider */}
@@ -154,7 +240,7 @@ export default function AppDevelopment() {
                   href="/contact"
                   className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[#0a8bc7] via-[#2443ab] to-[#40159e] text-white text-xs font-extrabold rounded-full transition-all duration-300 shadow-[0_8px_20px_rgba(36,67,171,0.25)] hover:shadow-[0_10px_24px_rgba(64,21,158,0.4)] hover:opacity-95 flex items-center justify-center gap-2 uppercase tracking-wider mt-4"
                 >
-                  <span>Book a Strategy Call</span>
+                  <span>Book a Free App Strategy Call</span>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-3.5 h-3.5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                   </svg>
@@ -224,28 +310,66 @@ export default function AppDevelopment() {
           </div>
         </section>
 
-        {/* Key Takeaways Section */}
-        <section className="relative z-10 max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 py-16">
-          <div className="bg-gradient-to-br from-[#0d1b3e] to-[#1e293b] rounded-[32px] p-8 sm:p-12 text-white shadow-xl relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-blue-500/10 to-purple-500/10 rounded-full blur-3xl pointer-events-none" />
-            <span className="text-[#a855f7] text-xs font-black tracking-widest uppercase block mb-4">Summary</span>
-            <h3 className="text-2xl sm:text-3xl font-black mb-8">Key Takeaways</h3>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {[
-                "We build ecommerce apps for both iOS and Android, using native or cross-platform frameworks depending on the project.",
-                "We have live, published apps already running on the App Store and Google Play.",
-                "Pricing depends on platform choice, feature scope, and whether the app is native or cross-platform — a proper quote comes after a scoping call, not a flat rate.",
-                "We handle the full app lifecycle: design, development, app store submission, and ongoing maintenance."
-              ].map((takeaway, idx) => (
-                <div key={idx} className="flex gap-4 items-start">
-                  <div className="w-8 h-8 rounded-full bg-[#a855f7]/20 border border-[#a855f7]/40 flex items-center justify-center shrink-0 mt-0.5">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="w-4 h-4 text-[#a855f7]">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                    </svg>
-                  </div>
-                  <p className="text-slate-200 font-semibold leading-relaxed">{takeaway}</p>
-                </div>
+
+        {/* Brand Showcase Grid Section */}
+        <section className="relative z-10 py-24 bg-gradient-to-b from-[#fafbfc] to-white overflow-hidden border-t border-slate-100">
+          <div className="w-full mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+
+            {/* Header */}
+            <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-purple-250 bg-purple-50/80 px-4 py-2 text-[10px] sm:text-xs font-black tracking-[0.2em] text-purple-700 uppercase shadow-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 text-purple-600">
+                  <path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192L12 .587z" />
+                </svg>
+                <span>Brands Thrive with Digital Edge</span>
+              </span>
+              <h2 className="text-3xl sm:text-5xl font-black text-[#0d1b3e] tracking-tight mt-4">
+                Bespoke Digital Success Stories
+              </h2>
+              {/* Short styled underline line */}
+              <div className="w-16 h-1 bg-gradient-to-r from-purple-500 to-indigo-600 mx-auto rounded-full mt-2" />
+            </div>
+
+            {/* Grid Layout */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+              {appDevShowcases.map((brand, idx) => (
+                <Link href={brand.link || "/contact"} key={idx} className="block w-full">
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0,0,0,0.06)" }}
+                    transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                    className="bg-white rounded-[24px] overflow-hidden shadow-sm border border-slate-100/80 flex flex-col justify-between group transition-all duration-300 cursor-pointer h-full"
+                  >
+                    {/* Top Image wrapper */}
+                    <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-50">
+                      <img
+                        src={brand.image}
+                        alt={brand.name}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                    </div>
+
+                    {/* Bottom details block */}
+                    <div className="p-6 flex items-center justify-between min-h-[90px]">
+                      <div className="flex-grow text-left flex flex-col justify-center">
+                        <div className="mb-1.5">{brand.logo}</div>
+                        {brand.metric && (
+                          <div className="flex flex-col text-left leading-none mt-2">
+                            <span className={`text-2xl font-black ${brand.metricColor} leading-none`}>{brand.metric}</span>
+                            <span className="text-[10px] font-bold text-slate-400 tracking-wider uppercase mt-1">{brand.metricLabel}</span>
+                          </div>
+                        )}
+                      </div>
+                      {/* Circle Chevron Indicator Button */}
+                      <button className="w-10 h-10 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-650 group-hover:bg-[#2443ab] group-hover:text-white group-hover:border-[#2443ab] transition-all duration-300 shrink-0 ml-4 shadow-sm">
+                        <ChevronRight className="w-5 h-5 transform group-hover:translate-x-0.5 transition-transform duration-300" />
+                      </button>
+                    </div>
+                  </motion.div>
+                </Link>
               ))}
             </div>
           </div>
@@ -255,16 +379,16 @@ export default function AppDevelopment() {
         <section className="relative z-10 w-full py-24 sm:py-32 bg-gradient-to-br from-red-50/40 via-white to-amber-50/20 text-slate-800 border-y border-red-100/60 overflow-hidden">
           {/* Subtle warm glow accents */}
           <div className="absolute top-[20%] left-[10%] w-[350px] sm:w-[500px] h-[350px] sm:h-[500px] rounded-full bg-gradient-to-br from-red-500/5 to-transparent blur-[100px] pointer-events-none z-0" />
-          
+
           <div className="relative z-10 mx-auto max-w-[1400px] px-6 sm:px-8 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-            
+
             {/* Left side info */}
             <div className="lg:col-span-5 text-left space-y-6">
               <span className="inline-flex items-center gap-1.5 rounded-full border border-red-200 bg-red-50/80 px-4 py-1.5 text-xs font-black tracking-widest text-red-600 uppercase shadow-sm">
                 <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
                 Critical Leak
               </span>
-              
+
               <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0d1b3e] tracking-tight leading-tight">
                 The Problem:<br />
                 A Website Isn’t<br />
@@ -272,11 +396,11 @@ export default function AppDevelopment() {
                   Enough Anymore
                 </span>
               </h3>
-              
+
               <p className="text-base sm:text-lg text-slate-500 font-semibold leading-relaxed">
                 Ecommerce customers increasingly expect a dedicated app, not just a mobile-friendly website. A website that works fine on mobile still isn’t the same experience as a native app — slower load times between sessions, no push notifications to bring customers back, and a checkout flow that has to be re-authenticated every visit instead of stored securely on-device.
               </p>
-              
+
               <div className="p-6 bg-red-50/60 border border-red-100 rounded-2xl relative overflow-hidden">
                 <div className="absolute top-0 left-0 bottom-0 w-1.5 bg-red-500" />
                 <p className="text-sm sm:text-base text-red-950 font-bold leading-relaxed pl-2">
@@ -309,20 +433,20 @@ export default function AppDevelopment() {
                   border: "border-orange-100 hover:border-orange-300"
                 }
               ].map((gap, idx) => (
-                <div 
-                  key={idx} 
+                <div
+                  key={idx}
                   className={`flex flex-col sm:flex-row items-start gap-5 p-6 bg-white border rounded-2xl transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.01)] hover:shadow-[0_12px_32px_rgba(239,68,68,0.05)] hover:-translate-y-0.5 relative overflow-hidden group ${gap.border}`}
                 >
                   {/* Left visual strip indicator */}
                   <div className="absolute left-0 top-0 bottom-0 w-1 bg-red-500/40 group-hover:bg-red-500 transition-colors duration-300" />
-                  
+
                   {/* Warning Hexagon/Icon */}
                   <div className="w-12 h-12 rounded-xl bg-red-50/50 border border-red-100 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-300">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.2} stroke="currentColor" className="w-5.5 h-5.5 text-red-500">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
                     </svg>
                   </div>
-                  
+
                   <div className="space-y-1">
                     <h4 className="text-lg sm:text-xl font-bold text-[#0d1b3e] tracking-tight group-hover:text-red-600 transition-colors duration-200">
                       {gap.title}
@@ -340,7 +464,7 @@ export default function AppDevelopment() {
 
         {/* Platform & Expertise Section (Pyramid Structure with Deeper Gradients) */}
         <section className="relative w-full z-10 py-24 bg-gradient-to-br from-indigo-100 via-slate-50 to-emerald-100 overflow-hidden">
-          
+
           {/* Deeper floating glowing orbs corresponding to the pyramid nodes */}
           <div className="absolute top-[15%] left-1/2 -translate-x-1/2 w-[350px] sm:w-[500px] h-[350px] sm:h-[500px] rounded-full bg-purple-500/15 blur-[80px] sm:blur-[110px] pointer-events-none z-0" />
           <div className="absolute bottom-[20%] left-[15%] w-[250px] sm:w-[350px] h-[250px] sm:h-[350px] rounded-full bg-blue-500/15 blur-[70px] sm:blur-[90px] pointer-events-none z-0" />
@@ -359,7 +483,7 @@ export default function AppDevelopment() {
 
             {/* Pyramid Structure Container */}
             <div className="max-w-5xl mx-auto flex flex-col items-center relative">
-              
+
               {/* TIER 1: The Apex (Strategy & Custom Architecture) */}
               <div className="relative z-10 w-full max-w-2xl text-center pb-12">
                 <div className="inline-flex flex-col items-center">
@@ -386,7 +510,7 @@ export default function AppDevelopment() {
 
               {/* TIER 2: The Base (Implementation & Platforms) */}
               <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 pt-8 border-t border-slate-300 md:border-t-0 text-left">
-                
+
                 {/* Left Base Piece: Native */}
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
@@ -435,9 +559,9 @@ export default function AppDevelopment() {
         </section>
 
         <ArchitectureTimeline
-          title="The Architecture"
-          subtitle="How We Engineer The Solution."
-          tagline="A proven process. Relentless quality. Built for mobile performance, designed to scale."
+          title="The Framework"
+          subtitle="How We Engineer Your App"
+          tagline="“The System” — How We Build Apps That Retain Users"
           codeFile="src/app/mobile-pipeline.ts"
           codeLines={[
             "import { iOSNative, AndroidNative, CrossPlatform } from 'digital-edge';",
@@ -462,8 +586,8 @@ export default function AppDevelopment() {
           phases={[
             {
               num: "01",
-              phase: "PHASE 01",
-              text: "Every app we build is structured around how your specific customers browse and buy — product discovery, cart flow, checkout, and post-purchase experience are all mapped out before a single screen gets designed.",
+              phase: "Phase 01 — Discovery & Strategy",
+              text: "We start by understanding your business goals, target users, and the one core problem your app needs to solve — before any design or development begins.",
               borderCol: "border-l-[#2443ab]",
               dotCol: "border-blue-500 bg-white",
               shadowCol: "shadow-blue-500/5",
@@ -473,8 +597,8 @@ export default function AppDevelopment() {
             },
             {
               num: "02",
-              phase: "PHASE 02",
-              text: "Native iOS & Android development gives the smoothest possible performance and full access to platform features such as Apple Pay, Google Pay, and biometric security systems.",
+              phase: "Phase 02 — UI/UX Design",
+              text: "We design every screen around how real users behave on mobile — clean navigation, intuitive flows, and interfaces people don’t need instructions to use.",
               borderCol: "border-l-[#a855f7]",
               dotCol: "border-purple-500 bg-white",
               shadowCol: "shadow-purple-500/5",
@@ -484,8 +608,8 @@ export default function AppDevelopment() {
             },
             {
               num: "03",
-              phase: "PHASE 03",
-              text: "For most ecommerce apps, cross-platform frameworks like React Native or Flutter make more sense — one codebase, both platforms, faster to build and easier to maintain long-term.",
+              phase: "Phase 03 — Development",
+              text: "Whether native iOS, native Android, or cross-platform with Flutter or React Native, we write clean, scalable code built to perform reliably as your user base grows.",
               borderCol: "border-l-[#ec4899]",
               dotCol: "border-pink-500 bg-white",
               shadowCol: "shadow-pink-500/5",
@@ -495,8 +619,8 @@ export default function AppDevelopment() {
             },
             {
               num: "04",
-              phase: "PHASE 04",
-              text: "Push notification retention triggers. We set up automated campaigns for abandoned carts, product restocks, and custom tailored discount codes.",
+              phase: "Phase 04 — Testing & Quality Assurance",
+              text: "Rigorous testing across devices, OS versions, and real-world conditions, so bugs get caught before your users find them.",
               borderCol: "border-l-[#f97316]",
               dotCol: "border-orange-500 bg-white",
               shadowCol: "shadow-orange-500/5",
@@ -506,8 +630,8 @@ export default function AppDevelopment() {
             },
             {
               num: "05",
-              phase: "PHASE 05",
-              text: "Blazing fast checkout flow. Storing user addresses, biometrics, and secure tokenized payment integrations on-device to reduce cart abandonment.",
+              phase: "Phase 05 — Launch & App Store Optimization",
+              text: "We handle App Store and Play Store submission and optimize your listing for discoverability, so your app doesn’t just launch — it gets found.",
               borderCol: "border-l-[#10b981]",
               dotCol: "border-emerald-500 bg-white",
               shadowCol: "shadow-emerald-500/5",
@@ -517,8 +641,8 @@ export default function AppDevelopment() {
             },
             {
               num: "06",
-              phase: "PHASE 06",
-              text: "Full App lifecycle support. We manage the entire store compliance process, submitting your build to the Apple App Store and Google Play Store.",
+              phase: "Phase 06 — Post-Launch Support",
+              text: "Ongoing updates, performance monitoring, and feature improvements after launch, so your app keeps evolving instead of going stale.",
               borderCol: "border-l-[#6366f1]",
               dotCol: "border-indigo-500 bg-white",
               shadowCol: "shadow-indigo-500/5",
@@ -531,171 +655,220 @@ export default function AppDevelopment() {
 
 
 
-        {/* Full-Stack Deliverable & Support */}
-        <section className="relative z-10 mx-auto max-w-[1400px] px-6 sm:px-8 lg:px-12 py-20 bg-white border-y border-slate-100">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            
-            {/* Left side copy */}
-            <div className="lg:col-span-6 space-y-6 text-left">
-              <span className="text-[#a855f7] text-xs font-black tracking-widest uppercase">Start-to-Finish Lifecycle</span>
-              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0d1b3e] tracking-tight leading-tight">
-                What’s Included From Start to Finish
-              </h3>
-              <p className="text-base sm:text-lg text-slate-500 font-semibold leading-relaxed">
-                Building an ecommerce app means handling the full stack: UI/UX design tailored to how your customers actually shop, product catalog and search functionality, secure payment gateway integration, push notification setup, order tracking and management, app store submission and compliance (App Store and Google Play both have their own review requirements), and a testing process across devices before anything goes live.
-              </p>
-              
-              <div className="w-full border-t border-slate-200/60 pt-6">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#0a8bc7] to-[#2443ab] px-8 py-4 text-xs font-black text-white uppercase tracking-wider shadow-lg hover:shadow-xl transition-all duration-300"
+        {/* The Tangible Output Section / Outcomes */}
+        <section className="relative z-10 w-full py-24 sm:py-32 bg-[#fafbfc] text-slate-800 overflow-hidden text-center px-6 sm:px-8 lg:px-12 border-b border-slate-100">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(36,67,171,0.02)_0%,transparent_70%)] pointer-events-none" />
+
+          <div className="relative z-10 max-w-7xl mx-auto space-y-16">
+            {/* Circular/Orbital Layout */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center max-w-6xl mx-auto pt-8">
+              {/* Left Spokes (01, 03, 05) */}
+              <div className="lg:col-span-4 space-y-12 lg:text-right">
+                {/* Feature 1 */}
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="space-y-3 group text-left lg:text-right"
                 >
-                  Get a Free Quote &rarr;
-                </Link>
-              </div>
-            </div>
-
-            {/* Right side support offers */}
-            <div className="lg:col-span-6 space-y-6 text-left">
-              <div className="p-8 bg-gradient-to-br from-blue-100 to-indigo-200 border border-blue-300 rounded-[32px] hover:shadow-md transition-shadow duration-300">
-                <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight mb-4">
-                  Full-Service Ecommerce App Support
-                </h4>
-                <p className="text-sm sm:text-base text-slate-600 font-semibold leading-relaxed">
-                  New app builds are only part of what we handle. Businesses that already have an app but are seeing high uninstall rates or poor reviews come to us for a redesign rather than starting over. Others need to migrate from one framework to another — moving from a native build to cross-platform to cut long-term maintenance costs, for example — without losing existing user data or app store rankings built up over time.
-                </p>
-              </div>
-
-              <div className="p-8 bg-gradient-to-br from-purple-100 to-violet-200 border border-purple-300 rounded-[32px] hover:shadow-md transition-shadow duration-300">
-                <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight mb-4">
-                  Narrow Scope Engineering
-                </h4>
-                <p className="text-sm sm:text-base text-slate-600 font-semibold leading-relaxed">
-                  Some projects are narrower: fixing a payment gateway that’s failing too many transactions at checkout, adding multi-vendor marketplace functionality to an existing app, or ongoing maintenance so app updates, OS compatibility, and security patches don’t fall behind. We scope each engagement to what the app actually needs.
-                </p>
-              </div>
-            </div>
-            
-          </div>
-        </section>
-
-        {/* The Workflow Timeline (How it Works) */}
-        <section className="relative z-10 w-full py-24 sm:py-32 bg-[#fafbfc] text-slate-800 overflow-hidden text-center px-6 sm:px-8 lg:px-12">
-          <div className="relative z-10 max-w-5xl mx-auto space-y-16">
-            
-            <div className="space-y-4 max-w-2xl mx-auto">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-200 bg-blue-50/50 px-4 py-2 text-[10px] sm:text-xs font-black tracking-[0.2em] text-blue-600 uppercase shadow-sm">
-                <span>OUR WORKFLOW</span>
-              </span>
-              <h2 className="text-4xl sm:text-6xl font-black text-[#0d1b3e] tracking-tight">
-                How It Works: Our Process
-              </h2>
-            </div>
-
-            <div className="relative flex flex-col gap-0 max-w-4xl mx-auto mt-20 text-left">
-              {/* Timeline Dashed Connecting Line */}
-              <div className="absolute left-6 lg:left-1/2 top-4 bottom-4 w-0.5 border-l-2 border-dashed border-slate-200 -translate-x-1/2 z-0" />
-
-              {[
-                {
-                  num: "01",
-                  title: "Discovery Call",
-                  desc: "We learn your business, product catalog, target customers, and goals, and whether you already have an existing website or backend to connect to.",
-                  lineColor: "bg-blue-500",
-                  borderColor: "border-blue-100 hover:border-blue-300",
-                  circleBg: "bg-gradient-to-br from-blue-400 to-indigo-600",
-                  grad: "from-white via-white to-blue-50/10"
-                },
-                {
-                  num: "02",
-                  title: "Platform & Framework Recommendation",
-                  desc: "Based on budget, timeline, and catalog complexity, we recommend native iOS/Android or a cross-platform build.",
-                  lineColor: "bg-purple-500",
-                  borderColor: "border-purple-100 hover:border-purple-300",
-                  circleBg: "bg-gradient-to-br from-purple-400 to-violet-600",
-                  grad: "from-white via-white to-purple-50/10"
-                },
-                {
-                  num: "03",
-                  title: "Design",
-                  desc: "UX wireframes and UI design reviewed and refined with you before development starts.",
-                  lineColor: "bg-pink-500",
-                  borderColor: "border-rose-100 hover:border-rose-300",
-                  circleBg: "bg-gradient-to-br from-pink-400 to-rose-600",
-                  grad: "from-white via-white to-rose-50/10"
-                },
-                {
-                  num: "04",
-                  title: "Development",
-                  desc: "App build, payment gateway integration, push notifications, and QA testing across real devices.",
-                  lineColor: "bg-orange-500",
-                  borderColor: "border-orange-100 hover:border-orange-300",
-                  circleBg: "bg-gradient-to-br from-amber-400 to-orange-500",
-                  grad: "from-white via-white to-orange-50/10"
-                },
-                {
-                  num: "05",
-                  title: "App Store Submission",
-                  desc: "Handling the submission and review process for both the App Store and Google Play.",
-                  lineColor: "bg-emerald-500",
-                  borderColor: "border-emerald-100 hover:border-emerald-300",
-                  circleBg: "bg-gradient-to-br from-emerald-400 to-teal-600",
-                  grad: "from-white via-white to-emerald-50/10"
-                },
-                {
-                  num: "06",
-                  title: "Ongoing Support",
-                  desc: "Maintenance, OS compatibility updates, and feature additions based on real usage data after launch.",
-                  lineColor: "bg-indigo-500",
-                  borderColor: "border-indigo-100 hover:border-indigo-300",
-                  circleBg: "bg-gradient-to-br from-indigo-400 to-slate-600",
-                  grad: "from-white via-white to-indigo-50/10"
-                }
-              ].map((step, idx) => {
-                const isLeft = idx % 2 === 0;
-
-                return (
-                  <div key={idx} className={`flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-12 relative z-10 py-0.5 lg:-my-2.5 ${isLeft ? "" : "lg:flex-row-reverse"}`}>
-                    
-                    {/* Node point */}
-                    <div className={`absolute left-6 lg:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-white border-4 ${step.lineColor.replace('bg-', 'border-')} flex items-center justify-center z-20 shadow-sm transition-transform duration-300 hover:scale-125`}>
-                      <div className={`w-2.5 h-2.5 rounded-full ${step.lineColor}`} />
+                  <div className="flex lg:flex-row-reverse items-center gap-3 justify-start lg:justify-start">
+                    <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 group-hover:scale-110 transition-transform duration-300">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                      </svg>
                     </div>
-
-                    {/* Content Box */}
-                    <motion.div
-                      initial={{ opacity: 0, x: isLeft ? -40 : 40 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true, margin: "-100px" }}
-                      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                      className={`w-full lg:w-[45%] pl-14 lg:pl-0 ${isLeft ? "lg:text-right" : "lg:text-left"}`}
-                    >
-                      <div className={`p-5 rounded-[24px] border bg-gradient-to-br ${step.grad} ${step.borderColor} shadow-sm hover:shadow-md transition-all duration-300 group`}>
-                        <div className={`flex items-center gap-3 mb-2.5 ${isLeft ? "lg:justify-end" : "lg:justify-start"}`}>
-                          {isLeft && <h3 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight">{step.title}</h3>}
-                          <div className={`w-12 h-12 rounded-full flex items-center justify-center text-white font-black text-sm shrink-0 ${step.circleBg} group-hover:scale-110 transition-transform duration-300`}>
-                            {step.num}
-                          </div>
-                          {!isLeft && <h3 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight">{step.title}</h3>}
-                        </div>
-                        <div className={`w-12 h-1 rounded mt-2 mb-4 ${step.lineColor} ${isLeft ? "lg:ml-auto" : "lg:mr-auto"}`} />
-                        <p className="text-sm sm:text-[15px] text-slate-500 font-semibold leading-relaxed">{step.desc}</p>
-                      </div>
-                    </motion.div>
-
-                    {/* Spacer Column */}
-                    <div className="hidden lg:block lg:w-[45%]" />
+                    <span className="text-sm font-black text-blue-600 tracking-wider">01</span>
                   </div>
-                );
-              })}
+                  <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight group-hover:text-blue-600 transition-colors duration-300">An App Built for Retention</h4>
+                  <p className="text-base text-slate-500 font-semibold leading-relaxed">
+                    Every design and development decision is made around keeping users engaged, not just getting an install.
+                  </p>
+                </motion.div>
+
+                {/* Feature 3 */}
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
+                  className="space-y-3 group text-left lg:text-right"
+                >
+                  <div className="flex lg:flex-row-reverse items-center gap-3 justify-start lg:justify-start">
+                    <div className="w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center text-purple-600 group-hover:scale-110 transition-transform duration-300">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0110 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0114 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+                      </svg>
+                    </div>
+                    <span className="text-sm font-black text-blue-600 tracking-wider">03</span>
+                  </div>
+                  <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight group-hover:text-purple-600 transition-colors duration-300">Scalable Architecture</h4>
+                  <p className="text-base text-slate-500 font-semibold leading-relaxed">
+                    Apps built to handle growth from day one, so a spike in users doesn’t mean a rebuild six months later.
+                  </p>
+                </motion.div>
+
+                {/* Feature 5 */}
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className="space-y-3 group text-left lg:text-right"
+                >
+                  <div className="flex lg:flex-row-reverse items-center gap-3 justify-start lg:justify-start">
+                    <div className="w-10 h-10 rounded-full bg-teal-50 flex items-center justify-center text-teal-600 group-hover:scale-110 transition-transform duration-300">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 18h.008v.008H12V18zm0-3h.008v.008H12V15zm0-3h.008v.008H12V12zm0-3h.008v.008H12V9zm0-3h.008v.008H12V6zm0-3h.008v.008H12V3zm0 18a9 9 0 110-18 9 9 0 010 18z" />
+                      </svg>
+                    </div>
+                    <span className="text-sm font-black text-blue-600 tracking-wider">05</span>
+                  </div>
+                  <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight group-hover:text-teal-600 transition-colors duration-300">Store-Ready Optimization</h4>
+                  <p className="text-base text-slate-500 font-semibold leading-relaxed">
+                    App Store and Play Store listings built and optimized for discoverability, not just a technical submission.
+                  </p>
+                </motion.div>
+              </div>
+
+              {/* Central Hub (Orbiting Center Circle with Color-Changing Glow) */}
+              <div className="lg:col-span-4 flex items-center justify-center py-8 lg:py-0 relative">
+                {/* Animated Color-Changing Glow Background Circle */}
+                <motion.div
+                  animate={{
+                    scale: [1.5, 2.5, 1.5],
+                    opacity: [0.4, 0.8, 0.4],
+                    backgroundColor: [
+                      "rgba(239, 68, 68, 0.25)",
+                      "rgba(34, 197, 94, 0.25)",
+                      "rgba(59, 130, 246, 0.25)",
+                      "rgba(239, 68, 68, 0.25)"
+                    ],
+                    filter: [
+                      "drop-shadow(0 0 35px rgba(239, 68, 68, 0.85)) blur(24px)",
+                      "drop-shadow(0 0 55px rgba(34, 197, 94, 0.85)) blur(32px)",
+                      "drop-shadow(0 0 35px rgba(59, 130, 246, 0.85)) blur(24px)",
+                      "drop-shadow(0 0 55px rgba(239, 68, 68, 0.85)) blur(32px)"
+                    ]
+                  }}
+                  transition={{
+                    duration: 6,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                  className="absolute w-[242px] h-[242px] rounded-full pointer-events-none"
+                />
+
+                {/* Core Hub Circle */}
+                <motion.div
+                  animate={{
+                    borderColor: [
+                      "#ef4444",
+                      "#22c55e",
+                      "#3b82f6",
+                      "#ef4444"
+                    ]
+                  }}
+                  transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+                  className="w-[240px] h-[240px] rounded-full bg-white flex flex-col items-center justify-center p-6 relative z-10 shadow-lg"
+                >
+                  <span className="text-[10px] font-black tracking-[0.2em] text-[#0d1b3e]/60 uppercase mb-2">Why Businesses Choose Us</span>
+                  <h3 className="text-2xl font-black text-[#0d1b3e] tracking-tight text-center leading-tight">
+                    What You<br />Actually Get<span className="text-blue-600">.</span>
+                  </h3>
+                  <motion.div
+                    animate={{
+                      backgroundColor: [
+                        "#ef4444",
+                        "#22c55e",
+                        "#3b82f6",
+                        "#ef4444"
+                      ]
+                    }}
+                    transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+                    className="w-12 h-1 rounded mt-4"
+                  />
+                </motion.div>
+              </div>
+
+              {/* Right Spokes (02, 04, 06) */}
+              <div className="lg:col-span-4 space-y-12 text-left">
+                {/* Feature 2 */}
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="space-y-3 group text-left"
+                >
+                  <div className="flex items-center gap-3 justify-start">
+                    <div className="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-600 group-hover:scale-110 transition-transform duration-300">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+                      </svg>
+                    </div>
+                    <span className="text-sm font-black text-blue-600 tracking-wider">02</span>
+                  </div>
+                  <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight group-hover:text-emerald-600 transition-colors duration-300">Reliable Performance</h4>
+                  <p className="text-base text-slate-500 font-semibold leading-relaxed">
+                    Clean, well-tested code so your app runs smoothly across devices instead of crashing or lagging under real usage.
+                  </p>
+                </motion.div>
+
+                {/* Feature 4 */}
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
+                  className="space-y-3 group text-left"
+                >
+                  <div className="flex items-center gap-3 justify-start">
+                    <div className="w-10 h-10 rounded-full bg-orange-50 flex items-center justify-center text-orange-500 group-hover:scale-110 transition-transform duration-300">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <span className="text-sm font-black text-blue-600 tracking-wider">04</span>
+                  </div>
+                  <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight group-hover:text-orange-500 transition-colors duration-300">End-to-End Ownership</h4>
+                  <p className="text-base text-slate-500 font-semibold leading-relaxed">
+                    One team handling strategy, design, development, testing, and launch — no gaps between vendors, no dropped context.
+                  </p>
+                </motion.div>
+
+                {/* Feature 6 */}
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className="space-y-3 group text-left"
+                >
+                  <div className="flex items-center gap-3 justify-start">
+                    <div className="w-10 h-10 rounded-full bg-rose-50 flex items-center justify-center text-rose-500 group-hover:scale-110 transition-transform duration-300">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+                      </svg>
+                    </div>
+                    <span className="text-sm font-black text-blue-600 tracking-wider">06</span>
+                  </div>
+                  <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight group-hover:text-rose-500 transition-colors duration-300">Ongoing Support</h4>
+                  <p className="text-base text-slate-500 font-semibold leading-relaxed">
+                    A team that stays available after launch to fix issues, ship updates, and help your app keep growing.
+                  </p>
+                </motion.div>
+              </div>
             </div>
           </div>
         </section>
+
+
 
         {/* Why Choose Digital Edge 360 */}
         <section className="relative z-10 mx-auto max-w-[1400px] px-6 sm:px-8 lg:px-12 py-24 bg-white border-y border-slate-100">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-            
+
             {/* Sticky/Fixed Title Column */}
             <div className="lg:col-span-5 lg:sticky lg:top-32 text-left space-y-4">
               <span className="text-[#2443ab] text-xs font-black tracking-widest uppercase">The Client Advantage</span>
@@ -736,8 +909,8 @@ export default function AppDevelopment() {
                   textCol: "text-amber-600"
                 }
               ].map((card, idx) => (
-                <div 
-                  key={idx} 
+                <div
+                  key={idx}
                   className={`p-8 rounded-[32px] border bg-gradient-to-br ${card.grad} shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between relative overflow-hidden min-h-[220px]`}
                 >
                   {/* Huge Background Number */}
@@ -759,7 +932,7 @@ export default function AppDevelopment() {
                 </div>
               ))}
             </div>
-            
+
           </div>
         </section>
 
@@ -776,7 +949,7 @@ export default function AppDevelopment() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left items-stretch">
-            
+
             {/* Tier 1 */}
             <div className="bg-white p-8 rounded-[32px] border border-slate-100 shadow-sm flex flex-col justify-between hover:scale-[1.02] transition-transform duration-300">
               <div className="space-y-6">
@@ -844,11 +1017,127 @@ export default function AppDevelopment() {
           </div>
         </section>
 
+        {/* The Workflow Timeline (How it Works) */}
+        <section className="relative z-10 w-full py-24 sm:py-32 bg-[#fafbfc] text-slate-800 overflow-hidden text-center px-6 sm:px-8 lg:px-12">
+          <div className="relative z-10 max-w-5xl mx-auto space-y-16">
+
+            <div className="space-y-4 max-w-2xl mx-auto">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-200 bg-blue-50/50 px-4 py-2 text-[10px] sm:text-xs font-black tracking-[0.2em] text-blue-600 uppercase shadow-sm">
+                <span>How We Work</span>
+              </span>
+              <h2 className="text-4xl sm:text-6xl font-black text-[#0d1b3e] tracking-tight">
+                Our App Build Roadmap
+              </h2>
+            </div>
+
+            <div className="relative flex flex-col gap-0 max-w-4xl mx-auto mt-20 text-left">
+              {/* Timeline Dashed Connecting Line */}
+              <div className="absolute left-6 lg:left-1/2 top-4 bottom-4 w-0.5 border-l-2 border-dashed border-slate-200 -translate-x-1/2 z-0" />
+
+              {[
+                {
+                  num: "01",
+                  title: "Discovery & Requirement Mapping",
+                  desc: "Understanding your business, users, and the core problem the app needs to solve.",
+                  lineColor: "bg-blue-500",
+                  borderColor: "border-blue-100 hover:border-blue-300",
+                  circleBg: "bg-gradient-to-br from-blue-400 to-indigo-600",
+                  grad: "from-white via-white to-blue-50/10"
+                },
+                {
+                  num: "02",
+                  title: "UI/UX Design",
+                  desc: "Designing wireframes and visual screens focused on ease of use and clear user flows.",
+                  lineColor: "bg-purple-500",
+                  borderColor: "border-purple-100 hover:border-purple-300",
+                  circleBg: "bg-gradient-to-br from-purple-400 to-violet-600",
+                  grad: "from-white via-white to-purple-50/10"
+                },
+                {
+                  num: "03",
+                  title: "Development",
+                  desc: "Building your app natively or cross-platform, with regular check-ins so you’re never in the dark on progress.",
+                  lineColor: "bg-pink-500",
+                  borderColor: "border-rose-100 hover:border-rose-300",
+                  circleBg: "bg-gradient-to-br from-pink-400 to-rose-600",
+                  grad: "from-white via-white to-rose-50/10"
+                },
+                {
+                  num: "04",
+                  title: "Testing",
+                  desc: "Thorough QA across devices and scenarios to catch issues before your users ever do.",
+                  lineColor: "bg-orange-500",
+                  borderColor: "border-orange-100 hover:border-orange-300",
+                  circleBg: "bg-gradient-to-br from-amber-400 to-orange-500",
+                  grad: "from-white via-white to-orange-50/10"
+                },
+                {
+                  num: "05",
+                  title: "Launch",
+                  desc: "Managing App Store and Play Store submission, optimized for approval and visibility.",
+                  lineColor: "bg-emerald-500",
+                  borderColor: "border-emerald-100 hover:border-emerald-300",
+                  circleBg: "bg-gradient-to-br from-emerald-400 to-teal-600",
+                  grad: "from-white via-white to-emerald-50/10"
+                },
+                {
+                  num: "06",
+                  title: "Support & Iteration",
+                  desc: "Ongoing monitoring, updates, and feature additions based on real user feedback after launch.",
+                  lineColor: "bg-indigo-500",
+                  borderColor: "border-indigo-100 hover:border-indigo-300",
+                  circleBg: "bg-gradient-to-br from-indigo-400 to-slate-600",
+                  grad: "from-white via-white to-indigo-50/10"
+                }
+              ].map((step, idx) => {
+                const isLeft = idx % 2 === 0;
+
+                return (
+                  <div key={idx} className={`flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-12 relative z-10 py-0.5 lg:-my-2.5 ${isLeft ? "" : "lg:flex-row-reverse"}`}>
+
+                    {/* Node point */}
+                    <div className={`absolute left-6 lg:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-white border-4 ${step.lineColor.replace('bg-', 'border-')} flex items-center justify-center z-20 shadow-sm transition-transform duration-300 hover:scale-125`}>
+                      <div className={`w-2.5 h-2.5 rounded-full ${step.lineColor}`} />
+                    </div>
+
+                    {/* Content Box */}
+                    <motion.div
+                      initial={{ opacity: 0, x: isLeft ? -40 : 40 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true, margin: "-100px" }}
+                      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                      className={`w-full lg:w-[45%] pl-14 lg:pl-0 ${isLeft ? "lg:text-right" : "lg:text-left"}`}
+                    >
+                      <div className={`p-5 rounded-[24px] border bg-gradient-to-br ${step.grad} ${step.borderColor} shadow-sm hover:shadow-md transition-all duration-300 group`}>
+                        <div className={`flex items-center gap-3 mb-2.5 ${isLeft ? "lg:justify-end" : "lg:justify-start"}`}>
+                          {isLeft && <h3 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight">{step.title}</h3>}
+                          <div className={`w-12 h-12 rounded-full flex items-center justify-center text-white font-black text-sm shrink-0 ${step.circleBg} group-hover:scale-110 transition-transform duration-300`}>
+                            {step.num}
+                          </div>
+                          {!isLeft && <h3 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight">{step.title}</h3>}
+                        </div>
+                        <div className={`w-12 h-1 rounded mt-2 mb-4 ${step.lineColor} ${isLeft ? "lg:ml-auto" : "lg:mr-auto"}`} />
+                        <p className="text-sm sm:text-[15px] text-slate-500 font-semibold leading-relaxed">{step.desc}</p>
+                      </div>
+                    </motion.div>
+
+                    {/* Spacer Column */}
+                    <div className="hidden lg:block lg:w-[45%]" />
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
         {/* The FAQ Accordion Section */}
         <section className="relative z-10 w-full py-24 sm:py-32 bg-[#fafbfc] border-t border-slate-100/80 text-slate-800 overflow-hidden text-center px-6 sm:px-8 lg:px-12">
           <div className="relative z-10 max-w-6xl mx-auto space-y-16">
-            
+
             <div className="space-y-4">
+              <span className="block text-[10px] sm:text-xs font-black tracking-[0.25em] text-[#2443ab] uppercase select-none">
+                Common Questions
+              </span>
               <h2 className="text-4xl sm:text-6xl font-black text-[#0d1b3e] tracking-tight">
                 Frequently Asked Questions
               </h2>
@@ -882,7 +1171,7 @@ export default function AppDevelopment() {
                         </svg>
                       </div>
                     </button>
-                    
+
                     <AnimatePresence initial={false}>
                       {isOpen && (
                         <motion.div
@@ -914,10 +1203,10 @@ export default function AppDevelopment() {
               The Next Step
             </span>
             <h2 className="text-4xl sm:text-6xl font-black text-[#0d1b3e] tracking-tight leading-[1.1] max-w-5xl">
-              Ready to Build an Ecommerce App<br />That Actually Sells?
+              Ready to Build an App People Actually Use?
             </h2>
             <p className="text-base sm:text-lg text-slate-500 font-semibold leading-relaxed max-w-2xl">
-              We build ecommerce apps engineered around real purchasing behavior — checkout speed, repeat engagement, and platform performance — not just a launch date.
+              Book your free, no-obligation 30-minute app strategy call. No generic slide decks — just a clear look at what it takes to build your app right.
             </p>
 
             <div className="pt-6 flex flex-col sm:flex-row gap-4 items-center justify-center">
@@ -925,17 +1214,7 @@ export default function AppDevelopment() {
                 href="/contact"
                 className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#0a8bc7] via-[#2443ab] to-[#40159e] px-8 py-4 text-xs font-black text-white uppercase tracking-wider shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group whitespace-nowrap"
               >
-                <span>Get a Free Quote</span>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1 flex-shrink-0">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                </svg>
-              </Link>
-
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 rounded-full bg-white border border-slate-200 px-8 py-4 text-xs font-black text-[#0d1b3e] uppercase tracking-wider shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105 group whitespace-nowrap"
-              >
-                <span>Book a Discovery Call</span>
+                <span>Schedule Strategy Call</span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1 flex-shrink-0">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                 </svg>

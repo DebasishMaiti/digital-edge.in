@@ -106,7 +106,7 @@ export default function Footer() {
                 { label: "WooCommerce Builds", href: "/woocommerce" },
                 { label: "Performance Marketing", href: "/performance-marketing" },
                 { label: "SEO & Content Strategy", href: "/seo-smm" },
-                { label: "Creative Studio", href: "/digital-product-editing" }
+                { label: "Creative Studio", href: "/creative-studio" }
               ].map((link, idx) => (
                 <li key={idx}>
                   <Link href={link.href} className="hover:text-white transition-colors duration-200">

@@ -8,7 +8,94 @@ import { motion } from "framer-motion";
 import LeadForm from "@/components/LeadForm";
 import AnimatedWords from "@/components/AnimatedWords";
 import Marquee from "react-fast-marquee";
+import { Rocket, Search, Puzzle, Zap, Code, Shield, ChevronRight } from "lucide-react";
 import ArchitectureTimeline from "@/components/ArchitectureTimeline";
+
+const perfMarketingShowcases = [
+  {
+    name: "Chris Louis",
+    link: "/company-details/chris-louis",
+    image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=600&auto=format&fit=crop",
+    logo: (
+      <div className="flex items-center gap-1.5 text-left">
+        <span className="font-extrabold text-[13px] text-slate-800 tracking-wider uppercase">Chris Louis</span>
+      </div>
+    )
+  },
+  {
+    name: "Jiva",
+    link: "/company-details/jiva",
+    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=600&auto=format&fit=crop",
+    logo: (
+      <div className="flex items-center gap-1.5 text-left">
+        <svg className="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fillRule="evenodd" d="M4.083 9h1.946c.089-1.546.383-2.97.837-4.118A8.004 8.004 0 004.083 9zM10 2a8 8 0 100 16 8 8 0 000-16zm1.09 14.507a7.925 7.925 0 01-2.18 0 7.227 7.227 0 01-.005-13.014 7.925 7.925 0 012.185 0 7.226 7.226 0 010 13.014z" clipRule="evenodd" />
+        </svg>
+        <span className="font-extrabold text-[14px] text-slate-800 tracking-widest uppercase">JIVA</span>
+      </div>
+    )
+  },
+  {
+    name: "JetChoice",
+    link: "/company-details/jetchoice",
+    image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=600&auto=format&fit=crop",
+    logo: (
+      <div className="flex items-center gap-1.5 text-left">
+        <span className="font-extrabold text-[13px] text-blue-600 tracking-wider uppercase">JetChoice</span>
+      </div>
+    )
+  },
+  {
+    name: "EdefyHome",
+    link: "/company-details/edefyhome",
+    image: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=600&auto=format&fit=crop",
+    logo: (
+      <div className="flex items-center gap-1.5 text-left">
+        <svg className="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+        </svg>
+        <span className="font-extrabold text-[12px] text-slate-800 tracking-tight">EdefyHome</span>
+      </div>
+    )
+  },
+  {
+    name: "Dash Capital",
+    link: "/company-details/dash-capital",
+    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=600&auto=format&fit=crop",
+    logo: (
+      <div className="flex items-center gap-1.5 text-left">
+        <span className="font-extrabold text-[13px] text-indigo-650 tracking-wider uppercase">Dash Capital</span>
+      </div>
+    ),
+    metric: "135%",
+    metricLabel: "Spike in Qualified Leads",
+    metricColor: "text-indigo-600"
+  },
+  {
+    name: "IBT Behala",
+    link: "/company-details/ibt-behala",
+    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=600&auto=format&fit=crop",
+    logo: (
+      <div className="flex items-center gap-1.5 text-left">
+        <span className="font-extrabold text-[13px] text-[#2443ab] tracking-wider uppercase">IBT Behala</span>
+      </div>
+    ),
+    metric: "3X",
+    metricLabel: "Attributed ROAS Growth",
+    metricColor: "text-blue-600"
+  },
+  {
+    name: "Ducati",
+    link: "/company-details/ducati",
+    image: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?q=80&w=600&auto=format&fit=crop",
+    logo: (
+      <div className="flex items-center gap-2 text-left">
+        <div className="w-5 h-6 bg-red-600 rounded-b-md flex items-center justify-center text-[10px] font-black text-white shadow-sm shrink-0">D</div>
+        <span className="font-extrabold text-[13px] text-slate-900 tracking-widest uppercase">Ducati</span>
+      </div>
+    )
+  }
+];
 
 export default function PerformanceMarketing() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -206,6 +293,35 @@ export default function PerformanceMarketing() {
         </div>
       </section>
 
+      {/* Marketing Showcase Marquee Section */}
+      <section className="relative z-10 py-16 bg-white border-b border-slate-100/80 overflow-hidden">
+        <div className="w-full">
+          <Marquee speed={95} gradient={true} gradientColor="white" gradientWidth={80} pauseOnHover={true} play={true}>
+            {[
+              { src: "/marketing-slider/Chris-Louis.png", alt: "Chris Louis" },
+              { src: "/marketing-slider/Ducati.png", alt: "Ducati" },
+              { src: "/marketing-slider/Edify-Home-Decore.png", alt: "Edify Home Decore" },
+              { src: "/marketing-slider/Ellixt-8.png", alt: "Ellixt 8" },
+              { src: "/marketing-slider/Hotel-JIva.png", alt: "Hotel Jiva" },
+              { src: "/marketing-slider/Jet-Choice.png", alt: "Jet Choice" },
+              { src: "/marketing-slider/TLS.png", alt: "TLS" },
+              { src: "/marketing-slider/dashCapital.png", alt: "Dash Capital" },
+            ].map((slide, index) => (
+              <div key={index} className="mx-4 sm:mx-6 transition-all duration-300 hover:-translate-y-1">
+                <div className="relative w-[280px] h-[160px] sm:w-[480px] sm:h-[270px] md:w-[700px] md:h-[390px] rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200/60 shadow-[0_8px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_15px_30px_rgba(0,0,0,0.06)] bg-white">
+                  <Image
+                    src={slide.src}
+                    alt={slide.alt}
+                    fill
+                    className="object-cover p-2"
+                  />
+                </div>
+              </div>
+            ))}
+          </Marquee>
+        </div>
+      </section>
+
       {/* Current Reality Section */}
       <section
         className="relative z-10 w-full py-28 sm:py-36 overflow-hidden text-center px-6 sm:px-8 lg:px-12 bg-gradient-to-br from-slate-100 via-slate-50 to-blue-100/40"
@@ -224,6 +340,70 @@ export default function PerformanceMarketing() {
               delay={0.25}
             />
           </p>
+        </div>
+      </section>
+
+      {/* Brand Showcase Grid Section */}
+      <section className="relative z-10 py-24 bg-gradient-to-b from-[#fafbfc] to-white overflow-hidden border-t border-slate-100">
+        <div className="w-full mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+
+          {/* Header */}
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-purple-250 bg-purple-50/80 px-4 py-2 text-[10px] sm:text-xs font-black tracking-[0.2em] text-purple-700 uppercase shadow-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 text-purple-600">
+                <path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192L12 .587z" />
+              </svg>
+              <span>Brands Thrive with Digital Edge</span>
+            </span>
+            <h2 className="text-3xl sm:text-5xl font-black text-[#0d1b3e] tracking-tight mt-4">
+              Bespoke Digital Success Stories
+            </h2>
+            {/* Short styled underline line */}
+            <div className="w-16 h-1 bg-gradient-to-r from-purple-500 to-indigo-600 mx-auto rounded-full mt-2" />
+          </div>
+
+          {/* Grid Layout */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            {perfMarketingShowcases.map((brand, idx) => (
+              <Link href={brand.link || "/contact"} key={idx} className="block w-full">
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0,0,0,0.06)" }}
+                  transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                  className="bg-white rounded-[24px] overflow-hidden shadow-sm border border-slate-100/80 flex flex-col justify-between group transition-all duration-300 cursor-pointer h-full"
+                >
+                  {/* Top Image wrapper */}
+                  <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-50">
+                    <img
+                      src={brand.image}
+                      alt={brand.name}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </div>
+
+                  {/* Bottom details block */}
+                  <div className="p-6 flex items-center justify-between min-h-[90px]">
+                    <div className="flex-grow text-left flex flex-col justify-center">
+                      <div className="mb-1.5">{brand.logo}</div>
+                      {brand.metric && (
+                        <div className="flex flex-col text-left leading-none mt-2">
+                          <span className={`text-2xl font-black ${brand.metricColor} leading-none`}>{brand.metric}</span>
+                          <span className="text-[10px] font-bold text-slate-400 tracking-wider uppercase mt-1">{brand.metricLabel}</span>
+                        </div>
+                      )}
+                    </div>
+                    {/* Circle Chevron Indicator Button */}
+                    <button className="w-10 h-10 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-650 group-hover:bg-[#2443ab] group-hover:text-white group-hover:border-[#2443ab] transition-all duration-300 shrink-0 ml-4 shadow-sm">
+                      <ChevronRight className="w-5 h-5 transform group-hover:translate-x-0.5 transition-transform duration-300" />
+                    </button>
+                  </div>
+                </motion.div>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 

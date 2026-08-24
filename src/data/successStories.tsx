@@ -33,122 +33,10 @@ export interface SuccessStoryData {
   impactHeadline?: string;
   impactDescription?: string;
   impactCards?: { title: string; desc: string; icon: string }[];
+  image?: string;
 }
 
 export const storiesData: Record<string, SuccessStoryData> = {
-  "aarogya-vidhaan": {
-    title: "Aarogya Vidhaan",
-    subtitle: "Simplifying Ayurveda, Empowering Wellness",
-    emoji: "☀️",
-    description: "Aarogya Vidhaan is a holistic digital health platform bringing authentic Ayurvedic consultations and wellness products to users worldwide.",
-    stats: {
-      estimatedTime: "45 Days",
-      bugsFixing: "240 +",
-      security: "99.9%",
-      projectCompletion: "52 Days",
-      trafficSpikes: "180%"
-    },
-    about: "Aarogya Vidhaan connects certified Ayurvedic doctors with users seeking natural healing remedies. By digitizing pulse readings and personalized herb formulations, they bring ancient wisdom into modern lifestyles safely and seamlessly.",
-    challenge: "Scaling real-time video consultations during peak morning hours while syncing multi-vendor inventory updates was a primary operational obstacle. Securing private health records according to wellness data compliance was also key.",
-    workflow: [
-      "Designed compliant consult booking flow",
-      "Created digital wellness dashboard interface",
-      "Integrated secure WebRTC video sessions",
-      "Built multi-warehouse herbal inventory synchronization"
-    ],
-    timeline: [
-      { label: "Planning", day: "10 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
-      { label: "UI/UX Development", day: "20 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
-      { label: "Development", day: "42 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
-      { label: "Testing", day: "48 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
-      { label: "Deploy & Live", day: "52 Day", color: "border-emerald-500 bg-emerald-50 text-emerald-600" }
-    ]
-  },
-  "dooli": {
-    title: "Dooli",
-    subtitle: "Driven by Comfort, Powered by Trust",
-    emoji: "🚗",
-    description: "Dooli is a versatile ride-hailing app that offers cab services, parcel delivery, and JCB rentals. Despite its innovation, Dooli experiences challenges like ensuring reliable cab availability, streamlining parcel logistics, and managing JCB service demands. Overcoming these difficulties requires efficient operations, driver coordination, and customer satisfaction to establish a seamless mobility experience.",
-    playStoreUrl: "https://play.google.com/store/apps/details?id=com.dooli.user",
-    stats: {
-      estimatedTime: "60 Days",
-      bugsFixing: "769 +",
-      security: "99.99%",
-      projectCompletion: "67 Days",
-      trafficSpikes: "250%"
-    },
-    about: "Dooli is a smart, reliable ride-hailing app designed for seamless and affordable travel. Whether you need a quick ride to work, a late-night pickup, or a long-distance trip, Dooli ensures safety, comfort, and efficiency at your fingertips. With real-time tracking, easy booking, and multiple ride options, it’s the perfect travel companion. Experience hassle-free commuting with professional drivers and competitive fares. Choose Dooli—your ride, your way.",
-    challenge: "Dooli, offering cab services, parcel delivery, and JCB rentals, faces several challenges. Ensuring timely service amidst traffic congestion, handling peak-hour demands, and maintaining vehicle availability are key concerns for cab services. Parcel delivery struggles with logistics management, address accuracy, and delivery delays. JCB rentals face issues like equipment maintenance, fuel costs, and skilled operator shortages. Despite these challenges, Dooli remains committed to seamless service, leveraging technology and efficiency to enhance customer experience across all its offerings.",
-    workflow: [
-      "Strategized the app structure to effectively showcase the brand’s stunning vision",
-      "Designed an intuitive, visually appealing, and user-friendly interface for seamless navigation",
-      "Implemented the planned design and features, ensuring alignment",
-      "Built a fully functional app, integrating content, visuals, and technology to enhance user engagement"
-    ],
-    timeline: [
-      { label: "Planning", day: "14 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
-      { label: "UI/UX Development", day: "25 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
-      { label: "Development", day: "50 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
-      { label: "Testing", day: "65 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
-      { label: "Deploy & Live", day: "67 Day", color: "border-emerald-500 bg-emerald-50 text-emerald-600" }
-    ]
-  },
-  "edgering": {
-    title: "EdgeRing",
-    subtitle: "Uncompromising Protection, Premium Style",
-    emoji: "📱",
-    description: "EdgeRing specializes in high-durability, premium aesthetic mobile accessories and smartphone cases featuring shockproof technology.",
-    stats: {
-      estimatedTime: "35 Days",
-      bugsFixing: "120 +",
-      security: "99.99%",
-      projectCompletion: "38 Days",
-      trafficSpikes: "300%"
-    },
-    about: "EdgeRing elevates mobile fashion by supplying high-performance armor shells that protect mobile devices without adding excess bulk, leveraging aerospace-grade materials.",
-    challenge: "Achieving accurate product-to-model filtering across thousands of device permutations while presenting photorealistic 3D cases in real-time browser preview sessions.",
-    workflow: [
-      "Designed interactive device accessory filter",
-      "Modeled responsive high-fidelity UI components",
-      "Programmed advanced search index indexing system",
-      "Completed visual regression checks"
-    ],
-    timeline: [
-      { label: "Planning", day: "5 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
-      { label: "UI/UX Development", day: "12 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
-      { label: "Development", day: "28 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
-      { label: "Testing", day: "34 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
-      { label: "Deploy & Live", day: "38 Day", color: "border-emerald-500 bg-emerald-50 text-emerald-600" }
-    ]
-  },
-  "edgeringtone": {
-    title: "Edge Ringtones",
-    subtitle: "Elevate Your Style with Personalized, Premium Ringtones – Effortless & Seamless.",
-    emoji: "🎵",
-    description: "Our custom ringtone app combines a sleek, premium UI with a vast collection of high-quality ringtones for every taste. Offering seamless customization for calls, notifications, and alarms, it ensures a smooth and engaging experience. With frequent updates and compatibility across devices, this app keeps you connected with fresh sounds and personalized options at your fingertips.",
-    stats: {
-      estimatedTime: "45 Days",
-      bugsFixing: "491 +",
-      security: "99.99%",
-      projectCompletion: "40 Days",
-      trafficSpikes: "536%"
-    },
-    about: "The custom ringtone app is designed to deliver a premium, user-centric experience with a sleek, intuitive UI. It offers a diverse selection of high-quality ringtones, allowing users to personalize their devices with custom sounds for calls, notifications, and alarms. The app ensures seamless performance with fast downloads and smooth functionality, while regular updates keep the content fresh. Compatible across a variety of devices, this app delivers a dynamic and engaging experience, offering users the ability to tailor their mobile sound experience to suit their preferences.",
-    challenge: "The challenge was to offer a large selection of high-quality ringtones while maintaining optimal performance. To address this, we implemented a custom-built CDN for fast and reliable content delivery. Paired with advanced caching techniques, optimized download speeds, and a refined UI framework, we ensured smooth, efficient access to personalized ringtones, providing users with an exceptional experience across all devices without compromising on speed or quality.",
-    workflow: [
-      "Requirement Analysis: Collaborate with clients to define clear objectives and key features.",
-      "UI/UX Design: Develop intuitive, aesthetically pleasing interfaces focused on user experience.",
-      "App Development: Utilize advanced technologies to build robust, feature-rich applications.",
-      "Quality Assurance & Launch: Conduct thorough testing to ensure performance, then deploy for optimal user access."
-    ],
-    timeline: [
-      { label: "Planning", day: "7 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
-      { label: "UI/UX Development", day: "10 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
-      { label: "Development", day: "33 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
-      { label: "Testing", day: "38 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
-      { label: "Deploy & Live", day: "40 Day", color: "border-emerald-500 bg-emerald-50 text-emerald-600" }
-    ]
-  },
   "priyanka-khaitan": {
     title: "Priyanka Khaitan",
     subtitle: "Bridal Content Strategy & High-intent Conversions",
@@ -615,5 +503,480 @@ export const storiesData: Record<string, SuccessStoryData> = {
       { title: "Customer Trust", desc: "Built strong trust and credibility with the right audience", icon: "shield" },
       { title: "Sustainable Growth", desc: "Enhanced conversions and sustainable business growth", icon: "trending" }
     ]
+  },
+  "chris-louis": {
+    title: "Chris Louis",
+    subtitle: "Premium Australian leather bags crafted for modern lifestyles.",
+    emoji: "💼",
+    description: "Chris Louis, a luxury Australian brand specializing in handcrafted leather bags for men and women, collaborated with Digital Edge 360 to enhance its online presence, drive e-commerce sales, and establish a premium brand identity. Through a focused digital marketing strategy, the brand achieved remarkable growth in visibility, engagement, and revenue.",
+    websiteUrl: "https://chrislouis.com.au",
+    image: "/portfolio/chrislouis.png",
+    stats: {
+      estimatedTime: "30 Days",
+      bugsFixing: "N/A",
+      security: "99.9%",
+      projectCompletion: "35 Days",
+      trafficSpikes: "220%",
+      trafficSpikesLabel: "Sales Increase"
+    },
+    about: "Chris Louis is a high-end Australian brand known for its premium leather bags, combining elegance, durability, and functionality. Designed for professionals and trendsetters, the brand offers a collection of sophisticated bags that blend timeless craftsmanship with contemporary aesthetics. With a strong emphasis on quality and style, Chris Louis caters to individuals seeking luxurious, long-lasting accessories that complement their lifestyle, whether for work, travel, or everyday use.",
+    challenge: "Despite its superior craftsmanship, Chris Louis faced challenges in scaling its online sales and reaching international customers. High competition in the luxury leather goods market made brand differentiation difficult. The brand also struggled with low social media engagement and customer retention. Without a strong digital marketing strategy, it needed a refined approach to increase brand awareness, attract high-value customers, and convert online visitors into loyal buyers.",
+    workflowTitle: "Our Approach",
+    workflow: [
+      "Influencer & Lifestyle Marketing: Partnered with fashion influencers to showcase bags in real-life use.",
+      "Social Media Content Strategy: Created premium visual storytelling with high-end photography and videos.",
+      "Personalized Email & WhatsApp Marketing: Engaged customers with exclusive offers and product recommendations.",
+      "High-Impact Paid Social Campaigns: Targeted luxury buyers on Instagram and Facebook for maximum ROI."
+    ],
+    timeline: [
+      { label: "Planning", day: "5 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "Strategy", day: "10 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "Campaign Launch", day: "15 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "Optimization", day: "25 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
+      { label: "Scale & Retention", day: "35 Day", color: "border-emerald-500 bg-emerald-55 text-emerald-600" }
+    ],
+    heroHeadingBlack: "Premium Leather",
+    heroHeadingGreen: "Modern Lifestyles",
+    industry: "E-commerce & Luxury Fashion",
+    projectType: "Performance Marketing & Brand Strategy",
+    aboutHeadline: "Timeless Craftsmanship. Elegance & Durability.",
+    challengeHeadline: "Scaling Sales in a Competitive Luxury Market",
+    challengeBullets: [
+      "High competition in the luxury leather goods market",
+      "Difficulties in scaling online sales internationally",
+      "Low social media engagement and organic reach",
+      "Poor customer retention and high cart abandonment"
+    ],
+    timelineBanner: "Performance Marketing Strategy Initiated and Scaled in 35 Days",
+    impactHeadline: "Substantial ROI. Global Reach.",
+    impactDescription: "Through targeted paid advertising, influencer collabs, and retention marketing, Chris Louis expanded its footprint and scaled sales.",
+    impactCards: [
+      { title: "E-commerce Sales", desc: "220% Increase in online sales revenue", icon: "trending" },
+      { title: "International Orders", desc: "140% Rise in worldwide shipments", icon: "globe" },
+      { title: "Cart Abandonment", desc: "75% Decrease in abandoned carts", icon: "percent" },
+      { title: "Retention & Loyalty", desc: "90% Increase in customer retention rate", icon: "users" }
+    ]
+  },
+  "dash-capital": {
+    title: "Dash Capital",
+    subtitle: "Expert wealth management solutions for financial growth & security.",
+    emoji: "📈",
+    description: "Dash Capital, a leading wealth distribution house in Kolkata, partnered with Digital Edge 360 to enhance its digital presence, generate high-net-worth leads, and establish itself as a trusted name in financial services. Through a focused digital marketing strategy, the firm achieved substantial growth in client acquisition, engagement, and brand credibility.",
+    websiteUrl: "https://dashcapital.in",
+    image: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=800&auto=format&fit=crop",
+    stats: {
+      estimatedTime: "30 Days",
+      bugsFixing: "N/A",
+      security: "99.9%",
+      projectCompletion: "35 Days",
+      trafficSpikes: "180%",
+      trafficSpikesLabel: "Traffic Increase"
+    },
+    about: "Dash Capital specializes in wealth management, investment advisory, and financial planning services for individuals and businesses. With expertise in mutual funds, insurance, tax planning, and portfolio management, the firm helps clients achieve long-term financial security. By offering personalized solutions and data-driven strategies, Dash Capital has built a strong reputation among investors seeking expert guidance to grow, protect, and optimize their financial assets efficiently.",
+    challenge: "Despite its strong financial expertise, Dash Capital struggled with digital visibility and lead generation. The wealth management industry is highly competitive, making it difficult to stand out. Limited online presence and low engagement on social platforms reduced trust and client inquiries. The firm needed a strategic digital marketing approach to reach high-net-worth individuals, build credibility, and convert online visitors into long-term clients.",
+    workflowTitle: "Our Approach",
+    workflow: [
+      "SEO & Content Strategy: Created high-value blogs, investment guides, and industry insights.",
+      "Social Media Branding: Engaged audiences with expert financial tips and success stories.",
+      "Performance Marketing Campaigns: Targeted high-net-worth individuals via Google and LinkedIn Ads.",
+      "Lead Nurturing & Retargeting: Used email marketing and personalized follow-ups to convert prospects."
+    ],
+    timeline: [
+      { label: "Planning", day: "5 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "Strategy", day: "10 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "Campaign Launch", day: "15 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "Optimization", day: "25 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
+      { label: "Scale & Retention", day: "35 Day", color: "border-emerald-500 bg-emerald-55 text-emerald-600" }
+    ],
+    heroHeadingBlack: "Expert Wealth",
+    heroHeadingGreen: "Management Solutions",
+    industry: "Wealth Management & Finance",
+    projectType: "Performance Marketing & Brand Strategy",
+    aboutHeadline: "Personalized Financial Planning. Trusted Expertise.",
+    challengeHeadline: "Standing Out in a Highly Competitive Sector",
+    challengeBullets: [
+      "Highly competitive wealth management landscape",
+      "Limited initial digital visibility and brand trust",
+      "Low social media engagement with key audiences",
+      "Need to efficiently reach and convert high-net-worth individuals"
+    ],
+    timelineBanner: "Wealth Marketing Strategy Scaled in 35 Days",
+    impactHeadline: "Substantial Lead Volume. Optimized CPL.",
+    impactDescription: "Through targeted paid advertising, high-quality content, and retargeting campaigns, Dash Capital successfully scaled high-quality inquiries.",
+    impactCards: [
+      { title: "Website Traffic", desc: "180% Increase in Website Traffic", icon: "trending" },
+      { title: "Social Media", desc: "90% Boost in Social Media Engagement", icon: "users" },
+      { title: "Cost Per Lead", desc: "60% Decrease in Cost Per Lead (CPL)", icon: "percent" },
+      { title: "Lead Generation", desc: "140% Growth in High-Quality Lead Generation", icon: "trending" },
+      { title: "Client Conversions", desc: "75% Increase in Client Conversions", icon: "shield" }
+    ]
+  },
+  "ibt-behala": {
+    title: "IBT Behala",
+    subtitle: "Premier coaching institute for competitive exam success.",
+    emoji: "🎓",
+    description: "IBT Behala, a leading competitive exam coaching institute, partnered with Digital Edge 360 to enhance its digital presence, attract more students, and establish itself as a top choice for exam preparation. Through targeted digital marketing strategies, the institute saw significant growth in student inquiries, engagement, and admissions, ensuring a strong market position.",
+    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop",
+    stats: {
+      estimatedTime: "30 Days",
+      bugsFixing: "N/A",
+      security: "99.9%",
+      projectCompletion: "35 Days",
+      trafficSpikes: "150%",
+      trafficSpikesLabel: "Traffic Increase"
+    },
+    about: "IBT Behala is a well-known coaching institute that prepares students for government exams such as banking, SSC, railways, and other competitive tests. With expert faculty, structured courses, and a proven track record of success, IBT Behala has helped thousands of aspirants achieve their career goals. The institute focuses on delivering quality education, personalized guidance, and result-oriented training to ensure that students excel in their exams with confidence.",
+    challenge: "Despite its strong curriculum and faculty, IBT Behala struggled with generating quality leads and reaching a wider audience. Heavy reliance on offline promotions limited its ability to attract students digitally. Additionally, high competition from other coaching institutes made it difficult to differentiate. The institute needed a data-driven digital marketing strategy to boost visibility, increase student enrollment, and build trust among aspirants seeking quality coaching.",
+    workflowTitle: "Our Approach",
+    workflow: [
+      "Targeted Paid Campaigns: Ran Facebook and Google Ads to attract high-intent students.",
+      "SEO & Content Marketing: Optimized website with exam-related blogs and ranking keywords.",
+      "Social Media Strategy: Created engaging videos, success stories, and student testimonials.",
+      "Lead Nurturing & Retargeting: Implemented WhatsApp, email, and call-based follow-ups for conversions."
+    ],
+    timeline: [
+      { label: "Planning", day: "5 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "Strategy", day: "10 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "Campaign Launch", day: "15 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "Optimization", day: "25 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
+      { label: "Scale & Retention", day: "35 Day", color: "border-emerald-500 bg-emerald-55 text-emerald-600" }
+    ],
+    heroHeadingBlack: "Premier Coaching",
+    heroHeadingGreen: "Competitive Success",
+    industry: "Education & Coaching",
+    projectType: "Performance Marketing & Brand Strategy",
+    aboutHeadline: "Quality Education. Proven Exam Success.",
+    challengeHeadline: "Shifting from Offline to Digital Enrollment",
+    challengeBullets: [
+      "Heavy reliance on traditional offline marketing channels",
+      "High competition from established regional coaching centers",
+      "Difficulties in generating qualified student leads digitally",
+      "Need to build digital authority and trust among aspirants"
+    ],
+    timelineBanner: "Education Marketing Strategy Scaled in 35 Days",
+    impactHeadline: "More Admissions. Scaled Enrollment.",
+    impactDescription: "Through targeted paid advertising, high-quality content, and retargeting campaigns, IBT Behala successfully scaled enrollment inquiries.",
+    impactCards: [
+      { title: "Student Inquiries", desc: "200% Increase in qualified student inquiries", icon: "users" },
+      { title: "Website Traffic", desc: "150% Growth in monthly site visitors", icon: "trending" },
+      { title: "Social Media", desc: "120% Rise in organic engagement and reach", icon: "users" },
+      { title: "Student Admissions", desc: "85% Increase in overall admissions", icon: "shield" },
+      { title: "Cost Per Lead", desc: "70% Reduction in digital CPL", icon: "percent" }
+    ]
+  },
+  "momentum": {
+    title: "Momentum",
+    subtitle: "Learn. Practice. Succeed. Your ultimate path to exam excellence!",
+    emoji: "🎯",
+    description: "Momentum is designed to be the ultimate learning companion for students striving for academic excellence. Our goal is to provide an all-in-one education platform that simplifies learning, enhances understanding, and helps students clear exams with confidence. With engaging content, seamless navigation, and interactive features, we aim to bridge the gap between students and quality education. Momentum ensures uninterrupted learning from the comfort of home, empowering students to achieve their dreams. Whether it’s concept clarity, mock tests, or live classes, our app provides everything needed to succeed—all in one place, making learning easier, smarter, and more effective.",
+    playStoreUrl: "https://play.google.com/store/apps/details?id=co.brown.qjdzl",
+    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop",
+    stats: {
+      estimatedTime: "90 Days",
+      bugsFixing: "1,032 +",
+      security: "99.99%",
+      projectCompletion: "73 Days",
+      trafficSpikes: "300%",
+      trafficSpikesLabel: "Traffic Spike"
+    },
+    about: "Momentum is more than just an education app—it’s a revolution in online learning! Designed for students across the country, we provide an engaging, interactive, and structured learning experience tailored for success. From topic-wise clarity to full-fledged exam preparation, Momentum ensures every learner stays ahead. Our intuitive user interface, expert-curated content, and real-time doubt-solving make studying stress-free and effective. Whether preparing for competitive exams or enhancing subject knowledge, Momentum makes learning accessible, convenient, and results-driven. With us, students don’t just study—they thrive, excel, and create a brighter future, all from the comfort of their homes.",
+    challenge: "Developing a flawless online learning experience comes with its own challenges. Ensuring seamless live classes without third-party apps, maintaining high-quality video streaming, and integrating interactive tools like quizzes and doubt resolution in real time is crucial. Managing a vast amount of study material while keeping the platform lightweight and user-friendly is another key challenge. Additionally, providing a secure, ad-free learning environment without interruptions is essential to maintain focus. Momentum is committed to overcoming these hurdles, continuously optimizing our platform for speed, efficiency, and engagement—so students can experience a hassle-free, immersive learning journey from anywhere!",
+    workflowTitle: "Development Stages",
+    workflow: [
+      "Conceptualization & Integration: Plan astrology services (chat, calls, video) and integrate APIs.",
+      "UI/UX Design: Create an intuitive, user-friendly design focusing on personalization.",
+      "Astrologer Matching Algorithm: Develop an algorithm to match users with astrologers.",
+      "Testing & Launch: Conduct testing for reliability and privacy compliance before launch."
+    ],
+    timeline: [
+      { label: "Planning", day: "10 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "UI/UX Development", day: "25 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "Development", day: "60 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "Testing", day: "67 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
+      { label: "Deploy & Live", day: "73 Day", color: "border-emerald-500 bg-emerald-55 text-emerald-600" }
+    ],
+    heroHeadingBlack: "Learn & Practice",
+    heroHeadingGreen: "Succeed & Excel",
+    industry: "EdTech & Mobile Learning",
+    projectType: "Full-Stack App Development",
+    aboutHeadline: "Your Ultimate Path to Exam Excellence",
+    challengeHeadline: "Optimizing Live Streaming and Interactivity",
+    challengeBullets: [
+      "High-quality video streaming and interactive quizzes",
+      "Lightweight platform hosting extensive study materials",
+      "Secure, ad-free environment without interruptions"
+    ],
+    timelineBanner: "Education Platform Successfully Launched in 73 Days",
+    impactHeadline: "Seamless Scale. Enhanced Engagement.",
+    impactDescription: "Through optimized streaming architecture and robust backend design, Momentum successfully handled 300% traffic spikes without any downtime.",
+    impactCards: [
+      { title: "High-Quality Streaming", desc: "Seamless class delivery without lag", icon: "trending" },
+      { title: "Traffic Spikes", desc: "300% traffic spikes handled without downtime", icon: "shield" },
+      { title: "Reliability", desc: "99.99% security and reliability standards met", icon: "users" },
+      { title: "Admissions & Scale", desc: "A robust learning ecosystem built efficiently", icon: "percent" }
+    ]
+  },
+  "recipe-keeper": {
+    title: "Recipe Keeper",
+    subtitle: "Your Personal Digital Cookbook – Recipes, Planning & Shopping Made Easy!",
+    emoji: "🍳",
+    description: "Recipe Keeper aims to revolutionize how food lovers organize, plan, and share their favorite recipes! Whether you’re a home cook or a seasoned chef, this all-in-one app simplifies recipe storage, meal planning, and grocery shopping. From importing recipes from Instagram and TikTok to scanning handwritten notes and cookbooks, Recipe Keeper ensures every meal idea is at your fingertips. With seamless device synchronization, smart meal planning, and hands-free Alexa support, our goal is to make cooking fun, efficient, and stress-free. Say goodbye to scattered notes and forgotten recipes—Recipe Keeper is your personal digital cookbook, keeping every dish just a tap away!",
+    websiteUrl: "https://apps.apple.com/us/app/recipe-keeper/id974683711",
+    image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=800&auto=format&fit=crop",
+    stats: {
+      estimatedTime: "90 Days",
+      bugsFixing: "1,032 +",
+      security: "99.99%",
+      projectCompletion: "73 Days",
+      trafficSpikes: "300%",
+      trafficSpikesLabel: "Traffic Spike"
+    },
+    about: "Recipe Keeper is more than just an app—it’s your ultimate cooking companion, designed for passionate foodies and busy families. This feature-packed tool allows users to effortlessly collect, organize, and customize recipes from various sources, including the web, handwritten notes, and cookbooks. With built-in meal planning and shopping list integration, it transforms the way users approach home cooking. Whether you're meal prepping for the week, sharing a secret family recipe, or exploring new dishes, Recipe Keeper ensures every culinary experience is smooth and enjoyable. Accessible across multiple devices, it’s the smartest way to keep your kitchen organized and inspired!",
+    challenge: "Developing a seamless and intuitive platform like Recipe Keeper comes with unique challenges. The biggest hurdle is ensuring smooth integration of diverse recipe sources—from scanning handwritten notes to importing directly from social media. Optimizing Optical Character Recognition (OCR) for handwritten and printed text requires precision to avoid errors. Another challenge is providing real-time synchronization across devices while maintaining data security. Creating an AI-powered smart meal planner that suggests meals based on preferences and available ingredients requires constant refinement. Additionally, developing a voice-enabled cooking assistant for hands-free kitchen use adds another layer of complexity. Overcoming these ensures Recipe Keeper stays the ultimate kitchen essential!",
+    workflowTitle: "Development Stages",
+    workflow: [
+      "Recipe Integration & Import: Develop seamless importing from web, social media & OCR scanning.",
+      "Smart Meal Planning: Implement AI-powered meal suggestions and dynamic grocery lists.",
+      "Cross-Device Synchronization: Ensure real-time access across multiple platforms with secure cloud storage.",
+      "Voice & Hands-Free Cooking: Integrate Alexa and voice commands for a smooth, touch-free experience."
+    ],
+    timeline: [
+      { label: "Planning", day: "10 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "UI/UX Development", day: "25 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "Development", day: "60 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "Testing", day: "67 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
+      { label: "Deploy & Live", day: "73 Day", color: "border-emerald-500 bg-emerald-55 text-emerald-600" }
+    ],
+    heroHeadingBlack: "Your Personal",
+    heroHeadingGreen: "Digital Cookbook",
+    industry: "Food & Lifestyle",
+    projectType: "Full-Stack App Development",
+    aboutHeadline: "Recipes, Planning & Shopping Made Easy!",
+    challengeHeadline: "OCR Accuracy & AI Meal Suggestions",
+    challengeBullets: [
+      "Importing from Instagram, TikTok, and web sources",
+      "High-precision OCR scanning of handwritten recipes",
+      "Real-time cross-device sync and smart meal algorithms",
+      "Voice assistant integration for hands-free kitchen use"
+    ],
+    timelineBanner: "Digital Cookbook Platform Launched in 73 Days",
+    impactHeadline: "Seamless Scale. Enhanced Cooking Experience.",
+    impactDescription: "Through optimized OCR scanning technology, secure cloud synchronization, and Alexa voice integration, Recipe Keeper became the ultimate cooking companion.",
+    impactCards: [
+      { title: "Smart Imports", desc: "Scan and import recipes seamlessly", icon: "trending" },
+      { title: "Traffic Spikes", desc: "300% traffic spikes handled without downtime", icon: "shield" },
+      { title: "Cloud Sync", desc: "Real-time cross-device synchronization", icon: "users" },
+      { title: "Voice Control", desc: "Hands-free cooking with smart voice assistance", icon: "percent" }
+    ]
+  },
+  "hubfit": {
+    title: "HubFit",
+    subtitle: "Your Fitness. Your Coach. Your Results – All in One App!",
+    emoji: "💪",
+    description: "HubFit is designed to revolutionize online coaching by providing a seamless platform for fitness enthusiasts and coaches to connect. Our goal is to simplify progress tracking, nutrition monitoring, and personalized training in one powerful app. With features like check-ins, macro tracking, workout history, and wearable integration, HubFit ensures that users stay accountable, motivated, and on track. Whether you’re a fitness coach managing multiple clients or an individual striving for peak performance, HubFit streamlines the process, making fitness management effortless. The ultimate aim is to empower users with data-driven insights, real-time communication, and a structured approach to achieving their goals.",
+    image: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=800&auto=format&fit=crop",
+    stats: {
+      estimatedTime: "30 Days",
+      bugsFixing: "N/A",
+      security: "99.9%",
+      projectCompletion: "35 Days",
+      trafficSpikes: "305%",
+      trafficSpikesLabel: "Users Growth"
+    },
+    about: "HubFit is more than just a coaching app—it’s your ultimate fitness companion. Designed for athletes, trainers, and fitness enthusiasts, HubFit bridges the gap between structured training and real-time progress tracking. The app offers a fully immersive experience, combining workout logging, macro tracking, and one-on-one coaching to optimize results. With intuitive features and seamless device integration, HubFit empowers users to take control of their fitness journey. Whether at home, in the gym, or on the go, HubFit is designed to adapt to your needs, providing an all-in-one solution for a smarter, data-driven fitness transformation.",
+    challenge: "Building HubFit comes with unique challenges, including ensuring real-time synchronization of fitness data across multiple devices while maintaining a smooth, lag-free experience. Nutrition tracking must be accurate and customizable, accommodating different dietary needs. The app must support high-quality image uploads for progress tracking without compromising performance. Additionally, secure and responsive one-on-one messaging is critical for seamless communication between coaches and clients. Integrating wearables with multiple platforms while ensuring compatibility and accurate data syncing is another challenge. HubFit aims to overcome these hurdles by offering a robust, scalable, and user-friendly solution tailored for every fitness journey.",
+    workflowTitle: "Development Stages",
+    workflow: [
+      "Core Fitness Features: Implement workout tracking, macro monitoring, and check-in submissions.",
+      "Data Synchronization: Integrate with wearables and ensure real-time data syncing.",
+      "Interactive Coaching: Develop secure messaging and live progress tracking for users.",
+      "Performance Optimization: Enhance app speed, scalability, and personalized recommendations using AI."
+    ],
+    timeline: [
+      { label: "Planning", day: "10 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "UI/UX Development", day: "20 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "Development", day: "30 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "Testing", day: "33 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
+      { label: "Deploy & Live", day: "35 Day", color: "border-emerald-500 bg-emerald-55 text-emerald-600" }
+    ],
+    heroHeadingBlack: "Your Fitness",
+    heroHeadingGreen: "Your Coach",
+    industry: "Health & Fitness",
+    projectType: "Full-Stack App Development",
+    aboutHeadline: "Your Fitness. Your Coach. Your Results.",
+    challengeHeadline: "Wearables Sync & Real-Time Macro Tracking",
+    challengeBullets: [
+      "Real-time synchronization across devices and wearables",
+      "Accurate and highly customizable nutrition tracking",
+      "High-quality progress image uploads without lag",
+      "Secure and responsive client-coach messaging"
+    ],
+    timelineBanner: "Fitness Coaching Platform Successfully Launched in 35 Days",
+    impactHeadline: "Substantial User Acquisition. Strong Engagement.",
+    impactDescription: "Through performance optimization and strategic user acquisition, HubFit achieved notable milestones in first-time user growth and search performance.",
+    impactCards: [
+      { title: "Search Volume", desc: "274% increase in search volume", icon: "trending" },
+      { title: "Brand Searches", desc: "305% surge in brand-specific searches", icon: "users" },
+      { title: "Organic Growth", desc: "305% significant organic growth", icon: "shield" },
+      { title: "Direct Traffic", desc: "305% rise in direct website traffic", icon: "percent" },
+      { title: "First-Time Buyers", desc: "305% growth in first-time buyers", icon: "users" }
+    ]
+  },
+  "publix": {
+    title: "Publix",
+    subtitle: "Style. Book. Grow. The Smartest Way to Run Your Salon!",
+    emoji: "🛒",
+    description: "Publix,, powered by Instacart, is designed to provide a seamless grocery shopping experience for busy customers. Our goal is to offer fast, reliable delivery and curbside services that bring the convenience of Publix right to your doorstep or car. By ensuring quality control, personalized service, and fast delivery times, we aim to enhance your shopping experience. Whether you need groceries in an hour or prefer curbside pickup, Publix Delivery is here to serve you. With easy reordering, real-time shopper communication, and weekly savings, Publix is making grocery shopping easier and faster than ever before.",
+    image: "https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=800&auto=format&fit=crop",
+    stats: {
+      estimatedTime: "90 Days",
+      bugsFixing: "1,032 +",
+      security: "99.99%",
+      projectCompletion: "73 Days",
+      trafficSpikes: "300%",
+      trafficSpikesLabel: "Traffic Spike"
+    },
+    about: "Publix, powered by Instacart, is your ultimate grocery shopping solution, offering the best of both worlds: Publix’s high-quality products delivered straight to your door, or curbside pickup at your convenience. With same-day deliveries as fast as an hour, you can get fresh produce, household essentials, and more without leaving home. Publix Delivery takes care of the shopping for you, while Instacart ensures quality control with real-time shopper updates. With a user-friendly app, weekly sales, and easy reordering, Publix Delivery is a must-have for anyone looking to simplify their grocery shopping.",
+    challenge: "The challenge with developing Publix powered by Instacart lies in ensuring seamless integration between Publix’s inventory and Instacart’s delivery system. The app must maintain real-time updates on stock availability, offer high-quality control during shopping (checking expiration dates, freshness), and handle logistics to ensure timely deliveries. Additionally, the system must be able to scale across multiple regions with varying delivery times, manage real-time customer support, and provide a flawless curbside pickup experience. Creating a smooth user experience, while keeping quality and convenience at the forefront, is essential for success.",
+    workflowTitle: "Development Stages",
+    workflow: [
+      "User Account & Shopping Integration: Connect user accounts to Instacart for seamless shopping and delivery.",
+      "Quality Control & Shopper Features: Develop tools for real-time shopper updates and quality monitoring.",
+      "Delivery & Curbside Optimization: Enhance delivery time algorithms and curbside pickup experience.",
+      "Reordering & Personalized Service: Implement personalized item recommendations and reordering for convenience."
+    ],
+    timeline: [
+      { label: "Planning", day: "10 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "UI/UX Development", day: "25 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "Development", day: "60 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "Testing", day: "67 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
+      { label: "Deploy & Live", day: "73 Day", color: "border-emerald-500 bg-emerald-55 text-emerald-600" }
+    ],
+    heroHeadingBlack: "Publix Grocery",
+    heroHeadingGreen: "Instacart Delivery",
+    industry: "Retail & Grocery",
+    projectType: "Full-Stack App Development",
+    aboutHeadline: "Grocery shopping simplified and delivered.",
+    challengeHeadline: "Real-Time Inventory & Curbside Logistics",
+    challengeBullets: [
+      "Seamless inventory integration with Instacart backend",
+      "Real-time updates on stock level and product freshness",
+      "Curbside pickup optimization across multiple regions",
+      "Shopper communication tools and error-free receipt logs"
+    ],
+    timelineBanner: "Grocery Delivery Platform Successfully Scaled in 73 Days",
+    impactHeadline: "Seamless Scale. Zero Downtime.",
+    impactDescription: "Through cloud architecture design and optimized shopping lists sync, Publix handled 300% traffic spikes during holiday rushes without any service degradation.",
+    impactCards: [
+      { title: "Stock Sync", desc: "Real-time inventory updates for users", icon: "trending" },
+      { title: "Traffic Spikes", desc: "300% traffic spike handled without downtime", icon: "shield" },
+      { title: "Order Delivery", desc: "Fast same-day grocery delivery optimized", icon: "users" },
+      { title: "Shopper Updates", desc: "Real-time shopper chat and updates tools", icon: "percent" }
+    ]
+  },
+  "ring-my-stylist": {
+    title: "Ring My Stylist",
+    subtitle: "Style. Book. Grow. The Smartest Way to Run Your Salon!",
+    emoji: "💇‍♀️",
+    description: "Ring My Stylist is designed to empower beauty professionals by streamlining appointment booking, client management, and business growth. Our goal is to simplify scheduling, reduce no-shows, and enhance client communication—all within one intuitive platform. By offering online payments, a customizable service menu, and a seamless booking experience, we help stylists focus on what they do best: creating beauty. With a user-friendly interface and unlimited client database, Ring My Stylist ensures that professionals can manage their business effortlessly. Whether you’re a hairstylist, makeup artist, or nail technician, our app is your ultimate tool for salon success.",
+    image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=800&auto=format&fit=crop",
+    stats: {
+      estimatedTime: "90 Days",
+      bugsFixing: "1,032 +",
+      security: "99.99%",
+      projectCompletion: "73 Days",
+      trafficSpikes: "300%",
+      trafficSpikesLabel: "Traffic Spike"
+    },
+    about: "Ring My Stylist is the ultimate booking app crafted specifically for beauty professionals. It offers a hassle-free way to manage appointments, track client history, and boost customer engagement. Say goodbye to scheduling headaches and hello to an organized, profitable salon business. With features like online payments, service customization, and automatic reminders, this app ensures a flawless experience for both stylists and clients. Available on smartphones, tablets, and laptops, Ring My Stylist transforms the way beauty professionals operate—making every booking effortless and every interaction meaningful. Start your 7-day free trial today and take control of your business!",
+    challenge: "Developing Ring My Stylist comes with exciting challenges, including ensuring real-time appointment synchronization across multiple devices. A seamless booking flow must be maintained, reducing cancellations and last-minute no-shows. Secure online payments need to be integrated smoothly while ensuring stylist flexibility with pricing and availability. Additionally, building a user-friendly experience that caters to both professionals and clients without complexity is a key focus. As the app grows, scalability and stability remain top priorities, allowing thousands of stylists to manage their businesses effortlessly while keeping client data secure and accessible anytime, anywhere.",
+    workflowTitle: "Development Stages",
+    workflow: [
+      "Core Booking System: Implement seamless appointment scheduling, service listings, and client database.",
+      "Payment & Business Tools: Enable online payments, automated reminders, and revenue tracking.",
+      "Client Engagement Features: Add direct messaging, reviews, and loyalty rewards.",
+      "AI & Scalability Enhancements: Introduce smart recommendations, business insights, and multi-device syncing."
+    ],
+    timeline: [
+      { label: "Planning", day: "10 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "UI/UX Development", day: "25 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "Development", day: "60 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "Testing", day: "67 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
+      { label: "Deploy & Live", day: "73 Day", color: "border-emerald-500 bg-emerald-55 text-emerald-600" }
+    ],
+    heroHeadingBlack: "Style & Book",
+    heroHeadingGreen: "Grow Your Salon",
+    industry: "Beauty & Wellness",
+    projectType: "Full-Stack App Development",
+    aboutHeadline: "The Smartest Way to Run Your Salon!",
+    challengeHeadline: "Real-Time Sync & Booking Flow Optimization",
+    challengeBullets: [
+      "Real-time appointment sync across devices",
+      "Interactive customized booking workflow",
+      "Secure payments and stylist pricing flexibility",
+      "Reminders system to reduce no-show rates"
+    ],
+    timelineBanner: "Salon Booking Platform Successfully Launched in 73 Days",
+    impactHeadline: "Seamless Bookings. Zero Downtime.",
+    impactDescription: "Through cloud architecture design and optimized booking database queries, Ring My Stylist handled 300% traffic spikes during seasonal rushes without any service degradation.",
+    impactCards: [
+      { title: "Smart Bookings", desc: "Interactive customized booking workflow built", icon: "trending" },
+      { title: "Traffic Spikes", desc: "300% traffic spike handled without downtime", icon: "shield" },
+      { title: "Service Sync", desc: "Real-time calendar synchronization for clients", icon: "users" },
+      { title: "Salon Payments", desc: "Secure multi-gateway payment processing", icon: "percent" }
+    ]
+  },
+  "edgeringtone": {
+    title: "Edge Ringtones",
+    subtitle: "Elevate Your Style with Personalized, Premium Ringtones – Effortless & Seamless.",
+    emoji: "🎵",
+    description: "Our custom ringtone app combines a sleek, premium UI with a vast collection of high-quality ringtones for every taste. Offering seamless customization for calls, notifications, and alarms, it ensures a smooth and engaging experience. With frequent updates and compatibility across devices, this app keeps you connected with fresh sounds and personalized options at your fingertips.",
+    image: "https://images.unsplash.com/photo-1616348436168-de43ad0db179?q=80&w=800&auto=format&fit=crop",
+    stats: {
+      estimatedTime: "45 Days",
+      bugsFixing: "491 +",
+      security: "99.99%",
+      projectCompletion: "40 Days",
+      trafficSpikes: "536%",
+      trafficSpikesLabel: "Traffic Spike"
+    },
+    about: "The custom ringtone app is designed to deliver a premium, user-centric experience with a sleek, intuitive UI. It offers a diverse selection of high-quality ringtones, allowing users to personalize their devices with custom sounds for calls, notifications, and alarms. The app ensures seamless performance with fast downloads and smooth functionality, while regular updates keep the content fresh. Compatible across a variety of devices, this app delivers a dynamic and engaging experience, offering users the ability to tailor their mobile sound experience to suit their preferences.",
+    challenge: "The challenge was to offer a large selection of high-quality ringtones while maintaining optimal performance. To address this, we implemented a custom-built CDN for fast and reliable content delivery. Paired with advanced caching techniques, optimized download speeds, and a refined UI framework, we ensured smooth, efficient access to personalized ringtones, providing users with an exceptional experience across all devices without compromising on speed or quality.",
+    workflowTitle: "Development Stages",
+    workflow: [
+      "Requirement Analysis: Collaborate with clients to define clear objectives and key features.",
+      "UI/UX Design: Develop intuitive, aesthetically pleasing interfaces focused on user experience.",
+      "App Development: Utilize advanced technologies to build robust, feature-rich applications.",
+      "Quality Assurance & Launch: Conduct thorough testing to ensure performance, then deploy for optimal user access."
+    ],
+    timeline: [
+      { label: "Planning", day: "7 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "UI/UX Development", day: "10 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "Development", day: "33 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "Testing", day: "38 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
+      { label: "Deploy & Live", day: "40 Day", color: "border-emerald-500 bg-emerald-55 text-emerald-600" }
+    ],
+    heroHeadingBlack: "Edge Ringtones",
+    heroHeadingGreen: "Premium Custom Sounds",
+    industry: "Entertainment & Mobile Apps",
+    projectType: "Full-Stack App Development",
+    aboutHeadline: "Personalized Sound Experiences",
+    challengeHeadline: "CDN Scaling & High Fidelity Audio Delivery",
+    challengeBullets: [
+      "High-quality audio asset compression & streaming",
+      "Custom CDN infrastructure for global downloads",
+      "Real-time ringtone cropper and editor functionality",
+      "Optimal UI performance with extensive collection library"
+    ],
+    timelineBanner: "Ringtone Customization Platform Launched in 40 Days",
+    impactHeadline: "Seamless Scale. Enhanced Engagement.",
+    impactDescription: "Through custom CDN architecture and optimized sound streaming delivery, Edge Ringtones successfully handled 536% traffic spikes without any quality degradation.",
+    impactCards: [
+      { title: "Asset Delivery", desc: "Custom-built CDN delivers sounds instantly", icon: "trending" },
+      { title: "Traffic Spikes", desc: "536% traffic spike handled without downtime", icon: "shield" },
+      { title: "Downloads Sync", desc: "Optimized speeds for simultaneous downloads", icon: "users" },
+      { title: "Quality Assurance", desc: "Sleek and robust UI running smoothly", icon: "percent" }
+    ]
   }
 };
+

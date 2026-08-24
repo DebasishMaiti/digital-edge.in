@@ -10,31 +10,6 @@ import { brandLogos, portfolioItems, services, testimonials, faqItems, deliversF
 
 const brandShowcases = [
   {
-    name: "Aarogya Vidhaan",
-    link: "/company-details/aarogya-vidhaan",
-    image: "https://images.unsplash.com/photo-1544256718-3bcf237f3974?q=80&w=600&auto=format&fit=crop",
-    logo: (
-      <div className="flex items-center gap-2">
-        <svg className="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 24 24">
-          <circle cx="12" cy="12" r="5" />
-          <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" strokeWidth="2" />
-        </svg>
-        <span className="font-extrabold text-[13px] text-slate-800 tracking-tight uppercase">Aarogya <span className="text-amber-500">Vidhaan</span></span>
-      </div>
-    )
-  },
-  {
-    name: "Dooli",
-    link: "/company-details/dooli",
-    image: "https://images.unsplash.com/photo-1549060263-af5c3f3b9fb6?q=80&w=600&auto=format&fit=crop",
-    logo: (
-      <div className="flex items-center gap-1.5">
-        <span className="font-black text-xl text-blue-600 font-sans">D</span>
-        <span className="font-extrabold text-[15px] text-slate-800 tracking-tight -ml-0.5">ooli</span>
-      </div>
-    )
-  },
-  {
     name: "Edge Ringtones",
     link: "/company-details/edgeringtone",
     image: "https://images.unsplash.com/photo-1616348436168-de43ad0db179?q=80&w=600&auto=format&fit=crop",
@@ -336,7 +311,7 @@ export default function Home() {
 
   return (
     <>
-      <link rel="canonical" href="https://digitaledge360.com" />
+      <link rel="canonical" href="https://digitaledge360.com/" />
       <div className="relative w-full bg-[#fafbfc] min-h-screen text-slate-800 overflow-hidden">
 
         {/* Hero Section Container */}
@@ -862,8 +837,8 @@ export default function Home() {
         </section>
 
         {/* Beyond Tradition Tech Section */}
-        <section className="relative w-full mx-2 py-28 md:py-36 bg-[#fafbfc] overflow-hidden flex flex-col items-center justify-center border-t border-slate-100/80">
-          {/* Scattered Rotated tech names background (moveable) */}
+        {/* <section className="relative w-full mx-2 py-28 md:py-36 bg-[#fafbfc] overflow-hidden flex flex-col items-center justify-center border-t border-slate-100/80">
+ 
           <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none opacity-[0.06] sm:opacity-[0.08] rotate-[-10deg] scale-110 flex flex-col justify-between py-6">
             <motion.div
               animate={{ x: [-60, 60, -60] }}
@@ -952,7 +927,7 @@ export default function Home() {
             </motion.div>
           </div>
 
-          {/* Core Content */}
+ 
           <div className="relative z-10 text-center px-4 sm:px-6 max-w-[90rem] mx-auto flex flex-col items-center justify-center">
             <h3 className="text-[12vw] sm:text-[10vw] md:text-[8vw] lg:text-[7vw] xl:text-[6.5vw] 2xl:text-[110px] font-black italic text-slate-900 leading-none tracking-tight select-none">
               BEYOND
@@ -961,13 +936,11 @@ export default function Home() {
               BOUNDARIES.
             </h4>
 
-            {/* Subtext Quote Box */}
+ 
             <div className="relative group max-w-xl mx-auto mt-12 sm:mt-16 md:mt-20 transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.03]">
-              {/* Glowing Aura Background (visible in normal state, intensifies on hover) */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[#0a8bc7]/25 via-[#2443ab]/25 to-[#40159e]/25 rounded-[22px] blur-xl opacity-90 group-hover:opacity-100 group-hover:blur-2xl transition-all duration-500 pointer-events-none" />
+               <div className="absolute inset-0 bg-gradient-to-r from-[#0a8bc7]/25 via-[#2443ab]/25 to-[#40159e]/25 rounded-[22px] blur-xl opacity-90 group-hover:opacity-100 group-hover:blur-2xl transition-all duration-500 pointer-events-none" />
 
-              {/* Glassmorphic Container with Vibrant Multi-Colored Layered Shadow */}
-              <div className="relative bg-white/95 backdrop-blur-md border border-slate-200/80 rounded-[22px] px-6 py-5 sm:px-10 sm:py-8 shadow-[0_20px_50px_rgba(10,139,199,0.15),_0_10px_30px_rgba(64,21,158,0.12),_0_0_40px_rgba(36,67,171,0.08)]  group-hover:border-[#2443ab]/40 transition-all duration-300 text-center">
+               <div className="relative bg-white/95 backdrop-blur-md border border-slate-200/80 rounded-[22px] px-6 py-5 sm:px-10 sm:py-8 shadow-[0_20px_50px_rgba(10,139,199,0.15),_0_10px_30px_rgba(64,21,158,0.12),_0_0_40px_rgba(36,67,171,0.08)]  group-hover:border-[#2443ab]/40 transition-all duration-300 text-center">
                 <p className="text-[12px] sm:text-[15px] md:text-[18px] font-black text-slate-800 uppercase tracking-[0.15em] sm:tracking-[0.2em] leading-relaxed">
                   "We don't follow the tech stack. <span className="bg-gradient-to-r from-[#0a8bc7] via-[#2443ab] to-[#40159e] bg-clip-text text-transparent">We define it.</span> Our tools are selected for pure dominance."
                 </p>
@@ -975,7 +948,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* What We Do - Full-Stack Growth & Digital Architecture Section */}
         <section className="relative z-10 w-full py-24 bg-gradient-to-br from-indigo-100/40 via-purple-100/40 to-indigo-50/40 border-y border-slate-200/60 overflow-hidden">
@@ -1065,7 +1038,7 @@ export default function Home() {
 
         {/* Brand Showcase Grid Section */}
         <section className="relative z-10 py-24 bg-gradient-to-b from-[#fafbfc] to-white overflow-hidden border-t border-slate-100">
-          <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+          <div className="w-full mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
 
             {/* Header */}
             <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
@@ -1083,7 +1056,7 @@ export default function Home() {
             </div>
 
             {/* Grid Layout */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
               {brandShowcases.map((brand, idx) => (
                 <Link href={brand.link || "/contact"} key={idx} className="block w-full">
                   <motion.div
@@ -1124,24 +1097,8 @@ export default function Home() {
                 </Link>
               ))}
             </div>
-
-            {/* Bottom CTA Button */}
-            <div className="flex justify-center mt-16">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2.5 px-8 py-4 border border-purple-200 hover:border-purple-300 bg-purple-50/20 hover:bg-purple-50/40 text-purple-700 text-sm font-extrabold rounded-full transition-all duration-300 shadow-sm"
-              >
-                {/* 4 squares Grid Icon */}
-                <svg className="w-4 h-4 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
-                </svg>
-                <span>Explore More Success Stories</span>
-              </Link>
-            </div>
-
           </div>
         </section>
-
 
         {/* Five Vendors & Growth Help Section */}
         <section className="relative z-10 py-24 bg-gradient-to-b from-[#fafbfc] via-white to-[#fafbfc] border-t border-b border-slate-100 overflow-hidden">
@@ -2533,9 +2490,9 @@ export default function Home() {
                         animate={{ opacity: 1, x: 0, scale: 1 }}
                         exit={{ opacity: 0, x: -80, scale: 0.96 }}
                         transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-                        className={`p-[3px] bg-gradient-to-br ${accent.borderGradient} rounded-[32px] shadow-[0_20px_50px_rgba(0,0,0,0.04)] flex flex-col justify-between text-left relative overflow-hidden group w-full`}
+                        className="rounded-[32px] shadow-[0_20px_50px_rgba(0,0,0,0.04)] flex flex-col justify-between text-left relative overflow-hidden group w-full"
                       >
-                        <div className="bg-white rounded-[29px] p-8 sm:p-12 flex flex-col md:flex-row gap-8 md:gap-12 items-center text-left relative overflow-hidden w-full h-full">
+                        <div className="bg-white rounded-[32px] p-8 sm:p-12 flex flex-col md:flex-row gap-8 md:gap-12 items-center text-left relative overflow-hidden w-full h-full">
                           {/* Hover Top-Right Glow */}
                           <div className={`absolute top-0 right-0 w-80 h-80 bg-gradient-to-bl ${accent.glowBg} rounded-bl-[200px] pointer-events-none opacity-40 group-hover:opacity-60 transition-all duration-500 z-0`} />
 
