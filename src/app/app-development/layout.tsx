@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "App Development Company in India| Digital Edge 360",
-  description: "Native & cross-platform ecommerce apps built for iOS and Android — engineered for checkout speed, retention and repeat purchases.",
+  title: "Mobile App Development Company in India | DE360",
+  description: "Custom iOS & Android app development company in India — native and cross-platform apps built for startups and enterprises.",
   alternates: {
     canonical: "https://digitaledge360.in/app-development/",
   },

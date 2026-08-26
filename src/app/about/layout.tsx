@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Us | Digital Edge 360° Founders & Mission",
-  description: "Meet the founders behind Digital Edge 360 — 7+ years, 75+ projects delivered, building ecommerce sites, apps & marketing that actually convert.",
+  title: "About Us | Digital Growth Agency in India",
+  description: "Meet Digital Edge 360 — a full-service digital growth and web/app development agency in India with 7+ years of experience.",
   alternates: {
     canonical: "https://digitaledge360.in/about/",
   },

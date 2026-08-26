@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "AI Integration & Automation Services in India | DE360",
-  description: "Transform your business workflows with custom AI integration, LLM deployment, neural pipelines, and RAG semantic search solutions.",
+  title: "AI Integration Services | Digital Edge 360° India",
+  description: "Incorporate artificial intelligence solutions, machine learning models, and smart automation tools into your digital business systems.",
   alternates: {
     canonical: "https://digitaledge360.in/ai-integration/",
   },

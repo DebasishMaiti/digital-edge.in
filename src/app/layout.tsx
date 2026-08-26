@@ -7,10 +7,8 @@ import ScrollToTop from "@/components/ScrollToTop";
 import CustomCursor from "@/components/CustomCursor";
 
 export const metadata: Metadata = {
-  title:
-    "Digital Edge 360° - Digital Marketing Agency & Web/app Development Company",
-  description:
-    "Digital Edge 360° delivers result-driven digital marketing and innovative web and mobile app development services. From SEO, Google Ads, and social media marketing to responsive websites, eCommerce platforms, and custom applications, we help businesses build a strong digital presence and achieve sustainable growth.",
+  title: "Digital Edge 360° | Digital Marketing Agency in India",
+  description: "Award-winning digital marketing agency in India offering web development, app development, SEO, PPC and social media marketing services.",
   alternates: {
     canonical: "https://digitaledge360.in/",
   },
