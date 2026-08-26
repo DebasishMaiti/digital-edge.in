@@ -15,85 +15,44 @@ const perfMarketingShowcases = [
   {
     name: "Chris Louis",
     link: "/company-details/chris-louis",
-    image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=600&auto=format&fit=crop",
-    logo: (
-      <div className="flex items-center gap-1.5 text-left">
-        <span className="font-extrabold text-[13px] text-slate-800 tracking-wider uppercase">Chris Louis</span>
-      </div>
-    )
+    image: "/brand-card-images/Chris-Louis.jpg",
+    logo: "/logos/20.jpg"
   },
   {
     name: "Jiva",
     link: "/company-details/jiva",
-    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=600&auto=format&fit=crop",
-    logo: (
-      <div className="flex items-center gap-1.5 text-left">
-        <svg className="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
-          <path fillRule="evenodd" d="M4.083 9h1.946c.089-1.546.383-2.97.837-4.118A8.004 8.004 0 004.083 9zM10 2a8 8 0 100 16 8 8 0 000-16zm1.09 14.507a7.925 7.925 0 01-2.18 0 7.227 7.227 0 01-.005-13.014 7.925 7.925 0 012.185 0 7.226 7.226 0 010 13.014z" clipRule="evenodd" />
-        </svg>
-        <span className="font-extrabold text-[14px] text-slate-800 tracking-widest uppercase">JIVA</span>
-      </div>
-    )
+    image: "/brand-card-images/Jiva.png",
+    logo: "/logos/jiva.jpg"
   },
   {
     name: "JetChoice",
     link: "/company-details/jetchoice",
-    image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=600&auto=format&fit=crop",
-    logo: (
-      <div className="flex items-center gap-1.5 text-left">
-        <span className="font-extrabold text-[13px] text-blue-600 tracking-wider uppercase">JetChoice</span>
-      </div>
-    )
+    image: "/brand-card-images/jet-choice.jpg",
+    logo: "/logos/18.jpg"
   },
   {
     name: "EdefyHome",
     link: "/company-details/edefyhome",
-    image: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=600&auto=format&fit=crop",
-    logo: (
-      <div className="flex items-center gap-1.5 text-left">
-        <svg className="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-        </svg>
-        <span className="font-extrabold text-[12px] text-slate-800 tracking-tight">EdefyHome</span>
-      </div>
-    )
+    image: "/brand-card-images/Edify-home.png",
+    logo: "/logos/16.jpg"
   },
   {
     name: "Dash Capital",
     link: "/company-details/dash-capital",
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=600&auto=format&fit=crop",
-    logo: (
-      <div className="flex items-center gap-1.5 text-left">
-        <span className="font-extrabold text-[13px] text-indigo-650 tracking-wider uppercase">Dash Capital</span>
-      </div>
-    ),
-    metric: "135%",
-    metricLabel: "Spike in Qualified Leads",
-    metricColor: "text-indigo-600"
+    image: "/brand-card-images/Dash-Capital.jpg",
+    logo: "/logos/17.jpg"
   },
   {
     name: "IBT Behala",
     link: "/company-details/ibt-behala",
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=600&auto=format&fit=crop",
-    logo: (
-      <div className="flex items-center gap-1.5 text-left">
-        <span className="font-extrabold text-[13px] text-[#2443ab] tracking-wider uppercase">IBT Behala</span>
-      </div>
-    ),
-    metric: "3X",
-    metricLabel: "Attributed ROAS Growth",
-    metricColor: "text-blue-600"
+    image: "/brand-card-images/IBT-behala.jpg",
+    logo: "/logos/13.jpg"
   },
   {
     name: "Ducati",
     link: "/company-details/ducati",
-    image: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?q=80&w=600&auto=format&fit=crop",
-    logo: (
-      <div className="flex items-center gap-2 text-left">
-        <div className="w-5 h-6 bg-red-600 rounded-b-md flex items-center justify-center text-[10px] font-black text-white shadow-sm shrink-0">D</div>
-        <span className="font-extrabold text-[13px] text-slate-900 tracking-widest uppercase">Ducati</span>
-      </div>
-    )
+    image: "/brand-card-images/Ducati-home.jpg",
+    logo: "/logos/28.jpg"
   }
 ];
 
@@ -345,8 +304,8 @@ export default function PerformanceMarketing() {
       </section>
 
       {/* Brand Showcase Grid Section */}
-      <section className="relative z-10 py-24 bg-gradient-to-b from-[#fafbfc] to-white overflow-hidden border-t border-slate-100">
-        <div className="w-full mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+      <section className="relative z-10 py-32 sm:py-40 bg-gradient-to-b from-[#fafbfc] to-white overflow-hidden border-t border-slate-100">
+        <div className="w-full mx-auto px-8 sm:px-16 lg:px-24 relative z-10">
 
           {/* Header */}
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
@@ -385,21 +344,25 @@ export default function PerformanceMarketing() {
                     />
                   </div>
 
-                  {/* Bottom details block */}
-                  <div className="p-6 flex items-center justify-between min-h-[90px]">
-                    <div className="flex-grow text-left flex flex-col justify-center">
-                      <div className="mb-1.5">{brand.logo}</div>
-                      {brand.metric && (
-                        <div className="flex flex-col text-left leading-none mt-2">
-                          <span className={`text-2xl font-black ${brand.metricColor} leading-none`}>{brand.metric}</span>
-                          <span className="text-[10px] font-bold text-slate-400 tracking-wider uppercase mt-1">{brand.metricLabel}</span>
-                        </div>
-                      )}
+                  <div className="relative p-6 flex flex-col items-center justify-center min-h-[110px]">
+                    <div className="flex items-center justify-center h-16 w-full">
+                      {brand.logo ? (
+                        typeof brand.logo === "string" ? (
+                          <img
+                            src={brand.logo}
+                            alt={brand.name}
+                            className="max-h-full max-w-[170px] object-contain"
+                          />
+                        ) : (
+                          brand.logo
+                        )
+                      ) : null}
                     </div>
-                    {/* Circle Chevron Indicator Button */}
-                    <button className="w-10 h-10 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-650 group-hover:bg-[#2443ab] group-hover:text-white group-hover:border-[#2443ab] transition-all duration-300 shrink-0 ml-4 shadow-sm">
-                      <ChevronRight className="w-5 h-5 transform group-hover:translate-x-0.5 transition-transform duration-300" />
-                    </button>
+
+                    {/* Arrow Icon */}
+                    <div className="absolute bottom-3 right-4 text-slate-400 group-hover:text-[#2443ab] transition-all duration-300 transform group-hover:translate-x-0.5">
+                      <ChevronRight className="w-6 h-6" />
+                    </div>
                   </div>
                 </motion.div>
               </Link>

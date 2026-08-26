@@ -15,72 +15,34 @@ const appDevShowcases = [
   {
     name: "Publix",
     link: "/company-details/publix",
-    image: "https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=800&auto=format&fit=crop",
-    logo: (
-      <div className="flex items-center gap-1.5 text-left">
-        <span className="text-xl shrink-0">🛒</span>
-        <span className="font-extrabold text-[13px] text-emerald-750 tracking-wider uppercase">Publix</span>
-      </div>
-    ),
-    metric: "300%",
-    metricLabel: "Traffic Spike Handled",
-    metricColor: "text-emerald-600"
+    image: "/brand-card-images/publix.jpg",
+    logo: "/logos/publix.jpg",
+
   },
   {
     name: "Recipe Keeper",
     link: "/company-details/recipe-keeper",
-    image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=800&auto=format&fit=crop",
-    logo: (
-      <div className="flex items-center gap-1.5 text-left">
-        <span className="text-xl shrink-0">🍳</span>
-        <span className="font-extrabold text-[13px] text-slate-800 tracking-wider uppercase">Recipe Keeper</span>
-      </div>
-    ),
-    metric: "300%",
-    metricLabel: "Traffic Spike Handled",
-    metricColor: "text-blue-600"
+    image: "/brand-card-images/recipee-keeper.jpg",
+    logo: "/logos/recipe keper.jpg",
+
   },
   {
     name: "Momentum",
     link: "/company-details/momentum",
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop",
-    logo: (
-      <div className="flex items-center gap-1.5 text-left">
-        <span className="text-xl shrink-0">🎯</span>
-        <span className="font-extrabold text-[13px] text-indigo-750 tracking-wider uppercase">Momentum</span>
-      </div>
-    ),
-    metric: "300%",
-    metricLabel: "Traffic Spikes",
-    metricColor: "text-indigo-600"
+    image: "/brand-card-images/momentum.jpg",
+    logo: "/logos/momentum.jpg",
   },
   {
     name: "HubFit",
     link: "/company-details/hubfit",
-    image: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=800&auto=format&fit=crop",
-    logo: (
-      <div className="flex items-center gap-1.5 text-left">
-        <span className="text-xl shrink-0">💪</span>
-        <span className="font-extrabold text-[13px] text-[#2443ab] tracking-wider uppercase">HubFit</span>
-      </div>
-    ),
-    metric: "305%",
-    metricLabel: "Users Growth",
-    metricColor: "text-[#2443ab]"
+    image: "/brand-card-images/hubfit.jpg",
+    logo: "/logos/hubfit.jpg",
   },
   {
     name: "Ring My Stylist",
     link: "/company-details/ring-my-stylist",
-    image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=800&auto=format&fit=crop",
-    logo: (
-      <div className="flex items-center gap-1.5 text-left">
-        <span className="text-xl shrink-0">💇‍♀️</span>
-        <span className="font-extrabold text-[13px] text-rose-750 tracking-wider uppercase">Ring My Stylist</span>
-      </div>
-    ),
-    metric: "300%",
-    metricLabel: "Traffic Spikes",
-    metricColor: "text-rose-500"
+    image: "/brand-card-images/rign-my-list.jpg",
+    logo: "/logos/ring-my-list.jpg",
   }
 ];
 
@@ -313,8 +275,8 @@ export default function AppDevelopment() {
 
 
         {/* Brand Showcase Grid Section */}
-        <section className="relative z-10 py-24 bg-gradient-to-b from-[#fafbfc] to-white overflow-hidden border-t border-slate-100">
-          <div className="w-full mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+        <section className="relative z-10 py-32 sm:py-40 bg-gradient-to-b from-[#fafbfc] to-white overflow-hidden border-t border-slate-100">
+          <div className="w-full mx-auto px-8 sm:px-16 lg:px-24 relative z-10">
 
             {/* Header */}
             <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
@@ -354,20 +316,25 @@ export default function AppDevelopment() {
                     </div>
 
                     {/* Bottom details block */}
-                    <div className="p-6 flex items-center justify-between min-h-[90px]">
-                      <div className="flex-grow text-left flex flex-col justify-center">
-                        <div className="mb-1.5">{brand.logo}</div>
-                        {brand.metric && (
-                          <div className="flex flex-col text-left leading-none mt-2">
-                            <span className={`text-2xl font-black ${brand.metricColor} leading-none`}>{brand.metric}</span>
-                            <span className="text-[10px] font-bold text-slate-400 tracking-wider uppercase mt-1">{brand.metricLabel}</span>
-                          </div>
-                        )}
+                    <div className="relative p-6 flex flex-col items-center justify-center min-h-[110px]">
+                      <div className="flex items-center justify-center h-16 w-full">
+                        {brand.logo ? (
+                          typeof brand.logo === "string" ? (
+                            <img
+                              src={brand.logo}
+                              alt={brand.name}
+                              className="max-h-full max-w-[170px] object-contain"
+                            />
+                          ) : (
+                            brand.logo
+                          )
+                        ) : null}
                       </div>
-                      {/* Circle Chevron Indicator Button */}
-                      <button className="w-10 h-10 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-650 group-hover:bg-[#2443ab] group-hover:text-white group-hover:border-[#2443ab] transition-all duration-300 shrink-0 ml-4 shadow-sm">
-                        <ChevronRight className="w-5 h-5 transform group-hover:translate-x-0.5 transition-transform duration-300" />
-                      </button>
+
+                      {/* Arrow Icon */}
+                      <div className="absolute bottom-3 right-4 text-slate-400 group-hover:text-[#2443ab] transition-all duration-300 transform group-hover:translate-x-0.5">
+                        <ChevronRight className="w-6 h-6" />
+                      </div>
                     </div>
                   </motion.div>
                 </Link>

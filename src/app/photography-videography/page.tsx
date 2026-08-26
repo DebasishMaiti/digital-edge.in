@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import Image from "next/image";
@@ -9,123 +9,58 @@ import LeadForm from "@/components/LeadForm";
 import AnimatedWords from "@/components/AnimatedWords";
 import Marquee from "react-fast-marquee";
 import ArchitectureTimeline from "@/components/ArchitectureTimeline";
-import { logoMapping } from "@/data/successStories";
 import { ChevronRight } from "lucide-react";
-
+ 
 const photographyShowcases = [
   {
     name: "Royal Enfield",
     link: "/company-details/royal-enfield",
     image: "/brand-card-images/ROYAL-ENFIELD.jpg",
-    logo: (
-      <div className="flex items-center gap-2">
-        <span className="text-xl shrink-0">🏍️</span>
-        <span className="font-extrabold text-[12px] text-slate-800 tracking-wider uppercase">Royal Enfield</span>
-      </div>
-    ),
-    metric: "250%",
-    metricLabel: "Showroom Footfall Growth",
-    metricColor: "text-red-600"
+    logo: "/logos/royal enfiled.jpg",
   },
   {
     name: "Creative Ecotech",
     link: "/company-details/creative-ecotech",
     image: "/brand-card-images/creative-echotech.jpg",
-    logo: (
-      <div className="flex items-center gap-2">
-        <svg className="w-5 h-5 text-emerald-500" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v18M3 12h18M12 3l9 9-9 9M12 3L3 12l9 9" />
-        </svg>
-        <span className="font-extrabold text-[12px] text-slate-855 tracking-wider uppercase">Creative <span className="text-emerald-600">Ecotech</span></span>
-      </div>
-    ),
-    metric: "90%",
-    metricLabel: "Growth in Organic Traffic",
-    metricColor: "text-emerald-600"
+    logo: "/logos/3.jpg",
   },
   {
     name: "Goel Forgings",
     link: "/company-details/goel-forgings",
     image: "/brand-card-images/goel-forgings.jpg",
-    logo: (
-      <div className="flex items-center gap-2">
-        <span className="text-xl shrink-0">âš™ï¸</span>
-        <span className="font-extrabold text-[12px] text-slate-800 tracking-wider uppercase">Goel <span className="text-blue-600">Forgings</span></span>
-      </div>
-    ),
-    metric: "150%",
-    metricLabel: "B2B Inquiry Growth",
-    metricColor: "text-blue-600"
+    logo: "/logos/19.jpg",
   },
   {
     name: "Geological Survey of India",
     link: "/company-details/gsi",
     image: "/brand-card-images/GSI.jpg",
-    logo: (
-      <div className="flex items-center gap-2">
-        <span className="text-xl shrink-0">🌐</span>
-        <span className="font-extrabold text-[12px] text-slate-800 tracking-wider uppercase">GSI</span>
-      </div>
-    ),
-    metric: "30%",
-    metricLabel: "Public Engagement",
-    metricColor: "text-green-600"
+    logo: "/logos/gis.jpg",
+ 
   },
   {
     name: "Indian Maritime University",
     link: "/company-details/imu",
     image: "/brand-card-images/IMU.jpg",
-    logo: (
-      <div className="flex items-center gap-2">
-        <span className="text-xl shrink-0">⚓</span>
-        <span className="font-extrabold text-[12px] text-slate-800 tracking-wider uppercase">IMU Kolkata</span>
-      </div>
-    ),
-    metric: "100%",
-    metricLabel: "Campus Viewership",
-    metricColor: "text-indigo-650"
+    logo: "/logos/37.jpg",
   },
   {
     name: "The Lighter Side",
     link: "/company-details/the-lighter-side",
     image: "/brand-card-images/THE-LIGHTER-SIDE.jpg",
-    logo: (
-      <div className="flex items-center gap-2">
-        <span className="text-xl shrink-0">☕</span>
-        <span className="font-extrabold text-[12px] text-slate-800 tracking-wider uppercase">The Lighter Side</span>
-      </div>
-    ),
-    metric: "120%",
-    metricLabel: "Increase in Footfall",
-    metricColor: "text-amber-600"
+    logo: "/logos/4.jpg"
   },
   {
     name: "Brand Leather",
     link: "/company-details/brand-leather",
     image: "/brand-card-images/brand-leather.jpg",
-    logo: (
-      <div className="flex items-center gap-2">
-        <span className="text-xl shrink-0">💼</span>
-        <span className="font-extrabold text-[12px] text-slate-800 tracking-wider uppercase">Brand Leather</span>
-      </div>
-    ),
-    metric: "150%",
-    metricLabel: "Online Sales Growth",
-    metricColor: "text-orange-750"
+    logo: "/logos/26.jpg"
   },
   {
     name: "Kayra",
     link: "/company-details/kayra",
     image: "/brand-card-images/KAYRAH.jpg",
-    logo: (
-      <div className="flex items-center gap-2">
-        <span className="text-xl shrink-0">💎</span>
-        <span className="font-extrabold text-[12px] text-slate-800 tracking-wider uppercase">Kayra Jewelry</span>
-      </div>
-    ),
-    metric: "70%",
-    metricLabel: "Product Sales Growth",
-    metricColor: "text-purple-655"
+    logo: "/logos/kayrah.jpg",
+ 
   }
 ];
 
@@ -317,8 +252,8 @@ export default function PhotographyVideography() {
         </section>
 
         {/* Success Stories Section */}
-        <section className="relative z-10 w-full py-24 sm:py-32 bg-[#fafbfc] border-b border-slate-100/80 overflow-hidden">
-          <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
+        <section className="relative z-10 w-full py-32 sm:py-40 bg-[#fafbfc] border-b border-slate-100/80 overflow-hidden">
+          <div className="max-w-[1400px] mx-auto px-8 sm:px-16 lg:px-24">
             
             {/* Section Header */}
             <div className="max-w-3xl mx-auto mb-16 text-center space-y-4">
@@ -333,47 +268,50 @@ export default function PhotographyVideography() {
 
             {/* Grid Layout */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-              {photographyShowcases.map((brand, idx) => {
-                const slug = brand.link?.split("/").pop() || "";
-                const companyLogo = logoMapping[slug];
-                return (
-                  <Link href={brand.link || "/contact"} key={idx} className="block w-full">
-                    <motion.div
-                      initial={{ opacity: 0, y: 30 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true, margin: "-50px" }}
-                      whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0,0,0,0.06)" }}
-                      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                      className="bg-white rounded-[24px] overflow-hidden shadow-sm border border-slate-100/80 flex flex-col justify-between group transition-all duration-300 cursor-pointer h-full"
-                    >
-                      {/* Top Image wrapper */}
-                      <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-50">
-                        <img
-                          src={brand.image}
-                          alt={brand.name}
-                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                          loading="lazy"
-                        />
-                      </div>
+              {photographyShowcases.map((brand, idx) => (
+                <Link href={brand.link || "/contact"} key={idx} className="block w-full">
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0,0,0,0.06)" }}
+                    transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                    className="bg-white rounded-[24px] overflow-hidden shadow-sm border border-slate-100/80 flex flex-col justify-between group transition-all duration-300 cursor-pointer h-full"
+                  >
+                    {/* Top Image wrapper */}
+                    <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-50">
+                      <img
+                        src={brand.image}
+                        alt={brand.name}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                    </div>
 
-                      {/* Bottom details block */}
-                      <div className="p-5 flex items-center justify-center min-h-[100px]">
-                        <div className="flex items-center justify-center h-16 w-full">
-                          {companyLogo ? (
+                    {/* Bottom details block */}
+                    <div className="relative p-6 flex flex-col items-center justify-center min-h-[110px]">
+                      <div className="flex items-center justify-center h-16 w-full">
+                        {brand.logo ? (
+                          typeof brand.logo === "string" ? (
                             <img
-                              src={companyLogo}
+                              src={brand.logo}
                               alt={brand.name}
-                              className="max-h-full max-w-[200px] object-contain"
+                              className="max-h-full max-w-[170px] object-contain"
                             />
                           ) : (
                             brand.logo
-                          )}
-                        </div>
+                          )
+                        ) : null}
                       </div>
-                    </motion.div>
-                  </Link>
-                );
-              })}
+
+                      {/* Arrow Icon */}
+                      <div className="absolute bottom-3 right-4 text-slate-400 group-hover:text-[#2443ab] transition-all duration-300 transform group-hover:translate-x-0.5">
+                        <ChevronRight className="w-6 h-6" />
+                      </div>
+                    </div>
+                  </motion.div>
+                </Link>
+              ))}
             </div>
           </div>
         </section>

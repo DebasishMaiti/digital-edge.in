@@ -34,10 +34,12 @@ export interface SuccessStoryData {
   impactDescription?: string;
   impactCards?: { title: string; desc: string; icon: string }[];
   image?: string;
+  logo?: string;
 }
 
 export const storiesData: Record<string, SuccessStoryData> = {
   "priyanka-khaitan": {
+    logo: "/logos/16.jpg",
     title: "Priyanka Khaitan",
     subtitle: "Bridal Content Strategy & High-intent Conversions",
     emoji: "💎",
@@ -66,6 +68,7 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "creative-ecotech": {
+    logo: "/logos/3.jpg",
     title: "Creative Ecotech",
     subtitle: "Eco-Friendly Plastics for a Greener Tomorrow",
     emoji: "🌱",
@@ -96,6 +99,7 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "truboy-bbq": {
+    logo: "/logos/7.jpg",
     title: "Truboy BBQ",
     subtitle: "Bringing Authentic Texas BBQ Straight to Your Table",
     emoji: "🍖",
@@ -126,10 +130,12 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "jiva": {
+    logo: "/logos/jiva.jpg",
     title: "Hotel JIVA",
     subtitle: "A 4-star boutique hotel offering luxury & comfort.",
     emoji: "🏨",
     description: "Hotel JIVA, a renowned 4-star boutique hotel in Jamshedpur, partnered with Digital Edge 360 to enhance its digital presence and boost direct bookings. Through strategic digital marketing efforts, JIVA experienced remarkable growth in online visibility, guest engagement, and occupancy rates, establishing itself as a top choice for premium hospitality in the city.",
+    websiteUrl: "https://www.hoteljiva.com/",
     stats: {
       estimatedTime: "50 Days",
       bugsFixing: "140 +",
@@ -155,6 +161,7 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "ducati": {
+    logo: "/logos/28.jpg",
     title: "Ducati Kolkata",
     subtitle: "Premium superbikes redefining speed, performance, and luxury.",
     emoji: "🏍️",
@@ -184,10 +191,12 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "edefyhome": {
+    logo: "/logos/16.jpg",
     title: "Edify Home Decor",
     subtitle: "Premium interior design solutions transforming spaces with elegance.",
     emoji: "🏠",
     description: "Edify Home Decor, a Kolkata-based interior design company, partnered with Digital Edge 360 to scale its online presence and generate quality leads. Through a strategic mix of SEO, performance marketing, and content-driven engagement, the brand achieved substantial growth, attracting high-intent clients and establishing itself as a trusted name in luxury interiors.",
+    websiteUrl: "https://www.edifyhomedecor.com/",
     stats: {
       estimatedTime: "55 Days",
       bugsFixing: "190 +",
@@ -213,6 +222,7 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "omniastra": {
+    logo: "/logos/astra.jpg",
     title: "OmniAstra",
     subtitle: "Omni Astra leads India’s luxury eyewear distribution",
     emoji: "🕶️",
@@ -243,6 +253,7 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "earthy-line": {
+    logo: "/logos/earthyline.jpg",
     title: "Earthyline",
     subtitle: "Where Tradition Meets Conscious Elegance",
     emoji: "👗",
@@ -273,11 +284,12 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "likeson": {
+    logo: "/logos/likeson.jpg",
     title: "Likeson",
     subtitle: "Simplified healthcare appointment booking and management platform",
     emoji: "🏥",
     description: "Likeson, a healthcare appointment booking and management platform dedicated to simplifying medical care for individuals and families, brings convenience, clarity, and confidence to every health journey. With a seamless digital experience, Likeson enables users to book appointments, manage multiple patient profiles, track health progress, and connect with trusted doctors and clinics — all in one place. Seeking to expand its digital presence and build meaningful connections with a wider audience, Likeson partnered with Digital Edge 360. Through strategic marketing initiatives, performance-driven campaigns, and creative brand positioning, Digital Edge 360 empowers Likeson to strengthen its online visibility, engage users effectively, and establish itself as a trusted name in digital healthcare management.",
-    websiteUrl: "https://likeson.in/",
+    websiteUrl: "https://www.likeson.in/",
     stats: {
       estimatedTime: "20 Days",
       bugsFixing: "136 +",
@@ -303,6 +315,7 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "nayantara": {
+    logo: "/logos/nayantara.jpg",
     title: "Nayantara",
     subtitle: "Nayantara leads India’s ethnic fashion collection",
     emoji: "👗",
@@ -333,11 +346,12 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "earthbags": {
+    logo: "/logos/earthbags.jpg",
     title: "EarthBags",
     subtitle: "Made for You, Made for the Planet",
     emoji: "👜",
     description: "Earthbags is a sustainable bag brand dedicated to eco-friendly fashion and conscious living. Committed to reducing waste and promoting ethical choices, they craft stylish, durable bags from recycled materials. Seeking to expand their reach and enhance their digital presence, Earthbags partnered with Digital Edge 360 for innovative marketing solutions and a stronger online impact.",
-    websiteUrl: "https://shopeearthbags.com/",
+    websiteUrl: "https://shopearthbags.com/",
     stats: {
       estimatedTime: "20 Days",
       bugsFixing: "136 +",
@@ -363,6 +377,7 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "roughells": {
+    logo: "/logos/roughells.jpg",
     title: "RougHells",
     subtitle: "Built for the Bold, Designed for Comfort",
     emoji: "👕",
@@ -393,11 +408,12 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "jetchoice": {
+    logo: "/logos/18.jpg",
     title: "JetChoice",
     subtitle: "Wings of Freedom, Choice of Excellence",
     emoji: "✈️",
     description: "Jet Choice, a premier international travel company, specializes in seamless global journeys with personalized experiences. However, they faced challenges in reaching the right audience and maximizing digital engagement. To overcome this, they partnered with Digital Edge 360, leveraging expert digital marketing strategies to enhance visibility and drive customer growth.",
-    websiteUrl: "https://jetchoice.in/",
+    websiteUrl: "https://jetchoicenew.beginit4u.com/",
     stats: {
       estimatedTime: "20 Days",
       bugsFixing: "136 +",
@@ -423,6 +439,7 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "sacred-suta": {
+    logo: "/logos/sacred-suta.jpg",
     title: "Sacred Suta",
     subtitle: "Crafted by Artisans, Adorned by You",
     emoji: "👗",
@@ -453,6 +470,7 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "sree-vedics": {
+    logo: "/logos/Sree_Vedics_Logo.jpg",
     title: "Sree Vedics",
     subtitle: "Skincare and wellness combining scientific expertise with self-care",
     emoji: "🧴",
@@ -505,6 +523,7 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "chris-louis": {
+    logo: "/logos/20.jpg",
     title: "Chris Louis",
     subtitle: "Premium Australian leather bags crafted for modern lifestyles.",
     emoji: "💼",
@@ -558,6 +577,7 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "dash-capital": {
+    logo: "/logos/17.jpg",
     title: "Dash Capital",
     subtitle: "Expert wealth management solutions for financial growth & security.",
     emoji: "📈",
@@ -612,10 +632,12 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "ibt-behala": {
+    logo: "/logos/13.jpg",
     title: "IBT Behala",
     subtitle: "Premier coaching institute for competitive exam success.",
     emoji: "🎓",
     description: "IBT Behala, a leading competitive exam coaching institute, partnered with Digital Edge 360 to enhance its digital presence, attract more students, and establish itself as a top choice for exam preparation. Through targeted digital marketing strategies, the institute saw significant growth in student inquiries, engagement, and admissions, ensuring a strong market position.",
+    websiteUrl: "https://www.ibtindia.com/",
     image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop",
     stats: {
       estimatedTime: "30 Days",
@@ -665,6 +687,7 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "momentum": {
+    logo: "/logos/momentum.jpg",
     title: "Momentum",
     subtitle: "Learn. Practice. Succeed. Your ultimate path to exam excellence!",
     emoji: "🎯",
@@ -717,6 +740,7 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "recipe-keeper": {
+    logo: "/logos/recipe keper.jpg",
     title: "Recipe Keeper",
     subtitle: "Your Personal Digital Cookbook – Recipes, Planning & Shopping Made Easy!",
     emoji: "🍳",
@@ -770,6 +794,7 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "hubfit": {
+    logo: "/logos/hubfit.jpg",
     title: "HubFit",
     subtitle: "Your Fitness. Your Coach. Your Results – All in One App!",
     emoji: "💪",
@@ -823,6 +848,7 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "publix": {
+    logo: "/logos/publix.jpg",
     title: "Publix",
     subtitle: "Style. Book. Grow. The Smartest Way to Run Your Salon!",
     emoji: "🛒",
@@ -875,6 +901,7 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "ring-my-stylist": {
+    logo: "/logos/ring-my-list.jpg",
     title: "Ring My Stylist",
     subtitle: "Style. Book. Grow. The Smartest Way to Run Your Salon!",
     emoji: "💇‍♀️",
@@ -927,6 +954,7 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "edgeringtone": {
+    logo: "/logos/edgering.jpg",
     title: "Edge Ringtones",
     subtitle: "Elevate Your Style with Personalized, Premium Ringtones – Effortless & Seamless.",
     emoji: "🎵",
@@ -979,4 +1007,7 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   }
 };
+
+
+
 

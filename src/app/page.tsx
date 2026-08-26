@@ -7,128 +7,73 @@ import { motion, AnimatePresence } from "framer-motion";
 import LeadForm from "@/components/LeadForm";
 import { Users, Shield, ShoppingCart, MessageSquare, BarChart3, Clock, AlertCircle, FileText, LayoutDashboard, MessageCircle, TrendingUp, Gauge, ShieldAlert, Receipt, Target, Rocket, Trophy, ChevronLeft, ChevronRight } from "lucide-react";
 import { brandLogos, portfolioItems, services, testimonials, faqItems, deliversFeatures } from "@/data";
-import { logoMapping } from "@/data/successStories";
 
 const brandShowcases = [
-    {
-    name: "Ducati",
-    link: "/company-details/ducati",
-    image: "/brand-card-images/Ducati-home.jpg",
-    logo: (
-      <div className="flex items-center gap-2">
-        <div className="w-5 h-6 bg-red-600 rounded-b-md flex items-center justify-center text-[10px] font-black text-white shadow-sm shrink-0">D</div>
-        <span className="font-extrabold text-[13px] text-slate-900 tracking-widest uppercase">Ducati</span>
-      </div>
-    )
-  },
   {
-    name: "Truboy BBQ",
-    link: "/company-details/truboy-bbq",
-    image: "/brand-card-images/Trueboybbq.jpg",
-    logo: (
-      <div className="flex items-center gap-2">
-        <span className="text-xl shrink-0">ðŸ”¥</span>
-        <span className="font-black text-[13px] text-slate-900 uppercase tracking-tight">Truboy <span className="text-red-500">BBQ</span></span>
-      </div>
-    ),
-    metric: "200%",
-    metricLabel: "Increase in ACV",
-    metricColor: "text-red-500"
-  },
-  {
-    name: "Edge Ringtones",
-    link: "/company-details/edgeringtone",
-    image: "/brand-card-images/Edge-ring.jpg",
-    logo: (
-      <div className="flex items-center gap-2 text-left">
-        <span className="text-xl shrink-0">ðŸŽµ</span>
-        <div>
-          <span className="block font-extrabold text-[12px] text-slate-800 leading-none">Edge Ringtones</span>
-          <span className="block text-[8px] font-bold text-slate-400 mt-0.5">Premium Custom Sound App</span>
-        </div>
-      </div>
-    )
-  },
-  {
-    name: "Nayantara",
-    link: "/company-details/nayantara",
-    image: "/brand-card-images/Nayantara.jpg",
-    logo: (
-      <div className="flex items-center gap-1.5">
-        <span className="font-extrabold text-[13px] text-slate-800 tracking-wider uppercase">Nayantara</span>
-      </div>
-    )
-  },
-  {
-    name: "Creative Ecotech",
-    link: "/company-details/creative-ecotech",
-    image: "/brand-card-images/creative-echotech.jpg",
-    logo: (
-      <div className="flex items-center gap-2">
-        <svg className="w-5 h-5 text-emerald-500" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v18M3 12h18M12 3l9 9-9 9M12 3L3 12l9 9" />
-        </svg>
-        <span className="font-extrabold text-[12px] text-slate-855 tracking-wider uppercase">Creative <span className="text-emerald-600">Ecotech</span></span>
-      </div>
-    ),
-    metric: "90%",
-    metricLabel: "Growth in Organic Traffic",
-    metricColor: "text-emerald-600"
-  },
-  {
-    name: "JIVA",
-    link: "/company-details/jiva",
-    image: "/brand-card-images/Jiva.png",
-    logo: (
-      <div className="flex items-center gap-1.5">
-        <svg className="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
-          <path fillRule="evenodd" d="M4.083 9h1.946c.089-1.546.383-2.97.837-4.118A8.004 8.004 0 004.083 9zM10 2a8 8 0 100 16 8 8 0 000-16zm1.09 14.507a7.925 7.925 0 01-2.18 0 7.227 7.227 0 01-.005-13.014 7.925 7.925 0 012.185 0 7.226 7.226 0 010 13.014z" clipRule="evenodd" />
-        </svg>
-        <span className="font-extrabold text-[14px] text-slate-800 tracking-widest uppercase">JIVA</span>
-      </div>
-    )
-  },
-  {
-    name: "EdefyHome",
-    link: "/company-details/edefyhome",
-    image: "/brand-card-images/Edify-home.png",
-    logo: (
-      <div className="flex items-center gap-1.5">
-        <svg className="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-        </svg>
-        <span className="font-extrabold text-[12px] text-slate-800 tracking-tight">EdefyHome</span>
-      </div>
-    )
+    name: "Likeson",
+    link: "/company-details/likeson",
+    image: "/brand-card-images/likeson.jpg",
+    logo: "/logos/likeson.jpg"
   },
   {
     name: "OmniAstra",
     link: "/company-details/omniastra",
     image: "/brand-card-images/astra.jpg",
-    logo: (
-      <div className="flex flex-col text-left leading-none">
-        <span className="font-black text-[12px] text-slate-955 tracking-wider">OMNI ASTRA</span>
-        <span className="text-[7px] font-bold text-slate-400 tracking-widest uppercase mt-0.5">Luxury Eyewear</span>
-      </div>
-    )
-  },
-  {
-    name: "Likeson",
-    link: "/company-details/likeson",
-    image: "/brand-card-images/likeson.jpg",
-    logo: (
-      <div className="flex items-center gap-1.5">
-        <span className="font-extrabold text-[13px] text-blue-600 tracking-wider uppercase">Likeson</span>
-      </div>
-    )
+    logo: "/logos/astra.jpg"
   },
   {
     name: "Earthy Line",
     link: "/company-details/earthy-line",
     image: "/brand-card-images/earthline.jpg",
-    logo: (
-      <span className="font-extrabold text-[14px] text-[#2c5e43] font-serif italic tracking-wide">EarthyLine</span>
-    )
+    logo: "/logos/earthyline.jpg"
+  },
+  {
+    name: "EdefyHome",
+    link: "/company-details/edefyhome",
+    image: "/brand-card-images/Edify-home.png",
+    logo: "/logos/16.jpg"
+  },
+  {
+    name: "Ducati",
+    link: "/company-details/ducati",
+    image: "/brand-card-images/Ducati-home.jpg",
+    logo: "/logos/28.jpg"
+  },
+  {
+    name: "JIVA",
+    link: "/company-details/jiva",
+    image: "/brand-card-images/Jiva.png",
+    logo: "/logos/jiva.jpg"
+  },
+  {
+    name: "Nayantara",
+    link: "/company-details/nayantara",
+    image: "/brand-card-images/Nayantara.jpg",
+    logo: "/logos/nayantara.jpg"
+  },
+  {
+    name: "Truboy BBQ",
+    link: "/company-details/truboy-bbq",
+    image: "/brand-card-images/Trueboybbq.jpg",
+    logo: "/logos/7.jpg",
+    metric: "200%",
+    metricLabel: "Increase in ACV",
+    metricColor: "text-red-500"
+  },
+  {
+    name: "Creative Ecotech",
+    link: "/company-details/creative-ecotech",
+    image: "/brand-card-images/creative-echotech.jpg",
+    logo: "/logos/3.jpg",
+    metric: "90%",
+    metricLabel: "Growth in Organic Traffic",
+    metricColor: "text-emerald-600"
+  },
+  {
+    name: "Edge Ringtones",
+    link: "/company-details/edgeringtone",
+    image: "/brand-card-images/Edge-ring.jpg",
+    logo: "/logos/edgering.jpg"
   }
 ];
 
@@ -905,7 +850,7 @@ export default function Home() {
               </div>
               <div className="lg:max-w-[280px] text-left lg:text-right mb-2">
                 <p className="text-base sm:text-lg text-slate-500 font-semibold leading-relaxed">
-                  From storefront builds to performance marketing â€” every lever that drives your online revenue, handled by one team.              </p>
+                  From storefront builds to performance marketing — every lever that drives your online revenue, handled by one team.              </p>
               </div>
             </div>
 
@@ -938,10 +883,6 @@ export default function Home() {
                 } else if (index === 6) {
                   // AI Integration: 2x1 Wide Image Card
                   gridClass = "lg:col-start-2 lg:row-start-3 lg:col-span-2 lg:row-span-1 min-h-[310px]";
-                } else if (index === 7) {
-                  // Photography & Videography: 1x1 Solid Purple Card
-                  gridClass = "lg:col-start-4 lg:row-start-3 lg:col-span-1 lg:row-span-1 min-h-[240px]";
-                  isSolidBrand = false;
                 }
 
                 return (
@@ -962,7 +903,7 @@ export default function Home() {
                       {/* Bottom Explore Topic button */}
                       <div className="mb-3">
                         <span className="inline-flex items-center gap-1.5 text-xs font-black text-slate-800 bg-white/95 backdrop-blur-sm border border-slate-200/80 px-4 py-2 rounded-lg shadow-md group-hover:bg-[#0210d9] group-hover:text-white group-hover:border-[#0210d9] transition-all duration-300">
-                          Explore Topic <span className="inline-block transform group-hover:translate-x-1 transition-transform duration-300">â†’</span>
+                          Explore Topic <span className="inline-block transform group-hover:translate-x-1 transition-transform duration-300"><ChevronRight className="h-5 w-5" /></span>
                         </span>
                       </div>
 
@@ -975,8 +916,8 @@ export default function Home() {
         </section>
 
         {/* Brand Showcase Grid Section */}
-        <section className="relative z-10 w-full py-24 sm:py-32 bg-[#fafbfc] border-b border-slate-100/80 overflow-hidden">
-          <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
+        <section className="relative z-10 w-full py-32 sm:py-40 bg-[#fafbfc] border-b border-slate-100/80 overflow-hidden">
+          <div className="max-w-[1400px] mx-auto px-8 sm:px-16 lg:px-24">
 
             {/* Header */}
             <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
@@ -995,47 +936,50 @@ export default function Home() {
 
             {/* Grid Layout */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-              {brandShowcases.map((brand, idx) => {
-                const slug = brand.link?.split("/").pop() || "";
-                const companyLogo = logoMapping[slug];
-                return (
-                  <Link href={brand.link || "/contact"} key={idx} className="block w-full">
-                    <motion.div
-                      initial={{ opacity: 0, y: 30 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true, margin: "-50px" }}
-                      whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0,0,0,0.06)" }}
-                      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                      className="bg-white rounded-[24px] overflow-hidden shadow-sm border border-slate-100/80 flex flex-col justify-between group transition-all duration-300 cursor-pointer h-full"
-                    >
-                      {/* Top Image wrapper */}
-                      <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-50">
-                        <img
-                          src={brand.image}
-                          alt={brand.name}
-                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                          loading="lazy"
-                        />
-                      </div>
+              {brandShowcases.map((brand, idx) => (
+                <Link href={brand.link || "/contact"} key={idx} className="block w-full">
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0,0,0,0.06)" }}
+                    transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                    className="bg-white rounded-[24px] overflow-hidden shadow-sm border border-slate-100/80 flex flex-col justify-between group transition-all duration-300 cursor-pointer h-full"
+                  >
+                    {/* Top Image wrapper */}
+                    <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-50">
+                      <img
+                        src={brand.image}
+                        alt={brand.name}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                    </div>
 
-                      {/* Bottom details block */}
-                      <div className="p-5 flex items-center justify-center min-h-[100px]">
-                        <div className="flex items-center justify-center h-16 w-full">
-                          {companyLogo ? (
+                    {/* Bottom details block */}
+                    <div className="relative p-6 flex flex-col items-center justify-center min-h-[110px]">
+                      <div className="flex items-center justify-center h-16 w-full">
+                        {brand.logo ? (
+                          typeof brand.logo === "string" ? (
                             <img
-                              src={companyLogo}
+                              src={brand.logo}
                               alt={brand.name}
-                              className="max-h-full max-w-[200px] object-contain"
+                              className="max-h-full max-w-[170px] object-contain"
                             />
                           ) : (
                             brand.logo
-                          )}
-                        </div>
+                          )
+                        ) : null}
                       </div>
-                    </motion.div>
-                  </Link>
-                );
-              })}
+
+                      {/* Arrow Icon */}
+                      <div className="absolute bottom-3 right-4 text-slate-400 group-hover:text-[#2443ab] transition-all duration-300 transform group-hover:translate-x-0.5">
+                        <ChevronRight className="w-6 h-6" />
+                      </div>
+                    </div>
+                  </motion.div>
+                </Link>
+              ))}
             </div>
           </div>
         </section>
@@ -1054,10 +998,10 @@ export default function Home() {
                 <span>The Core Problem</span>
               </span>
               <h2 className="text-3xl sm:text-5xl font-black text-[#0d1b3e] tracking-tight leading-tight">
-                Running an <span className="text-[#2443ab]">Online Store</span> Shouldnâ€™t Feel Like Managing <span className="text-[#9203ff]">Five Different Vendors</span>
+                Running an <span className="text-[#2443ab]">Online Store</span> Shouldn't Feel Like Managing <span className="text-[#9203ff]">Five Different Vendors</span>
               </h2>
               <p className="text-slate-500 font-bold text-sm sm:text-base leading-relaxed">
-                If any of this sounds familiar, youâ€™re not alone - and itâ€™s not your fault.
+                If any of this sounds familiar, you're not alone - and it's not your fault.
               </p>
             </div>
 
@@ -1069,7 +1013,7 @@ export default function Home() {
               {[
                 {
                   title: "Siloed Communication",
-                  text: "Your SEO agency, ad manager, creative team, and dev team donâ€™t talk to each other. So nobody actually owns your results, and youâ€™re stuck playing translator between four different Slack channels.",
+                  text: "Your SEO agency, ad manager, creative team, and dev team don't talk to each other. So nobody actually owns your results, and you're stuck playing translator between four different Slack channels.",
                   icon: (
                     <MessageSquare className="w-5 h-5 text-white" strokeWidth={2.5} />
                   ),
@@ -1111,7 +1055,7 @@ export default function Home() {
                 },
                 {
                   title: "Blame Game",
-                  text: "Every agency blames someone else when growth stalls- the SEO team blames the site speed, the dev team blames the ad targeting, and youâ€™re left with no clear answer.",
+                  text: "Every agency blames someone else when growth stalls- the SEO team blames the site speed, the dev team blames the ad targeting, and you're left with no clear answer.",
                   icon: (
                     <AlertCircle className="w-5 h-5 text-white" strokeWidth={2.5} />
                   ),
@@ -1125,7 +1069,7 @@ export default function Home() {
                 },
                 {
                   title: "Fragmented Invoices",
-                  text: "Youâ€™re paying five separate invoices for tools and services that should be working as one system - not five disconnected pieces pretending to be a strategy.",
+                  text: "You're paying five separate invoices for tools and services that should be working as one system - not five disconnected pieces pretending to be a strategy.",
                   icon: (
                     <FileText className="w-5 h-5 text-white" strokeWidth={2.5} />
                   ),
@@ -1139,7 +1083,7 @@ export default function Home() {
                 },
                 {
                   title: "One Team. One Dashboard. One Line of Accountability.",
-                  text: "Thatâ€™s exactly why we built Digital Edge 360 differently - one team, one dashboard, one clear line of accountability from click to conversion.",
+                  text: "That's exactly why we built Digital Edge 360 differently - one team, one dashboard, one clear line of accountability from click to conversion.",
                   icon: (
                     <LayoutDashboard className="w-5 h-5 text-white" strokeWidth={2.5} />
                   ),
@@ -1245,7 +1189,7 @@ export default function Home() {
                 {[
                   {
                     title: "Launch faster",
-                    desc: "We build your website, your app, and your WooCommerce store â€” and we build them to convert, not just to look good in a portfolio. Speed and structure get baked in from the first sprint.",
+                    desc: "We build your website, your app, and your WooCommerce store — and we build them to convert, not just to look good in a portfolio. Speed and structure get baked in from the first sprint.",
                     grad: "from-blue-50 to-blue-100/50 border-blue-100 text-[#0a8bc7]",
                     badge: "Development",
                     watermark: "Launch",
@@ -1261,7 +1205,7 @@ export default function Home() {
                   },
                   {
                     title: "Automate and scale",
-                    desc: "As your store grows, so does the manual work behind it. We use AI for personalization and support automation to cut that down, and we produce the video content that keeps your brand looking like one brand across every channel â€” not five different ones stitched together.",
+                    desc: "As your store grows, so does the manual work behind it. We use AI for personalization and support automation to cut that down, and we produce the video content that keeps your brand looking like one brand across every channel — not five different ones stitched together.",
                     grad: "from-emerald-50 to-emerald-100/50 border-emerald-100 text-emerald-600",
                     badge: "Retention & AI",
                     watermark: "Scale",
@@ -1382,10 +1326,10 @@ export default function Home() {
                   </p>
                   <div className="flex flex-wrap gap-3">
                     <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-black bg-blue-50 text-blue-700 border border-blue-100 shadow-sm">
-                      <span className="text-blue-500 text-sm">âœ“</span> Dev + Marketing Aligned
+                      <span className="text-blue-500 text-sm">✓</span> Dev + Marketing Aligned
                     </span>
                     <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-black bg-blue-50 text-blue-700 border border-blue-100 shadow-sm">
-                      <span className="text-blue-500 text-sm">âœ“</span> Direct Accountability
+                      <span className="text-blue-500 text-sm">✓</span> Direct Accountability
                     </span>
                   </div>
                 </div>
@@ -1500,10 +1444,10 @@ export default function Home() {
                   </p>
                   <div className="flex flex-wrap gap-3">
                     <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-black bg-amber-50 text-amber-700 border border-amber-100 shadow-sm">
-                      <span className="text-amber-500 text-sm">âœ“</span> Margin Economics
+                      <span className="text-amber-500 text-sm">✓</span> Margin Economics
                     </span>
                     <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-black bg-amber-50 text-amber-700 border border-amber-100 shadow-sm">
-                      <span className="text-amber-500 text-sm">âœ“</span> Funnel Optimization
+                      <span className="text-amber-500 text-sm">✓</span> Funnel Optimization
                     </span>
                   </div>
                 </div>
@@ -1595,13 +1539,13 @@ export default function Home() {
                 <span>03. The Problem</span>
               </span>
               <h2 className="text-3xl sm:text-5xl font-black text-[#0d1b3e] tracking-tight leading-[1.1] mt-2">
-                Most Marketing Spend Doesnâ€™t Fail Because of Bad Ideas. <br className="hidden md:inline" />
+                Most Marketing Spend Doesn't Fail Because of Bad Ideas. <br className="hidden md:inline" />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 via-orange-500 to-amber-500">
                   It Fails Because of Fragmentation.
                 </span>
               </h2>
               <p className="text-slate-500 font-semibold text-sm sm:text-lg max-w-3xl mx-auto leading-relaxed pt-4">
-                Your website vendor doesnâ€™t talk to your ad agency. Your ad agency doesnâ€™t know what your branding team shipped last quarter. Nobody owns the number that actually matters â€” <span className="text-[#0d1b3e] font-black underline decoration-rose-500 decoration-2">revenue</span>.
+                Your website vendor doesn't talk to your ad agency. Your ad agency doesn't know what your branding team shipped last quarter. Nobody owns the number that actually matters — <span className="text-[#0d1b3e] font-black underline decoration-rose-500 decoration-2">revenue</span>.
               </p>
             </div>
 
@@ -1614,7 +1558,7 @@ export default function Home() {
                 <div>
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center text-red-600 font-black text-sm">
-                      âœ•
+                      ✕
                     </div>
                     <h3 className="text-xl sm:text-2xl font-black text-red-950 tracking-tight">
                       From This...
@@ -1626,11 +1570,11 @@ export default function Home() {
                       "Marketing spend with no clear line to ROI",
                       "Four or five disconnected vendors, each blaming the others",
                       "Leads coming in, but not converting",
-                      "A website that looks fine but doesnâ€™t generate enquiries",
-                      "No one telling you what to fix next â€” just what to pay for next"
+                      "A website that looks fine but doesn't generate enquiries",
+                      "No one telling you what to fix next — just what to pay for next"
                     ].map((text, idx) => (
                       <li key={idx} className="flex items-start gap-3 text-slate-600 text-sm sm:text-[15px] font-semibold leading-relaxed">
-                        <span className="text-red-500 shrink-0 mt-1">âœ•</span>
+                        <span className="text-red-500 shrink-0 mt-1">✕</span>
                         <span>{text}</span>
                       </li>
                     ))}
@@ -1644,7 +1588,7 @@ export default function Home() {
                 <div>
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 font-black text-sm">
-                      âœ“
+                      ✓
                     </div>
                     <h3 className="text-xl sm:text-2xl font-black text-emerald-950 tracking-tight">
                       To This!
@@ -1657,10 +1601,10 @@ export default function Home() {
                       "Predictable, qualified leads instead of random spikes",
                       "A website built to convert, not just to exist",
                       "Lower cost per acquisition over time, not higher",
-                      "A clear plan for whatâ€™s next â€” before you have to ask"
+                      "A clear plan for what's next — before you have to ask"
                     ].map((text, idx) => (
                       <li key={idx} className="flex items-start gap-3 text-slate-700 text-sm sm:text-[15px] font-semibold leading-relaxed">
-                        <span className="text-emerald-500 shrink-0 mt-1">âœ“</span>
+                        <span className="text-emerald-500 shrink-0 mt-1">✓</span>
                         <span className="bg-gradient-to-r from-slate-900 to-slate-800 bg-clip-text text-transparent">{text}</span>
                       </li>
                     ))}
@@ -1686,10 +1630,10 @@ export default function Home() {
                 HOW WE WORK
               </span>
               <h2 className="text-3xl sm:text-5xl font-black text-[#0d1b3e] tracking-tight leading-tight">
-                Hereâ€™s Exactly How We Get You Results
+                Here's Exactly How We Get You Results
               </h2>
               <p className="text-slate-500 font-semibold text-sm sm:text-base mt-4 leading-relaxed">
-                Weâ€™re not going to throw a bunch of buzzwords at you. Hereâ€™s what actually happens when you work with us.
+                We're not going to throw a bunch of buzzwords at you. Here's what actually happens when you work with us.
               </p>
             </div>
 
@@ -1746,7 +1690,7 @@ export default function Home() {
                     Audit: Finding Where Your Funnel Bleeds Money
                   </h3>
                   <p className="text-base text-slate-500 font-semibold leading-relaxed">
-                    First thing we do is go through your entire funnel with a fine-tooth comb. That means checking your traffic sources, how people move through checkout, whether your siteâ€™s loading fast enough, and where your ad budgetâ€™s actually going. By the end of this, weâ€™ll know precisely where youâ€™re bleeding money.
+                    First thing we do is go through your entire funnel with a fine-tooth comb. That means checking your traffic sources, how people move through checkout, whether your site's loading fast enough, and where your ad budget's actually going. By the end of this, we'll know precisely where you're bleeding money.
                   </p>
                   <div>
                     <Link
@@ -1774,7 +1718,7 @@ export default function Home() {
                     Strategy: Customized Scale Architecture Built for You
                   </h3>
                   <p className="text-base text-slate-500 font-semibold leading-relaxed">
-                    Now that we know the problem areas, we sit down and build a plan around your store specifically. This isnâ€™t some recycled template we hand every client â€” your business has different customers, different margins, different goals, so the strategy reflects that.
+                    Now that we know the problem areas, we sit down and build a plan around your store specifically. This isn't some recycled template we hand every client — your business has different customers, different margins, different goals, so the strategy reflects that.
                   </p>
                   <div>
                     <Link
@@ -1839,8 +1783,8 @@ export default function Home() {
                           <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
                         </div>
                         <p className="text-white font-bold mb-1">deploy_storefront.yml</p>
-                        <p className="text-slate-400">âœ“ build assets [production]</p>
-                        <p className="text-[#2443ab]">âœ“ api sync complete [success]</p>
+                        <p className="text-slate-400">✓ build assets [production]</p>
+                        <p className="text-[#2443ab]">✓ api sync complete [success]</p>
                       </div>
                     </div>
                   </div>
@@ -1864,7 +1808,7 @@ export default function Home() {
                     Execute: Handcrafted Code, Zero Outsourcing
                   </h3>
                   <p className="text-base text-slate-500 font-semibold leading-relaxed">
-                    This is where our team actually gets to work. Everything gets built, launched, and tested in-house â€” we donâ€™t hand things off to freelancers or third-party vendors halfway through. Youâ€™re dealing with the same developers and marketing specialists from day one.
+                    This is where our team actually gets to work. Everything gets built, launched, and tested in-house — we don't hand things off to freelancers or third-party vendors halfway through. You're dealing with the same developers and marketing specialists from day one.
                   </p>
                   <div>
                     <Link
@@ -1892,7 +1836,7 @@ export default function Home() {
                     Report: Clean Attribution Data and Real Accountability
                   </h3>
                   <p className="text-base text-slate-500 font-semibold leading-relaxed">
-                    Youâ€™ll get updates every week with proper KPI metrics. Just straight answers on whatâ€™s working, what isnâ€™t, and where your moneyâ€™s actually going, without the fluff or vanity statistics.
+                    You'll get updates every week with proper KPI metrics. Just straight answers on what's working, what isn't, and where your money's actually going, without the fluff or vanity statistics.
                   </p>
                   <div>
                     <Link
@@ -2122,7 +2066,7 @@ export default function Home() {
                 transition={{ duration: 0.7, delay: 0.2 }}
                 className="text-slate-500 font-semibold text-base sm:text-xl leading-relaxed max-w-3xl mx-auto"
               >
-                Weâ€™ll identify the three biggest leaks preventing your business from generating more revenue online â€” and hand you a plan to fix them, whether or not you ever work with us.
+                We'll identify the three biggest leaks preventing your business from generating more revenue online — and hand you a plan to fix them, whether or not you ever work with us.
               </motion.p>
             </div>
 
@@ -2214,8 +2158,8 @@ export default function Home() {
             >
               <div className="flex flex-col sm:flex-row items-center gap-4">
                 <span className="text-slate-400 font-bold text-sm tracking-wider uppercase">Value:</span>
-                <span className="text-slate-400/80 font-bold line-through text-lg">â‚¹25,000</span>
-                <span className="hidden sm:inline text-slate-300 font-bold">â€¢</span>
+                <span className="text-slate-400/80 font-bold line-through text-lg">₹25,000</span>
+                <span className="hidden sm:inline text-slate-300 font-bold">”¢</span>
                 <span className="inline-flex items-center gap-1.5 bg-emerald-50 border border-emerald-100 px-3.5 py-1.5 rounded-full text-xs font-black tracking-wider text-emerald-600 uppercase">
                   Today: Free for qualified businesses
                 </span>
@@ -2225,7 +2169,7 @@ export default function Home() {
                 href="/contact"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-10 py-5 bg-gradient-to-r from-sky-500 to-emerald-500 hover:from-sky-600 hover:to-emerald-600 text-white text-sm font-extrabold rounded-full transition-all duration-300 shadow-[0_10px_25px_rgba(14,165,233,0.15)] hover:shadow-[0_15px_30px_rgba(14,165,233,0.3)] hover:-translate-y-0.5 uppercase tracking-wider"
               >
-                <span>Get My Free Growth Audit â†’</span>
+                <span>Get My Free Growth Audit →</span>
               </Link>
             </motion.div>
           </div>
@@ -2291,7 +2235,7 @@ export default function Home() {
                   client: "Jet Choice",
                   stat: "ROI Boost",
                   statLabel: "Campaign Performance Lift",
-                  problem: "Performance marketing spend wasnâ€™t translating into measurable ROI.",
+                  problem: "Performance marketing spend wasn't translating into measurable ROI.",
                   action: "Rebuilt Google & Meta campaign structure around ROI, not just reach.",
                   result: "Significant, measurable improvement in ROI.",
                   badgeBg: "bg-sky-50 text-sky-700 border-sky-100",
@@ -2462,7 +2406,7 @@ export default function Home() {
                                 {/* Rating Pill */}
                                 <div className="inline-flex items-center gap-0.5 px-3 py-1.5 rounded-full bg-amber-500/5 border border-amber-500/10">
                                   {Array.from({ length: t.stars }).map((_, i) => (
-                                    <span key={i} className="text-amber-500 text-sm sm:text-base font-bold">â˜…</span>
+                                    <span key={i} className="text-amber-500 text-sm sm:text-base font-bold">★</span>
                                   ))}
                                 </div>
                                 {/* Metric Pill */}
@@ -2475,9 +2419,9 @@ export default function Home() {
                               </div>
                               {/* Quote */}
                               <p className="text-[15px] sm:text-[17px] text-slate-600 font-semibold leading-[1.8] mt-6 italic relative pl-4">
-                                <span className={`absolute left-0 top-0 text-3xl font-serif font-black ${accent.quoteColor} leading-none`}>â€œ</span>
+                                <span className={`absolute left-0 top-0 text-3xl font-serif font-black ${accent.quoteColor} leading-none`}>“</span>
                                 {t.quote}
-                                <span className={`text-xl font-serif font-black ${accent.quoteColor} ml-1`}>â€</span>
+                                <span className={`text-xl font-serif font-black ${accent.quoteColor} ml-1`}>”</span>
                               </p>
                             </div>
 
@@ -2697,11 +2641,11 @@ export default function Home() {
                       feature: "Campaign strategy",
                       us: {
                         title: "Built Around Profit, Not Clicks",
-                        desc: "We structure campaigns around your margins and AOV â€” not a generic \"boost sales\" template applied to every client."
+                        desc: "We structure campaigns around your margins and AOV — not a generic \"boost sales\" template applied to every client."
                       },
                       typical: {
                         title: "Same Playbook for Everyone",
-                        desc: "Runs the same ad structure for a store as for a service business â€” traffic goes up, profitability doesn't."
+                        desc: "Runs the same ad structure for a store as for a service business — traffic goes up, profitability doesn't."
                       },
                       freelance: {
                         title: "Optimizes for Cheap Clicks",
@@ -2712,7 +2656,7 @@ export default function Home() {
                       feature: "Store performance",
                       us: {
                         title: "We Fix the Store, Not Just the Ads",
-                        desc: "Checkout flow, cart abandonment, and product page conversion â€” built and improved by the same team running your ads."
+                        desc: "Checkout flow, cart abandonment, and product page conversion — built and improved by the same team running your ads."
                       },
                       typical: {
                         title: "Disconnected Web Team",
@@ -2731,7 +2675,7 @@ export default function Home() {
                       },
                       typical: {
                         title: "One Blended ROAS Number",
-                        desc: "Reports overall ROAS with no breakdown by product â€” a bestseller and a loss-leader look identical."
+                        desc: "Reports overall ROAS with no breakdown by product — a bestseller and a loss-leader look identical."
                       },
                       freelance: {
                         title: "No Attribution Setup",
@@ -2749,7 +2693,7 @@ export default function Home() {
                         {/* Winning Column (Us) */}
                         <td className={`py-12 px-8 bg-[#2443ab] text-white align-top shadow-[0_15px_35px_rgba(36,67,171,0.12)] relative ${isLastRow ? "rounded-b-[24px]" : ""}`}>
                           <div className="flex gap-4">
-                            <span className="flex-shrink-0 inline-flex items-center justify-center w-6 h-6 rounded-full bg-white text-[#2443ab] font-bold text-xs shadow-sm">âœ“</span>
+                            <span className="flex-shrink-0 inline-flex items-center justify-center w-6 h-6 rounded-full bg-white text-[#2443ab] font-bold text-xs shadow-sm">✓</span>
                             <div>
                               <p className="font-extrabold text-white text-base sm:text-lg tracking-tight">{row.us.title}</p>
                               <p className="text-[14px] sm:text-[15px] text-white/85 font-medium leading-[1.6] mt-2">{row.us.desc}</p>
@@ -2760,7 +2704,7 @@ export default function Home() {
                         {/* Typical Agency column */}
                         <td className="py-12 px-8 align-top">
                           <div className="flex gap-4">
-                            <span className="flex-shrink-0 inline-flex items-center justify-center w-6 h-6 rounded-full bg-rose-50/80 text-rose-500/70 font-bold text-xs border border-rose-100/50">âœ•</span>
+                            <span className="flex-shrink-0 inline-flex items-center justify-center w-6 h-6 rounded-full bg-rose-50/80 text-rose-500/70 font-bold text-xs border border-rose-100/50">✕</span>
                             <div>
                               <p className="font-semibold text-slate-500 text-base sm:text-lg tracking-tight">{row.typical.title}</p>
                               <p className="text-[14px] sm:text-[15px] text-[#6b7280] font-medium leading-[1.6] mt-2">{row.typical.desc}</p>
@@ -2771,7 +2715,7 @@ export default function Home() {
                         {/* Freelancer column */}
                         <td className="py-12 px-8 align-top">
                           <div className="flex gap-4">
-                            <span className="flex-shrink-0 inline-flex items-center justify-center w-6 h-6 rounded-full bg-rose-50/80 text-rose-500/70 font-bold text-xs border border-rose-100/50">âœ•</span>
+                            <span className="flex-shrink-0 inline-flex items-center justify-center w-6 h-6 rounded-full bg-rose-50/80 text-rose-500/70 font-bold text-xs border border-rose-100/50">✕</span>
                             <div>
                               <p className="font-semibold text-slate-500 text-base sm:text-lg tracking-tight">{row.freelance.title}</p>
                               <p className="text-[14px] sm:text-[15px] text-[#6b7280] font-medium leading-[1.6] mt-2">{row.freelance.desc}</p>
@@ -2792,11 +2736,11 @@ export default function Home() {
                   feature: "Campaign strategy",
                   us: {
                     title: "Built Around Profit, Not Clicks",
-                    desc: "We structure campaigns around your margins and AOV â€” not a generic \"boost sales\" template applied to every client."
+                    desc: "We structure campaigns around your margins and AOV — not a generic \"boost sales\" template applied to every client."
                   },
                   typical: {
                     title: "Same Playbook for Everyone",
-                    desc: "Runs the same ad structure for a store as for a service business â€” traffic goes up, profitability doesn't."
+                    desc: "Runs the same ad structure for a store as for a service business — traffic goes up, profitability doesn't."
                   },
                   freelance: {
                     title: "Optimizes for Cheap Clicks",
@@ -2807,7 +2751,7 @@ export default function Home() {
                   feature: "Store performance",
                   us: {
                     title: "We Fix the Store, Not Just the Ads",
-                    desc: "Checkout flow, cart abandonment, and product page conversion â€” built and improved by the same team running your ads."
+                    desc: "Checkout flow, cart abandonment, and product page conversion — built and improved by the same team running your ads."
                   },
                   typical: {
                     title: "Disconnected Web Team",
@@ -2826,7 +2770,7 @@ export default function Home() {
                   },
                   typical: {
                     title: "One Blended ROAS Number",
-                    desc: "Reports overall ROAS with no breakdown by product â€” a bestseller and a loss-leader look identical."
+                    desc: "Reports overall ROAS with no breakdown by product — a bestseller and a loss-leader look identical."
                   },
                   freelance: {
                     title: "No Attribution Setup",
@@ -2853,7 +2797,7 @@ export default function Home() {
                         <span className="text-[10px] font-black tracking-widest uppercase bg-white text-[#2443ab] px-3 py-1 rounded-full border border-blue-200">
                           DIGITAL EDGE 360
                         </span>
-                        <span className="w-6 h-6 rounded-full bg-white text-[#2443ab] flex items-center justify-center font-bold text-xs shadow-sm">âœ“</span>
+                        <span className="w-6 h-6 rounded-full bg-white text-[#2443ab] flex items-center justify-center font-bold text-xs shadow-sm">✓</span>
                       </div>
                       <h4 className="font-extrabold text-base text-white tracking-tight">{row.us.title}</h4>
                       <p className="text-xs text-white/80 font-medium mt-1.5 leading-relaxed">{row.us.desc}</p>
@@ -2865,7 +2809,7 @@ export default function Home() {
                         <span className="text-[10px] font-bold tracking-widest uppercase text-slate-400">
                           TYPICAL AGENCY
                         </span>
-                        <span className="w-5 h-5 rounded-full bg-rose-50 text-rose-500/70 flex items-center justify-center font-bold text-xs border border-rose-100/50">âœ•</span>
+                        <span className="w-5 h-5 rounded-full bg-rose-50 text-rose-500/70 flex items-center justify-center font-bold text-xs border border-rose-100/50">✕</span>
                       </div>
                       <h4 className="font-bold text-sm text-slate-600 tracking-tight">{row.typical.title}</h4>
                       <p className="text-xs text-[#6b7280] mt-1.5 leading-relaxed font-medium">{row.typical.desc}</p>
@@ -2877,7 +2821,7 @@ export default function Home() {
                         <span className="text-[10px] font-bold tracking-widest uppercase text-slate-400">
                           FREELANCERS / OFFSHORE
                         </span>
-                        <span className="w-5 h-5 rounded-full bg-rose-50 text-rose-500/70 flex items-center justify-center font-bold text-xs border border-rose-100/50">âœ•</span>
+                        <span className="w-5 h-5 rounded-full bg-rose-50 text-rose-500/70 flex items-center justify-center font-bold text-xs border border-rose-100/50">✕</span>
                       </div>
                       <h4 className="font-bold text-sm text-slate-600 tracking-tight">{row.freelance.title}</h4>
                       <p className="text-xs text-[#6b7280] mt-1.5 leading-relaxed font-medium">{row.freelance.desc}</p>
@@ -2984,7 +2928,7 @@ export default function Home() {
 
             {/* Subheading */}
             <p className="max-w-2xl text-sm sm:text-base text-slate-400 font-semibold leading-relaxed mt-6">
-              Get a free audit of your store, ads, and growth funnel â€” no commitment, just a clear picture.
+              Get a free audit of your store, ads, and growth funnel — no commitment, just a clear picture.
             </p>
 
             {/* CTA Link Button */}

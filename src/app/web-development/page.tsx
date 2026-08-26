@@ -13,136 +13,90 @@ import ArchitectureTimeline from "@/components/ArchitectureTimeline";
 
 const webDevShowcases = [
   {
-    name: "Nayantara",
-    link: "/company-details/nayantara",
-    image: "https://images.unsplash.com/photo-1608748010899-18f300247112?q=80&w=600&auto=format&fit=crop",
-    logo: (
-      <div className="flex items-center gap-1.5 text-left">
-        <span className="font-extrabold text-[13px] text-slate-800 tracking-wider uppercase">Nayantara</span>
-      </div>
-    )
-  },
-  {
-    name: "EdefyHome",
-    link: "/company-details/edefyhome",
-    image: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=600&auto=format&fit=crop",
-    logo: (
-      <div className="flex items-center gap-1.5 text-left">
-        <svg className="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-        </svg>
-        <span className="font-extrabold text-[12px] text-slate-800 tracking-tight">EdefyHome</span>
-      </div>
-    )
-  },
-  {
-    name: "EarthBags",
-    link: "/company-details/earthbags",
-    image: "https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=600&auto=format&fit=crop",
-    logo: (
-      <div className="flex items-center gap-1.5 text-left">
-        <span className="font-extrabold text-[13px] text-emerald-800 tracking-wider uppercase">EarthBags</span>
-      </div>
-    )
-  },
-  {
-    name: "Truboy BBQ",
-    link: "/company-details/truboy-bbq",
-    image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=600&auto=format&fit=crop",
-    logo: (
-      <div className="flex items-center gap-2 text-left">
-        <span className="text-xl shrink-0">🔥</span>
-        <span className="font-black text-[13px] text-slate-900 uppercase tracking-tight">Truboy <span className="text-red-500">BBQ</span></span>
-      </div>
-    ),
-    metric: "200%",
-    metricLabel: "Increase in ACV",
-    metricColor: "text-red-500"
-  },
-  {
-    name: "RougHells",
-    link: "/company-details/roughells",
-    image: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=600&auto=format&fit=crop",
-    logo: (
-      <div className="flex items-center gap-1.5 text-left">
-        <span className="font-extrabold text-[13px] text-slate-900 tracking-wider uppercase">RougHells</span>
-      </div>
-    )
-  },
-  {
-    name: "JetChoice",
-    link: "/company-details/jetchoice",
-    image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=600&auto=format&fit=crop",
-    logo: (
-      <div className="flex items-center gap-1.5 text-left">
-        <span className="font-extrabold text-[13px] text-blue-600 tracking-wider uppercase">JetChoice</span>
-      </div>
-    )
-  },
-  {
-    name: "Creative Ecotech",
-    link: "/company-details/creative-ecotech",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop",
-    logo: (
-      <div className="flex items-center gap-2 text-left">
-        <svg className="w-5 h-5 text-emerald-500" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v18M3 12h18M12 3l9 9-9 9M12 3L3 12l9 9" />
-        </svg>
-        <span className="font-extrabold text-[12px] text-slate-855 tracking-wider uppercase">Creative <span className="text-emerald-600">Ecotech</span></span>
-      </div>
-    ),
-    metric: "90%",
-    metricLabel: "Growth in Organic Traffic",
-    metricColor: "text-emerald-600"
-  },
-  {
-    name: "Sacred Suta",
-    link: "/company-details/sacred-suta",
-    image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=600&auto=format&fit=crop",
-    logo: (
-      <div className="flex items-center gap-1.5 text-left">
-        <span className="font-extrabold text-[13px] text-slate-800 tracking-wider uppercase">Sacred Suta</span>
-      </div>
-    )
+    name: "Likeson",
+    link: "/company-details/likeson",
+    image: "/brand-card-images/likeson.jpg",
+    logo: "/logos/likeson.jpg"
   },
   {
     name: "OmniAstra",
     link: "/company-details/omniastra",
-    image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?q=80&w=600&auto=format&fit=crop",
-    logo: (
-      <div className="flex flex-col text-left leading-none">
-        <span className="font-black text-[12px] text-slate-955 tracking-wider">OMNI ASTRA</span>
-        <span className="text-[7px] font-bold text-slate-400 tracking-widest uppercase mt-0.5">Luxury Eyewear</span>
-      </div>
-    )
+    image: "/brand-card-images/astra.jpg",
+    logo: "/logos/astra.jpg"
   },
   {
     name: "Earthy Line",
     link: "/company-details/earthy-line",
-    image: "https://images.unsplash.com/photo-1610030470298-40b8a1c24d3c?q=80&w=600&auto=format&fit=crop",
-    logo: (
-      <span className="font-extrabold text-[14px] text-[#2c5e43] font-serif italic tracking-wide text-left">EarthyLine</span>
-    )
+    image: "/brand-card-images/earthline.jpg",
+    logo: "/logos/earthyline.jpg"
   },
   {
-    name: "Likeson",
-    link: "/company-details/likeson",
-    image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=600&auto=format&fit=crop",
-    logo: (
-      <div className="flex items-center gap-1.5 text-left">
-        <span className="font-extrabold text-[13px] text-blue-600 tracking-wider uppercase">Likeson</span>
-      </div>
-    )
+    name: "EdefyHome",
+    link: "/company-details/edefyhome",
+    image: "/brand-card-images/Edify-home.png",
+    logo: "/logos/16.jpg"
+  },
+  {
+    name: "Ducati",
+    link: "/company-details/ducati",
+    image: "/brand-card-images/Ducati-home.jpg",
+    logo: "/logos/28.jpg"
+  },
+  {
+    name: "JIVA",
+    link: "/company-details/jiva",
+    image: "/brand-card-images/Jiva.png",
+    logo: "/logos/jiva.jpg"
+  },
+  {
+    name: "Nayantara",
+    link: "/company-details/nayantara",
+    image: "/brand-card-images/Nayantara.jpg",
+    logo: "/logos/nayantara.jpg"
+  },
+  {
+    name: "Truboy BBQ",
+    link: "/company-details/truboy-bbq",
+    image: "/brand-card-images/Trueboybbq.jpg",
+    logo: "/logos/7.jpg",
+ 
+  },
+  {
+    name: "Creative Ecotech",
+    link: "/company-details/creative-ecotech",
+    image: "/brand-card-images/creative-echotech.jpg",
+    logo: "/logos/3.jpg",
+ 
+  },
+  {
+    name: "Edge Ringtones",
+    link: "/company-details/edgeringtone",
+    image: "/brand-card-images/Edge-ring.jpg",
+    logo: "/logos/edgering.jpg"
+  },
+  {
+    name: "JetChoice",
+    link: "/company-details/jetchoice",
+    image: "/brand-card-images/jet-choice.jpg",
+    logo: "/logos/18.jpg"
+  },
+  {
+    name: "Sacred Suta",
+    link: "/company-details/sacred-suta",
+    image: "/brand-card-images/sacred-suta.jpg",
+    logo: "/logos/sacred-suta.jpg"
+  },
+  {
+    name: "RougHells",
+    link: "/company-details/roughells",
+    image: "/brand-card-images/roughells.jpg",
+    logo: "/logos/roughells.jpg"
   },
   {
     name: "Sree Vedics",
     link: "/company-details/sree-vedics",
-    image: "https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?q=80&w=600&auto=format&fit=crop",
-    logo: (
-      <div className="flex items-center gap-1.5 text-left">
-        <span className="font-extrabold text-[13px] text-teal-800 tracking-wider uppercase">Sree Vedics</span>
-      </div>
-    )
+    image: "/brand-card-images/sreevadic.jpg",
+    logo: "/logos/Sree_Vedics_Logo.jpg"
   }
 ];
 
@@ -521,8 +475,8 @@ export default function WebDevelopment() {
         </section>
 
         {/* Brand Showcase Grid Section */}
-        <section className="relative z-10 py-24 bg-gradient-to-b from-[#fafbfc] to-white overflow-hidden border-t border-slate-100">
-          <div className="w-full mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+        <section className="relative z-10 py-32 sm:py-40 bg-gradient-to-b from-[#fafbfc] to-white overflow-hidden border-t border-slate-100">
+          <div className="w-full mx-auto px-8 sm:px-16 lg:px-24 relative z-10">
 
             {/* Header */}
             <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
@@ -562,20 +516,25 @@ export default function WebDevelopment() {
                     </div>
 
                     {/* Bottom details block */}
-                    <div className="p-6 flex items-center justify-between min-h-[90px]">
-                      <div className="flex-grow text-left flex flex-col justify-center">
-                        <div className="mb-1.5">{brand.logo}</div>
-                        {brand.metric && (
-                          <div className="flex flex-col text-left leading-none mt-2">
-                            <span className={`text-2xl font-black ${brand.metricColor} leading-none`}>{brand.metric}</span>
-                            <span className="text-[10px] font-bold text-slate-400 tracking-wider uppercase mt-1">{brand.metricLabel}</span>
-                          </div>
-                        )}
+                    <div className="relative p-6 flex flex-col items-center justify-center min-h-[110px]">
+                      <div className="flex items-center justify-center h-16 w-full">
+                        {brand.logo ? (
+                          typeof brand.logo === "string" ? (
+                            <img
+                              src={brand.logo}
+                              alt={brand.name}
+                              className="max-h-full max-w-[170px] object-contain"
+                            />
+                          ) : (
+                            brand.logo
+                          )
+                        ) : null}
                       </div>
-                      {/* Circle Chevron Indicator Button */}
-                      <button className="w-10 h-10 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-650 group-hover:bg-[#2443ab] group-hover:text-white group-hover:border-[#2443ab] transition-all duration-300 shrink-0 ml-4 shadow-sm">
-                        <ChevronRight className="w-5 h-5 transform group-hover:translate-x-0.5 transition-transform duration-300" />
-                      </button>
+
+                      {/* Arrow Icon */}
+                      <div className="absolute bottom-3 right-4 text-slate-400 group-hover:text-[#2443ab] transition-all duration-300 transform group-hover:translate-x-0.5">
+                        <ChevronRight className="w-6 h-6" />
+                      </div>
                     </div>
                   </motion.div>
                 </Link>

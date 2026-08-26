@@ -62,6 +62,7 @@ interface SuccessStoryData {
   impactDescription?: string;
   impactCards?: { title: string; desc: string; icon: string }[];
   image?: string;
+  logo?: string;
 }
 
 function AnimatedCounter({ value }: { value: string }) {
@@ -122,7 +123,7 @@ function AnimatedCounter({ value }: { value: string }) {
   );
 }
 
-export default function CompanyDetailsClient({ story }: { story: SuccessStoryData }) {
+export default function CompanyDetailsClient({ story, slug }: { story: SuccessStoryData; slug: string }) {
   const timelineRef = useRef<HTMLDivElement>(null);
   const isTimelineInView = useInView(timelineRef, { once: true, margin: "-100px" });
 
@@ -162,6 +163,8 @@ export default function CompanyDetailsClient({ story }: { story: SuccessStoryDat
 
   return (
     <div className="relative min-h-screen bg-[#fafbfc] text-slate-800 pb-32 overflow-hidden font-sans antialiased">
+      {/* Canonical Link */}
+      <link rel="canonical" href={`https://digitaledge360.in/company-details/${slug}/`} />
       {/* Moving Grid Background Layer */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(226,232,240,0.4)_1px,transparent_1px),linear-gradient(to_bottom,rgba(226,232,240,0.4)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none z-0" />
 
@@ -180,11 +183,17 @@ export default function CompanyDetailsClient({ story }: { story: SuccessStoryDat
         >
           {/* Hero Section */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-
+ 
             {/* Hero Left Content */}
             <motion.div variants={itemVariants} className="lg:col-span-6 space-y-8 text-left">
-              <div className="flex items-center gap-2.5">
-                <span className="text-2xl drop-shadow-sm select-none">{story.emoji}</span>
+              <div className="flex items-center gap-3">
+                {story.logo ? (
+                  <div className="bg-white/95 border border-slate-200/60 p-2.5 rounded-2xl shadow-[0_8px_20px_rgba(0,0,0,0.04)] flex items-center justify-center h-14 w-32 md:h-16 md:w-36 transition-all duration-300">
+                    <img src={story.logo} alt={story.title} className="max-h-full max-w-full object-contain" />
+                  </div>
+                ) : (
+                  <span className="text-2xl drop-shadow-sm select-none">{story.emoji}</span>
+                )}
                 <span className="text-xs font-black uppercase tracking-[0.25em] text-slate-400">{story.title}</span>
               </div>
 
@@ -263,17 +272,17 @@ export default function CompanyDetailsClient({ story }: { story: SuccessStoryDat
           <motion.div variants={itemVariants} className="w-full bg-gradient-to-r from-blue-100/60 via-white/80 to-indigo-100/60 backdrop-blur-md border border-slate-200/55 rounded-[32px] p-8 shadow-[0_15px_40px_rgba(0,0,0,0.03)]">
             <div className="grid grid-cols-2 md:grid-cols-6 gap-6 md:gap-4 divide-y md:divide-y-0 md:divide-x divide-slate-200/80">
               {[
-                { label: "Estimated Time", val: story.stats.estimatedTime, icon: <Clock className="w-4.5 h-4.5 text-indigo-500" /> },
-                { label: "Bugs Fixing", val: story.stats.bugsFixing, icon: <Bug className="w-4.5 h-4.5 text-indigo-500" /> },
-                { label: "Security & Reliability", val: story.stats.security, icon: <ShieldCheck className="w-4.5 h-4.5 text-indigo-500" /> },
-                { label: "Project Completion", val: story.stats.projectCompletion, icon: <CheckCircle2 className="w-4.5 h-4.5 text-indigo-500" /> },
-                { label: story.stats.trafficSpikesLabel || "Load Time", val: story.stats.trafficSpikes, icon: <Gauge className="w-4.5 h-4.5 text-indigo-500" /> },
-                { label: "Traffic & Engagement", val: "Higher", icon: <TrendingUp className="w-4.5 h-4.5 text-indigo-500" /> }
+                { label: "Estimated Time", val: story.stats.estimatedTime, icon: <Clock className="w-5 h-5 text-blue-500" />, colorClass: "from-blue-600 to-sky-500" },
+                { label: "Bugs Fixing", val: story.stats.bugsFixing, icon: <Bug className="w-5 h-5 text-violet-500" />, colorClass: "from-violet-600 to-fuchsia-500" },
+                { label: "Security & Reliability", val: story.stats.security, icon: <ShieldCheck className="w-5 h-5 text-pink-500" />, colorClass: "from-pink-600 to-rose-500" },
+                { label: "Project Completion", val: story.stats.projectCompletion, icon: <CheckCircle2 className="w-5 h-5 text-emerald-500" />, colorClass: "from-emerald-600 to-green-500" },
+                { label: story.stats.trafficSpikesLabel || "Load Time", val: story.stats.trafficSpikes, icon: <Gauge className="w-5 h-5 text-amber-500" />, colorClass: "from-amber-600 to-yellow-500" },
+                { label: "Traffic & Engagement", val: "Higher", icon: <TrendingUp className="w-5 h-5 text-indigo-500" />, colorClass: "from-indigo-600 to-blue-500" }
               ].map((stat, i) => (
                 <div key={i} className={`flex flex-col items-center text-center px-4 ${i > 0 && "pt-4 md:pt-0"}`}>
                   <div className="flex items-center gap-1.5 justify-center">
                     {stat.icon}
-                    <span className="text-xl font-black text-slate-900 leading-none bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
+                    <span className={`text-xl font-black leading-none bg-gradient-to-r ${stat.colorClass} bg-clip-text text-transparent`}>
                       <AnimatedCounter value={stat.val} />
                     </span>
                   </div>
@@ -375,6 +384,7 @@ export default function CompanyDetailsClient({ story }: { story: SuccessStoryDat
                         transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
                         className="absolute inset-0 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500"
                       />
+                      {/* Desktop Glow (Outer Blurred Layer) */}
                       <motion.div
                         initial={{ left: "-50%" }}
                         animate={isTimelineInView ? { left: "150%" } : { left: "-50%" }}
@@ -384,7 +394,54 @@ export default function CompanyDetailsClient({ story }: { story: SuccessStoryDat
                           repeat: Infinity,
                           delay: 1.8
                         }}
-                        className="absolute top-0 bottom-0 w-2/5 bg-gradient-to-r from-transparent via-cyan-400 via-sky-400 to-transparent"
+                        className="absolute top-[-3px] bottom-[-3px] w-2/5 bg-gradient-to-r from-transparent via-cyan-300 via-sky-300 to-transparent blur-[3px]"
+                      />
+                      {/* Desktop Core (Inner Bright Layer) */}
+                      <motion.div
+                        initial={{ left: "-50%" }}
+                        animate={isTimelineInView ? { left: "150%" } : { left: "-50%" }}
+                        transition={{
+                          duration: 2.5,
+                          ease: "linear",
+                          repeat: Infinity,
+                          delay: 1.8
+                        }}
+                        className="absolute top-0 bottom-0 w-2/5 bg-gradient-to-r from-transparent via-white via-cyan-400 to-transparent"
+                      />
+                    </div>
+
+                    {/* Vertical connecting line for mobile screens */}
+                    <div className="absolute left-1/2 top-[32px] bottom-[32px] w-[3px] bg-slate-100 md:hidden z-0 -translate-x-1/2 overflow-hidden">
+                      <motion.div
+                        initial={{ scaleY: 0 }}
+                        animate={isTimelineInView ? { scaleY: 1 } : { scaleY: 0 }}
+                        style={{ originY: 0 }}
+                        transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
+                        className="absolute inset-0 bg-gradient-to-b from-blue-500 via-indigo-500 to-purple-500"
+                      />
+                      {/* Mobile Glow (Outer Blurred Layer) */}
+                      <motion.div
+                        initial={{ top: "-50%" }}
+                        animate={isTimelineInView ? { top: "150%" } : { top: "-50%" }}
+                        transition={{
+                          duration: 2.5,
+                          ease: "linear",
+                          repeat: Infinity,
+                          delay: 1.8
+                        }}
+                        className="absolute left-[-3px] right-[-3px] h-2/5 bg-gradient-to-b from-transparent via-cyan-300 via-sky-300 to-transparent blur-[3px]"
+                      />
+                      {/* Mobile Core (Inner Bright Layer) */}
+                      <motion.div
+                        initial={{ top: "-50%" }}
+                        animate={isTimelineInView ? { top: "150%" } : { top: "-50%" }}
+                        transition={{
+                          duration: 2.5,
+                          ease: "linear",
+                          repeat: Infinity,
+                          delay: 1.8
+                        }}
+                        className="absolute left-0 right-0 h-2/5 bg-gradient-to-b from-transparent via-white via-cyan-400 to-transparent"
                       />
                     </div>
 
@@ -464,17 +521,17 @@ export default function CompanyDetailsClient({ story }: { story: SuccessStoryDat
                       />
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-5 gap-6 relative z-10">
+                    <div className="grid grid-cols-1 md:grid-cols-5 gap-16 md:gap-6 relative z-10">
                       {story.timeline.map((step, i) => {
                         const nodeColors = [
                           "from-blue-600 to-sky-400 shadow-[0_15px_30px_-5px_rgba(59,130,246,0.45),_0_10px_15px_-6px_rgba(59,130,246,0.3)] border-blue-400/50",
                           "from-violet-600 to-fuchsia-400 shadow-[0_15px_30px_-5px_rgba(139,92,246,0.45),_0_10px_15px_-6px_rgba(139,92,246,0.3)] border-violet-400/50",
                           "from-pink-600 to-rose-400 shadow-[0_15px_30px_-5px_rgba(236,72,153,0.45),_0_10px_15px_-6px_rgba(236,72,153,0.3)] border-pink-400/50",
                           "from-emerald-600 to-green-400 shadow-[0_15px_30px_-5px_rgba(16,185,129,0.45),_0_10px_15px_-6px_rgba(16,185,129,0.3)] border-emerald-400/50",
-                          "from-amber-600 to-yellow-400 shadow-[0_15px_30px_-5px_rgba(245,158,11,0.45),_0_10px_15px_-6px_rgba(245,158, Yellow, 0.3)] border-amber-400/50"
+                          "from-amber-600 to-yellow-400 shadow-[0_15px_30px_-5px_rgba(245,158,11,0.45),_0_10px_15px_-6px_rgba(245,158,11,0.3)] border-amber-400/50"
                         ];
                         return (
-                          <div key={i} className="flex flex-col items-center text-center space-y-3.5 relative z-10">
+                          <div key={i} className="flex flex-col items-center text-center relative z-10">
                             <motion.div
                               initial={{ scale: 0, opacity: 0 }}
                               animate={isTimelineInView ? { scale: 1, opacity: 1 } : { scale: 0, opacity: 0 }}
@@ -486,13 +543,28 @@ export default function CompanyDetailsClient({ story }: { story: SuccessStoryDat
                               </span>
                             </motion.div>
 
-                            <div className="pt-2">
+                            {/* Desktop only text (below circle) */}
+                            <div className="hidden md:block pt-5">
                               <span className="block text-[10px] font-black text-slate-400 uppercase tracking-[0.25em] leading-none">
                                 {step.label}
                               </span>
                               <span className="block text-base sm:text-lg font-black text-slate-800 mt-2.5">
                                 {step.day}
                               </span>
+                            </div>
+
+                            {/* Mobile only text (Step label on left of circle, Day on right of circle) */}
+                            <div className="md:hidden absolute inset-0 flex items-center justify-between pointer-events-none px-4">
+                              <div className="w-[calc(50%-45px)] text-right pr-2">
+                                <span className="block text-[9px] font-black text-slate-400 uppercase tracking-widest leading-normal">
+                                  {step.label}
+                                </span>
+                              </div>
+                              <div className="w-[calc(50%-45px)] text-left pl-2">
+                                <span className="block text-sm font-black text-slate-800 leading-normal">
+                                  {step.day}
+                                </span>
+                              </div>
                             </div>
                           </div>
                         );
@@ -595,6 +667,17 @@ export default function CompanyDetailsClient({ story }: { story: SuccessStoryDat
               </motion.div>
             )}
           </div>
+          {/* Bottom Centered Logo */}
+          {story.logo && (
+            <div className="flex flex-col items-center justify-center pt-20 border-t border-slate-200/50 mt-16 max-w-sm mx-auto space-y-4">
+              <div className="bg-white/95 backdrop-blur-sm border border-slate-200/60 p-5 rounded-[32px] shadow-[0_20px_45px_rgba(0,0,0,0.05)] flex items-center justify-center h-28 w-56 md:h-36 md:w-72 transition-all duration-300">
+                <img src={story.logo} alt={story.title} className="max-h-full max-w-full object-contain" />
+              </div>
+              <span className="text-[10px] font-black text-slate-400 uppercase tracking-[0.25em]">
+                {story.title} Case Study
+              </span>
+            </div>
+          )}
         </motion.div>
       </div>
     </div>
