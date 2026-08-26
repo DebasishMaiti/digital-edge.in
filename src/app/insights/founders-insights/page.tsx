@@ -42,7 +42,8 @@ export default function FoundersInsightsPage() {
 
   return (
     <>
-      <link rel="canonical" href="https://digitaledge360.com/insights/founders-insights" />
+      <link rel="canonical" href="https://digitaledge360.in/insights/founders-insights/" />
+
       <div className="w-full bg-[#f8fafc] bg-gradient-to-tr from-[#0a8bc7]/16 via-white to-[#40159e]/16 min-h-screen pb-24 text-slate-800 relative overflow-hidden font-sans">
         
         {/* Grid Background decoration */}

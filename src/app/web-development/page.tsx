@@ -226,7 +226,8 @@ export default function WebDevelopment() {
 
   return (
     <>
-      <link rel="canonical" href="https://digitaledge360.com/web-development" />
+      <link rel="canonical" href="https://digitaledge360.in/web-development/" />
+
       <div className="relative w-full bg-[#fafbfc] min-h-screen text-slate-800 overflow-hidden">
 
         {/* Hero Background Layer with Sky Blue gradient */}

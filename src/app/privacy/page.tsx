@@ -17,7 +17,8 @@ export default function PrivacyPolicy() {
 
   return (
     <>
-      <link rel="canonical" href="https://digitaledge360.com/privacy" />
+      <link rel="canonical" href="https://digitaledge360.in/privacy/" />
+
       <div className="w-full bg-[#fafbfc] min-h-screen pb-24 text-slate-800">
 
         {/* Sky blue to purple privacy hero wrapper (1 shade deeper) */}

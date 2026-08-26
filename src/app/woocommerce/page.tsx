@@ -25,7 +25,8 @@ export default function WooCommerce() {
 
   return (
     <>
-      <link rel="canonical" href="https://digitaledge360.com/woocommerce" />
+      <link rel="canonical" href="https://digitaledge360.in/woocommerce/" />
+
       <div className="w-full bg-[#fafbfc] min-h-screen pb-24 text-slate-800">
         {/* Hero Section with custom Blue light mode gradient */}
         <section className="relative w-full pt-[160px] pb-24 px-6 sm:px-8 lg:px-12 flex flex-col justify-center items-center bg-gradient-to-b from-[#e0f2fe] via-[#bae6fd]/30 to-[#fafbfc] border-b border-slate-100/80 overflow-hidden">

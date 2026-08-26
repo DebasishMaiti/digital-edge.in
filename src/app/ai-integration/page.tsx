@@ -25,7 +25,8 @@ export default function AiIntegration() {
 
   return (
     <>
-      <link rel="canonical" href="https://digitaledge360.com/ai-integration" />
+      <link rel="canonical" href="https://digitaledge360.in/ai-integration/" />
+
       <div className="w-full bg-[#fafbfc] min-h-screen pb-24 text-slate-800">
         {/* Hero Section with custom Lavender/Violet light mode gradient (1 shade deeper) */}
         <section className="relative w-full pt-[160px] pb-24 px-6 sm:px-8 lg:px-12 flex flex-col justify-center items-center bg-gradient-to-b from-[#ede9fe] via-[#ddd6fe] to-[#fafbfc] border-b border-slate-200 overflow-hidden">

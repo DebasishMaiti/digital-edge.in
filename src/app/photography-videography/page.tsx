@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import Image from "next/image";
@@ -9,8 +9,127 @@ import LeadForm from "@/components/LeadForm";
 import AnimatedWords from "@/components/AnimatedWords";
 import Marquee from "react-fast-marquee";
 import ArchitectureTimeline from "@/components/ArchitectureTimeline";
+import { logoMapping } from "@/data/successStories";
+import { ChevronRight } from "lucide-react";
 
-export default function CreativeStudio() {
+const photographyShowcases = [
+  {
+    name: "Royal Enfield",
+    link: "/company-details/royal-enfield",
+    image: "/brand-card-images/ROYAL-ENFIELD.jpg",
+    logo: (
+      <div className="flex items-center gap-2">
+        <span className="text-xl shrink-0">🏍️</span>
+        <span className="font-extrabold text-[12px] text-slate-800 tracking-wider uppercase">Royal Enfield</span>
+      </div>
+    ),
+    metric: "250%",
+    metricLabel: "Showroom Footfall Growth",
+    metricColor: "text-red-600"
+  },
+  {
+    name: "Creative Ecotech",
+    link: "/company-details/creative-ecotech",
+    image: "/brand-card-images/creative-echotech.jpg",
+    logo: (
+      <div className="flex items-center gap-2">
+        <svg className="w-5 h-5 text-emerald-500" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v18M3 12h18M12 3l9 9-9 9M12 3L3 12l9 9" />
+        </svg>
+        <span className="font-extrabold text-[12px] text-slate-855 tracking-wider uppercase">Creative <span className="text-emerald-600">Ecotech</span></span>
+      </div>
+    ),
+    metric: "90%",
+    metricLabel: "Growth in Organic Traffic",
+    metricColor: "text-emerald-600"
+  },
+  {
+    name: "Goel Forgings",
+    link: "/company-details/goel-forgings",
+    image: "/brand-card-images/goel-forgings.jpg",
+    logo: (
+      <div className="flex items-center gap-2">
+        <span className="text-xl shrink-0">âš™ï¸</span>
+        <span className="font-extrabold text-[12px] text-slate-800 tracking-wider uppercase">Goel <span className="text-blue-600">Forgings</span></span>
+      </div>
+    ),
+    metric: "150%",
+    metricLabel: "B2B Inquiry Growth",
+    metricColor: "text-blue-600"
+  },
+  {
+    name: "Geological Survey of India",
+    link: "/company-details/gsi",
+    image: "/brand-card-images/GSI.jpg",
+    logo: (
+      <div className="flex items-center gap-2">
+        <span className="text-xl shrink-0">🌐</span>
+        <span className="font-extrabold text-[12px] text-slate-800 tracking-wider uppercase">GSI</span>
+      </div>
+    ),
+    metric: "30%",
+    metricLabel: "Public Engagement",
+    metricColor: "text-green-600"
+  },
+  {
+    name: "Indian Maritime University",
+    link: "/company-details/imu",
+    image: "/brand-card-images/IMU.jpg",
+    logo: (
+      <div className="flex items-center gap-2">
+        <span className="text-xl shrink-0">⚓</span>
+        <span className="font-extrabold text-[12px] text-slate-800 tracking-wider uppercase">IMU Kolkata</span>
+      </div>
+    ),
+    metric: "100%",
+    metricLabel: "Campus Viewership",
+    metricColor: "text-indigo-650"
+  },
+  {
+    name: "The Lighter Side",
+    link: "/company-details/the-lighter-side",
+    image: "/brand-card-images/THE-LIGHTER-SIDE.jpg",
+    logo: (
+      <div className="flex items-center gap-2">
+        <span className="text-xl shrink-0">☕</span>
+        <span className="font-extrabold text-[12px] text-slate-800 tracking-wider uppercase">The Lighter Side</span>
+      </div>
+    ),
+    metric: "120%",
+    metricLabel: "Increase in Footfall",
+    metricColor: "text-amber-600"
+  },
+  {
+    name: "Brand Leather",
+    link: "/company-details/brand-leather",
+    image: "/brand-card-images/brand-leather.jpg",
+    logo: (
+      <div className="flex items-center gap-2">
+        <span className="text-xl shrink-0">💼</span>
+        <span className="font-extrabold text-[12px] text-slate-800 tracking-wider uppercase">Brand Leather</span>
+      </div>
+    ),
+    metric: "150%",
+    metricLabel: "Online Sales Growth",
+    metricColor: "text-orange-750"
+  },
+  {
+    name: "Kayra",
+    link: "/company-details/kayra",
+    image: "/brand-card-images/KAYRAH.jpg",
+    logo: (
+      <div className="flex items-center gap-2">
+        <span className="text-xl shrink-0">💎</span>
+        <span className="font-extrabold text-[12px] text-slate-800 tracking-wider uppercase">Kayra Jewelry</span>
+      </div>
+    ),
+    metric: "70%",
+    metricLabel: "Product Sales Growth",
+    metricColor: "text-purple-655"
+  }
+];
+
+export default function PhotographyVideography() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const gridBackgroundStyle = {
@@ -25,7 +144,8 @@ export default function CreativeStudio() {
 
   return (
     <>
-      <link rel="canonical" href="https://digitaledge360.com/creative-studio" />
+      <link rel="canonical" href="https://digitaledge360.in/photography-videography/" />
+
       <div className="w-full bg-[#fafbfc] min-h-screen pb-24 text-slate-800">
         {/* Hero Section with custom Sky Blue light mode gradient (1 shade deeper) */}
         <section className="relative w-full pt-[160px] pb-24 px-6 sm:px-8 lg:px-12 flex flex-col justify-center items-center bg-gradient-to-b from-[#e0f2fe] via-[#bae6fd] to-[#fafbfc] border-b border-slate-200 overflow-hidden">
@@ -86,14 +206,14 @@ export default function CreativeStudio() {
             {/* Left Column */}
             <div className="lg:col-span-6 flex flex-col items-start text-left">
               {/* Pill Badge */}
-              <h1 className="inline-flex items-center gap-1.5 rounded-full border border-gray-600 bg-white px-6 py-3.5 text-sm sm:text-base md:text-sm font-extrabold tracking-[0.2em] text-gray-600 uppercase shadow-sm mb-6">
-                Creative Studio Solution
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-gray-600 bg-white px-6 py-3.5 text-sm sm:text-base md:text-sm font-extrabold tracking-[0.2em] text-gray-600 uppercase shadow-sm mb-6 select-none">
+                Photography & Videography
+              </span>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[2.75rem] font-black text-[#0d1b3e] tracking-tight leading-[1.1] mb-6 flex flex-col items-start">
+                Visuals That Do More Than Look Good — They Sell, Convince, and Convert
               </h1>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#0d1b3e] tracking-tight leading-[1.1] mb-6 flex flex-col items-start">
-                Creative Studio
-              </h2>
               <p className="text-lg sm:text-xl text-slate-500 leading-relaxed mb-8 max-w-2xl">
-                We create high-end visual assets, custom branding, and persuasive copy that tell your brand's unique story and build immediate trust. From premium digital product rendering to high-fidelity marketing visuals, our creative studio bridges technical web structure with world-class design to elevate your market positioning.
+                From product shoots that boost e-commerce sales to corporate films that build brand trust, Digital Edge 360 creates photography and videography that works as hard as your marketing team does. Based in Kolkata, trusted by brands and businesses across India.
               </p>
               {/* Full Width Line Divider */}
               <div className="w-full border-t border-slate-200/60 my-3"></div>
@@ -103,7 +223,7 @@ export default function CreativeStudio() {
                   href="/contact"
                   className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[#0a8bc7] via-[#2443ab] to-[#40159e] text-white text-xs font-extrabold rounded-full transition-all duration-300 shadow-[0_8px_20px_rgba(36,67,171,0.25)] hover:shadow-[0_10px_24px_rgba(64,21,158,0.4)] hover:opacity-95 flex items-center justify-center gap-2 flex-shrink-0 uppercase tracking-wider mt-4"
                 >
-                  <span>Book a Strategy Call</span>
+                  <span>Get a Free Shoot Consultation</span>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-3.5 h-3.5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                   </svg>
@@ -146,13 +266,13 @@ export default function CreativeStudio() {
             {/* Header */}
             <div className="max-w-3xl mx-auto mb-16 space-y-4">
               <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-200 bg-blue-50/50 px-4 py-2 text-[10px] sm:text-xs font-black tracking-[0.2em] text-[#2443ab] uppercase shadow-sm">
-                Creative Showreel
+                Production Showreel
               </span>
               <h2 className="text-3xl sm:text-5xl font-black text-[#0d1b3e] tracking-tight mt-4">
-                Step Into Our Creative Studio
+                Step Into Our Visual Production
               </h2>
               <p className="text-slate-500 font-semibold text-sm sm:text-base leading-relaxed mt-4 max-w-2xl mx-auto">
-                Watch our creative showreel to see how we blend high-fidelity 3D rendering, color grading, and cinematic motion design to define premium brand authority.
+                Watch our production showreel to see how we blend high-fidelity shoots, professional color grading, and cinematic motion design to define premium brand authority.
               </p>
               {/* Short styled underline line */}
               <div className="w-16 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto rounded-full mt-4" />
@@ -196,24 +316,83 @@ export default function CreativeStudio() {
           </div>
         </section>
 
+        {/* Success Stories Section */}
+        <section className="relative z-10 w-full py-24 sm:py-32 bg-[#fafbfc] border-b border-slate-100/80 overflow-hidden">
+          <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
+            
+            {/* Section Header */}
+            <div className="max-w-3xl mx-auto mb-16 text-center space-y-4">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-200 bg-blue-50/50 px-4 py-2 text-[10px] sm:text-xs font-black tracking-[0.2em] text-[#2443ab] uppercase shadow-sm">
+                Case Studies & Showcases
+              </span>
+              <h2 className="text-3xl sm:text-5xl font-black text-[#0d1b3e] tracking-tight mt-4">
+                Bespoke Visual Success Stories
+              </h2>
+              <div className="w-16 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto rounded-full mt-2" />
+            </div>
+
+            {/* Grid Layout */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+              {photographyShowcases.map((brand, idx) => {
+                const slug = brand.link?.split("/").pop() || "";
+                const companyLogo = logoMapping[slug];
+                return (
+                  <Link href={brand.link || "/contact"} key={idx} className="block w-full">
+                    <motion.div
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, margin: "-50px" }}
+                      whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0,0,0,0.06)" }}
+                      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                      className="bg-white rounded-[24px] overflow-hidden shadow-sm border border-slate-100/80 flex flex-col justify-between group transition-all duration-300 cursor-pointer h-full"
+                    >
+                      {/* Top Image wrapper */}
+                      <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-50">
+                        <img
+                          src={brand.image}
+                          alt={brand.name}
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                          loading="lazy"
+                        />
+                      </div>
+
+                      {/* Bottom details block */}
+                      <div className="p-5 flex items-center justify-center min-h-[100px]">
+                        <div className="flex items-center justify-center h-16 w-full">
+                          {companyLogo ? (
+                            <img
+                              src={companyLogo}
+                              alt={brand.name}
+                              className="max-h-full max-w-[200px] object-contain"
+                            />
+                          ) : (
+                            brand.logo
+                          )}
+                        </div>
+                      </div>
+                    </motion.div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
         {/* The Architecture Section */}
         <ArchitectureTimeline
           title="The Architecture"
           subtitle="How We Engineer The Solution."
-          tagline="A proven process. Relentless quality. Built for creative precision, designed to scale."
-          codeFile="src/app/asset-pipeline.ts"
+          tagline="A proven process. Relentless quality. Built for visual precision, designed to scale."
+          codeFile="src/config/post-production.ts"
           codeLines={[
-            "import { AssetPipeline, ColorGrading, Render } from 'digital-edge';",
-            "// Automated Asset Processing Pipeline",
-            "export default async function MediaOptimizer() {",
-            "  const profile = await loadColorProfiles();",
-            "  return (",
-            "    <AssetPipeline compression='lossless' format='webp'>",
-            "      <ColorGrading lut={profile} whiteBalance='perfect' />",
-            "      <Render output='4K' raytrace={true} />",
-            "    </AssetPipeline>",
-            "  );",
-            "}"
+            "// DaVinci Resolve & Lightroom Color Grading Pipeline",
+            "const mediaPipelineConfig = {",
+            "  captureFormat: 'RED-16bit-RAW',",
+            "  colorProfiles: { baseProfile: 'REDWideGamutRGB', targetGamma: 'Rec709' },",
+            "  colorGrading: { exposure: 0.12, contrast: 1.08, saturation: 1.05 },",
+            "  renderConfig: { resolution: '4K-DCI', frameRate: '24fps', bitrate: '120Mbps' },",
+            "  mediaDelivery: { compression: 'lossless-ProRes', cdnSync: true }",
+            "};"
           ]}
           floatingBadge1Text="Asset Spec"
           floatingBadge1Sub="Retina & 4K Optimization"
@@ -644,7 +823,7 @@ export default function CreativeStudio() {
           <div className="w-full">
             <img 
               src="/ON-WHITE.jpg" 
-              alt="Creative Studio Design Showcase" 
+              alt="Photography & Videography Showcase" 
               className="w-full h-auto object-cover block"
             />
           </div>
@@ -655,8 +834,11 @@ export default function CreativeStudio() {
           <div className="relative z-10 max-w-6xl mx-auto space-y-16">
             {/* Header */}
             <div className="space-y-4">
+              <span className="block text-[10px] sm:text-xs font-black tracking-[0.25em] text-[#2443ab] uppercase select-none">
+                Common Questions
+              </span>
               <h2 className="text-4xl sm:text-6xl font-black text-[#0d1b3e] tracking-tight">
-                Absolute Clarity.
+                Frequently Asked Questions
               </h2>
               <p className="text-slate-500 text-base sm:text-lg font-semibold tracking-wide">
                 You have highly specific questions. We have exact answers.
@@ -667,16 +849,28 @@ export default function CreativeStudio() {
             <div className="max-w-5xl mx-auto bg-white rounded-[32px] border border-slate-100/80 shadow-[0_10px_45px_rgba(0,0,0,0.02)] p-6 sm:p-10 text-left">
               {[
                 {
-                  q: "What source files do you need?",
-                  a: "We typically require high-resolution raw photos, 3D CAD files, or product dimension drafts."
+                  q: "Do you provide both photography and videography, or do we need separate vendors?",
+                  a: "Both, under one team. Most of our clients need a mix of stills and video for a single campaign or product launch, and having one team handle both keeps the visual style consistent and the process simpler on your end."
                 },
                 {
-                  q: "Do you handle custom branding?",
-                  a: "Yes, we design logos, choose color guidelines, and build corporate design identity styles."
+                  q: "Can you handle product photography specifically for e-commerce listings?",
+                  a: "Yes — this is one of our most requested services. We shoot with e-commerce platform requirements in mind: consistent lighting, accurate colour, and formatting that works across Amazon, Shopify, and other marketplaces."
                 },
                 {
-                  q: "What formats do you deliver?",
-                  a: "We deliver raw models (OBJ/FBX), layered design files (PSD/Figma), and high-quality web-ready images."
+                  q: "Do you offer drone photography for real estate or industrial sites?",
+                  a: "Yes, our drone operations are handled by licensed pilots using professional equipment, suitable for real estate listings, industrial facility documentation, event coverage, and aerial brand films."
+                },
+                {
+                  q: "How far in advance should we book a shoot?",
+                  a: "It depends on scope — a straightforward product shoot can often be scheduled within a week, while larger productions involving multiple locations, drone work, or event coverage benefit from two to three weeks of lead time for proper planning."
+                },
+                {
+                  q: "Do you edit footage from shoots you didn't shoot yourself?",
+                  a: "In most cases, yes — if you have existing raw footage that needs professional editing, colour grading, or post-production work, our editing team can take that on independently of the shoot itself."
+                },
+                {
+                  q: "What industries do you typically work with?",
+                  a: "We've worked across corporate, industrial, real estate, fashion, e-commerce, and events — the common thread is businesses that need visual content to support a marketing or sales goal directly, not just look good in a portfolio."
                 }
               ].map((faq, index) => {
                 const isOpen = openFaq === index;
@@ -685,7 +879,7 @@ export default function CreativeStudio() {
                     initial={{ opacity: 0, y: 15 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: index * 0.1 }}
+                    transition={{ duration: 0.4, delay: index * 0.08 }}
                     key={index}
                     className="border-b border-slate-100 last:border-0 py-6 first:pt-2 last:pb-2"
                   >
@@ -731,9 +925,12 @@ export default function CreativeStudio() {
               The Final Step
             </span>
             {/* Header */}
-            <h2 className="text-5xl sm:text-7xl font-black text-[#0d1b3e] tracking-tight leading-[1.1] max-w-5xl">
-              Ready to dominate<br />your category?
+            <h2 className="text-4xl sm:text-6xl font-black text-[#0d1b3e] tracking-tight leading-[1.15] max-w-5xl">
+              Ready for Visual Content That<br />Actually Works for Your Business?
             </h2>
+            <p className="text-slate-500 text-base sm:text-lg font-semibold max-w-3xl leading-relaxed">
+              Tell us what you're shooting for — a product launch, a brand film, a corporate profile — and we'll put together a plan built around that goal, not a generic package.
+            </p>
 
             {/* Button Link */}
             <div className="pt-6">
@@ -741,7 +938,7 @@ export default function CreativeStudio() {
                 href="/contact"
                 className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#0a8bc7] via-[#2443ab] to-[#40159e] px-8 py-4 text-xs font-black text-white uppercase tracking-wider shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group whitespace-nowrap"
               >
-                <span>Schedule Strategy Call</span>
+                <span>Book a Free Consultation</span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1 flex-shrink-0">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                 </svg>
@@ -753,3 +950,4 @@ export default function CreativeStudio() {
     </>
   );
 }
+

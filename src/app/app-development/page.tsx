@@ -154,7 +154,8 @@ export default function AppDevelopment() {
 
   return (
     <>
-      <link rel="canonical" href="https://digitaledge360.com/app-development" />
+      <link rel="canonical" href="https://digitaledge360.in/app-development/" />
+
       <div className="w-full bg-[#fafbfc] min-h-screen pb-24 text-slate-800">
 
         {/* Hero Section */}

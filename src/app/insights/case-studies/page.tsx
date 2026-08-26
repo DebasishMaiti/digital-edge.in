@@ -38,7 +38,8 @@ export default function CaseStudiesListingPage() {
 
   return (
     <>
-      <link rel="canonical" href="https://digitaledge360.com/insights/case-studies" />
+      <link rel="canonical" href="https://digitaledge360.in/insights/case-studies/" />
+
       <div className="w-full bg-[#f8fafc] bg-gradient-to-tr from-[#0a8bc7]/10 via-white to-[#40159e]/10 text-[#2d3748] min-h-screen pb-24 relative overflow-hidden font-sans">
         
         {/* Soft Blue/Purple Glow Accents */}

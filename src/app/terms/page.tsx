@@ -18,8 +18,9 @@ export default function TermsOfService() {
 
   return (
     <>
-    <link rel="canonical" href="https://digitaledge360.com/terms" />
-    <div className="w-full bg-[#fafbfc] min-h-screen pb-24 text-slate-800">
+      <link rel="canonical" href="https://digitaledge360.in/terms/" />
+
+      <div className="w-full bg-[#fafbfc] min-h-screen pb-24 text-slate-800">
         {/* Minimal light gray terms hero wrapper (1 shade deeper) */}
         <section className="relative w-full pt-[160px] pb-20 overflow-hidden flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#f5f5f5] via-[#e5e5e5] to-[#fafbfc] border-b border-slate-200">
           {/* Light Grid Scrolling Background */}

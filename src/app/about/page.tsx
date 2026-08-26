@@ -17,7 +17,8 @@ export default function About() {
 
   return (
     <>
-      <link rel="canonical" href="https://digitaledge360.com/about" />
+      <link rel="canonical" href="https://digitaledge360.in/about/" />
+
       <div className="w-full bg-[#fafbfc] min-h-screen pb-24 text-slate-800 relative overflow-hidden">
         
         {/* Hero Section Container with custom light blue-slate gradient (1 shade deeper) */}
