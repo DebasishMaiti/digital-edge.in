@@ -92,7 +92,7 @@ export default async function BlogDetailPage({ params }: PageProps) {
 
   if (!post) {
     return (
-      <div className="w-full bg-[#fafbfc] min-h-screen pt-[180px] pb-24 text-center">
+      <div className="w-full bg-[#fafbfc] min-h-screen pt-24 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-[180px] pb-24 text-center">
         <div className="max-w-md mx-auto space-y-6">
           <h1 className="text-3xl font-black text-[#0d1b3e]">Article Not Found</h1>
           <p className="text-slate-500 font-semibold">The blog post you are looking for does not exist or has been relocated.</p>

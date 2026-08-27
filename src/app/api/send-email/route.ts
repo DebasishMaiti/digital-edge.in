@@ -28,7 +28,7 @@ export async function POST(request: Request) {
 
     const mailOptions = {
       from: `"DigitalEdge 360°" <${process.env.SMTP_USER}>`,
-      to: "maitidebasish91@gmail.com,maiti.debasish2001@gmail.com",
+      to: "maiti.debasish2001@gmail.com",
       subject: `New Lead: Strategy Call Booking from ${name}`,
       text: `
 You have received a new strategy call booking:

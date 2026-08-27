@@ -22,7 +22,7 @@ export default function About() {
       <div className="w-full bg-[#fafbfc] min-h-screen pb-24 text-slate-800 relative overflow-hidden">
         
         {/* Hero Section Container with custom light blue-slate gradient (1 shade deeper) */}
-        <section className="relative z-10 w-full pt-[180px] pb-24 text-center bg-gradient-to-b from-[#e0f2fe] via-[#bae6fd] to-[#fafbfc] border-b border-slate-200/60 overflow-hidden">
+        <section className="relative z-10 w-full pt-24 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-24 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-[180px] pb-24 text-center bg-gradient-to-b from-[#e0f2fe] via-[#bae6fd] to-[#fafbfc] border-b border-slate-200/60 overflow-hidden">
           {/* Light Grid Scrolling Background */}
           <div 
             className="animate-grid-scroll opacity-70 pointer-events-none z-0" 

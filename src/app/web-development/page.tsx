@@ -173,7 +173,7 @@ export default function WebDevelopment() {
       <div className="relative w-full bg-[#fafbfc] min-h-screen text-slate-800 overflow-hidden">
 
         {/* Hero Background Layer with Sky Blue gradient */}
-        <section className="relative z-10 w-full pt-[160px] pb-12 bg-gradient-to-b from-[#e0f2fe] via-[#bae6fd] to-[#fafbfc] border-b border-slate-200 overflow-hidden">
+        <section className="relative z-10 w-full pt-24 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-24 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-[160px] pb-12 bg-gradient-to-b from-[#e0f2fe] via-[#bae6fd] to-[#fafbfc] border-b border-slate-200 overflow-hidden">
           {/* Light Grid Scrolling Background */}
           <div
             className="animate-grid-scroll opacity-70 pointer-events-none z-0"

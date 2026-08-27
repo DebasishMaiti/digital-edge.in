@@ -259,7 +259,7 @@ export default function Home() {
           {/* Left and Right Columns Wrapper */}
           <div className="w-full flex flex-col xl:flex-row items-stretch flex-grow z-10">
             {/* Left Column: Content */}
-            <div className="w-full xl:w-[48%] relative flex flex-col justify-center items-center xl:items-start text-center xl:text-left px-6 sm:px-12 xl:pl-16 xl:pr-8 pt-32 pb-12 xl:pt-40 xl:pb-16 z-40">
+            <div className="w-full xl:w-[48%] relative flex flex-col justify-center items-center xl:items-start text-center xl:text-left px-6 sm:px-12 xl:pl-16 xl:pr-8 pt-24 sm:pt-28 xl:pt-40 pb-12 xl:pb-16 z-40">
 
               {/* Exact background graphic matching user uploaded reference */}
               <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-0 opacity-85">

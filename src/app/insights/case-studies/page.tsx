@@ -48,7 +48,7 @@ export default function CaseStudiesListingPage() {
         <div className="absolute top-[400px] right-[-10%] w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle_at_center,rgba(64,21,158,0.1)_0%,transparent_70%)] pointer-events-none blur-[60px]" />
 
         {/* Hero Section */}
-        <section className="relative z-10 mx-auto max-w-[1300px] px-6 sm:px-8 lg:px-12 pt-[180px] pb-16">
+        <section className="relative z-10 mx-auto max-w-[1300px] px-6 sm:px-8 lg:px-12 pt-24 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-[180px] pb-16">
           <motion.div 
             initial="initial"
             animate="animate"

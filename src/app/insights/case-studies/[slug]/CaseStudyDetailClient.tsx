@@ -91,7 +91,7 @@ export default function CaseStudyDetailClient({ slug }: ClientProps) {
         <div className="absolute top-[400px] right-[-10%] w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle_at_center,rgba(64,21,158,0.1)_0%,transparent_70%)] pointer-events-none blur-[60px]" />
 
         {/* Back navigation */}
-        <div className="relative z-10 mx-auto max-w-[1300px] px-6 sm:px-8 lg:px-12 pt-[120px] pb-4">
+        <div className="relative z-10 mx-auto max-w-[1300px] px-6 sm:px-8 lg:px-12 pt-24 sm:pt-28 md:pt-32 lg:pt-[120px] pb-4">
           <Link
             href="/insights/case-studies"
             className="inline-flex items-center gap-2 text-slate-500 hover:text-[#2443ab] transition-colors font-semibold text-sm group"

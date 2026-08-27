@@ -49,7 +49,7 @@ export default function BlogDetailClient({ id, post }: BlogDetailClientProps) {
         <div className="absolute top-[35%] right-[-20%] w-[1000px] h-[1000px] rounded-full bg-[radial-gradient(circle_at_center,rgba(10,139,199,0.18)_0%,transparent_70%)] pointer-events-none blur-[120px]" />
         <div className="absolute bottom-[5%] left-[-15%] w-[900px] h-[900px] rounded-full bg-[radial-gradient(circle_at_center,rgba(64,21,158,0.12)_0%,transparent_70%)] pointer-events-none blur-[100px]" />
 
-        <div className="relative z-10 mx-auto max-w-[1150px] px-6 sm:px-8 pt-[180px] pb-16">
+        <div className="relative z-10 mx-auto max-w-[1150px] px-6 sm:px-8 pt-24 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-[180px] pb-16">
           {/* Breadcrumb / Back Link */}
           <Link 
             href="/insights/blogs" 

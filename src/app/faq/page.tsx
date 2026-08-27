@@ -197,7 +197,7 @@ export default function FAQPage() {
       <div className="relative w-full bg-[#fafbfc] min-h-screen pb-24 text-slate-800 overflow-hidden">
         
         {/* FAQ Hero Wrapper with custom azure-cream light mode gradient */}
-        <section className="relative z-10 w-full pt-[160px] pb-12 flex flex-col justify-center items-center text-center px-6 sm:px-8 bg-gradient-to-b from-[#f0fdfa] via-[#ccfbf1]/40 to-[#fafbfc] border-b border-slate-100/60 overflow-hidden">
+        <section className="relative z-10 w-full pt-24 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-24 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-[160px] pb-12 flex flex-col justify-center items-center text-center px-6 sm:px-8 bg-gradient-to-b from-[#f0fdfa] via-[#ccfbf1]/40 to-[#fafbfc] border-b border-slate-100/60 overflow-hidden">
           {/* Light Grid Scrolling Background */}
           <div 
             className="animate-grid-scroll opacity-65 pointer-events-none z-0" 

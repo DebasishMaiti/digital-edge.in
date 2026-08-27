@@ -64,7 +64,7 @@ export default function BlogsPage() {
         <div className="absolute bottom-[5%] left-[5%] w-[900px] h-[900px] rounded-full bg-[radial-gradient(circle_at_center,rgba(36,67,171,0.08)_0%,transparent_70%)] pointer-events-none blur-[100px]" />
 
         {/* Hero Section */}
-        <section className="relative z-10 mx-auto max-w-[1300px] px-6 sm:px-8 lg:px-12 pt-[180px] pb-16 text-center font-sans">
+        <section className="relative z-10 mx-auto max-w-[1300px] px-6 sm:px-8 lg:px-12 pt-24 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-[180px] pb-16 text-center font-sans">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}

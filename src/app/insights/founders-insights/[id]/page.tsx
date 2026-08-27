@@ -138,7 +138,7 @@ export default async function FoundersInsightPage({ params }: PageProps) {
 
   if (!post) {
     return (
-      <div className="w-full bg-[#0d1b3e] min-h-screen pt-[180px] pb-24 text-center text-white">
+      <div className="w-full bg-[#0d1b3e] min-h-screen pt-24 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-[180px] pb-24 text-center text-white">
         <div className="max-w-md mx-auto space-y-6">
           <h1 className="text-3xl font-black">Insight Not Found</h1>
           <p className="text-slate-400 font-semibold">The insight article you are looking for does not exist.</p>

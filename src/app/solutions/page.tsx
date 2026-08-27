@@ -105,7 +105,7 @@ export default function Solutions() {
       <div className="relative w-full bg-[#fafbfc] min-h-screen pb-24 text-slate-800 overflow-hidden">
 
         {/* Hero Section with custom pearl/platinum light mode gradient */}
-        <section className="relative z-10 w-full pt-[180px] pb-16 flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#fafbfc] via-[#f1f5f9] to-[#fafbfc] border-b border-slate-100/60 overflow-hidden">
+        <section className="relative z-10 w-full pt-24 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-24 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-[180px] pb-16 flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#fafbfc] via-[#f1f5f9] to-[#fafbfc] border-b border-slate-100/60 overflow-hidden">
           {/* Light Grid Scrolling Background */}
           <div 
             className="animate-grid-scroll opacity-60 pointer-events-none z-0" 
