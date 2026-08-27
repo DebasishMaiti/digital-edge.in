@@ -670,9 +670,7 @@ export default function CompanyDetailsClient({ story, slug }: { story: SuccessSt
           {/* Bottom Centered Logo */}
           {story.logo && (
             <div className="flex flex-col items-center justify-center pt-20 border-t border-slate-200/50 mt-16 max-w-sm mx-auto space-y-4">
-              <div className="bg-white/95 backdrop-blur-sm border border-slate-200/60 p-5 rounded-[32px] shadow-[0_20px_45px_rgba(0,0,0,0.05)] flex items-center justify-center h-28 w-56 md:h-36 md:w-72 transition-all duration-300">
-                <img src={story.logo} alt={story.title} className="max-h-full max-w-full object-contain" />
-              </div>
+              <img src={story.logo} alt={story.title} className="h-20 md:h-28 w-auto object-contain transition-all duration-300 hover:scale-105" />
               <span className="text-[10px] font-black text-slate-400 uppercase tracking-[0.25em]">
                 {story.title} Case Study
               </span>

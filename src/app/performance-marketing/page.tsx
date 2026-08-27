@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import LeadForm from "@/components/LeadForm";
 import AnimatedWords from "@/components/AnimatedWords";
 import Marquee from "react-fast-marquee";
-import { Rocket, Search, Puzzle, Zap, Code, Shield, ChevronRight } from "lucide-react";
+import { Rocket, Search, Puzzle, Zap, Code, Shield, ChevronRight, ArrowRight } from "lucide-react";
 import ArchitectureTimeline from "@/components/ArchitectureTimeline";
 
 const perfMarketingShowcases = [
@@ -344,7 +344,7 @@ export default function PerformanceMarketing() {
                     />
                   </div>
 
-                  <div className="relative p-6 flex flex-col items-center justify-center min-h-[110px]">
+                  <div className="relative p-6 flex flex-col items-center justify-center min-h-[130px]">
                     <div className="flex items-center justify-center h-16 w-full">
                       {brand.logo ? (
                         typeof brand.logo === "string" ? (
@@ -359,9 +359,10 @@ export default function PerformanceMarketing() {
                       ) : null}
                     </div>
 
-                    {/* Arrow Icon */}
-                    <div className="absolute bottom-3 right-4 text-slate-400 group-hover:text-[#2443ab] transition-all duration-300 transform group-hover:translate-x-0.5">
-                      <ChevronRight className="w-6 h-6" />
+                    {/* Company Name & Arrow */}
+                    <div className="mt-2 flex items-center justify-center gap-2 text-sm font-semibold text-slate-700 group-hover:text-[#2443ab] transition-colors duration-300">
+                      <span>{brand.name}</span>
+                      <ArrowRight className="w-4 h-4 transition-transform duration-300 transform group-hover:translate-x-1 text-slate-400 group-hover:text-[#2443ab]" />
                     </div>
                   </div>
                 </motion.div>

@@ -21,7 +21,7 @@ export const portfolioItems = [
   { name: "United By Blue", image: "/portfolio/unitedbyblue.png", url: "https://www.unitedbyblue.com/" },
   { name: "Truboy BBQ", image: "/portfolio/truboybbq.png", url: "https://truboybbq.com" },
   { name: "Aladeen", image: "/portfolio/aladeenbangkok.png", url: "https://aladeenbangkok.com/" },
-  { name: "Shop Earth Bags", image: "/portfolio/shopservearthbags.png", url: "https://www.shopearthbags.com/" },
+  { name: "Shop Earth Bags", image: "/portfolio/shopearthbags.png", url: "https://www.shopearthbags.com/" },
   { name: "Mezoma", image: "/portfolio/mezoma.png", url: "https://mezoma.com" },
   { name: "Sacred Suta", image: "/portfolio/sacredsuta.png", url: "https://sacredsuta.com" },
   { name: "Peach Tassels", image: "/portfolio/peachtassels.png", url: "https://peachtassels.com" },

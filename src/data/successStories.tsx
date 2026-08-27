@@ -40,6 +40,7 @@ export interface SuccessStoryData {
 export const storiesData: Record<string, SuccessStoryData> = {
   "priyanka-khaitan": {
     logo: "/logos/16.jpg",
+    image: "/caseStudy/bridal-content-storytelling.png",
     title: "Priyanka Khaitan",
     subtitle: "Bridal Content Strategy & High-intent Conversions",
     emoji: "💎",
@@ -69,6 +70,7 @@ export const storiesData: Record<string, SuccessStoryData> = {
   },
   "creative-ecotech": {
     logo: "/logos/3.jpg",
+    image: "/brand-card-images/creative-echotech.jpg",
     title: "Creative Ecotech",
     subtitle: "Eco-Friendly Plastics for a Greener Tomorrow",
     emoji: "🌱",
@@ -100,6 +102,7 @@ export const storiesData: Record<string, SuccessStoryData> = {
   },
   "truboy-bbq": {
     logo: "/logos/7.jpg",
+    image: "/brand-card-images/Trueboybbq.jpg",
     title: "Truboy BBQ",
     subtitle: "Bringing Authentic Texas BBQ Straight to Your Table",
     emoji: "🍖",
@@ -131,6 +134,7 @@ export const storiesData: Record<string, SuccessStoryData> = {
   },
   "jiva": {
     logo: "/logos/jiva.jpg",
+    image: "/brand-card-images/Jiva.png",
     title: "Hotel JIVA",
     subtitle: "A 4-star boutique hotel offering luxury & comfort.",
     emoji: "🏨",
@@ -162,6 +166,7 @@ export const storiesData: Record<string, SuccessStoryData> = {
   },
   "ducati": {
     logo: "/logos/28.jpg",
+    image: "/brand-card-images/Ducati-home.jpg",
     title: "Ducati Kolkata",
     subtitle: "Premium superbikes redefining speed, performance, and luxury.",
     emoji: "🏍️",
@@ -192,6 +197,7 @@ export const storiesData: Record<string, SuccessStoryData> = {
   },
   "edefyhome": {
     logo: "/logos/16.jpg",
+    image: "/brand-card-images/Edify-home.png",
     title: "Edify Home Decor",
     subtitle: "Premium interior design solutions transforming spaces with elegance.",
     emoji: "🏠",
@@ -223,6 +229,7 @@ export const storiesData: Record<string, SuccessStoryData> = {
   },
   "omniastra": {
     logo: "/logos/astra.jpg",
+    image: "/brand-card-images/astra.jpg",
     title: "OmniAstra",
     subtitle: "Omni Astra leads India’s luxury eyewear distribution",
     emoji: "🕶️",
@@ -254,6 +261,7 @@ export const storiesData: Record<string, SuccessStoryData> = {
   },
   "earthy-line": {
     logo: "/logos/earthyline.jpg",
+    image: "/brand-card-images/earthline.jpg",
     title: "Earthyline",
     subtitle: "Where Tradition Meets Conscious Elegance",
     emoji: "👗",
@@ -285,6 +293,7 @@ export const storiesData: Record<string, SuccessStoryData> = {
   },
   "likeson": {
     logo: "/logos/likeson.jpg",
+    image: "/brand-card-images/likeson.jpg",
     title: "Likeson",
     subtitle: "Simplified healthcare appointment booking and management platform",
     emoji: "🏥",
@@ -316,6 +325,7 @@ export const storiesData: Record<string, SuccessStoryData> = {
   },
   "nayantara": {
     logo: "/logos/nayantara.jpg",
+    image: "/brand-card-images/Nayantara.jpg",
     title: "Nayantara",
     subtitle: "Nayantara leads India’s ethnic fashion collection",
     emoji: "👗",
@@ -347,6 +357,7 @@ export const storiesData: Record<string, SuccessStoryData> = {
   },
   "earthbags": {
     logo: "/logos/earthbags.jpg",
+    image: "/brand-card-images/earth-bags.jpg",
     title: "EarthBags",
     subtitle: "Made for You, Made for the Planet",
     emoji: "👜",
@@ -378,6 +389,7 @@ export const storiesData: Record<string, SuccessStoryData> = {
   },
   "roughells": {
     logo: "/logos/roughells.jpg",
+    image: "/brand-card-images/roughells.jpg",
     title: "RougHells",
     subtitle: "Built for the Bold, Designed for Comfort",
     emoji: "👕",
@@ -409,6 +421,7 @@ export const storiesData: Record<string, SuccessStoryData> = {
   },
   "jetchoice": {
     logo: "/logos/18.jpg",
+    image: "/brand-card-images/jet-choice.jpg",
     title: "JetChoice",
     subtitle: "Wings of Freedom, Choice of Excellence",
     emoji: "✈️",
@@ -440,6 +453,7 @@ export const storiesData: Record<string, SuccessStoryData> = {
   },
   "sacred-suta": {
     logo: "/logos/sacred-suta.jpg",
+    image: "/brand-card-images/sacred-suta.jpg",
     title: "Sacred Suta",
     subtitle: "Crafted by Artisans, Adorned by You",
     emoji: "👗",
@@ -471,6 +485,7 @@ export const storiesData: Record<string, SuccessStoryData> = {
   },
   "sree-vedics": {
     logo: "/logos/Sree_Vedics_Logo.jpg",
+    image: "/brand-card-images/sreevadic.jpg",
     title: "Sree Vedics",
     subtitle: "Skincare and wellness combining scientific expertise with self-care",
     emoji: "🧴",
@@ -583,7 +598,7 @@ export const storiesData: Record<string, SuccessStoryData> = {
     emoji: "📈",
     description: "Dash Capital, a leading wealth distribution house in Kolkata, partnered with Digital Edge 360 to enhance its digital presence, generate high-net-worth leads, and establish itself as a trusted name in financial services. Through a focused digital marketing strategy, the firm achieved substantial growth in client acquisition, engagement, and brand credibility.",
     websiteUrl: "https://dashcapital.in",
-    image: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=800&auto=format&fit=crop",
+    image: "/brand-card-images/Dash-Capital.jpg",
     stats: {
       estimatedTime: "30 Days",
       bugsFixing: "N/A",
@@ -638,7 +653,7 @@ export const storiesData: Record<string, SuccessStoryData> = {
     emoji: "🎓",
     description: "IBT Behala, a leading competitive exam coaching institute, partnered with Digital Edge 360 to enhance its digital presence, attract more students, and establish itself as a top choice for exam preparation. Through targeted digital marketing strategies, the institute saw significant growth in student inquiries, engagement, and admissions, ensuring a strong market position.",
     websiteUrl: "https://www.ibtindia.com/",
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop",
+    image: "/brand-card-images/IBT-behala.jpg",
     stats: {
       estimatedTime: "30 Days",
       bugsFixing: "N/A",
@@ -693,7 +708,7 @@ export const storiesData: Record<string, SuccessStoryData> = {
     emoji: "🎯",
     description: "Momentum is designed to be the ultimate learning companion for students striving for academic excellence. Our goal is to provide an all-in-one education platform that simplifies learning, enhances understanding, and helps students clear exams with confidence. With engaging content, seamless navigation, and interactive features, we aim to bridge the gap between students and quality education. Momentum ensures uninterrupted learning from the comfort of home, empowering students to achieve their dreams. Whether it’s concept clarity, mock tests, or live classes, our app provides everything needed to succeed—all in one place, making learning easier, smarter, and more effective.",
     playStoreUrl: "https://play.google.com/store/apps/details?id=co.brown.qjdzl",
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop",
+    image: "/brand-card-images/momentum.jpg",
     stats: {
       estimatedTime: "90 Days",
       bugsFixing: "1,032 +",
@@ -746,7 +761,7 @@ export const storiesData: Record<string, SuccessStoryData> = {
     emoji: "🍳",
     description: "Recipe Keeper aims to revolutionize how food lovers organize, plan, and share their favorite recipes! Whether you’re a home cook or a seasoned chef, this all-in-one app simplifies recipe storage, meal planning, and grocery shopping. From importing recipes from Instagram and TikTok to scanning handwritten notes and cookbooks, Recipe Keeper ensures every meal idea is at your fingertips. With seamless device synchronization, smart meal planning, and hands-free Alexa support, our goal is to make cooking fun, efficient, and stress-free. Say goodbye to scattered notes and forgotten recipes—Recipe Keeper is your personal digital cookbook, keeping every dish just a tap away!",
     websiteUrl: "https://apps.apple.com/us/app/recipe-keeper/id974683711",
-    image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=800&auto=format&fit=crop",
+    image: "/brand-card-images/recipee-keeper.jpg",
     stats: {
       estimatedTime: "90 Days",
       bugsFixing: "1,032 +",
@@ -799,7 +814,7 @@ export const storiesData: Record<string, SuccessStoryData> = {
     subtitle: "Your Fitness. Your Coach. Your Results – All in One App!",
     emoji: "💪",
     description: "HubFit is designed to revolutionize online coaching by providing a seamless platform for fitness enthusiasts and coaches to connect. Our goal is to simplify progress tracking, nutrition monitoring, and personalized training in one powerful app. With features like check-ins, macro tracking, workout history, and wearable integration, HubFit ensures that users stay accountable, motivated, and on track. Whether you’re a fitness coach managing multiple clients or an individual striving for peak performance, HubFit streamlines the process, making fitness management effortless. The ultimate aim is to empower users with data-driven insights, real-time communication, and a structured approach to achieving their goals.",
-    image: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=800&auto=format&fit=crop",
+    image: "/brand-card-images/hubfit.jpg",
     stats: {
       estimatedTime: "30 Days",
       bugsFixing: "N/A",
@@ -853,7 +868,7 @@ export const storiesData: Record<string, SuccessStoryData> = {
     subtitle: "Style. Book. Grow. The Smartest Way to Run Your Salon!",
     emoji: "🛒",
     description: "Publix,, powered by Instacart, is designed to provide a seamless grocery shopping experience for busy customers. Our goal is to offer fast, reliable delivery and curbside services that bring the convenience of Publix right to your doorstep or car. By ensuring quality control, personalized service, and fast delivery times, we aim to enhance your shopping experience. Whether you need groceries in an hour or prefer curbside pickup, Publix Delivery is here to serve you. With easy reordering, real-time shopper communication, and weekly savings, Publix is making grocery shopping easier and faster than ever before.",
-    image: "https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=800&auto=format&fit=crop",
+    image: "/brand-card-images/publix.jpg",
     stats: {
       estimatedTime: "90 Days",
       bugsFixing: "1,032 +",
@@ -906,7 +921,7 @@ export const storiesData: Record<string, SuccessStoryData> = {
     subtitle: "Style. Book. Grow. The Smartest Way to Run Your Salon!",
     emoji: "💇‍♀️",
     description: "Ring My Stylist is designed to empower beauty professionals by streamlining appointment booking, client management, and business growth. Our goal is to simplify scheduling, reduce no-shows, and enhance client communication—all within one intuitive platform. By offering online payments, a customizable service menu, and a seamless booking experience, we help stylists focus on what they do best: creating beauty. With a user-friendly interface and unlimited client database, Ring My Stylist ensures that professionals can manage their business effortlessly. Whether you’re a hairstylist, makeup artist, or nail technician, our app is your ultimate tool for salon success.",
-    image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=800&auto=format&fit=crop",
+    image: "/brand-card-images/rign-my-list.jpg",
     stats: {
       estimatedTime: "90 Days",
       bugsFixing: "1,032 +",
@@ -959,7 +974,7 @@ export const storiesData: Record<string, SuccessStoryData> = {
     subtitle: "Elevate Your Style with Personalized, Premium Ringtones – Effortless & Seamless.",
     emoji: "🎵",
     description: "Our custom ringtone app combines a sleek, premium UI with a vast collection of high-quality ringtones for every taste. Offering seamless customization for calls, notifications, and alarms, it ensures a smooth and engaging experience. With frequent updates and compatibility across devices, this app keeps you connected with fresh sounds and personalized options at your fingertips.",
-    image: "https://images.unsplash.com/photo-1616348436168-de43ad0db179?q=80&w=800&auto=format&fit=crop",
+    image: "/brand-card-images/Edge-ring.jpg",
     stats: {
       estimatedTime: "45 Days",
       bugsFixing: "491 +",
@@ -1005,6 +1020,293 @@ export const storiesData: Record<string, SuccessStoryData> = {
       { title: "Downloads Sync", desc: "Optimized speeds for simultaneous downloads", icon: "users" },
       { title: "Quality Assurance", desc: "Sleek and robust UI running smoothly", icon: "percent" }
     ]
+  },
+  "royal-enfield": {
+    logo: "/logos/royal enfiled.jpg",
+    image: "/brand-card-images/ROYAL-ENFIELD.jpg",
+    title: "Royal Enfield",
+    subtitle: "Royal Enfield is India’s No.1 retro and adventure motorcycle company",
+    emoji: "🏍️",
+    description: "Royal Enfield in the Kolkata region across their dealership got an unprecedented growth in showroom footfall of 250%. Their sales figure across dealerships in Kolkata and neighbouring regions grew by 60% in a single quarter. These impressive statistics is a testimony to DigitalEdge 360’s Videography & Photography teams quality content on showroom video reels including delivery reels and their bike accessories and merchandise.",
+    stats: {
+      estimatedTime: "30 Days",
+      bugsFixing: "N/A",
+      security: "N/A",
+      projectCompletion: "30 Days",
+      trafficSpikes: "250%",
+      trafficSpikesLabel: "Footfall Growth"
+    },
+    customStats: [
+      { label: "growth in showroom footfall", val: "250%" },
+      { label: "growth in vehicle sales", val: "60%" },
+      { label: "growth in merchandise sales", val: "40%" },
+      { label: "growth in brand visibility", val: "80%" },
+      { label: "growth in business revenue for all dealerships", val: "30%" }
+    ],
+    about: "Royal Enfield is renowned for its iconic, timeless design and robust build quality. It offers a unique riding experience with its thumping engines, blending vintage charm with modern reliability, making it a beloved brand among motorcycle enthusiasts worldwide. Its motorcycles offer a distinctive, rugged character, combining power, reliability, and a sense of adventure. The brand's strong community and iconic designs inspire riders globally.",
+    challenge: "The Royal Enfield dealerships across the Kolkata region and sub area were finding it very difficult to get decent footfalls. Low turn out at their sales outlet resulted in less taste rides, product interactions of potential customers. Digital Edge 360 was appointed in order to provide the dealerships of Royal Enfield in Kolkata with high quality video and photo content to post on their social media handles to boost customer traffic at the dealerships. The talented branding team of DE360 did not disappoint on this front and provided high quality video and photos of the showrooms and products resulting in huge success.",
+    workflowTitle: "Our Approach",
+    workflow: [
+      "Royal Enfield dealers got steady increase of footfalls",
+      "There were more test rides of their products",
+      "Better photo and video on their social media elevated brand recall and reach",
+      "Strategic communication with the help of better video content resulted in more sales"
+    ],
+    timeline: [
+      { label: "Planning", day: "5 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "Pre-Production", day: "10 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "Production & Shoot", day: "20 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "Post-Production", day: "28 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
+      { label: "Delivery & Live", day: "30 Day", color: "border-emerald-500 bg-emerald-50 text-emerald-600" }
+    ],
+    heroHeadingBlack: "Royal Enfield -",
+    heroHeadingGreen: "The Indo British Legend"
+  },
+  "goel-forgings": {
+    logo: "/logos/19.jpg",
+    image: "/brand-card-images/goel-forgings.jpg",
+    title: "Goel Forgings",
+    subtitle: "Goel Forgings – Forging Excellence in Iron and Steel",
+    emoji: "⚙️",
+    description: "Goel Forgings is a renowned manufacturer of high-quality iron and steel products, serving various industries including automotive, construction, and infrastructure. With years of expertise in the field, the company is committed to producing durable and reliable metal products that meet the highest standards of quality. Despite their technical proficiency and excellent product range, Goel Forgings was facing challenges in effectively showcasing their manufacturing capabilities and products to a broader audience.",
+    stats: {
+      estimatedTime: "25 Days",
+      bugsFixing: "N/A",
+      security: "N/A",
+      projectCompletion: "25 Days",
+      trafficSpikes: "150%",
+      trafficSpikesLabel: "B2B Inquiries Growth"
+    },
+    customStats: [
+      { label: "Increase in B2B Inquiries after the industrial photo and video shoot", val: "150%" },
+      { label: "increase in client inquiries and product interest within the first month", val: "10%" },
+      { label: "Growth in Brochure Downloads", val: "60%" },
+      { label: "increase in website traffic", val: "80%" },
+      { label: "Boost in Social Media Engagement", val: "50%" }
+    ],
+    about: "Goel Forgings has established itself as a key player in the iron and steel industry, known for its exceptional products and commitment to precision. With state-of-the-art technology and a highly skilled workforce, the company produces a wide range of forged and machined metal products. Catering to industries such as automotive, manufacturing, and construction. Goel Forgings prioritizes quality, innovation, and customer satisfaction, ensuring that each product meets the rigorous standards of reliability and durability that their clients demand.",
+    challenge: "Although Goel Forgings produced high-quality industrial products, they struggled to effectively communicate their manufacturing capabilities and showcase the full potential of their offerings to the market. Their marketing materials lacked the professional appeal necessary to capture the attention of potential clients, and their website did not adequately highlight the scale and quality of their operations. The company needed a visual overhaul to properly convey the strength, precision, and reliability of their iron and steel products, which were integral to their clients' success. To enhance their brand visibility and attract more clients, a comprehensive content strategy was implemented, focusing on industrial photography and videography, along with a redesigned brochure to highlight their offerings.",
+    workflowTitle: "Our Approach",
+    workflow: [
+      "Introduction of better visual content led to enhanced brand awareness across social media and professional B2B Media like LinkedIn",
+      "Elevated brand recall with the new designed product brochure among existing clients",
+      "Enhancing the visual appeal of their products by posting high quality images on their Google Business Profile and their websites making it more appealing",
+      "High quality output with world class video reels attracted new clients"
+    ],
+    timeline: [
+      { label: "Planning", day: "4 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "Pre-Production", day: "8 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "Production & Shoot", day: "15 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "Post-Production", day: "22 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
+      { label: "Delivery & Live", day: "25 Day", color: "border-emerald-500 bg-emerald-55 text-emerald-600" }
+    ],
+    heroHeadingBlack: "Goel Forgings -",
+    heroHeadingGreen: "A Renowned Steel Brand"
+  },
+  "gsi": {
+    logo: "/logos/gis.jpg",
+    image: "/brand-card-images/GSI.jpg",
+    title: "Geological Survey of India",
+    subtitle: "The Geological Survey of India (GSI) conducts geological mapping, mineral exploration, and natural hazard studies in India.",
+    emoji: "🗺️",
+    description: "GSI has seen a 30% increase in public engagement and a 20% rise in viewership of their educational content. The photography and videography team played a key role in showcasing their geological studies through impactful videos, enhancing understanding and visibility. These visual representations have contributed to a 25% in online interactions, effectively communicating complex geological research to a broader audience while reinforcing GSI’s brand as a leader in geological exploration and education.",
+    stats: {
+      estimatedTime: "7 Days",
+      bugsFixing: "N/A",
+      security: "N/A",
+      projectCompletion: "7 Days",
+      trafficSpikes: "30%",
+      trafficSpikesLabel: "Public Engagement Growth"
+    },
+    customStats: [
+      { label: "increase in public engagement", val: "30%" },
+      { label: "rise in viewership of their educational content", val: "20%" },
+      { label: "growth in online interactions", val: "25%" },
+      { label: "boost in brand visibility through media", val: "15%" },
+      { label: "improvement in viewership on their Youtube channel", val: "10%" }
+    ],
+    about: "The Geological Survey of India (GSI) is an organization under the Ministry of Mines of the Government of India, which is responsible for conducting geological surveys and studies in India. It was established in 1851, and its primary mission is to explore, map, and assess the mineral, water, and energy resources of the country. The GSI plays a key role in understanding the geological structure, mineral wealth, and natural hazards in India.",
+    challenge: "There were 3 sites of GSI which required professional footage and educational video content. These 3 locations were - The Sundarban, Amkhoi And Gangani. All of these 3 geological sites are located in West Bengal, India. There was also no drone footage of these Geological sites. The educational content was required by the Ministry of Mines within 2 weeks. The videography and photography team of Digital Edge 360 successfully captured high quality videos including drone footage within a record 7 days and presented it to the top officials of GSI. It was a record feat considering there was video editing and voice over integration that had to be done for all the videos.",
+    workflowTitle: "Our Approach",
+    workflow: [
+      "A highly planned and structured approach for the video shoot.",
+      "High quality output with world class video editing and voice over.",
+      "Enhancing education content with high-quality photos and videos on GSI’s media network.",
+      "Capturing locations with drone footage which was previously not available."
+    ],
+    timeline: [
+      { label: "Planning", day: "1 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "Location Prep", day: "2 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "Production & Drone Shoots", day: "4 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "Voice-over & Editing", day: "6 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
+      { label: "Delivery to Officials", day: "7 Day", color: "border-emerald-500 bg-emerald-55 text-emerald-600" }
+    ],
+    heroHeadingBlack: "Geological Survey of India -",
+    heroHeadingGreen: "Geological Exploration"
+  },
+  "imu": {
+    logo: "/logos/37.jpg",
+    image: "/brand-card-images/IMU.jpg",
+    title: "Indian Maritime University",
+    subtitle: "Indian Maritime University – The Gateway to Maritime Excellence",
+    emoji: "⚓",
+    description: "IMU boasts an impressive placement rate of 70%, one of the best in India, reflecting its strong industry connections and the employability of its graduates. The Kolkata campus is equipped with modern classrooms, a well-stocked library, computer laboratories, an auditorium with a seating capacity of 1,000, and model-making workshops, providing a conducive environment for learning and research. IMU Kolkata offers residential facilities with hostels for both boys and girls, complete with study rooms, messes, and recreational areas, ensuring a holistic living and learning experience.",
+    stats: {
+      estimatedTime: "15 Days",
+      bugsFixing: "N/A",
+      security: "N/A",
+      projectCompletion: "15 Days",
+      trafficSpikes: "100%",
+      trafficSpikesLabel: "Campus Viewership"
+    },
+    customStats: [
+      { label: "viewership from all IMU Campus for the passing of parade ceremony 2024", val: "100%" },
+      { label: "viewership of their Live Streaming of the entire ceremony", val: "89%" },
+      { label: "growth in interaction and messages by students during the streaming", val: "25%" },
+      { label: "boost in brand visibility through Social Media Posts", val: "15%" },
+      { label: "improvement in overall viewership on their Youtube channel", val: "10%" }
+    ],
+    about: "Indian Maritime University is renowned for its commitment to excellence in maritime education and research. With a focus on discipline, dedication, and integrity, IMU offers a unique learning experience that blends theoretical knowledge with practical skills, preparing students for successful careers in the maritime industry. The university's strong industry ties and comprehensive programs make it a preferred choice for aspiring maritime professionals.",
+    challenge: "The IMU Kolkata campus faced the challenge of streaming live videos of their annual Passing of Parade ceremony. The streaming and capturing of Drone footage of this grand event was extremely crucial as the Governor of West Bengal was also present during the special event. The talented branding team of DE360 provided a high quality Live Streaming of Drone footage and video and photos of the complete ceremony with utmost precision and delivered exceeded expectations results.",
+    workflowTitle: "Our Approach",
+    workflow: [
+      "A highly planned and structured approach for Live Streaming and shoot",
+      "High Quality Drone Footages covering complete ceremony in full details",
+      "Enhancing the image of the deemed University by showcasing all footage on their social media platforms",
+      "World class video reels from the event to be used in their media"
+    ],
+    timeline: [
+      { label: "Planning & Prep", day: "3 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "Technical Setup", day: "7 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "Dry Runs & Testing", day: "12 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "Live Broadcast", day: "14 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
+      { label: "Post-Event Delivery", day: "15 Day", color: "border-emerald-500 bg-emerald-55 text-emerald-600" }
+    ],
+    heroHeadingBlack: "Indian Maritime University -",
+    heroHeadingGreen: "Gateway to Maritime Excellence"
+  },
+  "the-lighter-side": {
+    logo: "/logos/4.jpg",
+    image: "/brand-card-images/THE-LIGHTER-SIDE.jpg",
+    title: "The Lighter Side",
+    subtitle: "The Lighter Side – Local Cafe offering Global Cuisine",
+    emoji: "💡",
+    description: "The Lighter Side is an exclusive café in Kolkata, offering a unique dining experience with a diverse and expansive international menu. Known for its warm ambiance and exceptional food, the café has quickly become a favorite among locals and visitors alike. From gourmet coffees to global delicacies, The Lighter Side brings a fusion of flavors to the city. However, despite the café’s exceptional offerings, they were struggling to attract a consistent flow of customers and gain the visibility they needed. That was until they partnered with Digital Edge 360 with a photography and videography team for a complete visual transformation of their menu and a strategic approach to their social media presence.",
+    stats: {
+      estimatedTime: "20 Days",
+      bugsFixing: "N/A",
+      security: "N/A",
+      projectCompletion: "20 Days",
+      trafficSpikes: "120%",
+      trafficSpikesLabel: "Footfall Growth"
+    },
+    customStats: [
+      { label: "Increase in Footfall: After the photoshoot and videography of their menu", val: "120%" },
+      { label: "increase in repeat visits", val: "20%" },
+      { label: "Growth in Social Media Engagement", val: "100%" },
+      { label: "Growth in Online Orders", val: "150%" },
+      { label: "increase in business revenue", val: "40%" }
+    ],
+    about: "The Lighter Side is a culinary destination offering a vast selection of international cuisine that caters to a variety of tastes. The café is designed to provide not only a delightful dining experience but also a cozy, aesthetically pleasing environment for friends, families, and solo visitors. With an emphasis on quality ingredients and expertly crafted dishes, The Lighter Side has earned a reputation for delivering delicious food with a touch of global flair. Through consistent, high-quality content management and strategic posting.",
+    challenge: "When The Lighter Side first opened its doors, the café faced the challenge of attracting a steady stream of customers. Despite offering a remarkable menu with international flavors, their digital presence was lacking, and their food wasn’t being showcased to its full potential. With engaging photos or videos that captured the essence of their dishes, the café finally showed its competitive market. The brand with the help of Digital Edge 360 Videography crew finally showcased high-quality content to highlight the visual appeal of their menu, paired with a strong social media strategy to reach a much larger audience leading to growth in their revenue.",
+    workflowTitle: "Our Approach",
+    workflow: [
+      "A highly planned and structured approach for shoot of their main food items.",
+      "Witnessed a 400% growth in social media engagement, with customers actively interacting with their posts.",
+      "Enhancing the cafes visual appeal by posting high quality images on their Google Business Profile.",
+      "High quality output with world class video reels attracting more footfalls."
+    ],
+    timeline: [
+      { label: "Planning", day: "3 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "Food Styling", day: "6 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "Menu Shoot", day: "12 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "Post-Production", day: "18 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
+      { label: "Campaign Launch", day: "20 Day", color: "border-emerald-500 bg-emerald-55 text-emerald-600" }
+    ],
+    heroHeadingBlack: "The Lighter Side -",
+    heroHeadingGreen: "A Global Culinary Experience"
+  },
+  "brand-leather": {
+    logo: "/logos/26.jpg",
+    image: "/brand-card-images/brand-leather.jpg",
+    title: "Brand Leather",
+    subtitle: "Brand Leather- Premium Leather Products at affordable prices",
+    emoji: "🎒",
+    description: "Brand Leather a 25 year old premier leather manufacturing company has built its reputation on providing high-quality, stylish leather products for the modern individual. Each product is a testament to the brand’s commitment to quality, craftsmanship, and elegance.",
+    stats: {
+      estimatedTime: "22 Days",
+      bugsFixing: "N/A",
+      security: "N/A",
+      projectCompletion: "22 Days",
+      trafficSpikes: "150%",
+      trafficSpikesLabel: "Online Sales Growth"
+    },
+    customStats: [
+      { label: "increase in online sales within 3 months", val: "150%" },
+      { label: "Growth in Social Media Engagement", val: "200%" },
+      { label: "Increase in Website Traffic", val: "120%" },
+      { label: "Growth in Customer Retention", val: "50%" },
+      { label: "increase in repeat buyers", val: "50%" }
+    ],
+    about: "Brand Leather is one of India’s premier leather brands, known for its exceptional craftsmanship and elegant designs. Their products, ranging from wallets to bags and jackets, are crafted from the finest leather and tailored to perfection. Despite its longstanding reputation for quality, the brand was facing challenges in achieving the sales figures they aimed for. With minimal digital engagement, their sales were stagnant, and customer traffic was low. To help elevate the brand's presence and boost sales, a comprehensive digital strategy was implemented, focusing on high-quality content creation and a modern, user-friendly website.",
+    challenge: "Despite offering premium leather products, Brand Leather was facing stagnant sales and low online traffic. They struggled with inadequate digital content, a poorly designed website, and minimal engagement on social media. This made it difficult for them to connect with new customers or build brand loyalty. With their physical sales channels also underperforming, Brand Leather needed a significant boost in their digital strategy to increase visibility, engage their target audience, and drive conversions.Brand Leather’s product images and videos were given a professional upgrade, showcasing the high quality and intricate detailing of their leather products. These visuals were optimized for use on social media platforms and their website.The brand's social media presence was enhanced with eye-catching product visuals, behind-the-scenes videos, and customer testimonials, creating a connection with potential buyers and encouraging user interaction.",
+    workflowTitle: "Our Approach",
+    workflow: [
+      "Introduction of better visual content led to improved customer retention and surge in online sales by 60%",
+      "Witnessed a 130% growth in social media engagement, with customers actively interacting with their posts",
+      "Enhancing the visual appeal of their products by posting high quality images on their Google Business Profile",
+      "High quality output with world class video reels attracting new customers"
+    ],
+    timeline: [
+      { label: "Planning", day: "3 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "Product Styling", day: "6 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "Portfolio Shoots", day: "14 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "Visual Optimization", day: "19 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
+      { label: "Campaign Launch", day: "22 Day", color: "border-emerald-500 bg-emerald-55 text-emerald-600" }
+    ],
+    heroHeadingBlack: "Brand Leather -",
+    heroHeadingGreen: "Tradition of Craftsmanship"
+  },
+  "kayra": {
+    logo: "/logos/kayrah.jpg",
+    image: "/brand-card-images/KAYRAH.jpg",
+    title: "Kayra",
+    subtitle: "Emerging jewelry e-commerce brand",
+    emoji: "👗",
+    description: "Kayrah offers an exquisite collection of fine jewelry pieces, from classic designs to contemporary styles. Known for their attention to detail and high-quality craftsmanship, Kayrah provides a unique shopping experience for customers looking to invest in elegant, timeless pieces. Despite offering exceptional products, the brand struggled to make a significant mark in the competitive e-commerce space due to lackluster product photography and limited online engagement.",
+    stats: {
+      estimatedTime: "20 Days",
+      bugsFixing: "N/A",
+      security: "N/A",
+      projectCompletion: "20 Days",
+      trafficSpikes: "70%",
+      trafficSpikesLabel: "Product Sales Growth"
+    },
+    customStats: [
+      { label: "Growth in Product Sales", val: "70%" },
+      { label: "Increase in Engagement on Social Media", val: "40%" },
+      { label: "increase in engagement on Kayrah’s social media platforms, leading to more brand awareness", val: "60%" },
+      { label: "Improvement in Conversion Rates With high-quality images", val: "50%" },
+      { label: "Growth in business revenue", val: "40%" }
+    ],
+    about: "Kayrah is a jewelry brand committed to delivering elegant, finely crafted pieces that appeal to modern sensibilities while maintaining a timeless allure. Whether it’s for a special occasion or an everyday statement, Kayrah’s designs embody sophistication, luxury, and craftsmanship. The brand takes pride in using high-quality materials, ensuring that each piece is made to last. With a focus on customer satisfaction and attention to detail, Kayrah aims to be a trusted name in the jewelry industry.",
+    challenge: "Despite offering high-quality jewelry Kayrah faced difficulty in standing out in the competitive online marketplace. Their previous product images did not capture the true elegance and craftsmanship of their jewelry, leading to low customer engagement and subpar sales figures. In addition, their website lacked a cohesive visual style that could connect with their target audience and elevate the overall brand experience. The super talented branding team of Digital Edge 360 did a complete make over of the brands visuals content and high quality photographs and video which the brand thoroughly deserved.",
+    workflowTitle: "Our Approach",
+    workflow: [
+      "A product-focused photoshoot was organized, utilizing a clean, white background to highlight the intricate details of each piece of jewelry for sales in their ecommerce platforms",
+      "Creating an emotional connection with potential customers across social media",
+      "Enhancing the visual appeal of their products by posting high quality images on their Google Business Profile",
+      "World class visuals for their Youtube channel"
+    ],
+    timeline: [
+      { label: "Planning", day: "3 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "Creative Styling", day: "6 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "Jewelry Photography", day: "12 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "Visual Retouching", day: "17 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
+      { label: "Campaign Launch", day: "20 Day", color: "border-emerald-500 bg-emerald-55 text-emerald-600" }
+    ],
+    heroHeadingBlack: "Kayra -",
+    heroHeadingGreen: "Elevating Elegance"
   }
 };
 
