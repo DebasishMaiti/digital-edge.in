@@ -4,14 +4,16 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { brandLogosList } from "@/data";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import LeadForm from "@/components/LeadForm";
 import AnimatedWords from "@/components/AnimatedWords";
 import Marquee from "react-fast-marquee";
 import ArchitectureTimeline from "@/components/ArchitectureTimeline";
+import { CheckCircle2, Terminal, Search, FileText, Share2, Sparkles, TrendingUp } from "lucide-react";
 
 export default function SeoSmm() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [activeShowcaseTab, setActiveShowcaseTab] = useState(0);
 
   const gridBackgroundStyle = {
     backgroundImage: `
@@ -120,13 +122,13 @@ export default function SeoSmm() {
           <div className="lg:col-span-6 flex flex-col items-start text-left">
             {/* Pill Badge */}
             <h1 className="inline-flex items-center gap-1.5 rounded-full border border-gray-600 bg-white px-6 py-3.5 text-sm sm:text-base md:text-sm font-extrabold tracking-[0.2em] text-gray-600 uppercase shadow-sm mb-6">
-              SEO & SMM Solution
+              {"SEO & Social Media Marketing"}
             </h1>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#0d1b3e] tracking-tight leading-[1.1] mb-6 flex flex-col items-start">
-              SEO & SMM
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6.5xl font-black text-[#0d1b3e] tracking-tight leading-[1.1] mb-6 flex flex-col items-start">
+              {"SEO & Social Media Marketing Built to Bring You Customers, Not Just Traffic"}
             </h2>
             <p className="text-lg sm:text-xl text-slate-500 leading-relaxed mb-8 max-w-2xl">
-              We drive high-intent organic traffic and build lasting brand authority through advanced technical SEO and strategic social media marketing. From core web vitals optimization to custom content architectures and multi-channel campaigns, we scale your online visibility to secure organic revenue that grows month-over-month.
+              {"We help businesses across India rank higher on Google and build a social presence that actually converts — through technical SEO, content that targets real buyer intent, and social strategy designed for engagement, not just impressions."}
             </p>
             {/* Full Width Line Divider */}
             <div className="w-full border-t border-slate-200/60 my-3"></div>
@@ -136,7 +138,7 @@ export default function SeoSmm() {
                 href="/contact"
                 className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[#0a8bc7] via-[#2443ab] to-[#40159e] text-white text-xs font-extrabold rounded-full transition-all duration-300 shadow-[0_8px_20px_rgba(36,67,171,0.25)] hover:shadow-[0_10px_24px_rgba(64,21,158,0.4)] hover:opacity-95 flex items-center justify-center gap-2 flex-shrink-0 uppercase tracking-wider mt-4"
               >
-                <span>Book a Strategy Call</span>
+                <span>{"Book a Free Strategy Call"}</span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-3.5 h-3.5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                 </svg>
@@ -184,9 +186,9 @@ export default function SeoSmm() {
             <AnimatedWords text="The Current Reality" />
           </span>
           {/* Quote text */}
-          <p className="font-elms text-3xl sm:text-5xl md:text-[3.5rem] text-center leading-relaxed text-[#0d1b3e]/85">
+          <p className="font-elms text-2xl sm:text-4xl md:text-[2.65rem] text-center leading-relaxed text-[#0d1b3e]/85">
             <AnimatedWords 
-              text="&quot;Most brands are addicted to paid ads, leaving them vulnerable to rising CPMs and platform changes. Without organic authority, you're building your house on rented land. You need a persistent digital presence that generates traffic for $0.&quot;" 
+              text="&quot;Most businesses split their marketing budget entirely toward paid ads — and stay one algorithm change, or one paused campaign away from losing all their traffic overnight. Without organic search rankings and a real social following, you’re building your entire online presence on rented space. SEO and social media are the only channels where the audience you build today keeps working for you months and years later, without paying per click for every single visitor.&quot;" 
               delay={0.25}
             />
           </p>
@@ -195,8 +197,8 @@ export default function SeoSmm() {
 
       {/* The Architecture Section */}
       <ArchitectureTimeline
-        title="The Architecture"
-        subtitle="How We Engineer The Solution."
+        title="The Framework"
+        subtitle="How We Engineer Your Online Visibility"
         tagline="A proven process. Relentless quality. Built for organic visibility, designed to scale."
         codeFile="src/app/seo-optimization.ts"
         codeLines={[
@@ -221,8 +223,8 @@ export default function SeoSmm() {
         phases={[
           {
             num: "01",
-            phase: "PHASE 01",
-            text: "Technical SEO is our foundation. We fix crawl errors, optimize site speed, and implement schema markup so search engines love your site.",
+            phase: "Phase 01 — Technical SEO Foundation",
+            text: "We fix the technical issues quietly holding your website back — crawl errors, slow load times, broken structure, and missing schema markup — so search engines can properly find, understand, and rank your pages.",
             borderCol: "border-l-[#2443ab]",
             dotCol: "border-blue-500 bg-white",
             shadowCol: "shadow-blue-500/5",
@@ -232,8 +234,8 @@ export default function SeoSmm() {
           },
           {
             num: "02",
-            phase: "PHASE 02",
-            text: "Content that Converts. We don't just write for keywords; we write for humans who want to buy. Our content is designed to educate and convert.",
+            phase: "Phase 02 — Keyword & Content Strategy",
+            text: "We identify the exact searches your potential customers are typing in, then build content around those terms — written for real readers who are looking to buy or take action, not just to rank.",
             borderCol: "border-l-[#a855f7]",
             dotCol: "border-purple-500 bg-white",
             shadowCol: "shadow-purple-500/5",
@@ -243,8 +245,8 @@ export default function SeoSmm() {
           },
           {
             num: "03",
-            phase: "PHASE 03",
-            text: "Authority Link Building. We use strictly white-hat outreach to gain high-quality, relevant backlinks from massive publications.",
+            phase: "Phase 03 — Authority & Link Building",
+            text: "We earn genuine backlinks through outreach and digital PR, strictly white-hat, building the kind of domain authority that search engines reward with higher rankings.",
             borderCol: "border-l-[#ec4899]",
             dotCol: "border-pink-500 bg-white",
             shadowCol: "shadow-pink-500/5",
@@ -254,8 +256,8 @@ export default function SeoSmm() {
           },
           {
             num: "04",
-            phase: "PHASE 04",
-            text: "Viral Social Strategy. From TikTok trends to Instagram Reels, we create high-cadence content that builds a cult-like following.",
+            phase: "Phase 04 — Social Content Strategy",
+            text: "We build a content calendar and creative approach tailored to your industry and audience — designed to stop the scroll and build genuine engagement, not just post for the sake of posting.",
             borderCol: "border-l-[#f97316]",
             dotCol: "border-orange-500 bg-white",
             shadowCol: "shadow-orange-500/5",
@@ -265,8 +267,8 @@ export default function SeoSmm() {
           },
           {
             num: "05",
-            phase: "PHASE 05",
-            text: "Community Management. We engage with your audience, turning followers into fans and fans into brand advocates.",
+            phase: "Phase 05 — Community Management",
+            text: "We manage comments, messages, and audience interaction across your social channels, turning casual followers into engaged fans and engaged fans into customers.",
             borderCol: "border-l-[#10b981]",
             dotCol: "border-emerald-500 bg-white",
             shadowCol: "shadow-emerald-500/5",
@@ -276,8 +278,8 @@ export default function SeoSmm() {
           },
           {
             num: "06",
-            phase: "PHASE 06",
-            text: "Data-Driven Insights. We track keyword rankings, social engagement, and organic revenue to prove the value of every action.",
+            phase: "Phase 06 — Reporting Tied to Real Results",
+            text: "We track rankings, traffic, social engagement, and leads — so you always know exactly what your marketing spend is producing, in plain numbers, not vanity metrics.",
             borderCol: "border-l-[#6366f1]",
             dotCol: "border-indigo-500 bg-white",
             shadowCol: "shadow-indigo-500/5",
@@ -288,11 +290,301 @@ export default function SeoSmm() {
         ]}
       />
 
+      {/* Capability Showcase Section */}
+      <section className="relative z-10 w-full py-24 sm:py-32 bg-slate-50 text-slate-800 overflow-hidden px-6 sm:px-8 lg:px-12 border-t border-b border-slate-200/80">
+        <div className="absolute top-[10%] left-[-5%] w-[400px] h-[400px] rounded-full bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.06)_0%,transparent_70%)] pointer-events-none" />
+        <div className="absolute bottom-[10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.06)_0%,transparent_70%)] pointer-events-none" />
+
+        <div className="relative z-10 max-w-6xl mx-auto space-y-16">
+          {/* Header */}
+          <div className="space-y-4 text-center max-w-3xl mx-auto">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-[10px] sm:text-xs font-black tracking-[0.2em] text-blue-600 uppercase shadow-sm">
+              <span>See It In Action</span>
+            </span>
+            <h2 className="text-4xl sm:text-6xl font-black text-slate-900 tracking-tight mt-2">
+              How We Grow Search & Social Visibility
+            </h2>
+            <p className="text-slate-500 font-semibold text-sm sm:text-base leading-relaxed">
+              From fixing technical SEO issues that were silently capping rankings to building social content that turns followers into paying customers, here&rsquo;s how we turn both channels into a dependable growth engine.
+            </p>
+          </div>
+
+          {/* Split Interactive Showcase Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch pt-6">
+            
+            {/* Tab Selectors & Bullets (Left side) */}
+            <div className="lg:col-span-5 flex flex-col justify-between space-y-8">
+              <div className="space-y-4">
+                {[
+                  {
+                    title: "SEO Audit & Strategy",
+                    desc: "We start with a full technical and content audit — indexing issues, site structure, and competitor gap analysis — so every fix we make is backed by data, not guesswork."
+                  },
+                  {
+                    title: "Content & Keyword Optimization",
+                    desc: "We build website content and blog strategy around the exact searches your customers are already making, so you show up right when they&rsquo;re looking."
+                  },
+                  {
+                    title: "Social Content & Engagement",
+                    desc: "We plan and produce content mapped to your business goals — awareness, engagement, or direct leads — with a cadence and format built around what actually works for your industry and audience."
+                  }
+                ].map((tab, idx) => {
+                  const isActive = activeShowcaseTab === idx;
+                  return (
+                    <button
+                      key={idx}
+                      onClick={() => setActiveShowcaseTab(idx)}
+                      className={`w-full text-left p-5 rounded-2xl border transition-all duration-300 ${
+                        isActive
+                          ? "bg-white border-slate-200/80 shadow-md shadow-slate-100 translate-x-2"
+                          : "bg-white/40 border-slate-200/40 hover:bg-white hover:border-slate-300 hover:shadow-sm"
+                      }`}
+                      style={{
+                        borderLeftWidth: "4px",
+                        borderLeftColor: isActive ? "#2563eb" : "transparent"
+                      }}
+                    >
+                      <h4 className={`text-lg font-black tracking-tight mb-2 transition-colors duration-300 ${
+                        isActive ? "text-slate-900" : "text-slate-400 hover:text-slate-600"
+                      }`}>
+                        {tab.title}
+                      </h4>
+                      <p className={`text-xs sm:text-sm font-semibold leading-relaxed transition-colors duration-300 ${
+                        isActive ? "text-slate-600" : "text-slate-400"
+                      }`}>
+                        {tab.desc}
+                      </p>
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Supporting Bullets */}
+              <div className="bg-white p-5 rounded-2xl border border-slate-200/80 space-y-3.5 shadow-sm">
+                <h5 className="text-xs font-black tracking-widest text-slate-400 uppercase">Core Quality Standards</h5>
+                <div className="space-y-2.5">
+                  {[
+                    "Rank for the searches your ideal customers are actually typing",
+                    "A social presence built around genuine engagement, not just follower count",
+                    "Predictable organic traffic and reach that doesn&rsquo;t disappear when you stop paying for ads"
+                  ].map((bullet, bidx) => (
+                    <div key={bidx} className="flex items-start gap-2.5 text-slate-600 text-sm font-semibold">
+                      <CheckCircle2 className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                      <span>{bullet}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Dynamic Interactive Preview Panel (Right side) */}
+            <div className="lg:col-span-7 flex flex-col justify-center">
+              <div className="relative w-full aspect-[4/3] rounded-3xl bg-white border border-slate-200/85 overflow-hidden shadow-xl p-6 sm:p-8 flex flex-col justify-between">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.03)_0%,transparent_70%)] pointer-events-none" />
+                
+                {/* Decorative Glow corresponding to active tab */}
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={activeShowcaseTab}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className="absolute inset-0 pointer-events-none"
+                    style={{
+                      background: activeShowcaseTab === 0 
+                        ? "radial-gradient(circle at 70% 30%, rgba(37, 99, 235, 0.06) 0%, transparent 60%)" 
+                        : activeShowcaseTab === 1 
+                        ? "radial-gradient(circle at 70% 30%, rgba(139, 92, 246, 0.06) 0%, transparent 60%)" 
+                        : "radial-gradient(circle at 70% 30%, rgba(244, 63, 94, 0.06) 0%, transparent 60%)"
+                    }}
+                  />
+                </AnimatePresence>
+
+                {/* Panel Header */}
+                <div className="flex items-center justify-between border-b border-slate-200/80 pb-4 relative z-10">
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 rounded-full bg-red-400" />
+                    <div className="w-3 h-3 rounded-full bg-yellow-400" />
+                    <div className="w-3 h-3 rounded-full bg-green-400" />
+                  </div>
+                  <div className="text-xs font-mono text-slate-450 flex items-center gap-1 font-bold">
+                    {activeShowcaseTab === 0 ? (
+                      <>
+                        <Search className="w-3.5 h-3.5 text-blue-600" />
+                        <span className="text-blue-600">seo_audit_report.json</span>
+                      </>
+                    ) : activeShowcaseTab === 1 ? (
+                      <>
+                        <FileText className="w-3.5 h-3.5 text-purple-600" />
+                        <span className="text-purple-600">content_optimizer.md</span>
+                      </>
+                    ) : (
+                      <>
+                        <Share2 className="w-3.5 h-3.5 text-rose-500" />
+                        <span className="text-rose-500">social_campaign.yml</span>
+                      </>
+                    )}
+                  </div>
+                </div>
+
+                {/* Panel Body Content (Varies per Tab) */}
+                <div className="flex-grow flex items-center justify-center py-6 relative z-10">
+                  <AnimatePresence mode="wait">
+                    {activeShowcaseTab === 0 && (
+                      <motion.div
+                        key="tab0"
+                        initial={{ opacity: 0, y: 15 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -15 }}
+                        transition={{ duration: 0.3 }}
+                        className="w-full space-y-6"
+                      >
+                        {/* SEO Diagnostics Metric cards */}
+                        <div className="grid grid-cols-3 gap-4">
+                          {[
+                            { label: "Crawl Health", value: "98.5%", status: "Optimal", color: "text-blue-600" },
+                            { label: "Core Web Vitals", value: "Passed", status: "95ms TTFB", color: "text-emerald-600" },
+                            { label: "Mobile Usability", value: "100%", status: "Excellent", color: "text-indigo-600" }
+                          ].map((metric, midx) => (
+                            <div key={midx} className="bg-slate-50 p-4 rounded-2xl border border-slate-100 text-center shadow-sm">
+                              <span className="text-[10px] tracking-widest text-slate-400 font-bold uppercase">{metric.label}</span>
+                              <div className={`text-xl sm:text-2xl font-black my-1 ${metric.color}`}>{metric.value}</div>
+                              <span className="text-[10px] text-slate-500 font-semibold">{metric.status}</span>
+                            </div>
+                          ))}
+                        </div>
+                        
+                        {/* Progress/Metric Bars */}
+                        <div className="space-y-3 bg-slate-50 p-4 rounded-2xl border border-slate-100 font-mono text-xs text-slate-600 shadow-sm">
+                          <div className="flex justify-between">
+                            <span>Google Schema Integration</span>
+                            <span className="text-blue-600 font-black">105 schemas validated</span>
+                          </div>
+                          <div className="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
+                            <div className="w-[100%] bg-blue-500 h-full rounded-full" />
+                          </div>
+                          <div className="flex justify-between pt-2">
+                            <span>Technical Indexing Coverage</span>
+                            <span className="text-emerald-600 font-black">99.8% mapped</span>
+                          </div>
+                          <div className="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
+                            <div className="w-[99%] bg-emerald-500 h-full rounded-full" />
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+
+                    {activeShowcaseTab === 1 && (
+                      <motion.div
+                        key="tab1"
+                        initial={{ opacity: 0, y: 15 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -15 }}
+                        transition={{ duration: 0.3 }}
+                        className="w-full space-y-4 font-mono text-xs text-slate-700 bg-slate-50 p-5 rounded-2xl border border-slate-100 leading-relaxed text-left shadow-sm"
+                      >
+                        <div className="border-b border-slate-200/60 pb-2 mb-2 flex items-center justify-between">
+                          <span className="text-purple-650 font-bold">Keyword Intent Analysis</span>
+                          <span className="px-2 py-0.5 bg-purple-50 text-purple-600 text-[10px] font-black rounded-full">High Buying Intent</span>
+                        </div>
+                        <div className="space-y-3.5">
+                          {[
+                            { term: "best financial consultant in mumbai", volume: "2,400/mo", intent: "Commercial", color: "border-purple-200 bg-purple-50/20" },
+                            { term: "how to scale logistics operations india", volume: "1,850/mo", intent: "Informational", color: "border-indigo-100 bg-indigo-50/10" },
+                            { term: "enterprise security systems customized", volume: "950/mo", intent: "Transactional", color: "border-emerald-200 bg-emerald-50/20" }
+                          ].map((kw, kwidx) => (
+                            <div key={kwidx} className={`p-3 rounded-xl border ${kw.color} flex items-center justify-between`}>
+                              <div className="space-y-0.5">
+                                <div className="text-slate-800 font-bold text-[13px]">{kw.term}</div>
+                                <div className="text-[10px] text-slate-400 font-semibold">{kw.intent} Query</div>
+                              </div>
+                              <div className="space-y-0.5 text-right">
+                                <div className="text-slate-700 font-black">{kw.volume}</div>
+                                <div className="text-[10px] text-slate-400">Search Volume</div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+
+                    {activeShowcaseTab === 2 && (
+                      <motion.div
+                        key="tab2"
+                        initial={{ opacity: 0, y: 15 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -15 }}
+                        transition={{ duration: 0.3 }}
+                        className="w-full space-y-4 font-mono text-xs text-slate-700 bg-slate-50 p-5 rounded-2xl border border-slate-100 leading-relaxed text-left shadow-sm"
+                      >
+                        <div className="border-b border-slate-200/60 pb-2 mb-2 flex items-center justify-between">
+                          <span className="text-rose-500 font-bold">Social Campaign Analytics</span>
+                          <span className="px-2 py-0.5 bg-rose-50 text-rose-600 text-[10px] font-black rounded-full flex items-center gap-1">
+                            <Sparkles className="w-2.5 h-2.5 animate-pulse" /> Live Scheduler
+                          </span>
+                        </div>
+                        
+                        <div className="grid grid-cols-2 gap-4">
+                          <div className="bg-white p-3 rounded-xl border border-slate-200/60">
+                            <span className="text-[9px] font-bold text-slate-400 uppercase">Avg Engagement Rate</span>
+                            <div className="text-xl font-black text-rose-500 mt-1">8.65%</div>
+                            <span className="text-[9px] text-emerald-600 font-bold">↑ 2.4% vs industry avg</span>
+                          </div>
+                          <div className="bg-white p-3 rounded-xl border border-slate-200/60">
+                            <span className="text-[9px] font-bold text-slate-400 uppercase">Organic Brand Impressions</span>
+                            <div className="text-xl font-black text-purple-600 mt-1">142,500</div>
+                            <span className="text-[9px] text-slate-400">Past 30 days active campaigns</span>
+                          </div>
+                        </div>
+
+                        <div className="space-y-1.5 text-slate-500 pt-1 text-[11px]">
+                          <div className="flex items-center gap-2 text-emerald-600">
+                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                            <span>{"LinkedIn: Scheduled: \"Bespoke SaaS Architectures\" (Aug 29)"}</span>
+                          </div>
+                          <div className="flex items-center gap-2 text-emerald-600">
+                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                            <span>{"Instagram: Carousel Campaign \"Google Ranking Secrets\" Active"}</span>
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
+                {/* Panel Footer */}
+                <div className="border-t border-slate-200/80 pt-4 flex items-center justify-between text-xs text-slate-400 relative z-10">
+                  <div className="flex items-center gap-1.5">
+                    <Terminal className="w-4 h-4 text-blue-600" />
+                    <span>Data Pipeline: Secured & Active</span>
+                  </div>
+                  <div className="flex items-center gap-1 text-emerald-600 font-bold">
+                    <TrendingUp className="w-4 h-4" />
+                    <span>Traffic Compounding</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* The Tangible Output Section */}
       <section className="relative z-10 w-full py-24 sm:py-32 bg-[#fafbfc] text-slate-800 overflow-hidden text-center px-6 sm:px-8 lg:px-12 border-b border-slate-100">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(36,67,171,0.02)_0%,transparent_70%)] pointer-events-none" />
 
         <div className="relative z-10 max-w-7xl mx-auto space-y-16">
+          {/* Header */}
+          <div className="space-y-4 max-w-3xl mx-auto text-center">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-200 bg-blue-50/50 px-4 py-2 text-[10px] sm:text-xs font-black tracking-[0.2em] text-blue-600 uppercase shadow-sm">
+              <span>Why Businesses Choose Us</span>
+            </span>
+            <h2 className="text-4xl sm:text-6xl font-black text-[#0d1b3e] tracking-tight mt-2">
+              What You Actually Get
+            </h2>
+          </div>
+
           {/* Circular/Orbital Layout */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center max-w-6xl mx-auto pt-8">
             
@@ -314,9 +606,9 @@ export default function SeoSmm() {
                   </div>
                   <span className="text-sm font-black text-blue-600 tracking-wider">01</span>
                 </div>
-                <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight group-hover:text-blue-600 transition-colors duration-300">Compound ROI</h4>
+                <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight group-hover:text-blue-600 transition-colors duration-300">Compounding Traffic</h4>
                 <p className="text-base text-slate-500 font-semibold leading-relaxed">
-                  Traffic that grows month over month without increasing your direct advertising costs.
+                  Organic search traffic that grows month over month, without a matching increase in ad spend.
                 </p>
               </motion.div>
 
@@ -336,9 +628,9 @@ export default function SeoSmm() {
                   </div>
                   <span className="text-sm font-black text-blue-600 tracking-wider">03</span>
                 </div>
-                <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight group-hover:text-purple-600 transition-colors duration-300">Viral Social Reach</h4>
+                <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight group-hover:text-purple-600 transition-colors duration-300">Genuine Social Reach</h4>
                 <p className="text-base text-slate-500 font-semibold leading-relaxed">
-                  Leveraging platform algorithms to reach millions of prospects organically.
+                  Content built to work with platform algorithms, reaching new audiences without paying for every impression.
                 </p>
               </motion.div>
 
@@ -358,9 +650,9 @@ export default function SeoSmm() {
                   </div>
                   <span className="text-sm font-black text-blue-600 tracking-wider">05</span>
                 </div>
-                <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight group-hover:text-teal-600 transition-colors duration-300">Community Loyalty</h4>
+                <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight group-hover:text-teal-600 transition-colors duration-300">Audience Loyalty</h4>
                 <p className="text-base text-slate-500 font-semibold leading-relaxed">
-                  A thriving social presence that builds deep trust and long-term brand equity.
+                  A social presence that turns casual followers into repeat customers and repeat customers into advocates for your brand.
                 </p>
               </motion.div>
             </div>
@@ -443,9 +735,9 @@ export default function SeoSmm() {
                   </div>
                   <span className="text-sm font-black text-blue-600 tracking-wider">02</span>
                 </div>
-                <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight group-hover:text-emerald-600 transition-colors duration-300">Authority Mastery</h4>
+                <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight group-hover:text-emerald-600 transition-colors duration-300">Category Authority</h4>
                 <p className="text-base text-slate-500 font-semibold leading-relaxed">
-                  Becoming the #1 trusted source in your category through elite content and technical SEO.
+                  Becoming the trusted, top-ranking source in your industry through strong technical SEO and consistent content.
                 </p>
               </motion.div>
 
@@ -465,9 +757,9 @@ export default function SeoSmm() {
                   </div>
                   <span className="text-sm font-black text-blue-600 tracking-wider">04</span>
                 </div>
-                <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight group-hover:text-orange-500 transition-colors duration-300">Search Dominance</h4>
+                <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight group-hover:text-orange-500 transition-colors duration-300">High-Intent Rankings</h4>
                 <p className="text-base text-slate-500 font-semibold leading-relaxed">
-                  Ranking for high-intent keywords that bring &lsquo;ready-to-buy&rsquo; customers to your site.
+                  {"Visibility for the exact searches people make right before they're ready to buy or reach out — not just broad, low-value traffic."}
                 </p>
               </motion.div>
 
@@ -487,16 +779,15 @@ export default function SeoSmm() {
                   </div>
                   <span className="text-sm font-black text-blue-600 tracking-wider">06</span>
                 </div>
-                <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight group-hover:text-rose-500 transition-colors duration-300">Zero Dependency</h4>
+                <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight group-hover:text-rose-500 transition-colors duration-300">Lower Dependency on Paid Ads</h4>
                 <p className="text-base text-slate-500 font-semibold leading-relaxed">
-                  Reducing your reliance on paid ad platforms by building a proprietary traffic engine.
+                  An owned, compounding traffic channel that reduces how much of your growth depends on rising ad costs.
                 </p>
               </motion.div>
             </div>
           </div>
         </div>
       </section>
-
       {/* The Blueprint Section (Interactive Journey) */}
       <section className="relative z-10 w-full py-24 sm:py-32 bg-[#fafbfc] text-slate-800 overflow-hidden text-center px-6 sm:px-8 lg:px-12">
         {/* Decorative background gradients */}
@@ -507,13 +798,13 @@ export default function SeoSmm() {
           {/* Header */}
           <div className="space-y-4 max-w-2xl mx-auto">
             <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-200 bg-blue-50/50 px-4 py-2 text-[10px] sm:text-xs font-black tracking-[0.2em] text-blue-600 uppercase shadow-sm">
-              <span>OUR WORKFLOW</span>
+              <span>How We Work</span>
             </span>
             <h2 className="text-4xl sm:text-6xl font-black text-[#0d1b3e] tracking-tight">
-              The Blueprint.
+              Our Growth Roadmap
             </h2>
             <p className="text-slate-500 font-semibold text-sm sm:text-base leading-relaxed">
-              Our proven step-by-step engineering journey to transform your concept into a high-performance digital asset.
+              Our step-by-step roadmap to scale your brand&rsquo;s organic search visibility and social media authority.
             </p>
           </div>
 
@@ -526,7 +817,7 @@ export default function SeoSmm() {
               {
                 num: "01",
                 title: "Technical Audit",
-                desc: "Forensic analysis of site structure, speed, and indexing barriers.",
+                desc: "Full diagnostic of your website’s structure, speed, and indexing — the barriers quietly capping your rankings.",
                 circleBg: "bg-gradient-to-br from-blue-400 to-indigo-600 shadow-[0_6px_20px_rgba(59,130,246,0.35)]",
                 lineColor: "bg-blue-500",
                 textColor: "text-blue-500",
@@ -536,8 +827,8 @@ export default function SeoSmm() {
               },
               {
                 num: "02",
-                title: "Keyword Mapping",
-                desc: "Identifying high-value search terms and informational content gaps.",
+                title: "Keyword & Intent Mapping",
+                desc: "Identifying the exact searches your potential customers are typing in, across both informational and buying-intent queries.",
                 circleBg: "bg-gradient-to-br from-purple-400 to-violet-600 shadow-[0_6px_20px_rgba(139,92,246,0.35)]",
                 lineColor: "bg-purple-500",
                 textColor: "text-purple-600",
@@ -547,8 +838,8 @@ export default function SeoSmm() {
               },
               {
                 num: "03",
-                title: "Content Engine",
-                desc: "Deploying high-frequency, authority-building content across channels.",
+                title: "Content & Social Engine",
+                desc: "Publishing high-frequency, targeted content across your website and social channels on a consistent schedule.",
                 circleBg: "bg-gradient-to-br from-pink-400 to-rose-600 shadow-[0_6px_20px_rgba(244,63,94,0.35)]",
                 lineColor: "bg-rose-500",
                 textColor: "text-rose-500",
@@ -558,8 +849,8 @@ export default function SeoSmm() {
               },
               {
                 num: "04",
-                title: "Backlink Velocity",
-                desc: "Executing strategic outreach to secure high-authority placements.",
+                title: "Authority Building",
+                desc: "Running outreach to earn backlinks and placements from credible, relevant sources in your industry.",
                 circleBg: "bg-gradient-to-br from-amber-400 to-orange-500 shadow-[0_6px_20px_rgba(249,115,22,0.35)]",
                 lineColor: "bg-orange-500",
                 textColor: "text-orange-500",
@@ -569,8 +860,8 @@ export default function SeoSmm() {
               },
               {
                 num: "05",
-                title: "Data Loop",
-                desc: "Analyzing performance data to double down on winning topics and platforms.",
+                title: "Data & Optimization Loop",
+                desc: "Reviewing performance weekly across SEO and social, and doubling down on what’s actually driving traffic and leads.",
                 circleBg: "bg-gradient-to-br from-emerald-400 to-teal-600 shadow-[0_6px_20px_rgba(16,185,129,0.35)]",
                 lineColor: "bg-emerald-500",
                 textColor: "text-emerald-500",
@@ -641,7 +932,10 @@ export default function SeoSmm() {
         <div className="relative z-10 max-w-6xl mx-auto space-y-16">
           {/* Header */}
           <div className="space-y-4">
-            <h2 className="text-4xl sm:text-6xl font-black text-[#0d1b3e] tracking-tight">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-200 bg-blue-50/50 px-4 py-2 text-[10px] sm:text-xs font-black tracking-[0.2em] text-blue-600 uppercase shadow-sm">
+              <span>Common Questions</span>
+            </span>
+            <h2 className="text-4xl sm:text-6xl font-black text-[#0d1b3e] tracking-tight mt-2">
               Absolute Clarity.
             </h2>
             <p className="text-slate-500 text-base sm:text-lg font-semibold tracking-wide">
@@ -653,12 +947,44 @@ export default function SeoSmm() {
           <div className="max-w-5xl mx-auto bg-white rounded-[32px] border border-slate-100/80 shadow-[0_10px_45px_rgba(0,0,0,0.02)] p-6 sm:p-10 text-left">
             {[
               {
-                q: "How long until I see results?",
-                a: "SEO typically shows significant compounding after 4-6 months; social growth can be faster depending on viral hits."
+                q: "How long until I see results from SEO?",
+                a: "Technical fixes can improve site health within the first few weeks. Meaningful ranking and traffic growth typically starts showing between months 2–4, and compounds from there — SEO is a channel you build once, and it keeps paying you back, unlike ads that stop the moment you stop paying."
               },
               {
-                q: "Is SEO still relevant in the age of AI?",
-                a: "More than ever. AI search (SGE) relies on high-authority sources; we ensure you are that source."
+                q: "How long until I see results from social media marketing?",
+                a: "Engagement improvements are usually visible within the first 3–4 weeks as content and format testing kicks in. Follower growth and social-driven leads typically build steadily over 60–90 days as we identify what resonates most with your specific audience."
+              },
+              {
+                q: "Is SEO still relevant with AI search and AI Overviews?",
+                a: "More than ever. AI-driven search still pulls its answers from well-structured, authoritative, technically sound websites — the same fundamentals we build. Businesses with strong SEO foundations are the ones getting cited and recommended inside AI search results, not the ones sitting it out."
+              },
+              {
+                q: "Do you work with businesses outside ecommerce?",
+                a: "Yes. We work across industries — service businesses, local businesses, SaaS companies, and D2C brands alike. Every SEO and social strategy is built around your specific business model, audience, and goals, not a one-size-fits-all template."
+              },
+              {
+                q: "Which social media platforms do you manage?",
+                a: "It depends on where your actual audience is. For most Indian businesses, that’s a mix of Instagram, Facebook, and LinkedIn, with YouTube and other platforms added depending on your industry and goals. We’ll recommend a focused set rather than spreading you thin everywhere at once."
+              },
+              {
+                q: "Do you create the content, or manage the account?",
+                a: "Both. We handle strategy, content creation, scheduling, and community management — you approve the direction, we handle the execution."
+              },
+              {
+                q: "Will this replace my paid ads?",
+                a: "Not immediately, and not entirely — but it will reduce how dependent you are on them. Most businesses run SEO, social, and paid ads together, using organic channels to lower overall customer acquisition cost over time."
+              },
+              {
+                q: "How do you measure success — just rankings and followers?",
+                a: "No. We track what actually matters to your business — organic traffic, keyword rankings, social engagement, leads generated, and where possible, revenue attributed to organic channels. Vanity metrics alone don’t tell you if marketing is working."
+              },
+              {
+                q: "What makes this different from a generic digital marketing agency?",
+                a: "Every SEO and social strategy we build is tailored to your specific industry and business model, backed by a technical foundation most generalist agencies skip — not a templated content calendar applied to every client the same way."
+              },
+              {
+                q: "What’s included in the free strategy call?",
+                a: "A live review of your current SEO health and social presence, 2–3 specific opportunities we spot immediately, and a rough roadmap for what working together would look like — no generic slide deck, no pressure to sign anything."
               }
             ].map((faq, index) => {
               const isOpen = openFaq === index;
@@ -667,7 +993,7 @@ export default function SeoSmm() {
                   initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
                   key={index} 
                   className="border-b border-slate-100 last:border-0 py-6 first:pt-2 last:pb-2"
                 >
@@ -713,9 +1039,12 @@ export default function SeoSmm() {
             The Final Step
           </span>
           {/* Header */}
-          <h2 className="text-5xl sm:text-7xl font-black text-[#0d1b3e] tracking-tight leading-[1.1] max-w-5xl">
-            Ready to dominate<br />your category?
+          <h2 className="text-4xl sm:text-6xl font-black text-[#0d1b3e] tracking-tight leading-[1.1] max-w-5xl">
+            Ready to Build a Presence That Keeps Working for You?
           </h2>
+          <p className="text-slate-500 font-semibold text-sm sm:text-base leading-relaxed max-w-2xl">
+            {"Book your free, no-obligation 30-minute SEO & social media audit. No generic slide decks — just a clear look at where you're losing visibility and how to fix it."}
+          </p>
 
           {/* Button Link */}
           <div className="pt-6">
@@ -723,7 +1052,7 @@ export default function SeoSmm() {
               href="/contact"
               className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#0a8bc7] via-[#2443ab] to-[#40159e] px-8 py-4 text-xs font-black text-white uppercase tracking-wider shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group whitespace-nowrap"
             >
-              <span>Schedule Strategy Call</span>
+              <span>Schedule Free Strategy Call</span>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1 flex-shrink-0">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
               </svg>

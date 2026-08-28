@@ -1392,7 +1392,7 @@ export default function Home() {
                       Adobe
                     </span>
                     <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-black bg-emerald-50 text-emerald-700 border border-emerald-100 shadow-sm">
-                      ðŸ”’ ISO 27001 Security
+                      🔒 ISO 27001 Security
                     </span>
                   </div>
                 </div>
@@ -1425,13 +1425,13 @@ export default function Home() {
               >
                 {/* Left section: Number & line */}
                 <div className="flex items-center gap-8 shrink-0 w-full lg:w-auto">
-                  <span className="text-[7rem] sm:text-[8rem] font-black text-amber-600 tracking-tighter leading-none select-none w-36 text-left">
+                  <span className="text-[7rem] sm:text-[8rem] font-black text-teal-600 tracking-tighter leading-none select-none w-36 text-left">
                     03
                   </span>
                   {/* Vertical line with dot */}
                   <div className="hidden lg:flex flex-col items-center h-24 relative">
                     <div className="w-[1.5px] h-full bg-slate-200" />
-                    <div className="absolute top-1/2 -translate-y-1/2 w-2.5 h-2.5 rounded-full bg-amber-600" />
+                    <div className="absolute top-1/2 -translate-y-1/2 w-2.5 h-2.5 rounded-full bg-teal-600" />
                   </div>
                 </div>
 
@@ -1441,14 +1441,14 @@ export default function Home() {
                     Built for e-commerce only.
                   </h4>
                   <p className="text-slate-500 font-semibold text-sm sm:text-base leading-relaxed mb-6">
-                    We focus <span className="text-amber-600 font-extrabold">100% on online retail</span>. No wasted onboarding or generic strategies. Our team understands how to move your needle.
+                    We focus <span className="text-teal-600 font-extrabold">100% on online retail</span>. No wasted onboarding or generic strategies. Our team understands how to move your needle.
                   </p>
                   <div className="flex flex-wrap gap-3">
-                    <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-black bg-amber-50 text-amber-700 border border-amber-100 shadow-sm">
-                      <span className="text-amber-500 text-sm">✓</span> Margin Economics
+                    <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-black bg-teal-50 text-teal-700 border border-teal-100 shadow-sm">
+                      <span className="text-teal-500 text-sm">✓</span> Margin Economics
                     </span>
-                    <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-black bg-amber-50 text-amber-700 border border-amber-100 shadow-sm">
-                      <span className="text-amber-500 text-sm">✓</span> Funnel Optimization
+                    <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-black bg-teal-50 text-teal-700 border border-teal-100 shadow-sm">
+                      <span className="text-teal-500 text-sm">✓</span> Funnel Optimization
                     </span>
                   </div>
                 </div>
@@ -1456,7 +1456,7 @@ export default function Home() {
                 {/* Right Decorative Graphic */}
                 <div className="hidden lg:block relative w-48 h-48 shrink-0 overflow-hidden">
                   {/* Dot Grid */}
-                  <div className="absolute inset-0 opacity-20 text-amber-300">
+                  <div className="absolute inset-0 opacity-20 text-teal-300">
                     <svg width="100%" height="100%" fill="currentColor">
                       <defs>
                         <pattern id="dot-grid-3" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
@@ -1467,7 +1467,7 @@ export default function Home() {
                     </svg>
                   </div>
                   {/* Floating sphere peeking from bottom right corner */}
-                  <div className="absolute bottom-[-40px] right-[-40px] w-36 h-36 rounded-full bg-gradient-to-br from-amber-300 to-amber-500/20 shadow-lg shadow-amber-500/10 blur-[1px]" />
+                  <div className="absolute bottom-[-40px] right-[-40px] w-36 h-36 rounded-full bg-gradient-to-br from-teal-300 to-teal-500/20 shadow-lg shadow-teal-500/10 blur-[1px]" />
                 </div>
               </motion.div>
 
@@ -1479,9 +1479,12 @@ export default function Home() {
         <section ref={mobileSectionRef} className="relative z-10 w-full py-16 overflow-hidden bg-gradient-to-b from-white to-[#fafbfc]">
           {/* Section Header */}
           <div className="text-center mb-12 px-6 sm:px-8 lg:px-12">
-            <h2 className="text-2xl sm:text-4xl font-black text-[#0d1b3e] tracking-tight mt-4">
+            <h2 className="text-4xl sm:text-6xl font-black text-[#0d1b3e] tracking-tight mt-4">
               Our <span className="text-[#2443ab]">Works</span>
             </h2>
+            <p className="max-w-2xl mx-auto text-sm sm:text-base text-slate-400 font-semibold leading-relaxed mt-4">
+              A curated showcase of high-converting storefronts, bespoke e-commerce experiences, and custom digital solutions we've designed and engineered.
+            </p>
           </div>
 
           {/* Mockups Marquee */}
@@ -1541,7 +1544,7 @@ export default function Home() {
               </span>
               <h2 className="text-3xl sm:text-5xl font-black text-[#0d1b3e] tracking-tight leading-[1.1] mt-2">
                 Most Marketing Spend Doesn't Fail Because of Bad Ideas. <br className="hidden md:inline" />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 via-orange-500 to-amber-500">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 via-teal-600 to-cyan-500">
                   It Fails Because of Fragmentation.
                 </span>
               </h2>
@@ -1694,15 +1697,19 @@ export default function Home() {
                     First thing we do is go through your entire funnel with a fine-tooth comb. That means checking your traffic sources, how people move through checkout, whether your site's loading fast enough, and where your ad budget's actually going. By the end of this, we'll know precisely where you're bleeding money.
                   </p>
                   <div>
-                    <Link
-                      href="/contact"
-                      className="inline-flex items-center gap-2 px-6 py-3 bg-[#0a8bc7] hover:bg-[#0a8bc7]/90 text-white text-xs font-bold rounded-full transition-all duration-300 shadow-md uppercase tracking-wider"
-                    >
-                      <span>Get in Touch</span>
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-3.5 h-3.5">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                      </svg>
-                    </Link>
+                    <div className="relative inline-block p-[2px] rounded-xl bg-gradient-to-r from-[#9333ea] via-[#2563eb] to-[#06b6d4] transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.03] group/btn">
+                      {/* Ambient Glow */}
+                      <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#9333ea] via-[#2563eb] to-[#06b6d4] blur-md opacity-40 group-hover/btn:opacity-80 transition-opacity duration-500 -z-10" />
+                      <Link
+                        href="/contact"
+                        className="relative z-10 inline-flex items-center gap-2 px-6 py-3 bg-[#0c1033] hover:bg-[#12194d] text-white text-xs font-extrabold rounded-[10px] transition-colors duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] uppercase tracking-wider"
+                      >
+                        <span>Get in Touch</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-3.5 h-3.5">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                        </svg>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1722,15 +1729,19 @@ export default function Home() {
                     Now that we know the problem areas, we sit down and build a plan around your store specifically. This isn't some recycled template we hand every client — your business has different customers, different margins, different goals, so the strategy reflects that.
                   </p>
                   <div>
-                    <Link
-                      href="/contact"
-                      className="inline-flex items-center gap-2 px-6 py-3 bg-[#2443ab] hover:bg-[#2443ab]/90 text-white text-xs font-bold rounded-full transition-all duration-300 shadow-md uppercase tracking-wider"
-                    >
-                      <span>Build Your Strategy</span>
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-3.5 h-3.5">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                      </svg>
-                    </Link>
+                    <div className="relative inline-block p-[2px] rounded-xl bg-gradient-to-r from-[#9333ea] via-[#2563eb] to-[#06b6d4] transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.03] group/btn">
+                      {/* Ambient Glow */}
+                      <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#9333ea] via-[#2563eb] to-[#06b6d4] blur-md opacity-40 group-hover/btn:opacity-80 transition-opacity duration-500 -z-10" />
+                      <Link
+                        href="/contact"
+                        className="relative z-10 inline-flex items-center gap-2 px-6 py-3 bg-[#0c1033] hover:bg-[#12194d] text-white text-xs font-extrabold rounded-[10px] transition-colors duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] uppercase tracking-wider"
+                      >
+                        <span>Build Your Strategy</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-3.5 h-3.5">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                        </svg>
+                      </Link>
+                    </div>
                   </div>
                 </div>
 
@@ -1812,15 +1823,19 @@ export default function Home() {
                     This is where our team actually gets to work. Everything gets built, launched, and tested in-house — we don't hand things off to freelancers or third-party vendors halfway through. You're dealing with the same developers and marketing specialists from day one.
                   </p>
                   <div>
-                    <Link
-                      href="/contact"
-                      className="inline-flex items-center gap-2 px-6 py-3 bg-[#40159e] hover:bg-[#40159e]/90 text-white text-xs font-bold rounded-full transition-all duration-300 shadow-md uppercase tracking-wider"
-                    >
-                      <span>Get in Touch</span>
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-3.5 h-3.5">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                      </svg>
-                    </Link>
+                    <div className="relative inline-block p-[2px] rounded-xl bg-gradient-to-r from-[#9333ea] via-[#2563eb] to-[#06b6d4] transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.03] group/btn">
+                      {/* Ambient Glow */}
+                      <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#9333ea] via-[#2563eb] to-[#06b6d4] blur-md opacity-40 group-hover/btn:opacity-80 transition-opacity duration-500 -z-10" />
+                      <Link
+                        href="/contact"
+                        className="relative z-10 inline-flex items-center gap-2 px-6 py-3 bg-[#0c1033] hover:bg-[#12194d] text-white text-xs font-extrabold rounded-[10px] transition-colors duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] uppercase tracking-wider"
+                      >
+                        <span>Get in Touch</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-3.5 h-3.5">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                        </svg>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1840,15 +1855,19 @@ export default function Home() {
                     You'll get updates every week with proper KPI metrics. Just straight answers on what's working, what isn't, and where your money's actually going, without the fluff or vanity statistics.
                   </p>
                   <div>
-                    <Link
-                      href="/contact"
-                      className="inline-flex items-center gap-2 px-6 py-3 bg-[#0d1b3e] hover:bg-[#0d1b3e]/90 text-white text-xs font-bold rounded-full transition-all duration-300 shadow-md uppercase tracking-wider"
-                    >
-                      <span>Request a Report</span>
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-3.5 h-3.5">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                      </svg>
-                    </Link>
+                    <div className="relative inline-block p-[2px] rounded-xl bg-gradient-to-r from-[#9333ea] via-[#2563eb] to-[#06b6d4] transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.03] group/btn">
+                      {/* Ambient Glow */}
+                      <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#9333ea] via-[#2563eb] to-[#06b6d4] blur-md opacity-40 group-hover/btn:opacity-80 transition-opacity duration-500 -z-10" />
+                      <Link
+                        href="/contact"
+                        className="relative z-10 inline-flex items-center gap-2 px-6 py-3 bg-[#0c1033] hover:bg-[#12194d] text-white text-xs font-extrabold rounded-[10px] transition-colors duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] uppercase tracking-wider"
+                      >
+                        <span>Request a Report</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-3.5 h-3.5">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                        </svg>
+                      </Link>
+                    </div>
                   </div>
                 </div>
 
@@ -2206,9 +2225,9 @@ export default function Home() {
                   problem: "Strong product, inconsistent online discovery, and low repeat order value.",
                   action: "Rebuilt their digital presence and ran targeted campaigns focused on order value, not just traffic.",
                   result: "200% increase in average order value, with measurably more customers discovering the brand online.",
-                  badgeBg: "bg-amber-50 text-amber-700 border-amber-100",
-                  themeColor: "group-hover:border-amber-400 group-hover:shadow-[0_20px_50px_rgba(245,158,11,0.08)]",
-                  statBg: "bg-gradient-to-br from-amber-500 via-amber-600 to-orange-600 text-white shadow-amber-500/20"
+                  badgeBg: "bg-teal-50 text-teal-700 border-teal-100",
+                  themeColor: "group-hover:border-teal-400 group-hover:shadow-[0_20px_50px_rgba(20,184,166,0.08)]",
+                  statBg: "bg-gradient-to-br from-teal-500 via-teal-600 to-cyan-600 text-white shadow-teal-500/20"
                 },
                 {
                   client: "Nayantara",
@@ -2694,7 +2713,7 @@ export default function Home() {
                         {/* Winning Column (Us) */}
                         <td className={`py-12 px-8 bg-[#2443ab] text-white align-top shadow-[0_15px_35px_rgba(36,67,171,0.12)] relative ${isLastRow ? "rounded-b-[24px]" : ""}`}>
                           <div className="flex gap-4">
-                            <span className="flex-shrink-0 inline-flex items-center justify-center w-6 h-6 rounded-full bg-white text-[#2443ab] font-bold text-xs shadow-sm">✓</span>
+                            <span className="flex-shrink-0 inline-flex items-center justify-center w-6 h-6 rounded-full bg-green-600 text-white font-bold text-xs shadow-sm">✓</span>
                             <div>
                               <p className="font-extrabold text-white text-base sm:text-lg tracking-tight">{row.us.title}</p>
                               <p className="text-[14px] sm:text-[15px] text-white/85 font-medium leading-[1.6] mt-2">{row.us.desc}</p>
@@ -2798,7 +2817,7 @@ export default function Home() {
                         <span className="text-[10px] font-black tracking-widest uppercase bg-white text-[#2443ab] px-3 py-1 rounded-full border border-blue-200">
                           DIGITAL EDGE 360
                         </span>
-                        <span className="w-6 h-6 rounded-full bg-white text-[#2443ab] flex items-center justify-center font-bold text-xs shadow-sm">✓</span>
+                        <span className="w-6 h-6 rounded-full bg-green-600 text-white flex items-center justify-center font-bold text-xs shadow-sm">✓</span>
                       </div>
                       <h4 className="font-extrabold text-base text-white tracking-tight">{row.us.title}</h4>
                       <p className="text-xs text-white/80 font-medium mt-1.5 leading-relaxed">{row.us.desc}</p>

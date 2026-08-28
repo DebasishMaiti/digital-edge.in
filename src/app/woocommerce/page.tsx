@@ -4,14 +4,16 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { brandLogosList } from "@/data";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import LeadForm from "@/components/LeadForm";
 import AnimatedWords from "@/components/AnimatedWords";
 import Marquee from "react-fast-marquee";
 import ArchitectureTimeline from "@/components/ArchitectureTimeline";
+import { Terminal, Shield, Cpu, RefreshCw, CheckCircle2, Code2, ShoppingCart, HeartHandshake } from "lucide-react";
 
 export default function WooCommerce() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [activeShowcaseTab, setActiveShowcaseTab] = useState(0);
 
   const gridBackgroundStyle = {
     backgroundImage: `
@@ -159,13 +161,13 @@ export default function WooCommerce() {
             <div className="lg:col-span-6 flex flex-col items-start text-left">
               {/* Pill Badge */}
               <h1 className="inline-flex items-center gap-1.5 rounded-full border border-gray-600 bg-white px-6 py-3.5 text-sm sm:text-base md:text-sm font-extrabold tracking-[0.2em] text-gray-600 uppercase shadow-sm mb-6">
-                WooCommerce Solution
+                WooCommerce & CMS Development
               </h1>
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#0d1b3e] tracking-tight leading-[1.1] mb-6 flex flex-col items-start">
-                WooCommerce & CMS
+                A WordPress Website Built to Grow With Your Business, Not Slow It Down
               </h2>
               <p className="text-lg sm:text-xl text-slate-500 leading-relaxed mb-8 max-w-2xl">
-                We architect enterprise-grade WooCommerce and custom WordPress setups designed specifically for scalability, speed, and high conversions. Re-engineering heavy checkouts, optimizing databases, and deploying advanced caching layers, we provide custom e-commerce solutions that eliminate cart abandonment and secure steady revenue.
+                We build enterprise-grade WooCommerce stores and custom WordPress websites for businesses across India — whether you’re selling products online, running a content-heavy site, or managing a business website your team updates daily. Engineered for speed, security, and a backend your team can actually use.
               </p>
               {/* Full Width Line Divider */}
               <div className="w-full border-t border-slate-200/60 my-3"></div>
@@ -175,7 +177,7 @@ export default function WooCommerce() {
                   href="/contact"
                   className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[#0a8bc7] via-[#2443ab] to-[#40159e] text-white text-xs font-extrabold rounded-full transition-all duration-300 shadow-[0_8px_20px_rgba(36,67,171,0.25)] hover:shadow-[0_10px_24px_rgba(64,21,158,0.4)] hover:opacity-95 flex items-center justify-center gap-2 flex-shrink-0 uppercase tracking-wider mt-4"
                 >
-                  <span>Book a Strategy Call</span>
+                  <span>Book a Free Website Audit</span>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-3.5 h-3.5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                   </svg>
@@ -213,7 +215,7 @@ export default function WooCommerce() {
 
         {/* Current Reality Section */}
         <section
-          className="relative z-10 w-full py-28 sm:py-36 overflow-hidden text-center px-6 sm:px-8 lg:px-12 bg-gradient-to-br from-slate-100 via-slate-50 to-blue-100/40"
+          className="relative min-h-[500px] flex items-center z-10 w-full py-28 sm:py-36 overflow-hidden text-center px-6 sm:px-8 lg:px-12 bg-gradient-to-br from-slate-100 via-slate-50 to-blue-100/40"
         >
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(10,139,199,0.06)_0%,transparent_70%)] pointer-events-none" />
 
@@ -223,17 +225,18 @@ export default function WooCommerce() {
               <AnimatedWords text="The Current Reality" />
             </span>
             {/* Quote text */}
-            <p className="font-elms text-3xl sm:text-5xl md:text-[3.5rem] text-center leading-relaxed text-[#0d1b3e]/85">            <AnimatedWords
-              text="&quot;Typical WordPress sites are slow, vulnerable to attacks, and cluttered with conflicting plugins. This leads to high bounce rates, security breaches, and an operational nightmare for your team. You need a clean, custom-coded core that performs flawlessly under pressure.&quot;"
-              delay={0.25}
-            />
+            <p className="font-elms text-2xl sm:text-4xl md:text-[2.65rem] text-center leading-relaxed text-[#0d1b3e]/85 max-w-6xl mx-auto">
+              <AnimatedWords
+                text="&quot;Most WordPress sites are running on bloated themes, conflicting plugins, and a backend nobody on the team actually enjoys using. The result shows up as slow load times, security gaps, and a website that becomes harder to update the longer it’s been live. Whether you’re running a WooCommerce store or a content-driven business site, you don’t need another plugin duct-taped on top — you need a clean, well-built core that stays fast, stays secure, and stays easy for your team to manage.&quot;"
+                delay={0.25}
+              />
             </p>
           </div>
         </section>
 
         <ArchitectureTimeline
-          title="The Architecture"
-          subtitle="How We Engineer The Solution."
+          title="The Framework"
+          subtitle="How We Engineer Your Website"
           tagline="A proven process. Relentless quality. Built for WooCommerce, designed to scale."
           codeFile="src/app/woocommerce.tsx"
           codeLines={[
@@ -258,8 +261,8 @@ export default function WooCommerce() {
           phases={[
             {
               num: "01",
-              phase: "PHASE 01",
-              text: "We approach WooCommerce with an 'un-WordPress' mindset. We eliminate the bloat, bypass generic themes, and build high-performance child themes from scratch.",
+              phase: "Phase 01 — Bloat-Free Foundation",
+              text: "We strip away everything a typical WordPress build carries by default — generic themes, unnecessary plugins, unused code — and build a lean, custom setup designed around exactly what your business needs.",
               borderCol: "border-l-[#2443ab]",
               dotCol: "border-blue-500 bg-white",
               shadowCol: "shadow-blue-500/5",
@@ -269,8 +272,8 @@ export default function WooCommerce() {
             },
             {
               num: "02",
-              phase: "PHASE 02",
-              text: "Security is paramount. We implement military-grade hardening, immutable backups, and continuous monitoring to protect your customer data and brand reputation.",
+              phase: "Phase 02 — Enterprise-Grade Security",
+              text: "We harden your site against attacks with proper access controls, immutable backups, and ongoing monitoring — protecting your data, your customers’ data, and your brand's reputation.",
               borderCol: "border-l-[#a855f7]",
               dotCol: "border-purple-500 bg-white",
               shadowCol: "shadow-purple-500/5",
@@ -280,8 +283,8 @@ export default function WooCommerce() {
             },
             {
               num: "03",
-              phase: "PHASE 03",
-              text: "Our custom checkout flows are designed to destroy cart abandonment. We rebuild the checkout experience from the ground up to be frictionless and mobile-first.",
+              phase: "Phase 03 — Conversion-Focused Structure",
+              text: "Whether it’s a checkout flow for a WooCommerce store or a contact and inquiry flow for a service website, we design every key page to move visitors toward taking action.",
               borderCol: "border-l-[#ec4899]",
               dotCol: "border-pink-500 bg-white",
               shadowCol: "shadow-pink-500/5",
@@ -291,8 +294,8 @@ export default function WooCommerce() {
             },
             {
               num: "04",
-              phase: "PHASE 04",
-              text: "API integrations are our specialty. Whether it's ERP, CRM, or custom inventory sync, we ensure your store communicates perfectly with your entire business ecosystem.",
+              phase: "Phase 04 — Seamless System Integrations",
+              text: "We connect your site cleanly to the tools that run your business — payment gateways, CRM, inventory, booking systems — so information stays in sync without manual work.",
               borderCol: "border-l-[#f97316]",
               dotCol: "border-orange-500 bg-white",
               shadowCol: "shadow-orange-500/5",
@@ -302,8 +305,8 @@ export default function WooCommerce() {
             },
             {
               num: "05",
-              phase: "PHASE 05",
-              text: "Scalability is built-in. We architect our Woo solutions to handle massive traffic spikes during sales events without breaking a sweat.",
+              phase: "Phase 05 — Built for Traffic Growth",
+              text: "Your site is architected to handle growing traffic over time — whether that’s a sale-day spike for a store or a surge from a successful marketing campaign — without slowing down.",
               borderCol: "border-l-[#10b981]",
               dotCol: "border-emerald-500 bg-white",
               shadowCol: "shadow-emerald-500/5",
@@ -313,8 +316,8 @@ export default function WooCommerce() {
             },
             {
               num: "06",
-              phase: "PHASE 06",
-              text: "Full ownership. Unlike proprietary platforms, your WooCommerce store is 100% yours. Your code, your data, your rules.",
+              phase: "Phase 06 — You Own Everything",
+              text: "Unlike locked-in platforms, your WordPress website is entirely yours — your code, your data, your decisions, with no forced fees or platform lock-in down the line.",
               borderCol: "border-l-[#6366f1]",
               dotCol: "border-indigo-500 bg-white",
               shadowCol: "shadow-indigo-500/5",
@@ -325,10 +328,344 @@ export default function WooCommerce() {
           ]}
         />
 
+        {/* Capability Showcase Section */}
+        <section className="relative z-10 w-full py-24 sm:py-32 bg-slate-50 text-slate-800 overflow-hidden px-6 sm:px-8 lg:px-12 border-t border-b border-slate-200/80">
+          <div className="absolute top-[10%] left-[-5%] w-[400px] h-[400px] rounded-full bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.06)_0%,transparent_70%)] pointer-events-none" />
+          <div className="absolute bottom-[10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.06)_0%,transparent_70%)] pointer-events-none" />
+
+          <div className="relative z-10 max-w-6xl mx-auto space-y-16">
+            {/* Header */}
+            <div className="space-y-4 text-center max-w-3xl mx-auto">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-[10px] sm:text-xs font-black tracking-[0.2em] text-blue-600 uppercase shadow-sm">
+                <span>See It In Action</span>
+              </span>
+              <h2 className="text-4xl sm:text-6xl font-black text-slate-900 tracking-tight mt-2">
+                How We Build Websites That Perform Under Pressure
+              </h2>
+              <p className="text-slate-500 font-semibold text-sm sm:text-base leading-relaxed">
+                From rescuing sites buckling under traffic spikes to rebuilding checkout and inquiry flows that were quietly losing leads, here’s how we turn WordPress into a real growth engine for your business.
+              </p>
+            </div>
+
+            {/* Split Interactive Showcase Grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch pt-6">
+              
+              {/* Tab Selectors & Bullets (Left side) */}
+              <div className="lg:col-span-5 flex flex-col justify-between space-y-8">
+                <div className="space-y-4">
+                  {[
+                    {
+                      title: "Website Audit & Diagnostics",
+                      desc: "We review your current site’s speed, plugin health, security, and content structure to find exactly what’s slowing your site down or costing you leads and sales."
+                    },
+                    {
+                      title: "Custom Development",
+                      desc: "We write clean, purpose-built code — custom plugins, themes, and integrations — instead of relying on generic marketplace solutions that add bloat and break easily."
+                    },
+                    {
+                      title: "Migration & Launch",
+                      desc: "Whether you’re moving from another platform or rebuilding an existing WordPress site, we handle the migration carefully so you don’t lose data, rankings, or uptime."
+                    }
+                  ].map((tab, idx) => {
+                    const isActive = activeShowcaseTab === idx;
+                    return (
+                      <button
+                        key={idx}
+                        onClick={() => setActiveShowcaseTab(idx)}
+                        className={`w-full text-left p-5 rounded-2xl border transition-all duration-300 ${
+                          isActive
+                            ? "bg-white border-slate-200/80 shadow-md shadow-slate-100 translate-x-2"
+                            : "bg-white/40 border-slate-200/40 hover:bg-white hover:border-slate-300 hover:shadow-sm"
+                        }`}
+                        style={{
+                          borderLeftWidth: "4px",
+                          borderLeftColor: isActive ? "#3b82f6" : "transparent"
+                        }}
+                      >
+                        <h4 className={`text-lg font-black tracking-tight mb-2 transition-colors duration-300 ${
+                          isActive ? "text-slate-900" : "text-slate-400 hover:text-slate-600"
+                        }`}>
+                          {tab.title}
+                        </h4>
+                        <p className={`text-xs sm:text-sm font-semibold leading-relaxed transition-colors duration-300 ${
+                          isActive ? "text-slate-600" : "text-slate-400"
+                        }`}>
+                          {tab.desc}
+                        </p>
+                      </button>
+                    );
+                  })}
+                </div>
+
+                {/* Supporting Bullets */}
+                <div className="bg-white p-5 rounded-2xl border border-slate-200/80 space-y-3.5 shadow-sm">
+                  <h5 className="text-xs font-black tracking-widest text-slate-400 uppercase">Core Quality Standards</h5>
+                  <div className="space-y-2.5">
+                    {[
+                      "Sites built to stay fast under real traffic, not just in a demo",
+                      "Checkout and inquiry flows engineered specifically to reduce drop-off",
+                      "Clean integrations with the business tools you already use"
+                    ].map((bullet, bidx) => (
+                      <div key={bidx} className="flex items-start gap-2.5 text-slate-600 text-sm font-semibold">
+                        <CheckCircle2 className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                        <span>{bullet}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Dynamic Interactive Preview Panel (Right side) */}
+              <div className="lg:col-span-7 flex flex-col justify-center">
+                <div className="relative w-full aspect-[4/3] rounded-3xl bg-white border border-slate-200/85 overflow-hidden shadow-xl p-6 sm:p-8 flex flex-col justify-between">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.03)_0%,transparent_70%)] pointer-events-none" />
+                  
+                  {/* Decorative Glow corresponding to active tab */}
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={activeShowcaseTab}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      className="absolute inset-0 pointer-events-none"
+                      style={{
+                        background: activeShowcaseTab === 0 
+                          ? "radial-gradient(circle at 70% 30%, rgba(99, 102, 241, 0.05) 0%, transparent 60%)" 
+                          : activeShowcaseTab === 1 
+                          ? "radial-gradient(circle at 70% 30%, rgba(6, 182, 212, 0.05) 0%, transparent 60%)" 
+                          : "radial-gradient(circle at 70% 30%, rgba(16, 185, 129, 0.05) 0%, transparent 60%)"
+                      }}
+                    />
+                  </AnimatePresence>
+
+                  {/* Panel Header */}
+                  <div className="flex items-center justify-between border-b border-slate-200/80 pb-4 relative z-10">
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 rounded-full bg-red-400" />
+                      <div className="w-3 h-3 rounded-full bg-yellow-400" />
+                      <div className="w-3 h-3 rounded-full bg-green-400" />
+                    </div>
+                    <div className="text-xs font-mono text-slate-400">
+                      {activeShowcaseTab === 0 ? "diagnostics_panel.sh" : activeShowcaseTab === 1 ? "wp-custom-plugin.php" : "live_deployment.log"}
+                    </div>
+                  </div>
+
+                  {/* Panel Body Content (Varies per Tab) */}
+                  <div className="flex-grow flex items-center justify-center py-6 relative z-10">
+                    <AnimatePresence mode="wait">
+                      {activeShowcaseTab === 0 && (
+                        <motion.div
+                          key="tab0"
+                          initial={{ opacity: 0, y: 15 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -15 }}
+                          transition={{ duration: 0.3 }}
+                          className="w-full space-y-6"
+                        >
+                          {/* Diagnostics Metric visualization */}
+                          <div className="grid grid-cols-3 gap-4">
+                            {[
+                              { label: "TTFB", value: "85ms", status: "Optimal", color: "text-emerald-600" },
+                              { label: "FID", value: "11ms", status: "Excellent", color: "text-emerald-600" },
+                              { label: "CLS", value: "0.01", status: "Optimal", color: "text-emerald-600" }
+                            ].map((metric, midx) => (
+                              <div key={midx} className="bg-slate-50 p-4 rounded-2xl border border-slate-100 text-center shadow-sm">
+                                <span className="text-[10px] tracking-widest text-slate-400 font-bold uppercase">{metric.label}</span>
+                                <div className={`text-2xl font-black my-1 ${metric.color}`}>{metric.value}</div>
+                                <span className="text-[10px] text-slate-500 font-semibold">{metric.status}</span>
+                              </div>
+                            ))}
+                          </div>
+                          
+                          {/* Progress/Metric Bars */}
+                          <div className="space-y-3 bg-slate-50 p-4 rounded-2xl border border-slate-100 font-mono text-xs text-slate-600 shadow-sm">
+                            <div className="flex justify-between">
+                              <span>Database Queries Optimized</span>
+                              <span className="text-emerald-600 font-black">100%</span>
+                            </div>
+                            <div className="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
+                              <div className="w-full bg-emerald-500 h-full rounded-full" />
+                            </div>
+                            <div className="flex justify-between pt-2">
+                              <span>Unused CSS/JS Purged</span>
+                              <span className="text-emerald-600 font-black">94%</span>
+                            </div>
+                            <div className="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
+                              <div className="w-[94%] bg-emerald-500 h-full rounded-full" />
+                            </div>
+                          </div>
+                        </motion.div>
+                      )}
+
+                      {activeShowcaseTab === 1 && (
+                        <motion.div
+                          key="tab1"
+                          initial={{ opacity: 0, y: 15 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -15 }}
+                          transition={{ duration: 0.3 }}
+                          className="w-full space-y-4 font-mono text-xs sm:text-[13px] text-slate-700 bg-slate-50 p-5 rounded-2xl border border-slate-100 leading-relaxed text-left overflow-x-auto shadow-sm"
+                        >
+                          <div><span className="text-indigo-600">class</span> <span className="text-purple-600 font-semibold">BespokeCore</span> &#123;</div>
+                          <div className="pl-4 text-slate-400 italic">// Zero external bloat logic</div>
+                          <div className="pl-4"><span className="text-indigo-600">public function</span> <span className="text-blue-600">initializeTheme</span>() &#123;</div>
+                          <div className="pl-8"><span className="text-indigo-600">this</span>-&gt;<span className="text-blue-600">disableUnusedScripts</span>();</div>
+                          <div className="pl-8"><span className="text-indigo-600">this</span>-&gt;<span className="text-blue-600">enforceHardenedFirewall</span>();</div>
+                          <div className="pl-4">&#125;</div>
+                          <div>&#125;</div>
+                        </motion.div>
+                      )}
+
+                      {activeShowcaseTab === 2 && (
+                        <motion.div
+                          key="tab2"
+                          initial={{ opacity: 0, y: 15 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -15 }}
+                          transition={{ duration: 0.3 }}
+                          className="w-full space-y-4 font-mono text-xs text-slate-500 bg-slate-50 p-5 rounded-2xl border border-slate-100 leading-relaxed text-left shadow-sm"
+                        >
+                          <div className="flex items-center gap-2 text-emerald-600 font-bold">
+                            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
+                            <span>System Status: 100% Uptime Preserved</span>
+                          </div>
+                          <div className="space-y-1 text-slate-400">
+                            <div>[INFO] Scanning databases... Done (0 integrity errors)</div>
+                            <div>[INFO] Remapping SEO redirect rules... 412 rules verified</div>
+                            <div>[INFO] Caching system warmed up successfully</div>
+                            <div className="text-emerald-600 font-bold">[SUCCESS] Switchover complete. 0ms downtime.</div>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+
+                  {/* Panel Footer */}
+                  <div className="border-t border-slate-200/80 pt-4 flex items-center justify-between text-xs text-slate-400 relative z-10">
+                    <div className="flex items-center gap-1.5">
+                      <Terminal className="w-4 h-4 text-blue-600" />
+                      <span>Security: Impregnable</span>
+                    </div>
+                    <span>Performance Score: 100/100</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        {/* Services Section */}
+        <section className="relative z-10 w-full py-24 sm:py-32 bg-white text-slate-800 overflow-hidden px-6 sm:px-8 lg:px-12 border-b border-slate-100">
+          {/* Ambient decorative elements */}
+          <div className="absolute top-[30%] left-[-10%] w-[350px] h-[350px] rounded-full bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.02)_0%,transparent_70%)] pointer-events-none" />
+          <div className="absolute bottom-[30%] right-[-10%] w-[350px] h-[350px] rounded-full bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.02)_0%,transparent_70%)] pointer-events-none" />
+
+          <div className="relative z-10 max-w-6xl mx-auto space-y-16">
+            {/* Header */}
+            <div className="space-y-4 text-center max-w-3xl mx-auto">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-200 bg-blue-50/50 px-4 py-2 text-[10px] sm:text-xs font-black tracking-[0.2em] text-[#2443ab] uppercase shadow-sm">
+                <span>What We Build</span>
+              </span>
+              <h2 className="text-4xl sm:text-6xl font-black text-[#0d1b3e] tracking-tight mt-2">
+                WordPress & WooCommerce Services
+              </h2>
+            </div>
+
+            {/* 3x2 Grid for the 6 Service items */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 pt-4">
+              {[
+                {
+                  title: "WooCommerce Development",
+                  desc: "Custom WooCommerce stores built for smooth checkout flows, product discovery, and mobile-first shopping — for businesses that sell products online.",
+                  icon: ShoppingCart,
+                  bgGlow: "from-blue-50 to-indigo-50/10",
+                  borderColor: "hover:border-blue-300",
+                  iconBg: "bg-blue-50 text-blue-600",
+                  iconGlow: "shadow-blue-500/10"
+                },
+                {
+                  title: "Custom WordPress Development",
+                  desc: "Business and content-driven websites built on WordPress, with clean custom themes and full backend and frontend development — ideal for service businesses, SaaS companies, and content publishers.",
+                  icon: Code2,
+                  bgGlow: "from-purple-50 to-violet-50/10",
+                  borderColor: "hover:border-purple-300",
+                  iconBg: "bg-purple-50 text-purple-600",
+                  iconGlow: "shadow-purple-500/10"
+                },
+                {
+                  title: "CMS Migration",
+                  desc: "Careful migration of your existing website to WordPress, preserving your content, SEO rankings, and uptime throughout the switch.",
+                  icon: RefreshCw,
+                  bgGlow: "from-pink-50 to-rose-50/10",
+                  borderColor: "hover:border-pink-300",
+                  iconBg: "bg-pink-50 text-pink-600",
+                  iconGlow: "shadow-pink-500/10"
+                },
+                {
+                  title: "Custom Plugin Development",
+                  desc: "Purpose-built plugins for requirements that off-the-shelf solutions don’t cover cleanly, keeping your site lightweight instead of bloated with generic add-ons.",
+                  icon: Cpu,
+                  bgGlow: "from-orange-50 to-amber-50/10",
+                  borderColor: "hover:border-orange-300",
+                  iconBg: "bg-orange-50 text-orange-500",
+                  iconGlow: "shadow-orange-500/10"
+                },
+                {
+                  title: "Security & Performance Optimization",
+                  desc: "Hardening, caching, and database optimization for existing WordPress sites that have become slow, vulnerable, or difficult to maintain over time.",
+                  icon: Shield,
+                  bgGlow: "from-teal-50 to-emerald-50/10",
+                  borderColor: "hover:border-teal-300",
+                  iconBg: "bg-teal-50 text-teal-600",
+                  iconGlow: "shadow-teal-500/10"
+                },
+                {
+                  title: "Support & Maintenance",
+                  desc: "Ongoing updates, security monitoring, and performance checks so your website keeps working as hard as it did on day one.",
+                  icon: HeartHandshake,
+                  bgGlow: "from-indigo-50 to-blue-50/10",
+                  borderColor: "hover:border-indigo-300",
+                  iconBg: "bg-indigo-50 text-indigo-600",
+                  iconGlow: "shadow-indigo-500/10"
+                }
+              ].map((service, sidx) => {
+                const IconComponent = service.icon;
+                return (
+                  <div
+                    key={sidx}
+                    className={`p-6 sm:p-8 rounded-[32px] border border-slate-100 bg-gradient-to-br ${service.bgGlow} transition-all duration-500 hover:-translate-y-1.5 hover:shadow-xl ${service.borderColor} group cursor-default`}
+                  >
+                    <div className={`w-14 h-14 rounded-2xl flex items-center justify-center ${service.iconBg} ${service.iconGlow} shadow-md group-hover:scale-110 transition-transform duration-300 mb-6`}>
+                      <IconComponent className="w-7 h-7" />
+                    </div>
+                    <h3 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight mb-4 group-hover:text-blue-600 transition-colors duration-300 leading-tight">
+                      {service.title}
+                    </h3>
+                    <p className="text-sm sm:text-base text-slate-500 font-semibold leading-relaxed">
+                      {service.desc}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
         <section className="relative z-10 w-full py-24 sm:py-32 bg-[#fafbfc] text-slate-800 overflow-hidden text-center px-6 sm:px-8 lg:px-12 border-b border-slate-100">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(36,67,171,0.02)_0%,transparent_70%)] pointer-events-none" />
 
           <div className="relative z-10 max-w-7xl mx-auto space-y-16">
+            {/* Header */}
+            <div className="space-y-4 max-w-3xl mx-auto text-center">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-200 bg-blue-50/50 px-4 py-2 text-[10px] sm:text-xs font-black tracking-[0.2em] text-blue-600 uppercase shadow-sm">
+                <span>Why Businesses Choose Us</span>
+              </span>
+              <h2 className="text-4xl sm:text-6xl font-black text-[#0d1b3e] tracking-tight mt-2">
+                What You Actually Get
+              </h2>
+            </div>
+
             {/* Circular/Orbital Layout */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center max-w-6xl mx-auto pt-8">
               
@@ -352,7 +689,7 @@ export default function WooCommerce() {
                   </div>
                   <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight group-hover:text-blue-600 transition-colors duration-300">Hardened Security</h4>
                   <p className="text-base text-slate-500 font-semibold leading-relaxed">
-                    Zero-vulnerability stance with enterprise-grade protection and monitoring.
+                    Enterprise-grade protection and ongoing monitoring, built to keep your site and data safe.
                   </p>
                 </motion.div>
 
@@ -372,9 +709,9 @@ export default function WooCommerce() {
                     </div>
                     <span className="text-sm font-black text-blue-600 tracking-wider">03</span>
                   </div>
-                  <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight group-hover:text-purple-600 transition-colors duration-300">Custom Plugins</h4>
+                  <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight group-hover:text-purple-600 transition-colors duration-300">Custom-Built Plugins</h4>
                   <p className="text-base text-slate-500 font-semibold leading-relaxed">
-                    Lightweight, bespoke extensions built specifically for your unique requirements.
+                    Lightweight, purpose-built extensions made for your exact requirements — nothing generic, nothing bloated.
                   </p>
                 </motion.div>
 
@@ -394,9 +731,9 @@ export default function WooCommerce() {
                     </div>
                     <span className="text-sm font-black text-blue-600 tracking-wider">05</span>
                   </div>
-                  <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight group-hover:text-teal-600 transition-colors duration-300">Total Ownership</h4>
+                  <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight group-hover:text-teal-600 transition-colors duration-300">Complete Ownership</h4>
                   <p className="text-base text-slate-500 font-semibold leading-relaxed">
-                    Complete control of your platform, data, and long-term tech roadmap.
+                    Full control over your platform, your data, and your long-term technical roadmap — no vendor lock-in.
                   </p>
                 </motion.div>
               </div>
@@ -479,9 +816,9 @@ export default function WooCommerce() {
                     </div>
                     <span className="text-sm font-black text-blue-600 tracking-wider">02</span>
                   </div>
-                  <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight group-hover:text-emerald-600 transition-colors duration-300">Pure Speed</h4>
+                  <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight group-hover:text-emerald-600 transition-colors duration-300">Real Speed</h4>
                   <p className="text-base text-slate-500 font-semibold leading-relaxed">
-                    Advanced caching and optimized code for a WordPress experience that feels native.
+                    Advanced caching and optimized code so your site feels instant, not like a typical WordPress site.
                   </p>
                 </motion.div>
 
@@ -501,9 +838,9 @@ export default function WooCommerce() {
                     </div>
                     <span className="text-sm font-black text-blue-600 tracking-wider">04</span>
                   </div>
-                  <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight group-hover:text-orange-500 transition-colors duration-300">Checkout Mastery</h4>
+                  <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight group-hover:text-orange-500 transition-colors duration-300">A Site That Converts</h4>
                   <p className="text-base text-slate-500 font-semibold leading-relaxed">
-                    Frictionless, high-conversion checkout journeys that drive revenue.
+                    Whether it’s a checkout or a contact form, every key flow is designed specifically to reduce drop-off and drive action.
                   </p>
                 </motion.div>
 
@@ -523,9 +860,9 @@ export default function WooCommerce() {
                     </div>
                     <span className="text-sm font-black text-blue-600 tracking-wider">06</span>
                   </div>
-                  <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight group-hover:text-rose-500 transition-colors duration-300">CMS Flexibility</h4>
+                  <h4 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight group-hover:text-rose-500 transition-colors duration-300">A CMS Your Team Can Actually Use</h4>
                   <p className="text-base text-slate-500 font-semibold leading-relaxed">
-                    Easy-to-use backend for your team, powered by a high-performance engine.
+                    An easy, intuitive backend for your team to manage day-to-day, backed by a high-performance engine underneath.
                   </p>
                 </motion.div>
               </div>
@@ -543,13 +880,13 @@ export default function WooCommerce() {
             {/* Header */}
             <div className="space-y-4 max-w-2xl mx-auto">
               <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-200 bg-blue-50/50 px-4 py-2 text-[10px] sm:text-xs font-black tracking-[0.2em] text-blue-600 uppercase shadow-sm">
-                <span>OUR WORKFLOW</span>
+                <span>How We Work</span>
               </span>
               <h2 className="text-4xl sm:text-6xl font-black text-[#0d1b3e] tracking-tight">
-                The Blueprint.
+                Our Build Roadmap
               </h2>
               <p className="text-slate-500 font-semibold text-sm sm:text-base leading-relaxed">
-                Our proven step-by-step engineering journey to transform your concept into a high-performance digital asset.
+                Our proven step-by-step roadmap to transform your vision into a fast, secure, and conversion-optimized WordPress website.
               </p>
             </div>
 
@@ -561,8 +898,8 @@ export default function WooCommerce() {
               {[
                 {
                   num: "01",
-                  title: "Code Audit",
-                  desc: "Analyzing your existing WP setup or scoping your new custom requirements.",
+                  title: "Discovery & Audit",
+                  desc: "Reviewing your existing WordPress setup, or scoping your requirements from scratch if you’re starting new.",
                   circleBg: "bg-gradient-to-br from-blue-400 to-indigo-600 shadow-[0_6px_20px_rgba(59,130,246,0.35)]",
                   lineColor: "bg-blue-500",
                   textColor: "text-blue-500",
@@ -573,7 +910,7 @@ export default function WooCommerce() {
                 {
                   num: "02",
                   title: "Design Systems",
-                  desc: "Creating a cohesive UI kit that works perfectly within the WordPress ecosystem.",
+                  desc: "Building a cohesive UI kit that fits naturally within the WordPress ecosystem and your brand.",
                   circleBg: "bg-gradient-to-br from-purple-400 to-violet-600 shadow-[0_6px_20px_rgba(139,92,246,0.35)]",
                   lineColor: "bg-purple-500",
                   textColor: "text-purple-600",
@@ -583,8 +920,8 @@ export default function WooCommerce() {
                 },
                 {
                   num: "03",
-                  title: "Bespoke Dev",
-                  desc: "Writing clean PHP and React components to fuel your custom store.",
+                  title: "Bespoke Development",
+                  desc: "Writing clean, custom code to power your site — built for your exact content, catalog, or feature needs.",
                   circleBg: "bg-gradient-to-br from-pink-400 to-rose-600 shadow-[0_6px_20px_rgba(244,63,94,0.35)]",
                   lineColor: "bg-rose-500",
                   textColor: "text-rose-500",
@@ -594,14 +931,25 @@ export default function WooCommerce() {
                 },
                 {
                   num: "04",
-                  title: "Transition",
-                  desc: "Seamless migration and staff training for your new enterprise platform.",
+                  title: "Migration & Training",
+                  desc: "Handling a seamless transition to your new platform, with your team trained to manage it confidently from day one.",
                   circleBg: "bg-gradient-to-br from-amber-400 to-orange-500 shadow-[0_6px_20px_rgba(249,115,22,0.35)]",
                   lineColor: "bg-orange-500",
                   textColor: "text-orange-500",
                   borderColor: "border-orange-100 hover:border-orange-300",
                   hoverGlow: "hover:shadow-[0_20px_50px_rgba(249,115,22,0.08)]",
                   grad: "from-white via-white to-orange-50/10"
+                },
+                {
+                  num: "05",
+                  title: "Support & Growth",
+                  desc: "Ongoing maintenance and improvements post-launch, so your website keeps evolving alongside your business.",
+                  circleBg: "bg-gradient-to-br from-emerald-400 to-teal-600 shadow-[0_6px_20px_rgba(16,185,129,0.35)]",
+                  lineColor: "bg-emerald-500",
+                  textColor: "text-emerald-500",
+                  borderColor: "border-emerald-100 hover:border-emerald-300",
+                  hoverGlow: "hover:shadow-[0_20px_50px_rgba(16,185,129,0.08)]",
+                  grad: "from-white via-white to-emerald-50/10"
                 }
               ].map((step, idx) => {
                 const isLeft = idx % 2 === 0;
@@ -666,7 +1014,10 @@ export default function WooCommerce() {
           <div className="relative z-10 max-w-6xl mx-auto space-y-16">
             {/* Header */}
             <div className="space-y-4">
-              <h2 className="text-4xl sm:text-6xl font-black text-[#0d1b3e] tracking-tight">
+              <span className="block text-[10px] sm:text-xs font-black tracking-[0.25em] text-[#2443ab] uppercase select-none">
+                Common Questions
+              </span>
+              <h2 className="text-4xl sm:text-6xl font-black text-[#0d1b3e] tracking-tight mt-2">
                 Absolute Clarity.
               </h2>
               <p className="text-slate-500 text-base sm:text-lg font-semibold tracking-wide">
@@ -678,12 +1029,44 @@ export default function WooCommerce() {
             <div className="max-w-5xl mx-auto bg-white rounded-[32px] border border-slate-100/80 shadow-[0_10px_45px_rgba(0,0,0,0.02)] p-6 sm:p-10 text-left">
               {[
                 {
-                  q: "Is WooCommerce better than Shopify?",
-                  a: "WooCommerce offers more freedom and lower long-term costs; Shopify is more managed. We help you choose based on your specific growth goals."
+                  q: "Do I need WooCommerce, or just a regular WordPress website?",
+                  a: "It depends on whether you’re selling products directly on your site. If you need online checkout and product catalog management, WooCommerce is the right fit. If your site is more about services, content, or generating inquiries, a standard WordPress build without WooCommerce is usually simpler and faster to manage."
                 },
                 {
                   q: "Can you fix my slow WordPress site?",
-                  a: "Yes, we specialize in 'decrapifying' bloated WP builds and restoring them to high-speed performance."
+                  a: "Yes — this is one of the most common projects we take on. Slow WordPress sites are almost always caused by bloated themes, conflicting plugins, unoptimized databases, or poor hosting, and all of these are fixable without necessarily rebuilding from scratch. We’ll audit your site first and tell you honestly whether it needs optimization or a deeper rebuild."
+                },
+                {
+                  q: "Do I need to rebuild my entire website, or can you improve what I already have?",
+                  a: "It depends on the audit. Many sites need targeted fixes — plugin cleanup, database tuning, security hardening, content restructuring. Others have deeper structural issues where a rebuild is genuinely faster and cheaper long-term. We’ll tell you which situation you’re in before recommending anything."
+                },
+                {
+                  q: "How long does a WordPress build or migration take?",
+                  a: "A typical business website build takes 3–5 weeks. A WooCommerce store usually takes 5–8 weeks depending on catalog size and features. Migrations from another platform usually take 3–6 weeks, planned carefully to avoid downtime or data loss."
+                },
+                {
+                  q: "Will my website go down during migration?",
+                  a: "No. We plan migrations to run in parallel with your live site, testing everything on a staging environment first, and only switching over once everything is verified — so your site stays live throughout the process."
+                },
+                {
+                  q: "Do you provide ongoing maintenance after launch?",
+                  a: "Yes. We offer ongoing support plans covering security monitoring, backups, plugin updates, and performance checks, so your site stays fast and protected long after launch — not just on day one."
+                },
+                {
+                  q: "Can you integrate WordPress with our CRM, payment gateway, or booking system?",
+                  a: "Yes. We regularly build custom integrations between WordPress or WooCommerce and the business tools our clients already use, so information stays accurate and synced automatically."
+                },
+                {
+                  q: "Is WordPress a good fit for non-ecommerce businesses too?",
+                  a: "Yes. WordPress is one of the most flexible platforms available and works well for service businesses, content publishers, SaaS companies, and local businesses — not just online stores. We tailor the build entirely around your specific business type."
+                },
+                {
+                  q: "What makes this different from a regular WordPress developer?",
+                  a: "Every decision — theme structure, plugin choices, hosting setup, and conversion flow — is made around your specific business goals and performance, not a generic template applied the same way to every client."
+                },
+                {
+                  q: "What’s included in the free website audit?",
+                  a: "A live review of your site’s speed, security, plugin health, and structure, plus 2–3 specific issues we spot immediately — no generic slide deck, no pressure to sign anything."
                 }
               ].map((faq, index) => {
                 const isOpen = openFaq === index;
@@ -732,15 +1115,19 @@ export default function WooCommerce() {
         <section className="relative z-10 w-full py-24 sm:py-32 bg-gradient-to-br from-slate-100 via-slate-50 to-blue-100/45 text-slate-800 border-t border-slate-200/60 overflow-hidden text-center px-6 sm:px-8 lg:px-12">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(36,67,171,0.04)_0%,transparent_70%)] pointer-events-none" />
 
-          <div className="relative z-10 max-w-6xl mx-auto space-y-8 flex flex-col justify-center items-center">
+          <div className="relative z-10 max-w-6xl mx-auto space-y-6 flex flex-col justify-center items-center">
             {/* Badge */}
             <span className="block text-[10px] sm:text-xs font-black tracking-[0.25em] text-[#2443ab] uppercase select-none">
               The Final Step
             </span>
             {/* Header */}
-            <h2 className="text-5xl sm:text-7xl font-black text-[#0d1b3e] tracking-tight leading-[1.1] max-w-5xl">
-              Ready to dominate<br />your category?
+            <h2 className="text-4xl sm:text-6xl font-black text-[#0d1b3e] tracking-tight leading-[1.15] max-w-5xl">
+              Ready to Stop Losing Visitors to a Slow, Fragile Website?
             </h2>
+            {/* Subheading */}
+            <p className="text-slate-500 font-semibold text-sm sm:text-lg max-w-3xl leading-relaxed">
+              Book your free, no-obligation 30-minute website audit. No generic slide decks — just a clear look at what’s slowing you down and how to fix it.
+            </p>
 
             {/* Button Link */}
             <div className="pt-6">
@@ -748,7 +1135,7 @@ export default function WooCommerce() {
                 href="/contact"
                 className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#0a8bc7] via-[#2443ab] to-[#40159e] px-8 py-4 text-xs font-black text-white uppercase tracking-wider shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group whitespace-nowrap"
               >
-                <span>Schedule Strategy Call</span>
+                <span>Schedule Free Strategy Call</span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1 flex-shrink-0">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                 </svg>
