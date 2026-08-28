@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "Digital Edge 360° | Digital Marketing Agency in India",
   description: "Award-winning digital marketing agency in India offering web development, app development, SEO, PPC and social media marketing services.",
   alternates: {
-    canonical: "https://digitaledge360.in/",
+    canonical: "https://digitaledge360.in",
   },
   icons: {
     icon: "/icon.png",
@@ -29,6 +29,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable}`}>
+      <head>
+        <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+      </head>
       <body className="antialiased">
         <ScrollToTop />
         <CustomCursor />

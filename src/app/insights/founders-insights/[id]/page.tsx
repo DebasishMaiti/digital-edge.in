@@ -3,7 +3,7 @@ import { ArrowLeft } from "lucide-react";
 import FoundersInsightClient from "./FoundersInsightClient";
 
 const insightsData = {
-  "1": {
+  "what-include-complete-ecommerce-solution": {
     title: "What Include in Complete Ecommerce Solution",
     tag: "Ecommerce Strategy",
     date: "Aug 17, 2026",
@@ -78,7 +78,7 @@ const insightsData = {
       }
     ]
   },
-  "2": {
+  "why-we-turned-down-40-lakh-retainer": {
     title: "Why We Turned Down a ₹40 Lakh Retainer",
     tag: "Specialization",
     date: "Aug 17, 2026",
@@ -123,8 +123,8 @@ type InsightId = keyof typeof insightsData;
 
 export async function generateStaticParams() {
   return [
-    { id: "1" },
-    { id: "2" }
+    { id: "what-include-complete-ecommerce-solution" },
+    { id: "why-we-turned-down-40-lakh-retainer" }
   ];
 }
 

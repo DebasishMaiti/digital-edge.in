@@ -38,7 +38,7 @@ export default function BlogDetailClient({ id, post }: BlogDetailClientProps) {
 
   return (
     <>
-      <link rel="canonical" href={`https://digitaledge360.com/insights/blogs/${id}`} />
+      <link rel="canonical" href={`https://digitaledge360.in/insights/blogs/${id}/`} />
       <div className="w-full bg-[#f8fafc] bg-gradient-to-tr from-[#0a8bc7]/16 via-white to-[#40159e]/16 text-[#2d3748] min-h-screen pb-24 relative overflow-hidden font-sans">
         
         {/* Soft Background Grid */}
@@ -95,7 +95,7 @@ export default function BlogDetailClient({ id, post }: BlogDetailClientProps) {
             </div>
 
             {/* Light Brand-Aligned Blog Header Banners */}
-            {id === "1" && (
+            {id === "how-to-know-whether-service-should-be-seo-aeo-geo" && (
               <div className="relative w-full h-[350px] sm:h-[650px] md:h-[750px] overflow-hidden rounded-3xl border border-slate-100 shadow-[0_15px_40px_rgba(0,0,0,0.03)] my-6">
                 <Image
                   src="/logs/ecommerce_seo_aeo_geo.png"
@@ -106,11 +106,22 @@ export default function BlogDetailClient({ id, post }: BlogDetailClientProps) {
                 />
               </div>
             )}
-            {id === "2" && (
+            {id === "ecommerce-growth-roadmap-launch-to-market-leader" && (
               <div className="relative w-full h-[350px] sm:h-[650px] md:h-[750px] overflow-hidden rounded-3xl border border-slate-100 shadow-[0_15px_40px_rgba(0,0,0,0.03)] my-6">
                 <Image
                   src="/logs/ecommerce_growth_roadmap.png"
                   alt="E-commerce growth roadmap strategy illustration"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            )}
+            {id === "boosting-brand-credibility-trust-through-seo" && (
+              <div className="relative w-full h-[350px] sm:h-[650px] md:h-[750px] overflow-hidden rounded-3xl border border-slate-100 shadow-[0_15px_40px_rgba(0,0,0,0.03)] my-6">
+                <Image
+                  src="/logs/ecommerce_growth_roadmap.jpg"
+                  alt="Boosting Brand Credibility and Trust Through SEO illustration"
                   fill
                   className="object-cover"
                   priority

@@ -16,7 +16,7 @@ export const brandLogosList = [
 ];
 
 export const portfolioItems = [
-
+  { name: "Melfort", image: "/portfolio/melfort.png", url: "https://melfort.com" },
   { name: "Chris Louis", image: "/portfolio/chrislouis.png", url: "https://chrislouis.com.au" },
   { name: "United By Blue", image: "/portfolio/unitedbyblue.png", url: "https://www.unitedbyblue.com/" },
   { name: "Truboy BBQ", image: "/portfolio/truboybbq.png", url: "https://truboybbq.com" },

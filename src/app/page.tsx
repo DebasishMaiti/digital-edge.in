@@ -74,6 +74,18 @@ const brandShowcases = [
     link: "/company-details/edgeringtone",
     image: "/brand-card-images/Edge-ring.jpg",
     logo: "/logos/edgering.jpg"
+  },
+  {
+    name: "Kayrah",
+    link: "/company-details/kayrah",
+    image: "/brand-card-images/KAYRAH.jpg",
+    logo: "/logos/kayrah.jpg"
+  },
+  {
+    name: "Hubfit",
+    link: "/company-details/hubfit",
+    image: "/brand-card-images/hubfit.jpg",
+    logo: "/logos/hubfit.jpg"
   }
 ];
 
@@ -717,6 +729,61 @@ export default function Home() {
             </div>
           </div>
 
+        </section>
+
+
+        {/* Our Works Section */}
+        <section ref={mobileSectionRef} className="relative z-10 w-full py-16 overflow-hidden bg-gradient-to-b from-white to-[#fafbfc]">
+          {/* Section Header */}
+          <div className="text-center mb-12 px-6 sm:px-8 lg:px-12">
+            <h2 className="text-4xl sm:text-6xl font-black text-[#0d1b3e] tracking-tight mt-4">
+              Our <span className="text-[#2443ab]">Works</span>
+            </h2>
+            <p className="max-w-2xl mx-auto text-sm sm:text-base text-slate-400 font-semibold leading-relaxed mt-4">
+              A curated showcase of high-converting storefronts, bespoke e-commerce experiences, and custom digital solutions we've designed and engineered.
+            </p>
+          </div>
+
+          {/* Mockups Marquee */}
+          <div className="relative w-full overflow-hidden pt-4 pb-16">
+            {/* Edge Fades for Premium Design */}
+
+            <div className="w-full animate-marquee-left flex gap-12 py-8">
+              {/* Single map with duplicated items for infinite scroll */}
+              {[...portfolioItems, ...portfolioItems].map((item, index) => (
+                <div
+                  key={index}
+                  className="w-[240px] sm:w-[320px] shrink-0 group relative pb-8 transition-all duration-300 transform hover:scale-105"
+                >
+                  {/* Phone Mockup Frame */}
+                  <div className="w-full aspect-[1/2] rounded-[36px] sm:rounded-[48px] bg-[#0c101a] p-2 sm:p-2.5 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] border border-[#1f293d] relative overflow-visible transition-all duration-300 group-hover:shadow-[0_40px_80px_-20px_rgba(36,67,171,0.4)] group-hover:border-[#2443ab]/50">
+                    {/* Top Camera Notch */}
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 sm:w-28 h-5 sm:h-6 bg-[#0c101a] rounded-b-[14px] sm:rounded-b-[24px] z-30 flex items-center justify-center gap-1.5 sm:gap-2 pb-0.5 sm:pb-1">
+                      <div className="w-2 sm:w-3 h-2 sm:h-3 rounded-full bg-slate-900 border border-slate-800" />
+                      <div className="w-1 sm:w-2 h-1 sm:h-2 rounded-full bg-slate-900 border border-slate-800" />
+                    </div>
+
+                    {/* Inner Screen */}
+                    <div className="w-full h-full rounded-[28px] sm:rounded-[38px] overflow-hidden bg-slate-950 relative border border-black/40">
+                      {/* Long Scrolling Screenshot */}
+                      <div className="w-full h-full overflow-y-auto no-scrollbar relative">
+                        <img
+                          src={item.image}
+                          alt={item.name}
+                          className="w-full h-auto object-cover object-top pointer-events-none select-none"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Bottom Card Tag overlapping the bezel */}
+                    <div className="absolute -bottom-8 left-3 right-3 sm:left-6 sm:right-6 bg-[#fafbfc] rounded-[18px] sm:rounded-[24px] p-3 sm:p-5 flex items-center justify-center shadow-[0_20px_40px_-5px_rgba(0,0,0,0.18)] border border-slate-200/80 z-30 transition-all duration-300 group-hover:bg-white">
+                      <span className="text-xs sm:text-base font-extrabold text-[#0d1b3e] tracking-tight text-center">{item.name}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </section>
 
         {/* Beyond Tradition Tech Section */}
@@ -1471,60 +1538,6 @@ export default function Home() {
                 </div>
               </motion.div>
 
-            </div>
-          </div>
-        </section>
-
-        {/* Our Works Section */}
-        <section ref={mobileSectionRef} className="relative z-10 w-full py-16 overflow-hidden bg-gradient-to-b from-white to-[#fafbfc]">
-          {/* Section Header */}
-          <div className="text-center mb-12 px-6 sm:px-8 lg:px-12">
-            <h2 className="text-4xl sm:text-6xl font-black text-[#0d1b3e] tracking-tight mt-4">
-              Our <span className="text-[#2443ab]">Works</span>
-            </h2>
-            <p className="max-w-2xl mx-auto text-sm sm:text-base text-slate-400 font-semibold leading-relaxed mt-4">
-              A curated showcase of high-converting storefronts, bespoke e-commerce experiences, and custom digital solutions we've designed and engineered.
-            </p>
-          </div>
-
-          {/* Mockups Marquee */}
-          <div className="relative w-full overflow-hidden pt-4 pb-16">
-            {/* Edge Fades for Premium Design */}
-
-            <div className="w-full animate-marquee-left flex gap-12 py-8">
-              {/* Single map with duplicated items for infinite scroll */}
-              {[...portfolioItems, ...portfolioItems].map((item, index) => (
-                <div
-                  key={index}
-                  className="w-[240px] sm:w-[320px] shrink-0 group relative pb-8 transition-all duration-300 transform hover:scale-105"
-                >
-                  {/* Phone Mockup Frame */}
-                  <div className="w-full aspect-[1/2] rounded-[36px] sm:rounded-[48px] bg-[#0c101a] p-2 sm:p-2.5 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] border border-[#1f293d] relative overflow-visible transition-all duration-300 group-hover:shadow-[0_40px_80px_-20px_rgba(36,67,171,0.4)] group-hover:border-[#2443ab]/50">
-                    {/* Top Camera Notch */}
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 sm:w-28 h-5 sm:h-6 bg-[#0c101a] rounded-b-[14px] sm:rounded-b-[24px] z-30 flex items-center justify-center gap-1.5 sm:gap-2 pb-0.5 sm:pb-1">
-                      <div className="w-2 sm:w-3 h-2 sm:h-3 rounded-full bg-slate-900 border border-slate-800" />
-                      <div className="w-1 sm:w-2 h-1 sm:h-2 rounded-full bg-slate-900 border border-slate-800" />
-                    </div>
-
-                    {/* Inner Screen */}
-                    <div className="w-full h-full rounded-[28px] sm:rounded-[38px] overflow-hidden bg-slate-950 relative border border-black/40">
-                      {/* Long Scrolling Screenshot */}
-                      <div className="w-full h-full overflow-y-auto no-scrollbar relative">
-                        <img
-                          src={item.image}
-                          alt={item.name}
-                          className="w-full h-auto object-cover object-top pointer-events-none select-none"
-                        />
-                      </div>
-                    </div>
-
-                    {/* Bottom Card Tag overlapping the bezel */}
-                    <div className="absolute -bottom-8 left-3 right-3 sm:left-6 sm:right-6 bg-[#fafbfc] rounded-[18px] sm:rounded-[24px] p-3 sm:p-5 flex items-center justify-center shadow-[0_20px_40px_-5px_rgba(0,0,0,0.18)] border border-slate-200/80 z-30 transition-all duration-300 group-hover:bg-white">
-                      <span className="text-xs sm:text-base font-extrabold text-[#0d1b3e] tracking-tight text-center">{item.name}</span>
-                    </div>
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
         </section>

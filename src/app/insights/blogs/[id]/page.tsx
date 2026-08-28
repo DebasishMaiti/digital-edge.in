@@ -3,7 +3,7 @@ import { ArrowLeft } from "lucide-react";
 import BlogDetailClient from "./BlogDetailClient";
 
 const blogPosts = {
-  "1": {
+  "how-to-know-whether-service-should-be-seo-aeo-geo": {
     title: "How Do I Know Whether a Service Should Be SEO, AEO, or GEO?",
     tag: "Search Strategy",
     readTime: "6 min read",
@@ -33,7 +33,7 @@ const blogPosts = {
       }
     ]
   },
-  "2": {
+  "ecommerce-growth-roadmap-launch-to-market-leader": {
     title: "The Ecommerce Growth Roadmap: How a Store Goes From Launch to Market Leader",
     tag: "Ecommerce",
     readTime: "7 min read",
@@ -70,6 +70,36 @@ const blogPosts = {
         text: "Skip a stage, and the ones after it get more expensive. Running paid ads before Stage 4’s conversion work is done means paying full price for traffic a better checkout flow could have converted for free. Expanding to a new marketplace before Stage 6’s attribution is in place means growth nobody can actually explain or repeat. A roadmap isn’t a constraint on speed — it’s what makes speed sustainable. Brands that follow this sequence tend to spend less to get more, because every stage is built to make the next one cheaper."
       }
     ]
+  },
+  "boosting-brand-credibility-trust-through-seo": {
+    title: "Boosting Brand Credibility and Trust Through SEO: Why It’s Worth the Investment",
+    tag: "SEO Strategy",
+    readTime: "5 min read",
+    date: "June 29, 2024",
+    author: "Adnan Khan, Head of Search",
+    desc: "In today’s digital age, establishing a brand people trust and perceive as credible is crucial for long-term success. With countless online options, consumers gravitate towards brands they feel confident about. One effective method to build this trust is through search engine optimization (SEO). SEO helps your brand become more visible in search results, which means more people can find and learn about your business. When your website appears at the top of search engine results, it signals to users that your brand is a leading authority in its field.",
+    content: [
+      {
+        heading: "Why Is It Worth the Investment?",
+        text: "Investing in SEO is crucial for several reasons:\nIt helps your brand appear higher in search results, making it easier for potential customers to find you. This increased visibility leads to more website traffic and, eventually, more sales.\nGood SEO practices enhance user experience on your website, which can lead to higher engagement and conversion rates. Users who find your site easy to navigate and relevant to their needs will likely stay longer and take the desired actions.\n\nSEO builds long-term value.\nUnlike paid ads, which stop bringing in traffic once you stop paying for them, SEO can continue to drive organic search traffic to your site for years. This sustained traffic growth helps establish your brand as a trusted authority in your industry, and investing in SEO is a worthwhile strategy for ongoing success."
+      },
+      {
+        heading: "Improving Search Engine Rankings",
+        text: "One of the primary goals of SEO is to improve your website’s ranking on search engine results pages (SERPs). When your website appears at the top of search results, it automatically gains more visibility and credibility. Users tend to trust websites that rank higher because they assume they are more relevant and reliable.\nFor example, if you are search-ranking for your core keywords, appearing on the first page of search results can significantly boost your credibility. People are more likely to visit your website, learn about your services, and consider you a trusted authority.\nYou can use various SEO tools like Google Analytics, Ahrefs, and SEMrush to improve your search engine rankings. These tools help you analyze your website’s performance, identify keywords your target audience is searching for, and monitor your competitors’ strategies."
+      },
+      {
+        heading: "Building Quality Backlinks",
+        text: "Backlinks are links from other websites to your site. They are crucial for SEO because search engines view them as votes of confidence. When reputable websites link to your content, search engines signal that your site is trustworthy and valuable.\nBuilding quality backlinks requires creating high-quality content that others find helpful and want to link to. For instance, writing informative blog posts, producing engaging videos, or publishing in-depth research reports can attract backlinks from other websites.\nTools like Moz, Ahrefs, and Majestic can help you identify potential backlink opportunities, track your backlink profile, and analyze the quality of your backlinks. You enhance your website’s authority and trustworthiness by consistently building and maintaining a solid backlink profile."
+      },
+      {
+        heading: "Enhancing User Experience",
+        text: "User experience (UX) is critical to building trust and credibility. A website that is easy to navigate, fast-loading, and mobile-friendly keeps visitors engaged and sends positive signals to search engines. Good SEO practices ensure that your website provides a seamless user experience, which can lead to higher engagement and conversions.\nFor example, optimizing your site’s speed using tools like Google PageSpeed Insights, ensuring mobile responsiveness with Google’s Mobile-Friendly Test, and improving navigation and layout can greatly enhance UX. When users have a positive experience on your site, they are more likely to trust your brand and return in the future."
+      },
+      {
+        heading: "Sustained Long-Term Growth",
+        text: "Investing in search engine optimization is a smart move for any brand aiming to build credibility and trust. By improving search engine rankings, your brand gains higher visibility and is perceived as more reliable. Building quality backlinks further enhances this trust, showing that other reputable sites vouch for your content. Enhancing user experience ensures visitors find your site easy to navigate and engaging, encouraging them to stay longer and return. These combined efforts boost your brand’s reputation and attract more customers. Effective SEO strategies and tools like Google Analytics, Ahrefs, and Moz can help you achieve these goals. With a strong SEO foundation, your brand can achieve long-term success, standing out in a competitive market and continually drawing organic traffic and potential customers."
+      }
+    ]
   }
 };
 
@@ -77,8 +107,9 @@ type BlogId = keyof typeof blogPosts;
 
 export async function generateStaticParams() {
   return [
-    { id: "1" },
-    { id: "2" }
+    { id: "how-to-know-whether-service-should-be-seo-aeo-geo" },
+    { id: "ecommerce-growth-roadmap-launch-to-market-leader" },
+    { id: "boosting-brand-credibility-trust-through-seo" }
   ];
 }
 

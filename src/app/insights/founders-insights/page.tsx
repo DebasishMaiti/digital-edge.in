@@ -6,7 +6,7 @@ import { ArrowRight, Calendar, Sparkles, Quote } from "lucide-react";
 
 const items = [
   {
-    id: 1,
+    id: "what-include-complete-ecommerce-solution",
     title: "What Include in Complete Ecommerce Solution",
     category: "Founder's Insights",
     tag: "Ecommerce Strategy",
@@ -17,7 +17,7 @@ const items = [
     desc: "A comprehensive breakdown of the core service pillars, key deliverables, and growth metrics that transition a standard online storefront into a market-leading brand."
   },
   {
-    id: 2,
+    id: "why-we-turned-down-40-lakh-retainer",
     title: "Why We Turned Down a ₹40 Lakh Retainer",
     category: "Founder's Insights",
     tag: "Specialization",
@@ -88,18 +88,21 @@ export default function FoundersInsightsPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="bg-white rounded-3xl border border-[#2443ab]/30 shadow-[0_30px_60px_rgba(36,67,171,0.12)] overflow-hidden flex flex-col justify-between group -translate-y-1.5 scale-[1.01] transition-all duration-300"
+                className="bg-white rounded-3xl border border-[#2443ab]/20 shadow-[0_20px_50px_rgba(36,67,171,0.08)] overflow-hidden flex flex-col justify-between group hover:-translate-y-1.5 hover:shadow-[0_30px_60px_rgba(36,67,171,0.15)] transition-all duration-300"
               >
                 <div>
-                  {/* Accent Top Gradient Line */}
-                  <div className="h-1.5 w-full bg-gradient-to-r from-[#0a8bc7] via-[#2443ab] to-[#40159e]" />
-                  
-                  <div className="p-8 sm:p-10 space-y-6 relative">
-                    <div className="absolute top-8 right-8 text-slate-100">
-                      <Quote className="w-16 h-16 stroke-[1.5]" />
-                    </div>
+                  {/* Top Image Banner */}
+                  <div className="relative lg:h-80 w-full border-b border-slate-100 overflow-hidden bg-[#f1f5f9] flex items-center justify-center">
+                    <img 
+                      src="/shomak.png" 
+                      alt={item.author} 
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
 
-                    <div className="flex flex-wrap items-center gap-3 text-xs font-semibold text-slate-400">
+                  <div className="p-8 space-y-5">
+                    {/* Tag & Date */}
+                    <div className="flex items-center gap-3 text-xs font-semibold text-slate-400">
                       <span className="px-3.5 py-1.5 rounded-full bg-[#2443ab]/10 text-[#2443ab] font-bold uppercase tracking-wider text-[10px]">
                         {item.tag}
                       </span>
@@ -109,46 +112,40 @@ export default function FoundersInsightsPage() {
                       </span>
                     </div>
 
+                    {/* Title */}
                     <h3 className="text-xl sm:text-2xl font-black text-[#0d1b3e] leading-snug group-hover:text-[#2443ab] transition-colors duration-200">
                       {item.title}
                     </h3>
 
-                    <div className="relative pl-4 border-l-2 border-[#2443ab] py-1 text-slate-700 italic text-sm sm:text-base font-semibold leading-relaxed bg-[#2443ab]/5 pr-4 rounded-r-xl">
-                      "{item.quote}"
-                    </div>
-
+                    {/* Description */}
                     <p className="text-slate-500 font-semibold text-sm leading-relaxed">
                       {item.desc}
                     </p>
                   </div>
                 </div>
 
-                {/* Founder Info Footer */}
-                <div className="px-8 sm:px-10 pb-8 sm:pb-10 pt-4 border-t border-slate-100 flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    {item.author === "Shomak Mitra" ? (
-                      <img 
-                        src="/shomak.png" 
-                        alt="Shomak Mitra" 
-                        className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover border-2 border-slate-200 shadow-sm"
-                      />
-                    ) : (
-                      <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#2443ab]/10 flex items-center justify-center font-black text-sm text-[#2443ab]">
-                        {item.author.split(" ").map(n => n[0]).join("")}
-                      </div>
-                    )}
+                {/* Bottom Section containing the quote, author metadata, and Read Full Article button */}
+                <div className="px-8 pb-8 space-y-6 pt-2 border-t border-slate-50">
+                  {/* The Quote Text at the bottom */}
+                  <div className="relative pl-4 border-l-2 border-[#2443ab] py-3.5 text-slate-700 italic text-sm sm:text-[15px] font-semibold leading-relaxed bg-[#2443ab]/5 pr-4 rounded-r-xl">
+                    <Quote className="absolute top-2 right-3 w-8 h-8 text-[#2443ab]/10 pointer-events-none" />
+                    "{item.quote}"
+                  </div>
+
+                  {/* Founder Details and button */}
+                  <div className="flex items-center justify-between pt-4 border-t border-slate-100">
                     <div className="space-y-0.5">
                       <div className="text-sm sm:text-base font-black text-[#0d1b3e]">{item.author}</div>
-                      <div className="text-[11px] sm:text-xs font-bold text-slate-550">{item.role}</div>
+                      <div className="text-[10px] sm:text-xs font-bold text-slate-500 uppercase tracking-wider">{item.role}</div>
                     </div>
+                    <Link
+                      href={`/insights/founders-insights/${item.id}`}
+                      className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#0a8bc7] via-[#2443ab] to-[#40159e] text-white text-xs font-black rounded-full shadow-[0_4px_12px_rgba(36,67,171,0.25)] hover:shadow-[0_6px_16px_rgba(36,67,171,0.35)] transition-all duration-300 hover:opacity-95 uppercase tracking-wider whitespace-nowrap"
+                    >
+                      <span>Read Full Article</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
                   </div>
-                  <Link
-                    href={`/insights/founders-insights/${item.id}`}
-                    className="inline-flex items-center gap-1.5 text-xs font-extrabold text-[#2443ab] hover:text-[#40159e] uppercase tracking-wider transition-colors"
-                  >
-                    <span>Read Article</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
                 </div>
               </motion.div>
             ))}

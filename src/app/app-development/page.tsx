@@ -38,12 +38,12 @@ const appDevShowcases = [
     image: "/brand-card-images/hubfit.jpg",
     logo: "/logos/hubfit.jpg",
   },
-  {
-    name: "Ring My Stylist",
-    link: "/company-details/ring-my-stylist",
-    image: "/brand-card-images/rign-my-list.jpg",
-    logo: "/logos/ring-my-list.jpg",
-  }
+  // {
+  //   name: "Ring My Stylist",
+  //   link: "/company-details/ring-my-stylist",
+  //   image: "/brand-card-images/rign-my-list.jpg",
+  //   logo: "/logos/ring-my-list.jpg",
+  // }
 ];
 
 export default function AppDevelopment() {
