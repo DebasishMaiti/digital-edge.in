@@ -90,6 +90,7 @@ const brandShowcases = [
 ];
 
 export default function Home() {
+  
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
