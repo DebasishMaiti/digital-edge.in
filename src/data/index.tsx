@@ -5,6 +5,7 @@ export const brandLogos = [
   // { src: "/brand-logos/msme-logo.png", alt: "MSME Certified" },
   { src: "/brand-logos/aws-genai.png", alt: "AWS Partner" },
   { src: "/brand-logos/startup-india.png", alt: "Startup India" },
+  { src: "/brand-logos/digital-ocean.png", alt: "DigitalOcean" },
 ];
 
 export const brandLogosList = [
@@ -12,7 +13,8 @@ export const brandLogosList = [
   { src: "/brand-logos/google-partner.png", name: "Google Partner" },
   { src: "/brand-logos/meta-logo.png", name: "Meta" },
   { src: "/brand-logos/aws-genai.png", name: "AWS GenAI" },
-  { src: "/brand-logos/startup-india.png", name: "Startup India" }
+  { src: "/brand-logos/startup-india.png", name: "Startup India" },
+  { src: "/brand-logos/digital-ocean.png", name: "DigitalOcean" }
 ];
 
 export const portfolioItems = [

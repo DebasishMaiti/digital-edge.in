@@ -100,6 +100,102 @@ const blogPosts = {
         text: "Investing in search engine optimization is a smart move for any brand aiming to build credibility and trust. By improving search engine rankings, your brand gains higher visibility and is perceived as more reliable. Building quality backlinks further enhances this trust, showing that other reputable sites vouch for your content. Enhancing user experience ensures visitors find your site easy to navigate and engaging, encouraging them to stay longer and return. These combined efforts boost your brand’s reputation and attract more customers. Effective SEO strategies and tools like Google Analytics, Ahrefs, and Moz can help you achieve these goals. With a strong SEO foundation, your brand can achieve long-term success, standing out in a competitive market and continually drawing organic traffic and potential customers."
       }
     ]
+  },
+  "mobile-app-effective-for-small-businesses": {
+    title: "Mobile App: How effective is it for Small Businesses?",
+    tag: "App Development",
+    readTime: "4 min read",
+    date: "November 7, 2022",
+    author: "Shomak Sen, Infrastructure Architect",
+    desc: "From ordering food to getting the water tap fixed, mobile applications are everywhere. We explore how mobile apps can prove a game-changing strategy for small businesses.",
+    content: [
+      {
+        heading: "Introduction",
+        text: "There was a time when the only go-to app on our mobile phones was the one with the 'f' icon - Facebook! Time has changed. We are now experiencing technology on a level unimaginable, especially in Android app development. Consequently, businesses have taken over to apps to offer services by hiring a mobile app development company. From ordering food to getting the water tap fixed, what not is there on mobile applications. In this blog, we shall take a brief look at how mobile apps may prove a game-changing strategy for small businesses."
+      },
+      {
+        heading: "Better Customer Service",
+        text: "Through iOS applications or Android app development, your customers can reach out to you easily through built-in features like chatbots, feedback buttons, and so on. This eliminates the hurdle between the business and the customers. Good customer service is a cornerstone of a successful business."
+      },
+      {
+        heading: "Increased Brand Awareness",
+        text: "The only effective way to create brand awareness is to be where the customer is. It is a known fact that the best way to get the attention of customers is to get into their phones. No, not by spying! That’s illegal! It is by getting an app built for your business from a mobile app development company."
+      },
+      {
+        heading: "Collection of Data and Leads",
+        text: "If potential clients are downloading your app this means they trust you, and, because they trust you, they are happy to give their email IDs or phone numbers. Capturing such leads and using the data to interpret trends is vital to keep the business relevant to the customers."
+      },
+      {
+        heading: "Cost Effective in the Long-run",
+        text: "Getting a mobile application as a small business may be expensive but it pays off well, in the long run. It is a one-time payment with a small recurring amount for maintenance that you may have to pay the mobile app development company. If your business has been running for a good number of years and has a reliable client base, having an app could be a great way to scale up. If you are not sure whether your company needs iOS or Android app development, feel free to find that out through a consultation with a mobile app development company."
+      }
+    ]
+  },
+  "choosing-digital-marketing-agency-12-red-flags": {
+    title: "Choosing a Digital Marketing Agency: 12 Red Flags to Avoid",
+    tag: "Marketing Agency",
+    readTime: "6 min read",
+    date: "July 7, 2025",
+    author: "Adnan Khan, Head of Search",
+    desc: "Hiring the wrong digital marketing agency can burn budget, stall growth, and leave you chasing reports that never translate into ROI. Use the checklist below to spot problem signs early—before the contract is inked.",
+    content: [
+      {
+        heading: "1. No Clear Strategy Beyond “More Traffic”",
+        text: "If an agency pitches “get more clicks” without tying traffic to revenue goals—bounce. What to ask: “How will you connect traffic growth to qualified leads and sales?”"
+      },
+      {
+        heading: "2. Guaranteed Rankings or ROAS",
+        text: "Search and paid-ads algorithms change daily; real pros promise effort, not outcomes. “Guaranteed #1 on Google” is a red-flag cliché."
+      },
+      {
+        heading: "3. One-Size-Fits-All Packages",
+        text: "Pre-boxed Bronze–Silver–Gold plans ignore your funnel, market, and margins. Custom scopes show the agency is thinking about your business— not its menu."
+      },
+      {
+        heading: "4. No Access to Raw Data",
+        text: "You should own (or at least view) Google Analytics, Search Console, and Ads accounts. Agencies that hide behind proprietary dashboards may be masking under-performance."
+      },
+      {
+        heading: "5. Vanity Metrics Over Business KPIs",
+        text: "Monthly reports packed with impressions and likes—but no CPL, CAC, or pipeline value—signal misaligned priorities."
+      },
+      {
+        heading: "6. High Staff Turnover or “Mystery” Team",
+        text: "Frequent account-manager swaps erode momentum. Ask to meet the strategists and specialists who’ll actually execute."
+      },
+      {
+        heading: "7. Outdated Case Studies",
+        text: "A reel of 2019 wins shows stagnation. Look for fresh proof less than 12 months old, ideally in your industry or market size."
+      },
+      {
+        heading: "8. Black-Box Tactics or “Secret Sauce”",
+        text: "Ethical SEO and paid-media work are transparent and well documented. If an agency won’t explain methods, suspect shortcuts that can trigger penalties."
+      },
+      {
+        heading: "9. Heavy Dependence on One Channel",
+        text: "All-Google, all-meta, or “just SEO” approaches ignore channel risk. A credible agency outlines a diversified media mix matched to your customer journey."
+      },
+      {
+        heading: "10. No Conversion-Rate Optimization (CRO) Plan",
+        text: "Driving traffic without improving landing pages wastes ad spend. Ask how they audit UX, page speed, and on-page persuasion."
+      },
+      {
+        heading: "11. Slow or Vague Communication",
+        text: "Delayed replies, unexplained jargon, and missing timelines in the sales cycle often worsen after onboarding. Demand a sample reporting cadence and SLA."
+      },
+      {
+        heading: "12. Misaligned Pricing and Deliverables",
+        text: "Flat monthly fees that don’t scale with workload (or tie to performance) can hide under-resourcing. Ensure hours, outputs, and KPIs are spelled out in the MSA."
+      },
+      {
+        heading: "How to Vet Agencies the Right Way",
+        text: "Request a discovery call, not a generic proposal. Ask for two recent client references in a similar vertical or budget tier. Insist on channel ownership. Your business keeps the ad accounts. Score proposals on strategy, transparency, and cultural fit, not on price alone."
+      },
+      {
+        heading: "Final Thoughts",
+        text: "A reliable digital marketing partner is measured by proactive strategy, data transparency, and business-level accountability—never glittering promises. Use the red-flag checklist above, and you’ll filter pretenders fast. Ready to see an agency that checks every box? Book a free 30-minute strategy call with Digital Edge 360 and discover how data-driven growth really looks."
+      }
+    ]
   }
 };
 
@@ -109,7 +205,9 @@ export async function generateStaticParams() {
   return [
     { id: "how-to-know-whether-service-should-be-seo-aeo-geo" },
     { id: "ecommerce-growth-roadmap-launch-to-market-leader" },
-    { id: "boosting-brand-credibility-trust-through-seo" }
+    { id: "boosting-brand-credibility-trust-through-seo" },
+    { id: "mobile-app-effective-for-small-businesses" },
+    { id: "choosing-digital-marketing-agency-12-red-flags" }
   ];
 }
 

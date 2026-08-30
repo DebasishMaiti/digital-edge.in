@@ -545,6 +545,7 @@ export default function Home() {
                   "/brand-logos/iso.png",
                   "/brand-logos/msme-logo.png",
                   "/brand-logos/startup-india.png",
+                  "/brand-logos/digital-ocean.png",
                 ].map((src, index) => (
                   <div key={index} className="w-24 h-24 rounded-full bg-white/5 border border-white/10 shadow-lg flex items-center justify-center p-4 hover:scale-110 transition-transform duration-300 backdrop-blur-sm flex-shrink-0">
                     <div className="relative w-full h-full">
@@ -562,6 +563,7 @@ export default function Home() {
                   "/brand-logos/iso.png",
                   "/brand-logos/msme-logo.png",
                   "/brand-logos/startup-india.png",
+                  "/brand-logos/digital-ocean.png",
                 ].map((src, index) => (
                   <div key={`dup-${index}`} className="w-24 h-24 rounded-full bg-white/5 border border-white/10 shadow-lg flex items-center justify-center p-4 hover:scale-110 transition-transform duration-300 backdrop-blur-sm flex-shrink-0">
                     <div className="relative w-full h-full">
@@ -653,8 +655,8 @@ export default function Home() {
                     </span>
                   </div>
                   {/* Code viewport */}
-                  <div className="relative font-mono text-[10px] sm:text-[10px] md:text-[12px] leading-relaxed text-slate-700 select-none flex items-start">
-                    <pre ref={codeRef} className="whitespace-pre-wrap flex-1 min-h-[220px]"></pre>
+                  <div className="relative font-mono text-[10px] sm:text-[10px] md:text-[12px] leading-relaxed text-slate-700 select-none flex items-start overflow-hidden max-w-full">
+                    <pre ref={codeRef} className="whitespace-pre-wrap flex-1 min-h-[220px] overflow-hidden max-w-full"></pre>
                   </div>
                 </div>
 
@@ -2337,7 +2339,7 @@ export default function Home() {
               <div className="text-left space-y-3">
                 <span className="block text-[10px] sm:text-xs font-black tracking-[0.25em] text-[#2443ab] uppercase">TESTIMONIALS</span>
                 <h2 className="text-3xl sm:text-5xl font-black text-[#0d1b3e] tracking-tight leading-tight">
-                  Founders & CMOs<br />Love Us.
+                  What Our<br />Clients Say.
                 </h2>
               </div>
             </div>
@@ -2984,6 +2986,7 @@ export default function Home() {
           <img src="/brand-logos/google-partner.png" alt="Google Premier Partner" className="h-20 w-auto object-contain" />
           <img src="/brand-logos/meta-logo.png" alt="Meta Business Partner" className="h-20 w-auto object-contain" />
           <img src="/brand-logos/iso.png" alt="ISO 27001 Certified" className="h-20 w-auto object-contain" />
+          <img src="/brand-logos/digital-ocean.png" alt="DigitalOcean" className="h-20 w-auto object-contain" />
         </div>
       </div>
     </>

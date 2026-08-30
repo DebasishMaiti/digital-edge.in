@@ -49,6 +49,36 @@ const items = [
       "How quality backlinks act as votes of confidence",
       "Why user experience (UX) directly impacts brand reputation"
     ]
+  },
+  {
+    id: "mobile-app-effective-for-small-businesses",
+    title: "Mobile App: How effective is it for Small Businesses?",
+    category: "Blogs",
+    tag: "App Development",
+    readTime: "4 min read",
+    date: "Nov 07, 2022",
+    image: "/logs/mobileapp.jpg",
+    desc: "From ordering food to getting the water tap fixed, mobile applications are everywhere. We explore how mobile apps can prove a game-changing strategy for small businesses.",
+    details: [
+      "Improving customer service accessibility",
+      "Increasing brand awareness and lead capture",
+      "Evaluating long-term cost effectiveness"
+    ]
+  },
+  {
+    id: "choosing-digital-marketing-agency-12-red-flags",
+    title: "Choosing a Digital Marketing Agency: 12 Red Flags to Avoid",
+    category: "Blogs",
+    tag: "Marketing Agency",
+    readTime: "6 min read",
+    date: "July 07, 2025",
+    image: "/logs/digital-marketing.jpg",
+    desc: "Hiring the wrong digital marketing agency can burn budget, stall growth, and leave you chasing reports that never translate into ROI. We highlight 12 red flags to watch out for.",
+    details: [
+      "Spotting hidden fees and vanity metrics",
+      "Demanding access to raw data and clear KPIs",
+      "Vetting agency proposals the right way"
+    ]
   }
 ];
 

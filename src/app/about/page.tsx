@@ -288,6 +288,86 @@ export default function About() {
           </div>
         </section>
 
+        {/* From the Founder's Desk Section */}
+        <section className="relative z-10 py-20 bg-white border-t border-slate-100 overflow-hidden">
+          {/* Decorative radial gradients for premium feel */}
+          <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:32px_32px] opacity-35 pointer-events-none" />
+          
+          <div className="mx-auto max-w-[1300px] px-6 sm:px-8 lg:px-12 relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center max-w-5xl mx-auto">
+              
+              {/* Left Column: Image with beautiful styling */}
+              <div className="lg:col-span-5 flex justify-center">
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7 }}
+                  className="relative group w-full max-w-[360px]"
+                >
+                  {/* Image container with no padding or border */}
+                  <div className="relative w-full aspect-[4/5] rounded-[24px] overflow-hidden bg-slate-50 shadow-xl">
+                    <Image
+                      src="/founder.jpg"
+                      alt="From the Founder's desk"
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      priority
+                    />
+                    
+                    {/* Premium Label Overlay */}
+                    <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md px-4 py-3 rounded-2xl shadow-lg">
+                      <span className="block text-[10px] font-black tracking-widest text-[#2443ab] uppercase">
+                        FOUNDER'S PERSPECTIVE
+                      </span>
+                      <h4 className="text-sm font-black text-[#0d1b3e] mt-0.5">
+                        From the Founder's Desk
+                      </h4>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Right Column: Founder's Message */}
+              <div className="lg:col-span-7 space-y-6 text-left">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-4 py-2 text-[10px] sm:text-xs font-black tracking-[0.2em] text-[#2443ab] uppercase shadow-sm">
+                  LEADERSHIP LETTER
+                </span>
+                
+                <h2 className="text-3xl sm:text-4xl font-black text-[#0d1b3e] tracking-tight leading-tight">
+                  "We don't build to ship. <br />
+                  We build to <span className="bg-gradient-to-r from-[#0a8bc7] via-[#2443ab] to-[#40159e] bg-clip-text text-transparent">solve & scale</span>."
+                </h2>
+
+                <div className="space-y-4 text-slate-600 font-semibold text-sm sm:text-base leading-relaxed">
+                  <p>
+                    When we started Digital Edge 360, the digital landscape was cluttered with standard, templated solutions. Agency models focused on completing a checklist and handing over the keys. 
+                  </p>
+                  <p>
+                    We wanted to write a different story. To us, every project is a partnership built on trust and alignment. We measure our success not by the launch date, but by the tangible impact we create—whether it's scaling conversion rates, optimizing infrastructure, or acquiring lifelong customers.
+                  </p>
+                  <p>
+                    Our promise is simple: a senior-led engineering approach, fully aligned with your business goals, and a relentless focus on creating performance that lasts.
+                  </p>
+                </div>
+
+                <div className="pt-4 flex items-center gap-4">
+                  <div className="h-px w-12 bg-slate-200" />
+                  <div>
+                    <span className="block text-sm font-black text-[#0d1b3e]">
+                      The Digital Edge 360 Team
+                    </span>
+                    <span className="block text-xs font-bold text-slate-400">
+                      Digital Edge 360
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
         {/* 4. What We Do Section */}
         <section className="mx-auto max-w-[1300px] px-6 sm:px-8 lg:px-12 py-20 text-center relative z-10 border-t border-slate-100">
           <div className="max-w-3xl mx-auto mb-16 space-y-4">

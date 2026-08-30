@@ -281,6 +281,7 @@ export default function Solutions() {
         <img src="/brand-logos/google-partner.png" alt="Google Premier Partner" className="h-20 w-auto object-contain" />
         <img src="/brand-logos/meta-logo.png" alt="Meta Business Partner" className="h-20 w-auto object-contain" />
         <img src="/brand-logos/iso.png" alt="ISO 27001 Certified" className="h-20 w-auto object-contain" />
+        <img src="/brand-logos/digital-ocean.png" alt="DigitalOcean" className="h-20 w-auto object-contain" />
       </div>
     </div>
     </>
