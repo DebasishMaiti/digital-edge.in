@@ -206,7 +206,7 @@ export default function Home() {
 
   return (
     <>
-      <link rel="canonical" href="https://digitaledge360.in" />
+      <link rel="canonical" href="https://digitaledge360.in"/>
 
       <div className="relative w-full bg-[#fafbfc] min-h-screen text-slate-800 overflow-hidden">
 
