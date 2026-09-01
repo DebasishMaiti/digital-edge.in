@@ -533,7 +533,7 @@ export default function Home() {
           </div>
 
           {/* Partner Logos Marquee - Full Width Center Bottom */}
-          <div className="w-full relative z-40 pb-16 pt-8 px-6 mt-4 sm:px-12 flex flex-col items-center justify-center text-center">
+          <div className="w-full relative z-40 pb-8 pt-4 px-6 mt-2 sm:px-12 flex flex-col items-center justify-center text-center">
 
             <div className="relative w-full max-w-[960px] overflow-hidden flex [mask-image:_linear-gradient(to_right,_transparent_0%,_black_10%,_black_90%,_transparent_100%)] flex-row">
               <div className="flex gap-12 items-center animate-marquee-infinite py-4 pr-12">
@@ -578,7 +578,7 @@ export default function Home() {
         </section>
 
         {/* The Elite Build Section */}
-        <section className="relative z-10 mx-auto max-w-[1500px] px-6 sm:px-8 lg:px-24 py-20 bg-gradient-to-b from-white to-[#fafbfc] overflow-hidden">
+        <section className="relative z-10 mx-auto max-w-[1500px] px-6 sm:px-8 lg:px-24 py-12 md:py-16 bg-gradient-to-b from-white to-[#fafbfc] overflow-hidden">
           {/* Background text */}
           <div className="absolute left-[5%] top-[20%] lg:top-[10%] z-0 font-black text-slate-100 text-[9rem] sm:text-[14rem] md:text-[18rem] uppercase pointer-events-none select-none tracking-tighter leading-none">
             FULL
@@ -587,8 +587,8 @@ export default function Home() {
             STACK
           </div>
           {/* Section Header */}
-          <div className="text-center mb-16 relative z-10">
-            <div className="text-center mb-12">
+          <div className="text-center mb-10 sm:mb-12 relative z-10">
+            <div className="text-center mb-8 sm:mb-10">
               <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-4 py-2 text-[12px] font-extrabold tracking-[0.2em] text-slate-500 uppercase shadow-sm">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="h-3 w-3 text-emerald-500">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -736,9 +736,9 @@ export default function Home() {
 
 
         {/* Our Works Section */}
-        <section ref={mobileSectionRef} className="relative z-10 w-full py-16 overflow-hidden bg-gradient-to-b from-white to-[#fafbfc]">
+        <section ref={mobileSectionRef} className="relative z-10 w-full py-10 md:py-12 overflow-hidden bg-gradient-to-b from-white to-[#fafbfc]">
           {/* Section Header */}
-          <div className="text-center mb-12 px-6 sm:px-8 lg:px-12">
+          <div className="text-center mb-8 px-6 sm:px-8 lg:px-12">
             <h2 className="text-4xl sm:text-6xl font-black text-[#0d1b3e] tracking-tight mt-4">
               Our <span className="text-[#2443ab]">Works</span>
             </h2>
@@ -748,10 +748,10 @@ export default function Home() {
           </div>
 
           {/* Mockups Marquee */}
-          <div className="relative w-full overflow-hidden pt-4 pb-16">
+          <div className="relative w-full overflow-hidden pt-2 pb-8">
             {/* Edge Fades for Premium Design */}
 
-            <div className="w-full animate-marquee-left flex gap-12 py-8">
+            <div className="w-full animate-marquee-left flex gap-12 py-4">
               {/* Single map with duplicated items for infinite scroll */}
               {[...portfolioItems, ...portfolioItems].map((item, index) => (
                 <div
@@ -904,7 +904,7 @@ export default function Home() {
         </section> */}
 
         {/* What We Do - Full-Stack Growth & Digital Architecture Section */}
-        <section className="relative z-10 w-full py-24 bg-gradient-to-br from-indigo-100/40 via-purple-100/40 to-indigo-50/40 border-y border-slate-200/60 overflow-hidden">
+        <section className="relative z-10 w-full py-12 md:py-16 bg-gradient-to-br from-indigo-100/40 via-purple-100/40 to-indigo-50/40 border-y border-slate-200/60 overflow-hidden">
           <div className="mx-auto max-w-[1500px] px-6 sm:px-8 lg:px-12">
 
             {/* Header container */}
@@ -986,11 +986,11 @@ export default function Home() {
         </section>
 
         {/* Brand Showcase Grid Section */}
-        <section className="relative z-10 w-full py-32 sm:py-40 bg-[#fafbfc] border-b border-slate-100/80 overflow-hidden">
+        <section className="relative z-10 w-full py-12 md:py-16 bg-[#fafbfc] border-b border-slate-100/80 overflow-hidden">
           <div className="max-w-[1400px] mx-auto px-8 sm:px-16 lg:px-24">
 
             {/* Header */}
-            <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <div className="text-center max-w-3xl mx-auto mb-10 space-y-4">
               <span className="inline-flex items-center gap-1.5 rounded-full border border-purple-250 bg-purple-50/80 px-4 py-2 text-[10px] sm:text-xs font-black tracking-[0.2em] text-purple-700 uppercase shadow-sm">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 text-purple-600">
                   <path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192L12 .587z" />
@@ -1056,7 +1056,7 @@ export default function Home() {
         </section>
 
         {/* Five Vendors & Growth Help Section */}
-        <section className="relative z-10 py-24 bg-gradient-to-b from-[#fafbfc] via-white to-[#fafbfc] border-t border-b border-slate-100 overflow-hidden">
+        <section className="relative z-10 py-12 md:py-16 bg-gradient-to-b from-[#fafbfc] via-white to-[#fafbfc] border-t border-b border-slate-100 overflow-hidden">
           {/* Decorative shapes */}
           <div className="absolute top-[20%] left-[-5%] w-[450px] h-[450px] rounded-full bg-[radial-gradient(circle_at_center,rgba(36,67,171,0.02)_0%,transparent_70%)] pointer-events-none" />
           <div className="absolute bottom-[20%] right-[-5%] w-[550px] h-[550px] rounded-full bg-[radial-gradient(circle_at_center,rgba(10,139,199,0.02)_0%,transparent_70%)] pointer-events-none" />
@@ -1064,7 +1064,7 @@ export default function Home() {
           <div className="max-w-[1300px] mx-auto px-6 sm:px-8 lg:px-12">
 
             {/* H2 Heading & H3 Subheading */}
-            <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <div className="text-center max-w-3xl mx-auto mb-10 space-y-4">
               <span className="inline-flex items-center gap-1.5 rounded-full border border-red-200 bg-red-50/50 px-4 py-2 text-[10px] sm:text-xs font-black tracking-[0.2em] text-red-500 uppercase shadow-sm">
                 <span>The Core Problem</span>
               </span>
@@ -1077,7 +1077,7 @@ export default function Home() {
             </div>
 
             {/* Connected Vertical Timeline Step-by-Step Layout */}
-            <div className="relative max-w-5xl mx-auto mt-20">
+            <div className="relative max-w-5xl mx-auto mt-12 md:mt-14">
               {/* Central dashed line */}
               <div className="absolute left-4 lg:left-1/2 top-0 bottom-0 w-0.5 border-l-2 border-dashed border-slate-200 -translate-x-1/2 z-0" />
 
@@ -1246,7 +1246,7 @@ export default function Home() {
             </div>
 
             {/* How We Help You Grow Section */}
-            <div className="mt-40 space-y-20">
+            <div className="mt-16 md:mt-20 space-y-10 md:space-y-12">
               <div className="text-center max-w-3xl mx-auto space-y-4">
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-200 bg-blue-50/50 px-4 py-2 text-[10px] sm:text-xs font-black tracking-[0.2em] text-blue-600 uppercase shadow-sm">
                   <span>OUR CAPABILITIES</span>
@@ -1320,7 +1320,7 @@ export default function Home() {
         {/* what makes us different Section */}
         <section ref={mobileSectionRef} className="relative z-10 w-full overflow-hidden">
           {/* Dark Header Part */}
-          <div className="bg-gradient-to-b from-[#060b24] via-[#09102c] to-[#040818] text-white pt-24 pb-36 relative overflow-hidden">
+          <div className="bg-gradient-to-b from-[#060b24] via-[#09102c] to-[#040818] text-white pt-14 pb-20 md:pt-16 md:pb-24 relative overflow-hidden">
             {/* Background elements */}
             <div className="absolute top-1/2 left-8 -translate-y-1/2 opacity-20 pointer-events-none">
               {/* Dot pattern */}
@@ -1364,8 +1364,8 @@ export default function Home() {
           </div>
 
           {/* Light Cards Part */}
-          <div className="bg-white py-24 relative">
-            <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 space-y-24">
+          <div className="bg-white py-12 md:py-16 relative">
+            <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 space-y-12 md:space-y-16">
 
               {/* Row 1 */}
               <motion.div
@@ -1546,7 +1546,7 @@ export default function Home() {
         </section>
 
         {/* The Problem Section */}
-        <section className="relative z-10 w-full py-24 bg-gradient-to-b from-[#fafbfc] to-white border-b border-slate-100 overflow-hidden">
+        <section className="relative z-10 w-full py-12 md:py-16 bg-gradient-to-b from-[#fafbfc] to-white border-b border-slate-100 overflow-hidden">
           {/* Ambient Glows */}
           <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-[#ff477e]/5 rounded-full blur-[120px] pointer-events-none" />
           <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-emerald-500/5 rounded-full blur-[120px] pointer-events-none" />
@@ -1554,7 +1554,7 @@ export default function Home() {
           <div className="max-w-[1300px] mx-auto px-6 sm:px-8 lg:px-12">
 
             {/* Badge & Header */}
-            <div className="text-center max-w-4xl mx-auto mb-16 space-y-4">
+            <div className="text-center max-w-4xl mx-auto mb-10 space-y-4">
               <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-4 py-2 text-[10px] sm:text-xs font-black tracking-[0.25em] text-[#2443ab] uppercase shadow-sm">
                 <span>03. The Problem</span>
               </span>
@@ -1638,14 +1638,14 @@ export default function Home() {
         </section>
 
         {/* How We Work Section */}
-        <section className="relative z-10 py-32 bg-gradient-to-b from-white via-slate-50 to-white border-t border-slate-100/80 overflow-hidden">
+        <section className="relative z-10 py-12 md:py-16 bg-gradient-to-b from-white via-slate-50 to-white border-t border-slate-100/80 overflow-hidden">
           {/* Decorative background gradients */}
           <div className="absolute top-[10%] left-[-10%] w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle_at_center,rgba(36,67,171,0.03)_0%,transparent_70%)] pointer-events-none" />
           <div className="absolute bottom-[10%] right-[-10%] w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle_at_center,rgba(10,139,199,0.03)_0%,transparent_70%)] pointer-events-none" />
 
           <div className="max-w-[1300px] mx-auto px-6 sm:px-8 lg:px-12">
             {/* Header */}
-            <div className="text-center max-w-3xl mx-auto mb-28">
+            <div className="text-center max-w-3xl mx-auto mb-12 md:mb-14">
               <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-4 py-2 text-[10px] font-extrabold tracking-[0.25em] text-[#2443ab] uppercase shadow-sm mb-4">
                 HOW WE WORK
               </span>
@@ -1658,7 +1658,7 @@ export default function Home() {
             </div>
 
             {/* Alternating Steps Section */}
-            <div className="space-y-32">
+            <div className="space-y-14 md:space-y-16">
 
               {/* Step 1: Audit (Left Image, Right Content) */}
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -1916,7 +1916,7 @@ export default function Home() {
         </section>
 
         {/* Shopify Trust Badge Section */}
-        <section className="relative z-10 py-24 bg-gradient-to-b from-[#fafbfc] via-white to-[#fafbfc] overflow-hidden">
+        <section className="relative z-10 py-12 md:py-16 bg-gradient-to-b from-[#fafbfc] via-white to-[#fafbfc] overflow-hidden">
           {/* Glow Effects */}
           <div className="absolute top-[20%] left-[-10%] w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle_at_center,rgba(0,128,96,0.06)_0%,transparent_70%)] pointer-events-none blur-[40px]" />
           <div className="absolute bottom-[20%] right-[-10%] w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.06)_0%,transparent_70%)] pointer-events-none blur-[40px]" />
@@ -2061,13 +2061,13 @@ export default function Home() {
         </section>
 
         {/* The Offer / Digital Growth Audit Section */}
-        <section className="relative z-10 py-24 bg-gradient-to-b from-[#fafbfc] via-[#f1f5f9] to-[#fafbfc] text-slate-800 overflow-hidden border-t border-b border-slate-100">
+        <section className="relative z-10 py-12 md:py-16 bg-gradient-to-b from-[#fafbfc] via-[#f1f5f9] to-[#fafbfc] text-slate-800 overflow-hidden border-t border-b border-slate-100">
           {/* Soft Glow Effects */}
           <div className="absolute top-[-10%] right-[-10%] w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle_at_center,rgba(56,189,248,0.08)_0%,transparent_70%)] pointer-events-none blur-[60px]" />
           <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle_at_center,rgba(52,211,153,0.06)_0%,transparent_70%)] pointer-events-none blur-[60px]" />
 
           <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
-            <div className="max-w-4xl mx-auto text-center space-y-6 mb-16">
+            <div className="max-w-4xl mx-auto text-center space-y-6 mb-10">
               {/* Badge */}
               <motion.div
                 initial={{ opacity: 0, y: 15 }}
@@ -2212,7 +2212,7 @@ export default function Home() {
         </section>
 
         {/* Case Studies Section */}
-        <section className="relative z-10 py-24 bg-gradient-to-b from-[#fafbfc] via-[#f8fafc] to-white border-b border-slate-100 overflow-hidden">
+        <section className="relative z-10 py-12 md:py-16 bg-gradient-to-b from-[#fafbfc] via-[#f8fafc] to-white border-b border-slate-100 overflow-hidden">
           {/* Subtle decoration elements */}
           <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:32px_32px] opacity-30 pointer-events-none" />
           <div className="absolute top-[20%] left-[-10%] w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.05)_0%,transparent_60%)] pointer-events-none blur-[60px]" />
@@ -2220,7 +2220,7 @@ export default function Home() {
 
           <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
             {/* Header */}
-            <div className="max-w-3xl mx-auto text-center space-y-4 mb-20">
+            <div className="max-w-3xl mx-auto text-center space-y-4 mb-10 md:mb-12">
               <span className="inline-flex items-center gap-2 rounded-full border border-blue-150 bg-blue-50/80 px-4 py-2 text-[10px] sm:text-xs font-black tracking-[0.2em] text-blue-600 uppercase shadow-sm">
                 <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
                 <span>CASE STUDIES</span>
@@ -2328,11 +2328,11 @@ export default function Home() {
         </section>
 
         {/* Testimonials Section */}
-        <section className="relative z-10 py-24 bg-gradient-to-b from-white to-[#fafbfc] border-t border-slate-100 overflow-hidden">
+        <section className="relative z-10 py-12 md:py-16 bg-gradient-to-b from-white to-[#fafbfc] border-t border-slate-100 overflow-hidden">
           {/* Subtle dot grid background texture */}
           <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none z-0" />
 
-          <div className="relative z-10 mx-auto max-w-[1500px] px-6 sm:px-8 lg:px-12 mb-12">
+          <div className="relative z-10 mx-auto max-w-[1500px] px-6 sm:px-8 lg:px-12 mb-8">
 
             {/* Header Row */}
             <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 max-w-6xl mx-auto">
@@ -2346,7 +2346,7 @@ export default function Home() {
           </div>
 
           {/* Testimonials Carousel */}
-          <div className="relative z-10 mx-auto max-w-[1100px] px-6 sm:px-8 lg:px-12 mt-12">
+          <div className="relative z-10 mx-auto max-w-[1100px] px-6 sm:px-8 lg:px-12 mt-6 md:mt-8">
             <div className="relative flex items-center justify-between">
               {/* Prev Button */}
               <button
@@ -2515,8 +2515,8 @@ export default function Home() {
         </section>
 
         {/* Trusted by Category Kings Section (Grid Format) */}
-        <section className="relative z-10 py-16 bg-[#fafbfc] border-t border-slate-100 overflow-hidden">
-          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-center mb-12">
+        <section className="relative z-10 py-10 md:py-12 bg-[#fafbfc] border-t border-slate-100 overflow-hidden">
+          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-center mb-8">
             {/* Header Icon */}
             <div className="flex justify-center mb-3">
               <div className="w-12 h-12 bg-blue-50/50 rounded-full flex items-center justify-center text-blue-600">
@@ -2528,7 +2528,7 @@ export default function Home() {
 
             <span className="block text-sm font-extrabold text-[#2443ab] tracking-wide mb-1 uppercase">Our Clients</span>
             <h2 className="text-3xl sm:text-4xl font-black text-[#0d1b3e] tracking-tight">
-              75+ Active Clients
+              75+ Happy Clients
             </h2>
           </div>
 
@@ -2625,7 +2625,7 @@ export default function Home() {
         </section>
 
         {/* Why Us Section */}
-        <section className="relative z-10 py-32 bg-white border-t border-slate-100 overflow-hidden">
+        <section className="relative z-10 py-12 md:py-16 bg-white border-t border-slate-100 overflow-hidden">
           <div className="max-w-[1500px] mx-auto px-6 sm:px-8 lg:px-12">
             {/* Header */}
             <motion.div
@@ -2633,7 +2633,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className="text-center mb-16"
+              className="text-center mb-10"
             >
               <div className="flex items-center justify-center gap-3 mb-3">
                 <span className="w-8 h-[2px] bg-[#2443ab]" />
@@ -2870,7 +2870,7 @@ export default function Home() {
         </section>
 
         {/* FAQ Section */}
-        <section className="relative z-10 py-24 bg-gradient-to-b from-[#fafbfc] to-white border-t border-slate-100 overflow-hidden">
+        <section className="relative z-10 py-12 md:py-16 bg-gradient-to-b from-[#fafbfc] to-white border-t border-slate-100 overflow-hidden">
           <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
 
             {/* Header */}
@@ -2879,7 +2879,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className="text-center mb-16"
+              className="text-center mb-10"
             >
               <span className="block text-[30px] font-extrabold text-[#2443ab] tracking-[0.25em] uppercase mb-3">FAQS</span>
               <h2 className="text-3xl sm:text-5xl font-black text-[#0d1b3e] tracking-tight leading-tight">
@@ -2947,7 +2947,7 @@ export default function Home() {
         </section>
 
         {/* Final CTA Section */}
-        <section id="strategy-call" className="relative z-10 mx-auto w-full px-6 sm:px-8 lg:px-12 py-24 bg-white border-t border-slate-100">
+        <section id="strategy-call" className="relative z-10 mx-auto w-full px-6 sm:px-8 lg:px-12 py-12 md:py-16 bg-white border-t border-slate-100">
 
           {/* Container */}
           <div className="max-w-3xl mx-auto text-center flex flex-col items-center">
@@ -2981,7 +2981,7 @@ export default function Home() {
           </div>
         </section>
         {/* Trust line/images beneath button */}
-        <div className="flex flex-wrap items-center bg-white justify-center gap-32 opacity-95 transition-opacity duration-300">
+        <div className="flex flex-wrap items-center bg-white justify-center gap-12 sm:gap-16 lg:gap-20 py-8 opacity-95 transition-opacity duration-300">
           <img src="/brand-logos/shopify-plus.png" alt="Shopify Plus Certified" className="h-20 w-auto object-contain" />
           <img src="/brand-logos/google-partner.png" alt="Google Premier Partner" className="h-20 w-auto object-contain" />
           <img src="/brand-logos/meta-logo.png" alt="Meta Business Partner" className="h-20 w-auto object-contain" />

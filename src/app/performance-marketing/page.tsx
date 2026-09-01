@@ -256,7 +256,7 @@ export default function PerformanceMarketing() {
 
             {/* Right Column: CTA Card */}
             <div className="lg:col-span-6 flex justify-center relative w-full">
-              <LeadForm showDecorations={false} />
+              <LeadForm showDecorations={false} initialServiceType="marketing" />
             </div>
           </div>
         </section>
@@ -264,7 +264,7 @@ export default function PerformanceMarketing() {
         {/* Marketing Showcase Marquee Section */}
         <section className="relative z-10 py-16 bg-white border-b border-slate-100/80 overflow-hidden">
           <div className="w-full">
-            <Marquee speed={95} gradient={true} gradientColor="white" gradientWidth={80} pauseOnHover={true} play={true}>
+            <Marquee speed={95} gradient={true} gradientColor="white" gradientWidth={80} pauseOnHover={false} play={true}>
               {[
                 { src: "/marketing-slider/Chris-Louis.png", alt: "Chris Louis" },
                 { src: "/marketing-slider/Ducati.png", alt: "Ducati" },
@@ -308,6 +308,99 @@ export default function PerformanceMarketing() {
                 delay={0.25}
               />
             </p>
+          </div>
+        </section>
+
+        {/* Ad Performance & Multi-Channel Campaigns Section */}
+        <section className="relative z-10 w-full py-24 sm:py-32 bg-white overflow-hidden border-b border-slate-100">
+          <div className="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+              
+              {/* Left Column: Visual Showcase with Image (Enlarged) */}
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="lg:col-span-7 relative w-full"
+              >
+                {/* Backdrop Glow */}
+                <div className="absolute -inset-6 bg-gradient-to-r from-blue-600/20 via-indigo-600/20 to-purple-600/20 rounded-[44px] blur-3xl opacity-70 pointer-events-none" />
+                
+                {/* Main Image Frame - High resolution enlarged display */}
+                <div className="relative rounded-[32px] overflow-hidden border border-slate-200/90 shadow-[0_25px_60px_rgba(0,0,0,0.15)] bg-slate-900">
+                  <Image
+                    src="/ads.jpg"
+                    alt="Performance Marketing Ad Campaigns"
+                    width={1200}
+                    height={900}
+                    className="w-full h-auto object-cover"
+                    priority
+                  />
+                </div>
+              </motion.div>
+
+              {/* Right Column: Content */}
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="lg:col-span-5 space-y-6 text-left"
+              >
+                <span className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-4 py-1.5 text-xs font-black tracking-widest text-sky-700 uppercase shadow-sm">
+                  <span className="w-2 h-2 rounded-full bg-sky-500 animate-pulse" />
+                  Multi-Channel Ad Dominance
+                </span>
+
+                <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0d1b3e] tracking-tight leading-tight">
+                  High-Converting Ad Campaigns Engineered for <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Maximum Profit</span>
+                </h3>
+
+                <p className="text-base sm:text-lg text-slate-600 font-medium leading-relaxed">
+                  Great performance marketing relies on creative excellence paired with surgical audience targeting. We craft high-impact ad creatives, optimize conversion funnels, and scale budgets smoothly without diluting return on investment.
+                </p>
+
+                {/* Key Points */}
+                <div className="space-y-4 pt-2">
+                  {[
+                    {
+                      title: "High-Impact Visual Creatives",
+                      desc: "Designed to stop the scroll, engage high-intent buyers, and dramatically increase click-through rates (CTR)."
+                    },
+                    {
+                      title: "Precision Audience & Intent Targeting",
+                      desc: "Deploying custom lookalikes, retargeting pools, and high-converting search keywords across Meta and Google."
+                    },
+                    {
+                      title: "Server-Side Conversion Tracking (CAPI)",
+                      desc: "Ensuring 100% accurate data attribution so every ad dollar spent is tracked back to actual revenue generated."
+                    }
+                  ].map((point, idx) => (
+                    <div key={idx} className="flex items-start gap-4 p-4 rounded-2xl bg-slate-50/80 border border-slate-100 hover:border-blue-200 transition-colors duration-300">
+                      <div className="w-8 h-8 rounded-xl bg-blue-100 border border-blue-200 flex items-center justify-center text-blue-700 font-bold shrink-0 mt-0.5">
+                        {idx + 1}
+                      </div>
+                      <div>
+                        <h4 className="text-base font-black text-[#0d1b3e]">{point.title}</h4>
+                        <p className="text-sm text-slate-500 font-medium leading-relaxed mt-0.5">{point.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="pt-4">
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#0a8bc7] via-[#2443ab] to-[#40159e] text-white text-xs font-extrabold rounded-full transition-all duration-300 shadow-[0_8px_20px_rgba(36,67,171,0.25)] hover:shadow-[0_10px_24px_rgba(64,21,158,0.4)] hover:opacity-95 uppercase tracking-wider"
+                  >
+                    <span>Scale Your Paid Ads Today</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </motion.div>
+
+            </div>
           </div>
         </section>
 

@@ -15,6 +15,10 @@ const caseStudiesMetadata: Record<string, { title: string; description: string }
     title: "Creative Ecotech Case Study | Digital Edge 360°",
     description: "How Digital Edge 360 helped Creative Ecotech, an eco-friendly plastics brand, build a clearer, trust-building digital presence."
   },
+  "dooli": {
+    title: "Dooli Case Study | Digital Edge 360°",
+    description: "How Digital Edge 360 built Dooli, a versatile ride-hailing, parcel delivery, and JCB rental mobile application."
+  },
   "ducati": {
     title: "Ducati Kolkata Case Study | Digital Edge 360°",
     description: "How Digital Edge 360 grew Ducati Kolkata's showroom footfall through influencer marketing, social storytelling & events."
@@ -94,6 +98,18 @@ const caseStudiesMetadata: Record<string, { title: string; description: string }
   "truboy-bbq": {
     title: "TruBoy BBQ Case Study | Digital Edge 360°",
     description: "How Digital Edge 360 helped TruBoy BBQ boost Average Order Value from $30 to $250 through strategic upselling and combos."
+  },
+  "o2bodmas": {
+    title: "O2 BODMAS Case Study | Digital Edge 360°",
+    description: "How Digital Edge 360 built the O2 BODMAS EdTech app with live classes, test series, and low-latency video streaming."
+  },
+  "gamp-wheels": {
+    title: "Gamp Wheels Case Study | Digital Edge 360°",
+    description: "How Digital Edge 360 built Gamp Wheels, an enterprise blood delivery management system for logistics staff, riders, and administrators."
+  },
+  "amp-wheels": {
+    title: "Gamp Wheels Case Study | Digital Edge 360°",
+    description: "How Digital Edge 360 built Gamp Wheels, an enterprise blood delivery management system for logistics staff, riders, and administrators."
   }
 };
 

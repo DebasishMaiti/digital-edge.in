@@ -8,7 +8,7 @@ export async function POST(request: Request) {
     const { name, company, email, whatsapp, goal, budget } = body;
 
     // Validate request body
-    if (!name || !company || !email || !whatsapp || !goal || !budget) {
+    if (!name || !email || !whatsapp || !goal || !budget) {
       return NextResponse.json(
         { error: "Missing required fields" },
         { status: 400 }
@@ -181,9 +181,9 @@ Budget: ${budget}
 
     return NextResponse.json({ success: true, message: "Email sent successfully" });
   } catch (error: any) {
-    console.error("Error sending email:", error);
+    console.error("Error sending email in API route:", error);
     return NextResponse.json(
-      { error: "Failed to send email", details: error.message },
+      { error: "Failed to send email", details: error?.message || String(error) },
       { status: 500 }
     );
   }

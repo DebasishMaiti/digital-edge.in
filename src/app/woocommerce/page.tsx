@@ -208,7 +208,18 @@ export default function WooCommerce() {
 
             {/* Right Column: CTA Card */}
             <div className="lg:col-span-6 flex justify-center relative w-full">
-              <LeadForm showDecorations={false} />
+              <LeadForm 
+                showDecorations={false} 
+                initialServiceType="development" 
+                customTargets={[
+                  { id: "store-setup", label: "Custom WooCommerce Store Setup" },
+                  { id: "payment-gateway", label: "Payment Gateway & Logistics Integration" },
+                  { id: "checkout-optimization", label: "Checkout & Conversion Rate Optimization" },
+                  { id: "plugin-dev", label: "Custom WooCommerce Plugin Development" },
+                  { id: "store-migration", label: "Shopify / Magento to WooCommerce Migration" },
+                  { id: "speed-sec", label: "WooCommerce Speed & Security Hardening" }
+                ]}
+              />
             </div>
           </div>
         </section>

@@ -135,7 +135,17 @@ export default function AiIntegration() {
 
           {/* Right Column: CTA Card */}
           <div className="lg:col-span-6 flex justify-center relative w-full">
-            <LeadForm showDecorations={false} />
+            <LeadForm 
+              showDecorations={false} 
+              initialServiceType="development" 
+              customTargets={[
+                { id: "ai-chatbot", label: "Custom AI Chatbot & Agentic Assistant" },
+                { id: "openai-api", label: "LLM / OpenAI API Integration" },
+                { id: "predictive-analytics", label: "AI Predictive Analytics & Data Pipeline" },
+                { id: "workflow-automation", label: "Business Process & Workflow Automation" },
+                { id: "recommendation-engine", label: "AI Recommendation & Personalization Engine" }
+              ]}
+            />
           </div>
         </div>
       </section>

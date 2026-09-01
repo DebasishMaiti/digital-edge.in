@@ -306,7 +306,7 @@ export default function About() {
                   className="relative group w-full max-w-[360px]"
                 >
                   {/* Image container with no padding or border */}
-                  <div className="relative w-full aspect-[4/5] rounded-[24px] overflow-hidden bg-slate-50 shadow-xl">
+                  <div className="relative w-full aspect-[4/4] rounded-[24px] overflow-hidden bg-slate-50 shadow-xl">
                     <Image
                       src="/founder.jpg"
                       alt="From the Founder's desk"
@@ -316,7 +316,7 @@ export default function About() {
                     />
                     
                     {/* Premium Label Overlay */}
-                    <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md px-4 py-3 rounded-2xl shadow-lg">
+                    <div className="absolute bottom-2 left-4 right-4 bg-white/95 backdrop-blur-md px-4 py-2 rounded-2xl shadow-lg">
                       <span className="block text-[10px] font-black tracking-widest text-[#2443ab] uppercase">
                         FOUNDER'S PERSPECTIVE
                       </span>

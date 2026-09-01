@@ -29,9 +29,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable}`}>
-      <head>
+      {/* <head>
         <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests" />
-      </head>
+      </head> */}
       <body className="antialiased">
         <ScrollToTop />
         <CustomCursor />

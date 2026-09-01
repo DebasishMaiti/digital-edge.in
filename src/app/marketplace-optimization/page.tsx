@@ -145,7 +145,7 @@ export default function MarketplaceOptimization() {
 
             {/* Right Column: CTA Card */}
             <div className="lg:col-span-6 flex justify-center relative w-full">
-              <LeadForm showDecorations={false} />
+              <LeadForm showDecorations={false} initialServiceType="marketing" />
             </div>
           </div>
         </section>

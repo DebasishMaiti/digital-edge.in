@@ -142,37 +142,47 @@ export default function Header() {
   ];
 
   useEffect(() => {
-    let ticking = false;
-    const threshold = 8;
+    let lastScrollY = window.scrollY;
 
     const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          const currentScrollY = window.scrollY;
+      window.requestAnimationFrame(() => {
+        const currentScrollY = window.scrollY;
 
-          if (currentScrollY < 10) {
+        // At top of page (< 50px), header is always visible
+        if (currentScrollY < 50) {
+          setIsVisible(true);
+          lastScrollY = currentScrollY;
+          return;
+        }
+
+        // If mobile menu is open, stay visible
+        if (isMobileMenuOpen) {
+          setIsVisible(true);
+          lastScrollY = currentScrollY;
+          return;
+        }
+
+        const diff = currentScrollY - lastScrollY;
+
+        // Require a 10px movement threshold to change direction
+        if (Math.abs(diff) > 10) {
+          if (diff > 0) {
+            // Scrolling down -> hide header & close dropdowns
+            setIsVisible(false);
+            setIsSolutionsOpen(false);
+            setIsInsightsOpen(false);
+          } else {
+            // Scrolling up -> show header
             setIsVisible(true);
-          } else if (Math.abs(currentScrollY - lastScrollY.current) > threshold) {
-            if (currentScrollY > lastScrollY.current) {
-              setIsVisible(false);
-              setIsSolutionsOpen(false);
-
-              setIsInsightsOpen(false);
-            } else {
-              setIsVisible(true);
-            }
           }
-
-          lastScrollY.current = currentScrollY;
-          ticking = false;
-        });
-        ticking = true;
-      }
+          lastScrollY = currentScrollY;
+        }
+      });
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isMobileMenuOpen]);
 
   // Close dropdown on outside click
   useEffect(() => {
@@ -190,6 +200,7 @@ export default function Header() {
   }, []);
 
   const handleSolutionsMouseEnter = () => {
+    if (!isVisible) return;
     if (hoverTimeout.current) clearTimeout(hoverTimeout.current);
     setIsSolutionsOpen(true);
   };
@@ -198,9 +209,8 @@ export default function Header() {
     hoverTimeout.current = setTimeout(() => setIsSolutionsOpen(false), 150);
   };
 
-
-
   const handleInsightsMouseEnter = () => {
+    if (!isVisible) return;
     if (insightsHoverTimeout.current) clearTimeout(insightsHoverTimeout.current);
     setIsInsightsOpen(true);
   };

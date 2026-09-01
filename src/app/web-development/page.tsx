@@ -344,7 +344,18 @@ export default function WebDevelopment() {
 
               {/* Right Column (Form Card) */}
               <div className="lg:col-span-6 flex justify-center relative w-full">
-                <LeadForm showDecorations={false} />
+                <LeadForm 
+                  showDecorations={false} 
+                  initialServiceType="development" 
+                  customTargets={[
+                    { id: "custom-site", label: "Custom Website Design & Dev" },
+                    { id: "fullstack-app", label: "Full-Stack Web Application" },
+                    { id: "cms-portal", label: "CMS / Corporate Website" },
+                    { id: "speed-optimization", label: "Website Speed & Core Web Vitals" },
+                    { id: "headless-migration", label: "Headless Architecture Migration" },
+                    { id: "uiux-redesign", label: "UI/UX Redesign & Modernization" }
+                  ]}
+                />
               </div>
             </div>
           </div>

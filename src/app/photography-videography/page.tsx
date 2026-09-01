@@ -189,7 +189,7 @@ export default function PhotographyVideography() {
 
             {/* Right Column: CTA Card */}
             <div className="lg:col-span-6 flex justify-center relative w-full">
-              <LeadForm showDecorations={false} />
+              <LeadForm showDecorations={false} initialServiceType="photography" />
             </div>
           </div>
         </section>
@@ -314,6 +314,274 @@ export default function PhotographyVideography() {
                 </Link>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Services Showcase Section - Architectural Multi-Color List */}
+        <section className="relative z-10 w-full py-24 sm:py-32 bg-gradient-to-b from-white via-slate-50/60 to-white border-b border-slate-100 overflow-hidden">
+          {/* Subtle Ambient Background Gradients */}
+          <div className="absolute top-[15%] left-[5%] w-[450px] h-[450px] rounded-full bg-sky-500/5 blur-[120px] pointer-events-none" />
+          <div className="absolute bottom-[15%] right-[5%] w-[450px] h-[450px] rounded-full bg-purple-500/5 blur-[120px] pointer-events-none" />
+
+          <div className="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+            {/* Section Header */}
+            <div className="max-w-3xl mx-auto mb-20 text-center space-y-4">
+              <span className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-4 py-1.5 text-xs font-black tracking-widest text-sky-700 uppercase shadow-sm">
+                <span className="w-2 h-2 rounded-full bg-sky-500 animate-pulse" />
+                Comprehensive Visual Offerings
+              </span>
+              <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-[#0d1b3e] tracking-tight">
+                Our Photography & Videography Services
+              </h2>
+              <p className="text-slate-500 font-semibold text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
+                Purpose-built visual solutions designed to elevate your brand presence, drive e-commerce sales, and build lasting customer trust.
+              </p>
+              <div className="w-20 h-1 bg-gradient-to-r from-sky-500 via-indigo-500 to-purple-600 mx-auto rounded-full mt-4" />
+            </div>
+
+            {/* Architectural Staggered Layout (No Cards) */}
+            <div className="space-y-6 max-w-6xl mx-auto">
+              {[
+                {
+                  num: "01",
+                  title: "Corporate Photography",
+                  desc: "Executive headshots, leadership portraits, office and team photography that reflect the professionalism of your brand. Ideal for websites, LinkedIn profiles, investor decks, and press coverage where first impressions carry real weight.",
+                  accent: "from-cyan-500 to-blue-600",
+                  tagBg: "bg-cyan-50 border-cyan-200 text-cyan-700",
+                  borderHover: "hover:border-cyan-300",
+                  dotColor: "bg-cyan-500",
+                  numText: "text-cyan-600"
+                },
+                {
+                  num: "02",
+                  title: "Product Photography",
+                  desc: "High-resolution product photography built for e-commerce listings, catalogs, and paid ad creative. We control lighting, angles, and styling so every product image highlights detail and drives buyer confidence — the kind of imagery that reduces returns and increases add-to-cart rates.",
+                  accent: "from-indigo-500 to-purple-600",
+                  tagBg: "bg-indigo-50 border-indigo-200 text-indigo-700",
+                  borderHover: "hover:border-indigo-300",
+                  dotColor: "bg-indigo-500",
+                  numText: "text-indigo-600"
+                },
+                {
+                  num: "03",
+                  title: "E-Commerce Photoshoots",
+                  desc: "A dedicated shoot format built specifically for online sellers: consistent backgrounds, accurate colour representation, lifestyle context shots, and platform-ready formatting for Amazon, Shopify, Flipkart, and D2C storefronts.",
+                  accent: "from-emerald-500 to-teal-600",
+                  tagBg: "bg-emerald-50 border-emerald-200 text-emerald-700",
+                  borderHover: "hover:border-emerald-300",
+                  dotColor: "bg-emerald-500",
+                  numText: "text-emerald-600"
+                },
+                {
+                  num: "04",
+                  title: "Drone Photography & Videography",
+                  desc: "Aerial photography and cinematography for real estate, industrial sites, large-scale events, and brand films. Operated by licensed drone pilots using professional-grade equipment, capturing perspectives ground-level photography can’t reach.",
+                  accent: "from-sky-500 to-blue-600",
+                  tagBg: "bg-sky-50 border-sky-200 text-sky-700",
+                  borderHover: "hover:border-sky-300",
+                  dotColor: "bg-sky-500",
+                  numText: "text-sky-600"
+                },
+                {
+                  num: "05",
+                  title: "Lifestyle Photography",
+                  desc: "Editorial-style lifestyle shoots that place your product or brand inside a real, relatable scene rather than a plain studio backdrop — the format that consistently performs best on social feeds and brand storytelling pages.",
+                  accent: "from-amber-500 to-orange-600",
+                  tagBg: "bg-amber-50 border-amber-200 text-amber-700",
+                  borderHover: "hover:border-amber-300",
+                  dotColor: "bg-amber-500",
+                  numText: "text-amber-600"
+                },
+                {
+                  num: "06",
+                  title: "Event Photography & Videography",
+                  desc: "Full coverage for corporate events, product launches, conferences, and brand activations. We document the moments that matter — keynote highlights, candid audience reactions, and the details your marketing team will need for recap content afterward.",
+                  accent: "from-rose-500 to-pink-600",
+                  tagBg: "bg-rose-50 border-rose-200 text-rose-700",
+                  borderHover: "hover:border-rose-300",
+                  dotColor: "bg-rose-500",
+                  numText: "text-rose-600"
+                },
+                {
+                  num: "07",
+                  title: "Industrial & Manufacturing Photography",
+                  desc: "Photography built for businesses that need to showcase machinery, facilities, and operational scale — used for marketing collateral, tender documentation, investor materials, and B2B sales decks where credibility depends on visual proof.",
+                  accent: "from-violet-500 to-purple-600",
+                  tagBg: "bg-violet-50 border-violet-200 text-violet-700",
+                  borderHover: "hover:border-violet-300",
+                  dotColor: "bg-violet-500",
+                  numText: "text-violet-600"
+                },
+                {
+                  num: "08",
+                  title: "Video Editing & Post-Production",
+                  desc: "Raw footage turned into polished, publish-ready video — corporate films, social media content, ad creative, and event recap videos. Colour grading, sound design, motion graphics, and platform-specific formatting included.",
+                  accent: "from-fuchsia-500 to-pink-600",
+                  tagBg: "bg-fuchsia-50 border-fuchsia-200 text-fuchsia-700",
+                  borderHover: "hover:border-fuchsia-300",
+                  dotColor: "bg-fuchsia-500",
+                  numText: "text-fuchsia-600"
+                }
+              ].map((service, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, x: idx % 2 === 0 ? -25 : 25 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.08 }}
+                  className={`relative p-6 sm:p-8 rounded-2xl bg-white border border-slate-200/70 transition-all duration-300 group ${service.borderHover} hover:shadow-lg`}
+                >
+                  {/* Left Colored Accent Line */}
+                  <div className={`absolute left-0 top-0 bottom-0 w-1.5 rounded-l-2xl bg-gradient-to-b ${service.accent}`} />
+
+                  <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
+                    {/* Number Identifier */}
+                    <div className="flex items-center gap-3 shrink-0">
+                      <span className={`text-2xl sm:text-3xl font-black ${service.numText} tracking-tight font-mono`}>
+                        {service.num}
+                      </span>
+                      <div className={`w-2 h-2 rounded-full ${service.dotColor}`} />
+                    </div>
+
+                    {/* Content Block */}
+                    <div className="space-y-2 flex-grow">
+                      <h3 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight group-hover:text-blue-600 transition-colors duration-200">
+                        {service.title}
+                      </h3>
+                      <p className="text-sm sm:text-base text-slate-600 font-medium leading-relaxed">
+                        {service.desc}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+          </div>
+        </section>
+
+        {/* Why Brands Choose Digital Edge 360 Section - Next-Gen Futuristic Architectural Experience */}
+        <section className="relative z-10 w-full py-28 sm:py-36 bg-gradient-to-b from-[#f8fafc] via-white to-[#f1f5f9] border-b border-slate-200/80 overflow-hidden">
+          {/* Futuristic Mesh Background & Ambient Light Orbs */}
+          <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:32px_32px] opacity-40 pointer-events-none" />
+          <div className="absolute top-[10%] left-[-10%] w-[600px] h-[600px] rounded-full bg-gradient-to-br from-blue-500/10 via-indigo-500/10 to-transparent blur-[140px] pointer-events-none animate-pulse" />
+          <div className="absolute bottom-[10%] right-[-10%] w-[600px] h-[600px] rounded-full bg-gradient-to-br from-emerald-500/10 via-purple-500/10 to-transparent blur-[140px] pointer-events-none" />
+
+          <div className="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+            
+            {/* Header with High-Impact Badging */}
+            <div className="max-w-4xl mx-auto mb-24 text-center space-y-6">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="inline-flex items-center gap-2.5 rounded-full border border-slate-300/80 bg-white/80 backdrop-blur-md px-5 py-2 text-xs font-black tracking-[0.25em] text-slate-800 uppercase shadow-sm"
+              >
+                <span className="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 animate-ping" />
+                The Digital Edge 360 Advantage
+              </motion.div>
+
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="text-4xl sm:text-6xl lg:text-7xl font-black text-[#0d1b3e] tracking-tight leading-[1.1]"
+              >
+                Why Brands Choose <br className="hidden sm:block" />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0a8bc7] via-[#2443ab] to-[#40159e]">
+                  Digital Edge 360
+                </span> for Visual Content
+              </motion.h2>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="text-slate-500 font-semibold text-base sm:text-xl leading-relaxed max-w-3xl mx-auto"
+              >
+                Zero fluff. Purpose-built visual production that bridges creative storytelling with measurable commercial returns.
+              </motion.p>
+            </div>
+
+            {/* Architectural 4-Column Futuristic Split Grid (No Cards/Boxes) */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 max-w-6xl mx-auto relative">
+
+              {[
+                {
+                  num: "01",
+                  title: "Business Outcomes First",
+                  desc: "Every shoot is planned around where the content will actually be used — a product page, an ad campaign, a pitch deck — so the output is built for that specific purpose, not a generic portfolio piece.",
+                  gradient: "from-blue-600 via-indigo-600 to-cyan-500",
+                  lineGrad: "from-blue-500 via-indigo-500 to-cyan-400",
+                  tag: "Purpose-Built Visuals"
+                },
+                {
+                  num: "02",
+                  title: "One Team, Full Production",
+                  desc: "Photography, videography, and post-production editing all happen under one roof—no juggling separate vendors for shooting and editing, and no inconsistency between the two.",
+                  gradient: "from-emerald-600 via-teal-600 to-cyan-500",
+                  lineGrad: "from-emerald-500 via-teal-500 to-cyan-400",
+                  tag: "Unified Workflow"
+                },
+                {
+                  num: "03",
+                  title: "Equipment & Expertise That Scales",
+                  desc: "From studio lighting setups to licensed drone operations, our team brings the right equipment and technical skill to match the scale of the shoot — whether that’s a single product flat-lay or a multi-day industrial site shoot.",
+                  gradient: "from-purple-600 via-violet-600 to-pink-500",
+                  lineGrad: "from-purple-500 via-violet-500 to-pink-400",
+                  tag: "Scalable Infrastructure"
+                },
+                {
+                  num: "04",
+                  title: "Fast Turnaround, Without Cutting Corners",
+                  desc: "We understand that marketing calendars don’t wait. Our production and editing workflows are built to deliver quickly without compromising on quality or consistency.",
+                  gradient: "from-fuchsia-600 via-rose-600 to-pink-500",
+                  lineGrad: "from-fuchsia-500 via-rose-500 to-pink-400",
+                  tag: "Rapid Delivery Engine"
+                }
+              ].map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 35 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: idx * 0.12 }}
+                  className="relative pt-10 pb-6 group"
+                >
+                  {/* Top Static Architectural Rail */}
+                  <div className="absolute top-0 left-0 right-0 h-[1px] bg-slate-200" />
+                  {/* Dynamic Glowing Laser Light Bar on Hover */}
+                  <div className={`absolute top-0 left-0 h-[3px] rounded-full bg-gradient-to-r ${item.lineGrad} w-16 group-hover:w-full transition-all duration-700 ease-out`} />
+
+                  {/* Corner Architectural Crosshair Accent */}
+                  <div className="absolute top-[-5px] left-0 w-2.5 h-2.5 rounded-full bg-slate-300 group-hover:bg-blue-600 transition-colors duration-500" />
+
+                  {/* Number & Tag Header */}
+                  <div className="flex items-center justify-between mb-4">
+                    <span className={`text-5xl sm:text-7xl font-black font-mono tracking-tighter text-transparent bg-clip-text bg-gradient-to-br ${item.gradient}`}>
+                      {item.num}
+                    </span>
+                    <span className="text-[10px] sm:text-xs font-black tracking-widest uppercase px-3.5 py-1 rounded-full bg-slate-100/80 border border-slate-200/90 text-slate-700 group-hover:bg-slate-900 group-hover:text-white transition-all duration-300">
+                      {item.tag}
+                    </span>
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-2xl sm:text-3xl font-black text-[#0d1b3e] tracking-tight group-hover:translate-x-1 transition-transform duration-300 mb-3">
+                    {item.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-base sm:text-lg text-slate-600 font-medium leading-relaxed">
+                    {item.desc}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+
           </div>
         </section>
 
@@ -632,10 +900,10 @@ export default function PhotographyVideography() {
                 <span>OUR WORKFLOW</span>
               </span>
               <h2 className="text-4xl sm:text-6xl font-black text-[#0d1b3e] tracking-tight">
-                The Blueprint.
+                Our Process
               </h2>
               <p className="text-slate-500 font-semibold text-sm sm:text-base leading-relaxed">
-                Our proven step-by-step engineering journey to transform your concept into a high-performance digital asset.
+                Our step-by-step roadmap to produce high-impact photography and videography tailored to your marketing goals.
               </p>
             </div>
 
@@ -647,8 +915,8 @@ export default function PhotographyVideography() {
               {[
                 {
                   num: "01",
-                  title: "Concept & Style Selection",
-                  desc: "Analyzing style attributes, selecting product angles, color palettes, and creating mood boards.",
+                  title: "Brief & Goal Mapping",
+                  desc: "We start by understanding where this content will live — website, ads, social, print — because that determines everything from framing to file format.",
                   circleBg: "bg-gradient-to-br from-blue-400 to-indigo-600 shadow-[0_6px_20_rgba(59,130,246,0.35)]",
                   lineColor: "bg-blue-500",
                   textColor: "text-blue-500",
@@ -658,8 +926,8 @@ export default function PhotographyVideography() {
                 },
                 {
                   num: "02",
-                  title: "3D Modeling & Retouching",
-                  desc: "Creating 3D modeling files, adjusting polygon counts, mapping textures, and editing source photographs.",
+                  title: "Shoot Planning",
+                  desc: "Location scouting, styling, equipment, and shot-list preparation, so shoot day runs efficiently and nothing critical gets missed.",
                   circleBg: "bg-gradient-to-br from-purple-400 to-violet-600 shadow-[0_6px_20_rgba(139,92,246,0.35)]",
                   lineColor: "bg-purple-500",
                   textColor: "text-purple-600",
@@ -669,8 +937,8 @@ export default function PhotographyVideography() {
                 },
                 {
                   num: "03",
-                  title: "Motion Graphic Design",
-                  desc: "Animating transition states, product details, styling hooks, and exporting high-impact visual loops.",
+                  title: "Production Day",
+                  desc: "Our photography and videography team executes the shoot with an eye on both creative quality and the practical requirements of how the content will be used downstream.",
                   circleBg: "bg-gradient-to-br from-pink-400 to-rose-600 shadow-[0_6px_20_rgba(244,63,94,0.35)]",
                   lineColor: "bg-rose-500",
                   textColor: "text-rose-500",
@@ -680,8 +948,8 @@ export default function PhotographyVideography() {
                 },
                 {
                   num: "04",
-                  title: "Review & Detail Polish",
-                  desc: "Fine-tuning render lighting, color balances, verifying display scales, and applying brand feedback.",
+                  title: "Editing & Post-Production",
+                  desc: "Retouching, colour correction, video editing, and formatting for each platform the content is intended for.",
                   circleBg: "bg-gradient-to-br from-amber-400 to-orange-500 shadow-[0_6px_20_rgba(249,115,22,0.35)]",
                   lineColor: "bg-orange-500",
                   textColor: "text-orange-500",
@@ -691,8 +959,8 @@ export default function PhotographyVideography() {
                 },
                 {
                   num: "05",
-                  title: "Delivery & Archive Setup",
-                  desc: "Compressing asset deliverables, uploading models and images to secure storage, and archiving projects.",
+                  title: "Delivery & Usage Guidance",
+                  desc: "Final assets delivered in the formats you need, along with guidance on how to deploy them for maximum impact across your channels.",
                   circleBg: "bg-gradient-to-br from-emerald-400 to-teal-600 shadow-[0_6px_20_rgba(16,185,129,0.35)]",
                   lineColor: "bg-emerald-500",
                   textColor: "text-emerald-500",

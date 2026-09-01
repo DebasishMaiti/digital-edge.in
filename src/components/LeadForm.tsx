@@ -4,15 +4,20 @@ import { useState } from "react";
 
 interface LeadFormProps {
   showDecorations?: boolean;
+  initialServiceType?: "development" | "marketing" | "photography" | "both";
+  customTargets?: { id: string; label: string }[];
 }
 
-export default function LeadForm({ showDecorations = false }: LeadFormProps) {
-  const [step, setStep] = useState(1);
+export default function LeadForm({ showDecorations = false, initialServiceType, customTargets }: LeadFormProps) {
+  // If embedded in a specific solution page (initialServiceType set), skip step 1 and start directly at step 2
+  const [step, setStep] = useState(initialServiceType ? 2 : 1);
+  const minStep = initialServiceType ? 2 : 1;
+
   const [formData, setFormData] = useState({
     // Step 1: Service selection & Address
-    serviceType: "both", // "development" | "marketing" | "both"
-    category: "",
-    country: "Laos", // Pre-select Laos
+    serviceType: initialServiceType || "both", // "development" | "marketing" | "photography" | "both"
+    category: initialServiceType ? (initialServiceType === "development" ? "Software & App Dev" : initialServiceType === "marketing" ? "Digital Marketing" : "Photography & Video") : "",
+    cityState: "",
 
     // Step 2: Goals / Services
     goals: [] as string[],
@@ -44,9 +49,9 @@ export default function LeadForm({ showDecorations = false }: LeadFormProps) {
     }
   };
 
-  const handleServiceTypeChange = (type: "development" | "marketing" | "both") => {
-    setFormData((prev) => ({ 
-      ...prev, 
+  const handleServiceTypeChange = (type: "development" | "marketing" | "photography" | "both") => {
+    setFormData((prev) => ({
+      ...prev,
       serviceType: type,
       category: "", // reset category
       goals: [] // reset selected goals on service type change
@@ -58,7 +63,7 @@ export default function LeadForm({ showDecorations = false }: LeadFormProps) {
       const goals = prev.goals.includes(goal)
         ? prev.goals.filter((g) => g !== goal)
         : [...prev.goals, goal];
-      
+
       const newErrors = { ...errors };
       delete newErrors.goals;
       setErrors(newErrors);
@@ -72,7 +77,7 @@ export default function LeadForm({ showDecorations = false }: LeadFormProps) {
 
     if (currentStep === 1) {
       if (!formData.category) stepErrors.category = "Select your business/project category.";
-      if (!formData.country) stepErrors.country = "Select your location/country.";
+      if (!formData.cityState.trim()) stepErrors.cityState = "Enter your City & State.";
     } else if (currentStep === 2) {
       if (formData.goals.length === 0) stepErrors.goals = "Select at least one challenge or goal.";
       if (!formData.budget) stepErrors.budget = "Select your estimated budget/ad spend.";
@@ -97,7 +102,7 @@ export default function LeadForm({ showDecorations = false }: LeadFormProps) {
   };
 
   const handleBack = () => {
-    setStep((prev) => prev - 1);
+    setStep((prev) => Math.max(minStep, prev - 1));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -110,10 +115,10 @@ export default function LeadForm({ showDecorations = false }: LeadFormProps) {
     // Maps nicely to old schema to avoid breaking send-email API
     const payload = {
       name: formData.name,
-      company: `${formData.category} (Category)`,
+      company: `${formData.category || formData.serviceType} (Category)`,
       email: formData.email,
       whatsapp: `${formData.phone} (Via: ${formData.contactMethod}, Call at: ${formData.callTime})`,
-      goal: `Service Type: ${formData.serviceType} | Targets: ${formData.goals.join(", ")} | Country: ${formData.country}`,
+      goal: `Service Type: ${formData.serviceType} | Targets: ${formData.goals.join(", ")} | Location: ${formData.cityState}`,
       budget: formData.budget,
     };
 
@@ -136,9 +141,9 @@ export default function LeadForm({ showDecorations = false }: LeadFormProps) {
 
         setSubmitStatus("success");
         setFormData({
-          serviceType: "both",
-          category: "",
-          country: "Laos",
+          serviceType: initialServiceType || "both",
+          category: initialServiceType ? (initialServiceType === "development" ? "Software & App Dev" : initialServiceType === "marketing" ? "Digital Marketing" : "Photography & Video") : "",
+          cityState: "",
           goals: [],
           budget: "",
           name: "",
@@ -147,8 +152,10 @@ export default function LeadForm({ showDecorations = false }: LeadFormProps) {
           contactMethod: "",
           callTime: "",
         });
-        setStep(1);
+        setStep(minStep);
       } else {
+        const errorData = await response.json().catch(() => null);
+        console.error("API error response:", response.status, errorData);
         setSubmitStatus("error");
       }
     } catch (error) {
@@ -159,13 +166,19 @@ export default function LeadForm({ showDecorations = false }: LeadFormProps) {
     }
   };
 
-  // Dynamically switch option list based on selected Service Type
+  // Dynamically switch option list based on selected Service Type or customTargets prop
   const getChallengesList = () => {
+    if (customTargets && customTargets.length > 0) {
+      return customTargets;
+    }
+
     if (formData.serviceType === "development") {
       return [
         { id: "custom-site", label: "Build Custom Website" },
-        { id: "app-dev", label: "Mobile App Needed" },
-      ];
+        { id: "app-dev", label: "Mobile App Development (iOS & Android)" },
+        { id: "ecommerce-dev", label: "E-Commerce / WooCommerce Store" },
+        { id: "saas-webapp", label: "Custom SaaS & Web Application" },
+       ];
     } else if (formData.serviceType === "marketing") {
       return [
         { id: "conversion", label: "Low conversion rate" },
@@ -177,18 +190,27 @@ export default function LeadForm({ showDecorations = false }: LeadFormProps) {
         { id: "brand-identity", label: "Brand Design & UGC" },
         { id: "analytics", label: "Analytics & Attribution" },
       ];
+    } else if (formData.serviceType === "photography") {
+      return [
+        { id: "product-shoot", label: "Commercial Product Photography" },
+        { id: "brand-videography", label: "Brand & Corporate Videography" },
+        { id: "ugc-ad-reels", label: "Ad Reels & UGC Shoot" },
+        { id: "event-coverage", label: "Corporate Event & Fashion Shoot" },
+        { id: "drone-shoot", label: "Drone & Aerial Videography" },
+        { id: "post-production", label: "Video Editing & Color Grading" },
+      ];
     } else {
       // Both
       return [
         { id: "custom-dev", label: "Custom Website Dev / Code" },
-        { id: "app-dev", label: "Mobile App Needed" },
+        { id: "app-dev", label: "Mobile App Development" },
         { id: "conversion", label: "Low conversion rate" },
         { id: "rising-ads", label: "Rising ad costs / poor ROAS" },
         { id: "marketing-growth", label: "Digital Marketing & Scale" },
+        { id: "photo-video-shoot", label: "Photography & Videography Shoot" },
         { id: "seo-ranking", label: "SEO & Organic Traffic" },
         { id: "headless", label: "Headless Commerce Migration" },
-        { id: "uiux-redesign", label: "UI/UX & Design Overhaul" },
-      ];
+       ];
     }
   };
 
@@ -207,23 +229,31 @@ export default function LeadForm({ showDecorations = false }: LeadFormProps) {
         { value: "SaaS Marketing", label: "SaaS & Tech Marketing" },
         { value: "Local Business", label: "Local / Service Business" }
       ];
+    } else if (formData.serviceType === "photography") {
+      return [
+        { value: "E-Commerce Product Shoot", label: "E-Commerce Product Shoot" },
+        { value: "Brand Commercial Shoot", label: "Brand Commercial & Video" },
+        { value: "Social Content / Reels Shoot", label: "Social Content & Ad Reels" },
+        { value: "Corporate & Event Shoot", label: "Corporate & Event Shoot" }
+      ];
     } else {
       return [
         { value: "E-Commerce Growth", label: "E-Commerce (Dev + Ads)" },
         { value: "SaaS Growth", label: "SaaS / Tech (Dev + Ads)" },
-        { value: "B2B growth", label: "B2B / Lead Gen (Dev + Ads)" }
+        { value: "B2B growth", label: "B2B / Lead Gen (Dev + Ads)" },
+        { value: "Full Brand & Media Package", label: "Full Package (Dev + Ads + Shoots)" }
       ];
     }
   };
 
   return (
     <div className="w-full max-w-[720px] mx-auto rounded-[32px] bg-white overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.08)] border border-slate-100 flex flex-col lg:flex-row min-h-[660px]">
-      
+
       {/* ───────────────────── LEFT BRANDING PANEL ───────────────────── */}
       <div className="relative lg:w-[38%] xl:w-[40%] px-8 py-10 lg:px-6 xl:px-8 lg:py-10 xl:py-12 text-white overflow-hidden flex flex-col justify-between">
         {/* Background Gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#0c89c7] via-[#2450b3] to-[#3d199f]" />
-        
+
         {/* Decorative glows */}
         <div className="absolute -bottom-20 -left-20 w-72 h-72 bg-cyan-400/20 rounded-full blur-[100px]" />
         <div className="absolute top-20 -right-16 w-56 h-56 bg-purple-500/25 rounded-full blur-[80px]" />
@@ -242,7 +272,7 @@ export default function LeadForm({ showDecorations = false }: LeadFormProps) {
               <span className="text-cyan-200">Growth Blueprint</span>
             </h2>
             <div className="mt-4 w-12 h-[3px] rounded-full bg-cyan-300" />
-            
+
             <p className="text-[13px] text-white/80 leading-relaxed mt-5">
               Identify friction points in your tech stack, custom code development limits, and marketing leaks holding your business back.
             </p>
@@ -258,7 +288,7 @@ export default function LeadForm({ showDecorations = false }: LeadFormProps) {
                 Covering both custom development and ROI-focused digital marketing campaigns.
               </p>
             </div>
-            
+
             <div className="rounded-2xl bg-white/10 border border-white/10 p-4 backdrop-blur-sm">
               <h4 className="text-[12px] font-black text-white uppercase tracking-wider">
                 100% Confidential
@@ -273,11 +303,13 @@ export default function LeadForm({ showDecorations = false }: LeadFormProps) {
 
       {/* ───────────────────── RIGHT INTERACTIVE FORM PANEL ───────────────────── */}
       <div className="lg:w-[62%] xl:w-[60%] bg-white px-6 py-8 sm:px-8 sm:py-10 lg:px-8 xl:px-10 flex flex-col justify-between">
-        
+
         {/* Step Progress Indicators */}
         <div className="space-y-4">
           <div className="flex gap-2">
-            <div className={`h-1.5 flex-1 rounded-full transition-all duration-300 ${step >= 1 ? "bg-indigo-600" : "bg-slate-100"}`} />
+            {!initialServiceType && (
+              <div className={`h-1.5 flex-1 rounded-full transition-all duration-300 ${step >= 1 ? "bg-indigo-600" : "bg-slate-100"}`} />
+            )}
             <div className={`h-1.5 flex-1 rounded-full transition-all duration-300 ${step >= 2 ? "bg-indigo-600" : "bg-slate-100"}`} />
             <div className={`h-1.5 flex-1 rounded-full transition-all duration-300 ${step >= 3 ? "bg-indigo-600" : "bg-slate-100"}`} />
           </div>
@@ -285,9 +317,18 @@ export default function LeadForm({ showDecorations = false }: LeadFormProps) {
           {/* Step Metadata Header */}
           <div className="text-left">
             <span className="text-[10px] font-black tracking-wider text-indigo-600 uppercase">
-              {step === 1 && "Step 1 of 3 · Service & Details"}
-              {step === 2 && "Step 2 of 3 · Goals & Stack"}
-              {step === 3 && "Step 3 of 3 · Reach Out"}
+              {initialServiceType ? (
+                <>
+                  {step === 2 && "Step 1 of 2 · Goals & Requirements"}
+                  {step === 3 && "Step 2 of 2 · Reach Out"}
+                </>
+              ) : (
+                <>
+                  {step === 1 && "Step 1 of 3 · Service & Details"}
+                  {step === 2 && "Step 2 of 3 · Goals & Stack"}
+                  {step === 3 && "Step 3 of 3 · Reach Out"}
+                </>
+              )}
             </span>
 
             <h3 className="text-xl sm:text-2xl font-black text-[#0d1b3e] mt-1 tracking-tight">
@@ -298,7 +339,7 @@ export default function LeadForm({ showDecorations = false }: LeadFormProps) {
 
             <p className="text-slate-500 text-xs sm:text-sm mt-1 leading-relaxed">
               {step === 1 && "Choose your service type, project category, and address below."}
-              {step === 2 && "Select the main areas where you need development or marketing support."}
+              {step === 2 && "Select the main areas where you need project support."}
               {step === 3 && "We will confirm your strategy slot in your local timezone."}
             </p>
           </div>
@@ -306,49 +347,71 @@ export default function LeadForm({ showDecorations = false }: LeadFormProps) {
 
         {/* Form Body container */}
         <div className="mt-8 flex-1 flex flex-col justify-center">
-          
+
           {/* STEP 1: SERVICE, CATEGORY, ADDRESS */}
           {step === 1 && (
             <div className="space-y-5 text-left">
-              {/* Choose Service */}
-              <div>
-                <label className="block text-xs font-bold text-[#0d1b3e] mb-2.5 uppercase tracking-wider">Choose Service</label>
-                <div className="grid grid-cols-3 gap-2">
-                  <button
-                    type="button"
-                    onClick={() => handleServiceTypeChange("development")}
-                    className={`px-3 py-2.5 rounded-xl border text-xs font-bold transition-all ${
-                      formData.serviceType === "development"
+              {/* Choose Service (only shown if form isn't scoped to a specific service by the page) */}
+              {!initialServiceType ? (
+                <div>
+                  <label className="block text-xs font-bold text-[#0d1b3e] mb-2.5 uppercase tracking-wider">Choose Service</label>
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                    <button
+                      type="button"
+                      onClick={() => handleServiceTypeChange("development")}
+                      className={`px-3 py-2.5 rounded-xl border text-xs font-bold transition-all ${formData.serviceType === "development"
                         ? "border-indigo-600 bg-indigo-50/50 text-indigo-700 font-extrabold shadow-sm"
                         : "border-slate-200 hover:border-slate-300 text-slate-600 bg-slate-50/50"
-                    }`}
-                  >
-                    Tech & Dev
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => handleServiceTypeChange("marketing")}
-                    className={`px-3 py-2.5 rounded-xl border text-xs font-bold transition-all ${
-                      formData.serviceType === "marketing"
+                        }`}
+                    >
+                      Tech & Dev
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => handleServiceTypeChange("marketing")}
+                      className={`px-3 py-2.5 rounded-xl border text-xs font-bold transition-all ${formData.serviceType === "marketing"
                         ? "border-indigo-600 bg-indigo-50/50 text-indigo-700 font-extrabold shadow-sm"
                         : "border-slate-200 hover:border-slate-300 text-slate-600 bg-slate-50/50"
-                    }`}
-                  >
-                    Marketing
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => handleServiceTypeChange("both")}
-                    className={`px-3 py-2.5 rounded-xl border text-xs font-bold transition-all ${
-                      formData.serviceType === "both"
+                        }`}
+                    >
+                      Marketing
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => handleServiceTypeChange("photography")}
+                      className={`px-3 py-2.5 rounded-xl border text-xs font-bold transition-all ${formData.serviceType === "photography"
                         ? "border-indigo-600 bg-indigo-50/50 text-indigo-700 font-extrabold shadow-sm"
                         : "border-slate-200 hover:border-slate-300 text-slate-600 bg-slate-50/50"
-                    }`}
-                  >
-                    Both
-                  </button>
+                        }`}
+                    >
+                      Photo & Video
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => handleServiceTypeChange("both")}
+                      className={`px-3 py-2.5 rounded-xl border text-xs font-bold transition-all ${formData.serviceType === "both"
+                        ? "border-indigo-600 bg-indigo-50/50 text-indigo-700 font-extrabold shadow-sm"
+                        : "border-slate-200 hover:border-slate-300 text-slate-600 bg-slate-50/50"
+                        }`}
+                    >
+                      All-in-One
+                    </button>
+                  </div>
                 </div>
-              </div>
+              ) : (
+                <div className="p-3.5 rounded-2xl bg-indigo-50/60 border border-indigo-100 flex items-center justify-between">
+                  <div>
+                    <span className="text-[10px] font-black uppercase tracking-wider text-indigo-600">Selected Service</span>
+                    <h4 className="text-sm font-extrabold text-[#0d1b3e] capitalize">
+                      {initialServiceType === "development" && "Tech & Custom Software Development"}
+                      {initialServiceType === "marketing" && "Digital Marketing & Growth"}
+                      {initialServiceType === "photography" && "Photography & Videography"}
+                      {initialServiceType === "both" && "Full Stack Dev + Marketing"}
+                    </h4>
+                  </div>
+                  <span className="w-2 h-2 rounded-full bg-indigo-600 animate-pulse" />
+                </div>
+              )}
 
               {/* Which Category */}
               <div>
@@ -374,35 +437,18 @@ export default function LeadForm({ showDecorations = false }: LeadFormProps) {
                 {errors.category && <p className="text-[11px] text-red-500 mt-1 font-bold">{errors.category}</p>}
               </div>
 
-              {/* Address / Country */}
+              {/* City & State */}
               <div>
-                <label className="block text-xs font-bold text-[#0d1b3e] mb-1.5 uppercase tracking-wider">Address / Country</label>
-                <div className="relative">
-                  <select
-                    id="country"
-                    value={formData.country}
-                    onChange={handleInputChange}
-                    className={`w-full appearance-none rounded-xl border ${errors.country ? "border-red-400 ring-2 ring-red-100" : "border-slate-200"} bg-slate-50/50 px-4 py-3 text-sm font-semibold text-[#0d1b3e] outline-none focus:border-indigo-600 focus:bg-white`}
-                  >
-                    <option value="">Select Location</option>
-                    <option value="Laos">Laos (Lao PDR)</option>
-                    <option value="Thailand">Thailand</option>
-                    <option value="Vietnam">Vietnam</option>
-                    <option value="Cambodia">Cambodia</option>
-                    <option value="United Arab Emirates">United Arab Emirates</option>
-                    <option value="United States">United States</option>
-                    <option value="United Kingdom">United Kingdom</option>
-                    <option value="Canada">Canada</option>
-                    <option value="Australia">Australia</option>
-                    <option value="India">India</option>
-                    <option value="Saudi Arabia">Saudi Arabia</option>
-                    <option value="Other">Other</option>
-                  </select>
-                  <div className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-slate-400">
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" /></svg>
-                  </div>
-                </div>
-                {errors.country && <p className="text-[11px] text-red-500 mt-1 font-bold">{errors.country}</p>}
+                <label className="block text-xs font-bold text-[#0d1b3e] mb-1.5 uppercase tracking-wider">City & State</label>
+                <input
+                  id="cityState"
+                  type="text"
+                  placeholder="e.g. Mumbai, Maharashtra"
+                  value={formData.cityState}
+                  onChange={handleInputChange}
+                  className={`w-full rounded-xl border ${errors.cityState ? "border-red-400 ring-2 ring-red-100" : "border-slate-200"} bg-slate-50/50 px-4 py-3 text-sm font-semibold text-[#0d1b3e] outline-none focus:border-indigo-600 focus:bg-white`}
+                />
+                {errors.cityState && <p className="text-[11px] text-red-500 mt-1 font-bold">{errors.cityState}</p>}
               </div>
             </div>
           )}
@@ -422,15 +468,13 @@ export default function LeadForm({ showDecorations = false }: LeadFormProps) {
                         key={item.id}
                         type="button"
                         onClick={() => handleGoalToggle(item.label)}
-                        className={`flex items-center gap-3 px-4 py-3 rounded-xl border text-xs sm:text-sm font-bold text-left transition-all ${
-                          isSelected
-                            ? "border-indigo-600 bg-indigo-50/40 text-indigo-700 ring-2 ring-indigo-100"
-                            : "border-slate-200 hover:border-slate-300 text-slate-700 bg-white"
-                        }`}
+                        className={`flex items-center gap-3 px-4 py-3 rounded-xl border text-xs sm:text-sm font-bold text-left transition-all ${isSelected
+                          ? "border-indigo-600 bg-indigo-50/40 text-indigo-700 ring-2 ring-indigo-100"
+                          : "border-slate-200 hover:border-slate-300 text-slate-700 bg-white"
+                          }`}
                       >
-                        <div className={`w-4.5 h-4.5 rounded flex items-center justify-center border transition-all ${
-                          isSelected ? "bg-indigo-600 border-indigo-600 text-white" : "border-slate-300 bg-white"
-                        }`}>
+                        <div className={`w-4.5 h-4.5 rounded flex items-center justify-center border transition-all ${isSelected ? "bg-indigo-600 border-indigo-600 text-white" : "border-slate-300 bg-white"
+                          }`}>
                           {isSelected && (
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={4} stroke="currentColor" className="w-2.5 h-2.5">
                               <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
@@ -447,7 +491,7 @@ export default function LeadForm({ showDecorations = false }: LeadFormProps) {
 
               <div>
                 <label className="block text-xs font-bold text-[#0d1b3e] mb-1.5 uppercase tracking-wider">
-                  {formData.serviceType === "development" ? "Target Project Budget (USD)" : "Monthly Ad Spend / Target Budget"}
+                  Budget (INR)
                 </label>
                 <div className="relative">
                   <select
@@ -459,17 +503,17 @@ export default function LeadForm({ showDecorations = false }: LeadFormProps) {
                     <option value="">Select Budget Range</option>
                     {formData.serviceType === "development" ? (
                       <>
-                        <option value="Under $5,000">Under $5,000</option>
-                        <option value="$5,000 - $10,000">$5,000 – $10,000</option>
-                        <option value="$10,000 - $25,000">$10,000 – $25,000</option>
-                        <option value="$25,000+">$25,000+</option>
+                        <option value="₹50,000 - ₹1,00,000">₹50,000 – ₹1,00,000</option>
+                        <option value="₹1,00,000 - ₹2,50,000">₹1,00,000 – ₹2,50,000</option>
+                        <option value="₹2,50,000 - ₹5,00,000">₹2,50,000 – ₹5,00,000</option>
+                        <option value="₹5,00,000+">₹5,00,000+</option>
                       </>
                     ) : (
                       <>
-                        <option value="Under $1,000">Under $1,000 / month</option>
-                        <option value="$1,000 - $5,000">$1,000 – $5,000 / month</option>
-                        <option value="$5,000 - $20,000">$5,000 – $20,000 / month</option>
-                        <option value="$20,000+">$20,000+ / month</option>
+                        <option value="₹50,000 - ₹1,00,000">₹50,000 – ₹1,00,000 / month</option>
+                        <option value="₹1,00,000 - ₹2,50,000">₹1,00,000 – ₹2,50,000 / month</option>
+                        <option value="₹2,50,000 - ₹5,00,000">₹2,50,000 – ₹5,00,000 / month</option>
+                        <option value="₹5,00,000+">₹5,00,000+ / month</option>
                       </>
                     )}
                   </select>
@@ -577,7 +621,7 @@ export default function LeadForm({ showDecorations = false }: LeadFormProps) {
 
         {/* Footer Navigation Buttons */}
         <div className="mt-8 pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
-          
+
           {step > 1 ? (
             <button
               type="button"

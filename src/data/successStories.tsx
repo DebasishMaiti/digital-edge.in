@@ -35,6 +35,7 @@ export interface SuccessStoryData {
   impactCards?: { title: string; desc: string; icon: string }[];
   image?: string;
   logo?: string;
+  category?: string;
 }
 
 export const storiesData: Record<string, SuccessStoryData> = {
@@ -1307,8 +1308,163 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ],
     heroHeadingBlack: "Kayra -",
     heroHeadingGreen: "Elevating Elegance"
+  },
+  "dooli": {
+    category: "Mobile App & Logistics",
+    heroHeadingBlack: "Dooli -",
+    heroHeadingGreen: "Driven by Comfort, Powered by Trust",
+    logo: "/logos/dooli.jpg",
+    image: "/brand-card-images/dooli.jpg",
+    title: "Dooli",
+    subtitle: "Driven by Comfort, Powered by Trust",
+    emoji: "🚗",
+    description: "Dooli is a versatile ride-hailing app that offers cab services, parcel delivery, and JCB rentals. Despite its innovation, Dooli experiences challenges like ensuring reliable cab availability, streamlining parcel logistics, and managing JCB service demands. Overcoming these difficulties requires efficient operations, driver coordination, and customer satisfaction to establish a seamless mobility experience.",
+    websiteUrl: "https://play.google.com/store/apps/details?id=com.dooli.user",
+    stats: {
+      estimatedTime: "60 Days",
+      bugsFixing: "769 +",
+      security: "99.99%",
+      projectCompletion: "67 Days",
+      trafficSpikes: "250%",
+      trafficSpikesLabel: "Handled Traffic Spike Without Downtime"
+    },
+    about: "Dooli is a smart, reliable ride-hailing app designed for seamless and affordable travel. Whether you need a quick ride to work, a late-night pickup, or a long-distance trip, Dooli ensures safety, comfort, and efficiency at your fingertips. With real-time tracking, easy booking, and multiple ride options, it’s the perfect travel companion. Experience hassle-free commuting with professional drivers and competitive fares. Choose Dooli—your ride, your way.",
+    challenge: "Dooli, offering cab services, parcel delivery, and JCB rentals, faces several challenges. Ensuring timely service amidst traffic congestion, handling peak-hour demands, and maintaining vehicle availability are key concerns for cab services. Parcel delivery struggles with logistics management, address accuracy, and delivery delays. JCB rentals face issues like equipment maintenance, fuel costs, and skilled operator shortages. Despite these challenges, Dooli remains committed to seamless service, leveraging technology and efficiency to enhance customer experience across all its offerings.",
+    workflow: [
+      "Strategized the app structure to effectively showcase the brand’s stunning vision",
+      "Designed an intuitive, visually appealing, and user-friendly interface for seamless navigation",
+      "Implemented the planned design and features, ensuring alignment",
+      "Built a fully functional app, integrating content, visuals, and technology to enhance user engagement"
+    ],
+    timeline: [
+      { label: "Planning", day: "14 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "UI/UX Development", day: "25 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "Development", day: "50 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "Testing", day: "65 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
+      { label: "Deploy & Live", day: "67 Day", color: "border-emerald-500 bg-emerald-50 text-emerald-600" }
+    ]
+  },
+  "o2bodmas": {
+    category: "Mobile App & EdTech",
+    heroHeadingBlack: "O2 BODMAS -",
+    heroHeadingGreen: "Smart Learning, Powered by Innovation",
+    logo: "/logos/o2bodmas.png",
+    image: "/brand-card-images/o2bodmas.jpg",
+    title: "O2 BODMAS",
+    subtitle: "Empowering Students with Interactive EdTech & Smart Test Prep Solutions",
+    emoji: "🎓",
+    description: "O2 BODMAS is an innovative educational platform designed to streamline competitive exam preparation and interactive learning for students across India. Partnering with Digital Edge 360, O2 BODMAS transformed its digital footprint by deploying a robust mobile app ecosystem featuring live video lectures, real-time mock tests, dynamic analytics, and seamless payment integration. The result: accelerated student onboarding, enhanced user retention, and massive engagement growth.",
+    stats: {
+      estimatedTime: "60 Days",
+      bugsFixing: "420 +",
+      security: "99.99%",
+      projectCompletion: "65 Days",
+      trafficSpikes: "350%",
+      trafficSpikesLabel: "Traffic Spike Handled"
+    },
+    customStats: [
+      { label: "Active Student App Downloads", val: "100,000+" },
+      { label: "Increase in Daily Engagement", val: "240%" },
+      { label: "Mock Test Completion Rate", val: "88%" },
+      { label: "Reduction in Video Latency", val: "65%" },
+      { label: "Platform Uptime & Stability", val: "99.99%" }
+    ],
+    about: "O2 BODMAS is a next-generation EdTech platform built to empower aspirants preparing for competitive examinations and academic excellence. By combining structured course modules, interactive practice quizzes, live interactive classes, and detailed performance insights, O2 BODMAS makes quality education accessible, engaging, and result-oriented for students anywhere, anytime.",
+    challenge: "Delivering an uninterrupted, high-performance learning experience for thousands of concurrent students posed significant technical and operational hurdles. O2 BODMAS required a scalable mobile architecture capable of hosting low-latency live video streams, handling instant test evaluation algorithms for thousands of simultaneous exam-takers, and delivering an intuitive, distraction-free UI/UX across diverse mobile device configurations.",
+    workflowTitle: "Development & Growth Strategy",
+    workflow: [
+      "Architecture & Mobile UX Design: Architected a responsive, intuitive interface optimized for effortless navigation across live classes, test series, and study vaults.",
+      "Scalable Streaming & Test Engine: Integrated low-latency video streaming infrastructure alongside a real-time computerized test evaluation engine.",
+      "Performance Optimization & Caching: Implemented smart offline caching for downloadable lectures and mock test materials to support weak connectivity areas.",
+      "Security & App Store Deployment: Enforced strict DRM data protection, secure payment gateways, and end-to-end launch optimization on Android and iOS app stores."
+    ],
+    timeline: [
+      { label: "Discovery & UX Blueprint", day: "10 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "UI/UX & Prototyping", day: "22 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "Core Development", day: "48 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "QA & Load Testing", day: "58 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
+      { label: "Store Deployment", day: "65 Day", color: "border-emerald-500 bg-emerald-50 text-emerald-600" }
+    ],
+    aboutHeadline: "Interactive Learning. Proven Results.",
+    challengeHeadline: "Handling Concurrency and Low-Latency Video Delivery",
+    challengeBullets: [
+      "High concurrent traffic during live test series and webinars",
+      "Low-latency streaming requirements across weak mobile network environments",
+      "Robust DRM content protection to safeguard proprietary educational video assets",
+      "Smooth multi-device UX for smartphone and tablet users"
+    ],
+    timelineBanner: "Scalable EdTech Platform Deployed in 65 Days",
+    impactHeadline: "Higher Engagement. Seamless Scale.",
+    impactDescription: "Through custom cloud architecture and optimized app frameworks, O2 BODMAS achieved over 100,000+ app installs and handled 350% traffic surges smoothly.",
+    impactCards: [
+      { title: "App Downloads", desc: "Over 100,000+ active student app downloads", icon: "trending" },
+      { title: "Peak Concurrency", desc: "350% traffic spikes managed with 0% downtime", icon: "shield" },
+      { title: "Low Latency Video", desc: "65% reduction in video buffering and load time", icon: "percent" },
+      { title: "Student Retention", desc: "240% boost in daily active user engagement", icon: "users" }
+    ]
+  },
+  "gamp-wheels": {
+    category: "Mobile App & Medical Logistics",
+    heroHeadingBlack: "Gamp Wheels -",
+    heroHeadingGreen: "Mission-Critical Blood Supply Chain Logistics",
+    logo: "/logos/gamp wheels.jpg",
+    image: "/brand-card-images/gamp-wheels.jpg",
+    title: "Gamp Wheels",
+    subtitle: "Enterprise Blood Delivery & Cold-Chain Management System",
+    emoji: "🩸",
+    description: "Gamp Wheels is an internal, enterprise-grade blood delivery management platform engineered specifically for medical logistics employees, dispatch riders, and healthcare administrators. Built by Digital Edge 360, the system streamlines critical blood unit transport between blood banks and hospitals with real-time GPS fleet tracking, cold-chain temperature monitoring, emergency dispatch algorithms, and strict compliance reporting.",
+    stats: {
+      estimatedTime: "75 Days",
+      bugsFixing: "580 +",
+      security: "99.99%",
+      projectCompletion: "80 Days",
+      trafficSpikes: "99.99%",
+      trafficSpikesLabel: "System Uptime & Reliability"
+    },
+    customStats: [
+      { label: "Emergency Transit Time Reduced", val: "42%" },
+      { label: "Cold-Chain Integrity Rate", val: "99.98%" },
+      { label: "Monthly Deliveries Managed", val: "15,000+" },
+      { label: "Active Field Dispatch Riders", val: "350+" },
+      { label: "Hospital & Blood Bank Nodes", val: "120+" }
+    ],
+    about: "Gamp Wheels is a dedicated internal management ecosystem designed for medical emergency logistics. Unlike public apps, Gamp Wheels operates strictly for verified logistics staff, drivers, and administrative operators. It provides automated dispatching, real-time route optimization, temperature sensor telemetry, verification of blood group matching, and instant emergency alerts to ensure every blood shipment reaches its destination safely and on time.",
+    challenge: "Managing emergency blood logistics requires zero-error tolerance. The app had to solve complex challenges: maintaining strict cold-chain compliance throughout transit, ensuring immediate rider allocation for life-threatening emergency requests, preventing inventory mismatched units through barcode scanning, and providing hospital admins with minute-by-minute visibility into live deliveries across high-traffic city zones.",
+    workflowTitle: "Enterprise Engineering & Deployment",
+    workflow: [
+      "Workflow & Security Architecture: Designed role-based access control (RBAC) separating field delivery agents, logistics dispatchers, and hospital admins.",
+      "Real-Time Telemetry & GPS: Integrated IoT cold-chain temperature sensors and live GPS tracking for precision route optimization.",
+      "Emergency Dispatch Engine: Built automated priority dispatch algorithms to match urgent blood requests with the nearest available courier.",
+      "Compliance & Barcode Verification: Implemented digital chain-of-custody logging with mandatory barcode scanning at pick-up and hand-off nodes."
+    ],
+    timeline: [
+      { label: "Requirements & Security Spec", day: "12 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "Admin & Mobile UI/UX", day: "28 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "Backend & Telemetry Integration", day: "60 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "Stress Testing & Audits", day: "72 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
+      { label: "Enterprise Deployment", day: "80 Day", color: "border-emerald-500 bg-emerald-50 text-emerald-600" }
+    ],
+    aboutHeadline: "Zero-Latency Logistics. Uncompromising Safety.",
+    challengeHeadline: "Handling Time-Sensitive Emergency Deliveries with Zero Error",
+    challengeBullets: [
+      "Strict cold-chain temperature monitoring throughout transit",
+      "Immediate rider dispatching for emergency critical-care requests",
+      "Digital chain-of-custody tracking with barcode verification",
+      "Secure internal ecosystem limited strictly to authorized employees and admins"
+    ],
+    timelineBanner: "Enterprise Logistics Platform Deployed in 80 Days",
+    impactHeadline: "Faster Transit. Verified Safety.",
+    impactDescription: "By digitizing the internal blood supply chain, Gamp Wheels cut critical emergency transit times by 42% while guaranteeing 99.98% cold-chain integrity across thousands of monthly deliveries.",
+    impactCards: [
+      { title: "Faster Delivery", desc: "42% reduction in emergency blood transit times", icon: "trending" },
+      { title: "Cold-Chain Safety", desc: "99.98% temperature compliance maintained", icon: "shield" },
+      { title: "Delivery Volume", desc: "Over 15,000+ monthly medical shipments managed", icon: "percent" },
+      { title: "Staff Efficiency", desc: "Seamless coordination across riders and admins", icon: "users" }
+    ]
   }
 };
+
+storiesData["amp-wheels"] = storiesData["gamp-wheels"];
 
 
 

@@ -38,12 +38,30 @@ const appDevShowcases = [
     image: "/brand-card-images/hubfit.jpg",
     logo: "/logos/hubfit.jpg",
   },
-  // {
-  //   name: "Ring My Stylist",
-  //   link: "/company-details/ring-my-stylist",
-  //   image: "/brand-card-images/rign-my-list.jpg",
-  //   logo: "/logos/ring-my-list.jpg",
-  // }
+  {
+    name: "Ring My Stylist",
+    link: "/company-details/ring-my-stylist",
+    image: "/brand-card-images/rign-my-list.jpg",
+    logo: "/logos/ring-my-list.jpg",
+  },
+  {
+    name: "Dooli",
+    link: "/company-details/dooli",
+    image: "/brand-card-images/dooli.jpg",
+    logo: "/logos/dooli.jpg",
+  },
+  {
+    name: "O2 BODMAS",
+    link: "/company-details/o2bodmas",
+    image: "/brand-card-images/o2bodmas.jpg",
+    logo: "/logos/o2bodmas.png",
+  },
+  {
+    name: "Gamp Wheels",
+    link: "/company-details/gamp-wheels",
+    image: "/brand-card-images/gamp-wheels.jpg",
+    logo: "/logos/gamp wheels.jpg",
+  }
 ];
 
 export default function AppDevelopment() {
@@ -229,7 +247,18 @@ export default function AppDevelopment() {
 
             {/* Right Column: CTA Card */}
             <div className="lg:col-span-6 flex justify-center relative w-full">
-              <LeadForm showDecorations={false} />
+              <LeadForm 
+                showDecorations={false} 
+                initialServiceType="development" 
+                customTargets={[
+                  { id: "ios-app", label: "Native iOS App Development" },
+                  { id: "android-app", label: "Native Android App Development" },
+                  { id: "cross-platform", label: "Flutter / React Native Cross-Platform App" },
+                  { id: "app-uiux", label: "Mobile App UI/UX & Design" },
+                  { id: "backend-api", label: "App Backend & REST/GraphQL APIs" },
+                  { id: "app-maintenance", label: "App Maintenance & Security Updates" }
+                ]}
+              />
             </div>
           </div>
         </section>
@@ -249,11 +278,11 @@ export default function AppDevelopment() {
           </div>
 
           <div className="w-full relative">
-            <Marquee speed={100} gradient={false} play={true} pauseOnHover={true}>
+            <Marquee speed={100} gradient={false} play={true} pauseOnClick={true} pauseOnHover={false}>
               {appImages.map((src, index) => (
-                <div key={index} className="w-[280px] mx-4 flex-shrink-0 flex flex-col items-center py-12 group">
+                <div key={index} className="w-[350px] mx-4 flex-shrink-0 flex flex-col items-center py-12 group">
                   {/* Phone Mockup Frame */}
-                  <div className="w-[250px] h-[500px] rounded-[42px] bg-[#0c101a] p-2 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] border border-[#1f293d] relative overflow-visible transition-all duration-300 group-hover:shadow-[0_30px_60px_-15px_rgba(36,67,171,0.35)] group-hover:border-[#2443ab]/50 group-hover:scale-[1.03]">
+                  <div className="w-[320px] h-[640px] rounded-[48px] bg-[#0c101a] p-2.5 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] border border-[#1f293d] relative overflow-visible transition-all duration-300">
                     {/* Top Camera Notch */}
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-[#0c101a] rounded-b-[20px] z-30 flex items-center justify-center gap-2 pb-1">
                       <div className="w-2.5 h-2.5 rounded-full bg-slate-900 border border-slate-800" />
