@@ -231,7 +231,7 @@ export default function CompanyDetailsClient({ story, slug }: { story: SuccessSt
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 text-xs font-extrabold text-slate-400 hover:text-indigo-600 transition-colors duration-300"
                   >
-                    <span>{new URL(story.websiteUrl).hostname}</span>
+                    <span>{(() => { try { return new URL(story.websiteUrl).hostname; } catch { return story.websiteUrl; } })()}</span>
                     <ExternalLink className="w-3.5 h-3.5 opacity-70" />
                   </a>
                 )}
@@ -308,9 +308,11 @@ export default function CompanyDetailsClient({ story, slug }: { story: SuccessSt
                     About {story.title}
                   </span>
                 </div>
-                <h3 className="text-2xl font-black text-slate-900 tracking-tight leading-snug border-l-4 border-blue-500 pl-4">
-                  {story.aboutHeadline || "Nurturing Beauty. Enhancing Confidence."}
-                </h3>
+                {story.aboutHeadline && (
+                  <h3 className="text-2xl font-black text-slate-900 tracking-tight leading-snug border-l-4 border-blue-500 pl-4">
+                    {story.aboutHeadline}
+                  </h3>
+                )}
                 <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-semibold">
                   {story.about}
                 </p>

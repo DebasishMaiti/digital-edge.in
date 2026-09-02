@@ -18,6 +18,7 @@ export const brandLogosList = [
 ];
 
 export const portfolioItems = [
+  { name: "Genesis", image: "/portfolio/genesis.jpg", url: "https://genesiseduzone.com/" },
   { name: "Melfort", image: "/portfolio/melfort.png", url: "https://melfort.com" },
   { name: "Chris Louis", image: "/portfolio/chrislouis.png", url: "https://chrislouis.com.au" },
   { name: "United By Blue", image: "/portfolio/unitedbyblue.png", url: "https://www.unitedbyblue.com/" },

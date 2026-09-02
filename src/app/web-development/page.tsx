@@ -13,6 +13,48 @@ import ArchitectureTimeline from "@/components/ArchitectureTimeline";
 
 const webDevShowcases = [
   {
+    name: "Genesis Eduzone",
+    link: "/company-details/genesis",
+    image: "/brand-card-images/genesis.jpg",
+    logo: "/logos/genesis-logo.png"
+  },
+  {
+    name: "CleanMax Solar",
+    link: "/company-details/clean-max",
+    image: "/brand-card-images/clean-max.jpg",
+    logo: "/logos/clean-max.svg"
+  },
+  {
+    name: "Riangle Studio",
+    link: "/company-details/riangle",
+    image: "/brand-card-images/riangle.jpg",
+    logo: "/logos/rangle-logo.jpg"
+  },
+  {
+    name: "Wire Communication",
+    link: "/company-details/wire-communication",
+    image: "/brand-card-images/wire-comunication.jpg",
+    logo: "/logos/wire-comunication.jpg"
+  },
+  {
+    name: "Arcesium",
+    link: "/company-details/arcesium",
+    image: "/brand-card-images/arcesium.jpg",
+    logo: "/logos/arcesium.svg"
+  },
+  {
+    name: "Era Residence",
+    link: "/company-details/era-residence",
+    image: "/brand-card-images/era-resident.jpg",
+    logo: "/logos/era-resident-logo.png"
+  },
+  {
+    name: "VentureSoul Partners",
+    link: "/company-details/venturesoul",
+    image: "/brand-card-images/venturesoul.jpg",
+    logo: "/logos/venturesoul-logo.jpg"
+  },
+  {
     name: "Likeson",
     link: "/company-details/likeson",
     image: "/brand-card-images/likeson.jpg",

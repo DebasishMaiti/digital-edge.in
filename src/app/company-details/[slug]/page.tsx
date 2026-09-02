@@ -11,6 +11,34 @@ export function generateStaticParams() {
 }
 
 const caseStudiesMetadata: Record<string, { title: string; description: string }> = {
+  "wire-communication": {
+    title: "Wire Communication Case Study | Digital Edge 360°",
+    description: "How Digital Edge 360 built Wire Communication a modern B2B telecom platform with 350% increase in enterprise customer inquiries."
+  },
+  "arcesium": {
+    title: "Arcesium Case Study | Digital Edge 360°",
+    description: "How Digital Edge 360 built Arcesium a high-performance web platform for its institutional investment technology and post-trade software solutions."
+  },
+  "era-residence": {
+    title: "Era Residence Case Study | Digital Edge 360°",
+    description: "How Digital Edge 360 built Era Residence an immersive luxury real estate digital platform with 410% growth in qualified buyer inquiries."
+  },
+  "genesis": {
+    title: "Genesis Eduzone Case Study | Digital Edge 360°",
+    description: "How Digital Edge 360 built an interactive learning platform and website for Genesis Eduzone, driving 310% growth in student inquiries."
+  },
+  "clean-max": {
+    title: "CleanMax Solar Case Study | Digital Edge 360°",
+    description: "How Digital Edge 360 built a high-performance web platform for CleanMax Solar, Asia's premier corporate renewable energy provider."
+  },
+  "riangle": {
+    title: "Riangle Studio Case Study | Digital Edge 360°",
+    description: "How Digital Edge 360 built a sleek, high-conversion web experience for Riangle Studio, elevating their digital product design portfolio."
+  },
+  "venturesoul": {
+    title: "VentureSoul Partners Case Study | Digital Edge 360°",
+    description: "How Digital Edge 360 built a high-performance web platform for VentureSoul Partners, a SEBI-registered Category II AIF debt fund."
+  },
   "creative-ecotech": {
     title: "Creative Ecotech Case Study | Digital Edge 360°",
     description: "How Digital Edge 360 helped Creative Ecotech, an eco-friendly plastics brand, build a clearer, trust-building digital presence."
@@ -42,6 +70,10 @@ const caseStudiesMetadata: Record<string, { title: string; description: string }
   "hubfit": {
     title: "HubFit Case Study | Digital Edge 360°",
     description: "How Digital Edge 360 built HubFit, a fitness coaching app with real-time tracking, wearable sync and coach messaging."
+  },
+  "kayrah": {
+    title: "Kayrah Case Study | Digital Edge 360°",
+    description: "How Digital Edge 360 built a high-performance Next.js e-commerce storefront for Kayrah luxury fashion brand."
   },
   "jetchoice": {
     title: "JetChoice Case Study | Digital Edge 360°",

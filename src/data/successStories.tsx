@@ -39,6 +39,230 @@ export interface SuccessStoryData {
 }
 
 export const storiesData: Record<string, SuccessStoryData> = {
+  "wire-communication": {
+    logo: "/logos/wire-comunication.jpg",
+    image: "/brand-card-images/wire-comunication.jpg",
+    title: "Wire Communication",
+    subtitle: "Reliable Global Telecom & Next-Gen Network Infrastructure Solutions",
+    emoji: "📡",
+    description: "Wire Communication is a German telecommunications provider delivering enterprise connectivity, fiber network infrastructure, and reliable business communication solutions.",
+    websiteUrl: "https://wire-communication.de/",
+    stats: {
+      estimatedTime: "25 Days",
+      bugsFixing: "140 +",
+      security: "99.99%",
+      projectCompletion: "25 Days",
+      trafficSpikes: "350%",
+      trafficSpikesLabel: "Inquiries & Conversions"
+    },
+    about: "Wire Communication specializes in high-availability telecommunications, VoIP networks, and enterprise IT infrastructure across Europe. Focused on speed, reliability, and security, the company empowers organizations with seamless connectivity and communication tools.",
+    challenge: "Establishing an authoritative digital identity in the European telecom sector while streamlining B2B service inquiries. Wire Communication required a multilingual, ultra-secure web platform that showcases technical capabilities and drives enterprise client onboarding.",
+    workflow: [
+      "Designed a sleek European telecom brand interface with intuitive service navigation.",
+      "Engineered a responsive, high-performance web structure with local compliance standards.",
+      "Integrated B2B quote request tools and direct customer support pipelines.",
+      "Executed search engine optimization and performance tuning for global scalability."
+    ],
+    timeline: [
+      { label: "Telecom Strategy", day: "4 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "UX & Interface Design", day: "10 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "Development & Security", day: "18 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "Quality Assurance", day: "22 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
+      { label: "Deploy & Live", day: "25 Day", color: "border-emerald-500 bg-emerald-50 text-emerald-600" }
+    ]
+  },
+  "genesis": {
+    logo: "/logos/genesis-logo.png",
+    image: "/brand-card-images/genesis.jpg",
+    title: "Genesis Eduzone",
+    subtitle: "Empowering Students with Comprehensive Educational & Learning Solutions",
+    emoji: "🎓",
+    description: "Genesis Eduzone is an educational platform delivering interactive learning programs, academic resources, and career guidance designed to help students excel in their academic and professional journeys.",
+    websiteUrl: "https://genesiseduzone.com/",
+    stats: {
+      estimatedTime: "25 Days",
+      bugsFixing: "120 +",
+      security: "99.99%",
+      projectCompletion: "25 Days",
+      trafficSpikes: "310%",
+      trafficSpikesLabel: "Student Registrations"
+    },
+    about: "Genesis Eduzone is dedicated to redefining modern education through high-quality study materials, expert mentorship, and innovative digital learning tools. The platform offers structured courses, competitive exam prep, and interactive skill-building resources tailored for students across diverse academic levels.",
+    challenge: "Developing an intuitive, engaging, and high-performance web platform that seamlessly connects students with educational courses, study guides, and live inquiry tools while maintaining fast load times and mobile accessibility across all devices.",
+    workflow: [
+      "Designed an accessible, student-centric UI/UX layout optimized for course navigation and resource discovery.",
+      "Engineered a responsive, high-speed educational platform with fast media delivery and clean layout hierarchy.",
+      "Integrated seamless lead generation and student inquiry pipelines for course admissions.",
+      "Executed comprehensive search engine optimization and speed tuning to maximize organic student reach."
+    ],
+    timeline: [
+      { label: "Educational Strategy", day: "4 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "UI & Course Architecture", day: "10 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "Platform Development", day: "18 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "Content & QA Testing", day: "22 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
+      { label: "Deploy & Live", day: "25 Day", color: "border-emerald-500 bg-emerald-50 text-emerald-600" }
+    ]
+  },
+  "clean-max": {
+    logo: "/logos/clean-max.svg",
+    image: "/brand-card-images/clean-max.jpg",
+    title: "CleanMax Solar",
+    subtitle: "Asia's Premier Commercial & Industrial Renewable Energy Solutions Partner",
+    emoji: "☀️",
+    description: "CleanMax is Asia's leading renewable energy provider for commercial and industrial clients, enabling corporations to adopt solar and wind power with zero upfront capital investment.",
+    websiteUrl: "https://www.cleanmax.com/",
+    stats: {
+      estimatedTime: "28 Days",
+      bugsFixing: "160 +",
+      security: "99.99%",
+      projectCompletion: "28 Days",
+      trafficSpikes: "340%",
+      trafficSpikesLabel: "Corporate Inquiries"
+    },
+    about: "CleanMax Solar pioneers sustainability across Asia by delivering tailor-made rooftop and farm-scale solar solutions, wind-solar hybrid plants, and corporate energy PPA structures. Trusted by top Fortune 500 multinationals and Indian conglomerates, CleanMax powers decarbonization goals while significantly reducing corporate operational energy costs.",
+    challenge: "Presenting complex B2B renewable energy products, sustainability metrics, and corporate PPA calculators clearly online. CleanMax needed a modern, eco-innovative web experience that communicates sustainability impact, builds institutional trust, and captures high-value corporate inquiries.",
+    workflow: [
+      "Architected a high-trust clean energy corporate brand interface with interactive service highlights.",
+      "Engineered a ultra-fast, responsive web platform highlighting real-time carbon offset impact and solar installations.",
+      "Integrated streamlined corporate PPA inquiry pipelines and interactive project portfolio viewports.",
+      "Executed search engine optimization for C&I renewable energy and corporate sustainability queries."
+    ],
+    timeline: [
+      { label: "Renewable Strategy", day: "5 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "UI & System Design", day: "11 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "Platform Engineering", day: "20 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "QA & Security Audit", day: "25 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
+      { label: "Deploy & Live", day: "28 Day", color: "border-emerald-500 bg-emerald-50 text-emerald-600" }
+    ]
+  },
+  "riangle": {
+    logo: "/logos/rangle-logo.jpg",
+    image: "/brand-card-images/riangle.jpg",
+    title: "Riangle Studio",
+    subtitle: "Next-Generation Digital Product Design, Brand Identity & UX Consultancy",
+    emoji: "🎨",
+    description: "Riangle is a premier design agency crafting human-centric digital products, immersive user interfaces, and strategic brand identities for scaling startups and global enterprises.",
+    websiteUrl: "https://riangle.com/",
+    stats: {
+      estimatedTime: "24 Days",
+      bugsFixing: "140 +",
+      security: "99.99%",
+      projectCompletion: "24 Days",
+      trafficSpikes: "320%",
+      trafficSpikesLabel: "Design Client Inquiries"
+    },
+    about: "Riangle Studio specializes in bespoke digital product design, creative direction, and high-impact visual design systems. By bridging aesthetics with business strategy, Riangle helps brands elevate their digital presence, deliver seamless user experiences, and convert audiences into loyal advocates.",
+    challenge: "Creating a high-concept, design-forward digital portfolio that showcases complex UX case studies, interactive UI prototypes, and creative services without compromising site load speed or mobile responsiveness.",
+    workflow: [
+      "Designed a sleek, design-agency visual interface with fluid transitions and bold typography.",
+      "Engineered an interactive digital portfolio showcasing agency case studies, design systems, and client results.",
+      "Integrated automated inquiry funnels and consultation scheduling for prospective enterprise clients.",
+      "Executed technical SEO and performance optimization to ensure high-speed media delivery across all viewports."
+    ],
+    timeline: [
+      { label: "Brand & UX Strategy", day: "4 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "Visual System & UI", day: "10 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "Frontend Engineering", day: "18 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "QA & Media Optimization", day: "22 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
+      { label: "Deploy & Live", day: "24 Day", color: "border-emerald-500 bg-emerald-50 text-emerald-600" }
+    ]
+  },
+  "arcesium": {
+    logo: "/logos/arcesium.svg",
+    image: "/brand-card-images/arcesium.jpg",
+    title: "Arcesium",
+    subtitle: "Post-Trade Technology & Financial Software Solutions for Investment Managers",
+    emoji: "💼",
+    description: "Arcesium is a leading financial technology company delivering advanced post-trade processing, data management, and investment lifecycle software to global asset managers and financial institutions.",
+    websiteUrl: "https://www.arcesium.com/",
+    stats: {
+      estimatedTime: "30 Days",
+      bugsFixing: "200 +",
+      security: "99.99%",
+      projectCompletion: "30 Days",
+      trafficSpikes: "380%",
+      trafficSpikesLabel: "Enterprise Leads"
+    },
+    about: "Arcesium powers modern financial institutions with sophisticated software and data solution suites. Designed specifically for hedge funds, asset managers, and institutional investors, Arcesium automates complex middle and back-office operations, post-trade accounting, and treasury workflows with unmatched accuracy and security.",
+    challenge: "Communicating complex institutional Fintech capabilities and enterprise-grade data security with clarity. Arcesium needed a refined, high-performance web platform that establishes immediate authority among financial executives, institutional investors, and global asset managers.",
+    workflow: [
+      "Architected an institutional Fintech brand identity and high-trust user experience.",
+      "Engineered ultra-secure, low-latency web interfaces tailored for financial decision makers.",
+      "Developed interactive solution showcases for post-trade and asset management products.",
+      "Implemented enterprise lead capture pipelines with strict compliance and security controls."
+    ],
+    timeline: [
+      { label: "Fintech Discovery", day: "5 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "UX & System Architecture", day: "12 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "Engineering & Integration", day: "22 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "Compliance & Security", day: "27 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
+      { label: "Deploy & Live", day: "30 Day", color: "border-emerald-500 bg-emerald-50 text-emerald-600" }
+    ]
+  },
+  "era-residence": {
+    logo: "/logos/era-resident-logo.png",
+    image: "/brand-card-images/era-resident.jpg",
+    title: "Era Residence",
+    subtitle: "Luxury Real Estate & Ultra-Modern Living Redefined",
+    emoji: "🏢",
+    description: "Era Residence is a premier real estate development brand delivering modern architectural landmarks, luxury living spaces, and world-class residential communities.",
+    websiteUrl: "https://www.era-residence.com/",
+    stats: {
+      estimatedTime: "25 Days",
+      bugsFixing: "150 +",
+      security: "99.99%",
+      projectCompletion: "25 Days",
+      trafficSpikes: "410%",
+      trafficSpikesLabel: "Inquiries & Leads"
+    },
+    about: "Era Residence specializes in creating state-of-the-art residential properties that harmonize architectural sophistication, eco-friendly design, and modern luxury. Dedicated to elevating urban lifestyles, Era Residence builds sustainable, high-value living spaces crafted with precision and elegance for discerning homebuyers and investors.",
+    challenge: "Showcasing premium architectural designs, 3D floor plans, and amenities dynamically online while capturing high-intent buyer inquiries. The brand needed an immersive, fast-loading digital platform that reflects elegance, builds buyer trust, and streamlines booking consultations.",
+    workflow: [
+      "Designed an elegant, high-converting digital showroom interface showcasing property portfolios.",
+      "Engineered interactive 3D virtual walkthroughs and property amenity viewports.",
+      "Integrated automated buyer inquiry routing and instant WhatsApp consultation booking.",
+      "Executed targeted real-estate performance marketing and local SEO strategies."
+    ],
+    timeline: [
+      { label: "Market Research", day: "4 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "Architectural UI/UX", day: "10 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "Platform Development", day: "18 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "Lead Pipeline Integration", day: "22 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
+      { label: "Deploy & Live", day: "25 Day", color: "border-emerald-500 bg-emerald-50 text-emerald-600" }
+    ]
+  },
+  "venturesoul": {
+    logo: "/logos/venturesoul-logo.jpg",
+    image: "/brand-card-images/venturesoul.jpg",
+    title: "VentureSoul Partners",
+    subtitle: "Category-Agnostic Debt & Growth Capital for Tomorrow's Leaders",
+    emoji: "📈",
+    description: "VentureSoul Partners is a SEBI-registered Category II AIF specializing in providing bespoke debt financing and growth capital to high-growth startups and new-economy enterprises.",
+    websiteUrl: "https://venturesoul.in/",
+    stats: {
+      estimatedTime: "30 Days",
+      bugsFixing: "180 +",
+      security: "99.99%",
+      projectCompletion: "30 Days",
+      trafficSpikes: "320%",
+      trafficSpikesLabel: "AUM & Inquiries"
+    },
+    about: "VentureSoul Partners is a premier category-agnostic debt fund designed to empower scale-up stage companies across India. Founded by seasoned banking and venture finance leaders, VentureSoul delivers agile, non-dilutive credit solutions tailored to founders' capital needs. By bridging traditional banking and venture ecosystems, VentureSoul accelerates growth for technology-driven, sustainable, and consumer-centric enterprises.",
+    challenge: "Establishing digital trust, institutional authority, and seamless investor engagement for a new-age venture fund. VentureSoul needed a sophisticated, high-performance web experience that communicates transparency, regulatory compliance, and strategic vision to institutional LPs and portfolio founders alike.",
+    workflow: [
+      "Crafted a high-authority financial brand architecture and institutional design system.",
+      "Engineered a ultra-fast, responsive web interface tailored for investors and founders.",
+      "Integrated secure lead capture and partner portfolio showcase modules.",
+      "Optimized search engine visibility and performance architecture for institutional credibility."
+    ],
+    timeline: [
+      { label: "Strategy & Positioning", day: "5 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "UI/UX Architecture", day: "12 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "Full-Stack Development", day: "22 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "Security & Testing", day: "28 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
+      { label: "Deploy & Live", day: "30 Day", color: "border-emerald-500 bg-emerald-50 text-emerald-600" }
+    ]
+  },
   "priyanka-khaitan": {
     logo: "/logos/16.jpg",
     image: "/caseStudy/bridal-content-storytelling.png",
@@ -590,6 +814,38 @@ export const storiesData: Record<string, SuccessStoryData> = {
       { title: "International Orders", desc: "140% Rise in worldwide shipments", icon: "globe" },
       { title: "Cart Abandonment", desc: "75% Decrease in abandoned carts", icon: "percent" },
       { title: "Retention & Loyalty", desc: "90% Increase in customer retention rate", icon: "users" }
+    ]
+  },
+  "kayrah": {
+    logo: "/logos/kayrah.jpg",
+    image: "/brand-card-images/KAYRAH.jpg",
+    title: "Kayrah",
+    subtitle: "Modern Luxury Fashion & Ethnic Couture Store",
+    emoji: "👗",
+    description: "Kayrah is a luxury fashion brand crafting contemporary apparel, designer ethnic wear, and bespoke couture for women worldwide.",
+    websiteUrl: "https://kayrah.in/",
+    stats: {
+      estimatedTime: "25 Days",
+      bugsFixing: "130 +",
+      security: "99.99%",
+      projectCompletion: "25 Days",
+      trafficSpikes: "290%",
+      trafficSpikesLabel: "Growth in Online Sales"
+    },
+    about: "Kayrah brings together timeless craft and contemporary aesthetics. Specializing in handcrafted ethnic wear, bridal attire, and designer pret collections, Kayrah offers fashion enthusiasts an effortless digital shopping experience powered by high-resolution lookbooks and custom sizing options.",
+    challenge: "Designing a high-conversion luxury fashion storefront that preserves the intricate beauty of designer fabrics while delivering instant page load speeds and smooth checkout across mobile devices.",
+    workflow: [
+      "Designed a sleek, high-trust luxury fashion layout highlighting collection lookbooks.",
+      "Engineered a responsive Next.js e-commerce storefront with optimized image assets.",
+      "Integrated seamless payment gateways and automated inventory management.",
+      "Executed targeted performance marketing and local SEO strategies."
+    ],
+    timeline: [
+      { label: "Fashion Strategy", day: "4 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "UI/UX & Lookbook Design", day: "10 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "Storefront Engineering", day: "18 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "QA & Payment Testing", day: "22 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
+      { label: "Deploy & Live", day: "25 Day", color: "border-emerald-500 bg-emerald-50 text-emerald-600" }
     ]
   },
   "dash-capital": {

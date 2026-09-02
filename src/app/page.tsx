@@ -10,6 +10,42 @@ import { brandLogos, portfolioItems, services, testimonials, faqItems, deliversF
 
 const brandShowcases = [
   {
+    name: "Genesis Eduzone",
+    link: "/company-details/genesis",
+    image: "/brand-card-images/genesis.jpg",
+    logo: "/logos/genesis-logo.png",
+    metric: "310%",
+    metricLabel: "Growth in Student Registrations",
+    metricColor: "text-amber-600"
+  },
+  {
+    name: "Wire Communication",
+    link: "/company-details/wire-communication",
+    image: "/brand-card-images/wire-comunication.jpg",
+    logo: "/logos/wire-comunication.jpg",
+    metric: "350%",
+    metricLabel: "Growth in B2B Inquiries",
+    metricColor: "text-sky-600"
+  },
+  {
+    name: "Arcesium",
+    link: "/company-details/arcesium",
+    image: "/brand-card-images/arcesium.jpg",
+    logo: "/logos/arcesium.svg",
+    metric: "380%",
+    metricLabel: "Growth in Enterprise Leads",
+    metricColor: "text-violet-600"
+  },
+  {
+    name: "Era Residence",
+    link: "/company-details/era-residence",
+    image: "/brand-card-images/era-resident.jpg",
+    logo: "/logos/era-resident-logo.png",
+    metric: "410%",
+    metricLabel: "Growth in Buyer Inquiries",
+    metricColor: "text-emerald-600"
+  },
+  {
     name: "Likeson",
     link: "/company-details/likeson",
     image: "/brand-card-images/likeson.jpg",
@@ -422,7 +458,7 @@ export default function Home() {
                   className="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full text-xs font-bold tracking-widest text-[#00c2eb] uppercase mb-8 shadow-sm backdrop-blur-md"
                 >
                   <span className="w-2 h-2 rounded-full bg-[#00c2eb] animate-pulse" />
-                  Full-Stack E-Commerce Marketing Agency
+                  Full-Stack Development, Software, AI Marketing & Branding Agency
                 </motion.div>
 
                 {/* Main Headline */}
@@ -432,9 +468,9 @@ export default function Home() {
                   transition={{ duration: 0.7, delay: 0.2 }}
                   className="text-4xl sm:text-5xl xl:text-[56px] font-black text-white leading-[1.1] tracking-tight mb-6"
                 >
-                  Turn Your Marketing Spend Into
+                  Increase Your Bussiness ROI With Our
                   <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-[#00c2eb] via-[#00e5ff] to-[#00a3c4]">
-                    Predictable Revenue
+                    Full Stack System
                   </span>
                 </motion.h1>
 
