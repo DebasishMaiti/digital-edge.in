@@ -543,6 +543,322 @@ export default function WebDevelopment() {
           </div>
         </section>
 
+        {/* Featured Live Websites Built By Us — Rich Visual Background Layer */}
+        <section className="relative z-10 py-16 sm:py-16 bg-[#f8fafc] text-slate-800 border-t border-slate-200/60 overflow-hidden">
+          {/* Soft Gradient Background Blobs, Tech Wireframes & Curved Wave Graphic Lines */}
+          <div className="absolute inset-0 pointer-events-none opacity-60 overflow-hidden select-none">
+            {/* Multi-color ambient background glows */}
+            <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[55rem] h-[30rem] bg-gradient-to-r from-purple-200/60 via-indigo-200/50 to-amber-200/50 blur-[130px] rounded-full animate-pulse" style={{ animationDuration: '10s' }} />
+            <div className="absolute top-1/3 -left-20 w-96 h-96 bg-gradient-to-br from-cyan-300/30 to-blue-400/20 blur-[110px] rounded-full" />
+            <div className="absolute bottom-10 -right-20 w-[30rem] h-[30rem] bg-gradient-to-tl from-rose-300/30 via-pink-200/20 to-transparent blur-[120px] rounded-full" />
+
+            {/* SVG Decorative Curves & Technical Architectural Waves */}
+            <svg className="absolute inset-0 w-full h-full min-w-[1200px]" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M-100 120 Q 350 280 750 80 T 1600 220" stroke="url(#lineGrad1)" strokeWidth="2.5" fill="none" opacity="0.6" />
+              <path d="M-50 480 Q 450 180 950 520 T 1550 340" stroke="url(#lineGrad2)" strokeWidth="2" strokeDasharray="8 8" fill="none" opacity="0.5" />
+              <path d="M100 780 C 400 620 900 850 1400 680" stroke="url(#lineGrad3)" strokeWidth="1.5" fill="none" opacity="0.4" />
+
+              {/* Floating Architectural Crosshairs & Plus Markers */}
+              <g opacity="0.3" stroke="#6366f1" strokeWidth="1.5">
+                <line x1="120" y1="180" x2="140" y2="180" />
+                <line x1="130" y1="170" x2="130" y2="190" />
+                
+                <line x1="1320" y1="240" x2="1340" y2="240" />
+                <line x1="1330" y1="230" x2="1330" y2="250" />
+
+                <line x1="220" y1="720" x2="240" y2="720" />
+                <line x1="230" y1="710" x2="230" y2="730" />
+              </g>
+
+              {/* Floating Code Window Wireframe Graphics (Left & Right) */}
+              <g transform="translate(60, 220) rotate(-6)" opacity="0.25">
+                <rect width="180" height="110" rx="12" fill="white" stroke="#6366f1" strokeWidth="1.5" />
+                <rect width="180" height="20" rx="12" fill="#f1f5f9" />
+                <circle cx="12" cy="10" r="2.5" fill="#ef4444" />
+                <circle cx="20" cy="10" r="2.5" fill="#eab308" />
+                <circle cx="28" cy="10" r="2.5" fill="#22c55e" />
+                <rect x="12" y="32" width="70" height="5" rx="2.5" fill="#3b82f6" />
+                <rect x="12" y="44" width="110" height="5" rx="2.5" fill="#8b5cf6" />
+                <rect x="12" y="56" width="90" height="5" rx="2.5" fill="#ec4899" />
+                <rect x="12" y="68" width="50" height="5" rx="2.5" fill="#10b981" />
+              </g>
+
+              <g transform="translate(1200, 360) rotate(8)" opacity="0.25">
+                <rect width="190" height="120" rx="12" fill="white" stroke="#3b82f6" strokeWidth="1.5" />
+                <rect width="190" height="22" rx="12" fill="#f1f5f9" />
+                <circle cx="14" cy="11" r="2.5" fill="#3b82f6" />
+                <rect x="15" y="34" width="50" height="30" rx="4" fill="#3b82f6" opacity="0.15" stroke="#3b82f6" strokeWidth="1" strokeDasharray="2 2" />
+                <rect x="72" y="34" width="100" height="6" rx="3" fill="#6366f1" />
+                <rect x="72" y="46" width="80" height="5" rx="2.5" fill="#94a3b8" />
+                <rect x="15" y="74" width="155" height="5" rx="2.5" fill="#f97316" />
+                <rect x="15" y="86" width="110" height="5" rx="2.5" fill="#10b981" />
+              </g>
+
+              {/* Background Geometric Dot Matrix Grids */}
+              <g transform="translate(80, 520)" opacity="0.2">
+                {Array.from({ length: 4 }).map((_, r) =>
+                  Array.from({ length: 5 }).map((_, c) => (
+                    <circle key={`bg-grid-l-${r}-${c}`} cx={c * 16} cy={r * 16} r={1.5} fill="#6366f1" />
+                  ))
+                )}
+              </g>
+
+              <g transform="translate(1260, 140)" opacity="0.2">
+                {Array.from({ length: 5 }).map((_, r) =>
+                  Array.from({ length: 5 }).map((_, c) => (
+                    <circle key={`bg-grid-r-${r}-${c}`} cx={c * 16} cy={r * 16} r={1.5} fill="#ec4899" />
+                  ))
+                )}
+              </g>
+
+              <defs>
+                <linearGradient id="lineGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#6366f1" />
+                  <stop offset="50%" stopColor="#ec4899" />
+                  <stop offset="100%" stopColor="#f97316" />
+                </linearGradient>
+                <linearGradient id="lineGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#3b82f6" />
+                  <stop offset="100%" stopColor="#10b981" />
+                </linearGradient>
+                <linearGradient id="lineGrad3" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#a855f7" />
+                  <stop offset="100%" stopColor="#06b6d4" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+
+          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+            {/* Header */}
+            <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/90 backdrop-blur-md px-4 py-1.5 text-xs font-bold text-slate-700 shadow-sm"
+              >
+                <Sparkles className="w-3.5 h-3.5 text-indigo-500" />
+                <span>Trusted by 500+ brands worldwide</span>
+              </motion.div>
+
+              <motion.h2 
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="text-4xl sm:text-6xl font-black tracking-tight text-[#0b132a] leading-[1.1]"
+              >
+                We Build Digital <br className="hidden sm:inline" />
+                <span className="bg-gradient-to-r from-[#2563eb] via-[#8b5cf6] to-[#f97316] bg-clip-text text-transparent">
+                  Experiences
+                </span>
+              </motion.h2>
+
+              <motion.p
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="text-slate-500 text-sm sm:text-base font-semibold max-w-xl mx-auto leading-relaxed"
+              >
+                Next-generation websites crafted with cutting-edge technology, modern architecture, and flawless performance.
+              </motion.p>
+            </div>
+
+            {/* Grid of Clean Architecture Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-2">
+              {[
+                {
+                  name: "VentureSoul Partners",
+                  url: "https://venturesoul.in/",
+                  domain: "venturesoul.in",
+                  category: "VENTURE CAPITAL",
+                  categoryColor: "text-blue-700",
+                  topBorder: "border-t-blue-600",
+                  btnBorder: "border-blue-600 text-blue-700 hover:bg-blue-100",
+                  arrowBg: "bg-blue-100 group-hover:bg-blue-600 text-blue-700 group-hover:text-white",
+                  glowHover: "hover:shadow-[0_15px_35px_rgba(37,99,235,0.18)]",
+                  desc: "Next-gen venture capital platform for startups",
+                  tags: ["React", "Node.js", "PostgreSQL"],
+                  bgWatermark: "from-blue-100/90 via-blue-50/50 to-transparent"
+                },
+                {
+                  name: "Industrial Site Design",
+                  url: "https://www.industrialsitedesign.com",
+                  domain: "industrialsitedesign.com",
+                  category: "ARCHITECTURE",
+                  categoryColor: "text-amber-700",
+                  topBorder: "border-t-amber-600",
+                  btnBorder: "border-amber-600 text-amber-700 hover:bg-amber-100",
+                  arrowBg: "bg-amber-100 group-hover:bg-amber-600 text-amber-700 group-hover:text-white",
+                  glowHover: "hover:shadow-[0_15px_35px_rgba(245,158,11,0.18)]",
+                  desc: "Modern industrial planning & 3D visualization",
+                  tags: ["Next.js", "Three.js", "TypeScript"],
+                  bgWatermark: "from-amber-100/90 via-amber-50/50 to-transparent"
+                },
+                {
+                  name: "Era Residence",
+                  url: "https://www.era-residence.com/",
+                  domain: "era-residence.com",
+                  category: "REAL ESTATE",
+                  categoryColor: "text-emerald-700",
+                  topBorder: "border-t-emerald-600",
+                  btnBorder: "border-emerald-600 text-emerald-700 hover:bg-emerald-100",
+                  arrowBg: "bg-emerald-100 group-hover:bg-emerald-600 text-emerald-700 group-hover:text-white",
+                  glowHover: "hover:shadow-[0_15px_35px_rgba(16,185,129,0.18)]",
+                  desc: "Luxury living redefined with elegance",
+                  tags: ["React", "Firebase", "Tailwind"],
+                  bgWatermark: "from-emerald-100/90 via-emerald-50/50 to-transparent"
+                },
+                {
+                  name: "The ScrollMint",
+                  url: "https://lp.thescrollmint.com/call?utm_source=fb&utm_medium=CBO_Recoov_6/05+%E2%80%93+Copy&utm_campaign=Static&utm_content=S2&Placement=Facebook_Marketplace&fbclid=IwZnRzaAUEVI5wZG9mBWZkaWQWUNqatB4GyW_rnaHSKkqGxznKSwV5vWV4dG4DYWVtATAAYWRpZAAAL9VorGlFc3J0YwZhcHBfaWQKNjYyODU2ODM3OQABHmo12mY52anF5z8NNrUQy5H1JQ30o8jWKrKkfr72qcxSPTFT_9dWkT_NMycR_aem_lxJICjFRaxVl8qdMIu_e_Q&utm_id=52593629406125&utm_term=52593629406925",
+                  domain: "lp.thescrollmint.com",
+                  category: "MARKETING",
+                  categoryColor: "text-purple-700",
+                  topBorder: "border-t-purple-600",
+                  btnBorder: "border-purple-600 text-purple-700 hover:bg-purple-100",
+                  arrowBg: "bg-purple-100 group-hover:bg-purple-600 text-purple-700 group-hover:text-white",
+                  glowHover: "hover:shadow-[0_15px_35px_rgba(147,51,234,0.18)]",
+                  desc: "Conversion-focused funnels that drive results",
+                  tags: ["React", "Node.js", "MongoDB"],
+                  bgWatermark: "from-purple-100/90 via-purple-50/50 to-transparent"
+                },
+                {
+                  name: "Riangle",
+                  url: "https://riangle.com",
+                  domain: "riangle.com",
+                  category: "CREATIVE AGENCY",
+                  categoryColor: "text-rose-700",
+                  topBorder: "border-t-rose-600",
+                  btnBorder: "border-rose-600 text-rose-700 hover:bg-rose-100",
+                  arrowBg: "bg-rose-100 group-hover:bg-rose-600 text-rose-700 group-hover:text-white",
+                  glowHover: "hover:shadow-[0_15px_35px_rgba(244,63,94,0.18)]",
+                  desc: "Branding, design & digital experiences",
+                  tags: ["Next.js", "Sanity", "GSAP"],
+                  bgWatermark: "from-rose-100/90 via-rose-50/50 to-transparent"
+                },
+                {
+                  name: "Wire Communication",
+                  url: "https://wire-communication.de",
+                  domain: "wire-communication.de",
+                  category: "TELECOM",
+                  categoryColor: "text-sky-700",
+                  topBorder: "border-t-sky-600",
+                  btnBorder: "border-sky-600 text-sky-700 hover:bg-sky-100",
+                  arrowBg: "bg-sky-100 group-hover:bg-sky-600 text-sky-700 group-hover:text-white",
+                  glowHover: "hover:shadow-[0_15px_35px_rgba(14,165,233,0.18)]",
+                  desc: "Reliable communication solutions for the world",
+                  tags: ["React", "Node.js", "Socket.io"],
+                  bgWatermark: "from-sky-100/90 via-sky-50/50 to-transparent"
+                },
+                {
+                  name: "Arcesium",
+                  url: "https://www.arcesium.com",
+                  domain: "arcesium.com",
+                  category: "FINTECH",
+                  categoryColor: "text-violet-700",
+                  topBorder: "border-t-violet-600",
+                  btnBorder: "border-violet-600 text-violet-700 hover:bg-violet-100",
+                  arrowBg: "bg-violet-100 group-hover:bg-violet-600 text-violet-700 group-hover:text-white",
+                  glowHover: "hover:shadow-[0_15px_35px_rgba(139,92,246,0.18)]",
+                  desc: "Secure & scalable fintech platform for tomorrow",
+                  tags: ["Next.js", "PostgreSQL", "AWS"],
+                  bgWatermark: "from-violet-100/90 via-violet-50/50 to-transparent"
+                },
+                {
+                  name: "CleanMax",
+                  url: "https://www.cleanmax.com",
+                  domain: "cleanmax.com",
+                  category: "CLEAN ENERGY",
+                  categoryColor: "text-emerald-700",
+                  topBorder: "border-t-emerald-600",
+                  btnBorder: "border-emerald-600 text-emerald-700 hover:bg-emerald-100",
+                  arrowBg: "bg-emerald-100 group-hover:bg-emerald-600 text-emerald-700 group-hover:text-white",
+                  glowHover: "hover:shadow-[0_15px_35px_rgba(16,185,129,0.18)]",
+                  desc: "Powering a sustainable future with clean energy",
+                  tags: ["React", "Laravel", "MySQL"],
+                  bgWatermark: "from-emerald-100/90 via-emerald-50/50 to-transparent"
+                }
+              ].map((site, index) => (
+                <motion.a
+                  key={index}
+                  href={site.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0, y: 25 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  className={`group relative bg-white rounded-[24px] p-6 border border-slate-200/80 border-t-4 ${site.topBorder} ${site.glowHover} transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-sm hover:-translate-y-1.5`}
+                >
+                  {/* Subtle Background Pattern Circle */}
+                  <div className={`absolute -right-12 -bottom-12 w-36 h-36 rounded-full bg-gradient-to-br ${site.bgWatermark} pointer-events-none transition-transform duration-500 group-hover:scale-125`} />
+                  
+                  {/* Decorative dot matrix pattern on card side */}
+                  <div className="absolute right-4 top-16 opacity-20 pointer-events-none group-hover:opacity-40 transition-opacity duration-300">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="currentColor" className="text-slate-400">
+                      <circle cx="4" cy="4" r="1.5" />
+                      <circle cx="16" cy="4" r="1.5" />
+                      <circle cx="28" cy="4" r="1.5" />
+                      <circle cx="4" cy="16" r="1.5" />
+                      <circle cx="16" cy="16" r="1.5" />
+                      <circle cx="28" cy="16" r="1.5" />
+                      <circle cx="4" cy="28" r="1.5" />
+                      <circle cx="16" cy="28" r="1.5" />
+                      <circle cx="28" cy="28" r="1.5" />
+                    </svg>
+                  </div>
+
+                  <div>
+                    {/* Top Row: Category label & External link icon */}
+                    <div className="flex items-center justify-between mb-3">
+                      <span className={`text-[10px] font-black tracking-wider uppercase ${site.categoryColor}`}>
+                        {site.category}
+                      </span>
+
+                      <div className="w-7 h-7 rounded-full bg-slate-100/80 group-hover:bg-slate-900 text-slate-400 group-hover:text-white flex items-center justify-center transition-all duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-3.5 h-3.5">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                        </svg>
+                      </div>
+                    </div>
+
+                    {/* Site Title */}
+                    <h3 className="text-lg sm:text-xl font-black text-[#0b132a] group-hover:text-indigo-600 transition-colors duration-200 mb-1.5 leading-snug">
+                      {site.name}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-slate-500 text-xs sm:text-sm font-semibold leading-relaxed mb-4">
+                      {site.desc}
+                    </p>
+
+                    {/* Tech Badges */}
+                    <div className="flex flex-wrap gap-1.5 mb-6">
+                      {site.tags.map((tag, tIdx) => (
+                        <span key={tIdx} className="text-[10px] font-bold text-slate-500 bg-slate-100/90 px-2.5 py-1 rounded-md">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Visit Website Action Link */}
+                  <div className="pt-3 flex items-center gap-2 text-xs font-black text-slate-800 group-hover:text-indigo-600 transition-colors">
+                    <span>Visit Website</span>
+                    <div className={`w-6 h-6 rounded-full ${site.arrowBg} flex items-center justify-center transition-all duration-300`}>
+                      <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-0.5 transition-transform duration-200" />
+                    </div>
+                  </div>
+                </motion.a>
+              ))}
+            </div>
+
+          </div>
+        </section>
+
         <ArchitectureTimeline
           title="The Framework"
           subtitle="How We Engineer Your Website"
