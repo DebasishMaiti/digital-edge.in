@@ -10,6 +10,33 @@ import { brandLogos, portfolioItems, services, testimonials, faqItems, deliversF
 
 const brandShowcases = [
   {
+    name: "Idaya Luxeee",
+    link: "/company-details/idaya-luxe",
+    image: "/brand-card-images/idaya luxee.jpg",
+    logo: "/logos/idaya-logo.jpg",
+    metric: "380%",
+    metricLabel: "Growth in Online Jewelry Sales",
+    metricColor: "text-purple-600"
+  },
+  {
+    name: "Mezoma",
+    link: "/company-details/mezoma",
+    image: "/brand-card-images/mezoma.jpg",
+    logo: "/logos/8.jpg",
+    metric: "360%",
+    metricLabel: "Growth in Global Jewelry Orders",
+    metricColor: "text-amber-600"
+  },
+  {
+    name: "Twenty One Jewels",
+    link: "/company-details/twenty-one-jewels",
+    image: "/brand-card-images/twenty-one.jpg",
+    logo: "/logos/twenty-one-logo.jpg",
+    metric: "340%",
+    metricLabel: "Growth in Sterling Silver Sales",
+    metricColor: "text-rose-600"
+  },
+  {
     name: "Genesis Eduzone",
     link: "/company-details/genesis",
     image: "/brand-card-images/genesis.jpg",
@@ -769,7 +796,6 @@ export default function Home() {
           </div>
 
         </section>
-
 
         {/* Our Works Section */}
         <section ref={mobileSectionRef} className="relative z-10 w-full py-10 md:py-12 overflow-hidden bg-gradient-to-b from-white to-[#fafbfc]">

@@ -14,6 +14,24 @@ import { section } from "framer-motion/client";
 
 const perfMarketingShowcases = [
   {
+    name: "Sakshi Handloom",
+    link: "/company-details/sakshi-handloom",
+    image: "/brand-card-images/sakshi-handloom.jpg",
+    logo: "/logos/sakshi-handloom-logo.jpg"
+  },
+  {
+    name: "Gangotri Group",
+    link: "/company-details/gangotri-group",
+    image: "/brand-card-images/gangotri-group.jpg",
+    logo: "/logos/gangotri-group-logo.jpg"
+  },
+  {
+    name: "Twenty One Jewels",
+    link: "/company-details/twenty-one-jewels",
+    image: "/brand-card-images/twenty-one.jpg",
+    logo: "/logos/twenty-one-logo.jpg"
+  },
+  {
     name: "Jiva",
     link: "/company-details/jiva",
     image: "/brand-card-images/Jiva.png",

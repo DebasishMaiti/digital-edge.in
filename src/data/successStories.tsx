@@ -103,6 +103,166 @@ export const storiesData: Record<string, SuccessStoryData> = {
       { label: "Deploy & Live", day: "25 Day", color: "border-emerald-500 bg-emerald-50 text-emerald-600" }
     ]
   },
+  "idaya-luxe": {
+    logo: "/logos/idaya-logo.jpg",
+    image: "/brand-card-images/idaya luxee.jpg",
+    title: "Idaya Luxe",
+    subtitle: "Bold, Empowering & Elegant Fine Jewelry and Accessories Storefront",
+    emoji: "💎",
+    description: "Idaya Luxe aims to make art and luxury meet, allowing customers to shower elegance. Developed by Digital Edge 360, the platform provides a unique, stylish, and modern e-commerce storefront that reflects Idaya Luxe's brand identity — bold, empowering, and elegant.",
+    websiteUrl: "https://idayaluxe.com/",
+    stats: {
+      estimatedTime: "25 Days",
+      bugsFixing: "150 +",
+      security: "99.99%",
+      projectCompletion: "25 Days",
+      trafficSpikes: "380%",
+      trafficSpikesLabel: "Growth in Online Jewelry Orders"
+    },
+    about: "Idaya Luxe is a modern fine jewelry brand crafted to celebrate individuality, empowerment, and timeless elegance. By bridging artistic craftsmanship with contemporary design, Idaya Luxe offers young professionals and fashion enthusiasts an effortless digital shopping experience powered by vibrant aesthetics and high-impact visual storytelling.",
+    challenge: "Creating a unique, stylish, and modern e-commerce experience that seamlessly communicates Idaya Luxe's bold brand story while delivering high-speed product browsing, vibrant imagery, and smooth checkout across mobile devices.",
+    workflow: [
+      "Sleek & Minimalist Design: Designed a sophisticated yet vibrant aesthetic tailored to appeal to young professionals.",
+      "User-Friendly Navigation: Engineered intuitive layout hierarchies for easy browsing of jewelry and accessories.",
+      "High-Quality Visuals: Optimized stunning product imagery viewports to enhance engagement without slowing page speed.",
+      "Brand Story Integration: Seamlessly highlighted empowerment and luxury through custom content and visual touchpoints."
+    ],
+    timeline: [
+      { label: "Brand Story & UX Blueprint", day: "4 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "UI & Minimalist Store Design", day: "10 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "E-Commerce Development", day: "18 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "Visual Optimization & QA", day: "22 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
+      { label: "Deploy & Live", day: "25 Day", color: "border-emerald-500 bg-emerald-50 text-emerald-600" }
+    ]
+  },
+  "mezoma": {
+    logo: "/logos/8.jpg",
+    image: "/brand-card-images/mezoma.jpg",
+    title: "Mezoma",
+    subtitle: "70+ Years of Craftsmanship in Moissanite & Handcrafted Fine Jewelry",
+    emoji: "💍",
+    description: "Mezoma is a fourth-generation jewelry brand based in New Delhi, India, with over 70 years of expertise in crafting high-quality, handcrafted jewelry. Built by Digital Edge 360, the website showcases and sells their handcrafted pieces and moissanite collection online, making affordable luxury accessible to retail and wholesale customers worldwide.",
+    websiteUrl: "https://mezoma.com/",
+    stats: {
+      estimatedTime: "25 Days",
+      bugsFixing: "140 +",
+      security: "99.99%",
+      projectCompletion: "25 Days",
+      trafficSpikes: "360%",
+      trafficSpikesLabel: "Growth in Global Jewelry Orders"
+    },
+    about: "Mezoma brings together a rich legacy of 70+ years of New Delhi craftsmanship with modern e-commerce technology. Specializing in ethically sourced moissanite jewelry and bespoke handcrafted collections, Mezoma provides an accessible platform for both individual retail shoppers and bulk wholesale clients seeking timeless elegance.",
+    challenge: "Creating a dual-purpose retail and wholesale e-commerce platform that highlights 70+ years of jewelry heritage while delivering low-latency high-resolution media browsing, moissanite certification displays, and seamless global checkout.",
+    workflow: [
+      "Heritage & Modern E-Commerce Architecture: Designed a refined storefront layout reflecting 70 years of jewelry craftsmanship.",
+      "Moissanite & Custom Collection Viewports: Built specialized product showcases for fine handcrafted jewelry & moissanite certifications.",
+      "Retail & Wholesale Ordering Pipelines: Integrated dual pricing and catalog access for retail buyers and wholesale partners.",
+      "Performance & Global SEO Optimization: Optimized mobile page load speeds and search engine visibility for international jewelry buyers."
+    ],
+    timeline: [
+      { label: "Heritage Strategy & UX", day: "4 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "UI & Catalog Architecture", day: "10 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "Storefront Development", day: "18 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "QA & Wholesale Integration", day: "22 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
+      { label: "Deploy & Live", day: "25 Day", color: "border-emerald-500 bg-emerald-50 text-emerald-600" }
+    ]
+  },
+  "twenty-one-jewels": {
+    logo: "/logos/twenty-one-logo.jpg",
+    image: "/brand-card-images/twenty-one.jpg",
+    title: "Twenty One Jewels",
+    subtitle: "Affordable High-Quality Handcrafted 925 Sterling Silver Jewelry",
+    emoji: "✨",
+    description: "Twenty One Jewels specializes in handcrafted 925 sterling silver jewelry, offering affordable, high-quality pieces. Partnering with Digital Edge 360, the brand launched a clean, modern e-commerce storefront and high-ROI performance marketing campaigns that focus on luxury, elegance, and effortless customer purchases.",
+    websiteUrl: "https://twentyonejewels.com/",
+    stats: {
+      estimatedTime: "25 Days",
+      bugsFixing: "145 +",
+      security: "99.99%",
+      projectCompletion: "25 Days",
+      trafficSpikes: "340%",
+      trafficSpikesLabel: "Increase in Sterling Silver Sales"
+    },
+    about: "Twenty One Jewels is a premier silver jewelry label dedicated to crafting genuine 925 sterling silver rings, necklaces, bracelets, and earrings. Blending luxury aesthetics with everyday affordability, Twenty One Jewels delivers elegant, timeless pieces designed for modern jewelry lovers.",
+    challenge: "Establishing a high-converting digital presence and performance ad engine that highlights the premium quality and craftsmanship of 925 sterling silver while ensuring intuitive navigation, large visuals, and smooth checkout animations for shoppers.",
+    workflow: [
+      "Luxury & Elegance UX Focus: Prioritized a clean, modern storefront design with refined typography and large high-resolution visuals.",
+      "High-Conversion Ad Architecture: Deployed targeted Meta and Google performance ad funnels highlighting affordable sterling silver luxury.",
+      "Smooth Micro-Animations: Engineered fluid transitions and micro-interactions to enhance customer engagement and buy-now conversions.",
+      "Checkout & Mobile Optimization: Streamlined checkout steps for frictionless purchasing across mobile and desktop devices."
+    ],
+    timeline: [
+      { label: "Brand Positioning & UX", day: "4 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "UI Design & Visual Systems", day: "10 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "Storefront & Ad Setup", day: "18 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "QA & Performance Testing", day: "22 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
+      { label: "Deploy & Scaling", day: "25 Day", color: "border-emerald-500 bg-emerald-50 text-emerald-600" }
+    ]
+  },
+  "gangotri-group": {
+    logo: "/logos/gangotri-group-logo.jpg",
+    image: "/brand-card-images/gangotri-group.jpg",
+    title: "Gangotri Group",
+    subtitle: "Premier Real Estate Development, Infrastructure & Commercial Workspaces",
+    emoji: "🏗️",
+    description: "Gangotri Group is a leading real estate and infrastructure conglomerate delivering modern residential townships, commercial complexes, and architectural landmarks. Built by Digital Edge 360, Gangotri Group launched a high-performance digital presence and multi-channel performance marketing engine to drive qualified buyer inquiries and site visits.",
+    websiteUrl: "https://gangotrigroup.org/",
+    stats: {
+      estimatedTime: "30 Days",
+      bugsFixing: "170 +",
+      security: "99.99%",
+      projectCompletion: "30 Days",
+      trafficSpikes: "420%",
+      trafficSpikesLabel: "Growth in Qualified Property Leads"
+    },
+    about: "Gangotri Group is renowned for crafting sustainable, high-value real estate projects across India. Focusing on architectural excellence, modern amenities, and prime urban locations, Gangotri Group builds residential communities and commercial hubs designed for discerning homebuyers and institutional investors.",
+    challenge: "Generating high-intent real estate buyer inquiries and site visit bookings for multi-crore residential and commercial developments while scaling Meta and Google performance ad campaigns with strict cost-per-lead (CPL) targets.",
+    workflow: [
+      "High-Intent Lead Funnels: Architected dedicated performance marketing landing pages with instant WhatsApp and consultation scheduling.",
+      "Targeted Performance Ads: Deployed hyper-targeted Meta & Google ad campaigns focused on high-net-worth real estate buyers.",
+      "Virtual Property Showcases: Integrated high-resolution floor plans, 3D project walkthroughs, and location highlights.",
+      "Lead Attribution & CRM Integration: Automated instant sales team notifications and lead tracking to maximize site visit conversion rates."
+    ],
+    timeline: [
+      { label: "Market Research & Positioning", day: "5 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "Funnel UI & Ad Creatives", day: "12 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "Campaign Launch & CRM Setup", day: "20 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "Optimization & Scaling", day: "26 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
+      { label: "Deploy & Ongoing Growth", day: "30 Day", color: "border-emerald-500 bg-emerald-50 text-emerald-600" }
+    ]
+  },
+  "sakshi-handloom": {
+    logo: "/logos/sakshi-handloom-logo.jpg",
+    image: "/brand-card-images/sakshi-handloom.jpg",
+    title: "Sakshi Handloom",
+    subtitle: "Authentic Indian Handloom Sarees, Ethnic Apparel & Artisan Weaves",
+    emoji: "🥻",
+    description: "Sakshi Handloom is a celebrated ethnic fashion brand specializing in authentic Indian handloom sarees, handcrafted dupattas, and heritage weaves. Partnered with Digital Edge 360, Sakshi Handloom scaled its nationwide e-commerce reach through targeted Meta & Google performance marketing funnels, driving high-ROAS sales and customer loyalty.",
+    websiteUrl: "https://sakshihandloom.com/",
+    stats: {
+      estimatedTime: "25 Days",
+      bugsFixing: "135 +",
+      security: "99.99%",
+      projectCompletion: "25 Days",
+      trafficSpikes: "390%",
+      trafficSpikesLabel: "Growth in Online Saree Orders"
+    },
+    about: "Sakshi Handloom celebrates the rich legacy of traditional Indian weaving. Sourcing directly from master weavers across Varanasi, Chanderi, and Kanchipuram, Sakshi Handloom brings hand-spun silk, linen, and cotton sarees to contemporary women who value authentic heritage apparel.",
+    challenge: "Scaling online customer acquisition and ROAS across competitive ethnic fashion markets while preserving brand authenticity and showcasing the intricate weave details on high-conversion digital ad creative.",
+    workflow: [
+      "Heritage Storytelling Ads: Created video and carousel ad creatives highlighting loom weaving processes and fabric textures.",
+      "High-ROAS Ad Targeting: Built lookalike and interest-based audience campaigns across Meta & Google Ads platforms.",
+      "Conversion Rate Optimization: Streamlined product collection navigation and mobile checkout for instant cart additions.",
+      "Automated Retargeting & Retention: Deployed WhatsApp & email abandoned cart recovery flows to maximize lifetime customer value."
+    ],
+    timeline: [
+      { label: "Brand Strategy & UX", day: "4 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "Ad Creative & Store UX", day: "10 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "Ad Setup & Integration", day: "18 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "QA & Campaign Launch", day: "22 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
+      { label: "Deploy & Scaling", day: "25 Day", color: "border-emerald-500 bg-emerald-50 text-emerald-600" }
+    ]
+  },
   "clean-max": {
     logo: "/logos/clean-max.svg",
     image: "/brand-card-images/clean-max.jpg",

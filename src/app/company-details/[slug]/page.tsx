@@ -27,6 +27,26 @@ const caseStudiesMetadata: Record<string, { title: string; description: string }
     title: "Genesis Eduzone Case Study | Digital Edge 360°",
     description: "How Digital Edge 360 built an interactive learning platform and website for Genesis Eduzone, driving 310% growth in student inquiries."
   },
+  "idaya-luxe": {
+    title: "Idaya Luxe Case Study | Digital Edge 360°",
+    description: "How Digital Edge 360 built a modern, sleek e-commerce storefront for Idaya Luxe fine jewelry and accessories."
+  },
+  "mezoma": {
+    title: "Mezoma Case Study | Digital Edge 360°",
+    description: "How Digital Edge 360 built a handcrafted moissanite & fine jewelry storefront for 4th generation legacy brand Mezoma."
+  },
+  "twenty-one-jewels": {
+    title: "Twenty One Jewels Case Study | Digital Edge 360°",
+    description: "How Digital Edge 360 built an elegant 925 sterling silver jewelry storefront & performance marketing strategy for Twenty One Jewels."
+  },
+  "gangotri-group": {
+    title: "Gangotri Group Case Study | Digital Edge 360°",
+    description: "How Digital Edge 360 generated 420% growth in qualified property leads for Gangotri Group real estate developments."
+  },
+  "sakshi-handloom": {
+    title: "Sakshi Handloom Case Study | Digital Edge 360°",
+    description: "How Digital Edge 360 scaled nationwide e-commerce sales for Sakshi Handloom via Meta & Google performance marketing."
+  },
   "clean-max": {
     title: "CleanMax Solar Case Study | Digital Edge 360°",
     description: "How Digital Edge 360 built a high-performance web platform for CleanMax Solar, Asia's premier corporate renewable energy provider."

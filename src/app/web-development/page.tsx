@@ -13,6 +13,18 @@ import ArchitectureTimeline from "@/components/ArchitectureTimeline";
 
 const webDevShowcases = [
   {
+    name: "Idaya Luxe",
+    link: "/company-details/idaya-luxe",
+    image: "/brand-card-images/idaya luxee.jpg",
+    logo: "/logos/idaya-logo.jpg"
+  },
+  {
+    name: "Mezoma",
+    link: "/company-details/mezoma",
+    image: "/brand-card-images/mezoma.jpg",
+    logo: "/logos/8.jpg"
+  },
+  {
     name: "Genesis Eduzone",
     link: "/company-details/genesis",
     image: "/brand-card-images/genesis.jpg",
