@@ -11,7 +11,14 @@ import Marquee from "react-fast-marquee";
 import { Rocket, Search, Puzzle, Zap, Code, Shield, ChevronRight, Globe, Layers, Settings, Sparkles, Smartphone, Cpu, ArrowRight } from "lucide-react";
 import ArchitectureTimeline from "@/components/ArchitectureTimeline";
 
-const webDevShowcases = [
+interface ShowcaseItem {
+  name: string;
+  link: string;
+  image: string;
+  logo: React.ReactNode | string | null;
+}
+
+const webDevShowcases: ShowcaseItem[] = [
   {
     name: "Idaya Luxe",
     link: "/company-details/idaya-luxe",
@@ -139,6 +146,24 @@ const webDevShowcases = [
     link: "/company-details/sree-vedics",
     image: "/brand-card-images/sreevadic.jpg",
     logo: "/logos/Sree_Vedics_Logo.jpg"
+  },
+  {
+    name: "No End Fashion",
+    link: "/company-details/no-end",
+    image: "/web-development-img/no-end.png",
+    logo: "/logos/no-end-logo.png"
+  },
+  {
+    name: "Kaamdham",
+    link: "/company-details/kaamdham",
+    image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800&auto=format&fit=crop",
+    logo: null
+  },
+  {
+    name: "Instayaar",
+    link: "/company-details/instayaar",
+    image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=800&auto=format&fit=crop",
+    logo: null
   }
 ];
 
@@ -581,7 +606,11 @@ export default function WebDevelopment() {
                           ) : (
                             brand.logo
                           )
-                        ) : null}
+                        ) : (
+                          <div className="px-4 py-2 rounded-xl bg-slate-50 border border-slate-200/70 text-slate-800 font-extrabold text-sm tracking-wide shadow-xs flex items-center justify-center">
+                            {brand.name}
+                          </div>
+                        )}
                       </div>
 
                       {/* Company Name & Arrow */}

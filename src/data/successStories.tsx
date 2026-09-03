@@ -1877,6 +1877,187 @@ export const storiesData: Record<string, SuccessStoryData> = {
       { title: "Delivery Volume", desc: "Over 15,000+ monthly medical shipments managed", icon: "percent" },
       { title: "Staff Efficiency", desc: "Seamless coordination across riders and admins", icon: "users" }
     ]
+  },
+  "no-end": {
+    category: "E-Commerce & Fashion Retail",
+    heroHeadingBlack: "No End -",
+    heroHeadingGreen: "Modern Fashion & Apparel E-Commerce Experience",
+    image: "/web-development-img/no-end.png",
+    logo: "/logos/no-end-logo.png",
+    title: "No End Fashion",
+    subtitle: "Trendsetting Modern Apparel, Denim & Contemporary E-Commerce Destination",
+    emoji: "👗",
+    description: "No End Fashion is a modern clothing and apparel brand delivering trend-forward denim, casuals, and contemporary lifestyle fashion. Digital Edge 360 engineered a lightning-fast, high-converting digital storefront designed to showcase seasonal drops, engage fashion-conscious shoppers, and scale direct-to-consumer sales.",
+    websiteUrl: "https://noendfashion.com/",
+    industry: "Fashion & E-Commerce",
+    projectType: "Next.js E-Commerce Storefront",
+    stats: {
+      estimatedTime: "24 Days",
+      bugsFixing: "135 +",
+      security: "99.99%",
+      projectCompletion: "24 Days",
+      trafficSpikes: "320%",
+      trafficSpikesLabel: "Increase in Online Orders"
+    },
+    customStats: [
+      { label: "Online Sales Growth", val: "320%" },
+      { label: "Mobile Checkout Speed", val: "1.2s" },
+      { label: "Catalog Conversion Rate", val: "4.8%" },
+      { label: "Customer Return Rate Reduced", val: "28%" }
+    ],
+    about: "No End Fashion brings trend-setting apparel and premium casual wear to modern consumers. With a focus on aesthetic denim, comfortable fits, and runway-inspired casual pieces, No End required an online destination that reflects the energy and youthfulness of the brand while delivering friction-free shopping and checkout.",
+    challenge: "Creating an e-commerce platform that balances rich, high-resolution imagery and lookbooks with rapid page load speeds, seamless mobile navigation, intuitive size guide filters, and instant checkout flows tailored for fashion shoppers across desktop and smartphone devices.",
+    workflowTitle: "Storefront Design & High-Conversion Architecture",
+    workflow: [
+      "Visual Identity & UX Architecture: Crafted an editorial-style e-commerce layout emphasizing collections, denim fits, and new drops.",
+      "High-Performance Catalog: Built lightning-fast product filtering by category, size, color, and fit with instant image preview transitions.",
+      "Conversion-Optimized Checkout: Streamlined 1-click cart and secure checkout with automated payment gateway integrations.",
+      "Mobile-First Responsive Design: Fine-tuned responsive touch gestures, micro-interactions, and visual storytelling for mobile shoppers."
+    ],
+    timeline: [
+      { label: "Discovery & UX Wireframes", day: "4 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "UI Design & Lookbook Styling", day: "10 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "Storefront & Cart Engineering", day: "17 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "Payment QA & Speed Audits", day: "21 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
+      { label: "Deployment & Production Launch", day: "24 Day", color: "border-emerald-500 bg-emerald-50 text-emerald-600" }
+    ],
+    aboutHeadline: "Curated Style. Flawless Shopping.",
+    challengeHeadline: "Designing High-Speed Visual Shopping for Trend-Driven Consumers",
+    challengeBullets: [
+      "Optimizing heavy visual editorial lookbooks without compromising Core Web Vitals",
+      "Building seamless filtering across extensive denim cuts, sizes, and collection variants",
+      "Ensuring frictionless mobile checkout with multiple instant payment methods",
+      "Maximizing average order value (AOV) with smart bundle and upsell recommendations"
+    ],
+    timelineBanner: "D2C Fashion Storefront Delivered in 24 Days",
+    impactHeadline: "Higher Conversions. Accelerated Brand Growth.",
+    impactDescription: "Through custom high-performance e-commerce engineering, No End Fashion achieved a 320% surge in online orders, a 4.8% storefront conversion rate, and sub-1.5s page load times across mobile devices.",
+    impactCards: [
+      { title: "Order Surge", desc: "320% increase in direct-to-consumer online orders", icon: "trending" },
+      { title: "Store Conversion", desc: "4.8% average e-commerce conversion rate", icon: "percent" },
+      { title: "Sub-Second Load", desc: "1.2s average mobile page response time", icon: "shield" },
+      { title: "Repeat Shoppers", desc: "65% growth in customer retention and re-orders", icon: "users" }
+    ]
+  },
+  "kaamdham": {
+    category: "Web & Service Marketplace",
+    heroHeadingBlack: "Kaamdham -",
+    heroHeadingGreen: "On-Demand Local Services & Verified Professional Platform",
+    image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=1200&auto=format&fit=crop",
+    title: "Kaamdham",
+    subtitle: "Connecting Everyday Customers with Verified Local Experts & Service Providers",
+    emoji: "🛠️",
+    description: "Kaamdham is a dynamic on-demand service marketplace connecting homeowners, event organizers, and businesses with verified professionals — from chefs, decorators, and technicians to musicians and photographers. Digital Edge 360 built an intuitive, high-reliability web application featuring instant booking, geolocation matching, and real-time order tracking.",
+    websiteUrl: "https://app.kaamdham.com/",
+    industry: "On-Demand Services & Marketplace",
+    projectType: "Full-Stack Web Application",
+    stats: {
+      estimatedTime: "30 Days",
+      bugsFixing: "190 +",
+      security: "99.99%",
+      projectCompletion: "30 Days",
+      trafficSpikes: "380%",
+      trafficSpikesLabel: "Monthly Booking Volume"
+    },
+    customStats: [
+      { label: "Monthly Service Bookings", val: "10,000+" },
+      { label: "Verified Service Providers", val: "1,500+" },
+      { label: "Booking Match Latency", val: "< 45s" },
+      { label: "Customer Satisfaction", val: "98.4%" }
+    ],
+    about: "Kaamdham simplifies how consumers and businesses discover and hire vetted, reliable professionals. With automated skill categorization, real-time availability tracking, transparent upfront pricing, and secure payment handling, Kaamdham eliminates the friction of finding trustworthy local talent for tasks large and small.",
+    challenge: "Building an intuitive two-sided marketplace that seamlessly balances the needs of customers booking services with verified vendors managing their schedules, bids, and earnings — all while maintaining ultra-fast matchmaking, live notifications, and ironclad transaction security.",
+    workflowTitle: "Marketplace Architecture & Dual-Portal Engineering",
+    workflow: [
+      "Two-Sided Portal Architecture: Engineered dedicated workflows for customers to book services and for vendors to manage jobs and payouts.",
+      "Smart Geolocation & Matching: Built instant radius-based search matching users with nearest verified service professionals.",
+      "Real-Time Booking & Scheduling: Integrated calendar management, slot booking, dynamic pricing, and automated confirmation triggers.",
+      "Secure Escrow & Payments: Implemented robust multi-tier payment handling and digital verification to protect customers and providers."
+    ],
+    timeline: [
+      { label: "Marketplace UX & Service Workflows", day: "5 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "Customer & Provider UI/UX", day: "12 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "Full-Stack Booking Engine", day: "22 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "Stress Testing & Verification QA", day: "27 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
+      { label: "Cloud Deployment & Production Launch", day: "30 Day", color: "border-emerald-500 bg-emerald-50 text-emerald-600" }
+    ],
+    aboutHeadline: "Reliable Talent. Zero Friction.",
+    challengeHeadline: "Architecting a Resilient Two-Sided On-Demand Booking Ecosystem",
+    challengeBullets: [
+      "Real-time geographic radius matching between customers and nearby active professionals",
+      "Automated provider onboarding, KYC verification, and background compliance workflows",
+      "Low-latency notifications for instant job acceptance and schedule updates",
+      "Transparent upfront pricing models with secure multi-gateway digital payments"
+    ],
+    timelineBanner: "On-Demand Service Marketplace Launched in 30 Days",
+    impactHeadline: "Fast Matchmaking. Rapid Scale.",
+    impactDescription: "With Kaamdham's full-stack web application, thousands of service requests are matched within seconds, establishing a high-trust platform that has driven 380% growth in recurring bookings.",
+    impactCards: [
+      { title: "Booking Growth", desc: "380% surge in monthly completed service bookings", icon: "trending" },
+      { title: "Active Providers", desc: "Over 1,500+ verified professionals onboarded", icon: "users" },
+      { title: "Matching Speed", desc: "Under 45-second average provider match response", icon: "shield" },
+      { title: "High Rating", desc: "98.4% positive client feedback and satisfaction", icon: "percent" }
+    ]
+  },
+  "instayaar": {
+    category: "Social Tech & Activity Platform",
+    heroHeadingBlack: "Instayaar -",
+    heroHeadingGreen: "Activity-Based Social Connection & Companion Marketplace",
+    image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1200&auto=format&fit=crop",
+    title: "Instayaar",
+    subtitle: "Real-World Activity Companionship, City Tours, Hobbies & Social Sessions",
+    emoji: "🤝",
+    description: "Instayaar is an innovative activity-based companionship platform designed to connect people with verified local individuals ('Yaars') for real-world shared experiences — including walking tours, museum visits, cafe conversations, hobby practice, and city exploration. Digital Edge 360 built an ultra-secure, privacy-first web application engineered for trust, safety, and seamless session booking.",
+    websiteUrl: "https://app.instayaar.com/",
+    industry: "Social Tech & Lifestyle Marketplace",
+    projectType: "Full-Stack Web Application",
+    stats: {
+      estimatedTime: "28 Days",
+      bugsFixing: "175 +",
+      security: "99.99%",
+      projectCompletion: "28 Days",
+      trafficSpikes: "410%",
+      trafficSpikesLabel: "Platform User Registrations"
+    },
+    customStats: [
+      { label: "Active User Growth", val: "410%" },
+      { label: "Verified Companion Profiles", val: "1,200+" },
+      { label: "Completed Activity Sessions", val: "18,000+" },
+      { label: "Trust & Safety Score", val: "99.9%" }
+    ],
+    about: "Instayaar redefines social connection in the digital age by prioritizing real-world, healthy human companionship. Strictly differentiated from dating platforms, Instayaar focuses on shared interests — from workout buddies and photography partners to city companions for solo travelers. The platform provides full identity verification, transparent hourly rates, and secure digital escrow payments.",
+    challenge: "Developing a safe, transparent social connection marketplace with strict identity verification protocols, intuitive profile discovery, private communication channels, and clear behavioral guidelines ensuring user safety and comfort at every interaction.",
+    workflowTitle: "Privacy-First UX & Secure Booking Ecosystem",
+    workflow: [
+      "Trust & Verification Protocol: Engineered multi-step profile verification including government ID checks and community guidelines attestation.",
+      "Activity Discovery Engine: Built faceted search allowing users to filter companions by city, hobbies, languages spoken, and availability.",
+      "Time-Based Booking & Escrow: Integrated hourly session scheduling with digital deposit protection and automated payout release.",
+      "Safety Features & Community Safeguards: Implemented SOS emergency triggers, mutual rating protocols, and automated moderation monitoring."
+    ],
+    timeline: [
+      { label: "Safety & Platform UX Architecture", day: "4 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "Profile Discovery & Companion UI", day: "11 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "Booking Engine & Escrow Flow", day: "20 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "Trust, Security & Privacy Testing", day: "25 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
+      { label: "Production Deployment & Launch", day: "28 Day", color: "border-emerald-500 bg-emerald-50 text-emerald-600" }
+    ],
+    aboutHeadline: "Real Connections. Real Activities. Absolute Safety.",
+    challengeHeadline: "Fostering Verified Real-World Human Connection with Uncompromising Safety",
+    challengeBullets: [
+      "Enforcing strict identity verification and safety safeguards for all participants",
+      "Designing activity-centric discovery to make finding hobby partners effortless",
+      "Integrating transparent hourly bookings with secure payment processing",
+      "Maintaining high-performance web experience across all desktop and mobile browsers"
+    ],
+    timelineBanner: "Social Companionship Web App Deployed in 28 Days",
+    impactHeadline: "Meaningful Experiences. Exceptional Community Trust.",
+    impactDescription: "Instayaar rapidly scaled its active community with over 18,000+ completed sessions, 410% user registration growth, and an industry-leading 99.9% safety and satisfaction rating.",
+    impactCards: [
+      { title: "User Growth", desc: "410% increase in registered platform members", icon: "trending" },
+      { title: "Completed Sessions", desc: "18,000+ verified real-world activity bookings", icon: "shield" },
+      { title: "Verified Yaars", desc: "1,200+ background-checked companions", icon: "users" },
+      { title: "Safety Record", desc: "99.9% positive and safe session completion rate", icon: "percent" }
+    ]
   }
 };
 

@@ -8,7 +8,17 @@ import LeadForm from "@/components/LeadForm";
 import { Users, Shield, ShoppingCart, MessageSquare, BarChart3, Clock, AlertCircle, FileText, LayoutDashboard, MessageCircle, TrendingUp, Gauge, ShieldAlert, Receipt, Target, Rocket, Trophy, ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import { brandLogos, portfolioItems, services, testimonials, faqItems, deliversFeatures } from "@/data";
 
-const brandShowcases = [
+interface ShowcaseBrandItem {
+  name: string;
+  link: string;
+  image: string;
+  logo: React.ReactNode | string | null;
+  metric?: string;
+  metricLabel?: string;
+  metricColor?: string;
+}
+
+const brandShowcases: ShowcaseBrandItem[] = [
   {
     name: "Idaya Luxeee",
     link: "/company-details/idaya-luxe",
@@ -149,6 +159,15 @@ const brandShowcases = [
     link: "/company-details/hubfit",
     image: "/brand-card-images/hubfit.jpg",
     logo: "/logos/hubfit.jpg"
+  },
+  {
+    name: "No End Fashion",
+    link: "/company-details/no-end",
+    image: "/web-development-img/no-end.png",
+    logo: "/logos/no-end-logo.png",
+    metric: "320%",
+    metricLabel: "Increase in Online Orders",
+    metricColor: "text-indigo-600"
   }
 ];
 
@@ -495,9 +514,9 @@ export default function Home() {
                   transition={{ duration: 0.7, delay: 0.2 }}
                   className="text-4xl sm:text-5xl xl:text-[56px] font-black text-white leading-[1.1] tracking-tight mb-6"
                 >
-                  Increase Your Bussiness ROI With Our
+                  Increase Your Business ROI With Our
                   <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-[#00c2eb] via-[#00e5ff] to-[#00a3c4]">
-                    Full Stack System
+                    360° Business System
                   </span>
                 </motion.h1>
 
@@ -1101,7 +1120,11 @@ export default function Home() {
                           ) : (
                             brand.logo
                           )
-                        ) : null}
+                        ) : (
+                          <div className="px-4 py-2 rounded-xl bg-slate-50 border border-slate-200/70 text-slate-800 font-extrabold text-sm tracking-wide shadow-xs flex items-center justify-center">
+                            {brand.name}
+                          </div>
+                        )}
                       </div>
 
                       {/* Company Name & Arrow */}

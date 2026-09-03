@@ -162,6 +162,18 @@ const caseStudiesMetadata: Record<string, { title: string; description: string }
   "amp-wheels": {
     title: "Gamp Wheels Case Study | Digital Edge 360°",
     description: "How Digital Edge 360 built Gamp Wheels, an enterprise blood delivery management system for logistics staff, riders, and administrators."
+  },
+  "no-end": {
+    title: "No End Fashion Case Study | Digital Edge 360°",
+    description: "How Digital Edge 360 built a modern, high-converting e-commerce storefront for No End Fashion apparel and denim brand."
+  },
+  "kaamdham": {
+    title: "Kaamdham Case Study | Digital Edge 360°",
+    description: "How Digital Edge 360 built Kaamdham, an on-demand service marketplace connecting clients with verified local experts and service providers."
+  },
+  "instayaar": {
+    title: "Instayaar Case Study | Digital Edge 360°",
+    description: "How Digital Edge 360 built Instayaar, a secure activity companionship and social session platform engineered for real-world connection."
   }
 };
 
