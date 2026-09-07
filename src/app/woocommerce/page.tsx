@@ -155,7 +155,7 @@ export default function WooCommerce() {
             </svg>
           </div>
 
-          <div className="relative z-10 max-w-[1600px] w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <div className="relative z-10 max-w-[1400px] w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
             {/* Left Column */}
             <div className="lg:col-span-6 flex flex-col items-start text-left">

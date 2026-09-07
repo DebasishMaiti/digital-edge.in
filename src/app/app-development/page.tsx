@@ -61,6 +61,30 @@ const appDevShowcases = [
     link: "/company-details/gamp-wheels",
     image: "/brand-card-images/gamp-wheels.jpg",
     logo: "/logos/gamp wheels.jpg",
+  },
+  {
+    name: "Kaamdham",
+    link: "/company-details/kaamdham",
+    image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800&auto=format&fit=crop",
+    logo: "/logos/kaamdham-logo.jpg",
+  },
+  {
+    name: "Instayaar",
+    link: "/company-details/instayaar",
+    image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=800&auto=format&fit=crop",
+    logo: "/logos/instayaar-logo.jpg",
+  },
+  {
+    name: "No End Fashion",
+    link: "/company-details/no-end",
+    image: "/web-development-img/no-end.png",
+    logo: "/logos/no-end-logo.png",
+  },
+  {
+    name: "Velvet Box",
+    link: "/company-details/velvet-box",
+    image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=800&auto=format&fit=crop",
+    logo: "/logos/velvet-box-logo.jpg",
   }
 ];
 
@@ -192,7 +216,7 @@ export default function AppDevelopment() {
             </svg>
           </div>
 
-          <div className="relative z-10 max-w-[1600px] w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <div className="relative z-10 max-w-[1400px] w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
             {/* Left Column */}
             <div className="lg:col-span-6 flex flex-col items-start text-left">

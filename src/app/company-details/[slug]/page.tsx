@@ -140,12 +140,20 @@ const caseStudiesMetadata: Record<string, { title: string; description: string }
     description: "How Digital Edge 360 boosted brand visibility and sales for RougHells, a contemporary comfort-first shirt brand."
   },
   "sacred-suta": {
-    title: "Sacred Suta Case Study | Digital Edge 360°",
-    description: "How Digital Edge 360 grew Sacred Suta's online visibility and sales for its handcrafted ethnic fashion collection."
+    title: "Sacred Suta Web Development Case Study | Digital Edge 360°",
+    description: "How Digital Edge 360 built a sleek, responsive e-commerce storefront for Sacred Suta handcrafted ethnic wear."
+  },
+  "sacred-suta-marketing": {
+    title: "Sacred Suta Performance Marketing Case Study | Digital Edge 360°",
+    description: "How Digital Edge 360 scaled Sacred Suta's D2C online sales with 520+ purchases and ₹312.40 Cost Per Purchase."
   },
   "sree-vedics": {
     title: "Sree Vedics Case Study | Digital Edge 360°",
-    description: "How Digital Edge 360 boosted Sree Vedics' online visibility and customer engagement for its skincare and wellness line."
+    description: "How Digital Edge 360 built a modern, responsive web storefront and optimized user experience for Sree Vedics skincare & wellness."
+  },
+  "sree-vedics-marketing": {
+    title: "Sree Vedics Performance Marketing Case Study | Digital Edge 360°",
+    description: "How Digital Edge 360 scaled Sree Vedics D2C Shopify sales with 456 purchases, ₹36.87 CPM and ₹277.89 Cost Per Purchase."
   },
   "truboy-bbq": {
     title: "TruBoy BBQ Case Study | Digital Edge 360°",
@@ -174,6 +182,18 @@ const caseStudiesMetadata: Record<string, { title: string; description: string }
   "instayaar": {
     title: "Instayaar Case Study | Digital Edge 360°",
     description: "How Digital Edge 360 built Instayaar, a secure activity companionship and social session platform engineered for real-world connection."
+  },
+  "chappan-bhog": {
+    title: "Chappan Bhog Case Study | Digital Edge 360°",
+    description: "How Digital Edge 360 drove 220% e-commerce sales growth for Chappan Bhog through targeted performance marketing, influencer partnerships, and retention strategies."
+  },
+  "peach-tassels": {
+    title: "Peach Tassels Case Study | Digital Edge 360°",
+    description: "How Digital Edge 360 scaled online sales for Peach Tassels through targeted performance ad campaigns and direct-to-consumer storefront optimization."
+  },
+  "velvet-box": {
+    title: "Velvet Box Case Study | Digital Edge 360°",
+    description: "How Digital Edge 360 built a high-converting luxury mobile shopping app for Velvet Box fine jewelry with 360-degree product inspection and biometric checkout."
   }
 };
 

@@ -136,7 +136,7 @@ export default function PhotographyVideography() {
             </svg>
           </div>
 
-          <div className="relative z-10 max-w-[1600px] w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <div className="relative z-10 max-w-[1400px] w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
             {/* Left Column */}
             <div className="lg:col-span-6 flex flex-col items-start text-left">
@@ -323,7 +323,7 @@ export default function PhotographyVideography() {
           <div className="absolute top-[15%] left-[5%] w-[450px] h-[450px] rounded-full bg-sky-500/5 blur-[120px] pointer-events-none" />
           <div className="absolute bottom-[15%] right-[5%] w-[450px] h-[450px] rounded-full bg-purple-500/5 blur-[120px] pointer-events-none" />
 
-          <div className="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+          <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
             {/* Section Header */}
             <div className="max-w-3xl mx-auto mb-20 text-center space-y-4">
               <span className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-4 py-1.5 text-xs font-black tracking-widest text-sky-700 uppercase shadow-sm">
@@ -467,7 +467,7 @@ export default function PhotographyVideography() {
           <div className="absolute top-[10%] left-[-10%] w-[600px] h-[600px] rounded-full bg-gradient-to-br from-blue-500/10 via-indigo-500/10 to-transparent blur-[140px] pointer-events-none animate-pulse" />
           <div className="absolute bottom-[10%] right-[-10%] w-[600px] h-[600px] rounded-full bg-gradient-to-br from-emerald-500/10 via-purple-500/10 to-transparent blur-[140px] pointer-events-none" />
 
-          <div className="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+          <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
             
             {/* Header with High-Impact Badging */}
             <div className="max-w-4xl mx-auto mb-24 text-center space-y-6">

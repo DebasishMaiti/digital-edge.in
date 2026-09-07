@@ -199,7 +199,7 @@ export default function CompanyDetailsClient({ story, slug }: { story: SuccessSt
 
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-slate-900 leading-[1.05] tracking-tight">
                 {story.heroHeadingBlack || "Success"}{" "}
-                <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 bg-clip-text text-transparent block sm:inline">
+                <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 bg-clip-text text-transparent block sm:inline pb-1">
                   {story.heroHeadingGreen || "Story"}
                 </span>
               </h1>
@@ -270,19 +270,31 @@ export default function CompanyDetailsClient({ story, slug }: { story: SuccessSt
 
           {/* Dynamic 6-Stats Ribbon bar */}
           <motion.div variants={itemVariants} className="w-full bg-gradient-to-r from-blue-100/60 via-white/80 to-indigo-100/60 backdrop-blur-md border border-slate-200/55 rounded-[32px] p-8 shadow-[0_15px_40px_rgba(0,0,0,0.03)]">
-            <div className="grid grid-cols-2 md:grid-cols-6 gap-6 md:gap-4 divide-y md:divide-y-0 md:divide-x divide-slate-200/80">
-              {[
-                { label: "Estimated Time", val: story.stats.estimatedTime, icon: <Clock className="w-5 h-5 text-blue-500" />, colorClass: "from-blue-600 to-sky-500" },
-                { label: "Bugs Fixing", val: story.stats.bugsFixing, icon: <Bug className="w-5 h-5 text-violet-500" />, colorClass: "from-violet-600 to-fuchsia-500" },
-                { label: "Security & Reliability", val: story.stats.security, icon: <ShieldCheck className="w-5 h-5 text-pink-500" />, colorClass: "from-pink-600 to-rose-500" },
-                { label: "Project Completion", val: story.stats.projectCompletion, icon: <CheckCircle2 className="w-5 h-5 text-emerald-500" />, colorClass: "from-emerald-600 to-green-500" },
-                { label: story.stats.trafficSpikesLabel || "Load Time", val: story.stats.trafficSpikes, icon: <Gauge className="w-5 h-5 text-amber-500" />, colorClass: "from-amber-600 to-yellow-500" },
-                { label: "Traffic & Engagement", val: "Higher", icon: <TrendingUp className="w-5 h-5 text-indigo-500" />, colorClass: "from-indigo-600 to-blue-500" }
-              ].map((stat, i) => (
+            <div className={`grid grid-cols-2 ${story.customStats && story.customStats.length > 0 ? `md:grid-cols-${Math.min(story.customStats.length, 5)}` : "md:grid-cols-6"} gap-6 md:gap-4 divide-y md:divide-y-0 md:divide-x divide-slate-200/80`}>
+              {(story.customStats && story.customStats.length > 0
+                ? story.customStats.map((item, idx) => {
+                    const icons = [<TrendingUp key="1" className="w-5 h-5 text-blue-500" />, <Users key="2" className="w-5 h-5 text-violet-500" />, <Eye key="3" className="w-5 h-5 text-pink-500" />, <CheckCircle2 key="4" className="w-5 h-5 text-emerald-500" />, <Gauge key="5" className="w-5 h-5 text-amber-500" />];
+                    const colorClasses = ["from-blue-600 to-sky-500", "from-violet-600 to-fuchsia-500", "from-pink-600 to-rose-500", "from-emerald-600 to-green-500", "from-amber-600 to-yellow-500"];
+                    return {
+                      label: item.label,
+                      val: item.val,
+                      icon: icons[idx % icons.length],
+                      colorClass: colorClasses[idx % colorClasses.length]
+                    };
+                  })
+                : [
+                    { label: "Estimated Time", val: story.stats.estimatedTime, icon: <Clock className="w-5 h-5 text-blue-500" />, colorClass: "from-blue-600 to-sky-500" },
+                    { label: "Bugs Fixing", val: story.stats.bugsFixing, icon: <Bug className="w-5 h-5 text-violet-500" />, colorClass: "from-violet-600 to-fuchsia-500" },
+                    { label: "Security & Reliability", val: story.stats.security, icon: <ShieldCheck className="w-5 h-5 text-pink-500" />, colorClass: "from-pink-600 to-rose-500" },
+                    { label: "Project Completion", val: story.stats.projectCompletion, icon: <CheckCircle2 className="w-5 h-5 text-emerald-500" />, colorClass: "from-emerald-600 to-green-500" },
+                    { label: story.stats.trafficSpikesLabel || "Load Time", val: story.stats.trafficSpikes, icon: <Gauge className="w-5 h-5 text-amber-500" />, colorClass: "from-amber-600 to-yellow-500" },
+                    { label: "Traffic & Engagement", val: "Higher", icon: <TrendingUp className="w-5 h-5 text-indigo-500" />, colorClass: "from-indigo-600 to-blue-500" }
+                  ]
+              ).map((stat, i) => (
                 <div key={i} className={`flex flex-col items-center text-center px-4 ${i > 0 && "pt-4 md:pt-0"}`}>
                   <div className="flex items-center gap-1.5 justify-center">
                     {stat.icon}
-                    <span className={`text-xl font-black leading-none bg-gradient-to-r ${stat.colorClass} bg-clip-text text-transparent`}>
+                    <span className={`text-xl font-black leading-normal pb-1 bg-gradient-to-r ${stat.colorClass} bg-clip-text text-transparent`}>
                       <AnimatedCounter value={stat.val} />
                     </span>
                   </div>
@@ -378,7 +390,7 @@ export default function CompanyDetailsClient({ story, slug }: { story: SuccessSt
                   {/* Timeline Graphic Nodes */}
                   <div className="relative pt-7 z-10">
                     {/* The connecting line with dynamic gradient tracer growth */}
-                    <div className="absolute top-[60px] left-[10%] right-[10%] h-[3px] bg-slate-100 hidden md:block z-0 overflow-hidden">
+                    <div className={`absolute top-[60px] ${story.timeline.length === 4 ? "left-[12.5%] right-[12.5%]" : "left-[10%] right-[10%]"} h-[3px] bg-slate-100 hidden md:block z-0 overflow-hidden`}>
                       <motion.div
                         initial={{ scaleX: 0 }}
                         animate={isTimelineInView ? { scaleX: 1 } : { scaleX: 0 }}
@@ -447,83 +459,39 @@ export default function CompanyDetailsClient({ story, slug }: { story: SuccessSt
                       />
                     </div>
 
-                    {/* Glowing colored segment dots appearing sequentially and then pulsing infinitely */}
+                    {/* Glowing colored segment dots appearing sequentially */}
                     <div className="absolute top-[55px] left-0 right-0 hidden md:block z-10 pointer-events-none">
-                      <motion.div
-                        initial={{ scale: 0, opacity: 0 }}
-                        animate={isTimelineInView ? {
-                          scale: [1, 1.35, 1],
-                          opacity: 1,
-                          boxShadow: [
-                            "0 0 6px rgba(59,130,246,0.3)",
-                            "0 0 18px rgba(59,130,246,0.7)",
-                            "0 0 6px rgba(59,130,246,0.3)"
-                          ]
-                        } : { scale: 0, opacity: 0 }}
-                        transition={{
-                          scale: { repeat: Infinity, duration: 2, ease: "easeInOut", delay: 0.7 },
-                          boxShadow: { repeat: Infinity, duration: 2, ease: "easeInOut", delay: 0.7 },
-                          default: { type: "spring", stiffness: 180, damping: 12, delay: 0.7 }
-                        }}
-                        className="absolute left-[20%] -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-[#3b82f6] border-2 border-white"
-                      />
-                      <motion.div
-                        initial={{ scale: 0, opacity: 0 }}
-                        animate={isTimelineInView ? {
-                          scale: [1, 1.35, 1],
-                          opacity: 1,
-                          boxShadow: [
-                            "0 0 6px rgba(139,92,246,0.3)",
-                            "0 0 18px rgba(139,92,246,0.7)",
-                            "0 0 6px rgba(139,92,246,0.3)"
-                          ]
-                        } : { scale: 0, opacity: 0 }}
-                        transition={{
-                          scale: { repeat: Infinity, duration: 2, ease: "easeInOut", delay: 1.1 },
-                          boxShadow: { repeat: Infinity, duration: 2, ease: "easeInOut", delay: 1.1 },
-                          default: { type: "spring", stiffness: 180, damping: 12, delay: 1.1 }
-                        }}
-                        className="absolute left-[40%] -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-[#8b5cf6] border-2 border-white"
-                      />
-                      <motion.div
-                        initial={{ scale: 0, opacity: 0 }}
-                        animate={isTimelineInView ? {
-                          scale: [1, 1.35, 1],
-                          opacity: 1,
-                          boxShadow: [
-                            "0 0 6px rgba(236,72,153,0.3)",
-                            "0 0 18px rgba(236,72,153,0.7)",
-                            "0 0 6px rgba(236,72,153,0.3)"
-                          ]
-                        } : { scale: 0, opacity: 0 }}
-                        transition={{
-                          scale: { repeat: Infinity, duration: 2, ease: "easeInOut", delay: 1.5 },
-                          boxShadow: { repeat: Infinity, duration: 2, ease: "easeInOut", delay: 1.5 },
-                          default: { type: "spring", stiffness: 180, damping: 12, delay: 1.5 }
-                        }}
-                        className="absolute left-[60%] -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-[#ec4899] border-2 border-white"
-                      />
-                      <motion.div
-                        initial={{ scale: 0, opacity: 0 }}
-                        animate={isTimelineInView ? {
-                          scale: [1, 1.35, 1],
-                          opacity: 1,
-                          boxShadow: [
-                            "0 0 6px rgba(245,158,11,0.3)",
-                            "0 0 18px rgba(245,158,11,0.7)",
-                            "0 0 6px rgba(245,158,11,0.3)"
-                          ]
-                        } : { scale: 0, opacity: 0 }}
-                        transition={{
-                          scale: { repeat: Infinity, duration: 2, ease: "easeInOut", delay: 1.9 },
-                          boxShadow: { repeat: Infinity, duration: 2, ease: "easeInOut", delay: 1.9 },
-                          default: { type: "spring", stiffness: 180, damping: 12, delay: 1.9 }
-                        }}
-                        className="absolute left-[80%] -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-[#f59e0b] border-2 border-white"
-                      />
+                      {(story.timeline.length === 4
+                        ? [25, 50, 75]
+                        : [20, 40, 60, 80]
+                      ).map((pos, index) => {
+                        const dotColors = ["#3b82f6", "#8b5cf6", "#ec4899", "#f59e0b"];
+                        return (
+                          <motion.div
+                            key={index}
+                            initial={{ scale: 0, opacity: 0 }}
+                            animate={isTimelineInView ? {
+                              scale: [1, 1.35, 1],
+                              opacity: 1,
+                              boxShadow: [
+                                `0 0 6px ${dotColors[index % dotColors.length]}`,
+                                `0 0 18px ${dotColors[index % dotColors.length]}`,
+                                `0 0 6px ${dotColors[index % dotColors.length]}`
+                              ]
+                            } : { scale: 0, opacity: 0 }}
+                            transition={{
+                              scale: { repeat: Infinity, duration: 2, ease: "easeInOut", delay: 0.7 + index * 0.4 },
+                              boxShadow: { repeat: Infinity, duration: 2, ease: "easeInOut", delay: 0.7 + index * 0.4 },
+                              default: { type: "spring", stiffness: 180, damping: 12, delay: 0.7 + index * 0.4 }
+                            }}
+                            style={{ left: `${pos}%` }}
+                            className="absolute -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-indigo-500 border-2 border-white"
+                          />
+                        );
+                      })}
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-5 gap-16 md:gap-6 relative z-10">
+                    <div className={`grid grid-cols-1 ${story.timeline.length === 4 ? "md:grid-cols-4" : "md:grid-cols-5"} gap-16 md:gap-6 relative z-10`}>
                       {story.timeline.map((step, i) => {
                         const nodeColors = [
                           "from-blue-600 to-sky-400 shadow-[0_15px_30px_-5px_rgba(59,130,246,0.45),_0_10px_15px_-6px_rgba(59,130,246,0.3)] border-blue-400/50",

@@ -157,13 +157,13 @@ const webDevShowcases: ShowcaseItem[] = [
     name: "Kaamdham",
     link: "/company-details/kaamdham",
     image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800&auto=format&fit=crop",
-    logo: null
+    logo: "/logos/kaamdham-logo.jpg"
   },
   {
     name: "Instayaar",
     link: "/company-details/instayaar",
     image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=800&auto=format&fit=crop",
-    logo: null
+    logo: "/logos/instayaar-logo.jpg"
   }
 ];
 
@@ -365,7 +365,7 @@ export default function WebDevelopment() {
           </div>
 
           <div className="relative z-10 mx-auto w-full px-6 sm:px-8 lg:px-12">
-            <div className="mx-auto max-w-[1600px] w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            <div className="mx-auto max-w-[1400px] w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
               {/* Left Column */}
               <div className="lg:col-span-6 flex flex-col items-start text-left">
@@ -442,7 +442,7 @@ export default function WebDevelopment() {
 
         {/* Premium Web Showcases Slider */}
         <section className="relative z-10 w-full py-16 bg-[#fafbfc] border-b border-slate-100 overflow-hidden">
-          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
+          <div className="max-w-full mx-auto px-8 sm:px-16 lg:px-24 text-center">
             <div className="mb-12 max-w-2xl mx-auto text-center">
               <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3.5 py-1 text-[9px] font-black tracking-[0.2em] text-[#2443ab] uppercase shadow-sm">
                 Live Showcase
@@ -554,7 +554,7 @@ export default function WebDevelopment() {
 
         {/* Brand Showcase Grid Section */}
         <section className="relative z-10 py-32 sm:py-40 bg-gradient-to-b from-[#fafbfc] to-white overflow-hidden border-t border-slate-100">
-          <div className="w-full mx-auto px-8 sm:px-16 lg:px-24 relative z-10">
+          <div className="max-w-full mx-auto px-8 sm:px-16 lg:px-24 relative z-10">
 
             {/* Header */}
             <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
@@ -712,7 +712,7 @@ export default function WebDevelopment() {
             </svg>
           </div>
 
-          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+          <div className="max-w-full mx-auto px-8 sm:px-16 lg:px-24 relative z-10">
             {/* Header */}
             <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
               <motion.div
@@ -874,7 +874,7 @@ export default function WebDevelopment() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.05 }}
-                  className={`group relative bg-white rounded-[24px] p-6 border border-slate-200/80 border-t-4 ${site.topBorder} ${site.glowHover} transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-sm hover:-translate-y-1.5`}
+                  className={`group relative bg-white rounded-[24px] p-6 border border-slate-200/80 border-t-4 ${site.topBorder} ${site.glowHover} transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-sm hover:-translate-y-1.5 min-h-[220px] sm:min-h-[280px]`}
                 >
                   {/* Subtle Background Pattern Circle */}
                   <div className={`absolute -right-12 -bottom-12 w-36 h-36 rounded-full bg-gradient-to-br ${site.bgWatermark} pointer-events-none transition-transform duration-500 group-hover:scale-125`} />
@@ -918,14 +918,14 @@ export default function WebDevelopment() {
                       {site.desc}
                     </p>
 
-                    {/* Tech Badges */}
+                    {/* Tech Badges
                     <div className="flex flex-wrap gap-1.5 mb-6">
                       {site.tags.map((tag, tIdx) => (
                         <span key={tIdx} className="text-[10px] font-bold text-slate-500 bg-slate-100/90 px-2.5 py-1 rounded-md">
                           {tag}
                         </span>
                       ))}
-                    </div>
+                    </div> */}
                   </div>
 
                   {/* Visit Website Action Link */}
@@ -1045,7 +1045,7 @@ export default function WebDevelopment() {
             <div className="absolute bottom-[20%] right-[-10%] w-[35%] aspect-square rounded-full bg-gradient-to-tr from-purple-500/5 to-pink-500/5 blur-[120px]" />
           </div>
 
-          <div className="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+          <div className="max-w-full mx-auto px-8 sm:px-16 lg:px-24 relative z-10">
             {/* Header */}
             <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
               <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-200 bg-blue-50/60 px-4 py-2 text-[10px] sm:text-xs font-black tracking-[0.2em] text-[#2443ab] uppercase shadow-sm">
@@ -1152,7 +1152,7 @@ export default function WebDevelopment() {
 
         {/* Tools & Technologies Section */}
         <section className="relative z-10 py-24 bg-white border-t border-b border-slate-100/80 overflow-hidden">
-          <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 text-center">
+          <div className="max-w-full mx-auto px-8 sm:px-16 lg:px-24 text-center">
             <span className="block text-[10px] sm:text-xs font-black tracking-[0.3em] text-[#2443ab] uppercase mb-3">
               TECH STACK
             </span>
@@ -1211,7 +1211,7 @@ export default function WebDevelopment() {
         <section className="relative z-10 w-full py-24 sm:py-32 bg-[#fafbfc] text-slate-800 overflow-hidden text-center px-6 sm:px-8 lg:px-12 border-b border-slate-100">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(36,67,171,0.02)_0%,transparent_70%)] pointer-events-none" />
 
-          <div className="relative z-10 max-w-7xl mx-auto space-y-16">
+          <div className="relative z-10 max-w-full mx-auto space-y-16">
             {/* Circular/Orbital Layout */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center max-w-6xl mx-auto pt-8">
               {/* Left Spokes (01, 03, 05) */}

@@ -172,9 +172,10 @@ const brandShowcases: ShowcaseBrandItem[] = [
 ];
 
 export default function Home() {
-  
+
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [worksMarqueePaused, setWorksMarqueePaused] = useState(false);
 
   const toggleFaq = (idx: number) => {
     setOpenFaqIndex(openFaqIndex === idx ? null : idx);
@@ -288,7 +289,7 @@ export default function Home() {
 
   return (
     <>
-      <link rel="canonical" href="https://digitaledge360.in"/>
+      <link rel="canonical" href="https://digitaledge360.in" />
 
       <div className="relative w-full bg-[#fafbfc] min-h-screen text-slate-800 overflow-hidden">
 
@@ -515,8 +516,8 @@ export default function Home() {
                   className="text-4xl sm:text-5xl xl:text-[56px] font-black text-white leading-[1.1] tracking-tight mb-6"
                 >
                   Increase Your Business ROI With Our
-                  <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-[#00c2eb] via-[#00e5ff] to-[#00a3c4]">
-                    360° Business System
+                  <span className="block mt-2 pb-2 text-transparent bg-clip-text bg-gradient-to-r from-[#00c2eb] via-[#00e5ff] to-[#00a3c4]">
+                    360° Tech & <br /> Digital Solutions
                   </span>
                 </motion.h1>
 
@@ -660,7 +661,7 @@ export default function Home() {
         </section>
 
         {/* The Elite Build Section */}
-        <section className="relative z-10 mx-auto max-w-[1500px] px-6 sm:px-8 lg:px-24 py-12 md:py-16 bg-gradient-to-b from-white to-[#fafbfc] overflow-hidden">
+        <section className="relative z-10 w-full px-6 sm:px-8 lg:px-12 py-12 md:py-16 bg-gradient-to-b from-white to-[#fafbfc] overflow-hidden">
           {/* Background text */}
           <div className="absolute left-[5%] top-[20%] lg:top-[10%] z-0 font-black text-slate-100 text-[9rem] sm:text-[14rem] md:text-[18rem] uppercase pointer-events-none select-none tracking-tighter leading-none">
             FULL
@@ -687,7 +688,7 @@ export default function Home() {
           </div>
 
           {/* Grid Wrapper containing Stats + Mockup Window */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center justify-center relative z-10 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center justify-center relative z-10 max-w-[1100px] mx-auto">
 
             {/* Left Stats Column (aligned right) */}
             <div className="hidden lg:flex lg:col-span-2 flex-col gap-12 justify-center items-end text-right">
@@ -829,10 +830,17 @@ export default function Home() {
           </div>
 
           {/* Mockups Marquee */}
-          <div className="relative w-full overflow-hidden pt-2 pb-8">
+          <div
+            onClick={() => setWorksMarqueePaused(!worksMarqueePaused)}
+            className="relative w-full overflow-hidden pt-2 pb-8 cursor-pointer select-none"
+            title="Click to pause or resume scrolling"
+          >
             {/* Edge Fades for Premium Design */}
 
-            <div className="w-full animate-marquee-left flex gap-12 py-4">
+            <div
+              className="w-full animate-marquee-left-no-pause flex gap-12 py-4"
+              style={{ animationPlayState: worksMarqueePaused ? "paused" : "running" }}
+            >
               {/* Single map with duplicated items for infinite scroll */}
               {[...portfolioItems, ...portfolioItems].map((item, index) => (
                 <div
@@ -986,7 +994,7 @@ export default function Home() {
 
         {/* What We Do - Full-Stack Growth & Digital Architecture Section */}
         <section className="relative z-10 w-full py-12 md:py-16 bg-gradient-to-br from-indigo-100/40 via-purple-100/40 to-indigo-50/40 border-y border-slate-200/60 overflow-hidden">
-          <div className="mx-auto max-w-[1500px] px-6 sm:px-8 lg:px-12">
+          <div className="mx-auto max-w-full px-6 sm:px-8 lg:px-12">
 
             {/* Header container */}
             <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8">
@@ -1068,7 +1076,7 @@ export default function Home() {
 
         {/* Brand Showcase Grid Section */}
         <section className="relative z-10 w-full py-12 md:py-16 bg-[#fafbfc] border-b border-slate-100/80 overflow-hidden">
-          <div className="max-w-[1400px] mx-auto px-8 sm:px-16 lg:px-24">
+          <div className="max-w-full mx-auto px-8 sm:px-16 lg:px-24">
 
             {/* Header */}
             <div className="text-center max-w-3xl mx-auto mb-10 space-y-4">
@@ -1141,12 +1149,12 @@ export default function Home() {
         </section>
 
         {/* Five Vendors & Growth Help Section */}
-        <section className="relative z-10 py-12 md:py-16 bg-gradient-to-b from-[#fafbfc] via-white to-[#fafbfc] border-t border-b border-slate-100 overflow-hidden">
+        <section className="relative z-10 w-full py-12 md:py-16 bg-gradient-to-b from-[#fafbfc] via-white to-[#fafbfc] border-t border-b border-slate-100 overflow-hidden">
           {/* Decorative shapes */}
           <div className="absolute top-[20%] left-[-5%] w-[450px] h-[450px] rounded-full bg-[radial-gradient(circle_at_center,rgba(36,67,171,0.02)_0%,transparent_70%)] pointer-events-none" />
           <div className="absolute bottom-[20%] right-[-5%] w-[550px] h-[550px] rounded-full bg-[radial-gradient(circle_at_center,rgba(10,139,199,0.02)_0%,transparent_70%)] pointer-events-none" />
 
-          <div className="max-w-[1300px] mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="max-w-full mx-auto px-8 sm:px-16 lg:px-24">
 
             {/* H2 Heading & H3 Subheading */}
             <div className="text-center max-w-3xl mx-auto mb-10 space-y-4">
@@ -1433,7 +1441,7 @@ export default function Home() {
                 WHY WORK WITH US
               </span>
               <h3 className="text-4xl sm:text-6xl font-black text-white tracking-tight leading-tight mt-2">
-                What Makes <br /> Us <span className="bg-gradient-to-r from-blue-400 to-[#a855f7] bg-clip-text text-transparent">Different</span>
+                What Makes <br /> Us <span className="bg-gradient-to-r from-blue-400 to-[#a855f7] bg-clip-text text-transparent pb-1">Different</span>
               </h3>
               <p className="text-slate-400 font-semibold text-sm sm:text-base leading-relaxed max-w-2xl mx-auto mt-6">
                 We combine performance marketing, e-commerce expertise, and enterprise-grade development to drive measurable growth for your brand.
@@ -1491,7 +1499,7 @@ export default function Home() {
                 </div>
 
                 {/* Right Decorative Graphic */}
-                <div className="hidden lg:block relative w-48 h-48 shrink-0">
+                <div className="hidden lg:block relative w-48 h-48 shrink-0 overflow-hidden">
                   {/* Dot Grid */}
                   <div className="absolute inset-0 opacity-20 text-blue-300">
                     <svg width="100%" height="100%" fill="currentColor">
@@ -1503,8 +1511,8 @@ export default function Home() {
                       <rect width="100%" height="100%" fill="url(#dot-grid-1)" />
                     </svg>
                   </div>
-                  {/* Floating sphere */}
-                  <div className="absolute top-1/2 right-0 -translate-y-1/2 w-28 h-28 rounded-full bg-gradient-to-br from-blue-300 to-blue-500/20 shadow-lg shadow-blue-500/10 blur-[1px]" />
+                  {/* Full Floating sphere centered */}
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-gradient-to-br from-blue-300 to-blue-600/30 shadow-xl shadow-blue-500/10 blur-[0.5px]" />
                 </div>
               </motion.div>
 
@@ -1565,8 +1573,8 @@ export default function Home() {
                       <rect width="100%" height="100%" fill="url(#dot-grid-2)" />
                     </svg>
                   </div>
-                  {/* Floating sphere peeking */}
-                  <div className="absolute top-1/2 -right-16 -translate-y-1/2 w-32 h-32 rounded-full bg-gradient-to-br from-purple-300 to-purple-500/20 shadow-lg shadow-purple-500/10 blur-[1px]" />
+                  {/* Full Floating sphere centered */}
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-gradient-to-br from-purple-300 to-purple-600/30 shadow-xl shadow-purple-500/10 blur-[0.5px]" />
                 </div>
               </motion.div>
 
@@ -1621,8 +1629,8 @@ export default function Home() {
                       <rect width="100%" height="100%" fill="url(#dot-grid-3)" />
                     </svg>
                   </div>
-                  {/* Floating sphere peeking from bottom right corner */}
-                  <div className="absolute bottom-[-40px] right-[-40px] w-36 h-36 rounded-full bg-gradient-to-br from-teal-300 to-teal-500/20 shadow-lg shadow-teal-500/10 blur-[1px]" />
+                  {/* Full Floating sphere centered */}
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-gradient-to-br from-teal-300 to-teal-600/30 shadow-xl shadow-teal-500/10 blur-[0.5px]" />
                 </div>
               </motion.div>
 
@@ -1636,7 +1644,7 @@ export default function Home() {
           <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-[#ff477e]/5 rounded-full blur-[120px] pointer-events-none" />
           <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-emerald-500/5 rounded-full blur-[120px] pointer-events-none" />
 
-          <div className="max-w-[1300px] mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="max-w-full mx-auto px-8 sm:px-16 lg:px-24">
 
             {/* Badge & Header */}
             <div className="text-center max-w-4xl mx-auto mb-10 space-y-4">
@@ -1645,7 +1653,7 @@ export default function Home() {
               </span>
               <h2 className="text-3xl sm:text-5xl font-black text-[#0d1b3e] tracking-tight leading-[1.1] mt-2">
                 Most Marketing Spend Doesn't Fail Because of Bad Ideas. <br className="hidden md:inline" />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 via-teal-600 to-cyan-500">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 via-teal-600 to-cyan-500 pb-1">
                   It Fails Because of Fragmentation.
                 </span>
               </h2>
@@ -1723,12 +1731,12 @@ export default function Home() {
         </section>
 
         {/* How We Work Section */}
-        <section className="relative z-10 py-12 md:py-16 bg-gradient-to-b from-white via-slate-50 to-white border-t border-slate-100/80 overflow-hidden">
+        <section className="relative z-10 w-full py-12 md:py-16 bg-gradient-to-b from-white via-slate-50 to-white border-t border-slate-100/80 overflow-hidden">
           {/* Decorative background gradients */}
           <div className="absolute top-[10%] left-[-10%] w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle_at_center,rgba(36,67,171,0.03)_0%,transparent_70%)] pointer-events-none" />
           <div className="absolute bottom-[10%] right-[-10%] w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle_at_center,rgba(10,139,199,0.03)_0%,transparent_70%)] pointer-events-none" />
 
-          <div className="max-w-[1300px] mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="max-w-full mx-auto px-8 sm:px-16 lg:px-24">
             {/* Header */}
             <div className="text-center max-w-3xl mx-auto mb-12 md:mb-14">
               <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-4 py-2 text-[10px] font-extrabold tracking-[0.25em] text-[#2443ab] uppercase shadow-sm mb-4">
@@ -2001,12 +2009,12 @@ export default function Home() {
         </section>
 
         {/* Shopify Trust Badge Section */}
-        <section className="relative z-10 py-12 md:py-16 bg-gradient-to-b from-[#fafbfc] via-white to-[#fafbfc] overflow-hidden">
+        <section className="relative z-10 w-full py-12 md:py-16 bg-gradient-to-b from-[#fafbfc] via-white to-[#fafbfc] overflow-hidden">
           {/* Glow Effects */}
           <div className="absolute top-[20%] left-[-10%] w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle_at_center,rgba(0,128,96,0.06)_0%,transparent_70%)] pointer-events-none blur-[40px]" />
           <div className="absolute bottom-[20%] right-[-10%] w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.06)_0%,transparent_70%)] pointer-events-none blur-[40px]" />
 
-          <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+          <div className="max-w-full mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
 
             {/* Main Glorified Glass Container */}
             <div className="bg-white/90 border border-slate-100/90 rounded-[40px] sm:rounded-[64px] p-8 sm:p-12 lg:p-16 backdrop-blur-xl relative overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.04)]">
@@ -2146,12 +2154,12 @@ export default function Home() {
         </section>
 
         {/* The Offer / Digital Growth Audit Section */}
-        <section className="relative z-10 py-12 md:py-16 bg-gradient-to-b from-[#fafbfc] via-[#f1f5f9] to-[#fafbfc] text-slate-800 overflow-hidden border-t border-b border-slate-100">
+        <section className="relative z-10 w-full py-12 md:py-16 bg-gradient-to-b from-[#fafbfc] via-[#f1f5f9] to-[#fafbfc] text-slate-800 overflow-hidden border-t border-b border-slate-100">
           {/* Soft Glow Effects */}
           <div className="absolute top-[-10%] right-[-10%] w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle_at_center,rgba(56,189,248,0.08)_0%,transparent_70%)] pointer-events-none blur-[60px]" />
           <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle_at_center,rgba(52,211,153,0.06)_0%,transparent_70%)] pointer-events-none blur-[60px]" />
 
-          <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+          <div className="max-w-full mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
             <div className="max-w-4xl mx-auto text-center space-y-6 mb-10">
               {/* Badge */}
               <motion.div
@@ -2297,13 +2305,13 @@ export default function Home() {
         </section>
 
         {/* Case Studies Section */}
-        <section className="relative z-10 py-12 md:py-16 bg-gradient-to-b from-[#fafbfc] via-[#f8fafc] to-white border-b border-slate-100 overflow-hidden">
+        <section className="relative z-10 w-full py-12 md:py-16 bg-gradient-to-b from-[#fafbfc] via-[#f8fafc] to-white border-b border-slate-100 overflow-hidden">
           {/* Subtle decoration elements */}
           <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:32px_32px] opacity-30 pointer-events-none" />
           <div className="absolute top-[20%] left-[-10%] w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.05)_0%,transparent_60%)] pointer-events-none blur-[60px]" />
           <div className="absolute bottom-[20%] right-[-10%] w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.04)_0%,transparent_60%)] pointer-events-none blur-[60px]" />
 
-          <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+          <div className="max-w-full mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
             {/* Header */}
             <div className="max-w-3xl mx-auto text-center space-y-4 mb-10 md:mb-12">
               <span className="inline-flex items-center gap-2 rounded-full border border-blue-150 bg-blue-50/80 px-4 py-2 text-[10px] sm:text-xs font-black tracking-[0.2em] text-blue-600 uppercase shadow-sm">
@@ -2413,12 +2421,11 @@ export default function Home() {
         </section>
 
         {/* Testimonials Section */}
-        <section className="relative z-10 py-12 md:py-16 bg-gradient-to-b from-white to-[#fafbfc] border-t border-slate-100 overflow-hidden">
+        <section className="relative z-10 w-full py-12 md:py-16 bg-gradient-to-b from-white to-[#fafbfc] border-t border-slate-100 overflow-hidden">
           {/* Subtle dot grid background texture */}
           <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none z-0" />
 
-          <div className="relative z-10 mx-auto max-w-[1500px] px-6 sm:px-8 lg:px-12 mb-8">
-
+          <div className="relative z-10 max-w-full mx-auto px-6 sm:px-8 lg:px-12 mb-8">
             {/* Header Row */}
             <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 max-w-6xl mx-auto">
               <div className="text-left space-y-3">
@@ -2431,8 +2438,8 @@ export default function Home() {
           </div>
 
           {/* Testimonials Carousel */}
-          <div className="relative z-10 mx-auto max-w-[1100px] px-6 sm:px-8 lg:px-12 mt-6 md:mt-8">
-            <div className="relative flex items-center justify-between">
+          <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 mt-6 md:mt-8">
+            <div className="relative flex items-center justify-between h-[680px] sm:h-[580px] md:h-[490px]">
               {/* Prev Button */}
               <button
                 onClick={() => setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length)}
@@ -2441,8 +2448,8 @@ export default function Home() {
                 <ChevronLeft className="w-5 h-5 group-hover:-translate-x-0.5 transition-transform duration-300" />
               </button>
 
-              <div className="w-full overflow-hidden py-4 px-1">
-                <AnimatePresence mode="popLayout">
+              <div className="w-full overflow-hidden py-4 px-1 h-[660px] sm:h-[560px] md:h-[470px] flex items-center">
+                <AnimatePresence mode="wait">
                   {(() => {
                     const t = testimonials[currentTestimonial];
                     const accent = [
@@ -2491,24 +2498,24 @@ export default function Home() {
                     return (
                       <motion.div
                         key={currentTestimonial}
-                        initial={{ opacity: 0, x: 80, scale: 0.96 }}
-                        animate={{ opacity: 1, x: 0, scale: 1 }}
-                        exit={{ opacity: 0, x: -80, scale: 0.96 }}
-                        transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-                        className="rounded-[32px] shadow-[0_20px_50px_rgba(0,0,0,0.04)] flex flex-col justify-between text-left relative overflow-hidden group w-full"
+                        initial={{ opacity: 0, x: 40 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -40 }}
+                        transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                        className="rounded-[32px] shadow-[0_20px_50px_rgba(0,0,0,0.04)] flex flex-col justify-between text-left relative overflow-hidden group w-full h-[640px] sm:h-[540px] md:h-[450px]"
                       >
-                        <div className="bg-white rounded-[32px] p-8 sm:p-12 flex flex-col md:flex-row gap-8 md:gap-12 items-center text-left relative overflow-hidden w-full h-full">
-                          {/* Hover Top-Right Glow */}
-                          <div className={`absolute top-0 right-0 w-80 h-80 bg-gradient-to-bl ${accent.glowBg} rounded-bl-[200px] pointer-events-none opacity-40 group-hover:opacity-60 transition-all duration-500 z-0`} />
+                        <div className="bg-white rounded-[32px] p-6 sm:p-10 md:p-14 flex flex-col md:flex-row gap-6 md:gap-12 items-center text-left relative overflow-hidden w-full h-full">
+                          {/* Soft Spreading Top-Right Ambient Glow */}
+                          <div className={`absolute -top-20 -right-20 w-96 h-96 bg-radial ${accent.glowBg} blur-3xl pointer-events-none opacity-60 group-hover:opacity-90 transition-all duration-700 z-0`} />
 
-                          {/* Left side: Extremely Large Profile Image */}
-                          <div className="relative w-48 h-48 sm:w-60 sm:h-60 md:w-72 md:h-72 rounded-[32px] overflow-hidden shadow-lg ring-4 ring-slate-100 shrink-0 bg-slate-50 flex items-center justify-center z-10 transition-transform duration-500 group-hover:scale-[1.02]">
+                          {/* Left side: Profile Image */}
+                          <div className="relative w-44 h-44 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-[28px] overflow-hidden shadow-lg ring-4 ring-slate-100 shrink-0 bg-slate-50 flex items-center justify-center z-10 transition-transform duration-500 group-hover:scale-[1.02]">
                             {t.image ? (
                               <Image
                                 src={t.image}
                                 alt={t.author}
                                 fill
-                                sizes="(max-width: 768px) 192px, 288px"
+                                sizes="(max-width: 768px) 176px, 256px"
                                 className="object-cover"
                                 priority
                               />
@@ -2520,39 +2527,41 @@ export default function Home() {
                           </div>
 
                           {/* Right side: details */}
-                          <div className="flex-grow flex flex-col justify-between h-full relative z-10">
-                            <div>
+                          <div className="flex-grow flex flex-col justify-between h-full relative z-10 w-full overflow-hidden">
+                            <div className="flex-1 flex flex-col justify-start overflow-hidden">
                               {/* Rating & Metric Header */}
-                              <div className="flex flex-wrap items-center justify-between gap-4">
+                              <div className="flex flex-wrap items-center justify-between gap-4 shrink-0">
                                 {/* Rating Pill */}
-                                <div className="inline-flex items-center gap-0.5 px-3 py-1.5 rounded-full bg-amber-500/5 border border-amber-500/10">
+                                <div className="inline-flex items-center gap-0.5 px-3.5 py-1.5 rounded-full bg-amber-500/5 border border-amber-500/10">
                                   {Array.from({ length: t.stars }).map((_, i) => (
                                     <span key={i} className="text-amber-500 text-sm sm:text-base font-bold">★</span>
                                   ))}
                                 </div>
                                 {/* Metric Pill */}
                                 {t.metric && (
-                                  <div className={`flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-wider border shadow-sm ${accent.metricBg}`}>
+                                  <div className={`flex items-center gap-1.5 px-4.5 py-2 rounded-full text-xs font-black uppercase tracking-wider border shadow-sm ${accent.metricBg}`}>
                                     {accent.metricIcon}
                                     {t.metric}
                                   </div>
                                 )}
                               </div>
-                              {/* Quote */}
-                              <p className="text-[15px] sm:text-[17px] text-slate-600 font-semibold leading-[1.8] mt-6 italic relative pl-4">
-                                <span className={`absolute left-0 top-0 text-3xl font-serif font-black ${accent.quoteColor} leading-none`}>“</span>
-                                {t.quote}
-                                <span className={`text-xl font-serif font-black ${accent.quoteColor} ml-1`}>”</span>
-                              </p>
+                              {/* Quote text container */}
+                              <div className="mt-4 sm:mt-6 flex-1 flex items-center overflow-y-auto no-scrollbar">
+                                <p className="text-xs sm:text-[17px] md:text-[18px] text-slate-600 font-semibold leading-[1.85] italic relative pl-5">
+                                  <span className={`absolute left-0 top-0 text-base md:text-lg font-serif font-black ${accent.quoteColor} leading-none`}>“</span>
+                                  {t.quote}
+                                  <span className={`text-md font-serif font-black ${accent.quoteColor} ml-1`}>” </span>
+                                </p>
+                              </div>
                             </div>
 
                             {/* Profile Handoff */}
-                            <div className="mt-8 pt-6 border-t border-slate-100">
+                            <div className="mt-6 pt-5 border-t border-slate-100 shrink-0">
                               <div className="flex items-center gap-4">
-                                <div className={`h-10 w-[3px] rounded-full ${accent.lineBg}`} />
+                                <div className={`h-11 w-[3.5px] rounded-full ${accent.lineBg}`} />
                                 <div>
-                                  <h4 className="text-[17px] font-black text-[#0d1b3e] tracking-tight">{t.author}</h4>
-                                  <span className="block text-[12px] font-bold text-slate-400 mt-0.5">{t.role}</span>
+                                  <h4 className="text-[18px] font-black text-[#0d1b3e] tracking-tight">{t.author}</h4>
+                                  <span className="block text-[13px] font-bold text-slate-400 mt-0.5">{t.role}</span>
                                 </div>
                               </div>
                             </div>
@@ -2600,8 +2609,8 @@ export default function Home() {
         </section>
 
         {/* Trusted by Category Kings Section (Grid Format) */}
-        <section className="relative z-10 py-10 md:py-12 bg-[#fafbfc] border-t border-slate-100 overflow-hidden">
-          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-center mb-8">
+        <section className="relative z-10 w-full py-10 md:py-12 bg-[#fafbfc] border-t border-slate-100 overflow-hidden">
+          <div className="max-w-full mx-auto px-6 sm:px-8 lg:px-12text-center mb-8">
             {/* Header Icon */}
             <div className="flex justify-center mb-3">
               <div className="w-12 h-12 bg-blue-50/50 rounded-full flex items-center justify-center text-blue-600">
@@ -2618,7 +2627,7 @@ export default function Home() {
           </div>
 
           {/* Desktop Grid Container */}
-          <div className="hidden md:block max-w-full mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="hidden md:block max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
             <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
               {[
                 7, 33, 28, 21, 14,
@@ -2710,8 +2719,8 @@ export default function Home() {
         </section>
 
         {/* Why Us Section */}
-        <section className="relative z-10 py-12 md:py-16 bg-white border-t border-slate-100 overflow-hidden">
-          <div className="max-w-[1500px] mx-auto px-6 sm:px-8 lg:px-12">
+        <section className="relative z-10 w-full py-12 md:py-16 bg-white border-t border-slate-100 overflow-hidden">
+          <div className="max-w-full mx-auto px-8 sm:px-16 lg:px-24">
             {/* Header */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -2736,21 +2745,21 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-              className="hidden md:block w-full bg-[#fafbfc] rounded-[32px] border border-slate-200/50 shadow-[0_20px_50px_rgba(0,0,0,0.03)] overflow-visible mt-8"
+              className="hidden md:block w-full max-w-full mx-auto bg-[#fafbfc] rounded-[32px] border border-slate-200/50 shadow-[0_20px_50px_rgba(0,0,0,0.03)] overflow-hidden mt-8"
             >
               <table className="w-full border-collapse text-left table-fixed">
                 <thead>
                   <tr className="border-b border-slate-200/60">
                     <th className="py-10 px-8 text-[13px] font-bold text-slate-400 uppercase tracking-widest w-[20%]">Features</th>
                     {/* Winning Column Header with badge */}
-                    <th className="py-10 px-8 bg-[#2443ab] text-white relative w-[32%] rounded-t-[24px] shadow-[0_-10px_25px_rgba(36,67,171,0.1)]">
-                      <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-white text-[#2443ab] text-[9px] font-black tracking-wider uppercase px-3.5 py-1.5 rounded-full border border-blue-200 flex items-center gap-1 shadow-sm">
+                    <th className="py-8 px-8 bg-[#2443ab] text-white relative w-[32%] shadow-[0_-10px_25px_rgba(36,67,171,0.1)] text-center">
+                      <div className="inline-flex items-center gap-1 bg-white text-[#2443ab] text-[9px] font-black tracking-wider uppercase px-3 py-1 rounded-full border border-blue-200 shadow-sm mb-2">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-3 h-3 text-[#2443ab]">
                           <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clipRule="evenodd" />
                         </svg>
                         <span>OUR APPROACH</span>
                       </div>
-                      <span className="block text-base font-black tracking-widest uppercase text-center mt-2.5">Digital Edge 360</span>
+                      <span className="block text-base font-black tracking-widest uppercase text-center">Digital Edge 360</span>
                     </th>
                     <th className="py-10 px-8 text-[13px] font-semibold text-slate-400 uppercase tracking-widest w-[24%]">Typical Agency</th>
                     <th className="py-10 px-8 text-[13px] font-semibold text-slate-400 uppercase tracking-widest w-[24%]">Freelancers / Offshore</th>
@@ -2812,7 +2821,7 @@ export default function Home() {
                         <td className="py-12 px-8 text-[17px] font-bold text-[#0d1b3e] align-top">{row.feature}</td>
 
                         {/* Winning Column (Us) */}
-                        <td className={`py-12 px-8 bg-[#2443ab] text-white align-top shadow-[0_15px_35px_rgba(36,67,171,0.12)] relative ${isLastRow ? "rounded-b-[24px]" : ""}`}>
+                        <td className="py-12 px-8 bg-[#2443ab] text-white align-top shadow-[0_15px_35px_rgba(36,67,171,0.12)] relative">
                           <div className="flex gap-4">
                             <span className="flex-shrink-0 inline-flex items-center justify-center w-6 h-6 rounded-full bg-green-600 text-white font-bold text-xs shadow-sm">✓</span>
                             <div>
@@ -2955,8 +2964,8 @@ export default function Home() {
         </section>
 
         {/* FAQ Section */}
-        <section className="relative z-10 py-12 md:py-16 bg-gradient-to-b from-[#fafbfc] to-white border-t border-slate-100 overflow-hidden">
-          <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+        <section className="relative z-10 w-full py-12 md:py-16 bg-gradient-to-b from-[#fafbfc] to-white border-t border-slate-100 overflow-hidden">
+          <div className="max-w-full mx-auto px-6 sm:px-8 lg:px-12">
 
             {/* Header */}
             <motion.div
@@ -3032,7 +3041,7 @@ export default function Home() {
         </section>
 
         {/* Final CTA Section */}
-        <section id="strategy-call" className="relative z-10 mx-auto w-full px-6 sm:px-8 lg:px-12 py-12 md:py-16 bg-white border-t border-slate-100">
+        <section id="strategy-call" className="relative z-10 w-full px-6 sm:px-8 lg:px-12 py-12 md:py-16 bg-white border-t border-slate-100">
 
           {/* Container */}
           <div className="max-w-3xl mx-auto text-center flex flex-col items-center">

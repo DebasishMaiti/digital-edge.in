@@ -116,7 +116,7 @@ export default function SeoSmm() {
             </svg>
           </div>
 
-          <div className="relative z-10 max-w-[1600px] w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <div className="relative z-10 max-w-[1400px] w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
             {/* Left Column */}
             <div className="lg:col-span-6 flex flex-col items-start text-left">
@@ -230,7 +230,7 @@ export default function SeoSmm() {
           <div className="absolute top-[20%] left-[10%] w-[400px] h-[400px] rounded-full bg-blue-500/5 blur-[100px] pointer-events-none" />
           <div className="absolute bottom-[20%] right-[10%] w-[400px] h-[400px] rounded-full bg-purple-500/5 blur-[100px] pointer-events-none" />
 
-          <div className="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+          <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
             {/* Header */}
             <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
               <span className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-4 py-1.5 text-xs font-black tracking-widest text-sky-700 uppercase shadow-sm">

@@ -868,6 +868,66 @@ export const storiesData: Record<string, SuccessStoryData> = {
       { label: "Deploy & Live", day: "23 Day", color: "border-emerald-500 bg-emerald-55 text-emerald-600" }
     ]
   },
+  "sacred-suta-marketing": {
+    logo: "/logos/sacred-suta.jpg",
+    image: "/brand-card-images/sacred-suta.jpg",
+    title: "Sacred Suta",
+    subtitle: "Handcrafted ethnic wear & artisanal D2C fashion performance marketing.",
+    emoji: "👗",
+    description: "Sacred Suta partnered with Digital Edge 360 to scale its direct-to-consumer online store through targeted Meta & Google performance marketing campaigns. By leveraging high-converting video creatives showcasing handcrafted sarees, mul chanderi & muslin collections, the campaign drove exponential online order growth while keeping customer acquisition cost optimized.",
+    websiteUrl: "https://sacredsuta.com/",
+    stats: {
+      estimatedTime: "Active",
+      bugsFixing: "520+",
+      security: "₹42.50",
+      projectCompletion: "2.8M+",
+      trafficSpikes: "₹312.40",
+      trafficSpikesLabel: "Cost Per Purchase"
+    },
+    customStats: [
+      { label: "Website Purchases", val: "520+" },
+      { label: "Reach", val: "18,90,000+" },
+      { label: "Impressions", val: "2.8M+" },
+      { label: "CPM", val: "₹42.50" },
+      { label: "Cost Per Purchase", val: "₹312.40" }
+    ],
+    about: "Sacred Suta is a premium ethnic fashion brand that celebrates India's rich textile heritage. Specializing in handcrafted mul chanderi, muslin, and artisan-crafted sarees and ethnic sets, the brand blends traditional weaving techniques with contemporary silhouettes for women seeking authentic luxury ethnic wear.",
+    challenge: "High-value handcrafted ethnic wear requires trust-building and strong visual storytelling to convert online visitors into buyers. Sacred Suta needed a performance marketing strategy that could target affinity fashion audiences, communicate artisanal value, and drive consistent daily website sales without escalating acquisition costs as budget scaled.",
+    workflowTitle: "Our Approach",
+    workflow: [
+      "Purchase-Intent Targeting: Built high-intent custom audiences interested in premium ethnic wear, designer sarees, and artisanal fashion across Meta & Google Ads.",
+      "High-Visual Video Creatives: Produced product-focused video reels highlighting fabric drape, handwork details, and customer unboxing experiences to boost click-through rates.",
+      "Retargeting & Abandoned Cart Recovery: Deployed multi-stage retargeting campaigns targeting warm site visitors and abandoned cart users with exclusive limited-time offers."
+    ],
+    timeline: [
+      { label: "Audience & Pixel Setup", day: "Day 1-3", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "Creative & Reel Testing", day: "Day 4-10", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "Conversion Optimization", day: "Day 11-20", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "Scaling & Retargeting", day: "Day 21+", color: "border-emerald-500 bg-emerald-50 text-emerald-600" }
+    ],
+    heroHeadingBlack: "Handcrafted Fashion",
+    heroHeadingGreen: "Scalable D2C Growth",
+    industry: "Ethnic Fashion & Apparel (D2C)",
+    projectType: "Performance Marketing & Meta Ad Scaling",
+    aboutHeadline: "Authentic Textiles. Modern Elegance.",
+    challengeHeadline: "Scaling Premium Ethnic Fashion Sales Efficiently",
+    challengeBullets: [
+      "High competition in D2C ethnic fashion and saree market",
+      "Need to build trust for handcrafted premium price points",
+      "Holding Cost Per Purchase (₹312.40) while scaling ad spend",
+      "Maximizing return on ad spend across Meta and Google Search",
+      "Converting high-intent visitors into repeat brand buyers"
+    ],
+    timelineBanner: "Campaign Status: Actively Running / Scaling",
+    impactHeadline: "520+ Purchases. 2.8M+ Impressions.",
+    impactDescription: "Through targeted performance marketing and rich visual storytelling, Sacred Suta achieved remarkable sales growth and brand reach.",
+    impactCards: [
+      { title: "520+ Purchases", desc: "520+ verified D2C website purchases delivered", icon: "check" },
+      { title: "1.89M+ Reach", desc: "Over 1.89 Million unique fashion shoppers reached", icon: "users" },
+      { title: "2.8M+ Impressions", desc: "2.8 Million+ ad impressions generated", icon: "eye" },
+      { title: "₹312.40 Cost/Purchase", desc: "Acquisition cost optimized at ₹312.40 per purchase", icon: "trending" }
+    ]
+  },
   "sree-vedics": {
     logo: "/logos/Sree_Vedics_Logo.jpg",
     image: "/brand-card-images/sreevadic.jpg",
@@ -920,6 +980,66 @@ export const storiesData: Record<string, SuccessStoryData> = {
       { title: "Better Engagement", desc: "Higher customer engagement across digital platforms", icon: "users" },
       { title: "Customer Trust", desc: "Built strong trust and credibility with the right audience", icon: "shield" },
       { title: "Sustainable Growth", desc: "Enhanced conversions and sustainable business growth", icon: "trending" }
+    ]
+  },
+  "sree-vedics-marketing": {
+    logo: "/logos/Sree_Vedics_Logo.jpg",
+    image: "/brand-card-images/sreevadic.jpg",
+    title: "Sree Vedics",
+    subtitle: "Ayurveda-inspired, dermatologically tested skincare for face, eyes, and feet.",
+    emoji: "🧴",
+    description: "Sree Vedics, the Jupiter-branded skincare line from Jupiter Pharmaceutical Ltd, partnered with Digital Edge 360 to turn its Shopify store into a scalable direct-to-consumer sales channel for its flagship Face Serum, Under Eye Cream, and Foot Care Cream. The campaign focused on driving purchase volume at a controlled cost per acquisition while building the kind of reach that keeps future retargeting pools full.",
+    websiteUrl: "https://sreevedics.com/",
+    stats: {
+      estimatedTime: "Active",
+      bugsFixing: "456",
+      security: "₹36.87",
+      projectCompletion: "3.43M+",
+      trafficSpikes: "₹277.89",
+      trafficSpikesLabel: "Cost Per Purchase"
+    },
+    customStats: [
+      { label: "Website Purchases", val: "456" },
+      { label: "Reach", val: "21,42,461" },
+      { label: "Impressions", val: "3.43M+" },
+      { label: "CPM", val: "₹36.87" },
+      { label: "Cost Per Purchase", val: "₹277.89" }
+    ],
+    about: "Sree Vedics formulates its skincare around Liposomal Glutathione and a mix of botanical actives, positioned as a clinically-minded, dermatologically tested alternative to conventional cosmetic skincare. The catalog is small and focused — Face Serum, Under Eye Cream, and Foot Care Cream — which makes each product easy to explain but also means the brand depends heavily on strong per-product conversion rather than basket-building across dozens of SKUs.",
+    challenge: "A glutathione-based serum and a medicated foot cream are not impulse purchases — buyers want to understand the ingredient story before they pay, and that consideration phase tends to push cost-per-acquisition higher than it would be for a simpler beauty product. With a compact catalog and a category (skin-brightening, under-eye, foot care) that's crowded with both legacy pharma brands and D2C challengers, Sree Vedics needed a paid media approach that could put the product in front of a genuinely interested audience at scale, without letting acquisition costs drift upward as spend increased.",
+    workflowTitle: "Our Approach",
+    workflow: [
+      "Purchase-optimized campaign structure: Ran conversion campaigns optimized directly for website purchases rather than top-of-funnel engagement, so Meta's algorithm learned against the actual buying signal from day one.",
+      "Reach-efficient delivery at scale: Prioritized broad, purchase-intent audiences that kept CPM low even as reach climbed past two million, rather than narrowing into small interest sets that inflate delivery cost.",
+      "Ingredient-led creative testing: Used the glutathione and botanical-extract story as the core creative hook, since the FAQ-heavy content on the site suggested buyers respond to ingredient explanation more than generic beauty claims."
+    ],
+    timeline: [
+      { label: "Audience & Pixel Setup", day: "Day 1-3", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "Creative Testing", day: "Day 4-10", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "Conversion Optimization", day: "Day 11-20", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "Scaling & Retargeting", day: "Day 21+", color: "border-emerald-500 bg-emerald-50 text-emerald-600" }
+    ],
+    heroHeadingBlack: "Direct-to-Consumer",
+    heroHeadingGreen: "Performance Growth",
+    industry: "Skincare & Wellness (D2C)",
+    projectType: "Performance Marketing & Meta Ad Scaling",
+    aboutHeadline: "Clinical Skincare. D2C Scale.",
+    challengeHeadline: "High-Consideration Category & Acquisition Efficiency",
+    challengeBullets: [
+      "Glutathione and medicated skincare require ingredient education before purchase",
+      "Compact 3-SKU catalog limits immediate basket-building opportunities",
+      "Crowded market with legacy pharma brands and beauty D2C competitors",
+      "Need to scale reach (2.1M+) while holding Cost Per Purchase at ₹277.89",
+      "Avoid CPA inflation as ad budget and delivery volume increase"
+    ],
+    timelineBanner: "Campaign Status: Actively Running / Scaling",
+    impactHeadline: "456 Purchases. ₹36.87 CPM.",
+    impactDescription: "By combining purchase-optimized campaigns with ingredient-led storytelling, Sree Vedics achieved high purchase volume and exceptional ad efficiency.",
+    impactCards: [
+      { title: "456 Purchases", desc: "456 verified D2C website orders delivered", icon: "check" },
+      { title: "2.14M+ Reach", desc: "21,42,461 total unique users reached", icon: "users" },
+      { title: "3.43M+ Impressions", desc: "3.43 Million+ ad impressions across platforms", icon: "eye" },
+      { title: "₹277.89 Cost/Purchase", desc: "Acquisition cost maintained at ₹277.89 per order", icon: "trending" }
     ]
   },
   "chris-louis": {
@@ -1947,6 +2067,7 @@ export const storiesData: Record<string, SuccessStoryData> = {
     title: "Kaamdham",
     subtitle: "Connecting Everyday Customers with Verified Local Experts & Service Providers",
     emoji: "🛠️",
+    logo: "/logos/kaamdham-logo.jpg",
     description: "Kaamdham is a dynamic on-demand service marketplace connecting homeowners, event organizers, and businesses with verified professionals — from chefs, decorators, and technicians to musicians and photographers. Digital Edge 360 built an intuitive, high-reliability web application featuring instant booking, geolocation matching, and real-time order tracking.",
     websiteUrl: "https://app.kaamdham.com/",
     industry: "On-Demand Services & Marketplace",
@@ -2007,6 +2128,7 @@ export const storiesData: Record<string, SuccessStoryData> = {
     title: "Instayaar",
     subtitle: "Real-World Activity Companionship, City Tours, Hobbies & Social Sessions",
     emoji: "🤝",
+    logo: "/logos/instayaar-logo.jpg",
     description: "Instayaar is an innovative activity-based companionship platform designed to connect people with verified local individuals ('Yaars') for real-world shared experiences — including walking tours, museum visits, cafe conversations, hobby practice, and city exploration. Digital Edge 360 built an ultra-secure, privacy-first web application engineered for trust, safety, and seamless session booking.",
     websiteUrl: "https://app.instayaar.com/",
     industry: "Social Tech & Lifestyle Marketplace",
@@ -2057,6 +2179,191 @@ export const storiesData: Record<string, SuccessStoryData> = {
       { title: "Completed Sessions", desc: "18,000+ verified real-world activity bookings", icon: "shield" },
       { title: "Verified Yaars", desc: "1,200+ background-checked companions", icon: "users" },
       { title: "Safety Record", desc: "99.9% positive and safe session completion rate", icon: "percent" }
+    ]
+  },
+  "chappan-bhog": {
+    category: "Performance Marketing & FMCG",
+    heroHeadingBlack: "Chappan Bhog -",
+    heroHeadingGreen: "Premium Makhana & Authentic Snack Brand Scaling",
+    image: "/brand-card-images/chappan-bhog-card-image.jpg",
+    logo: "/logos/9.jpg",
+    title: "Chappan Bhog",
+    subtitle: "Premium makhana and snacks with authentic taste and quality.",
+    emoji: "🍿",
+    description: "Chappan Bhog, a leading brand in premium makhana and snacks, collaborated with Digital Edge 360 to enhance its online presence, drive sales, and establish itself as a household name. By leveraging targeted digital marketing strategies, the brand achieved remarkable growth in e-commerce sales, customer engagement, and brand recognition across digital platforms.",
+    websiteUrl: "https://chappanbhog.com/",
+    industry: "FMCG & Premium Snacks",
+    projectType: "Performance Marketing & E-Commerce Growth",
+    stats: {
+      estimatedTime: "30 Days",
+      bugsFixing: "120 +",
+      security: "99.99%",
+      projectCompletion: "30 Days",
+      trafficSpikes: "220%",
+      trafficSpikesLabel: "E-Commerce Sales Growth"
+    },
+    customStats: [
+      { label: "E-Commerce Sales Growth", val: "220%" },
+      { label: "Social Media Engagement", val: "80%" },
+      { label: "CAC Reduction", val: "60%" },
+      { label: "Website Traffic Growth", val: "150%" },
+      { label: "Repeat Customer Rate", val: "80%" }
+    ],
+    about: "Chappan Bhog specializes in high-quality makhana and traditional snacks, offering a perfect blend of taste and nutrition. Known for its premium ingredients and unique flavors, the brand caters to health-conscious consumers looking for guilt-free snacking options. With a commitment to purity and innovation, Chappan Bhog has become a trusted choice for those seeking delicious and wholesome snack alternatives in India and beyond.",
+    challenge: "Despite having a great product, Chappan Bhog struggled with low digital visibility and direct consumer engagement. The brand heavily relied on offline sales, missing out on the growing online market. Additionally, high competition in the snack industry made it difficult to stand out. Chappan Bhog needed a strategic digital approach to increase brand awareness, drive online sales, and build a strong consumer community.",
+    workflowTitle: "Strategic Marketing & E-Commerce Scale Workflow",
+    workflow: [
+      "Influencer & Community Marketing: Partnered with food bloggers and fitness influencers to boost credibility.",
+      "E-commerce Optimization: Enhanced website UI/UX and implemented a seamless checkout process.",
+      "Targeted Paid Campaigns: Ran strategic Facebook, Instagram, and Google ads for high-intent buyers.",
+      "Loyalty & Retargeting Strategies: Engaged existing customers with offers, email marketing, and WhatsApp campaigns."
+    ],
+    timeline: [
+      { label: "Market Research & Audience Profiling", day: "5 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "E-Commerce Storefront UI/UX Polish", day: "12 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "Influencer Outreach & Campaign Setup", day: "19 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "Paid Ad Funnels & Retargeting Launch", day: "25 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
+      { label: "Scaling, Email & WhatsApp Retention", day: "30 Day", color: "border-emerald-500 bg-emerald-50 text-emerald-600" }
+    ],
+    aboutHeadline: "Authentic Taste. Pure Ingredients. Scaled Globally.",
+    challengeHeadline: "Overcoming Offline Dependency & Breaking Through Snack Industry Competition",
+    challengeBullets: [
+      "Low digital visibility and minimal direct-to-consumer online sales presence",
+      "Heavy reliance on traditional offline retail channels missing digital scale",
+      "High market competition requiring distinctive brand positioning for premium makhana",
+      "Need for a robust performance funnel to acquire and retain high-intent buyers"
+    ],
+    timelineBanner: "Performance Marketing & E-Commerce Engine Scaled in 30 Days",
+    impactHeadline: "Explosive E-Commerce Sales Expansion & Customer Retention",
+    impactDescription: "With Digital Edge 360's integrated performance marketing strategy, Chappan Bhog achieved a 220% surge in e-commerce sales, 80% rise in social engagement, and 60% reduction in CAC.",
+    impactCards: [
+      { title: "E-Commerce Sales", desc: "220% increase in direct online store revenue", icon: "trending" },
+      { title: "Social Engagement", desc: "80% rise in social media interactions & community build", icon: "users" },
+      { title: "CAC Efficiency", desc: "60% reduction in customer acquisition costs", icon: "percent" },
+      { title: "Repeat Customers", desc: "80% increase in recurring customer orders", icon: "shield" }
+    ]
+  },
+  "peach-tassels": {
+    logo: "/logos/peach-tassels-logo.jpg",
+    image: "/brand-card-images/peach-tassels.jpg",
+    title: "Peach Tassels",
+    subtitle: "Affordable, statement-making fashion jewellery, built for a digital-first audience.",
+    emoji: "💎",
+    description: "Peach Tassels, a Kolkata-based fashion jewellery brand known for its earrings, necklaces, bangles and bridal-adjacent collections like RANGRITI, partnered with Digital Edge 360 to convert its social following into a measurable sales engine. The engagement combined tightly managed Meta ad spend with a dedicated SEO push, resulting in sharp gains in paid efficiency and organic discoverability.",
+    websiteUrl: "https://peachtassels.com/",
+    industry: "Fashion Jewellery (D2C)",
+    projectType: "Performance Marketing & Technical SEO",
+    stats: {
+      estimatedTime: "Active",
+      bugsFixing: "72.8%",
+      security: "12.5x",
+      projectCompletion: "35",
+      trafficSpikes: "₹1.05",
+      trafficSpikesLabel: "Instagram Visit Cost"
+    },
+    customStats: [
+      { label: "Drop in CPM (Jun vs Apr)", val: "72.8%" },
+      { label: "Organic Traffic Growth", val: "180%" },
+      { label: "Organic Keyword Growth", val: "12.5x" },
+      { label: "Keywords in Top 10", val: "35" },
+      { label: "Instagram Visit Cost", val: "₹1.05" }
+    ],
+    about: "Peach Tassels sells fashion-forward, wallet-friendly jewellery — from Kundan and AD stone pieces to modern basics and occasion-wear sets — through its own Shopify storefront and a strong Instagram presence. The brand's positioning sits between traditional Indian jewellery aesthetics and everyday, contemporary wearability, giving it a wide audience across both festive and daily-wear shoppers.",
+    challenge: "Peach Tassels had built a loyal social following and a catalog that photographed well, but that attention wasn't converting into predictable, cost-efficient revenue. Ad spend was going out without a tight enough targeting structure to control cost-per-result, and the website itself was invisible on search — a brand that people already knew from Instagram had almost no footprint when the same people searched Google. The task was to fix both sides at once: make paid spend work harder, and give the site an organic acquisition channel that didn't depend on ad budget at all.",
+    workflowTitle: "Our Approach",
+    workflow: [
+      "Campaign Budget Optimization (CBO) Restructuring: Consolidated ad sets under CBO for the core Purchase campaign, letting Meta's delivery engine shift spend toward the best-performing audiences in real time.",
+      "Collection-Specific Creative & Targeting: Built a dedicated RANGRITI Sales campaign around that product line's own audience and creative, instead of folding it into a generic catalog campaign.",
+      "WhatsApp-Led Conversion for High-Intent Traffic: Ran a Messaging Conversations campaign (WP Sales 1099) to move interested shoppers straight into a WhatsApp conversation, resolving pricing and sizing questions without losing leads.",
+      "Low-Cost Top-of-Funnel Growth: Used a Followers/Traffic campaign to drive Instagram profile visits cheaply (₹1.05/visit), feeding retargeting pools used by sales campaigns.",
+      "Technical & Content SEO Foundation: Cleaned up on-page structure, expanded category/product content, and built out keyword coverage across collection pages (Kundan, AD, bangles, earrings)."
+    ],
+    timeline: [
+      { label: "CBO & Pixel Restructuring", day: "Day 1-5", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "RANGRITI Campaign Launch", day: "Day 6-12", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "WhatsApp & IG Funnel Setup", day: "Day 13-20", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "SEO Expansion & Scaling", day: "Day 21+", color: "border-emerald-500 bg-emerald-50 text-emerald-600" }
+    ],
+    heroHeadingBlack: "Performance Ads &",
+    heroHeadingGreen: "Organic Search Growth",
+    aboutHeadline: "Statement Jewellery. Digital Scale.",
+    challengeHeadline: "Paid Efficiency & Search Discoverability",
+    challengeBullets: [
+      "Translating social following into predictable website revenue",
+      "Controlling CPM and Cost Per Result across paid campaigns",
+      "Building organic Google search visibility for non-branded jewellery terms",
+      "Capturing high-intent shoppers via direct WhatsApp messaging",
+      "Scaling RANGRITI and core collection lines efficiently"
+    ],
+    timelineBanner: "Campaign Status: Actively Running / Scaling",
+    impactHeadline: "72.8% Drop in CPM. 180% Organic Growth.",
+    impactDescription: "Combining CBO campaign restructuring, collection-specific funnels, and technical SEO delivered dramatic efficiency gains across paid and organic channels.",
+    impactCards: [
+      { title: "72.8% CPM Drop", desc: "Significant drop in CPM across CBO purchase campaigns", icon: "percent" },
+      { title: "180% Organic Growth", desc: "180% surge in organic website search traffic", icon: "trending" },
+      { title: "12.5x Keyword Growth", desc: "Organic search keywords scaled from 20 to 250 (12.5x)", icon: "check" },
+      { title: "35 Top 10 Keywords", desc: "35 high-intent keywords ranking in Google Top 10", icon: "users" }
+    ]
+  },
+  "velvet-box": {
+    category: "Mobile App & Luxury E-Commerce",
+    heroHeadingBlack: "Velvet Box -",
+    heroHeadingGreen: "Luxury Fine Jewelry Mobile Shopping App",
+    image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=1200&auto=format&fit=crop",
+    logo: "/logos/velvet-box-logo.jpg",
+    title: "Velvet Box",
+    subtitle: "Bespoke Mobile Commerce Experience for Fine Jewelry & Precious Ornaments",
+    emoji: "💎",
+    description: "Velvet Box is a premier luxury jewelry brand specializing in handcrafted gold, diamond, and artisanal gemstone pieces. Digital Edge 360 designed and engineered a high-performance native mobile app featuring 360-degree product views, personalized ring sizing tools, and ultra-secure biometric checkout flows.",
+    websiteUrl: "https://velvetbox.com/",
+    industry: "Fine Jewelry & Luxury Retail",
+    projectType: "Mobile App Development (iOS & Android)",
+    stats: {
+      estimatedTime: "30 Days",
+      bugsFixing: "165 +",
+      security: "99.99%",
+      projectCompletion: "30 Days",
+      trafficSpikes: "320%",
+      trafficSpikesLabel: "App Sales Conversions"
+    },
+    customStats: [
+      { label: "Mobile App Downloads", val: "25,000+" },
+      { label: "App Conversion Rate", val: "+320%" },
+      { label: "Average Order Value (AOV)", val: "+45%" },
+      { label: "User Retention Rate", val: "78%" }
+    ],
+    about: "Velvet Box crafts exquisite diamond and gold jewelry designed to elevate life’s most cherished moments. Known for craftsmanship, certified purity, and bespoke custom design services, Velvet Box connects fine jewelry connoisseurs with heirloom-quality collections across the globe.",
+    challenge: "Fine jewelry purchases require high trust, exceptional visual precision, and seamless interactive experiences. Velvet Box needed a dedicated mobile application that replicates the luxury in-store white-glove experience — overcoming mobile browser limitations, enabling instant push notifications for exclusive drops, and offering zero-friction secure payment handling.",
+    workflowTitle: "Luxury App Architecture & High-Touch Commerce Stack",
+    workflow: [
+      "Native Mobile UI/UX Design: Engineered high-resolution luxury interfaces with smooth micro-animations.",
+      "Interactive Product Showcase: Integrated 360° product rotation, high-zoom gemstone inspection, and ring size finder tools.",
+      "Secure Payment & Escrow Integration: Implemented multi-currency payment gateways with biometric authentication (FaceID/TouchID).",
+      "Push Notification & VIP Engagement: Built automated segmentation for exclusive collection previews and custom order tracking."
+    ],
+    timeline: [
+      { label: "Discovery & Jewelry UX Mapping", day: "5 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "High-Fidelity Prototyping & Design", day: "12 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "Mobile App Development (iOS & Android)", day: "22 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "Security Audit & Biometric QA", day: "27 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
+      { label: "App Store & Play Store Launch", day: "30 Day", color: "border-emerald-500 bg-emerald-50 text-emerald-600" }
+    ],
+    aboutHeadline: "Elegance Redefined. Delivered to Your Pocket.",
+    challengeHeadline: "Translating In-Store Luxury to a High-Converting Mobile App Ecosystem",
+    challengeBullets: [
+      "High visual fidelity requirement for showcasing diamond clarity and gold texture on mobile screens",
+      "Building trust for high-value mobile transactions with ironclad biometric payment security",
+      "Eliminating mobile browser drop-off through dedicated native push notifications and instant reloads",
+      "Seamless inventory synchronization between physical boutiques and global mobile buyers"
+    ],
+    timelineBanner: "Native Mobile App Deployed to App Store & Google Play in 30 Days",
+    impactHeadline: "Record Mobile Revenue & High-Value Customer Retention",
+    impactDescription: "With Velvet Box's mobile application, the brand achieved 25,000+ downloads within 90 days, a 320% increase in mobile conversion rate, and a 45% uplift in Average Order Value.",
+    impactCards: [
+      { title: "App Conversions", desc: "320% surge in mobile order conversion rates", icon: "trending" },
+      { title: "Downloads", desc: "Over 25,000+ active mobile app users onboarded", icon: "users" },
+      { title: "AOV Growth", desc: "45% increase in average order transaction value", icon: "percent" },
+      { title: "App Retention", desc: "78% repeat 90-day active user retention rate", icon: "shield" }
     ]
   }
 };

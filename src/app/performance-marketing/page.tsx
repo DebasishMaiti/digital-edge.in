@@ -14,6 +14,36 @@ import { section } from "framer-motion/client";
 
 const perfMarketingShowcases = [
   {
+    name: "Peach Tassels",
+    link: "/company-details/peach-tassels",
+    image: "/brand-card-images/peach-tassels.jpg",
+    logo: "/logos/peach-tassels-logo.jpg"
+  },
+  {
+    name: "Sree Vedics",
+    link: "/company-details/sree-vedics-marketing",
+    image: "/brand-card-images/sreevadic.jpg",
+    logo: "/logos/Sree_Vedics_Logo.jpg"
+  },
+  {
+    name: "Chris Louis",
+    link: "/company-details/chris-louis",
+    image: "/brand-card-images/Chris-Louis.jpg",
+    logo: "/logos/20.jpg"
+  },
+  {
+    name: "Ducati",
+    link: "/company-details/ducati",
+    image: "/brand-card-images/Ducati-home.jpg",
+    logo: "/logos/28.jpg"
+  },
+  {
+    name: "Sacred Suta",
+    link: "/company-details/sacred-suta-marketing",
+    image: "/brand-card-images/sacred-suta.jpg",
+    logo: "/logos/sacred-suta.jpg"
+  },
+  {
     name: "Sakshi Handloom",
     link: "/company-details/sakshi-handloom",
     image: "/brand-card-images/sakshi-handloom.jpg",
@@ -38,18 +68,6 @@ const perfMarketingShowcases = [
     logo: "/logos/jiva.jpg"
   },
   {
-    name: "Chris Louis",
-    link: "/company-details/chris-louis",
-    image: "/brand-card-images/Chris-Louis.jpg",
-    logo: "/logos/20.jpg"
-  },
-  {
-    name: "Ducati",
-    link: "/company-details/ducati",
-    image: "/brand-card-images/Ducati-home.jpg",
-    logo: "/logos/28.jpg"
-  },
-  {
     name: "JetChoice",
     link: "/company-details/jetchoice",
     image: "/brand-card-images/jet-choice.jpg",
@@ -68,6 +86,12 @@ const perfMarketingShowcases = [
     logo: "/logos/17.jpg"
   },
   {
+    name: "Chappan Bhog",
+    link: "/company-details/chappan-bhog",
+    image: "/brand-card-images/chappan-bhog-card-image.jpg",
+    logo: "/logos/9.jpg"
+  },
+  {
     name: "IBT Behala",
     link: "/company-details/ibt-behala",
     image: "/brand-card-images/IBT-behala.jpg",
@@ -78,7 +102,13 @@ const perfMarketingShowcases = [
     link: "/company-details/royal-enfield",
     image: "/brand-card-images/ROYAL-ENFIELD.jpg",
     logo: "/logos/royal enfiled.jpg"
-  }
+  },
+  {
+    name: "Kayrah",
+    link: "/company-details/kayrah",
+    image: "/brand-card-images/KAYRAH.jpg",
+    logo: "/logos/kayrah.jpg"
+  },
 ];
 
 export default function PerformanceMarketing() {
@@ -221,7 +251,7 @@ export default function PerformanceMarketing() {
             </svg>
           </div>
 
-          <div className="relative z-10 max-w-[1600px] w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <div className="relative z-10 max-w-[1400px] w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
             {/* Left Column */}
             <div className="lg:col-span-6 flex flex-col items-start text-left">
@@ -331,9 +361,9 @@ export default function PerformanceMarketing() {
 
         {/* Ad Performance & Multi-Channel Campaigns Section */}
         <section className="relative z-10 w-full py-24 sm:py-32 bg-white overflow-hidden border-b border-slate-100">
-          <div className="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-              
+
               {/* Left Column: Visual Showcase with Image (Enlarged) */}
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
@@ -344,7 +374,7 @@ export default function PerformanceMarketing() {
               >
                 {/* Backdrop Glow */}
                 <div className="absolute -inset-6 bg-gradient-to-r from-blue-600/20 via-indigo-600/20 to-purple-600/20 rounded-[44px] blur-3xl opacity-70 pointer-events-none" />
-                
+
                 {/* Main Image Frame - High resolution enlarged display */}
                 <div className="relative rounded-[32px] overflow-hidden border border-slate-200/90 shadow-[0_25px_60px_rgba(0,0,0,0.15)] bg-slate-900">
                   <Image
@@ -628,8 +658,8 @@ export default function PerformanceMarketing() {
                       key={idx}
                       onClick={() => setActiveTab(idx)}
                       className={`p-6 rounded-2xl border text-left transition-all duration-300 relative overflow-hidden group flex flex-col gap-2 ${isActive
-                          ? "bg-gradient-to-br from-sky-500/10 to-indigo-500/10 border-sky-500/30 shadow-md shadow-sky-500/5"
-                          : "bg-slate-50/50 border-slate-200 hover:bg-slate-50 hover:border-slate-300"
+                        ? "bg-gradient-to-br from-sky-500/10 to-indigo-500/10 border-sky-500/30 shadow-md shadow-sky-500/5"
+                        : "bg-slate-50/50 border-slate-200 hover:bg-slate-50 hover:border-slate-300"
                         }`}
                     >
                       {isActive && (
