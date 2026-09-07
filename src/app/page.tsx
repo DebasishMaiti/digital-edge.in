@@ -993,7 +993,7 @@ export default function Home() {
 
         {/* What We Do - Full-Stack Growth & Digital Architecture Section */}
         <section className="relative z-10 w-full py-12 md:py-16 bg-gradient-to-br from-indigo-100/40 via-purple-100/40 to-indigo-50/40 border-y border-slate-200/60 overflow-hidden">
-          <div className="mx-auto max-w-full px-6 sm:px-8 lg:px-12">
+          <div className="mx-auto max-w-full px-8 sm:px-16 lg:px-24">
 
             {/* Header container */}
             <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8">
@@ -1735,7 +1735,7 @@ export default function Home() {
           <div className="absolute top-[10%] left-[-10%] w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle_at_center,rgba(36,67,171,0.03)_0%,transparent_70%)] pointer-events-none" />
           <div className="absolute bottom-[10%] right-[-10%] w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle_at_center,rgba(10,139,199,0.03)_0%,transparent_70%)] pointer-events-none" />
 
-          <div className="max-w-full mx-auto px-8 sm:px-16 lg:px-24">
+          <div className="max-w-[1400px] mx-auto px-8 sm:px-16 lg:px-24">
             {/* Header */}
             <div className="text-center max-w-3xl mx-auto mb-12 md:mb-14">
               <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-4 py-2 text-[10px] font-extrabold tracking-[0.25em] text-[#2443ab] uppercase shadow-sm mb-4">
@@ -2158,7 +2158,7 @@ export default function Home() {
           <div className="absolute top-[-10%] right-[-10%] w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle_at_center,rgba(56,189,248,0.08)_0%,transparent_70%)] pointer-events-none blur-[60px]" />
           <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle_at_center,rgba(52,211,153,0.06)_0%,transparent_70%)] pointer-events-none blur-[60px]" />
 
-          <div className="max-w-full mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+          <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-16 relative z-10">
             <div className="max-w-4xl mx-auto text-center space-y-6 mb-10">
               {/* Badge */}
               <motion.div
@@ -2287,8 +2287,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row items-center gap-4">
                 <span className="text-slate-400 font-bold text-sm tracking-wider uppercase">Value:</span>
                 <span className="text-slate-400/80 font-bold line-through text-lg">₹25,000</span>
-                <span className="hidden sm:inline text-slate-300 font-bold">”¢</span>
-                <span className="inline-flex items-center gap-1.5 bg-emerald-50 border border-emerald-100 px-3.5 py-1.5 rounded-full text-xs font-black tracking-wider text-emerald-600 uppercase">
+                 <span className="inline-flex items-center gap-1.5 bg-emerald-50 border border-emerald-100 px-3.5 py-1.5 rounded-full text-xs font-black tracking-wider text-emerald-600 uppercase">
                   Today: Free for qualified businesses
                 </span>
               </div>
@@ -2310,7 +2309,7 @@ export default function Home() {
           <div className="absolute top-[20%] left-[-10%] w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.05)_0%,transparent_60%)] pointer-events-none blur-[60px]" />
           <div className="absolute bottom-[20%] right-[-10%] w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.04)_0%,transparent_60%)] pointer-events-none blur-[60px]" />
 
-          <div className="max-w-full mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+          <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-16 relative z-10">
             {/* Header */}
             <div className="max-w-3xl mx-auto text-center space-y-4 mb-10 md:mb-12">
               <span className="inline-flex items-center gap-2 rounded-full border border-blue-150 bg-blue-50/80 px-4 py-2 text-[10px] sm:text-xs font-black tracking-[0.2em] text-blue-600 uppercase shadow-sm">
@@ -2719,7 +2718,7 @@ export default function Home() {
 
         {/* Why Us Section */}
         <section className="relative z-10 w-full py-12 md:py-16 bg-white border-t border-slate-100 overflow-hidden">
-          <div className="max-w-full mx-auto px-8 sm:px-16 lg:px-24">
+          <div className="max-w-[1500px] mx-auto px-8 sm:px-16 lg:px-24">
             {/* Header */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -2746,13 +2745,13 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
               className="hidden md:block w-full max-w-full mx-auto bg-[#fafbfc] rounded-[32px] border border-slate-200/50 shadow-[0_20px_50px_rgba(0,0,0,0.03)] overflow-hidden mt-8"
             >
-              <table className="w-full border-collapse text-left table-fixed">
+              <table className="w-full border-separate border-spacing-0 text-left table-fixed">
                 <thead>
-                  <tr className="border-b border-slate-200/60">
-                    <th className="py-10 px-8 text-[13px] font-bold text-slate-400 uppercase tracking-widest w-[20%]">Features</th>
+                  <tr>
+                    <th className="py-10 px-8 text-[13px] font-bold text-slate-400 uppercase tracking-widest w-[20%] border-b border-slate-200/60">Features</th>
                     {/* Winning Column Header with badge */}
-                    <th className="py-8 px-8 bg-[#2443ab] text-white relative w-[32%] shadow-[0_-10px_25px_rgba(36,67,171,0.1)] text-center">
-                      <div className="inline-flex items-center gap-1 bg-white text-[#2443ab] text-[9px] font-black tracking-wider uppercase px-3 py-1 rounded-full border border-blue-200 shadow-sm mb-2">
+                    <th className="pt-6 pb-6 px-8 bg-[#2443ab] text-white relative w-[32%] shadow-[0_-10px_25px_rgba(36,67,171,0.1)] text-center rounded-t-3xl border-b border-[#1d3794]/40">
+                      <div className="inline-flex items-center gap-1.5 bg-white text-[#2443ab] text-[9.5px] font-black tracking-wider uppercase px-3.5 py-1 rounded-full border border-blue-200 shadow-sm mb-3">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-3 h-3 text-[#2443ab]">
                           <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clipRule="evenodd" />
                         </svg>
@@ -2760,11 +2759,11 @@ export default function Home() {
                       </div>
                       <span className="block text-base font-black tracking-widest uppercase text-center">Digital Edge 360</span>
                     </th>
-                    <th className="py-10 px-8 text-[13px] font-semibold text-slate-400 uppercase tracking-widest w-[24%]">Typical Agency</th>
-                    <th className="py-10 px-8 text-[13px] font-semibold text-slate-400 uppercase tracking-widest w-[24%]">Freelancers / Offshore</th>
+                    <th className="py-10 px-8 text-[13px] font-semibold text-slate-400 uppercase tracking-widest w-[24%] border-b border-slate-200/60">Typical Agency</th>
+                    <th className="py-10 px-8 text-[13px] font-semibold text-slate-400 uppercase tracking-widest w-[24%] border-b border-slate-200/60">Freelancers / Offshore</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-slate-200/50">
+                <tbody>
                   {[
                     {
                       feature: "Campaign strategy",
@@ -2817,10 +2816,10 @@ export default function Home() {
                     return (
                       <tr key={rIdx} className={`${bgClass} hover:bg-slate-50/30 transition-colors`}>
                         {/* Feature name column */}
-                        <td className="py-12 px-8 text-[17px] font-bold text-[#0d1b3e] align-top">{row.feature}</td>
+                        <td className={`py-12 px-8 text-[17px] font-bold text-[#0d1b3e] align-top ${!isLastRow ? "border-b border-slate-200/50" : ""}`}>{row.feature}</td>
 
                         {/* Winning Column (Us) */}
-                        <td className="py-12 px-8 bg-[#2443ab] text-white align-top shadow-[0_15px_35px_rgba(36,67,171,0.12)] relative">
+                        <td className={`py-12 px-8 bg-[#2443ab] text-white align-top shadow-[0_15px_35px_rgba(36,67,171,0.12)] relative ${!isLastRow ? "border-b border-[#1d3794]/40" : ""} ${isLastRow ? "rounded-b-3xl" : ""}`}>
                           <div className="flex gap-4">
                             <span className="flex-shrink-0 inline-flex items-center justify-center w-6 h-6 rounded-full bg-green-600 text-white font-bold text-xs shadow-sm">✓</span>
                             <div>
@@ -2831,7 +2830,7 @@ export default function Home() {
                         </td>
 
                         {/* Typical Agency column */}
-                        <td className="py-12 px-8 align-top">
+                        <td className={`py-12 px-8 align-top ${!isLastRow ? "border-b border-slate-200/50" : ""}`}>
                           <div className="flex gap-4">
                             <span className="flex-shrink-0 inline-flex items-center justify-center w-6 h-6 rounded-full bg-rose-50/80 text-rose-500/70 font-bold text-xs border border-rose-100/50">✕</span>
                             <div>
@@ -2842,7 +2841,7 @@ export default function Home() {
                         </td>
 
                         {/* Freelancer column */}
-                        <td className="py-12 px-8 align-top">
+                        <td className={`py-12 px-8 align-top ${!isLastRow ? "border-b border-slate-200/50" : ""}`}>
                           <div className="flex gap-4">
                             <span className="flex-shrink-0 inline-flex items-center justify-center w-6 h-6 rounded-full bg-rose-50/80 text-rose-500/70 font-bold text-xs border border-rose-100/50">✕</span>
                             <div>
@@ -2964,7 +2963,7 @@ export default function Home() {
 
         {/* FAQ Section */}
         <section className="relative z-10 w-full py-12 md:py-16 bg-gradient-to-b from-[#fafbfc] to-white border-t border-slate-100 overflow-hidden">
-          <div className="max-w-full mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 
             {/* Header */}
             <motion.div
