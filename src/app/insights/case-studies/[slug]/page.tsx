@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import { caseStudiesData } from "@/data";
 import CaseStudyDetailClient from "./CaseStudyDetailClient";
 
@@ -10,6 +11,16 @@ export async function generateStaticParams() {
 
 interface PageProps {
   params: Promise<{ slug: string }>;
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const study = caseStudiesData.find((s) => s.slug === slug);
+  if (!study) return {};
+  return {
+    title: `${study.title} Case Study | Digital Edge 360°`,
+    description: study.description,
+  };
 }
 
 export default async function CaseStudyDetailPage({ params }: PageProps) {

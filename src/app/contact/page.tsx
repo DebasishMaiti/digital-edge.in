@@ -40,7 +40,6 @@ export default function Contact() {
   return (
     <>
       <link rel="canonical" href="https://digitaledge360.in/contact/" />
-
       <div className="relative w-full bg-[#fafbfc] min-h-screen pb-24 text-slate-800 overflow-hidden -mt-20 sm:-mt-24 md:-mt-[125px] pt-24 sm:pt-28 md:pt-[128px]">
         
         {/* Contact Hero Background with custom Blue light mode gradient */}

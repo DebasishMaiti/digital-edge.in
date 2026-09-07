@@ -101,7 +101,6 @@ export default function Solutions() {
   return (
     <>
       <link rel="canonical" href="https://digitaledge360.in/solutions/" />
-
       <div className="relative w-full bg-[#fafbfc] min-h-screen pb-24 text-slate-800 overflow-hidden">
 
         {/* Hero Section with custom pearl/platinum light mode gradient */}

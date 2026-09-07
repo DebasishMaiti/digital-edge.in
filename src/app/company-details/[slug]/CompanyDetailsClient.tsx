@@ -163,7 +163,6 @@ export default function CompanyDetailsClient({ story, slug }: { story: SuccessSt
 
   return (
     <div className="relative min-h-screen bg-[#fafbfc] text-slate-800 pb-32 overflow-hidden font-sans antialiased">
-      {/* Canonical Link */}
       <link rel="canonical" href={`https://digitaledge360.in/company-details/${slug}/`} />
       {/* Moving Grid Background Layer */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(226,232,240,0.4)_1px,transparent_1px),linear-gradient(to_bottom,rgba(226,232,240,0.4)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none z-0" />

@@ -28,7 +28,6 @@ export default function SeoSmm() {
   return (
     <>
       <link rel="canonical" href="https://digitaledge360.in/seo-smm/" />
-
       <div className="w-full bg-[#fafbfc] min-h-screen pb-24 text-slate-800">
         {/* Hero Section with custom Gold/Sunshine light mode gradient */}
         <section className="relative w-full pt-24 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-24 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-[160px] pb-24 px-6 sm:px-8 lg:px-12 flex flex-col justify-center items-center bg-gradient-to-b from-[rgba(46,89,242,0.15)] via-[rgba(46,89,242,0.06)] to-[#fafbfc] border-b border-slate-100/80 overflow-hidden">

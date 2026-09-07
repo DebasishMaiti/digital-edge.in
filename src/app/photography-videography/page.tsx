@@ -80,7 +80,6 @@ export default function PhotographyVideography() {
   return (
     <>
       <link rel="canonical" href="https://digitaledge360.in/photography-videography/" />
-
       <div className="w-full bg-[#fafbfc] min-h-screen pb-24 text-slate-800">
         {/* Hero Section with custom Sky Blue light mode gradient (1 shade deeper) */}
         <section className="relative w-full pt-24 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-24 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-[160px] pb-24 px-6 sm:px-8 lg:px-12 flex flex-col justify-center items-center bg-gradient-to-b from-[#e0f2fe] via-[#bae6fd] to-[#fafbfc] border-b border-slate-200 overflow-hidden">

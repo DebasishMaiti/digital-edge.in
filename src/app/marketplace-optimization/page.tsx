@@ -27,7 +27,6 @@ export default function MarketplaceOptimization() {
   return (
     <>
       <link rel="canonical" href="https://digitaledge360.in/marketplace-optimization/" />
-
       <div className="w-full bg-[#fafbfc] min-h-screen pb-24 text-slate-800">
         {/* Hero Section with custom Sage/Teal light mode gradient (1 shade deeper) */}
         <section className="relative w-full pt-24 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-24 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-[160px] pb-24 px-6 sm:px-8 lg:px-12 flex flex-col justify-center items-center bg-gradient-to-b from-[#cffafe] via-[#a5f3fc] to-[#fafbfc] border-b border-slate-200 overflow-hidden">

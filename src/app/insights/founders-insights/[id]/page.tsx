@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import FoundersInsightClient from "./FoundersInsightClient";
@@ -132,7 +133,17 @@ interface PageProps {
   params: Promise<{ id: string }>;
 }
 
-export default async function FoundersInsightPage({ params }: PageProps) {
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await params;
+  const post = insightsData[id as InsightId];
+  if (!post) return {};
+  return {
+    title: `${post.title} | Digital Edge 360°`,
+    description: post.desc,
+  };
+}
+
+export default async function FoundersInsightPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const post = insightsData[id as InsightId];
 

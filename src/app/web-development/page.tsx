@@ -240,7 +240,7 @@ export default function WebDevelopment() {
       linear-gradient(to right, rgba(226, 232, 240, 0.35) 1px, transparent 1px),
       linear-gradient(to bottom, rgba(226, 232, 240, 0.35) 1px, transparent 1px)
     `,
-    backgroundSize: '48px 48px',
+    backgroundSize: '48px 48px', 
     maskImage: 'linear-gradient(to bottom, black 80%, transparent 100%)',
     WebkitMaskImage: 'linear-gradient(to bottom, black 80%, transparent 100%)',
   };
@@ -248,7 +248,6 @@ export default function WebDevelopment() {
   return (
     <>
       <link rel="canonical" href="https://digitaledge360.in/web-development/" />
-
       <div className="relative w-full bg-[#fafbfc] min-h-screen text-slate-800 overflow-hidden">
 
         {/* Hero Background Layer with Sky Blue gradient */}

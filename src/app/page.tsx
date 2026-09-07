@@ -290,7 +290,6 @@ export default function Home() {
   return (
     <>
       <link rel="canonical" href="https://digitaledge360.in" />
-
       <div className="relative w-full bg-[#fafbfc] min-h-screen text-slate-800 overflow-hidden">
 
         {/* Hero Section Container */}
@@ -2610,7 +2609,7 @@ export default function Home() {
 
         {/* Trusted by Category Kings Section (Grid Format) */}
         <section className="relative z-10 w-full py-10 md:py-12 bg-[#fafbfc] border-t border-slate-100 overflow-hidden">
-          <div className="max-w-full mx-auto px-6 sm:px-8 lg:px-12text-center mb-8">
+          <div className="max-w-full mx-auto px-6 sm:px-8 lg:px-12 text-center mb-8">
             {/* Header Icon */}
             <div className="flex justify-center mb-3">
               <div className="w-12 h-12 bg-blue-50/50 rounded-full flex items-center justify-center text-blue-600">

@@ -193,7 +193,6 @@ export default function FAQPage() {
   return (
     <>
       <link rel="canonical" href="https://digitaledge360.in/faq/" />
-
       <div className="relative w-full bg-[#fafbfc] min-h-screen pb-24 text-slate-800 overflow-hidden">
         
         {/* FAQ Hero Wrapper with custom azure-cream light mode gradient */}
