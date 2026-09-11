@@ -185,13 +185,13 @@ export default function CompanyDetailsClient({ story, slug }: { story: SuccessSt
  
             {/* Hero Left Content */}
             <motion.div variants={itemVariants} className="lg:col-span-6 space-y-8 text-left">
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-5">
                 {story.logo ? (
-                  <div className="bg-white/95 border border-slate-200/60 p-2.5 rounded-2xl shadow-[0_8px_20px_rgba(0,0,0,0.04)] flex items-center justify-center h-14 w-32 md:h-16 md:w-36 transition-all duration-300">
+                  <div className="bg-white/95 border border-slate-200/60 p-4 rounded-2xl shadow-[0_8px_20px_rgba(0,0,0,0.04)] flex items-center justify-center h-24 w-56 md:h-32 md:w-72 transition-all duration-300">
                     <img src={story.logo} alt={story.title} className="max-h-full max-w-full object-contain" />
                   </div>
                 ) : (
-                  <span className="text-2xl drop-shadow-sm select-none">{story.emoji}</span>
+                  <span className="text-5xl drop-shadow-sm select-none">{story.emoji}</span>
                 )}
                 <span className="text-xs font-black uppercase tracking-[0.25em] text-slate-400">{story.title}</span>
               </div>

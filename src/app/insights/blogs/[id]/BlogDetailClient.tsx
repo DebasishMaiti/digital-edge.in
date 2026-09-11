@@ -77,7 +77,7 @@ export default function BlogDetailClient({ id, post }: BlogDetailClientProps) {
         <div className="absolute top-[35%] right-[-20%] w-[1000px] h-[1000px] rounded-full bg-[radial-gradient(circle_at_center,rgba(10,139,199,0.18)_0%,transparent_70%)] pointer-events-none blur-[120px]" />
         <div className="absolute bottom-[5%] left-[-15%] w-[900px] h-[900px] rounded-full bg-[radial-gradient(circle_at_center,rgba(64,21,158,0.12)_0%,transparent_70%)] pointer-events-none blur-[100px]" />
 
-        <div className="relative z-10 mx-auto max-w-[1150px] px-6 sm:px-8 pt-24 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-[180px] pb-16">
+        <div className="relative z-10 mx-auto w-full px-6 sm:px-8 pt-24 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-[180px] pb-16">
           {/* Breadcrumb / Back Link */}
           <Link 
             href="/insights/blogs" 
@@ -124,7 +124,7 @@ export default function BlogDetailClient({ id, post }: BlogDetailClientProps) {
 
             {/* Light Brand-Aligned Blog Header Banners */}
             {id === "how-to-know-whether-service-should-be-seo-aeo-geo" && (
-              <div className="relative w-full h-[350px] sm:h-[650px] md:h-[750px] overflow-hidden rounded-3xl border border-slate-100 shadow-[0_15px_40px_rgba(0,0,0,0.03)] my-6">
+              <div className="relative max-w-[960px] mx-auto w-full aspect-[4/3] max-h-[720px] overflow-hidden rounded-3xl border border-slate-100 shadow-[0_15px_40px_rgba(0,0,0,0.03)] my-6">
                 <Image
                   src="/logs/ecommerce_seo_aeo_geo.png"
                   alt="E-commerce SEO, AEO, and GEO search strategy illustration"
@@ -135,7 +135,7 @@ export default function BlogDetailClient({ id, post }: BlogDetailClientProps) {
               </div>
             )}
             {id === "ecommerce-growth-roadmap-launch-to-market-leader" && (
-              <div className="relative w-full h-[350px] sm:h-[650px] md:h-[750px] overflow-hidden rounded-3xl border border-slate-100 shadow-[0_15px_40px_rgba(0,0,0,0.03)] my-6">
+              <div className="relative max-w-[960px] mx-auto w-full aspect-[4/3] max-h-[720px] overflow-hidden rounded-3xl border border-slate-100 shadow-[0_15px_40px_rgba(0,0,0,0.03)] my-6">
                 <Image
                   src="/logs/ecommerce_growth_roadmap.png"
                   alt="E-commerce growth roadmap strategy illustration"
@@ -146,7 +146,7 @@ export default function BlogDetailClient({ id, post }: BlogDetailClientProps) {
               </div>
             )}
             {id === "boosting-brand-credibility-trust-through-seo" && (
-              <div className="relative w-full h-[350px] sm:h-[650px] md:h-[750px] overflow-hidden rounded-3xl border border-slate-100 shadow-[0_15px_40px_rgba(0,0,0,0.03)] my-6">
+              <div className="relative max-w-[960px] mx-auto w-full aspect-[4/3] max-h-[720px] overflow-hidden rounded-3xl border border-slate-100 shadow-[0_15px_40px_rgba(0,0,0,0.03)] my-6">
                 <Image
                   src="/logs/ecommerce_growth_roadmap.jpg"
                   alt="Boosting Brand Credibility and Trust Through SEO illustration"
@@ -157,7 +157,7 @@ export default function BlogDetailClient({ id, post }: BlogDetailClientProps) {
               </div>
             )}
             {id === "mobile-app-effective-for-small-businesses" && (
-              <div className="relative w-full h-[350px] sm:h-[650px] md:h-[750px] overflow-hidden rounded-3xl border border-slate-100 shadow-[0_15px_40px_rgba(0,0,0,0.03)] my-6">
+              <div className="relative max-w-[960px] mx-auto w-full aspect-[4/3] max-h-[720px] overflow-hidden rounded-3xl border border-slate-100 shadow-[0_15px_40px_rgba(0,0,0,0.03)] my-6">
                 <Image
                   src="/logs/mobileapp.jpg"
                   alt="Mobile App: How effective is it for Small Businesses? illustration"
@@ -168,7 +168,7 @@ export default function BlogDetailClient({ id, post }: BlogDetailClientProps) {
               </div>
             )}
             {id === "choosing-digital-marketing-agency-12-red-flags" && (
-              <div className="relative w-full h-[350px] sm:h-[650px] md:h-[750px] overflow-hidden rounded-3xl border border-slate-100 shadow-[0_15px_40px_rgba(0,0,0,0.03)] my-6">
+              <div className="relative max-w-[960px] mx-auto w-full aspect-[4/3] max-h-[720px] overflow-hidden rounded-3xl border border-slate-100 shadow-[0_15px_40px_rgba(0,0,0,0.03)] my-6">
                 <Image
                   src="/logs/digital-marketing.jpg"
                   alt="Choosing a Digital Marketing Agency: 12 Red Flags to Avoid illustration"
@@ -184,7 +184,7 @@ export default function BlogDetailClient({ id, post }: BlogDetailClientProps) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mt-8">
             
             {/* Left Column: Article Content */}
-            <div className="lg:col-span-7">
+            <div className="lg:col-span-8">
               <motion.article 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -215,7 +215,7 @@ export default function BlogDetailClient({ id, post }: BlogDetailClientProps) {
             </div>
 
             {/* Right Column: "More Posts" Sidebar */}
-            <div className="lg:col-span-5 lg:sticky lg:top-28 self-start space-y-6 text-left border-t lg:border-t-0 lg:border-l border-slate-100 pt-8 lg:pt-0 lg:pl-8">
+            <div className="lg:col-span-3 lg:sticky lg:top-28 self-start space-y-6 text-left border-t lg:border-t-0 lg:border-l border-slate-100 pt-8 lg:pt-0 lg:pl-8">
               <h3 className="text-xl sm:text-2xl font-black text-[#0d1b3e] tracking-tight border-b border-slate-100 pb-3 flex items-center gap-2">
                 <BookOpen className="w-5 h-5 text-[#2443ab]" />
                 More Posts

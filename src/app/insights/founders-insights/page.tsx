@@ -14,7 +14,6 @@ const items = [
     author: "Shomak Mitra",
     role: "Co-Founder & CTO",
     quote: "A complete ecommerce solution isn't just about launching a website; it is about building a scalable system where Strategy, Technology, Growth Marketing, and Omnichannel execution work together to drive transaction volume.",
-    desc: "A comprehensive breakdown of the core service pillars, key deliverables, and growth metrics that transition a standard online storefront into a market-leading brand."
   },
   {
     id: "why-we-turned-down-40-lakh-retainer",
@@ -24,9 +23,8 @@ const items = [
     date: "Aug 17, 2026",
     author: "Shomak Mitra",
     role: "Co-Founder & CTO",
-    quote: "Today, the rule is simple. If a brand isn’t in e-commerce or D2C, we don’t take them on — regardless of how attractive the retainer looks. Not because the money isn’t good, but because we’ve learned that depth beats width every time it actually matters.",
-    desc: "A raw note on why Digital Edge 360 shifted away from the full-service generalist model to specialize exclusively in e-commerce and D2C scaling, and what depth actually buys a client."
-  }
+    quote: "If a brand isn’t in e-commerce or D2C, we don’t take them on — regardless of how attractive the retainer looks. Not because the money isn’t good, but because we’ve learned that depth beats width every time it actually matters.",
+   }
 ];
 
 export default function FoundersInsightsPage() {
@@ -115,11 +113,6 @@ export default function FoundersInsightsPage() {
                     <h3 className="text-xl sm:text-2xl font-black text-[#0d1b3e] leading-snug group-hover:text-[#2443ab] transition-colors duration-200">
                       {item.title}
                     </h3>
-
-                    {/* Description */}
-                    <p className="text-slate-500 font-semibold text-sm leading-relaxed">
-                      {item.desc}
-                    </p>
                   </div>
                 </div>
 

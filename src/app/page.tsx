@@ -1405,7 +1405,6 @@ export default function Home() {
                 ))}
               </div>
             </div>
-
           </div>
         </section>
 
@@ -1632,7 +1631,6 @@ export default function Home() {
                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-gradient-to-br from-teal-300 to-teal-600/30 shadow-xl shadow-teal-500/10 blur-[0.5px]" />
                 </div>
               </motion.div>
-
             </div>
           </div>
         </section>
@@ -1723,9 +1721,7 @@ export default function Home() {
                   </ul>
                 </div>
               </div>
-
             </div>
-
           </div>
         </section>
 
