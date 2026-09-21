@@ -4,11 +4,29 @@ import { useState } from "react";
 
 interface LeadFormProps {
   showDecorations?: boolean;
-  initialServiceType?: "development" | "marketing" | "photography" | "both";
+  initialServiceType?: "development" | "marketing" | "photography" | "both" | "seo";
   customTargets?: { id: string; label: string }[];
+  customTitle?: string;
+  customDescription?: string;
+  customStep2Title?: string;
+  customStep2Subtitle?: string;
+  customBudgetLabel?: string;
+  customBudgetOptions?: { value: string; label: string }[];
+  customPrivacyNotice?: string;
 }
 
-export default function LeadForm({ showDecorations = false, initialServiceType, customTargets }: LeadFormProps) {
+export default function LeadForm({
+  showDecorations = false,
+  initialServiceType,
+  customTargets,
+  customTitle,
+  customDescription,
+  customStep2Title,
+  customStep2Subtitle,
+  customBudgetLabel,
+  customBudgetOptions,
+  customPrivacyNotice,
+}: LeadFormProps) {
   // If embedded in a specific solution page (initialServiceType set), skip step 1 and start directly at step 2
   const [step, setStep] = useState(initialServiceType ? 2 : 1);
   const minStep = initialServiceType ? 2 : 1;
@@ -80,7 +98,7 @@ export default function LeadForm({ showDecorations = false, initialServiceType, 
       if (!formData.cityState.trim()) stepErrors.cityState = "Enter your City & State.";
     } else if (currentStep === 2) {
       if (formData.goals.length === 0) stepErrors.goals = "Select at least one challenge or goal.";
-      if (!formData.budget) stepErrors.budget = "Select your estimated budget/ad spend.";
+      if (!formData.budget) stepErrors.budget = customBudgetLabel ? `Select ${customBudgetLabel}.` : "Select your estimated budget/ad spend.";
     } else if (currentStep === 3) {
       if (!formData.name.trim()) stepErrors.name = "Enter your full name.";
       if (!formData.email.trim() || !/\S+@\S+\.\S+/.test(formData.email)) {
@@ -267,14 +285,20 @@ export default function LeadForm({ showDecorations = false, initialServiceType, 
             </span>
 
             <h2 className="text-[28px] sm:text-[34px] lg:text-[24px] xl:text-[32px] font-black tracking-tight leading-[1.15] text-white">
-              Let&apos;s Build Your
-              <br />
-              <span className="text-cyan-200">Growth Blueprint</span>
+              {customTitle ? (
+                customTitle
+              ) : (
+                <>
+                  Let&apos;s Build Your
+                  <br />
+                  <span className="text-cyan-200">Growth Blueprint</span>
+                </>
+              )}
             </h2>
             <div className="mt-4 w-12 h-[3px] rounded-full bg-cyan-300" />
 
             <p className="text-[13px] text-white/80 leading-relaxed mt-5">
-              Identify friction points in your tech stack, custom code development limits, and marketing leaks holding your business back.
+              {customDescription || "Identify friction points in your tech stack, custom code development limits, and marketing leaks holding your business back."}
             </p>
           </div>
 
@@ -319,7 +343,7 @@ export default function LeadForm({ showDecorations = false, initialServiceType, 
             <span className="text-[10px] font-black tracking-wider text-indigo-600 uppercase">
               {initialServiceType ? (
                 <>
-                  {step === 2 && "Step 1 of 2 · Goals & Requirements"}
+                  {step === 2 && `Step 1 of 2 · ${customStep2Subtitle || "Goals & Requirements"}`}
                   {step === 3 && "Step 2 of 2 · Reach Out"}
                 </>
               ) : (
@@ -333,7 +357,7 @@ export default function LeadForm({ showDecorations = false, initialServiceType, 
 
             <h3 className="text-xl sm:text-2xl font-black text-[#0d1b3e] mt-1 tracking-tight">
               {step === 1 && "Configure Your Service"}
-              {step === 2 && "What are your core targets?"}
+              {step === 2 && (customStep2Title || "What are your core targets?")}
               {step === 3 && "Where should we reach you?"}
             </h3>
 
@@ -407,6 +431,7 @@ export default function LeadForm({ showDecorations = false, initialServiceType, 
                       {initialServiceType === "marketing" && "Digital Marketing & Growth"}
                       {initialServiceType === "photography" && "Photography & Videography"}
                       {initialServiceType === "both" && "Full Stack Dev + Marketing"}
+                      {initialServiceType === "seo" && "App Store Optimization & Search Growth"}
                     </h4>
                   </div>
                   <span className="w-2 h-2 rounded-full bg-indigo-600 animate-pulse" />
@@ -458,7 +483,7 @@ export default function LeadForm({ showDecorations = false, initialServiceType, 
             <div className="space-y-5 text-left">
               <div>
                 <label className="block text-xs font-bold text-[#0d1b3e] mb-2.5 uppercase tracking-wider">
-                  Select Targets (Select all that apply)
+                  {customStep2Title ? `${customStep2Title} (Select all that apply)` : "Select Targets (Select all that apply)"}
                 </label>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                   {getChallengesList().map((item) => {
@@ -491,7 +516,7 @@ export default function LeadForm({ showDecorations = false, initialServiceType, 
 
               <div>
                 <label className="block text-xs font-bold text-[#0d1b3e] mb-1.5 uppercase tracking-wider">
-                  Budget (INR)
+                  {customBudgetLabel || "Budget (INR)"}
                 </label>
                 <div className="relative">
                   <select
@@ -500,8 +525,14 @@ export default function LeadForm({ showDecorations = false, initialServiceType, 
                     onChange={handleInputChange}
                     className={`w-full appearance-none rounded-xl border ${errors.budget ? "border-red-400 ring-2 ring-red-100" : "border-slate-200"} bg-slate-50/50 px-4 py-3 text-sm font-semibold text-[#0d1b3e] outline-none focus:border-indigo-600 focus:bg-white`}
                   >
-                    <option value="">Select Budget Range</option>
-                    {formData.serviceType === "development" ? (
+                    <option value="">{customBudgetOptions ? `Select ${customBudgetLabel || "Option"}` : "Select Budget Range"}</option>
+                    {customBudgetOptions ? (
+                      customBudgetOptions.map((opt) => (
+                        <option key={opt.value} value={opt.value}>
+                          {opt.label}
+                        </option>
+                      ))
+                    ) : formData.serviceType === "development" ? (
                       <>
                         <option value="₹50,000 - ₹1,00,000">₹50,000 – ₹1,00,000</option>
                         <option value="₹1,00,000 - ₹2,50,000">₹1,00,000 – ₹2,50,000</option>
@@ -678,7 +709,7 @@ export default function LeadForm({ showDecorations = false, initialServiceType, 
         {/* Security / Privacy notice */}
         <div className="mt-4 flex items-center justify-center gap-1.5 text-[11px] text-slate-400">
           <svg className="w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
-          <span>Your data is secure and will never be shared.</span>
+          <span>{customPrivacyNotice || "Your data is secure and will never be shared."}</span>
         </div>
 
       </div>

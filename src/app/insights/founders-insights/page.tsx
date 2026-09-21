@@ -8,6 +8,7 @@ const items = [
   {
     id: "what-include-complete-ecommerce-solution",
     title: "What Include in Complete Ecommerce Solution",
+    image: "/shomak.png",
     category: "Founder's Insights",
     tag: "Ecommerce Strategy",
     date: "Aug 17, 2026",
@@ -18,13 +19,14 @@ const items = [
   {
     id: "why-we-turned-down-40-lakh-retainer",
     title: "Why We Turned Down a ₹40 Lakh Retainer",
+    image: "/shomok-mitra-img-2.jpg",
     category: "Founder's Insights",
     tag: "Specialization",
     date: "Aug 17, 2026",
     author: "Shomak Mitra",
     role: "Co-Founder & CTO",
     quote: "If a brand isn’t in e-commerce or D2C, we don’t take them on — regardless of how attractive the retainer looks. Not because the money isn’t good, but because we’ve learned that depth beats width every time it actually matters.",
-   }
+  }
 ];
 
 export default function FoundersInsightsPage() {
@@ -42,20 +44,20 @@ export default function FoundersInsightsPage() {
     <>
       <link rel="canonical" href="https://digitaledge360.in/insights/founders-insights/" />
       <div className="w-full bg-[#f8fafc] bg-gradient-to-tr from-[#0a8bc7]/16 via-white to-[#40159e]/16 min-h-screen pb-24 text-slate-800 relative overflow-hidden font-sans">
-        
+
         {/* Grid Background decoration */}
         <div
           className="absolute inset-0 z-0 pointer-events-none"
           style={gridBackgroundStyle}
         />
-        
+
         {/* Glow Spheres - Spread in wider area */}
         <div className="absolute top-[5%] left-[-15%] w-[1000px] h-[1000px] rounded-full bg-[radial-gradient(circle_at_center,rgba(10,139,199,0.18)_0%,transparent_70%)] pointer-events-none blur-[120px]" />
         <div className="absolute top-[35%] right-[-15%] w-[1000px] h-[1000px] rounded-full bg-[radial-gradient(circle_at_center,rgba(64,21,158,0.12)_0%,transparent_70%)] pointer-events-none blur-[120px]" />
 
         {/* Hero Section */}
         <section className="relative z-10 mx-auto max-w-[1300px] px-6 sm:px-8 lg:px-12 pt-24 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-[180px] pb-16 text-center">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
@@ -90,9 +92,9 @@ export default function FoundersInsightsPage() {
                 <div>
                   {/* Top Image Banner */}
                   <div className="relative lg:h-80 w-full border-b border-slate-100 overflow-hidden bg-[#f1f5f9] flex items-center justify-center">
-                    <img 
-                      src="/shomak.png" 
-                      alt={item.author} 
+                    <img
+                      src={item.image}
+                      alt={item.author}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>

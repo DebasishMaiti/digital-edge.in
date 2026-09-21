@@ -220,7 +220,7 @@ export default function About() {
                       Akanksha Madeshiya
                     </h3>
                     <span className="block text-xs font-extrabold text-[#2443ab] tracking-wider uppercase mt-1">
-                      CO-FOUNDER & CEO
+                      CO-FOUNDER & Authorised Signatory
                     </span>
                   </div>
                   <p className="text-xs sm:text-sm text-slate-500 font-semibold leading-relaxed">
@@ -263,7 +263,7 @@ export default function About() {
                       Shomak Mitra
                     </h3>
                     <span className="block text-xs font-extrabold text-[#2443ab] tracking-wider uppercase mt-1">
-                      CO-FOUNDER & CSO
+                      CO-FOUNDER
                     </span>
                   </div>
                   <p className="text-xs sm:text-sm text-slate-500 font-semibold leading-relaxed">
