@@ -22,8 +22,8 @@ const brandShowcases: ShowcaseBrandItem[] = [
   {
     name: "Idaya Luxeee",
     link: "/company-details/idaya-luxe",
-    image: "/brand-card-images/idaya luxee.jpg",
-    logo: "/logos/idaya-logo.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/idaya_luxee.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/idaya-logo.jpg",
     metric: "380%",
     metricLabel: "Growth in Online Jewelry Sales",
     metricColor: "text-purple-600"
@@ -31,8 +31,8 @@ const brandShowcases: ShowcaseBrandItem[] = [
   {
     name: "Mezoma",
     link: "/company-details/mezoma",
-    image: "/brand-card-images/mezoma.jpg",
-    logo: "/logos/8.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/mezoma.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/8.jpg",
     metric: "360%",
     metricLabel: "Growth in Global Jewelry Orders",
     metricColor: "text-amber-600"
@@ -40,8 +40,8 @@ const brandShowcases: ShowcaseBrandItem[] = [
   {
     name: "Twenty One Jewels",
     link: "/company-details/twenty-one-jewels",
-    image: "/brand-card-images/twenty-one.jpg",
-    logo: "/logos/twenty-one-logo.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/twenty-one.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/twenty-one-logo.jpg",
     metric: "340%",
     metricLabel: "Growth in Sterling Silver Sales",
     metricColor: "text-rose-600"
@@ -49,8 +49,8 @@ const brandShowcases: ShowcaseBrandItem[] = [
   {
     name: "Genesis Eduzone",
     link: "/company-details/genesis",
-    image: "/brand-card-images/genesis.jpg",
-    logo: "/logos/genesis-logo.png",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/genesis.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/genesis-logo.png",
     metric: "310%",
     metricLabel: "Growth in Student Registrations",
     metricColor: "text-amber-600"
@@ -58,8 +58,8 @@ const brandShowcases: ShowcaseBrandItem[] = [
   {
     name: "Wire Communication",
     link: "/company-details/wire-communication",
-    image: "/brand-card-images/wire-comunication.jpg",
-    logo: "/logos/wire-comunication.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/wire-comunication.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/wire-comunication.jpg",
     metric: "350%",
     metricLabel: "Growth in B2B Inquiries",
     metricColor: "text-sky-600"
@@ -67,8 +67,8 @@ const brandShowcases: ShowcaseBrandItem[] = [
   {
     name: "Arcesium",
     link: "/company-details/arcesium",
-    image: "/brand-card-images/arcesium.jpg",
-    logo: "/logos/arcesium.svg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/arcesium.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/arcesium.svg",
     metric: "380%",
     metricLabel: "Growth in Enterprise Leads",
     metricColor: "text-violet-600"
@@ -76,8 +76,8 @@ const brandShowcases: ShowcaseBrandItem[] = [
   {
     name: "Era Residence",
     link: "/company-details/era-residence",
-    image: "/brand-card-images/era-resident.jpg",
-    logo: "/logos/era-resident-logo.png",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/era-resident.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/era-resident-logo.png",
     metric: "410%",
     metricLabel: "Growth in Buyer Inquiries",
     metricColor: "text-emerald-600"
@@ -85,50 +85,50 @@ const brandShowcases: ShowcaseBrandItem[] = [
   {
     name: "Likeson",
     link: "/company-details/likeson",
-    image: "/brand-card-images/likeson.jpg",
-    logo: "/logos/likeson.jpg"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/likeson.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/likeson.jpg"
   },
   {
     name: "OmniAstra",
     link: "/company-details/omniastra",
-    image: "/brand-card-images/astra.jpg",
-    logo: "/logos/astra.jpg"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/astra.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/astra.jpg"
   },
   {
     name: "Earthy Line",
     link: "/company-details/earthy-line",
-    image: "/brand-card-images/earthline.jpg",
-    logo: "/logos/earthyline.jpg"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/earthline.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/earthyline.jpg"
   },
   {
     name: "EdefyHome",
     link: "/company-details/edefyhome",
-    image: "/brand-card-images/Edify-home.png",
-    logo: "/logos/16.jpg"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/Edify-home.png",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/16.jpg"
   },
   {
     name: "Ducati",
     link: "/company-details/ducati",
-    image: "/brand-card-images/Ducati-home.jpg",
-    logo: "/logos/28.jpg"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/Ducati-home.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/28.jpg"
   },
   {
     name: "JIVA",
     link: "/company-details/jiva",
-    image: "/brand-card-images/Jiva.png",
-    logo: "/logos/jiva.jpg"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/Jiva.png",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/jiva.jpg"
   },
   {
     name: "Nayantara",
     link: "/company-details/nayantara",
-    image: "/brand-card-images/Nayantara.jpg",
-    logo: "/logos/nayantara.jpg"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/Nayantara.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/nayantara.jpg"
   },
   {
     name: "Truboy BBQ",
     link: "/company-details/truboy-bbq",
-    image: "/brand-card-images/Trueboybbq.jpg",
-    logo: "/logos/7.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/Trueboybbq.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/7.jpg",
     metric: "200%",
     metricLabel: "Increase in ACV",
     metricColor: "text-red-500"
@@ -136,8 +136,8 @@ const brandShowcases: ShowcaseBrandItem[] = [
   {
     name: "Creative Ecotech",
     link: "/company-details/creative-ecotech",
-    image: "/brand-card-images/creative-echotech.jpg",
-    logo: "/logos/3.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/creative-echotech.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/3.jpg",
     metric: "90%",
     metricLabel: "Growth in Organic Traffic",
     metricColor: "text-emerald-600"
@@ -145,26 +145,26 @@ const brandShowcases: ShowcaseBrandItem[] = [
   {
     name: "Edge Ringtones",
     link: "/company-details/edgeringtone",
-    image: "/brand-card-images/Edge-ring.jpg",
-    logo: "/logos/edgering.jpg"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/Edge-ring.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/edgering.jpg"
   },
   {
     name: "Kayrah",
     link: "/company-details/kayrah",
-    image: "/brand-card-images/KAYRAH.jpg",
-    logo: "/logos/kayrah.jpg"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/KAYRAH.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/kayrah.jpg"
   },
   {
     name: "Hubfit",
     link: "/company-details/hubfit",
-    image: "/brand-card-images/hubfit.jpg",
-    logo: "/logos/hubfit.jpg"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/hubfit.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/hubfit.jpg"
   },
   {
     name: "No End Fashion",
     link: "/company-details/no-end",
-    image: "/web-development-img/no-end.png",
-    logo: "/logos/no-end-logo.png",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/web-development-img/no-end.png",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/no-end-logo.png",
     metric: "320%",
     metricLabel: "Increase in Online Orders",
     metricColor: "text-indigo-600"
@@ -601,7 +601,7 @@ export default function Home() {
                 {/* Video container */}
                 <div className="relative  opacity-95 bg-black">
                   <video
-                    src="/videos/hero-section.mp4"
+                    src="https://ik.imagekit.io/digitaledge360/digitaledge-in/videos/hero-section.mp4"
                     autoPlay
                     loop
                     muted
@@ -620,14 +620,14 @@ export default function Home() {
             <div className="relative w-full max-w-[960px] overflow-hidden flex [mask-image:_linear-gradient(to_right,_transparent_0%,_black_10%,_black_90%,_transparent_100%)] flex-row">
               <div className="flex gap-12 items-center animate-marquee-infinite py-4 pr-12">
                 {[
-                  "/brand-logos/google-partner.png",
-                  "/brand-logos/meta-logo.png",
-                  "/brand-logos/shopify-plus.png",
-                  "/brand-logos/aws-genai.png",
-                  "/brand-logos/iso.png",
-                  "/brand-logos/msme-logo.png",
-                  "/brand-logos/startup-india.png",
-                  "/brand-logos/digital-ocean.png",
+                  "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-logos/google-partner.png",
+                  "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-logos/meta-logo.png",
+                  "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-logos/shopify-plus.png",
+                  "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-logos/aws-genai.png",
+                  "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-logos/iso.png",
+                  "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-logos/msme-logo.png",
+                  "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-logos/startup-india.png",
+                  "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-logos/digital-ocean.png",
                 ].map((src, index) => (
                   <div key={index} className="w-24 h-24 rounded-full bg-white/5 border border-white/10 shadow-lg flex items-center justify-center p-4 hover:scale-110 transition-transform duration-300 backdrop-blur-sm flex-shrink-0">
                     <div className="relative w-full h-full">
@@ -638,14 +638,14 @@ export default function Home() {
               </div>
               <div className="flex gap-12 items-center animate-marquee-infinite py-4 pr-12">
                 {[
-                  "/brand-logos/google-partner.png",
-                  "/brand-logos/meta-logo.png",
-                  "/brand-logos/shopify-plus.png",
-                  "/brand-logos/aws-genai.png",
-                  "/brand-logos/iso.png",
-                  "/brand-logos/msme-logo.png",
-                  "/brand-logos/startup-india.png",
-                  "/brand-logos/digital-ocean.png",
+                  "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-logos/google-partner.png",
+                  "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-logos/meta-logo.png",
+                  "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-logos/shopify-plus.png",
+                  "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-logos/aws-genai.png",
+                  "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-logos/iso.png",
+                  "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-logos/msme-logo.png",
+                  "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-logos/startup-india.png",
+                  "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-logos/digital-ocean.png",
                 ].map((src, index) => (
                   <div key={`dup-${index}`} className="w-24 h-24 rounded-full bg-white/5 border border-white/10 shadow-lg flex items-center justify-center p-4 hover:scale-110 transition-transform duration-300 backdrop-blur-sm flex-shrink-0">
                     <div className="relative w-full h-full">
@@ -748,11 +748,11 @@ export default function Home() {
                   <div className="w-full overflow-hidden relative bg-white rounded-xl shadow-inner min-h-[300px] flex-1">
                     {/* Long Scrolling Strip containing all 3 mockups stacked */}
                     <div className="absolute inset-x-0 top-0 w-full flex flex-col gap-0 animate-scroll-mockup-single transition-all duration-500 cursor-pointer">
-                      <img src="/portfolio/chrislouis.png" alt="Fashion Store Mockup" className="w-full h-auto" />
-                      <img src="/portfolio/truboybbq.png" alt="Eyewear Store Mockup" className="w-full h-auto" />
-                      <img src="/portfolio/sacredsuta.png" alt="Ecommerce Store Mockup" className="w-full h-auto" />
+                      <img src="https://ik.imagekit.io/digitaledge360/digitaledge-in/portfolio/chrislouis.png" alt="Fashion Store Mockup" className="w-full h-auto" />
+                      <img src="https://ik.imagekit.io/digitaledge360/digitaledge-in/portfolio/truboybbq.png" alt="Eyewear Store Mockup" className="w-full h-auto" />
+                      <img src="https://ik.imagekit.io/digitaledge360/digitaledge-in/portfolio/sacredsuta.png" alt="Ecommerce Store Mockup" className="w-full h-auto" />
                       {/* Repeat first one for seamless looping */}
-                      <img src="/portfolio/chrislouis.png" alt="Fashion Store Mockup Repeat" className="w-full h-auto" />
+                      <img src="https://ik.imagekit.io/digitaledge360/digitaledge-in/portfolio/chrislouis.png" alt="Fashion Store Mockup Repeat" className="w-full h-auto" />
                     </div>
                   </div>
                 </div>
@@ -2081,7 +2081,7 @@ export default function Home() {
                     <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-500/5 via-blue-500/5 to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
                     <Image
-                      src="/shopify-plus-logo.png"
+                      src="https://ik.imagekit.io/digitaledge360/digitaledge-in/shopify-plus-logo.png"
                       alt="Shopify Plus Partner"
                       width={160}
                       height={160}
@@ -3070,11 +3070,11 @@ export default function Home() {
         </section>
         {/* Trust line/images beneath button */}
         <div className="flex flex-wrap items-center bg-white justify-center gap-12 sm:gap-16 lg:gap-20 py-8 opacity-95 transition-opacity duration-300">
-          <img src="/brand-logos/shopify-plus.png" alt="Shopify Plus Certified" className="h-20 w-auto object-contain" />
-          <img src="/brand-logos/google-partner.png" alt="Google Premier Partner" className="h-20 w-auto object-contain" />
-          <img src="/brand-logos/meta-logo.png" alt="Meta Business Partner" className="h-20 w-auto object-contain" />
-          <img src="/brand-logos/iso.png" alt="ISO 27001 Certified" className="h-20 w-auto object-contain" />
-          <img src="/brand-logos/digital-ocean.png" alt="DigitalOcean" className="h-20 w-auto object-contain" />
+          <img src="https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-logos/shopify-plus.png" alt="Shopify Plus Certified" className="h-20 w-auto object-contain" />
+          <img src="https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-logos/google-partner.png" alt="Google Premier Partner" className="h-20 w-auto object-contain" />
+          <img src="https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-logos/meta-logo.png" alt="Meta Business Partner" className="h-20 w-auto object-contain" />
+          <img src="https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-logos/iso.png" alt="ISO 27001 Certified" className="h-20 w-auto object-contain" />
+          <img src="https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-logos/digital-ocean.png" alt="DigitalOcean" className="h-20 w-auto object-contain" />
         </div>
       </div>
     </>

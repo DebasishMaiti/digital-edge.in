@@ -1,35 +1,44 @@
 "use client";
 
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, Calendar, Sparkles, Quote } from "lucide-react";
-
-const items = [
-  {
-    id: "what-include-complete-ecommerce-solution",
-    title: "What Include in Complete Ecommerce Solution",
-    image: "/shomak.png",
-    category: "Founder's Insights",
-    tag: "Ecommerce Strategy",
-    date: "Aug 17, 2026",
-    author: "Shomak Mitra",
-    role: "Co-Founder & CTO",
-    quote: "A complete ecommerce solution isn't just about launching a website; it is about building a scalable system where Strategy, Technology, Growth Marketing, and Omnichannel execution work together to drive transaction volume.",
-  },
-  {
-    id: "why-we-turned-down-40-lakh-retainer",
-    title: "Why We Turned Down a ₹40 Lakh Retainer",
-    image: "/shomok-mitra-img-2.jpg",
-    category: "Founder's Insights",
-    tag: "Specialization",
-    date: "Aug 17, 2026",
-    author: "Shomak Mitra",
-    role: "Co-Founder & CTO",
-    quote: "If a brand isn’t in e-commerce or D2C, we don’t take them on — regardless of how attractive the retainer looks. Not because the money isn’t good, but because we’ve learned that depth beats width every time it actually matters.",
-  }
-];
+import { ArrowRight, Calendar, Sparkles } from "lucide-react";
 
 export default function FoundersInsightsPage() {
+  const [items, setItems] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchInsights = async () => {
+      try {
+        setLoading(true);
+        const res = await fetch("/api/founders-insights?status=Published");
+        const data = await res.json();
+        if (data.success && Array.isArray(data.insights)) {
+          const dbItems = data.insights.map((item: any) => ({
+            id: item.slug || item._id,
+            title: item.title,
+            category: "Founder's Insights",
+            tag: item.topic || "Founder Insight",
+            date: item.publishDate || "Digital Edge",
+            author: item.founderName || "Digital Edge Founder",
+            role: item.founderRole || "Co-Founder",
+            quote: item.quote || item.desc || "",
+            featuredImage: item.featuredImage || "https://ik.imagekit.io/digitaledge360/digitaledge-in/shomak.png",
+          }));
+          setItems(dbItems);
+        }
+      } catch (err) {
+        console.error("Error fetching founder insights:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchInsights();
+  }, []);
+
   const gridBackgroundStyle = {
     backgroundImage: `
       linear-gradient(to right, rgba(36, 67, 171, 0.05) 1px, transparent 1px),
@@ -44,20 +53,20 @@ export default function FoundersInsightsPage() {
     <>
       <link rel="canonical" href="https://digitaledge360.in/insights/founders-insights/" />
       <div className="w-full bg-[#f8fafc] bg-gradient-to-tr from-[#0a8bc7]/16 via-white to-[#40159e]/16 min-h-screen pb-24 text-slate-800 relative overflow-hidden font-sans">
-
+        
         {/* Grid Background decoration */}
         <div
           className="absolute inset-0 z-0 pointer-events-none"
           style={gridBackgroundStyle}
         />
-
-        {/* Glow Spheres - Spread in wider area */}
+        
+        {/* Glow Spheres */}
         <div className="absolute top-[5%] left-[-15%] w-[1000px] h-[1000px] rounded-full bg-[radial-gradient(circle_at_center,rgba(10,139,199,0.18)_0%,transparent_70%)] pointer-events-none blur-[120px]" />
         <div className="absolute top-[35%] right-[-15%] w-[1000px] h-[1000px] rounded-full bg-[radial-gradient(circle_at_center,rgba(64,21,158,0.12)_0%,transparent_70%)] pointer-events-none blur-[120px]" />
 
         {/* Hero Section */}
-        <section className="relative z-10 mx-auto max-w-[1300px] px-6 sm:px-8 lg:px-12 pt-24 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-[180px] pb-16 text-center">
-          <motion.div
+        <section className="relative z-10 mx-auto max-w-[1400px] px-6 sm:px-8 lg:px-12 pt-24 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-[180px] pb-16 text-center">
+          <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
@@ -79,71 +88,74 @@ export default function FoundersInsightsPage() {
         </section>
 
         {/* Items Grid */}
-        <section className="relative z-10 mx-auto max-w-[1300px] px-6 sm:px-8 lg:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 max-w-4xl mx-auto">
-            {items.map((item) => (
-              <motion.div
-                key={item.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="bg-white rounded-3xl border border-[#2443ab]/20 shadow-[0_20px_50px_rgba(36,67,171,0.08)] overflow-hidden flex flex-col justify-between group hover:-translate-y-1.5 hover:shadow-[0_30px_60px_rgba(36,67,171,0.15)] transition-all duration-300"
-              >
-                <div>
-                  {/* Top Image Banner */}
-                  <div className="relative lg:h-80 w-full border-b border-slate-100 overflow-hidden bg-[#f1f5f9] flex items-center justify-center">
-                    <img
-                      src={item.image}
-                      alt={item.author}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
-
-                  <div className="p-8 space-y-5">
-                    {/* Tag & Date */}
-                    <div className="flex items-center gap-3 text-xs font-semibold text-slate-400">
-                      <span className="px-3.5 py-1.5 rounded-full bg-[#2443ab]/10 text-[#2443ab] font-bold uppercase tracking-wider text-[10px]">
-                        {item.tag}
-                      </span>
-                      <span className="flex items-center gap-1.5 text-slate-500">
-                        <Calendar className="w-3.5 h-3.5 text-[#2443ab]" />
-                        {item.date}
-                      </span>
+        <section className="relative z-10 mx-auto max-w-[1400px] px-6 sm:px-8 lg:px-12">
+          {loading ? (
+            <div className="text-center py-12 text-slate-500 font-semibold text-sm">
+              Loading founder insights...
+            </div>
+          ) : items.length === 0 ? (
+            <div className="text-center py-12 text-slate-500 font-semibold text-sm">
+              No founder insights published yet.
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {items.map((item) => (
+                <motion.div
+                  key={item.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="bg-white rounded-2xl border border-[#2443ab]/20 shadow-[0_10px_30px_rgba(36,67,171,0.06)] overflow-hidden flex flex-col justify-between group hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(36,67,171,0.12)] transition-all duration-300"
+                >
+                  <div>
+                    {/* Top Image Banner */}
+                    <div className="relative h-48 sm:h-52 w-full border-b border-slate-100 overflow-hidden bg-[#f1f5f9] flex items-center justify-center">
+                      <img 
+                        src={item.featuredImage} 
+                        alt={item.author} 
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
                     </div>
 
-                    {/* Title */}
-                    <h3 className="text-xl sm:text-2xl font-black text-[#0d1b3e] leading-snug group-hover:text-[#2443ab] transition-colors duration-200">
-                      {item.title}
-                    </h3>
-                  </div>
-                </div>
+                    <div className="p-5 space-y-3">
+                      {/* Tag & Date */}
+                      <div className="flex items-center gap-2.5 text-[11px] font-semibold text-slate-400">
+                        <span className="px-2.5 py-1 rounded-full bg-[#2443ab]/10 text-[#2443ab] font-bold uppercase tracking-wider text-[9px]">
+                          {item.tag}
+                        </span>
+                        <span className="flex items-center gap-1 text-slate-500">
+                          <Calendar className="w-3 h-3 text-[#2443ab]" />
+                          {item.date}
+                        </span>
+                      </div>
 
-                {/* Bottom Section containing the quote, author metadata, and Read Full Article button */}
-                <div className="px-8 pb-8 space-y-6 pt-2 border-t border-slate-50">
-                  {/* The Quote Text at the bottom */}
-                  <div className="relative pl-4 border-l-2 border-[#2443ab] py-3.5 text-slate-700 italic text-sm sm:text-[15px] font-semibold leading-relaxed bg-[#2443ab]/5 pr-4 rounded-r-xl">
-                    <Quote className="absolute top-2 right-3 w-8 h-8 text-[#2443ab]/10 pointer-events-none" />
-                    "{item.quote}"
-                  </div>
-
-                  {/* Founder Details and button */}
-                  <div className="flex items-center justify-between pt-4 border-t border-slate-100">
-                    <div className="space-y-0.5">
-                      <div className="text-sm sm:text-base font-black text-[#0d1b3e]">{item.author}</div>
-                      <div className="text-[10px] sm:text-xs font-bold text-slate-500 uppercase tracking-wider">{item.role}</div>
+                      {/* Title */}
+                      <h3 className="text-base sm:text-lg font-black text-[#0d1b3e] leading-snug group-hover:text-[#2443ab] transition-colors duration-200 truncate" title={item.title}>
+                        {item.title}
+                      </h3>
                     </div>
-                    <Link
-                      href={`/insights/founders-insights/${item.id}`}
-                      className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#0a8bc7] via-[#2443ab] to-[#40159e] text-white text-xs font-black rounded-full shadow-[0_4px_12px_rgba(36,67,171,0.25)] hover:shadow-[0_6px_16px_rgba(36,67,171,0.35)] transition-all duration-300 hover:opacity-95 uppercase tracking-wider whitespace-nowrap"
-                    >
-                      <span>Read Full Article</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </Link>
                   </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+
+                  {/* Bottom Section containing author metadata and Read button */}
+                  <div className="px-5 pb-5 pt-3 border-t border-slate-100">
+                    <div className="flex items-center justify-between gap-2">
+                      <div className="space-y-0.5 min-w-0">
+                        <div className="text-xs font-black text-[#0d1b3e] truncate">{item.author}</div>
+                        <div className="text-[9px] font-bold text-slate-500 uppercase tracking-wider truncate">{item.role}</div>
+                      </div>
+                      <Link
+                        href={`/insights/founders-insights/${item.id}`}
+                        className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-gradient-to-r from-[#0a8bc7] via-[#2443ab] to-[#40159e] text-white text-[10px] font-black rounded-full shadow-sm hover:shadow-md transition-all duration-300 hover:opacity-95 uppercase tracking-wider whitespace-nowrap shrink-0"
+                      >
+                        <span>Read</span>
+                        <ArrowRight className="w-3 h-3" />
+                      </Link>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          )}
         </section>
       </div>
     </>

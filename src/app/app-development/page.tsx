@@ -15,76 +15,76 @@ const appDevShowcases = [
   {
     name: "Publix",
     link: "/company-details/publix",
-    image: "/brand-card-images/publix.jpg",
-    logo: "/logos/publix.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/publix.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/publix.jpg",
 
   },
   {
     name: "Recipe Keeper",
     link: "/company-details/recipe-keeper",
-    image: "/brand-card-images/recipee-keeper.jpg",
-    logo: "/logos/recipe keper.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/recipee-keeper.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/recipe_keper.jpg",
 
   },
   {
     name: "Momentum",
     link: "/company-details/momentum",
-    image: "/brand-card-images/momentum.jpg",
-    logo: "/logos/momentum.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/momentum.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/momentum.jpg",
   },
   {
     name: "HubFit",
     link: "/company-details/hubfit",
-    image: "/brand-card-images/hubfit.jpg",
-    logo: "/logos/hubfit.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/hubfit.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/hubfit.jpg",
   },
   {
     name: "Ring My Stylist",
     link: "/company-details/ring-my-stylist",
-    image: "/brand-card-images/rign-my-list.jpg",
-    logo: "/logos/ring-my-list.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/rign-my-list.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/ring-my-list.jpg",
   },
   {
     name: "Dooli",
     link: "/company-details/dooli",
-    image: "/brand-card-images/dooli.jpg",
-    logo: "/logos/dooli.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/dooli.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/dooli.jpg",
   },
   {
     name: "O2 BODMAS",
     link: "/company-details/o2bodmas",
-    image: "/brand-card-images/o2bodmas.jpg",
-    logo: "/logos/o2bodmas.png",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/o2bodmas.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/o2bodmas.png",
   },
   {
     name: "Gamp Wheels",
     link: "/company-details/gamp-wheels",
-    image: "/brand-card-images/gamp-wheels.jpg",
-    logo: "/logos/gamp wheels.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/gamp-wheels.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/gamp_wheels.jpg",
   },
   {
     name: "Kaamdham",
     link: "/company-details/kaamdham",
     image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800&auto=format&fit=crop",
-    logo: "/logos/kaamdham-logo.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/kaamdham-logo.jpg",
   },
   {
     name: "Instayaar",
     link: "/company-details/instayaar",
     image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=800&auto=format&fit=crop",
-    logo: "/logos/instayaar-logo.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/instayaar-logo.jpg",
   },
   {
     name: "No End Fashion",
     link: "/company-details/no-end",
-    image: "/web-development-img/no-end.png",
-    logo: "/logos/no-end-logo.png",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/web-development-img/no-end.png",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/no-end-logo.png",
   },
   {
     name: "Velvet Box",
     link: "/company-details/velvet-box",
     image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=800&auto=format&fit=crop",
-    logo: "/logos/velvet-box-logo.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/velvet-box-logo.jpg",
   }
 ];
 
@@ -92,15 +92,15 @@ export default function AppDevelopment() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const appImages = [
-    "/app-development-img/aladeen.png",
-    "/app-development-img/instayaar.png",
-    "/app-development-img/kaam-dham.png",
-    "/app-development-img/noend.png",
-    "/app-development-img/publix.png",
-    "/app-development-img/sabjiKing.png",
-    "/app-development-img/hubfit.png",
-    "/app-development-img/recipe-keeper.png",
-    "/app-development-img/velvet-box.png",
+    "https://ik.imagekit.io/digitaledge360/digitaledge-in/app-development-img/aladeen.png",
+    "https://ik.imagekit.io/digitaledge360/digitaledge-in/app-development-img/instayaar.png",
+    "https://ik.imagekit.io/digitaledge360/digitaledge-in/app-development-img/kaam-dham.png",
+    "https://ik.imagekit.io/digitaledge360/digitaledge-in/app-development-img/noend.png",
+    "https://ik.imagekit.io/digitaledge360/digitaledge-in/app-development-img/publix.png",
+    "https://ik.imagekit.io/digitaledge360/digitaledge-in/app-development-img/sabjiKing.png",
+    "https://ik.imagekit.io/digitaledge360/digitaledge-in/app-development-img/hubfit.png",
+    "https://ik.imagekit.io/digitaledge360/digitaledge-in/app-development-img/recipe-keeper.png",
+    "https://ik.imagekit.io/digitaledge360/digitaledge-in/app-development-img/velvet-box.png",
   ];
 
   const gridBackgroundStyle = {

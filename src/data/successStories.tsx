@@ -40,8 +40,8 @@ export interface SuccessStoryData {
 
 export const storiesData: Record<string, SuccessStoryData> = {
   "wire-communication": {
-    logo: "/logos/wire-comunication.jpg",
-    image: "/brand-card-images/wire-comunication.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/wire-comunication.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/wire-comunication.jpg",
     title: "Wire Communication",
     subtitle: "Reliable Global Telecom & Next-Gen Network Infrastructure Solutions",
     emoji: "📡",
@@ -72,8 +72,8 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "genesis": {
-    logo: "/logos/genesis-logo.png",
-    image: "/brand-card-images/genesis.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/genesis-logo.png",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/genesis.jpg",
     title: "Genesis Eduzone",
     subtitle: "Empowering Students with Comprehensive Educational & Learning Solutions",
     emoji: "🎓",
@@ -104,8 +104,8 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "idaya-luxe": {
-    logo: "/logos/idaya-logo.jpg",
-    image: "/brand-card-images/idaya luxee.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/idaya-logo.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/idaya_luxee.jpg",
     title: "Idaya Luxe",
     subtitle: "Bold, Empowering & Elegant Fine Jewelry and Accessories Storefront",
     emoji: "💎",
@@ -136,8 +136,8 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "mezoma": {
-    logo: "/logos/8.jpg",
-    image: "/brand-card-images/mezoma.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/8.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/mezoma.jpg",
     title: "Mezoma",
     subtitle: "70+ Years of Craftsmanship in Moissanite & Handcrafted Fine Jewelry",
     emoji: "💍",
@@ -168,8 +168,8 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "twenty-one-jewels": {
-    logo: "/logos/twenty-one-logo.jpg",
-    image: "/brand-card-images/twenty-one.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/twenty-one-logo.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/twenty-one.jpg",
     title: "Twenty One Jewels",
     subtitle: "Affordable High-Quality Handcrafted 925 Sterling Silver Jewelry",
     emoji: "✨",
@@ -200,8 +200,8 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "gangotri-group": {
-    logo: "/logos/gangotri-group-logo.jpg",
-    image: "/brand-card-images/gangotri-group.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/gangotri-group-logo.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/gangotri-group.jpg",
     title: "Gangotri Group",
     subtitle: "Premier Real Estate Development, Infrastructure & Commercial Workspaces",
     emoji: "🏗️",
@@ -232,8 +232,8 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "sakshi-handloom": {
-    logo: "/logos/sakshi-handloom-logo.jpg",
-    image: "/brand-card-images/sakshi-handloom.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/sakshi-handloom-logo.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/sakshi-handloom.jpg",
     title: "Sakshi Handloom",
     subtitle: "Authentic Indian Handloom Sarees, Ethnic Apparel & Artisan Weaves",
     emoji: "🥻",
@@ -264,8 +264,8 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "clean-max": {
-    logo: "/logos/clean-max.svg",
-    image: "/brand-card-images/clean-max.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/clean-max.svg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/clean-max.jpg",
     title: "CleanMax Solar",
     subtitle: "Asia's Premier Commercial & Industrial Renewable Energy Solutions Partner",
     emoji: "☀️",
@@ -296,8 +296,8 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "riangle": {
-    logo: "/logos/rangle-logo.jpg",
-    image: "/brand-card-images/riangle.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/rangle-logo.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/riangle.jpg",
     title: "Riangle Studio",
     subtitle: "Next-Generation Digital Product Design, Brand Identity & UX Consultancy",
     emoji: "🎨",
@@ -328,8 +328,8 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "arcesium": {
-    logo: "/logos/arcesium.svg",
-    image: "/brand-card-images/arcesium.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/arcesium.svg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/arcesium.jpg",
     title: "Arcesium",
     subtitle: "Post-Trade Technology & Financial Software Solutions for Investment Managers",
     emoji: "💼",
@@ -360,8 +360,8 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "era-residence": {
-    logo: "/logos/era-resident-logo.png",
-    image: "/brand-card-images/era-resident.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/era-resident-logo.png",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/era-resident.jpg",
     title: "Era Residence",
     subtitle: "Luxury Real Estate & Ultra-Modern Living Redefined",
     emoji: "🏢",
@@ -392,8 +392,8 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "venturesoul": {
-    logo: "/logos/venturesoul-logo.jpg",
-    image: "/brand-card-images/venturesoul.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/venturesoul-logo.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/venturesoul.jpg",
     title: "VentureSoul Partners",
     subtitle: "Category-Agnostic Debt & Growth Capital for Tomorrow's Leaders",
     emoji: "📈",
@@ -424,8 +424,8 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "priyanka-khaitan": {
-    logo: "/logos/16.jpg",
-    image: "/caseStudy/bridal-content-storytelling.png",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/16.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/caseStudy/bridal-content-storytelling.png",
     title: "Priyanka Khaitan",
     subtitle: "Bridal Content Strategy & High-intent Conversions",
     emoji: "💎",
@@ -454,8 +454,8 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "creative-ecotech": {
-    logo: "/logos/3.jpg",
-    image: "/brand-card-images/creative-echotech.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/3.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/creative-echotech.jpg",
     title: "Creative Ecotech",
     subtitle: "Eco-Friendly Plastics for a Greener Tomorrow",
     emoji: "🌱",
@@ -486,8 +486,8 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "truboy-bbq": {
-    logo: "/logos/7.jpg",
-    image: "/brand-card-images/Trueboybbq.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/7.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/Trueboybbq.jpg",
     title: "Truboy BBQ",
     subtitle: "Bringing Authentic Texas BBQ Straight to Your Table",
     emoji: "🍖",
@@ -518,8 +518,8 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "jiva": {
-    logo: "/logos/jiva.jpg",
-    image: "/brand-card-images/Jiva.png",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/jiva.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/Jiva.png",
     title: "Hotel JIVA",
     subtitle: "A 4-star boutique hotel offering luxury & comfort.",
     emoji: "🏨",
@@ -550,8 +550,8 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "ducati": {
-    logo: "/logos/28.jpg",
-    image: "/brand-card-images/Ducati-home.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/28.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/Ducati-home.jpg",
     title: "Ducati Kolkata",
     subtitle: "Premium superbikes redefining speed, performance, and luxury.",
     emoji: "🏍️",
@@ -581,8 +581,8 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "edefyhome": {
-    logo: "/logos/16.jpg",
-    image: "/brand-card-images/Edify-home.png",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/16.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/Edify-home.png",
     title: "Edify Home Decor",
     subtitle: "Premium interior design solutions transforming spaces with elegance.",
     emoji: "🏠",
@@ -613,8 +613,8 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "omniastra": {
-    logo: "/logos/astra.jpg",
-    image: "/brand-card-images/astra.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/astra.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/astra.jpg",
     title: "OmniAstra",
     subtitle: "Omni Astra leads India’s luxury eyewear distribution",
     emoji: "🕶️",
@@ -645,8 +645,8 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "earthy-line": {
-    logo: "/logos/earthyline.jpg",
-    image: "/brand-card-images/earthline.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/earthyline.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/earthline.jpg",
     title: "Earthyline",
     subtitle: "Where Tradition Meets Conscious Elegance",
     emoji: "👗",
@@ -677,8 +677,8 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "likeson": {
-    logo: "/logos/likeson.jpg",
-    image: "/brand-card-images/likeson.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/likeson.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/likeson.jpg",
     title: "Likeson",
     subtitle: "Simplified healthcare appointment booking and management platform",
     emoji: "🏥",
@@ -709,8 +709,8 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "nayantara": {
-    logo: "/logos/nayantara.jpg",
-    image: "/brand-card-images/Nayantara.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/nayantara.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/Nayantara.jpg",
     title: "Nayantara",
     subtitle: "Nayantara leads India’s ethnic fashion collection",
     emoji: "👗",
@@ -741,8 +741,8 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "earthbags": {
-    logo: "/logos/earthbags.jpg",
-    image: "/brand-card-images/earth-bags.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/earthbags.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/earth-bags.jpg",
     title: "EarthBags",
     subtitle: "Made for You, Made for the Planet",
     emoji: "👜",
@@ -773,8 +773,8 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "roughells": {
-    logo: "/logos/roughells.jpg",
-    image: "/brand-card-images/roughells.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/roughells.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/roughells.jpg",
     title: "RougHells",
     subtitle: "Built for the Bold, Designed for Comfort",
     emoji: "👕",
@@ -805,8 +805,8 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "jetchoice": {
-    logo: "/logos/18.jpg",
-    image: "/brand-card-images/jet-choice.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/18.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/jet-choice.jpg",
     title: "JetChoice",
     subtitle: "Wings of Freedom, Choice of Excellence",
     emoji: "✈️",
@@ -837,8 +837,8 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "sacred-suta": {
-    logo: "/logos/sacred-suta.jpg",
-    image: "/brand-card-images/sacred-suta.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/sacred-suta.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/sacred-suta.jpg",
     title: "Sacred Suta",
     subtitle: "Crafted by Artisans, Adorned by You",
     emoji: "👗",
@@ -869,8 +869,8 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "sacred-suta-marketing": {
-    logo: "/logos/sacred-suta.jpg",
-    image: "/brand-card-images/sacred-suta.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/sacred-suta.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/sacred-suta.jpg",
     title: "Sacred Suta",
     subtitle: "Handcrafted ethnic wear & artisanal D2C fashion performance marketing.",
     emoji: "👗",
@@ -929,8 +929,8 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "sree-vedics": {
-    logo: "/logos/Sree_Vedics_Logo.jpg",
-    image: "/brand-card-images/sreevadic.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/Sree_Vedics_Logo.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/sreevadic.jpg",
     title: "Sree Vedics",
     subtitle: "Skincare and wellness combining scientific expertise with self-care",
     emoji: "🧴",
@@ -983,8 +983,8 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "sree-vedics-marketing": {
-    logo: "/logos/Sree_Vedics_Logo.jpg",
-    image: "/brand-card-images/sreevadic.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/Sree_Vedics_Logo.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/sreevadic.jpg",
     title: "Sree Vedics",
     subtitle: "Ayurveda-inspired, dermatologically tested skincare for face, eyes, and feet.",
     emoji: "🧴",
@@ -1043,13 +1043,13 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "chris-louis": {
-    logo: "/logos/20.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/20.jpg",
     title: "Chris Louis",
     subtitle: "Premium Australian leather bags crafted for modern lifestyles.",
     emoji: "💼",
     description: "Chris Louis, a luxury Australian brand specializing in handcrafted leather bags for men and women, collaborated with Digital Edge 360 to enhance its online presence, drive e-commerce sales, and establish a premium brand identity. Through a focused digital marketing strategy, the brand achieved remarkable growth in visibility, engagement, and revenue.",
     websiteUrl: "https://chrislouis.com.au",
-    image: "/portfolio/chrislouis.png",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/portfolio/chrislouis.png",
     stats: {
       estimatedTime: "30 Days",
       bugsFixing: "N/A",
@@ -1097,8 +1097,8 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "kayrah": {
-    logo: "/logos/kayrah.jpg",
-    image: "/brand-card-images/KAYRAH.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/kayrah.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/KAYRAH.jpg",
     title: "Kayrah",
     subtitle: "Modern Luxury Fashion & Ethnic Couture Store",
     emoji: "👗",
@@ -1129,13 +1129,13 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "dash-capital": {
-    logo: "/logos/17.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/17.jpg",
     title: "Dash Capital",
     subtitle: "Expert wealth management solutions for financial growth & security.",
     emoji: "📈",
     description: "Dash Capital, a leading wealth distribution house in Kolkata, partnered with Digital Edge 360 to enhance its digital presence, generate high-net-worth leads, and establish itself as a trusted name in financial services. Through a focused digital marketing strategy, the firm achieved substantial growth in client acquisition, engagement, and brand credibility.",
     websiteUrl: "https://dashcapital.in",
-    image: "/brand-card-images/Dash-Capital.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/Dash-Capital.jpg",
     stats: {
       estimatedTime: "30 Days",
       bugsFixing: "N/A",
@@ -1184,13 +1184,13 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "ibt-behala": {
-    logo: "/logos/13.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/13.jpg",
     title: "IBT Behala",
     subtitle: "Premier coaching institute for competitive exam success.",
     emoji: "🎓",
     description: "IBT Behala, a leading competitive exam coaching institute, partnered with Digital Edge 360 to enhance its digital presence, attract more students, and establish itself as a top choice for exam preparation. Through targeted digital marketing strategies, the institute saw significant growth in student inquiries, engagement, and admissions, ensuring a strong market position.",
     websiteUrl: "https://www.ibtindia.com/",
-    image: "/brand-card-images/IBT-behala.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/IBT-behala.jpg",
     stats: {
       estimatedTime: "30 Days",
       bugsFixing: "N/A",
@@ -1239,13 +1239,13 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "momentum": {
-    logo: "/logos/momentum.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/momentum.jpg",
     title: "Momentum",
     subtitle: "Learn. Practice. Succeed. Your ultimate path to exam excellence!",
     emoji: "🎯",
     description: "Momentum is designed to be the ultimate learning companion for students striving for academic excellence. Our goal is to provide an all-in-one education platform that simplifies learning, enhances understanding, and helps students clear exams with confidence. With engaging content, seamless navigation, and interactive features, we aim to bridge the gap between students and quality education. Momentum ensures uninterrupted learning from the comfort of home, empowering students to achieve their dreams. Whether it’s concept clarity, mock tests, or live classes, our app provides everything needed to succeed—all in one place, making learning easier, smarter, and more effective.",
     playStoreUrl: "https://play.google.com/store/apps/details?id=co.brown.qjdzl",
-    image: "/brand-card-images/momentum.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/momentum.jpg",
     stats: {
       estimatedTime: "90 Days",
       bugsFixing: "1,032 +",
@@ -1292,13 +1292,13 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "recipe-keeper": {
-    logo: "/logos/recipe keper.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/recipe_keper.jpg",
     title: "Recipe Keeper",
     subtitle: "Your Personal Digital Cookbook – Recipes, Planning & Shopping Made Easy!",
     emoji: "🍳",
-    description: "Recipe Keeper aims to revolutionize how food lovers organize, plan, and share their favorite recipes! Whether you’re a home cook or a seasoned chef, this all-in-one app simplifies recipe storage, meal planning, and grocery shopping. From importing recipes from Instagram and TikTok to scanning handwritten notes and cookbooks, Recipe Keeper ensures every meal idea is at your fingertips. With seamless device synchronization, smart meal planning, and hands-free Alexa support, our goal is to make cooking fun, efficient, and stress-free. Say goodbye to scattered notes and forgotten recipes—Recipe Keeper is your personal digital cookbook, keeping every dish just a tap away!",
+    description: "Recipe Keeper aims to revolutionize how food lovers organize, plan, and share their favorite recipes! Whether you’re a home cook or a seasoned chef, this all-in-one app simplifies recipe storage, meal planning, and grocery shopping. From importing recipes from Instagram to scanning handwritten notes and cookbooks, Recipe Keeper ensures every meal idea is at your fingertips. With seamless device synchronization, smart meal planning, and hands-free Alexa support, our goal is to make cooking fun, efficient, and stress-free. Say goodbye to scattered notes and forgotten recipes—Recipe Keeper is your personal digital cookbook, keeping every dish just a tap away!",
     websiteUrl: "https://apps.apple.com/us/app/recipe-keeper/id974683711",
-    image: "/brand-card-images/recipee-keeper.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/recipee-keeper.jpg",
     stats: {
       estimatedTime: "90 Days",
       bugsFixing: "1,032 +",
@@ -1330,7 +1330,7 @@ export const storiesData: Record<string, SuccessStoryData> = {
     aboutHeadline: "Recipes, Planning & Shopping Made Easy!",
     challengeHeadline: "OCR Accuracy & AI Meal Suggestions",
     challengeBullets: [
-      "Importing from Instagram, TikTok, and web sources",
+      "Importing from Instagram and web sources",
       "High-precision OCR scanning of handwritten recipes",
       "Real-time cross-device sync and smart meal algorithms",
       "Voice assistant integration for hands-free kitchen use"
@@ -1346,12 +1346,12 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "hubfit": {
-    logo: "/logos/hubfit.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/hubfit.jpg",
     title: "HubFit",
     subtitle: "Your Fitness. Your Coach. Your Results – All in One App!",
     emoji: "💪",
     description: "HubFit is designed to revolutionize online coaching by providing a seamless platform for fitness enthusiasts and coaches to connect. Our goal is to simplify progress tracking, nutrition monitoring, and personalized training in one powerful app. With features like check-ins, macro tracking, workout history, and wearable integration, HubFit ensures that users stay accountable, motivated, and on track. Whether you’re a fitness coach managing multiple clients or an individual striving for peak performance, HubFit streamlines the process, making fitness management effortless. The ultimate aim is to empower users with data-driven insights, real-time communication, and a structured approach to achieving their goals.",
-    image: "/brand-card-images/hubfit.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/hubfit.jpg",
     stats: {
       estimatedTime: "30 Days",
       bugsFixing: "N/A",
@@ -1400,12 +1400,12 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "publix": {
-    logo: "/logos/publix.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/publix.jpg",
     title: "Publix",
     subtitle: "Style. Book. Grow. The Smartest Way to Run Your Salon!",
     emoji: "🛒",
     description: "Publix,, powered by Instacart, is designed to provide a seamless grocery shopping experience for busy customers. Our goal is to offer fast, reliable delivery and curbside services that bring the convenience of Publix right to your doorstep or car. By ensuring quality control, personalized service, and fast delivery times, we aim to enhance your shopping experience. Whether you need groceries in an hour or prefer curbside pickup, Publix Delivery is here to serve you. With easy reordering, real-time shopper communication, and weekly savings, Publix is making grocery shopping easier and faster than ever before.",
-    image: "/brand-card-images/publix.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/publix.jpg",
     stats: {
       estimatedTime: "90 Days",
       bugsFixing: "1,032 +",
@@ -1453,12 +1453,12 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "ring-my-stylist": {
-    logo: "/logos/ring-my-list.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/ring-my-list.jpg",
     title: "Ring My Stylist",
     subtitle: "Style. Book. Grow. The Smartest Way to Run Your Salon!",
     emoji: "💇‍♀️",
     description: "Ring My Stylist is designed to empower beauty professionals by streamlining appointment booking, client management, and business growth. Our goal is to simplify scheduling, reduce no-shows, and enhance client communication—all within one intuitive platform. By offering online payments, a customizable service menu, and a seamless booking experience, we help stylists focus on what they do best: creating beauty. With a user-friendly interface and unlimited client database, Ring My Stylist ensures that professionals can manage their business effortlessly. Whether you’re a hairstylist, makeup artist, or nail technician, our app is your ultimate tool for salon success.",
-    image: "/brand-card-images/rign-my-list.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/rign-my-list.jpg",
     stats: {
       estimatedTime: "90 Days",
       bugsFixing: "1,032 +",
@@ -1506,12 +1506,12 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "edgeringtone": {
-    logo: "/logos/edgering.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/edgering.jpg",
     title: "Edge Ringtones",
     subtitle: "Elevate Your Style with Personalized, Premium Ringtones – Effortless & Seamless.",
     emoji: "🎵",
     description: "Our custom ringtone app combines a sleek, premium UI with a vast collection of high-quality ringtones for every taste. Offering seamless customization for calls, notifications, and alarms, it ensures a smooth and engaging experience. With frequent updates and compatibility across devices, this app keeps you connected with fresh sounds and personalized options at your fingertips.",
-    image: "/brand-card-images/Edge-ring.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/Edge-ring.jpg",
     stats: {
       estimatedTime: "45 Days",
       bugsFixing: "491 +",
@@ -1559,8 +1559,8 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "royal-enfield": {
-    logo: "/logos/royal enfiled.jpg",
-    image: "/brand-card-images/ROYAL-ENFIELD.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/royal_enfiled.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/ROYAL-ENFIELD.jpg",
     title: "Royal Enfield",
     subtitle: "Royal Enfield is India’s No.1 retro and adventure motorcycle company",
     emoji: "🏍️",
@@ -1600,8 +1600,8 @@ export const storiesData: Record<string, SuccessStoryData> = {
     heroHeadingGreen: "The Indo British Legend"
   },
   "goel-forgings": {
-    logo: "/logos/19.jpg",
-    image: "/brand-card-images/goel-forgings.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/19.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/goel-forgings.jpg",
     title: "Goel Forgings",
     subtitle: "Goel Forgings – Forging Excellence in Iron and Steel",
     emoji: "⚙️",
@@ -1641,8 +1641,8 @@ export const storiesData: Record<string, SuccessStoryData> = {
     heroHeadingGreen: "A Renowned Steel Brand"
   },
   "gsi": {
-    logo: "/logos/gis.jpg",
-    image: "/brand-card-images/GSI.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/gis.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/GSI.jpg",
     title: "Geological Survey of India",
     subtitle: "The Geological Survey of India (GSI) conducts geological mapping, mineral exploration, and natural hazard studies in India.",
     emoji: "🗺️",
@@ -1682,8 +1682,8 @@ export const storiesData: Record<string, SuccessStoryData> = {
     heroHeadingGreen: "Geological Exploration"
   },
   "imu": {
-    logo: "/logos/37.jpg",
-    image: "/brand-card-images/IMU.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/37.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/IMU.jpg",
     title: "Indian Maritime University",
     subtitle: "Indian Maritime University – The Gateway to Maritime Excellence",
     emoji: "⚓",
@@ -1723,8 +1723,8 @@ export const storiesData: Record<string, SuccessStoryData> = {
     heroHeadingGreen: "Gateway to Maritime Excellence"
   },
   "the-lighter-side": {
-    logo: "/logos/4.jpg",
-    image: "/brand-card-images/THE-LIGHTER-SIDE.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/4.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/THE-LIGHTER-SIDE.jpg",
     title: "The Lighter Side",
     subtitle: "The Lighter Side – Local Cafe offering Global Cuisine",
     emoji: "💡",
@@ -1764,8 +1764,8 @@ export const storiesData: Record<string, SuccessStoryData> = {
     heroHeadingGreen: "A Global Culinary Experience"
   },
   "brand-leather": {
-    logo: "/logos/26.jpg",
-    image: "/brand-card-images/brand-leather.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/26.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/brand-leather.jpg",
     title: "Brand Leather",
     subtitle: "Brand Leather- Premium Leather Products at affordable prices",
     emoji: "🎒",
@@ -1805,8 +1805,8 @@ export const storiesData: Record<string, SuccessStoryData> = {
     heroHeadingGreen: "Tradition of Craftsmanship"
   },
   "kayra": {
-    logo: "/logos/kayrah.jpg",
-    image: "/brand-card-images/KAYRAH.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/kayrah.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/KAYRAH.jpg",
     title: "Kayra",
     subtitle: "Emerging jewelry e-commerce brand",
     emoji: "👗",
@@ -1849,8 +1849,8 @@ export const storiesData: Record<string, SuccessStoryData> = {
     category: "Mobile App & Logistics",
     heroHeadingBlack: "Dooli -",
     heroHeadingGreen: "Driven by Comfort, Powered by Trust",
-    logo: "/logos/dooli.jpg",
-    image: "/brand-card-images/dooli.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/dooli.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/dooli.jpg",
     title: "Dooli",
     subtitle: "Driven by Comfort, Powered by Trust",
     emoji: "🚗",
@@ -1884,8 +1884,8 @@ export const storiesData: Record<string, SuccessStoryData> = {
     category: "Mobile App & EdTech",
     heroHeadingBlack: "O2 BODMAS -",
     heroHeadingGreen: "Smart Learning, Powered by Innovation",
-    logo: "/logos/o2bodmas.png",
-    image: "/brand-card-images/o2bodmas.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/o2bodmas.png",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/o2bodmas.jpg",
     title: "O2 BODMAS",
     subtitle: "Empowering Students with Interactive EdTech & Smart Test Prep Solutions",
     emoji: "🎓",
@@ -1943,8 +1943,8 @@ export const storiesData: Record<string, SuccessStoryData> = {
     category: "Mobile App & Medical Logistics",
     heroHeadingBlack: "Gamp Wheels -",
     heroHeadingGreen: "Mission-Critical Blood Supply Chain Logistics",
-    logo: "/logos/gamp wheels.jpg",
-    image: "/brand-card-images/gamp-wheels.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/gamp_wheels.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/gamp-wheels.jpg",
     title: "Gamp Wheels",
     subtitle: "Enterprise Blood Delivery & Cold-Chain Management System",
     emoji: "🩸",
@@ -2002,8 +2002,8 @@ export const storiesData: Record<string, SuccessStoryData> = {
     category: "E-Commerce & Fashion Retail",
     heroHeadingBlack: "No End -",
     heroHeadingGreen: "Modern Fashion & Apparel E-Commerce Experience",
-    image: "/web-development-img/no-end.png",
-    logo: "/logos/no-end-logo.png",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/web-development-img/no-end.png",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/no-end-logo.png",
     title: "No End Fashion",
     subtitle: "Trendsetting Modern Apparel, Denim & Contemporary E-Commerce Destination",
     emoji: "👗",
@@ -2067,7 +2067,7 @@ export const storiesData: Record<string, SuccessStoryData> = {
     title: "Kaamdham",
     subtitle: "Connecting Everyday Customers with Verified Local Experts & Service Providers",
     emoji: "🛠️",
-    logo: "/logos/kaamdham-logo.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/kaamdham-logo.jpg",
     description: "Kaamdham is a dynamic on-demand service marketplace connecting homeowners, event organizers, and businesses with verified professionals — from chefs, decorators, and technicians to musicians and photographers. Digital Edge 360 built an intuitive, high-reliability web application featuring instant booking, geolocation matching, and real-time order tracking.",
     websiteUrl: "https://app.kaamdham.com/",
     industry: "On-Demand Services & Marketplace",
@@ -2128,7 +2128,7 @@ export const storiesData: Record<string, SuccessStoryData> = {
     title: "Instayaar",
     subtitle: "Real-World Activity Companionship, City Tours, Hobbies & Social Sessions",
     emoji: "🤝",
-    logo: "/logos/instayaar-logo.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/instayaar-logo.jpg",
     description: "Instayaar is an innovative activity-based companionship platform designed to connect people with verified local individuals ('Yaars') for real-world shared experiences — including walking tours, museum visits, cafe conversations, hobby practice, and city exploration. Digital Edge 360 built an ultra-secure, privacy-first web application engineered for trust, safety, and seamless session booking.",
     websiteUrl: "https://app.instayaar.com/",
     industry: "Social Tech & Lifestyle Marketplace",
@@ -2185,8 +2185,8 @@ export const storiesData: Record<string, SuccessStoryData> = {
     category: "Performance Marketing & FMCG",
     heroHeadingBlack: "Chappan Bhog -",
     heroHeadingGreen: "Premium Makhana & Authentic Snack Brand Scaling",
-    image: "/brand-card-images/chappan-bhog-card-image.jpg",
-    logo: "/logos/9.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/chappan-bhog-card-image.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/9.jpg",
     title: "Chappan Bhog",
     subtitle: "Premium makhana and snacks with authentic taste and quality.",
     emoji: "🍿",
@@ -2244,8 +2244,8 @@ export const storiesData: Record<string, SuccessStoryData> = {
     ]
   },
   "peach-tassels": {
-    logo: "/logos/peach-tassels-logo.jpg",
-    image: "/brand-card-images/peach-tassels.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/peach-tassels-logo.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/peach-tassels.jpg",
     title: "Peach Tassels",
     subtitle: "Affordable, statement-making fashion jewellery, built for a digital-first audience.",
     emoji: "💎",
@@ -2310,7 +2310,7 @@ export const storiesData: Record<string, SuccessStoryData> = {
     heroHeadingBlack: "Velvet Box -",
     heroHeadingGreen: "Luxury Fine Jewelry Mobile Shopping App",
     image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=1200&auto=format&fit=crop",
-    logo: "/logos/velvet-box-logo.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/velvet-box-logo.jpg",
     title: "Velvet Box",
     subtitle: "Bespoke Mobile Commerce Experience for Fine Jewelry & Precious Ornaments",
     emoji: "💎",

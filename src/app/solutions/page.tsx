@@ -286,11 +286,11 @@ export default function Solutions() {
       </section>
       {/* Trust line/images beneath button */}
       <div className="flex flex-wrap items-center bg-white justify-center gap-32 py-20">
-        <img src="/brand-logos/shopify-plus.png" alt="Shopify Plus Certified" className="h-20 w-auto object-contain" />
-        <img src="/brand-logos/google-partner.png" alt="Google Premier Partner" className="h-20 w-auto object-contain" />
-        <img src="/brand-logos/meta-logo.png" alt="Meta Business Partner" className="h-20 w-auto object-contain" />
-        <img src="/brand-logos/iso.png" alt="ISO 27001 Certified" className="h-20 w-auto object-contain" />
-        <img src="/brand-logos/digital-ocean.png" alt="DigitalOcean" className="h-20 w-auto object-contain" />
+        <img src="https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-logos/shopify-plus.png" alt="Shopify Plus Certified" className="h-20 w-auto object-contain" />
+        <img src="https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-logos/google-partner.png" alt="Google Premier Partner" className="h-20 w-auto object-contain" />
+        <img src="https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-logos/meta-logo.png" alt="Meta Business Partner" className="h-20 w-auto object-contain" />
+        <img src="https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-logos/iso.png" alt="ISO 27001 Certified" className="h-20 w-auto object-contain" />
+        <img src="https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-logos/digital-ocean.png" alt="DigitalOcean" className="h-20 w-auto object-contain" />
       </div>
     </div>
     </>

@@ -228,3 +228,131 @@ a {
   animation: gridScrollUp 6s linear infinite;
   will-change: transform;
 }
+
+/* ========================================================
+   TipTap Editor & Rich Text Typography Styles
+   ======================================================== */
+.ProseMirror,
+.tiptap {
+  outline: none;
+  min-height: 280px;
+}
+
+.ProseMirror h1,
+.founder-rich-text h1,
+.blog-rich-text h1 {
+  display: block !important;
+  font-size: 2.25rem !important; /* 36px */
+  line-height: 2.75rem !important;
+  font-weight: 900 !important;
+  color: #0d1b3e !important;
+  margin-top: 1.75rem !important;
+  margin-bottom: 0.75rem !important;
+  letter-spacing: -0.025em !important;
+}
+
+.ProseMirror h2,
+.founder-rich-text h2,
+.blog-rich-text h2 {
+  display: block !important;
+  font-size: 1.625rem !important; /* 26px */
+  line-height: 2.125rem !important;
+  font-weight: 800 !important;
+  color: #0d1b3e !important;
+  margin-top: 1.5rem !important;
+  margin-bottom: 0.625rem !important;
+  letter-spacing: -0.02em !important;
+}
+
+.ProseMirror h3,
+.founder-rich-text h3,
+.blog-rich-text h3 {
+  display: block !important;
+  font-size: 1.25rem !important; /* 20px */
+  line-height: 1.75rem !important;
+  font-weight: 700 !important;
+  color: #0d1b3e !important;
+  margin-top: 1.25rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.ProseMirror p,
+.founder-rich-text p,
+.blog-rich-text p {
+  display: block;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #334155;
+  margin-bottom: 1rem !important;
+}
+
+.ProseMirror strong,
+.founder-rich-text strong,
+.blog-rich-text strong {
+  font-weight: 800 !important;
+  color: #0d1b3e !important;
+}
+
+.ProseMirror em,
+.founder-rich-text em,
+.blog-rich-text em {
+  font-style: italic !important;
+}
+
+.ProseMirror s,
+.founder-rich-text s,
+.blog-rich-text s {
+  text-decoration: line-through !important;
+}
+
+.ProseMirror ul,
+.founder-rich-text ul,
+.blog-rich-text ul {
+  display: block !important;
+  list-style-type: disc !important;
+  padding-left: 2rem !important;
+  margin-top: 0.75rem !important;
+  margin-bottom: 1.25rem !important;
+}
+
+.ProseMirror ol,
+.founder-rich-text ol,
+.blog-rich-text ol {
+  display: block !important;
+  list-style-type: decimal !important;
+  padding-left: 2rem !important;
+  margin-top: 0.75rem !important;
+  margin-bottom: 1.25rem !important;
+}
+
+.ProseMirror li,
+.founder-rich-text li,
+.blog-rich-text li {
+  display: list-item !important;
+  list-style: inherit !important;
+  margin-bottom: 0.5rem !important;
+  padding-left: 0.25rem !important;
+  color: #334155 !important;
+  line-height: 1.7 !important;
+}
+
+.ProseMirror li > p,
+.founder-rich-text li > p,
+.blog-rich-text li > p {
+  display: inline !important;
+  margin-bottom: 0 !important;
+}
+
+.ProseMirror blockquote,
+.founder-rich-text blockquote,
+.blog-rich-text blockquote {
+  display: block !important;
+  border-left: 4px solid #2443ab !important;
+  background: #f8fafc !important;
+  padding: 1rem 1.25rem !important;
+  border-radius: 0 1rem 1rem 0 !important;
+  font-style: italic !important;
+  color: #334155 !important;
+  margin: 1.5rem 0 !important;
+}
+

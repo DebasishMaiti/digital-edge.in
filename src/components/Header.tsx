@@ -229,6 +229,9 @@ export default function Header() {
     insightsHoverTimeout.current = setTimeout(() => setIsInsightsOpen(false), 150);
   };
 
+  if (pathname.startsWith("/portal-access") || pathname.startsWith("/admin")) {
+    return null;
+  }
 
   return (
     <header
@@ -242,7 +245,7 @@ export default function Header() {
         <div className="flex items-center pl-1 xl:pl-4">
           <Link href="/" className="flex items-center">
             <Image
-              src="/DE360-LOGO.png"
+              src="https://ik.imagekit.io/digitaledge360/digitaledge-in/DE360-LOGO.png"
               alt="DE360 Logo"
               width={160}
               height={44}
