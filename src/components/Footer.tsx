@@ -1,8 +1,16 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from 'next/navigation';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const pathname = usePathname();
+
+  if (pathname.startsWith("/portal-access") || pathname.startsWith("/admin")) {
+    return null;
+  }
 
   return (
     <footer className="w-full bg-gradient-to-br from-[#0c89c7] via-[#2450b3] to-[#3d199f] border-t border-white/10 text-white/80 pt-16 pb-8 relative overflow-hidden">
@@ -59,7 +67,7 @@ export default function Footer() {
           <div className="flex flex-col items-start gap-5 text-left">
             <Link href="/" className="flex items-center">
               <Image
-                src="/DE360-LOGO.png"
+                src="https://ik.imagekit.io/digitaledge360/digitaledge-in/DE360-LOGO.png"
                 alt="DE360 Logo"
                 width={150}
                 height={42}
@@ -103,6 +111,7 @@ export default function Footer() {
               {[
                 { label: "Web Development", href: "/web-development" },
                 { label: "App Development", href: "/app-development" },
+                { label: "App Store Optimization", href: "/app-store-optimization" },
                 { label: "WooCommerce Builds", href: "/woocommerce" },
                 { label: "Performance Marketing", href: "/performance-marketing" },
                 { label: "SEO & Content Strategy", href: "/seo-smm" },

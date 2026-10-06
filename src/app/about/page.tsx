@@ -205,7 +205,7 @@ export default function About() {
             >
               <div className="relative w-full aspect-[4/3] bg-slate-50">
                 <Image
-                  src="/akanksha.jpg"
+                  src="https://ik.imagekit.io/digitaledge360/digitaledge-in/akanksha.jpg"
                   alt="Akanksha Madeshiya"
                   fill
                   className="object-cover"
@@ -249,7 +249,7 @@ export default function About() {
             >
               <div className="relative w-full aspect-[4/3] bg-slate-50">
                 <Image
-                  src="/shomak.png"
+                  src="https://ik.imagekit.io/digitaledge360/digitaledge-in/shomak.png"
                   alt="Shomak Mitra"
                   fill
                   className="object-cover"
@@ -307,7 +307,7 @@ export default function About() {
                   {/* Image container with no padding or border */}
                   <div className="relative w-full aspect-[4/4] rounded-[24px] overflow-hidden bg-slate-50 shadow-xl">
                     <Image
-                      src="/founder.jpg"
+                      src="https://ik.imagekit.io/digitaledge360/digitaledge-in/founder.jpg"
                       alt="From the Founder's desk"
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-105"

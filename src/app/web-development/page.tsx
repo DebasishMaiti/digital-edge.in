@@ -22,148 +22,148 @@ const webDevShowcases: ShowcaseItem[] = [
   {
     name: "Idaya Luxe",
     link: "/company-details/idaya-luxe",
-    image: "/brand-card-images/idaya luxee.jpg",
-    logo: "/logos/idaya-logo.jpg"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/idaya_luxee.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/idaya-logo.jpg"
   },
   {
     name: "Mezoma",
     link: "/company-details/mezoma",
-    image: "/brand-card-images/mezoma.jpg",
-    logo: "/logos/8.jpg"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/mezoma.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/8.jpg"
   },
   {
     name: "Genesis Eduzone",
     link: "/company-details/genesis",
-    image: "/brand-card-images/genesis.jpg",
-    logo: "/logos/genesis-logo.png"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/genesis.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/genesis-logo.png"
   },
   {
     name: "CleanMax Solar",
     link: "/company-details/clean-max",
-    image: "/brand-card-images/clean-max.jpg",
-    logo: "/logos/clean-max.svg"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/clean-max.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/clean-max.svg"
   },
   {
     name: "Riangle Studio",
     link: "/company-details/riangle",
-    image: "/brand-card-images/riangle.jpg",
-    logo: "/logos/rangle-logo.jpg"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/riangle.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/rangle-logo.jpg"
   },
   {
     name: "Wire Communication",
     link: "/company-details/wire-communication",
-    image: "/brand-card-images/wire-comunication.jpg",
-    logo: "/logos/wire-comunication.jpg"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/wire-comunication.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/wire-comunication.jpg"
   },
   {
     name: "Arcesium",
     link: "/company-details/arcesium",
-    image: "/brand-card-images/arcesium.jpg",
-    logo: "/logos/arcesium.svg"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/arcesium.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/arcesium.svg"
   },
   {
     name: "Era Residence",
     link: "/company-details/era-residence",
-    image: "/brand-card-images/era-resident.jpg",
-    logo: "/logos/era-resident-logo.png"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/era-resident.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/era-resident-logo.png"
   },
   {
     name: "VentureSoul Partners",
     link: "/company-details/venturesoul",
-    image: "/brand-card-images/venturesoul.jpg",
-    logo: "/logos/venturesoul-logo.jpg"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/venturesoul.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/venturesoul-logo.jpg"
   },
   {
     name: "Likeson",
     link: "/company-details/likeson",
-    image: "/brand-card-images/likeson.jpg",
-    logo: "/logos/likeson.jpg"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/likeson.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/likeson.jpg"
   },
   {
     name: "OmniAstra",
     link: "/company-details/omniastra",
-    image: "/brand-card-images/astra.jpg",
-    logo: "/logos/astra.jpg"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/astra.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/astra.jpg"
   },
   {
     name: "Earthy Line",
     link: "/company-details/earthy-line",
-    image: "/brand-card-images/earthline.jpg",
-    logo: "/logos/earthyline.jpg"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/earthline.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/earthyline.jpg"
   },
   {
     name: "EdefyHome",
     link: "/company-details/edefyhome",
-    image: "/brand-card-images/Edify-home.png",
-    logo: "/logos/16.jpg"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/Edify-home.png",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/16.jpg"
   },
   {
     name: "JIVA",
     link: "/company-details/jiva",
-    image: "/brand-card-images/Jiva.png",
-    logo: "/logos/jiva.jpg"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/Jiva.png",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/jiva.jpg"
   },
   {
     name: "Nayantara",
     link: "/company-details/nayantara",
-    image: "/brand-card-images/Nayantara.jpg",
-    logo: "/logos/nayantara.jpg"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/Nayantara.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/nayantara.jpg"
   },
   {
     name: "Truboy BBQ",
     link: "/company-details/truboy-bbq",
-    image: "/brand-card-images/Trueboybbq.jpg",
-    logo: "/logos/7.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/Trueboybbq.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/7.jpg",
  
   },
   {
     name: "Creative Ecotech",
     link: "/company-details/creative-ecotech",
-    image: "/brand-card-images/creative-echotech.jpg",
-    logo: "/logos/3.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/creative-echotech.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/3.jpg",
  
   },
   {
     name: "JetChoice",
     link: "/company-details/jetchoice",
-    image: "/brand-card-images/jet-choice.jpg",
-    logo: "/logos/18.jpg"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/jet-choice.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/18.jpg"
   },
   {
     name: "Sacred Suta",
     link: "/company-details/sacred-suta",
-    image: "/brand-card-images/sacred-suta.jpg",
-    logo: "/logos/sacred-suta.jpg"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/sacred-suta.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/sacred-suta.jpg"
   },
   {
     name: "RougHells",
     link: "/company-details/roughells",
-    image: "/brand-card-images/roughells.jpg",
-    logo: "/logos/roughells.jpg"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/roughells.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/roughells.jpg"
   },
   {
     name: "Sree Vedics",
     link: "/company-details/sree-vedics",
-    image: "/brand-card-images/sreevadic.jpg",
-    logo: "/logos/Sree_Vedics_Logo.jpg"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/sreevadic.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/Sree_Vedics_Logo.jpg"
   },
   {
     name: "No End Fashion",
     link: "/company-details/no-end",
-    image: "/web-development-img/no-end.png",
-    logo: "/logos/no-end-logo.png"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/web-development-img/no-end.png",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/no-end-logo.png"
   },
   {
     name: "Kaamdham",
     link: "/company-details/kaamdham",
     image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800&auto=format&fit=crop",
-    logo: "/logos/kaamdham-logo.jpg"
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/kaamdham-logo.jpg"
   },
   {
     name: "Instayaar",
     link: "/company-details/instayaar",
     image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=800&auto=format&fit=crop",
-    logo: "/logos/instayaar-logo.jpg"
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/instayaar-logo.jpg"
   }
 ];
 
@@ -171,12 +171,12 @@ export default function WebDevelopment() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const webDevImages = [
-    { src: "/web-development-img/True Boy BBQ.png", title: "True Boy BBQ" },
-    { src: "/web-development-img/Chris Louis.png", title: "Chris Louis" },
-    { src: "/web-development-img/Aladeen Bangkok.png", title: "Aladeen Bangkok" },
-    { src: "/web-development-img/Earth Bags.png", title: "Earth Bags" },
-    { src: "/web-development-img/no-end.png", title: "No End Fashion" },
-    { src: "/web-development-img/united by blue.png", title: "United by Blue" },
+    { src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/web-development-img/True_Boy_BBQ.png", title: "True Boy BBQ" },
+    { src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/web-development-img/Chris_Louis.png", title: "Chris Louis" },
+    { src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/web-development-img/Aladeen_Bangkok.png", title: "Aladeen Bangkok" },
+    { src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/web-development-img/Earth_Bags.png", title: "Earth Bags" },
+    { src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/web-development-img/no-end.png", title: "No End Fashion" },
+    { src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/web-development-img/united_by_blue.png", title: "United by Blue" },
   ];
 
   // Infinite Slider Logic
@@ -1164,18 +1164,18 @@ export default function WebDevelopment() {
 
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 mt-16">
               {[
-                { name: "HTML5", icon: "/programing-icons/html.svg", desc: "Structure" },
-                { name: "CSS3", icon: "/programing-icons/css.svg", desc: "Styling" },
-                { name: "JavaScript", icon: "/programing-icons/javascript.svg", desc: "Interactivity" },
-                { name: "TypeScript", icon: "/programing-icons/typescript.svg", desc: "Type Safety" },
-                { name: "React.js", icon: "/programing-icons/reactjs.svg", desc: "UI Library" },
-                { name: "Node.js", icon: "/programing-icons/nodejs.svg", desc: "Runtime" },
-                { name: "Express.js", icon: "/programing-icons/expressjs.svg", desc: "Backend" },
-                { name: "MongoDB", icon: "/programing-icons/mongodb.svg", desc: "Database" },
-                { name: "Shopify", icon: "/programing-icons/shopify.svg", desc: "E-Commerce" },
-                { name: "WordPress", icon: "/programing-icons/wordpress.svg", desc: "CMS" },
-                { name: "Git", icon: "/programing-icons/git.svg", desc: "Version Control" },
-                { name: "GitHub", icon: "/programing-icons/github.svg", desc: "Collaboration" },
+                { name: "HTML5", icon: "https://ik.imagekit.io/digitaledge360/digitaledge-in/programing-icons/html.svg", desc: "Structure" },
+                { name: "CSS3", icon: "https://ik.imagekit.io/digitaledge360/digitaledge-in/programing-icons/css.svg", desc: "Styling" },
+                { name: "JavaScript", icon: "https://ik.imagekit.io/digitaledge360/digitaledge-in/programing-icons/javascript.svg", desc: "Interactivity" },
+                { name: "TypeScript", icon: "https://ik.imagekit.io/digitaledge360/digitaledge-in/programing-icons/typescript.svg", desc: "Type Safety" },
+                { name: "React.js", icon: "https://ik.imagekit.io/digitaledge360/digitaledge-in/programing-icons/reactjs.svg", desc: "UI Library" },
+                { name: "Node.js", icon: "https://ik.imagekit.io/digitaledge360/digitaledge-in/programing-icons/nodejs.svg", desc: "Runtime" },
+                { name: "Express.js", icon: "https://ik.imagekit.io/digitaledge360/digitaledge-in/programing-icons/expressjs.svg", desc: "Backend" },
+                { name: "MongoDB", icon: "https://ik.imagekit.io/digitaledge360/digitaledge-in/programing-icons/mongodb.svg", desc: "Database" },
+                { name: "Shopify", icon: "https://ik.imagekit.io/digitaledge360/digitaledge-in/programing-icons/shopify.svg", desc: "E-Commerce" },
+                { name: "WordPress", icon: "https://ik.imagekit.io/digitaledge360/digitaledge-in/programing-icons/wordpress.svg", desc: "CMS" },
+                { name: "Git", icon: "https://ik.imagekit.io/digitaledge360/digitaledge-in/programing-icons/git.svg", desc: "Version Control" },
+                { name: "GitHub", icon: "https://ik.imagekit.io/digitaledge360/digitaledge-in/programing-icons/github.svg", desc: "Collaboration" },
               ].map((tech, index) => (
                 <motion.div
                   key={index}

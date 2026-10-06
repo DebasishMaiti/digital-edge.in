@@ -1,10 +1,22 @@
 "use client";
 
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Clock, Sparkles, BookOpen } from "lucide-react";
 
-const items = [
+interface BlogItem {
+  id: string;
+  title: string;
+  category: string;
+  tag: string;
+  readTime: string;
+  date: string;
+  image: string;
+  desc: string;
+}
+
+const fallbackItems: BlogItem[] = [
   {
     id: "how-to-know-whether-service-should-be-seo-aeo-geo",
     title: "How Do I Know Whether a Service Should Be SEO, AEO, or GEO?",
@@ -12,13 +24,8 @@ const items = [
     tag: "Search Strategy",
     readTime: "6 min read",
     date: "Aug 17, 2026",
-    image: "/logs/ecommerce_seo_aeo_geo.png",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logs/ecommerce_seo_aeo_geo.png",
     desc: "As search behaviors expand to featured snippets, voice, and AI search engines, we break down how to classify and optimize your search campaigns for SEO, AEO, and GEO.",
-    details: [
-      "Target environments & platform differences",
-      "Nuances of keyword vs. question optimization",
-      "Strategic alignment for modern AI-led search behaviors"
-    ]
   },
   {
     id: "ecommerce-growth-roadmap-launch-to-market-leader",
@@ -27,13 +34,8 @@ const items = [
     tag: "Ecommerce",
     readTime: "7 min read",
     date: "Aug 02, 2026",
-    image: "/logs/ecommerce_growth_roadmap.png",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logs/ecommerce_growth_roadmap.png",
     desc: "We detail the 6-stage lifecycle process required to scale an ecommerce brand from foundation audits to global multi-channel market dominance.",
-    details: [
-      "Discovery & auditing technical bottlenecks",
-      "Autoscaling stacks, launch triggers & app rollouts",
-      "Optimizing CRO pipelines and marketplace expansion"
-    ]
   },
   {
     id: "boosting-brand-credibility-trust-through-seo",
@@ -42,13 +44,8 @@ const items = [
     tag: "SEO Strategy",
     readTime: "5 min read",
     date: "June 29, 2024",
-    image: "/logs/ecommerce_growth_roadmap.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logs/ecommerce_growth_roadmap.jpg",
     desc: "In today’s digital age, establishing a brand people trust and perceive as credible is crucial for long-term success. We break down why search engine optimization (SEO) is a high-return investment for building brand authority.",
-    details: [
-      "Understanding search engine ranking trust signals",
-      "How quality backlinks act as votes of confidence",
-      "Why user experience (UX) directly impacts brand reputation"
-    ]
   },
   {
     id: "mobile-app-effective-for-small-businesses",
@@ -57,13 +54,8 @@ const items = [
     tag: "App Development",
     readTime: "4 min read",
     date: "Nov 07, 2022",
-    image: "/logs/mobileapp.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logs/mobileapp.jpg",
     desc: "From ordering food to getting the water tap fixed, mobile applications are everywhere. We explore how mobile apps can prove a game-changing strategy for small businesses.",
-    details: [
-      "Improving customer service accessibility",
-      "Increasing brand awareness and lead capture",
-      "Evaluating long-term cost effectiveness"
-    ]
   },
   {
     id: "choosing-digital-marketing-agency-12-red-flags",
@@ -72,17 +64,42 @@ const items = [
     tag: "Marketing Agency",
     readTime: "6 min read",
     date: "July 07, 2025",
-    image: "/logs/digital-marketing.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logs/digital-marketing.jpg",
     desc: "Hiring the wrong digital marketing agency can burn budget, stall growth, and leave you chasing reports that never translate into ROI. We highlight 12 red flags to watch out for.",
-    details: [
-      "Spotting hidden fees and vanity metrics",
-      "Demanding access to raw data and clear KPIs",
-      "Vetting agency proposals the right way"
-    ]
   }
 ];
 
 export default function BlogsPage() {
+  const [items, setItems] = useState<BlogItem[]>(fallbackItems);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const res = await fetch("/api/blogs?status=Published");
+        const data = await res.json();
+        if (data.success && Array.isArray(data.blogs) && data.blogs.length > 0) {
+          const apiItems: BlogItem[] = data.blogs.map((b: any) => ({
+            id: b.slug || b._id,
+            title: b.title,
+            category: "Blogs",
+            tag: "Blog",
+            readTime: "5 min read",
+            date: b.publishDate || "Digital Edge",
+            image: b.featuredImage || "https://ik.imagekit.io/digitaledge360/digitaledge-in/logs/ecommerce_seo_aeo_geo.png",
+            desc: b.metaDescription || b.desc || b.title,
+          }));
+          setItems(apiItems);
+        }
+      } catch (err) {
+        console.error("Failed to fetch dynamic blogs, using fallback:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchBlogs();
+  }, []);
+
   const gridBackgroundStyle = {
     backgroundImage: `
       linear-gradient(to right, rgba(226, 232, 240, 0.35) 1px, transparent 1px),
@@ -134,66 +151,73 @@ export default function BlogsPage() {
 
         {/* Items Grid */}
         <section className="relative z-10 mx-auto max-w-[1300px] px-6 sm:px-8 lg:px-12 font-sans">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-            {items.map((item) => (
-              <motion.div
-                key={item.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="bg-white rounded-3xl border border-[#2443ab]/30 shadow-[0_30px_60px_rgba(36,67,171,0.12)] overflow-hidden flex flex-col justify-between group -translate-y-1.5 scale-[1.01] transition-all duration-300"
-              >
-                <div >
-                  {/* Color-shifting top accent bar - active by default */}
-                  <div className="h-1.5 w-full bg-gradient-to-r from-[#0a8bc7] via-[#2443ab] to-[#40159e]" />
+          {loading ? (
+            <div className="text-center py-12 text-sm text-slate-500 font-semibold">
+              Loading latest blog posts...
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+              {items.map((item) => (
+                <motion.div
+                  key={item.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="bg-white rounded-3xl border border-[#2443ab]/30 shadow-[0_30px_60px_rgba(36,67,171,0.12)] overflow-hidden flex flex-col justify-between group -translate-y-1.5 scale-[1.01] transition-all duration-300"
+                >
+                  <div>
+                    {/* Color-shifting top accent bar - active by default */}
+                    <div className="h-1.5 w-full bg-gradient-to-r from-[#0a8bc7] via-[#2443ab] to-[#40159e]" />
 
-                  {/* Blog Card Image Header */}
-                  <div className="relative h-52 w-full overflow-hidden bg-[#f1f5f9] border-b border-slate-100 flex items-center justify-center">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
-
-                  <div className="p-5 space-y-4">
-                    <div className="flex items-center gap-3 text-[11px] text-slate-400 font-semibold">
-                      <span className="px-2.5 py-1 rounded-full bg-[#2443ab]/10 text-[#2443ab] font-bold uppercase tracking-wider text-[9px] transition-all duration-300">
-                        {item.tag}
-                      </span>
-                      <span className="flex items-center gap-1 text-slate-650">
-                        <Clock className="w-3 h-3 text-[#2443ab]" />
-                        {item.readTime}
-                      </span>
+                    {/* Blog Card Image Header */}
+                    <div className="relative h-52 w-full overflow-hidden bg-[#f1f5f9] border-b border-slate-100 flex items-center justify-center">
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
                     </div>
 
-                    {/* Restored Title */}
-                    <h3 className="text-base sm:text-md font-black text-[#0d1b3e] leading-snug group-hover:text-[#2443ab] transition-colors duration-200 line-clamp-2">
-                      {item.title}
-                    </h3>
+                    <div className="p-5 space-y-4">
+                      <div className="flex items-center gap-3 text-[11px] text-slate-400 font-semibold">
+                        <span className="px-2.5 py-1 rounded-full bg-[#2443ab]/10 text-[#2443ab] font-bold uppercase tracking-wider text-[9px] transition-all duration-300">
+                          {item.tag}
+                        </span>
+                        <span className="flex items-center gap-1 text-slate-650">
+                          <Clock className="w-3 h-3 text-[#2443ab]" />
+                          {item.readTime}
+                        </span>
+                      </div>
 
-                    {/* Clamped Description */}
-                    <p className="text-slate-500 text-xs sm:text-sm leading-relaxed font-semibold line-clamp-2">
-                      {item.desc}
-                    </p>
+                      {/* Restored Title */}
+                      <h3 className="text-base sm:text-md font-black text-[#0d1b3e] leading-snug group-hover:text-[#2443ab] transition-colors duration-200 line-clamp-2">
+                        {item.title}
+                      </h3>
+
+                      {/* Clamped Description */}
+                      <p className="text-slate-500 text-xs sm:text-sm leading-relaxed font-semibold line-clamp-2">
+                        {item.desc}
+                      </p>
+                    </div>
                   </div>
-                </div>
 
-                <div className="px-5 pb-5 pt-3.5 border-t border-slate-100 flex items-center justify-between">
-                  <span className="text-[11px] font-semibold text-slate-450">Published {item.date}</span>
-                  <Link
-                    href={`/insights/blogs/${item.id}`}
-                    className="inline-flex items-center gap-1.5 text-xs font-extrabold text-[#2443ab] uppercase tracking-wider group/link hover:text-[#40159e] transition-colors duration-200"
-                  >
-                    <span>Read Article</span>
-                    <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover/link:translate-x-0.5" />
-                  </Link>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+                  <div className="px-5 pb-5 pt-3.5 border-t border-slate-100 flex items-center justify-between">
+                    <span className="text-[11px] font-semibold text-slate-450">Published {item.date}</span>
+                    <Link
+                      href={`/insights/blogs/${item.id}`}
+                      className="inline-flex items-center gap-1.5 text-xs font-extrabold text-[#2443ab] uppercase tracking-wider group/link hover:text-[#40159e] transition-colors duration-200"
+                    >
+                      <span>Read Article</span>
+                      <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover/link:translate-x-0.5" />
+                    </Link>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          )}
         </section>
       </div>
     </>
   );
 }
+

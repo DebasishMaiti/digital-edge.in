@@ -36,7 +36,8 @@ interface InsightPost {
   role: string;
   quote: string;
   desc: string;
-  content: string[];
+  content: string[] | string;
+  featuredImage?: string;
   sections?: Section[];
   pillars?: Pillar[];
   metrics?: Metric[];
@@ -58,6 +59,15 @@ export default function FoundersInsightClient({ id, post }: FoundersInsightClien
     maskImage: 'linear-gradient(to bottom, black 80%, transparent 100%)',
     WebkitMaskImage: 'linear-gradient(to bottom, black 80%, transparent 100%)',
   };
+
+  // Extract raw content string and detect if it contains rich HTML tags
+  const rawContent = Array.isArray(post.content)
+    ? post.content.join("\n")
+    : typeof post.content === "string"
+    ? post.content
+    : "";
+
+  const hasHtml = /<\/?[a-z][\s\S]*>/i.test(rawContent);
 
   // Pillar configs matching the layout screenshot
   const pillarConfigs = [
@@ -143,13 +153,13 @@ export default function FoundersInsightClient({ id, post }: FoundersInsightClien
             <div className="flex items-center gap-4 pt-2 pb-6 border-b border-slate-200">
               {post.author === "Shomak Mitra" ? (
                 <img 
-                  src="/shomak.png" 
+                  src="https://ik.imagekit.io/digitaledge360/digitaledge-in/shomak.png" 
                   alt="Shomak Mitra" 
                   className="w-14 h-14 sm:w-16 sm:h-16 rounded-full object-cover border-2 border-slate-200 shadow-sm"
                 />
               ) : (
                 <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#2443ab]/10 flex items-center justify-center font-black text-sm text-[#2443ab]">
-                  {post.author.split(" ").map(n => n[0]).join("")}
+                  {post.author ? post.author.split(" ").map(n => n[0]).join("") : "DE"}
                 </div>
               )}
               <div className="tracking-wide space-y-0.5">
@@ -159,20 +169,33 @@ export default function FoundersInsightClient({ id, post }: FoundersInsightClien
             </div>
           </motion.div>
 
-          {/* Quote Block */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="relative bg-white border border-slate-100 border-l-4 border-l-[#2443ab] rounded-r-2xl p-8 my-8 shadow-sm overflow-hidden"
-          >
-            <div className="absolute top-4 right-4 text-slate-100">
-              <Quote className="w-24 h-24 stroke-[1.5]" />
+          {/* Featured Image if present */}
+          {post.featuredImage && (
+            <div className="relative max-w-4xl mx-auto w-full aspect-[5/3] overflow-hidden rounded-2xl border border-slate-100 shadow-sm my-8">
+              <img
+                src={post.featuredImage}
+                alt={post.title}
+                className="w-full h-full object-cover"
+              />
             </div>
-            <p className="text-lg sm:text-xl md:text-2xl text-[#0d1b3e] font-semibold leading-relaxed italic relative z-10">
-              "{post.quote}"
-            </p>
-          </motion.div>
+          )}
+
+          {/* Quote Block */}
+          {post.quote && post.quote.trim().length > 0 && (
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="relative bg-white border border-slate-100 border-l-4 border-l-[#2443ab] rounded-r-2xl p-8 my-8 shadow-sm overflow-hidden"
+            >
+              <div className="absolute top-4 right-4 text-slate-100">
+                <Quote className="w-24 h-24 stroke-[1.5]" />
+              </div>
+              <p className="text-lg sm:text-xl md:text-2xl text-[#0d1b3e] font-semibold leading-relaxed italic relative z-10">
+                "{post.quote}"
+              </p>
+            </motion.div>
+          )}
 
           {/* Article Content */}
           <motion.article 
@@ -181,25 +204,43 @@ export default function FoundersInsightClient({ id, post }: FoundersInsightClien
             transition={{ duration: 0.6, delay: 0.2 }}
             className="pt-4 space-y-8 tracking-wide font-sans"
           >
-            {post.title.includes("Complete Ecommerce Solution") ? (
+            {post.title.includes("Complete Ecommerce Solution") && !hasHtml ? (
               <div className="flex flex-col md:flex-row gap-6 items-center border-b border-slate-100 pb-6 mb-8">
                 <p className="text-[#0d1b3e] font-extrabold text-xl sm:text-2xl md:text-3xl leading-relaxed tracking-tight flex-1">
                   {post.desc}
                 </p>
                 <div className="w-full md:w-[380px] shrink-0">
                   <img 
-                    src="/ecommerce_strategy.png" 
+                    src="https://ik.imagekit.io/digitaledge360/digitaledge-in/ecommerce_strategy.png" 
                     alt="Ecommerce Strategy and Architecture" 
                     className="w-full max-w-[380px] mx-auto rounded-2xl shadow-md border border-slate-200/60 object-cover" 
                   />
                 </div>
               </div>
-            ) : (
+            ) : post.desc && post.desc.trim().length > 0 ? (
               <p className="text-[#0d1b3e] font-extrabold mb-8 text-xl sm:text-2xl md:text-3xl leading-relaxed tracking-tight border-b border-slate-100 pb-6">
                 {post.desc}
               </p>
-            )}
-            {post.title.includes("₹40 Lakh Retainer") ? (
+            ) : null}
+
+            {hasHtml ? (
+              <div
+                className="founder-rich-text text-slate-700 font-normal leading-[1.8] text-base sm:text-lg space-y-6
+                  [&_h1]:text-3xl [&_h1]:sm:text-4xl [&_h1]:font-black [&_h1]:text-[#0d1b3e] [&_h1]:mt-10 [&_h1]:mb-5 [&_h1]:tracking-tight
+                  [&_h2]:text-2xl [&_h2]:sm:text-3xl [&_h2]:font-extrabold [&_h2]:text-[#0d1b3e] [&_h2]:mt-10 [&_h2]:mb-4 [&_h2]:pt-6 [&_h2]:border-t [&_h2]:border-slate-200/80 [&_h2]:tracking-tight
+                  [&_h3]:text-xl [&_h3]:sm:text-2xl [&_h3]:font-bold [&_h3]:text-[#0d1b3e] [&_h3]:mt-6 [&_h3]:mb-3
+                  [&_p]:mb-4 [&_p]:text-slate-600 [&_p]:leading-relaxed
+                  [&_strong]:font-black [&_strong]:text-[#0d1b3e]
+                  [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-6 [&_ul]:space-y-2 [&_ul]:text-slate-600
+                  [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-6 [&_ol]:space-y-2 [&_ol]:text-slate-600
+                  [&_li]:pl-1 [&_li]:text-slate-600
+                  [&_li_p]:mb-1 [&_li_p]:inline
+                  [&_a]:text-[#2443ab] [&_a]:font-semibold [&_a]:underline [&_a]:decoration-[#2443ab]/30 [&_a]:underline-offset-4 hover:[&_a]:decoration-[#2443ab]
+                  [&_blockquote]:border-l-4 [&_blockquote]:border-[#2443ab] [&_blockquote]:bg-white/80 [&_blockquote]:border-y [&_blockquote]:border-r [&_blockquote]:border-slate-100 [&_blockquote]:shadow-sm [&_blockquote]:py-4 [&_blockquote]:px-6 [&_blockquote]:rounded-r-2xl [&_blockquote]:italic [&_blockquote]:my-6 [&_blockquote]:text-slate-700
+                  [&_img]:rounded-2xl [&_img]:shadow-md [&_img]:my-6 [&_img]:w-full [&_img]:object-cover"
+                dangerouslySetInnerHTML={{ __html: rawContent }}
+              />
+            ) : post.title.includes("₹40 Lakh Retainer") ? (
               <div className="space-y-6 my-8 p-8 md:p-10 rounded-3xl bg-gradient-to-br from-[#2443ab]/10 via-[#2443ab]/5 to-[#40159e]/10 border-l-4 border-l-[#2443ab] border-y border-r border-slate-200/80 relative overflow-hidden shadow-md">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#0a8bc7]/10 to-[#40159e]/10 rounded-full blur-2xl -z-10" />
                 <p className="text-2xl sm:text-3xl md:text-4xl text-[#0d1b3e] font-black leading-relaxed">
@@ -211,14 +252,14 @@ export default function FoundersInsightClient({ id, post }: FoundersInsightClien
                   </p>
                   <div className="w-full md:w-[380px] shrink-0">
                     <img 
-                      src="/agency_specialization.png" 
+                      src="https://ik.imagekit.io/digitaledge360/digitaledge-in/agency_specialization.png" 
                       alt="Agency Specialization" 
                       className="w-full max-w-[380px] mx-auto rounded-2xl shadow-md border border-slate-200/60 bg-white object-cover" 
                     />
                   </div>
                 </div>
               </div>
-            ) : (
+            ) : Array.isArray(post.content) ? (
               post.content.map((para, idx) => (
                 <p 
                   key={idx} 
@@ -230,7 +271,11 @@ export default function FoundersInsightClient({ id, post }: FoundersInsightClien
                   {para}
                 </p>
               ))
-            )}
+            ) : post.content ? (
+              <p className="text-base sm:text-lg md:text-xl text-slate-500 font-semibold leading-relaxed">
+                {post.content}
+              </p>
+            ) : null}
 
             {/* Custom styled sections for details if present */}
             {post.sections && post.sections.map((sec, idx) => (
@@ -248,7 +293,7 @@ export default function FoundersInsightClient({ id, post }: FoundersInsightClien
                     </p>
                     <div className="w-full md:w-[380px] shrink-0">
                       <img 
-                        src="/ecommerce_focus.png" 
+                        src="https://ik.imagekit.io/digitaledge360/digitaledge-in/ecommerce_focus.png" 
                         alt="Ecommerce Specialization Focus" 
                         className="w-full max-w-[380px] mx-auto rounded-2xl shadow-md border border-slate-200/60 object-cover" 
                       />
@@ -456,7 +501,7 @@ export default function FoundersInsightClient({ id, post }: FoundersInsightClien
                   </div>
                   <div className="w-full lg:w-[380px] shrink-0">
                     <img 
-                      src="/cro_metrics.png" 
+                      src="https://ik.imagekit.io/digitaledge360/digitaledge-in/cro_metrics.png" 
                       alt="CRO Metrics Dashboard" 
                       className="w-full max-w-[380px] mx-auto rounded-2xl shadow-md border border-slate-200/60 object-cover" 
                     />

@@ -1,9 +1,12 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import mongoose from "mongoose";
+import { connectDB } from "@/lib/mongodb";
+import { BlogModel } from "@/models/Blog";
 import BlogDetailClient from "./BlogDetailClient";
 
-const blogPosts = {
+const blogPosts: Record<string, any> = {
   "how-to-know-whether-service-should-be-seo-aeo-geo": {
     title: "How Do I Know Whether a Service Should Be SEO, AEO, or GEO?",
     tag: "Search Strategy",
@@ -200,8 +203,6 @@ const blogPosts = {
   }
 };
 
-type BlogId = keyof typeof blogPosts;
-
 export async function generateStaticParams() {
   return [
     { id: "how-to-know-whether-service-should-be-seo-aeo-geo" },
@@ -214,17 +215,76 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const { id } = await params;
-  const post = blogPosts[id as BlogId];
-  if (!post) return {};
+
+  try {
+    await connectDB();
+
+    const normalizedSlug = decodeURIComponent(id).toLowerCase().trim();
+    let blog = await BlogModel.findOne({ slug: normalizedSlug });
+    if (!blog && mongoose.Types.ObjectId.isValid(normalizedSlug)) {
+      blog = await BlogModel.findById(normalizedSlug);
+    }
+
+    if (blog) {
+      const title = blog.metaTitle ? blog.metaTitle : blog.title ? `${blog.title} | Digital Edge 360°` : "Blog Article | Digital Edge 360°";
+      const description = blog.metaDescription || blog.title || "Explore insights and articles from Digital Edge 360°.";
+      return { title, description };
+    }
+  } catch (error) {
+    console.error("Error generating metadata for blog:", error);
+  }
+
+  // Fallback to static post
+  const staticPost = blogPosts[id];
+  if (staticPost) {
+    return {
+      title: `${staticPost.title} | Digital Edge 360°`,
+      description: staticPost.desc,
+    };
+  }
+
   return {
-    title: `${post.title} | Digital Edge 360°`,
-    description: post.desc,
+    title: "Blog Article | Digital Edge 360°",
+    description: "Explore insights and articles from Digital Edge 360°.",
   };
 }
 
 export default async function BlogDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const post = blogPosts[id as BlogId];
+
+  let post: any = null;
+
+  try {
+    await connectDB();
+    const normalizedSlug = decodeURIComponent(id).toLowerCase().trim();
+    let blog = await BlogModel.findOne({ slug: normalizedSlug });
+    if (!blog && mongoose.Types.ObjectId.isValid(normalizedSlug)) {
+      blog = await BlogModel.findById(normalizedSlug);
+    }
+
+    if (blog) {
+      post = {
+        title: blog.title,
+        slug: blog.slug,
+        tag: "Blog",
+        readTime: "5 min read",
+        date: blog.publishDate || "Digital Edge",
+        publishDate: blog.publishDate,
+        author: blog.author || "Digital Edge Team",
+        desc: blog.metaDescription || "",
+        metaTitle: blog.metaTitle || "",
+        metaDescription: blog.metaDescription || "",
+        featuredImage: blog.featuredImage || "",
+        content: blog.content || "",
+      };
+    }
+  } catch (error) {
+    console.error("Error fetching blog post on server:", error);
+  }
+
+  if (!post && blogPosts[id]) {
+    post = blogPosts[id];
+  }
 
   if (!post) {
     return (

@@ -16,98 +16,98 @@ const perfMarketingShowcases = [
   {
     name: "Peach Tassels",
     link: "/company-details/peach-tassels",
-    image: "/brand-card-images/peach-tassels.jpg",
-    logo: "/logos/peach-tassels-logo.jpg"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/peach-tassels.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/peach-tassels-logo.jpg"
   },
   {
     name: "Sree Vedics",
     link: "/company-details/sree-vedics-marketing",
-    image: "/brand-card-images/sreevadic.jpg",
-    logo: "/logos/Sree_Vedics_Logo.jpg"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/sreevadic.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/Sree_Vedics_Logo.jpg"
   },
   {
     name: "Chris Louis",
     link: "/company-details/chris-louis",
-    image: "/brand-card-images/Chris-Louis.jpg",
-    logo: "/logos/20.jpg"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/Chris-Louis.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/20.jpg"
   },
   {
     name: "Ducati",
     link: "/company-details/ducati",
-    image: "/brand-card-images/Ducati-home.jpg",
-    logo: "/logos/28.jpg"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/Ducati-home.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/28.jpg"
   },
   {
     name: "Sacred Suta",
     link: "/company-details/sacred-suta-marketing",
-    image: "/brand-card-images/sacred-suta.jpg",
-    logo: "/logos/sacred-suta.jpg"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/sacred-suta.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/sacred-suta.jpg"
   },
   {
     name: "Sakshi Handloom",
     link: "/company-details/sakshi-handloom",
-    image: "/brand-card-images/sakshi-handloom.jpg",
-    logo: "/logos/sakshi-handloom-logo.jpg"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/sakshi-handloom.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/sakshi-handloom-logo.jpg"
   },
   {
     name: "Gangotri Group",
     link: "/company-details/gangotri-group",
-    image: "/brand-card-images/gangotri-group.jpg",
-    logo: "/logos/gangotri-group-logo.jpg"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/gangotri-group.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/gangotri-group-logo.jpg"
   },
   {
     name: "Twenty One Jewels",
     link: "/company-details/twenty-one-jewels",
-    image: "/brand-card-images/twenty-one.jpg",
-    logo: "/logos/twenty-one-logo.jpg"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/twenty-one.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/twenty-one-logo.jpg"
   },
   {
     name: "Jiva",
     link: "/company-details/jiva",
-    image: "/brand-card-images/Jiva.png",
-    logo: "/logos/jiva.jpg"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/Jiva.png",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/jiva.jpg"
   },
   {
     name: "JetChoice",
     link: "/company-details/jetchoice",
-    image: "/brand-card-images/jet-choice.jpg",
-    logo: "/logos/18.jpg"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/jet-choice.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/18.jpg"
   },
   {
     name: "EdefyHome",
     link: "/company-details/edefyhome",
-    image: "/brand-card-images/Edify-home.png",
-    logo: "/logos/16.jpg"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/Edify-home.png",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/16.jpg"
   },
   {
     name: "Dash Capital",
     link: "/company-details/dash-capital",
-    image: "/brand-card-images/Dash-Capital.jpg",
-    logo: "/logos/17.jpg"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/Dash-Capital.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/17.jpg"
   },
   {
     name: "Chappan Bhog",
     link: "/company-details/chappan-bhog",
-    image: "/brand-card-images/chappan-bhog-card-image.jpg",
-    logo: "/logos/9.jpg"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/chappan-bhog-card-image.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/9.jpg"
   },
   {
     name: "IBT Behala",
     link: "/company-details/ibt-behala",
-    image: "/brand-card-images/IBT-behala.jpg",
-    logo: "/logos/13.jpg"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/IBT-behala.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/13.jpg"
   },
   {
     name: "Royal Enfield",
     link: "/company-details/royal-enfield",
-    image: "/brand-card-images/ROYAL-ENFIELD.jpg",
-    logo: "/logos/royal enfiled.jpg"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/ROYAL-ENFIELD.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/royal_enfiled.jpg"
   },
   {
     name: "Kayrah",
     link: "/company-details/kayrah",
-    image: "/brand-card-images/KAYRAH.jpg",
-    logo: "/logos/kayrah.jpg"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/KAYRAH.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/kayrah.jpg"
   },
 ];
 
@@ -313,14 +313,14 @@ export default function PerformanceMarketing() {
           <div className="w-full">
             <Marquee speed={95} gradient={true} gradientColor="white" gradientWidth={80} pauseOnHover={false} play={true}>
               {[
-                { src: "/marketing-slider/Chris-Louis.png", alt: "Chris Louis" },
-                { src: "/marketing-slider/Ducati.png", alt: "Ducati" },
-                { src: "/marketing-slider/Edify-Home-Decore.png", alt: "Edify Home Decore" },
-                { src: "/marketing-slider/Ellixt-8.png", alt: "Ellixt 8" },
-                { src: "/marketing-slider/Hotel-JIva.png", alt: "Hotel Jiva" },
-                { src: "/marketing-slider/Jet-Choice.png", alt: "Jet Choice" },
-                { src: "/marketing-slider/TLS.png", alt: "TLS" },
-                { src: "/marketing-slider/dashCapital.png", alt: "Dash Capital" },
+                { src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/marketing-slider/Chris-Louis.png", alt: "Chris Louis" },
+                { src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/marketing-slider/Ducati.png", alt: "Ducati" },
+                { src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/marketing-slider/Edify-Home-Decore.png", alt: "Edify Home Decore" },
+                { src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/marketing-slider/Ellixt-8.png", alt: "Ellixt 8" },
+                { src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/marketing-slider/Hotel-JIva.png", alt: "Hotel Jiva" },
+                { src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/marketing-slider/Jet-Choice.png", alt: "Jet Choice" },
+                { src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/marketing-slider/TLS.png", alt: "TLS" },
+                { src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/marketing-slider/dashCapital.png", alt: "Dash Capital" },
               ].map((slide, index) => (
                 <div key={index} className="mx-4 sm:mx-6 transition-all duration-300 hover:-translate-y-1">
                   <div className="relative w-[280px] h-[160px] sm:w-[480px] sm:h-[270px] md:w-[700px] md:h-[390px] rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200/60 shadow-[0_8px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_15px_30px_rgba(0,0,0,0.06)] bg-white">
@@ -377,7 +377,7 @@ export default function PerformanceMarketing() {
                 {/* Main Image Frame - High resolution enlarged display */}
                 <div className="relative rounded-[32px] overflow-hidden border border-slate-200/90 shadow-[0_25px_60px_rgba(0,0,0,0.15)] bg-slate-900">
                   <Image
-                    src="/ads.jpg"
+                    src="https://ik.imagekit.io/digitaledge360/digitaledge-in/ads.jpg"
                     alt="Performance Marketing Ad Campaigns"
                     width={1200}
                     height={900}

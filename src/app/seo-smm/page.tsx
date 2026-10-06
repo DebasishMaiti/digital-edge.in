@@ -178,14 +178,14 @@ export default function SeoSmm() {
           <div className="w-full">
             <Marquee speed={95} gradient={true} gradientColor="white" gradientWidth={80} pauseOnHover={true} play={true}>
               {[
-                { src: "/marketing-slider/Chris-Louis.png", alt: "Chris Louis" },
-                { src: "/marketing-slider/Ducati.png", alt: "Ducati" },
-                { src: "/marketing-slider/Edify-Home-Decore.png", alt: "Edify Home Decore" },
-                { src: "/marketing-slider/Ellixt-8.png", alt: "Ellixt 8" },
-                { src: "/marketing-slider/Hotel-JIva.png", alt: "Hotel Jiva" },
-                { src: "/marketing-slider/Jet-Choice.png", alt: "Jet Choice" },
-                { src: "/marketing-slider/TLS.png", alt: "TLS" },
-                { src: "/marketing-slider/dashCapital.png", alt: "Dash Capital" },
+                { src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/marketing-slider/Chris-Louis.png", alt: "Chris Louis" },
+                { src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/marketing-slider/Ducati.png", alt: "Ducati" },
+                { src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/marketing-slider/Edify-Home-Decore.png", alt: "Edify Home Decore" },
+                { src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/marketing-slider/Ellixt-8.png", alt: "Ellixt 8" },
+                { src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/marketing-slider/Hotel-JIva.png", alt: "Hotel Jiva" },
+                { src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/marketing-slider/Jet-Choice.png", alt: "Jet Choice" },
+                { src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/marketing-slider/TLS.png", alt: "TLS" },
+                { src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/marketing-slider/dashCapital.png", alt: "Dash Capital" },
               ].map((slide, index) => (
                 <div key={index} className="mx-4 sm:mx-6 transition-all duration-300 hover:-translate-y-1">
                   <div className="relative w-[280px] h-[160px] sm:w-[480px] sm:h-[270px] md:w-[700px] md:h-[390px] rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200/60 shadow-[0_8px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_15px_30px_rgba(0,0,0,0.06)] bg-white">
@@ -249,19 +249,19 @@ export default function SeoSmm() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
               {[
                 {
-                  src: "/seo-showcase/image-1.png",
+                  src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/seo-showcase/image-1.png",
                   title: "Organic Traffic Surge",
                   tag: "Compounding Growth",
                   desc: "Exponential month-over-month increase in high-intent organic visitors."
                 },
                 {
-                  src: "/seo-showcase/image-2.png",
+                  src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/seo-showcase/image-2.png",
                   title: "Keyword Position Dominance",
                   tag: "Top Search Rankings",
                   desc: "Securing top positions across competitive commercial and informational queries."
                 },
                 {
-                  src: "/seo-showcase/image-3.png",
+                  src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/seo-showcase/image-3.png",
                   title: "Core Technical Performance",
                   tag: "Technical SEO & Health",
                   desc: "Flawless site health scores, fast Core Web Vitals, and maximum index coverage."

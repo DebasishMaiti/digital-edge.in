@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import FoundersInsightClient from "./FoundersInsightClient";
 
-const insightsData = {
+const insightsData: Record<string, any> = {
   "what-include-complete-ecommerce-solution": {
     title: "What Include in Complete Ecommerce Solution",
     tag: "Ecommerce Strategy",
@@ -120,8 +120,6 @@ const insightsData = {
   }
 };
 
-type InsightId = keyof typeof insightsData;
-
 export async function generateStaticParams() {
   return [
     { id: "what-include-complete-ecommerce-solution" },
@@ -129,23 +127,68 @@ export async function generateStaticParams() {
   ];
 }
 
-interface PageProps {
-  params: Promise<{ id: string }>;
+async function getFounderInsightFromDb(id: string) {
+  try {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/api/founders-insights/${encodeURIComponent(id)}`, { cache: 'no-store' });
+    if (res.ok) {
+      const data = await res.json();
+      if (data.success && data.insight) {
+        return data.insight;
+      }
+    }
+  } catch (err) {
+    // Fail silently and return null
+  }
+  return null;
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const { id } = await params;
-  const post = insightsData[id as InsightId];
-  if (!post) return {};
+  
+  // Try DB first
+  const dbInsight = await getFounderInsightFromDb(id);
+  if (dbInsight) {
+    const title = dbInsight.metaTitle ? dbInsight.metaTitle : (dbInsight.title ? `${dbInsight.title} | Digital Edge 360°` : "Founder Insight | Digital Edge 360°");
+    const description = dbInsight.metaDescription || dbInsight.desc || dbInsight.title || "Strategic founder insights from Digital Edge 360°.";
+    return { title, description };
+  }
+
+  // Fallback static
+  const staticPost = insightsData[id];
+  if (staticPost) {
+    return {
+      title: `${staticPost.title} | Digital Edge 360°`,
+      description: staticPost.desc,
+    };
+  }
+
   return {
-    title: `${post.title} | Digital Edge 360°`,
-    description: post.desc,
+    title: "Founder Insight | Digital Edge 360°",
+    description: "Strategic founder insights from Digital Edge 360°.",
   };
 }
 
 export default async function FoundersInsightPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const post = insightsData[id as InsightId];
+
+  let post: any = null;
+
+  const dbInsight = await getFounderInsightFromDb(id);
+  if (dbInsight) {
+    post = {
+      title: dbInsight.title,
+      tag: dbInsight.topic || "Founder Insight",
+      date: dbInsight.publishDate || "Digital Edge",
+      author: dbInsight.founderName || "Digital Edge Founder",
+      role: dbInsight.founderRole || "Co-Founder",
+      quote: dbInsight.quote || "",
+      desc: dbInsight.desc || "",
+      content: dbInsight.content || "",
+      featuredImage: dbInsight.featuredImage || "",
+    };
+  } else if (insightsData[id]) {
+    post = insightsData[id];
+  }
 
   if (!post) {
     return (
@@ -163,3 +206,4 @@ export default async function FoundersInsightPage({ params }: { params: Promise<
 
   return <FoundersInsightClient id={id} post={post} />;
 }
+

@@ -1,78 +1,78 @@
 export const brandLogos = [
-  { src: "/brand-logos/shopify-plus.png", alt: "Shopify Plus" },
-  { src: "/brand-logos/google-partner.png", alt: "Google Premier" },
-  { src: "/brand-logos/meta-logo.png", alt: "Meta Business Partner" },
-  // { src: "/brand-logos/msme-logo.png", alt: "MSME Certified" },
-  { src: "/brand-logos/aws-genai.png", alt: "AWS Partner" },
-  { src: "/brand-logos/startup-india.png", alt: "Startup India" },
-  { src: "/brand-logos/digital-ocean.png", alt: "DigitalOcean" },
+  { src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-logos/shopify-plus.png", alt: "Shopify Plus" },
+  { src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-logos/google-partner.png", alt: "Google Premier" },
+  { src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-logos/meta-logo.png", alt: "Meta Business Partner" },
+  // { src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-logos/msme-logo.png", alt: "MSME Certified" },
+  { src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-logos/aws-genai.png", alt: "AWS Partner" },
+  { src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-logos/startup-india.png", alt: "Startup India" },
+  { src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-logos/digital-ocean.png", alt: "DigitalOcean" },
 ];
 
 export const brandLogosList = [
-  { src: "/brand-logos/shopify-plus.png", name: "Shopify Plus" },
-  { src: "/brand-logos/google-partner.png", name: "Google Partner" },
-  { src: "/brand-logos/meta-logo.png", name: "Meta" },
-  { src: "/brand-logos/aws-genai.png", name: "AWS GenAI" },
-  { src: "/brand-logos/startup-india.png", name: "Startup India" },
-  { src: "/brand-logos/digital-ocean.png", name: "DigitalOcean" }
+  { src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-logos/shopify-plus.png", name: "Shopify Plus" },
+  { src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-logos/google-partner.png", name: "Google Partner" },
+  { src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-logos/meta-logo.png", name: "Meta" },
+  { src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-logos/aws-genai.png", name: "AWS GenAI" },
+  { src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-logos/startup-india.png", name: "Startup India" },
+  { src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-logos/digital-ocean.png", name: "DigitalOcean" }
 ];
 
 export const portfolioItems = [
-  { name: "Genesis", image: "/portfolio/genesis.jpg", url: "https://genesiseduzone.com/" },
-  { name: "Melfort", image: "/portfolio/melfort.png", url: "https://melfort.com" },
-  { name: "Chris Louis", image: "/portfolio/chrislouis.png", url: "https://chrislouis.com.au" },
-  { name: "United By Blue", image: "/portfolio/unitedbyblue.png", url: "https://www.unitedbyblue.com/" },
-  { name: "Truboy BBQ", image: "/portfolio/truboybbq.png", url: "https://truboybbq.com" },
-  { name: "Aladeen", image: "/portfolio/aladeenbangkok.png", url: "https://aladeenbangkok.com/" },
-  { name: "Shop Earth Bags", image: "/portfolio/shopearthbags.png", url: "https://www.shopearthbags.com/" },
-  { name: "Mezoma", image: "/portfolio/mezoma.png", url: "https://mezoma.com" },
-  { name: "Sacred Suta", image: "/portfolio/sacredsuta.png", url: "https://sacredsuta.com" },
-  { name: "Peach Tassels", image: "/portfolio/peachtassels.png", url: "https://peachtassels.com" },
-  { name: "No-End Fashion", image: "/portfolio/no-end.png", url: "https://noend.com" },
-  { name: "Velvet Box", image: "/portfolio/velvet-box.png", url: "https://velvetbox.com" }
+  { name: "Genesis", image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/portfolio/genesis.jpg", url: "https://genesiseduzone.com/" },
+  { name: "Melfort", image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/portfolio/melfort.png", url: "https://melfort.com" },
+  { name: "Chris Louis", image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/portfolio/chrislouis.png", url: "https://chrislouis.com.au" },
+  { name: "United By Blue", image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/portfolio/unitedbyblue.png", url: "https://www.unitedbyblue.com/" },
+  { name: "Truboy BBQ", image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/portfolio/truboybbq.png", url: "https://truboybbq.com" },
+  { name: "Aladeen", image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/portfolio/aladeenbangkok.png", url: "https://aladeenbangkok.com/" },
+  { name: "Shop Earth Bags", image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/portfolio/shopearthbags.png", url: "https://www.shopearthbags.com/" },
+  { name: "Mezoma", image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/portfolio/mezoma.png", url: "https://mezoma.com" },
+  { name: "Sacred Suta", image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/portfolio/sacredsuta.png", url: "https://sacredsuta.com" },
+  { name: "Peach Tassels", image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/portfolio/peachtassels.png", url: "https://peachtassels.com" },
+  { name: "No-End Fashion", image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/portfolio/no-end.png", url: "https://noend.com" },
+  { name: "Velvet Box", image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/portfolio/velvet-box.png", url: "https://velvetbox.com" }
 ];
 
 export const services = [
   {
     title: "Web Development",
     href: "/web-development",
-    bgImage: "/home-bentogrid/web-development.png",
+    bgImage: "https://ik.imagekit.io/digitaledge360/digitaledge-in/home-bentogrid/web-development.png",
 
   },
   {
     title: "WooCommerce",
     href: "/woocommerce",
-    bgImage: "/home-bentogrid/woocomerce.png",
+    bgImage: "https://ik.imagekit.io/digitaledge360/digitaledge-in/home-bentogrid/woocomerce.png",
 
   },
   {
     title: "App Development",
     href: "/app-development",
-    bgImage: "/home-bentogrid/app-development.png",
+    bgImage: "https://ik.imagekit.io/digitaledge360/digitaledge-in/home-bentogrid/app-development.png",
 
   },
   {
     title: "Performance Ads",
     href: "/performance-marketing",
-    bgImage: "/home-bentogrid/performance-marketing.png",
+    bgImage: "https://ik.imagekit.io/digitaledge360/digitaledge-in/home-bentogrid/performance-marketing.png",
 
   },
   {
     title: "Search Engine Optimization",
     href: "/seo-smm",
-    bgImage: "/home-bentogrid/seo.png",
+    bgImage: "https://ik.imagekit.io/digitaledge360/digitaledge-in/home-bentogrid/seo.png",
 
   },
   {
     title: "Marketplace Growth",
     href: "/marketplace-optimization",
-    bgImage: "/home-bentogrid/marketplace-growth.png",
+    bgImage: "https://ik.imagekit.io/digitaledge360/digitaledge-in/home-bentogrid/marketplace-growth.png",
 
   },
   {
     title: "Photography & Videography",
     href: "/photography-videography",
-    bgImage: "/home-bentogrid/video-marketing.png",
+    bgImage: "https://ik.imagekit.io/digitaledge360/digitaledge-in/home-bentogrid/video-marketing.png",
 
   }
 ];
@@ -145,7 +145,7 @@ export const testimonials = [
     role: "TruBoy BBQ",
     avatarText: "JK",
     avatarColor: "bg-pink-100 text-pink-600",
-    image: "/testimonial-img/Trueboy-BBQ-owner.png"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/testimonial-img/Trueboy-BBQ-owner.png"
   },
   {
     stars: 5,
@@ -156,7 +156,7 @@ export const testimonials = [
     role: "Nayantara",
     avatarText: "PA",
     avatarColor: "bg-purple-100 text-purple-600",
-    image: "/testimonial-img/Nayantara_owner.png"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/testimonial-img/Nayantara_owner.png"
   },
   {
     stars: 5,
@@ -167,7 +167,7 @@ export const testimonials = [
     role: "Ducati",
     avatarText: "GB",
     avatarColor: "bg-blue-100 text-blue-600",
-    image: "/testimonial-img/Ducati_owner.png"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/testimonial-img/Ducati_owner.png"
   },
   {
     stars: 5,
@@ -178,7 +178,7 @@ export const testimonials = [
     role: "Jet Choice",
     avatarText: "TB",
     avatarColor: "bg-indigo-100 text-indigo-600",
-    image: "/testimonial-img/Jet-Choice-owner.png"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/testimonial-img/Jet-Choice-owner.png"
   }
 ];
 
@@ -307,7 +307,7 @@ export const caseStudiesData: CaseStudy[] = [
     title: "Turning a Fine Jewellery Label Into a Digital-First Luxury Brand",
     category: "Luxury Branding & Performance Marketing",
     description: "How we broke through the 'timeless elegance' sameness problem for Priyanka Khaitan Fine Jewellery with a custom targeted content strategy and precision audience mapping.",
-    heroImage: "/caseStudy/bridal-content-storytelling.png",
+    heroImage: "https://ik.imagekit.io/digitaledge360/digitaledge-in/caseStudy/bridal-content-storytelling.png",
     canonicalUrl: "https://digitaledge360.in/insights/case-studies/priyanka-khaitan-fine-jewellery/",
     problemTitle: "The Sameness Problem",
     problemDescription: [
@@ -327,7 +327,7 @@ export const caseStudiesData: CaseStudy[] = [
       {
         title: "Getting specific about who we were talking to",
         phase: "Phase 01 / Strategy",
-        image: "/caseStudy/necklace-audience-segmentation.png",
+        image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/caseStudy/necklace-audience-segmentation.png",
         imageLabel: "Audience Segmentation",
         imageSublabel: "Targeting distinct luxury segments",
         text: [
@@ -345,7 +345,7 @@ export const caseStudiesData: CaseStudy[] = [
       {
         title: "Giving the pieces a story worth remembering",
         phase: "Phase 02 / Creative",
-        image: "/caseStudy/bridal-content-storytelling.png",
+        image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/caseStudy/bridal-content-storytelling.png",
         imageLabel: "Content Strategy",
         imageSublabel: "Building connections via heirlooms",
         text: [
@@ -362,7 +362,7 @@ export const caseStudiesData: CaseStudy[] = [
       {
         title: "Choosing influencers for fit, not follower count",
         phase: "Phase 03 / Influence",
-        image: "/caseStudy/bracelet-influencer-strategy.png",
+        image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/caseStudy/bracelet-influencer-strategy.png",
         imageLabel: "Influence Strategy",
         imageSublabel: "Aesthetic-led creator alliances",
         text: [
@@ -374,7 +374,7 @@ export const caseStudiesData: CaseStudy[] = [
       {
         title: "Building ads around the actual buying journey",
         phase: "Phase 04 / Performance",
-        image: "/caseStudy/bracelet-targeted-advertising.png",
+        image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/caseStudy/bracelet-targeted-advertising.png",
         imageLabel: "Funnel Targeting",
         imageSublabel: "High-intent advertising acquisition",
         text: [

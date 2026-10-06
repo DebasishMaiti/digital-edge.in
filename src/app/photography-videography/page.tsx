@@ -15,51 +15,51 @@ const photographyShowcases = [
   {
     name: "Royal Enfield",
     link: "/company-details/royal-enfield",
-    image: "/brand-card-images/ROYAL-ENFIELD.jpg",
-    logo: "/logos/royal enfiled.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/ROYAL-ENFIELD.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/royal_enfiled.jpg",
   },
   {
     name: "Creative Ecotech",
     link: "/company-details/creative-ecotech",
-    image: "/brand-card-images/creative-echotech.jpg",
-    logo: "/logos/3.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/creative-echotech.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/3.jpg",
   },
   {
     name: "Goel Forgings",
     link: "/company-details/goel-forgings",
-    image: "/brand-card-images/goel-forgings.jpg",
-    logo: "/logos/19.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/goel-forgings.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/19.jpg",
   },
   {
     name: "Geological Survey of India",
     link: "/company-details/gsi",
-    image: "/brand-card-images/GSI.jpg",
-    logo: "/logos/gis.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/GSI.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/gis.jpg",
  
   },
   {
     name: "Indian Maritime University",
     link: "/company-details/imu",
-    image: "/brand-card-images/IMU.jpg",
-    logo: "/logos/37.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/IMU.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/37.jpg",
   },
   {
     name: "The Lighter Side",
     link: "/company-details/the-lighter-side",
-    image: "/brand-card-images/THE-LIGHTER-SIDE.jpg",
-    logo: "/logos/4.jpg"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/THE-LIGHTER-SIDE.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/4.jpg"
   },
   {
     name: "Brand Leather",
     link: "/company-details/brand-leather",
-    image: "/brand-card-images/brand-leather.jpg",
-    logo: "/logos/26.jpg"
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/brand-leather.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/26.jpg"
   },
   {
     name: "Kayra",
     link: "/company-details/kayra",
-    image: "/brand-card-images/KAYRAH.jpg",
-    logo: "/logos/kayrah.jpg",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/KAYRAH.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/kayrah.jpg",
  
   }
 ];
@@ -221,7 +221,7 @@ export default function PhotographyVideography() {
                 loop
                 playsInline
                 preload="auto"
-                src="/creative-studio-video/CS.mp4"
+                src="https://ik.imagekit.io/digitaledge360/digitaledge-in/creative-studio-video/CS.mp4"
               >
               </video>
             </div>
@@ -1028,7 +1028,7 @@ export default function PhotographyVideography() {
         <section className="relative z-10 w-full overflow-hidden border-t border-b border-slate-100 bg-white">
           <div className="w-full">
             <img 
-              src="/ON-WHITE.jpg" 
+              src="https://ik.imagekit.io/digitaledge360/digitaledge-in/ON-WHITE.jpg" 
               alt="Photography & Videography Showcase" 
               className="w-full h-auto object-cover block"
             />
