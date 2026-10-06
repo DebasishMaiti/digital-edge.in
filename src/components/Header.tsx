@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { ChevronRight, Code2, Smartphone, Search, TrendingUp, MessageCircle, Sparkles, MapPin } from "lucide-react";
 
 const solutionLinks = [
   {
@@ -130,6 +131,11 @@ export default function Header() {
   const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
   const [isMobileSolutionsOpen, setIsMobileSolutionsOpen] = useState(false);
 
+  const [isLocationOpen, setIsLocationOpen] = useState(false);
+  const [isMobileLocationOpen, setIsMobileLocationOpen] = useState(false);
+  const [isKolkataHovered, setIsKolkataHovered] = useState(false);
+  const kolkataHoverTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+
   const [isInsightsOpen, setIsInsightsOpen] = useState(false);
   const [isMobileInsightsOpen, setIsMobileInsightsOpen] = useState(false);
 
@@ -137,14 +143,32 @@ export default function Header() {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const hoverTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-
+  const locationDropdownRef = useRef<HTMLDivElement>(null);
+  const locationHoverTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const insightsDropdownRef = useRef<HTMLDivElement>(null);
   const insightsHoverTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
+  const locationLinks = [
+    {
+      name: "Kolkata",
+    },
+  ];
+
+  const kolkataServiceLinks = [
+    {
+      name: "Digital Marketing Services in Kolkata",
+      desc: "SEO, performance ads, social media and web",
+      href: "/digital-marketing-services-kolkata/",
+      bg: "bg-blue-50 text-blue-600",
+      icon: <Sparkles className="h-4 w-4" />,
+    },
+  ];
+
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "Solutions", href: "/solutions", hasDropdown: true },
+    { name: "Location", href: "/digital-marketing-services-kolkata", hasLocationDropdown: true },
     { name: "Insights", href: "/insights", hasInsightsDropdown: true },
     { name: "About", href: "/about" },
     { name: "FAQ's", href: "/faq" },
@@ -181,6 +205,8 @@ export default function Header() {
             setIsVisible(false);
             setIsSolutionsOpen(false);
             setIsInsightsOpen(false);
+            setIsLocationOpen(false);
+            setIsKolkataHovered(false);
           } else {
             // Scrolling up -> show header
             setIsVisible(true);
@@ -204,6 +230,11 @@ export default function Header() {
       if (insightsDropdownRef.current && !insightsDropdownRef.current.contains(e.target as Node)) {
         setIsInsightsOpen(false);
       }
+
+      if (locationDropdownRef.current && !locationDropdownRef.current.contains(e.target as Node)) {
+        setIsLocationOpen(false);
+        setIsKolkataHovered(false);
+      }
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
@@ -212,6 +243,9 @@ export default function Header() {
   const handleSolutionsMouseEnter = () => {
     if (!isVisible) return;
     if (hoverTimeout.current) clearTimeout(hoverTimeout.current);
+    setIsLocationOpen(false);
+    setIsKolkataHovered(false);
+    setIsInsightsOpen(false);
     setIsSolutionsOpen(true);
   };
 
@@ -219,9 +253,39 @@ export default function Header() {
     hoverTimeout.current = setTimeout(() => setIsSolutionsOpen(false), 150);
   };
 
+  const handleLocationMouseEnter = () => {
+    if (!isVisible) return;
+    if (locationHoverTimeout.current) clearTimeout(locationHoverTimeout.current);
+    setIsSolutionsOpen(false);
+    setIsInsightsOpen(false);
+    setIsLocationOpen(true);
+  };
+
+  const handleLocationMouseLeave = () => {
+    locationHoverTimeout.current = setTimeout(() => {
+      setIsLocationOpen(false);
+      setIsKolkataHovered(false);
+    }, 180);
+  };
+
+  const handleKolkataMouseEnter = () => {
+    if (kolkataHoverTimeout.current) clearTimeout(kolkataHoverTimeout.current);
+    if (locationHoverTimeout.current) clearTimeout(locationHoverTimeout.current);
+    setIsKolkataHovered(true);
+  };
+
+  const handleKolkataMouseLeave = () => {
+    kolkataHoverTimeout.current = setTimeout(() => {
+      setIsKolkataHovered(false);
+    }, 180);
+  };
+
   const handleInsightsMouseEnter = () => {
     if (!isVisible) return;
     if (insightsHoverTimeout.current) clearTimeout(insightsHoverTimeout.current);
+    setIsSolutionsOpen(false);
+    setIsLocationOpen(false);
+    setIsKolkataHovered(false);
     setIsInsightsOpen(true);
   };
 
@@ -256,11 +320,145 @@ export default function Header() {
         </div>
 
         {/* Center Capsule Navigation Links (Desktop) */}
-        <nav className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center gap-2 rounded-full bg-slate-100/80 p-1.5 border border-slate-200/60 shadow-sm backdrop-blur-md">
+        <nav className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center gap-1 xl:gap-2 rounded-full bg-slate-100/80 p-1.5 border border-slate-200/60 shadow-sm backdrop-blur-md">
           {navLinks.map((link) => {
-            const isActive = normalizePath(pathname) === normalizePath(link.href) ||
+            const isActive =
+              (link.hasLocationDropdown
+                ? isLocationOpen || pathname.startsWith("/digital-marketing-services-kolkata")
+                : (!link.hasLocationDropdown && normalizePath(pathname) === normalizePath(link.href))) ||
               (link.hasDropdown && pathname.startsWith("/solutions")) ||
               (link.hasInsightsDropdown && pathname.startsWith("/insights"));
+
+            if (link.hasLocationDropdown) {
+              return (
+                <div
+                  key={link.name}
+                  ref={locationDropdownRef}
+                  className="relative"
+                  onMouseEnter={handleLocationMouseEnter}
+                  onMouseLeave={handleLocationMouseLeave}
+                >
+                  <button
+                    onClick={() => setIsLocationOpen((v) => !v)}
+                    className={`flex items-center gap-1 xl:gap-1.5 rounded-full border px-3 py-2 xl:px-[18px] xl:py-2.5 text-xs xl:text-sm font-bold transition-all duration-200 ${
+                      isActive || isLocationOpen
+                        ? "border-slate-200 bg-white text-[#2443ab] shadow-sm"
+                        : "border-transparent text-slate-650 hover:bg-white/60 hover:text-[#2443ab]"
+                    }`}
+                    aria-expanded={isLocationOpen}
+                    aria-haspopup="true"
+                    id="location-menu-btn"
+                  >
+                    <span>{link.name}</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      className={`h-3 w-3 opacity-70 transition-transform duration-200 ${
+                        isLocationOpen ? "rotate-180" : ""
+                      }`}
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </button>
+
+                  {/* Desktop Dropdown Panel for Location */}
+                  <div
+                    className={`absolute top-[calc(100%+14px)] left-1/2 -translate-x-1/2 transition-all duration-200 origin-top z-50 ${
+                      isLocationOpen
+                        ? "opacity-100 scale-100 pointer-events-auto"
+                        : "opacity-0 scale-95 pointer-events-none"
+                    }`}
+                    onMouseEnter={handleLocationMouseEnter}
+                    onMouseLeave={handleLocationMouseLeave}
+                    role="menu"
+                    aria-labelledby="location-menu-btn"
+                  >
+                    {/* Arrow tip (white with subtle border matching reference design) */}
+                    <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3.5 h-3.5 rotate-45 bg-white border-l border-t border-slate-200/80 shadow-[-2px_-2px_4px_rgba(0,0,0,0.02)] z-30" />
+
+                    <div className="relative flex items-start">
+                      {/* Left card: OUR LOCATIONS */}
+                      <div className="w-[245px] bg-white/95 backdrop-blur-xl rounded-2xl border border-slate-200/80 shadow-[0_20px_50px_rgba(15,23,42,0.12)] overflow-hidden p-3.5 z-20">
+                        <p className="text-[10px] font-extrabold uppercase tracking-wider text-slate-400 px-2 pb-2.5 border-b border-slate-100">
+                          Our Locations
+                        </p>
+                        <div className="pt-2.5 flex flex-col gap-1.5">
+                          {locationLinks.map((item) => (
+                            <div
+                              key={item.name}
+                              onMouseEnter={handleKolkataMouseEnter}
+                              onMouseLeave={handleKolkataMouseLeave}
+                              onClick={() => setIsKolkataHovered((v) => !v)}
+                              role="button"
+                              tabIndex={0}
+                              className={`group flex items-center justify-between rounded-xl border px-3.5 py-3 transition-all duration-200 shadow-2xs cursor-pointer select-none ${
+                                isKolkataHovered
+                                  ? "bg-blue-50/70 border-blue-200 text-[#2443ab]"
+                                  : "bg-slate-50/80 hover:bg-slate-100/90 border-slate-100 hover:border-slate-200"
+                              }`}
+                            >
+                              <div className="flex items-center gap-2.5">
+                                <MapPin className="h-4 w-4 text-[#2443ab]" />
+                                <span className="text-sm font-bold text-[#1e293b] group-hover:text-[#2443ab] transition-colors">
+                                  {item.name}
+                                </span>
+                              </div>
+
+                              <div className="flex items-center">
+                                <ChevronRight className={`h-3.5 w-3.5 transition-transform duration-200 ${isKolkataHovered ? "translate-x-0.5 text-[#2443ab]" : "text-slate-400"}`} />
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Right Submenu / Flyout Panel for Services (shows on hovering Kolkata) */}
+                      <div
+                        onMouseEnter={handleKolkataMouseEnter}
+                        onMouseLeave={handleKolkataMouseLeave}
+                        className={`absolute left-[calc(100%-8px)] top-3 w-[320px] transition-all duration-200 origin-top-left z-20 before:absolute before:-left-3 before:top-0 before:w-4 before:h-full before:content-[''] ${
+                          isKolkataHovered
+                            ? "opacity-100 scale-100 pointer-events-auto translate-x-0"
+                            : "opacity-0 scale-95 pointer-events-none -translate-x-2"
+                        }`}
+                      >
+                        <div className="relative bg-white/98 backdrop-blur-xl rounded-3xl border border-slate-200/80 shadow-[0_20px_50px_rgba(15,23,42,0.16)] overflow-hidden p-3 flex flex-col gap-1">
+                          {kolkataServiceLinks.map((service) => (
+                            <Link
+                              key={service.name}
+                              href={service.href}
+                              onClick={() => {
+                                setIsLocationOpen(false);
+                                setIsKolkataHovered(false);
+                              }}
+                              role="menuitem"
+                              className="group flex items-center gap-3 rounded-2xl p-2.5 hover:bg-slate-50 transition-all duration-150"
+                            >
+                              <div className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl transition-transform duration-200 group-hover:scale-105 ${service.bg}`}>
+                                {service.icon}
+                              </div>
+                              <div>
+                                <p className="text-xs font-bold text-slate-800 group-hover:text-[#2443ab] transition-colors leading-snug">
+                                  {service.name}
+                                </p>
+                                <p className="text-[10px] text-slate-400 font-medium leading-tight mt-0.5">
+                                  {service.desc}
+                                </p>
+                              </div>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            }
 
 
 
@@ -484,6 +682,58 @@ export default function Header() {
       {isMobileMenuOpen && (
         <div className="lg:hidden absolute top-20 sm:top-24 left-4 right-4 z-40 bg-slate-950/95 backdrop-blur-lg rounded-3xl border border-white/10 p-6 shadow-2xl flex flex-col gap-2.5 text-center font-extrabold text-sm text-white">
           {navLinks.map((link) => {
+            if (link.hasLocationDropdown) {
+              return (
+                <div key={link.name}>
+                  <button
+                    onClick={() => setIsMobileLocationOpen((v) => !v)}
+                    className={`w-full flex items-center justify-between py-3.5 border-b border-white/5 text-sm font-extrabold transition-colors ${
+                      isMobileLocationOpen ? "text-[#ff5500]" : "text-white/80"
+                    }`}
+                  >
+                    <span className="flex-1 text-center">{link.name}</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      className={`h-4 w-4 text-white/40 transition-transform duration-200 ${
+                        isMobileLocationOpen ? "rotate-180" : ""
+                      }`}
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </button>
+
+                  {isMobileLocationOpen && (
+                    <div className="mt-2 mb-2 flex flex-col gap-1.5 w-full">
+                      {kolkataServiceLinks.map((item) => (
+                        <Link
+                          key={item.name}
+                          href={item.href}
+                          onClick={() => {
+                            setIsMobileMenuOpen(false);
+                            setIsMobileLocationOpen(false);
+                          }}
+                          className="flex items-center gap-3 rounded-xl bg-white/5 p-2.5 hover:bg-white/10 transition-colors w-full text-left"
+                        >
+                          <div className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${item.bg}`}>
+                            {item.icon}
+                          </div>
+                          <div>
+                            <p className="text-xs font-semibold text-white/95 leading-tight">{item.name}</p>
+                            <p className="text-[10px] text-white/50 leading-tight mt-0.5">{item.desc}</p>
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              );
+            }
 
 
             if (link.hasInsightsDropdown) {
