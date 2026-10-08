@@ -220,12 +220,12 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     await connectDB();
 
     const normalizedSlug = decodeURIComponent(id).toLowerCase().trim();
-    let blog = await BlogModel.findOne({ slug: normalizedSlug });
+    let blog: any = await BlogModel.findOne({ slug: normalizedSlug });
     if (!blog && mongoose.Types.ObjectId.isValid(normalizedSlug)) {
       blog = await BlogModel.findById(normalizedSlug);
     }
 
-    if (blog) {
+    if (blog && blog.status !== "deleted") {
       const title = blog.metaTitle ? blog.metaTitle : blog.title ? `${blog.title} | Digital Edge 360°` : "Blog Article | Digital Edge 360°";
       const description = blog.metaDescription || blog.title || "Explore insights and articles from Digital Edge 360°.";
       return { title, description };
@@ -257,12 +257,12 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ id:
   try {
     await connectDB();
     const normalizedSlug = decodeURIComponent(id).toLowerCase().trim();
-    let blog = await BlogModel.findOne({ slug: normalizedSlug });
+    let blog: any = await BlogModel.findOne({ slug: normalizedSlug });
     if (!blog && mongoose.Types.ObjectId.isValid(normalizedSlug)) {
       blog = await BlogModel.findById(normalizedSlug);
     }
 
-    if (blog) {
+    if (blog && blog.status !== "deleted") {
       post = {
         title: blog.title,
         slug: blog.slug,

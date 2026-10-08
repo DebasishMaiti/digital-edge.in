@@ -5,9 +5,38 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
+import Underline from "@tiptap/extension-underline";
+import LinkExtension from "@tiptap/extension-link";
+import TextAlign from "@tiptap/extension-text-align";
+import Highlight from "@tiptap/extension-highlight";
 import slugify from "react-slugify";
 import { AdminSidebar } from "@/components/AdminSidebar";
 import { getAuthHeaders } from "@/lib/auth-client";
+import {
+  Bold as BoldIcon,
+  Italic as ItalicIcon,
+  Underline as UnderlineIcon,
+  Strikethrough as StrikethroughIcon,
+  Code as CodeIcon,
+  Heading1,
+  Heading2,
+  Heading3,
+  Heading4,
+  AlignLeft,
+  AlignCenter,
+  AlignRight,
+  AlignJustify,
+  List as ListIcon,
+  ListOrdered,
+  Quote as QuoteIcon,
+  Minus,
+  Link as LinkIcon,
+  Unlink,
+  Highlighter,
+  Undo as UndoIcon,
+  Redo as RedoIcon,
+  Eraser,
+} from "lucide-react";
 
 function TipTapToolbar({ editor }: { editor: any }) {
   const [, setTick] = useState(0);
@@ -25,109 +54,257 @@ function TipTapToolbar({ editor }: { editor: any }) {
 
   if (!editor) return null;
 
+  const setLink = () => {
+    const previousUrl = editor.getAttributes("link").href;
+    const url = window.prompt("Enter link URL:", previousUrl || "https://");
+    if (url === null) return;
+    if (url === "") {
+      editor.chain().focus().extendMarkRange("link").unsetLink().run();
+      return;
+    }
+    editor.chain().focus().extendMarkRange("link").setLink({ href: url }).run();
+  };
+
+
+
+  const btnClass = (isActive: boolean = false, disabled: boolean = false) =>
+    `p-1.5 rounded-lg text-xs font-semibold transition-all flex items-center justify-center gap-1 cursor-pointer select-none disabled:opacity-40 disabled:cursor-not-allowed ${
+      isActive
+        ? "bg-indigo-600 text-white shadow-xs font-bold"
+        : "text-slate-600 hover:bg-slate-200/70 hover:text-slate-900"
+    }`;
+
   return (
-    <div className="bg-slate-50 border-b border-slate-200 px-3 py-2 flex flex-wrap items-center gap-1.5 text-xs text-slate-700 select-none">
-      {/* Bold */}
+    <div className="bg-slate-50 border-b border-slate-200 p-2 flex flex-wrap items-center gap-1 text-xs text-slate-700 select-none">
+      {/* History */}
       <button
         type="button"
-        onClick={() => editor.chain().focus().toggleBold().run()}
-        className={`px-2.5 py-1 font-bold rounded-lg transition-colors ${
-          editor.isActive("bold") ? "bg-indigo-600 text-white font-extrabold shadow-xs" : "hover:bg-slate-200/70"
-        }`}
+        title="Undo (Ctrl+Z)"
+        disabled={!editor.can().undo()}
+        onClick={() => editor.chain().focus().undo().run()}
+        className={btnClass(false, !editor.can().undo())}
       >
-        B
+        <UndoIcon className="w-3.5 h-3.5" />
       </button>
-
-      {/* Italic */}
       <button
         type="button"
-        onClick={() => editor.chain().focus().toggleItalic().run()}
-        className={`px-2 py-1 italic font-serif rounded-lg transition-colors ${
-          editor.isActive("italic") ? "bg-indigo-600 text-white font-extrabold shadow-xs" : "hover:bg-slate-200/70"
-        }`}
+        title="Redo (Ctrl+Y)"
+        disabled={!editor.can().redo()}
+        onClick={() => editor.chain().focus().redo().run()}
+        className={btnClass(false, !editor.can().redo())}
       >
-        I
-      </button>
-
-      {/* Strike */}
-      <button
-        type="button"
-        onClick={() => editor.chain().focus().toggleStrike().run()}
-        className={`px-2 py-1 line-through rounded-lg transition-colors ${
-          editor.isActive("strike") ? "bg-indigo-600 text-white font-extrabold shadow-xs" : "hover:bg-slate-200/70"
-        }`}
-      >
-        S
+        <RedoIcon className="w-3.5 h-3.5" />
       </button>
 
       <div className="h-4 w-px bg-slate-300 mx-1" />
 
-      {/* Heading 1 */}
+      {/* Headings & Paragraph */}
       <button
         type="button"
+        title="Paragraph / Normal Text"
+        onClick={() => editor.chain().focus().setParagraph().run()}
+        className={btnClass(editor.isActive("paragraph") && !editor.isActive("heading"))}
+      >
+        <span className="font-bold text-xs px-0.5">P</span>
+      </button>
+      <button
+        type="button"
+        title="Heading 1"
         onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
-        className={`px-2.5 py-1 font-bold rounded-lg transition-colors ${
-          editor.isActive("heading", { level: 1 }) ? "bg-indigo-600 text-white font-extrabold shadow-xs" : "hover:bg-slate-200/70"
-        }`}
+        className={btnClass(editor.isActive("heading", { level: 1 }))}
       >
-        H1
+        <Heading1 className="w-3.5 h-3.5" />
       </button>
-
-      {/* Heading 2 */}
       <button
         type="button"
+        title="Heading 2"
         onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
-        className={`px-2.5 py-1 font-bold rounded-lg transition-colors ${
-          editor.isActive("heading", { level: 2 }) ? "bg-indigo-600 text-white font-extrabold shadow-xs" : "hover:bg-slate-200/70"
-        }`}
+        className={btnClass(editor.isActive("heading", { level: 2 }))}
       >
-        H2
+        <Heading2 className="w-3.5 h-3.5" />
       </button>
-
-      {/* Heading 3 */}
       <button
         type="button"
+        title="Heading 3"
         onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}
-        className={`px-2.5 py-1 font-bold rounded-lg transition-colors ${
-          editor.isActive("heading", { level: 3 }) ? "bg-indigo-600 text-white font-extrabold shadow-xs" : "hover:bg-slate-200/70"
-        }`}
+        className={btnClass(editor.isActive("heading", { level: 3 }))}
       >
-        H3
+        <Heading3 className="w-3.5 h-3.5" />
+      </button>
+      <button
+        type="button"
+        title="Heading 4"
+        onClick={() => editor.chain().focus().toggleHeading({ level: 4 }).run()}
+        className={btnClass(editor.isActive("heading", { level: 4 }))}
+      >
+        <Heading4 className="w-3.5 h-3.5" />
       </button>
 
       <div className="h-4 w-px bg-slate-300 mx-1" />
 
-      {/* Bullet List */}
+      {/* Basic Marks */}
       <button
         type="button"
+        title="Bold (Ctrl+B)"
+        onClick={() => editor.chain().focus().toggleBold().run()}
+        className={btnClass(editor.isActive("bold"))}
+      >
+        <BoldIcon className="w-3.5 h-3.5" />
+      </button>
+      <button
+        type="button"
+        title="Italic (Ctrl+I)"
+        onClick={() => editor.chain().focus().toggleItalic().run()}
+        className={btnClass(editor.isActive("italic"))}
+      >
+        <ItalicIcon className="w-3.5 h-3.5" />
+      </button>
+      <button
+        type="button"
+        title="Underline (Ctrl+U)"
+        onClick={() => editor.chain().focus().toggleUnderline().run()}
+        className={btnClass(editor.isActive("underline"))}
+      >
+        <UnderlineIcon className="w-3.5 h-3.5" />
+      </button>
+      <button
+        type="button"
+        title="Strikethrough"
+        onClick={() => editor.chain().focus().toggleStrike().run()}
+        className={btnClass(editor.isActive("strike"))}
+      >
+        <StrikethroughIcon className="w-3.5 h-3.5" />
+      </button>
+      <button
+        type="button"
+        title="Highlight Text"
+        onClick={() => editor.chain().focus().toggleHighlight().run()}
+        className={btnClass(editor.isActive("highlight"))}
+      >
+        <Highlighter className="w-3.5 h-3.5" />
+      </button>
+      <button
+        type="button"
+        title="Inline Code"
+        onClick={() => editor.chain().focus().toggleCode().run()}
+        className={btnClass(editor.isActive("code"))}
+      >
+        <CodeIcon className="w-3.5 h-3.5" />
+      </button>
+
+      <div className="h-4 w-px bg-slate-300 mx-1" />
+
+      {/* Alignment */}
+      <button
+        type="button"
+        title="Align Left"
+        onClick={() => editor.chain().focus().setTextAlign("left").run()}
+        className={btnClass(editor.isActive({ textAlign: "left" }))}
+      >
+        <AlignLeft className="w-3.5 h-3.5" />
+      </button>
+      <button
+        type="button"
+        title="Align Center"
+        onClick={() => editor.chain().focus().setTextAlign("center").run()}
+        className={btnClass(editor.isActive({ textAlign: "center" }))}
+      >
+        <AlignCenter className="w-3.5 h-3.5" />
+      </button>
+      <button
+        type="button"
+        title="Align Right"
+        onClick={() => editor.chain().focus().setTextAlign("right").run()}
+        className={btnClass(editor.isActive({ textAlign: "right" }))}
+      >
+        <AlignRight className="w-3.5 h-3.5" />
+      </button>
+      <button
+        type="button"
+        title="Justify"
+        onClick={() => editor.chain().focus().setTextAlign("justify").run()}
+        className={btnClass(editor.isActive({ textAlign: "justify" }))}
+      >
+        <AlignJustify className="w-3.5 h-3.5" />
+      </button>
+
+      <div className="h-4 w-px bg-slate-300 mx-1" />
+
+      {/* Lists & Blocks */}
+      <button
+        type="button"
+        title="Bullet List"
         onClick={() => editor.chain().focus().toggleBulletList().run()}
-        className={`px-2 py-1 rounded-lg transition-colors ${
-          editor.isActive("bulletList") ? "bg-indigo-600 text-white font-extrabold shadow-xs" : "hover:bg-slate-200/70"
-        }`}
+        className={btnClass(editor.isActive("bulletList"))}
       >
-        • List
+        <ListIcon className="w-3.5 h-3.5" />
       </button>
-
-      {/* Ordered List */}
       <button
         type="button"
+        title="Numbered List"
         onClick={() => editor.chain().focus().toggleOrderedList().run()}
-        className={`px-2 py-1 rounded-lg transition-colors ${
-          editor.isActive("orderedList") ? "bg-indigo-600 text-white font-extrabold shadow-xs" : "hover:bg-slate-200/70"
-        }`}
+        className={btnClass(editor.isActive("orderedList"))}
       >
-        1. List
+        <ListOrdered className="w-3.5 h-3.5" />
       </button>
-
-      {/* Blockquote */}
       <button
         type="button"
+        title="Blockquote"
         onClick={() => editor.chain().focus().toggleBlockquote().run()}
-        className={`px-2 py-1 rounded-lg transition-colors ${
-          editor.isActive("blockquote") ? "bg-indigo-600 text-white font-extrabold shadow-xs" : "hover:bg-slate-200/70"
-        }`}
+        className={btnClass(editor.isActive("blockquote"))}
       >
-        “ Quote
+        <QuoteIcon className="w-3.5 h-3.5" />
+      </button>
+      <button
+        type="button"
+        title="Code Block"
+        onClick={() => editor.chain().focus().toggleCodeBlock().run()}
+        className={btnClass(editor.isActive("codeBlock"))}
+      >
+        <span className="font-mono text-[10px] font-bold px-1 border border-slate-300 rounded">{"{ }"}</span>
+      </button>
+      <button
+        type="button"
+        title="Horizontal Divider"
+        onClick={() => editor.chain().focus().setHorizontalRule().run()}
+        className={btnClass(false)}
+      >
+        <Minus className="w-3.5 h-3.5" />
+      </button>
+
+      <div className="h-4 w-px bg-slate-300 mx-1" />
+
+      {/* Links & Media */}
+      <button
+        type="button"
+        title={editor.isActive("link") ? "Edit Link" : "Insert Link"}
+        onClick={setLink}
+        className={btnClass(editor.isActive("link"))}
+      >
+        <LinkIcon className="w-3.5 h-3.5" />
+      </button>
+      {editor.isActive("link") && (
+        <button
+          type="button"
+          title="Remove Link"
+          onClick={() => editor.chain().focus().unsetLink().run()}
+          className={btnClass(false)}
+        >
+          <Unlink className="w-3.5 h-3.5 text-red-500" />
+        </button>
+      )}
+
+
+      <div className="h-4 w-px bg-slate-300 mx-1" />
+
+      {/* Clear Formatting */}
+      <button
+        type="button"
+        title="Clear All Formatting"
+        onClick={() => editor.chain().focus().unsetAllMarks().clearNodes().run()}
+        className={btnClass(false)}
+      >
+        <Eraser className="w-3.5 h-3.5 text-slate-500 hover:text-red-600" />
       </button>
     </div>
   );
@@ -150,12 +327,32 @@ function CreateBlogForm() {
 
   // TipTap Rich Text Editor Configuration
   const editor = useEditor({
-    extensions: [StarterKit],
+    extensions: [
+      StarterKit.configure({
+        heading: {
+          levels: [1, 2, 3, 4],
+        },
+      }),
+      Underline,
+      LinkExtension.configure({
+        openOnClick: false,
+        HTMLAttributes: {
+          class: "text-indigo-600 underline font-medium hover:text-indigo-800",
+          target: "_blank",
+          rel: "noopener noreferrer",
+        },
+      }),
+
+      TextAlign.configure({
+        types: ["heading", "paragraph"],
+      }),
+      Highlight,
+    ],
     content: "<p>Start writing your story...</p>",
     editorProps: {
       attributes: {
         class:
-          "focus:outline-none p-5 min-h-[350px] leading-relaxed text-slate-800",
+          "tiptap focus:outline-none p-5 min-h-[350px] leading-relaxed text-slate-800",
       },
     },
     immediatelyRender: false,
@@ -267,7 +464,7 @@ function CreateBlogForm() {
       metaTitle,
       metaDescription,
       content: htmlContent,
-      status: actionStatus,
+      status: actionStatus.toLowerCase() as "draft" | "published",
     };
 
     try {
@@ -303,7 +500,7 @@ function CreateBlogForm() {
       <div className="flex-1 flex flex-col min-w-0 overflow-y-auto">
         {/* Header */}
         <header className="sticky top-0 z-20 bg-white/90 backdrop-blur-md border-b border-slate-200/80 px-8 py-4 shadow-xs">
-          <div className="max-w-7xl w-full mx-auto flex items-center justify-between">
+          <div className="w-full flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <Link href="/admin/blogs" className="text-xs text-slate-500 hover:text-slate-900 font-medium transition-colors">
                 Blogs
@@ -348,9 +545,9 @@ function CreateBlogForm() {
         </header>
 
         {/* Editor Workspace */}
-        <main className="flex-1 p-8 max-w-7xl w-full mx-auto">
-          <form onSubmit={(e) => { e.preventDefault(); handleSubmit("Published"); }}>
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <main className="flex-1 p-8 w-full">
+          <form className="w-full" onSubmit={(e) => { e.preventDefault(); handleSubmit("Published"); }}>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full">
               {/* Left Panel: Article Content (2 Columns) */}
               <div className="lg:col-span-2 space-y-6 border border-slate-200/90 rounded-2xl p-6 bg-white shadow-xs">
                 <div>

@@ -356,3 +356,66 @@ a {
   margin: 1.5rem 0 !important;
 }
 
+.ProseMirror mark,
+.founder-rich-text mark,
+.blog-rich-text mark {
+  background-color: #fef08a !important;
+  padding: 0.1rem 0.35rem !important;
+  border-radius: 0.25rem !important;
+}
+
+.ProseMirror u,
+.founder-rich-text u,
+.blog-rich-text u {
+  text-decoration: underline !important;
+}
+
+.ProseMirror code,
+.founder-rich-text code,
+.blog-rich-text code {
+  background-color: #f1f5f9 !important;
+  color: #db2777 !important;
+  padding: 0.2rem 0.4rem !important;
+  border-radius: 0.35rem !important;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+  font-size: 0.875em !important;
+}
+
+.ProseMirror pre,
+.founder-rich-text pre,
+.blog-rich-text pre {
+  background-color: #0f172a !important;
+  color: #f8fafc !important;
+  padding: 1rem 1.25rem !important;
+  border-radius: 0.75rem !important;
+  overflow-x: auto !important;
+  margin: 1.25rem 0 !important;
+}
+
+.ProseMirror pre code,
+.founder-rich-text pre code,
+.blog-rich-text pre code {
+  background-color: transparent !important;
+  color: inherit !important;
+  padding: 0 !important;
+}
+
+.ProseMirror hr,
+.founder-rich-text hr,
+.blog-rich-text hr {
+  border: none !important;
+  border-top: 2px solid #e2e8f0 !important;
+  margin: 2rem 0 !important;
+}
+
+.ProseMirror img,
+.founder-rich-text img,
+.blog-rich-text img {
+  max-width: 100% !important;
+  height: auto !important;
+  border-radius: 0.75rem !important;
+  margin: 1.25rem 0 !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+}
+
+

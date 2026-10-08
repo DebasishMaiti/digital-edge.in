@@ -13,7 +13,7 @@ export interface IFounderInsight extends Document {
   featuredImage?: string;
   metaTitle?: string;
   metaDescription?: string;
-  status: "Draft" | "Published";
+  status: "draft" | "published" | "deleted";
   createdAt: Date;
   updatedAt: Date;
 }
@@ -80,8 +80,8 @@ const FounderInsightSchema = new Schema<IFounderInsight>(
     },
     status: {
       type: String,
-      enum: ["Draft", "Published"],
-      default: "Published",
+      enum: ["draft", "published", "deleted"],
+      default: "published",
     },
   },
   {
