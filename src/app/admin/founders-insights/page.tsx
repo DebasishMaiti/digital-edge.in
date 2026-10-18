@@ -16,7 +16,7 @@ interface FounderInsight {
   desc?: string;
   publishDate: string;
   featuredImage?: string;
-  status: "Published" | "Draft";
+  status: "published" | "draft" | "deleted" | "Published" | "Draft";
 }
 
 export default function AdminFoundersInsightsPage() {
@@ -75,7 +75,9 @@ export default function AdminFoundersInsightsPage() {
       item.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
       item.founderName?.toLowerCase().includes(searchQuery.toLowerCase()) ||
       item.topic?.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesStatus = statusFilter === "All" || item.status === statusFilter;
+    const matchesStatus =
+      statusFilter === "All" ||
+      item.status?.toLowerCase() === statusFilter.toLowerCase();
     return matchesSearch && matchesStatus;
   });
 
@@ -175,12 +177,12 @@ export default function AdminFoundersInsightsPage() {
                     <div className="absolute top-3 right-3">
                       <span
                         className={`px-3 py-1 text-[11px] font-extrabold rounded-full backdrop-blur-md shadow-xs ${
-                          item.status === "Published"
+                          item.status?.toLowerCase() === "published"
                             ? "bg-emerald-500/90 text-white"
                             : "bg-amber-500/90 text-white"
                         }`}
                       >
-                        {item.status}
+                        {item.status ? item.status.charAt(0).toUpperCase() + item.status.slice(1).toLowerCase() : "Draft"}
                       </span>
                     </div>
                   </div>

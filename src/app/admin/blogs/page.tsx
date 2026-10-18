@@ -11,7 +11,7 @@ interface BlogPost {
   slug: string;
   publishDate: string;
   featuredImage?: string;
-  status: "Published" | "Draft";
+  status: "published" | "draft" | "deleted" | "Published" | "Draft";
   author?: string;
   content?: string;
   metaDescription?: string;
@@ -159,12 +159,12 @@ export default function AdminBlogsPage() {
                     <div className="absolute top-3 right-3">
                       <span
                         className={`px-3 py-1 text-[11px] font-extrabold rounded-full backdrop-blur-md shadow-xs ${
-                          blog.status === "Published"
+                          blog.status?.toLowerCase() === "published"
                             ? "bg-emerald-500/90 text-white"
                             : "bg-amber-500/90 text-white"
                         }`}
                       >
-                        {blog.status}
+                        {blog.status ? blog.status.charAt(0).toUpperCase() + blog.status.slice(1).toLowerCase() : "Draft"}
                       </span>
                     </div>
                   </div>

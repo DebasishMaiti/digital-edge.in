@@ -2415,12 +2415,12 @@ export default function Home() {
         </section>
 
         {/* Testimonials Section */}
-        <section className="relative z-10 w-full py-12 md:py-16 bg-gradient-to-b from-white to-[#fafbfc] border-t border-slate-100 overflow-hidden">
-          {/* Subtle dot grid background texture */}
+        {/* <section className="relative z-10 w-full py-12 md:py-16 bg-gradient-to-b from-white to-[#fafbfc] border-t border-slate-100 overflow-hidden">
+ 
           <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none z-0" />
 
           <div className="relative z-10 max-w-full mx-auto px-6 sm:px-8 lg:px-12 mb-8">
-            {/* Header Row */}
+ 
             <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 max-w-6xl mx-auto">
               <div className="text-left space-y-3">
                 <span className="block text-[10px] sm:text-xs font-black tracking-[0.25em] text-[#2443ab] uppercase">TESTIMONIALS</span>
@@ -2431,10 +2431,10 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Testimonials Carousel */}
+ 
           <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 mt-6 md:mt-8">
             <div className="relative flex items-center justify-between h-[680px] sm:h-[580px] md:h-[490px]">
-              {/* Prev Button */}
+ 
               <button
                 onClick={() => setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length)}
                 className="absolute left-[-20px] lg:left-[-70px] z-20 w-12 h-12 rounded-full bg-white border border-slate-200/80 shadow-md flex items-center justify-center text-slate-600 hover:text-slate-900 hover:shadow-lg hover:scale-105 transition-all duration-300 group"
@@ -2499,10 +2499,9 @@ export default function Home() {
                         className="rounded-[32px] shadow-[0_20px_50px_rgba(0,0,0,0.04)] flex flex-col justify-between text-left relative overflow-hidden group w-full h-[640px] sm:h-[540px] md:h-[450px]"
                       >
                         <div className="bg-white rounded-[32px] p-6 sm:p-10 md:p-14 flex flex-col md:flex-row gap-6 md:gap-12 items-center text-left relative overflow-hidden w-full h-full">
-                          {/* Soft Spreading Top-Right Ambient Glow */}
+ 
                           <div className={`absolute -top-20 -right-20 w-96 h-96 bg-radial ${accent.glowBg} blur-3xl pointer-events-none opacity-60 group-hover:opacity-90 transition-all duration-700 z-0`} />
-
-                          {/* Left side: Profile Image */}
+ 
                           <div className="relative w-44 h-44 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-[28px] overflow-hidden shadow-lg ring-4 ring-slate-100 shrink-0 bg-slate-50 flex items-center justify-center z-10 transition-transform duration-500 group-hover:scale-[1.02]">
                             {t.image ? (
                               <Image
@@ -2519,19 +2518,18 @@ export default function Home() {
                               </div>
                             )}
                           </div>
-
-                          {/* Right side: details */}
+ 
                           <div className="flex-grow flex flex-col justify-between h-full relative z-10 w-full overflow-hidden">
                             <div className="flex-1 flex flex-col justify-start overflow-hidden">
-                              {/* Rating & Metric Header */}
+ 
                               <div className="flex flex-wrap items-center justify-between gap-4 shrink-0">
-                                {/* Rating Pill */}
+
                                 <div className="inline-flex items-center gap-0.5 px-3.5 py-1.5 rounded-full bg-amber-500/5 border border-amber-500/10">
                                   {Array.from({ length: t.stars }).map((_, i) => (
                                     <span key={i} className="text-amber-500 text-sm sm:text-base font-bold">★</span>
                                   ))}
                                 </div>
-                                {/* Metric Pill */}
+ 
                                 {t.metric && (
                                   <div className={`flex items-center gap-1.5 px-4.5 py-2 rounded-full text-xs font-black uppercase tracking-wider border shadow-sm ${accent.metricBg}`}>
                                     {accent.metricIcon}
@@ -2539,7 +2537,7 @@ export default function Home() {
                                   </div>
                                 )}
                               </div>
-                              {/* Quote text container */}
+ 
                               <div className="mt-4 sm:mt-6 flex-1 flex items-center overflow-y-auto no-scrollbar">
                                 <p className="text-xs sm:text-[17px] md:text-[18px] text-slate-600 font-semibold leading-[1.85] italic relative pl-5">
                                   <span className={`absolute left-0 top-0 text-base md:text-lg font-serif font-black ${accent.quoteColor} leading-none`}>“</span>
@@ -2549,7 +2547,7 @@ export default function Home() {
                               </div>
                             </div>
 
-                            {/* Profile Handoff */}
+ 
                             <div className="mt-6 pt-5 border-t border-slate-100 shrink-0">
                               <div className="flex items-center gap-4">
                                 <div className={`h-11 w-[3.5px] rounded-full ${accent.lineBg}`} />
@@ -2566,8 +2564,6 @@ export default function Home() {
                   })()}
                 </AnimatePresence>
               </div>
-
-              {/* Next Button */}
               <button
                 onClick={() => setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)}
                 className="absolute right-[-20px] lg:right-[-70px] z-20 w-12 h-12 rounded-full bg-white border border-slate-200/80 shadow-md flex items-center justify-center text-slate-600 hover:text-slate-900 hover:shadow-lg hover:scale-105 transition-all duration-300 group"
@@ -2576,8 +2572,7 @@ export default function Home() {
               </button>
 
             </div>
-
-            {/* Pagination indicator dots below */}
+ 
             <div className="flex justify-center gap-2 mt-8">
               {testimonials.map((_, dotIdx) => {
                 const isActive = dotIdx === currentTestimonial;
@@ -2600,7 +2595,7 @@ export default function Home() {
             </div>
 
           </div>
-        </section>
+        </section> */}
 
         {/* Trusted by Category Kings Section (Grid Format) */}
         <section className="relative z-10 w-full py-10 md:py-12 bg-[#fafbfc] border-t border-slate-100 overflow-hidden">

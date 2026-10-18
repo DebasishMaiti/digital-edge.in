@@ -12,8 +12,11 @@ export async function GET(req: Request) {
     const status = searchParams.get("status");
 
     const query: any = {};
-    if (status) {
-      query.status = status;
+    if (status && status.toLowerCase() !== "all") {
+      const normalizedStatus = status.toLowerCase().trim();
+      query.status = { $regex: new RegExp(`^${normalizedStatus}$`, "i") };
+    } else {
+      query.status = { $nin: ["deleted", "Deleted"] };
     }
 
     const insights = await FounderInsightModel.find(query).sort({ createdAt: -1 });
@@ -63,7 +66,7 @@ export async function POST(req: Request) {
       featuredImage,
       metaTitle,
       metaDescription,
-      status = "Published",
+      status = "published",
     } = data;
 
     if (!title || !content || !founderName) {
@@ -93,6 +96,14 @@ export async function POST(req: Request) {
       );
     }
 
+    let normalizedStatus: "draft" | "published" | "deleted" = "published";
+    if (status) {
+      const lower = String(status).toLowerCase().trim();
+      if (lower === "draft" || lower === "deleted" || lower === "published") {
+        normalizedStatus = lower as "draft" | "published" | "deleted";
+      }
+    }
+
     const newInsight = await FounderInsightModel.create({
       title: title.trim(),
       slug: normalizedSlug,
@@ -106,7 +117,7 @@ export async function POST(req: Request) {
       featuredImage: featuredImage || "",
       metaTitle: metaTitle || "",
       metaDescription: metaDescription || "",
-      status: status === "Draft" ? "Draft" : "Published",
+      status: normalizedStatus,
     });
 
     return NextResponse.json(

@@ -14,13 +14,19 @@ export async function GET(
 
     let insight = null;
 
-    // Check by Mongoose ObjectId or slug
+    // Check by Mongoose ObjectId or slug, excluding deleted
     if (id.match(/^[0-9a-fA-F]{24}$/)) {
-      insight = await FounderInsightModel.findById(id);
+      insight = await FounderInsightModel.findOne({
+        _id: id,
+        status: { $ne: "deleted" },
+      });
     }
 
     if (!insight) {
-      insight = await FounderInsightModel.findOne({ slug: decodeURIComponent(id) });
+      insight = await FounderInsightModel.findOne({
+        slug: decodeURIComponent(id),
+        status: { $ne: "deleted" },
+      });
     }
 
     if (!insight) {
@@ -96,7 +102,12 @@ export async function PUT(
     if (data.featuredImage !== undefined) insight.featuredImage = data.featuredImage;
     if (data.metaTitle !== undefined) insight.metaTitle = data.metaTitle;
     if (data.metaDescription !== undefined) insight.metaDescription = data.metaDescription;
-    if (data.status !== undefined) insight.status = data.status;
+    if (data.status !== undefined) {
+      const lower = String(data.status).toLowerCase().trim();
+      if (lower === "draft" || lower === "published" || lower === "deleted") {
+        insight.status = lower as "draft" | "published" | "deleted";
+      }
+    }
 
     await insight.save();
 
@@ -113,7 +124,7 @@ export async function PUT(
   }
 }
 
-// DELETE /api/founders-insights/[id] - Delete founder insight
+// DELETE /api/founders-insights/[id] - Soft delete founder insight
 export async function DELETE(
   req: Request,
   { params }: { params: Promise<{ id: string }> }
@@ -130,10 +141,18 @@ export async function DELETE(
     const { id } = await params;
     await connectDB();
 
-    let deleted = await FounderInsightModel.findByIdAndDelete(id);
-    if (!deleted) {
-      deleted = await FounderInsightModel.findOneAndDelete({ slug: decodeURIComponent(id) });
+    let filter: any = {};
+    if (id.match(/^[0-9a-fA-F]{24}$/)) {
+      filter = { _id: id };
+    } else {
+      filter = { slug: decodeURIComponent(id) };
     }
+
+    const deleted = await FounderInsightModel.findOneAndUpdate(
+      filter,
+      { $set: { status: "deleted" } },
+      { new: true }
+    );
 
     if (!deleted) {
       return NextResponse.json(

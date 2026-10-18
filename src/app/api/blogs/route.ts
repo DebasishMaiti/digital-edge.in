@@ -3,7 +3,7 @@ import { connectDB } from "@/lib/mongodb";
 import { BlogModel } from "@/models/Blog";
 import { verifyAdminRequest } from "@/lib/auth";
 
-// GET /api/blogs - Get all blogs (supports query: ?status=Published or all for admin)
+// GET /api/blogs - Get all blogs (supports query: ?status=published or all non-deleted blogs)
 export async function GET(req: Request) {
   try {
     await connectDB();
@@ -12,8 +12,11 @@ export async function GET(req: Request) {
     const status = searchParams.get("status");
 
     const query: any = {};
-    if (status) {
-      query.status = status;
+    if (status && status.toLowerCase() !== "all") {
+      const normalizedStatus = status.toLowerCase().trim();
+      query.status = { $regex: new RegExp(`^${normalizedStatus}$`, "i") };
+    } else {
+      query.status = { $nin: ["deleted", "Deleted"] };
     }
 
     const blogs = await BlogModel.find(query).sort({ createdAt: -1 });
@@ -58,7 +61,7 @@ export async function POST(req: Request) {
       featuredImage,
       metaTitle,
       metaDescription,
-      status = "Published",
+      status = "published",
       author = "Digital Edge Team",
     } = data;
 
@@ -91,6 +94,14 @@ export async function POST(req: Request) {
       );
     }
 
+    let normalizedStatus: "draft" | "published" | "deleted" = "published";
+    if (status) {
+      const lower = String(status).toLowerCase().trim();
+      if (lower === "draft" || lower === "deleted" || lower === "published") {
+        normalizedStatus = lower as "draft" | "published" | "deleted";
+      }
+    }
+
     const newBlog = await BlogModel.create({
       title: title.trim(),
       slug: normalizedSlug,
@@ -99,7 +110,7 @@ export async function POST(req: Request) {
       featuredImage: featuredImage || "",
       metaTitle: metaTitle || "",
       metaDescription: metaDescription || "",
-      status: status === "Draft" ? "Draft" : "Published",
+      status: normalizedStatus,
       author: author || "Digital Edge Team",
     });
 

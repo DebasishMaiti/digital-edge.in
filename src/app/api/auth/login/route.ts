@@ -46,18 +46,6 @@ export async function POST(req: Request) {
     const normalizedEmail = email.trim().toLowerCase();
     let user = await UserModel.findOne({ email: normalizedEmail });
 
-    // Seed default admin if the database is fresh and matching credentials
-    if (!user && normalizedEmail === "admin@gmail.com" && password === "123456") {
-      const salt = await bcrypt.genSalt(10);
-      const passwordHash = await bcrypt.hash("123456", salt);
-      user = await UserModel.create({
-        name: "Admin User",
-        email: "admin@gmail.com",
-        passwordHash,
-        role: "admin",
-      });
-    }
-
     if (!user) {
       return NextResponse.json(
         { error: "Invalid credentials. Please verify your email and password." },

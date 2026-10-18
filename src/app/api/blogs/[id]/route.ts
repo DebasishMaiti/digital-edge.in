@@ -15,12 +15,18 @@ export async function GET(req: Request, { params }: RouteParams) {
 
     await connectDB();
 
-    // Prioritize search by slug (case-insensitive exact match)
-    let blog = await BlogModel.findOne({ slug: id.toLowerCase().trim() });
+    // Prioritize search by slug (case-insensitive exact match), excluding deleted
+    let blog = await BlogModel.findOne({
+      slug: id.toLowerCase().trim(),
+      status: { $ne: "deleted" },
+    });
 
     // Fallback: search by ObjectId if slug match yields no document
     if (!blog && mongoose.Types.ObjectId.isValid(id)) {
-      blog = await BlogModel.findById(id);
+      blog = await BlogModel.findOne({
+        _id: id,
+        status: { $ne: "deleted" },
+      });
     }
 
     if (!blog) {
@@ -131,6 +137,14 @@ export async function PUT(req: Request, { params }: RouteParams) {
       }
     }
 
+    let normalizedStatus = existingBlog.status;
+    if (data.status !== undefined) {
+      const lower = String(data.status).toLowerCase().trim();
+      if (lower === "draft" || lower === "published" || lower === "deleted") {
+        normalizedStatus = lower as "draft" | "published" | "deleted";
+      }
+    }
+
     const updatedBlog = await BlogModel.findByIdAndUpdate(
       existingBlog._id,
       {
@@ -142,7 +156,7 @@ export async function PUT(req: Request, { params }: RouteParams) {
           featuredImage: data.featuredImage !== undefined ? data.featuredImage : existingBlog.featuredImage,
           metaTitle: data.metaTitle !== undefined ? data.metaTitle : existingBlog.metaTitle,
           metaDescription: data.metaDescription !== undefined ? data.metaDescription : existingBlog.metaDescription,
-          status: data.status !== undefined ? data.status : existingBlog.status,
+          status: normalizedStatus,
           author: data.author !== undefined ? data.author : existingBlog.author,
         },
       },
@@ -162,7 +176,7 @@ export async function PUT(req: Request, { params }: RouteParams) {
   }
 }
 
-// DELETE /api/blogs/[id] - Delete a blog post
+// DELETE /api/blogs/[id] - Soft delete a blog post (set status to deleted)
 export async function DELETE(req: Request, { params }: RouteParams) {
   try {
     const auth = verifyAdminRequest(req);
@@ -184,7 +198,11 @@ export async function DELETE(req: Request, { params }: RouteParams) {
       query = { slug: id.toLowerCase() };
     }
 
-    const deletedBlog = await BlogModel.findOneAndDelete(query);
+    const deletedBlog = await BlogModel.findOneAndUpdate(
+      query,
+      { $set: { status: "deleted" } },
+      { new: true }
+    );
     if (!deletedBlog) {
       return NextResponse.json(
         { success: false, error: "Blog post not found." },
