@@ -6,7 +6,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import LeadForm from "@/components/LeadForm";
 import { Users, Shield, ShoppingCart, MessageSquare, BarChart3, Clock, AlertCircle, FileText, LayoutDashboard, MessageCircle, TrendingUp, Gauge, ShieldAlert, Receipt, Target, Rocket, Trophy, ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
-import { brandLogos, portfolioItems, services, testimonials, faqItems, deliversFeatures } from "@/data";
+import { brandLogos, clientLogos, portfolioItems, services, testimonials, faqItems, deliversFeatures } from "@/data";
 
 interface ShowcaseBrandItem {
   name: string;
@@ -2415,7 +2415,7 @@ export default function Home() {
         </section>
 
         {/* Testimonials Section */}
-        {/* <section className="relative z-10 w-full py-12 md:py-16 bg-gradient-to-b from-white to-[#fafbfc] border-t border-slate-100 overflow-hidden">
+        <section className="relative z-10 w-full py-12 md:py-16 bg-gradient-to-b from-white to-[#fafbfc] border-t border-slate-100 overflow-hidden">
  
           <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none z-0" />
 
@@ -2595,7 +2595,7 @@ export default function Home() {
             </div>
 
           </div>
-        </section> */}
+        </section>
 
         {/* Trusted by Category Kings Section (Grid Format) */}
         <section className="relative z-10 w-full py-10 md:py-12 bg-[#fafbfc] border-t border-slate-100 overflow-hidden">
@@ -2618,22 +2618,16 @@ export default function Home() {
           {/* Desktop Grid Container */}
           <div className="hidden md:block max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
             <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-              {[
-                7, 33, 28, 21, 14,
-                30, 20, 22, 15, 12,
-                1, 3, 4, 5, 6,
-                8, 10, 13, 16, 17,
-                18, 19, 23, 24, 25,
-                26, 27, 29, 31, 32,
-              ].map((id) => (
+              {clientLogos.map((url, index) => (
                 <div
-                  key={id}
-                  className="bg-white border border-slate-400 hover:border-[#2443ab] hover:bg-[#2443ab]/[0.01] rounded-xl p-4 flex items-center justify-center h-24 transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/10 hover:-translate-y-1 hover:scale-[1.03]"
+                  key={`client-logo-${index}`}
+                  className="bg-white border border-slate-300 hover:border-[#2443ab] hover:bg-[#2443ab]/[0.01] rounded-xl p-4 flex items-center justify-center h-24 transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/10 hover:-translate-y-1 hover:scale-[1.03]"
                 >
                   <img
-                    src={`/logos/${id}.jpg`}
-                    alt={`Client Logo ${id}`}
+                    src={url}
+                    alt={`Client Logo ${index + 1}`}
                     className="max-h-full max-w-full object-contain"
+                    loading="lazy"
                   />
                 </div>
               ))}
@@ -2645,18 +2639,16 @@ export default function Home() {
             {/* Row 1: Right to Left */}
             <div className="relative w-full overflow-hidden">
               <div className="animate-marquee-left flex gap-3 py-1">
-                {[
-                  7, 33, 28, 21, 14, 30, 20, 22, 15, 12,
-                  7, 33, 28, 21, 14, 30, 20, 22, 15, 12
-                ].map((id, index) => (
+                {[...clientLogos.slice(0, 17), ...clientLogos.slice(0, 17)].map((url, index) => (
                   <div
-                    key={`mob-r1-${id}-${index}`}
-                    className="bg-white border border-slate-400 rounded-xl p-3 flex items-center justify-center h-20 w-32 shrink-0 shadow-sm"
+                    key={`mob-r1-${index}`}
+                    className="bg-white border border-slate-300 rounded-xl p-3 flex items-center justify-center h-20 w-32 shrink-0 shadow-sm"
                   >
                     <img
-                      src={`/logos/${id}.jpg`}
-                      alt={`Client Logo ${id}`}
+                      src={url}
+                      alt={`Client Logo row1-${index}`}
                       className="max-h-full max-w-full object-contain pointer-events-none select-none"
+                      loading="lazy"
                     />
                   </div>
                 ))}
@@ -2666,39 +2658,35 @@ export default function Home() {
             {/* Row 2: Left to Right */}
             <div className="relative w-full overflow-hidden">
               <div className="animate-marquee-right flex gap-3 py-1">
-                {[
-                  1, 3, 4, 5, 6, 8, 10, 13, 16, 17,
-                  1, 3, 4, 5, 6, 8, 10, 13, 16, 17
-                ].map((id, index) => (
+                {[...clientLogos.slice(17, 34), ...clientLogos.slice(17, 34)].map((url, index) => (
                   <div
-                    key={`mob-r2-${id}-${index}`}
-                    className="bg-white border border-slate-400 rounded-xl p-3 flex items-center justify-center h-20 w-32 shrink-0 shadow-sm"
+                    key={`mob-r2-${index}`}
+                    className="bg-white border border-slate-300 rounded-xl p-3 flex items-center justify-center h-20 w-32 shrink-0 shadow-sm"
                   >
                     <img
-                      src={`/logos/${id}.jpg`}
-                      alt={`Client Logo ${id}`}
+                      src={url}
+                      alt={`Client Logo row2-${index}`}
                       className="max-h-full max-w-full object-contain pointer-events-none select-none"
+                      loading="lazy"
                     />
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Row 3: Left to Right */}
+            {/* Row 3: Right to Left */}
             <div className="relative w-full overflow-hidden">
               <div className="animate-marquee-left flex gap-3 py-1">
-                {[
-                  18, 19, 23, 24, 25, 26, 27, 29, 31, 32,
-                  18, 19, 23, 24, 25, 26, 27, 29, 31, 32
-                ].map((id, index) => (
+                {[...clientLogos.slice(34), ...clientLogos.slice(34)].map((url, index) => (
                   <div
-                    key={`mob-r3-${id}-${index}`}
-                    className="bg-white border border-slate-400 rounded-xl p-3 flex items-center justify-center h-20 w-32 shrink-0 shadow-sm"
+                    key={`mob-r3-${index}`}
+                    className="bg-white border border-slate-300 rounded-xl p-3 flex items-center justify-center h-20 w-32 shrink-0 shadow-sm"
                   >
                     <img
-                      src={`/logos/${id}.jpg`}
-                      alt={`Client Logo ${id}`}
+                      src={url}
+                      alt={`Client Logo row3-${index}`}
                       className="max-h-full max-w-full object-contain pointer-events-none select-none"
+                      loading="lazy"
                     />
                   </div>
                 ))}
