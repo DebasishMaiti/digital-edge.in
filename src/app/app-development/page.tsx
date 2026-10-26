@@ -85,6 +85,12 @@ const appDevShowcases = [
     link: "/company-details/velvet-box",
     image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=800&auto=format&fit=crop",
     logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/velvet-box-logo.jpg",
+  },
+  {
+    name: "Aladeen Bangkok",
+    link: "/company-details/aladeen",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/app-development-img/aladeen.png",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/aladeen.jpg",
   }
 ];
 
@@ -92,15 +98,51 @@ export default function AppDevelopment() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const appImages = [
-    "https://ik.imagekit.io/digitaledge360/digitaledge-in/app-development-img/aladeen.png",
-    "https://ik.imagekit.io/digitaledge360/digitaledge-in/app-development-img/instayaar.png",
-    "https://ik.imagekit.io/digitaledge360/digitaledge-in/app-development-img/kaam-dham.png",
-    "https://ik.imagekit.io/digitaledge360/digitaledge-in/app-development-img/noend.png",
-    "https://ik.imagekit.io/digitaledge360/digitaledge-in/app-development-img/publix.png",
-    "https://ik.imagekit.io/digitaledge360/digitaledge-in/app-development-img/sabjiKing.png",
-    "https://ik.imagekit.io/digitaledge360/digitaledge-in/app-development-img/hubfit.png",
-    "https://ik.imagekit.io/digitaledge360/digitaledge-in/app-development-img/recipe-keeper.png",
-    "https://ik.imagekit.io/digitaledge360/digitaledge-in/app-development-img/velvet-box.png",
+    {
+      src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/app-development-img/aladeen.png",
+      title: "Aladeen Bangkok",
+      link: "/company-details/aladeen",
+    },
+    {
+      src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/app-development-img/instayaar.png",
+      title: "Instayaar",
+      link: "/company-details/instayaar",
+    },
+    {
+      src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/app-development-img/kaam-dham.png",
+      title: "Kaam Dham",
+      link: "/company-details/kaamdham",
+    },
+    {
+      src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/app-development-img/noend.png",
+      title: "No-End Fashion",
+      link: "/company-details/no-end",
+    },
+    {
+      src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/app-development-img/publix.png",
+      title: "Publix",
+      link: "/company-details/publix",
+    },
+    {
+      src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/app-development-img/sabjiKing.png",
+      title: "Sabji King",
+      link: "/company-details/sabjiking",
+    },
+    {
+      src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/app-development-img/hubfit.png",
+      title: "HubFit",
+      link: "/company-details/hubfit",
+    },
+    {
+      src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/app-development-img/recipe-keeper.png",
+      title: "Recipe Keeper",
+      link: "/company-details/recipe-keeper",
+    },
+    {
+      src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/app-development-img/velvet-box.png",
+      title: "Velvet Box",
+      link: "/company-details/velvet-box",
+    },
   ];
 
   const gridBackgroundStyle = {
@@ -302,10 +344,14 @@ export default function AppDevelopment() {
 
           <div className="w-full relative">
             <Marquee speed={100} gradient={false} play={true} pauseOnClick={true} pauseOnHover={false}>
-              {appImages.map((src, index) => (
-                <div key={index} className="w-[350px] mx-4 flex-shrink-0 flex flex-col items-center py-12 group">
+              {appImages.map((app, index) => (
+                <Link
+                  key={index}
+                  href={app.link}
+                  className="w-[350px] mx-4 flex-shrink-0 flex flex-col items-center py-12 group cursor-pointer block"
+                >
                   {/* Phone Mockup Frame */}
-                  <div className="w-[320px] h-[640px] rounded-[48px] bg-[#0c101a] p-2.5 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] border border-[#1f293d] relative overflow-visible transition-all duration-300">
+                  <div className="w-[320px] h-[640px] rounded-[48px] bg-[#0c101a] p-2.5 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] border border-[#1f293d] relative overflow-visible transition-all duration-300 group-hover:scale-105 group-hover:shadow-[0_40px_80px_-20px_rgba(36,67,171,0.4)] group-hover:border-[#2443ab]/50">
                     {/* Top Camera Notch */}
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-[#0c101a] rounded-b-[20px] z-30 flex items-center justify-center gap-2 pb-1">
                       <div className="w-2.5 h-2.5 rounded-full bg-slate-900 border border-slate-800" />
@@ -315,11 +361,17 @@ export default function AppDevelopment() {
                     {/* Inner Screen */}
                     <div className="w-full h-full rounded-[32px] overflow-hidden bg-slate-950 relative border border-black/40 py-[5px]">
                       <div className="w-full h-full overflow-hidden relative">
-                        <Image src={src} alt={`App Screen ${index}`} fill className="object-cover object-top" />
+                        <Image src={app.src} alt={app.title} fill className="object-cover object-top" />
                       </div>
                     </div>
+
+                    {/* Bottom Card Tag overlapping the bezel */}
+                    <div className="absolute -bottom-6 left-6 right-6 bg-[#fafbfc] rounded-[20px] p-3.5 flex items-center justify-center gap-2 shadow-[0_15px_30px_-5px_rgba(0,0,0,0.18)] border border-slate-200/80 z-30 transition-all duration-300 group-hover:bg-white group-hover:border-[#2443ab]/40">
+                      <span className="text-sm font-extrabold text-[#0d1b3e] tracking-tight text-center group-hover:text-[#2443ab] transition-colors">{app.title}</span>
+                      <ArrowRight className="w-4 h-4 text-[#2443ab] opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
+                    </div>
                   </div>
-                </div>
+                </Link>
               ))}
             </Marquee>
           </div>

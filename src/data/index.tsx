@@ -18,18 +18,18 @@ export const brandLogosList = [
 ];
 
 export const portfolioItems = [
-  { name: "Genesis", image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/portfolio/genesis.jpg", url: "https://genesiseduzone.com/" },
-  { name: "Melfort", image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/portfolio/melfort.png", url: "https://melfort.com" },
-  { name: "Chris Louis", image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/portfolio/chrislouis.png", url: "https://chrislouis.com.au" },
-  { name: "United By Blue", image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/portfolio/unitedbyblue.png", url: "https://www.unitedbyblue.com/" },
-  { name: "Truboy BBQ", image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/portfolio/truboybbq.png", url: "https://truboybbq.com" },
-  { name: "Aladeen", image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/portfolio/aladeenbangkok.png", url: "https://aladeenbangkok.com/" },
-  { name: "Shop Earth Bags", image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/portfolio/shopearthbags.png", url: "https://www.shopearthbags.com/" },
-  { name: "Mezoma", image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/portfolio/mezoma.png", url: "https://mezoma.com" },
-  { name: "Sacred Suta", image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/portfolio/sacredsuta.png", url: "https://sacredsuta.com" },
-  { name: "Peach Tassels", image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/portfolio/peachtassels.png", url: "https://peachtassels.com" },
-  { name: "No-End Fashion", image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/portfolio/no-end.png", url: "https://noend.com" },
-  { name: "Velvet Box", image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/portfolio/velvet-box.png", url: "https://velvetbox.com" }
+  { name: "Genesis", image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/portfolio/genesis.jpg", url: "https://genesiseduzone.com/", link: "/company-details/genesis" },
+  { name: "Melfort", image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/portfolio/melfort.png", url: "https://melfort.com", link: "/company-details/melfort" },
+  { name: "Chris Louis", image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/portfolio/chrislouis.png", url: "https://chrislouis.com.au", link: "/company-details/chris-louis" },
+  { name: "United By Blue", image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/portfolio/unitedbyblue.png", url: "https://www.unitedbyblue.com/", link: "/company-details/united-by-blue" },
+  { name: "Truboy BBQ", image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/portfolio/truboybbq.png", url: "https://truboybbq.com", link: "/company-details/truboy-bbq" },
+  { name: "Aladeen", image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/portfolio/aladeenbangkok.png", url: "https://aladeenbangkok.com/", link: "/company-details/aladeen" },
+  { name: "Shop Earth Bags", image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/portfolio/shopearthbags.png", url: "https://www.shopearthbags.com/", link: "/company-details/earthbags" },
+  { name: "Mezoma", image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/portfolio/mezoma.png", url: "https://mezoma.com", link: "/company-details/mezoma" },
+  { name: "Sacred Suta", image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/portfolio/sacredsuta.png", url: "https://sacredsuta.com", link: "/company-details/sacred-suta" },
+  { name: "Peach Tassels", image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/portfolio/peachtassels.png", url: "https://peachtassels.com", link: "/company-details/peach-tassels" },
+  { name: "No-End Fashion", image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/portfolio/no-end.png", url: "https://noend.com", link: "/company-details/no-end" },
+  { name: "Velvet Box", image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/portfolio/velvet-box.png", url: "https://velvetbox.com", link: "/company-details/velvet-box" }
 ];
 
 export const services = [

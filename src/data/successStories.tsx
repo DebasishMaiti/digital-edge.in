@@ -2365,10 +2365,274 @@ export const storiesData: Record<string, SuccessStoryData> = {
       { title: "AOV Growth", desc: "45% increase in average order transaction value", icon: "percent" },
       { title: "App Retention", desc: "78% repeat 90-day active user retention rate", icon: "shield" }
     ]
+  },
+  "aladeen": {
+    category: "Full-Stack Web & Mobile App Development",
+    heroHeadingBlack: "Aladeen Bangkok -",
+    heroHeadingGreen: "Omnichannel Restaurant Web & Mobile Ordering App",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/web-development-img/Aladeen_Bangkok.png",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/aladeen.jpg",
+    title: "Aladeen Bangkok",
+    subtitle: "Authentic Arabic, Indian & Mediterranean Dining Powered by Integrated Web & Mobile Ordering",
+    emoji: "🍽️",
+    description: "Aladeen Bangkok is a premier Middle Eastern and international fine dining restaurant and shisha lounge in Sukhumvit, Bangkok. Digital Edge 360 engineered a comprehensive digital ecosystem combining a high-performance interactive website and a custom mobile food ordering application with real-time kitchen dispatch, table reservations, and digital payments.",
+    websiteUrl: "https://aladeenbangkok.com/",
+    playStoreUrl: "https://app.aladeenbangkok.com/",
+    industry: "Hospitality, Fine Dining & Food Tech",
+    projectType: "Web & Mobile App Development (iOS, Android & Next.js)",
+    stats: {
+      estimatedTime: "30 Days",
+      bugsFixing: "155 +",
+      security: "99.99%",
+      projectCompletion: "30 Days",
+      trafficSpikes: "340%",
+      trafficSpikesLabel: "Direct Online Food Orders"
+    },
+    customStats: [
+      { label: "Direct Online Orders", val: "+340%" },
+      { label: "Table Reservations Growth", val: "+280%" },
+      { label: "Average Checkout Time", val: "45 sec" },
+      { label: "Mobile App Re-order Rate", val: "68%" },
+      { label: "Platform Uptime & Speed", val: "99.99%" }
+    ],
+    about: "Aladeen Bangkok brings an oasis of authentic culinary heritage to the heart of Bangkok, Thailand. Renowned for authentic Middle Eastern, Arabic, Indian, and Mediterranean delicacies — from tender charcoal-grilled kebabs and signature Biryanis to rich Mandi and aromatic curries — Aladeen pairs traditional recipes with a world-class dining and shisha lounge experience for international tourists and local food connoisseurs alike.",
+    challenge: "Relying solely on high-commission third-party food delivery platforms was eating into profit margins while offering no ownership of customer relationships. Aladeen needed an integrated digital solution — a high-speed, multilingual web presence for tourist discoverability and table reservations, paired with a seamless mobile ordering app for commission-free deliveries, dine-in contactless QR ordering, and automated kitchen order synchronization.",
+    workflowTitle: "Omnichannel Restaurant & Food Tech Development",
+    workflow: [
+      "Brand Experience & Digital Showroom: Crafted an elegant, visual-first UI highlighting chef specialties, dynamic food carousels, and the lounge ambiance.",
+      "High-Conversion Web Platform: Developed an ultra-fast responsive restaurant website with multi-language support, event booking, and direct reservation funnels.",
+      "Custom Web & Mobile Ordering App: Engineered a seamless mobile ordering app featuring dynamic menu modifiers, cart optimization, and instant order tracking.",
+      "Kitchen Dispatch & Payment Integration: Integrated automated POS/KDS kitchen ticket printing, multi-currency processing, and secure Thai QR PromptPay payments."
+    ],
+    timeline: [
+      { label: "Discovery & Menu UX Mapping", day: "5 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "UI/UX & Mobile Flow Design", day: "12 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "Web & Mobile App Engineering", day: "22 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "POS & Payment Gateway QA", day: "26 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
+      { label: "Production Deploy & Multi-Launch", day: "30 Day", color: "border-emerald-500 bg-emerald-50 text-emerald-600" }
+    ],
+    aboutHeadline: "Authentic Flavors Meet Cutting-Edge Food Tech",
+    challengeHeadline: "Transforming Dining and Delivery into a Commission-Free Digital Engine",
+    challengeBullets: [
+      "Eliminating reliance on high-commission third-party aggregators through proprietary ordering channels",
+      "Seamlessly synchronizing web reservations and mobile app delivery orders with real-time kitchen workflows",
+      "Delivering a frictionless multilingual experience for international tourists exploring Bangkok dining",
+      "Implementing fast, secure digital payment gateways including Thai QR PromptPay and global credit cards",
+      "Building a high-retention customer loyalty system with automated push notifications and re-order incentives"
+    ],
+    timelineBanner: "Unified Web & Mobile Ordering Ecosystem Launched in 30 Days",
+    impactHeadline: "Record Digital Revenue, Direct Orders & Guest Engagement",
+    impactDescription: "With the unified web platform and mobile ordering app, Aladeen Bangkok achieved a 340% increase in direct commission-free online food orders, a 280% increase in digital table reservations, and 68% repeat order retention.",
+    impactCards: [
+      { title: "+340% Online Orders", desc: "Surge in direct, commission-free takeaway and delivery orders", icon: "trending" },
+      { title: "+280% Reservations", desc: "Growth in online table reservations and VIP lounge bookings", icon: "users" },
+      { title: "68% App Retention", desc: "High repeat customer order rate via targeted mobile push alerts", icon: "shield" },
+      { title: "45s Quick Checkout", desc: "Frictionless mobile ordering with instant PromptPay & card payments", icon: "check" }
+    ]
+  },
+  "united-by-blue": {
+    category: "Web Development & E-Commerce Storefront",
+    heroHeadingBlack: "United By Blue -",
+    heroHeadingGreen: "Sustainable Bags & E-Commerce Web Development",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/web-development-img/united_by_blue.png",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/united%20by%20blue.png",
+    title: "United By Blue",
+    subtitle: "Certified B Corp Delivering Durable Sustainable Bags, Travel Gear & Ocean Conservation",
+    emoji: "🎒",
+    description: "United By Blue is a Certified B Corporation outdoor lifestyle brand known for its durable, sustainably crafted bags, backpacks, and travel accessories. Guided by a core environmental mission — removing one pound of trash from oceans and waterways for every product sold — Digital Edge 360 engineered a high-performance web development and e-commerce platform with intuitive bag spec filtering, real-time ocean impact tracking, and low-friction responsive checkout.",
+    websiteUrl: "https://unitedbyblue.com/",
+    industry: "Sustainable Fashion, Bags & Outdoor Lifestyle",
+    projectType: "Web Development (Custom Next.js & Shopify E-Commerce)",
+    stats: {
+      estimatedTime: "28 Days",
+      bugsFixing: "160 +",
+      security: "99.99%",
+      projectCompletion: "28 Days",
+      trafficSpikes: "380%",
+      trafficSpikesLabel: "Growth in Eco Bag Sales"
+    },
+    customStats: [
+      { label: "Eco Bag Online Sales", val: "+380%" },
+      { label: "Waterway Trash Cleaned", val: "5M+ lbs" },
+      { label: "Mobile Web Conversion", val: "+240%" },
+      { label: "Organic Search Growth", val: "+310%" },
+      { label: "Store Uptime & Speed", val: "99.99%" }
+    ],
+    about: "United By Blue is dedicated to proving that commerce and conservation can work in harmony. Specializing in rugged, weather-resistant backpacks, weekender duffels, and modular travel bags crafted from 100% recycled ocean plastics, organic cotton, and durable eco-canvas, the brand pairs timeless outdoor aesthetics with rigorous sustainability standards. For every product purchased, United By Blue directly removes one pound of trash from waterways, turning everyday gear into an ongoing vehicle for planetary impact.",
+    challenge: "Conveying the high technical quality, utility features, and sustainable material certifications of premium bags while maintaining a seamless, fast-loading shopping flow. United By Blue needed an interactive digital storefront that effectively communicates the '1 Pound Promise' impact counter, provides granular bag sizing and compartment comparison tools, and eliminates checkout drop-off across global mobile shoppers.",
+    workflowTitle: "Web Development Architecture & Sustainable Commerce",
+    workflow: [
+      "Eco-Centric Web UI/UX Architecture: Designed an earthy, nature-inspired web interface spotlighting bag durability, recycled fabrics, and the 1-Pound conservation pledge.",
+      "Interactive Bag Spec & Comparison Tools: Engineered responsive product viewports displaying volume capacity (Liters), laptop sleeve sizing, waterproof zippers, and multi-angle previews.",
+      "Real-Time Ocean Impact Web Integration: Built dynamic impact counters at cart and checkout showing the exact environmental contribution of every purchase.",
+      "Frontend Performance & Checkout Engineering: Engineered an ultra-fast web storefront with Next.js image optimization, multi-currency support, and streamlined one-page checkout."
+    ],
+    timeline: [
+      { label: "Conservation & Web Strategy", day: "4 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "UI & Responsive Store Design", day: "10 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "Storefront Web Development", day: "19 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "Web Performance & Checkout QA", day: "24 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
+      { label: "Deploy & Global Web Launch", day: "28 Day", color: "border-emerald-500 bg-emerald-50 text-emerald-600" }
+    ],
+    aboutHeadline: "Built for the Outdoors. Made from Recycled Ocean Waste.",
+    challengeHeadline: "Translating an Environmental Mission into High-Converting Bag Commerce",
+    challengeBullets: [
+      "Showcasing modular bag compartments, weatherproof materials, and laptop dimensions clearly on mobile web browsers",
+      "Integrating real-time environmental impact counters (pounds of trash removed per order) into product pages and cart",
+      "Reducing web page load latency caused by high-resolution multi-angle photography and video walkthroughs",
+      "Building multi-currency checkout and transparent eco-friendly shipping logistics for global customers",
+      "Optimizing organic search rankings for competitive eco-friendly bag, backpack, and travel gear keywords"
+    ],
+    timelineBanner: "High-Performance Web Platform Deployed in 28 Days",
+    impactHeadline: "Record Surge in Online Bag Sales & Direct Conservation Impact",
+    impactDescription: "United By Blue's revitalized web platform achieved a 380% surge in online bag purchases, a 240% increase in mobile web conversion rate, and engaged hundreds of thousands of conscious shoppers in direct ocean waterway conservation.",
+    impactCards: [
+      { title: "+380% Bag Sales", desc: "Significant surge in direct-to-consumer sustainable backpack & tote web orders", icon: "trending" },
+      { title: "5M+ lbs Cleaned", desc: "Pounds of trash removed from oceans and rivers supported by direct web sales", icon: "shield" },
+      { title: "+240% Web CVR", desc: "Uplift in mobile web store conversions through streamlined one-page checkout", icon: "check" },
+      { title: "310% SEO Traffic", desc: "Growth in organic search visits for recycled bags and eco travel accessories", icon: "users" }
+    ]
+  },
+  "melfort": {
+    category: "E-Commerce Web & Storefront Development",
+    heroHeadingBlack: "Melfort -",
+    heroHeadingGreen: "Bespoke Apparel & Contemporary E-Commerce Experience",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/portfolio/melfort.png",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/portfolio/melfort.png",
+    title: "Melfort",
+    subtitle: "Timeless Tailoring, Elevated Contemporary Menswear & High-Converting Digital Storefront",
+    emoji: "👔",
+    description: "Melfort is a contemporary fashion and menswear brand celebrated for modern tailoring, minimalist silhouettes, and premium fabrics. Digital Edge 360 designed and developed a bespoke, high-converting e-commerce storefront featuring interactive fit finders, rich editorial lookbooks, fast-checkout architecture, and optimized multi-device browsing.",
+    websiteUrl: "https://melfort.com",
+    industry: "Luxury Fashion, Menswear & Apparel E-Commerce",
+    projectType: "Full-Stack E-Commerce Web Development (Custom Next.js & Shopify)",
+    stats: {
+      estimatedTime: "30 Days",
+      bugsFixing: "120 +",
+      security: "99.99%",
+      projectCompletion: "30 Days",
+      trafficSpikes: "290%",
+      trafficSpikesLabel: "Online Revenue Growth"
+    },
+    customStats: [
+      { label: "Online Sales Growth", val: "+290%" },
+      { label: "Mobile Checkout Speed", val: "1.2s" },
+      { label: "Return Rate Reduction", val: "-35%" },
+      { label: "Average Order Value", val: "+42%" },
+      { label: "Global Platform Uptime", val: "99.99%" }
+    ],
+    about: "Melfort redefines contemporary apparel with an emphasis on refined aesthetics, versatile essentials, and meticulous tailoring. Bridging everyday sophistication with effortless comfort, the brand serves discerning fashion enthusiasts who value superior fabrics and enduring design. Every piece is engineered with precision, from signature structured shirts and trousers to curated modern outerwear.",
+    challenge: "Showcasing nuanced garment textures, drape, and precision tailoring on digital screens while providing shoppers with absolute sizing confidence. Melfort required an elevated, distraction-free digital storefront that conveys boutique luxury, solves sizing friction to reduce return rates, and delivers lightning-fast mobile transactions across international markets.",
+    workflowTitle: "Editorial E-Commerce & Precision Storefront Engineering",
+    workflow: [
+      "Luxury Brand Interface Design: Crafted a high-fashion, editorial visual design with high-resolution fabric zooms and interactive lookbook galleries.",
+      "Interactive Sizing & Fit Engine: Developed an intuitive, custom sizing recommendation tool allowing shoppers to discover their ideal cut and silhouette with ease.",
+      "Performance & Headless Checkout: Engineered a Next.js powered storefront paired with optimized one-page checkout, reducing mobile friction and cart abandonment.",
+      "Omnichannel Inventory Sync: Built unified stock management and automated fulfillment webhooks for streamlined cross-border operations."
+    ],
+    timeline: [
+      { label: "Brand Discovery & Architecture", day: "5 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "Editorial UI & Design System", day: "12 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "Storefront & Engine Development", day: "22 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "Performance & Checkout Testing", day: "26 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
+      { label: "Global Deployment & Go-Live", day: "30 Day", color: "border-emerald-500 bg-emerald-50 text-emerald-600" }
+    ],
+    aboutHeadline: "Refined Tailoring Meets Frictionless Modern Commerce",
+    challengeHeadline: "Translating Fabric Quality and Precision Fit into Digital Conversions",
+    challengeBullets: [
+      "Communicating luxury fabric drape and textures seamlessly on mobile screens without slowing down page load",
+      "Eliminating size uncertainty through an interactive, data-guided fit calculator to decrease costly product returns",
+      "Minimizing checkout drop-off across global mobile customers with instant payment methods like Apple Pay and Google Pay",
+      "Unifying warehouse inventory management with real-time stock notifications and pre-order capabilities"
+    ],
+    timelineBanner: "High-Performance Fashion Storefront Deployed in 30 Days",
+    impactHeadline: "Significant Sales Expansion, Lower Returns & Superior Customer Satisfaction",
+    impactDescription: "Through editorial design, interactive sizing assistance, and lightning-fast checkout performance, Melfort achieved a 290% increase in online store revenue and a 35% reduction in size-related return rates.",
+    impactCards: [
+      { title: "+290% Revenue", desc: "Substantial increase in direct-to-consumer online fashion sales", icon: "trending" },
+      { title: "-35% Returns", desc: "Significant reduction in returns through interactive fit recommendations", icon: "shield" },
+      { title: "+42% AOV", desc: "Uplift in average order value through curated lookbook bundling", icon: "percent" },
+      { title: "1.2s Fast Load", desc: "Ultra-fast Next.js mobile load times maximizing customer retention", icon: "check" }
+    ]
+  },
+  "sabjiking": {
+    category: "Mobile App Development & Quick-Commerce",
+    heroHeadingBlack: "Sabji King -",
+    heroHeadingGreen: "Farm-Fresh Vegetable & Daily Grocery Delivery App",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/app-development-img/sabjiKing.png",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/app-development-img/sabjiKing.png",
+    title: "Sabji King",
+    subtitle: "Farm-to-Doorstep Fresh Vegetables & Daily Groceries Delivered in Under 30 Minutes",
+    emoji: "🥬",
+    description: "Sabji King is a leading on-demand fresh vegetable and farm grocery delivery mobile application. Digital Edge 360 engineered a comprehensive mobile app ecosystem for iOS and Android featuring real-time daily mandi price updates, smart subscription baskets, dynamic delivery route dispatching, and seamless instant digital payments.",
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.sabjiking.app",
+    websiteUrl: "https://sabjiking.com",
+    industry: "Quick-Commerce, Farm Produce & Grocery Tech",
+    projectType: "Full-Stack Mobile App Development (React Native, iOS & Android)",
+    stats: {
+      estimatedTime: "45 Days",
+      bugsFixing: "210 +",
+      security: "99.99%",
+      projectCompletion: "42 Days",
+      trafficSpikes: "360%",
+      trafficSpikesLabel: "Daily App Orders"
+    },
+    customStats: [
+      { label: "Daily Active Orders", val: "+360%" },
+      { label: "Delivery Time Avg", val: "22 mins" },
+      { label: "Repeat Order Frequency", val: "84%" },
+      { label: "App Store Rating", val: "4.8 ★" },
+      { label: "System Uptime", val: "99.99%" }
+    ],
+    about: "Sabji King connects local farms directly to household kitchens, delivering crisp, farm-fresh vegetables, organic produce, and daily kitchen essentials. By removing traditional middlemen, Sabji King guarantees morning-harvested freshness at honest wholesale prices, backed by stringent quality checks and eco-friendly sanitized packaging.",
+    challenge: "Managing highly perishable farm inventory with rapid daily price fluctuations while coordinating ultra-fast hyperlocal delivery logistics. Sabji King required a lightweight, multilingual mobile application capable of supporting instant order dispatching, live rider GPS tracking, variable weight pricing adjustments, and offline-resilient caching for high order volumes during morning rush hours.",
+    workflowTitle: "Quick-Commerce Mobile Architecture & Hyperlocal Logistics",
+    workflow: [
+      "User-Centric Mobile UI/UX: Designed a clean, visual-first mobile app featuring one-tap reordering, quick-search categorization, and multilingual support.",
+      "Dynamic Mandi Pricing Engine: Built real-time administrative tooling to update daily vegetable market prices instantly across regions and pin codes.",
+      "Automated Rider Dispatch & Tracking: Integrated geospatial mapping for automated order batching, optimal route calculation, and live delivery status updates.",
+      "Wallet & Multi-Gateway Checkout: Implemented UPI, credit/debit card, net banking, and integrated digital wallet options for instant frictionless checkouts."
+    ],
+    timeline: [
+      { label: "Logistics & Architecture Planning", day: "7 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "Mobile UI/UX & Flow Wireframing", day: "15 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "Frontend & Backend App Build", day: "30 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "Rider Dispatch & Payment QA", day: "37 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
+      { label: "Play Store & App Store Launch", day: "42 Day", color: "border-emerald-500 bg-emerald-50 text-emerald-600" }
+    ],
+    aboutHeadline: "Fresh From Farm to Doorstep in Minutes",
+    challengeHeadline: "Engineering Real-Time Logistics and Perishable Inventory Workflows",
+    challengeBullets: [
+      "Handling rapid morning order surges without latency or app crashes during peak shopping hours",
+      "Accommodating variable product weights and dynamically adjusting customer cart balances transparently",
+      "Real-time geolocation tracking for dispatch riders to achieve consistent sub-30-minute delivery SLAs",
+      "Simple, accessible UX designed for users of all demographics with vernacular language support"
+    ],
+    timelineBanner: "Hyperlocal Mobile Delivery App Launched in 42 Days",
+    impactHeadline: "Explosive Daily Order Growth & High Customer Retention",
+    impactDescription: "With Sabji King's intuitive mobile app and optimized hyperlocal logistics, daily orders grew by 360%, average delivery time dropped to 22 minutes, and customer repeat order rate reached an industry-leading 84%.",
+    impactCards: [
+      { title: "+360% Daily Orders", desc: "Exponential surge in daily farm-fresh grocery and vegetable deliveries", icon: "trending" },
+      { title: "22-Min Delivery", desc: "Optimized route dispatching slashing average delivery completion time", icon: "check" },
+      { title: "84% Re-order Rate", desc: "High repeat customer retention powered by smart daily vegetable baskets", icon: "users" },
+      { title: "4.8★ App Rating", desc: "Top consumer satisfaction rating on Google Play Store and Apple App Store", icon: "shield" }
+    ]
   }
 };
 
 storiesData["amp-wheels"] = storiesData["gamp-wheels"];
+storiesData["aladeen-bangkok"] = storiesData["aladeen"];
+storiesData["united-by-blue"] = storiesData["united-by-blue"];
+storiesData["unitedbyblue"] = storiesData["united-by-blue"];
+storiesData["sabji-king"] = storiesData["sabjiking"];
+storiesData["shopearthbags"] = storiesData["earthbags"];
+storiesData["shop-earth-bags"] = storiesData["earthbags"];
+storiesData["chrislouis"] = storiesData["chris-louis"];
+storiesData["truboybbq"] = storiesData["truboy-bbq"];
+storiesData["peachtassels"] = storiesData["peach-tassels"];
+storiesData["velvetbox"] = storiesData["velvet-box"];
+
+
 
 
 

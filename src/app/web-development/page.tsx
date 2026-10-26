@@ -164,6 +164,18 @@ const webDevShowcases: ShowcaseItem[] = [
     link: "/company-details/instayaar",
     image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=800&auto=format&fit=crop",
     logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/instayaar-logo.jpg"
+  },
+  {
+    name: "Aladeen Bangkok",
+    link: "/company-details/aladeen",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/web-development-img/Aladeen_Bangkok.png",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/aladeen.jpg"
+  },
+  {
+    name: "United By Blue",
+    link: "/company-details/united-by-blue",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/web-development-img/united_by_blue.png",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/united%20by%20blue.png"
   }
 ];
 
@@ -171,12 +183,12 @@ export default function WebDevelopment() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const webDevImages = [
-    { src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/web-development-img/True_Boy_BBQ.png", title: "True Boy BBQ" },
-    { src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/web-development-img/Chris_Louis.png", title: "Chris Louis" },
-    { src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/web-development-img/Aladeen_Bangkok.png", title: "Aladeen Bangkok" },
-    { src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/web-development-img/Earth_Bags.png", title: "Earth Bags" },
-    { src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/web-development-img/no-end.png", title: "No End Fashion" },
-    { src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/web-development-img/united_by_blue.png", title: "United by Blue" },
+    { src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/web-development-img/True_Boy_BBQ.png", title: "True Boy BBQ", link: "/company-details/truboy-bbq" },
+    { src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/web-development-img/Chris_Louis.png", title: "Chris Louis", link: "/company-details/chris-louis" },
+    { src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/web-development-img/Aladeen_Bangkok.png", title: "Aladeen Bangkok", link: "/company-details/aladeen" },
+    { src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/web-development-img/Earth_Bags.png", title: "Earth Bags", link: "/company-details/earthbags" },
+    { src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/web-development-img/no-end.png", title: "No End Fashion", link: "/company-details/no-end" },
+    { src: "https://ik.imagekit.io/digitaledge360/digitaledge-in/web-development-img/united_by_blue.png", title: "United by Blue", link: "/company-details/united-by-blue" },
   ];
 
   // Infinite Slider Logic
@@ -463,25 +475,35 @@ export default function WebDevelopment() {
                   style={{ transform: `translateX(-${currentIndex * 100}%)` }}
                 >
                   {slides.map((image, index) => (
-                    <div
+                    <Link
                       key={index}
-                      className="relative w-full h-full flex-shrink-0"
+                      href={image.link || "#"}
+                      className="relative w-full h-full flex-shrink-0 block group cursor-pointer"
                     >
                       <Image
                         src={image.src}
                         alt={image.title}
                         fill
                         priority={index === 1}
-                        className="object-cover"
+                        className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                       />
                       {/* Shadow overlay at bottom */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent pointer-events-none group-hover:from-black/90 transition-colors duration-300" />
 
-                      {/* Caption */}
-                      <div className="absolute bottom-6 left-6 sm:bottom-8 sm:left-8 text-left z-20">
-                        <h3 className="text-xl sm:text-2xl font-black text-white mt-1">{image.title}</h3>
+                      {/* Caption & Call to action */}
+                      <div className="absolute bottom-6 left-6 right-6 sm:bottom-8 sm:left-8 sm:right-8 flex items-end justify-between z-20">
+                        <div className="text-left">
+                          <span className="text-[11px] sm:text-xs font-bold text-blue-400 tracking-wider uppercase">Case Study</span>
+                          <h3 className="text-xl sm:text-2xl font-black text-white mt-1 group-hover:text-blue-200 transition-colors">{image.title}</h3>
+                        </div>
+                        <div className="flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-white text-xs sm:text-sm font-semibold group-hover:bg-[#2443ab] group-hover:border-[#2443ab] transition-all duration-300 shadow-lg">
+                          <span>View Details</span>
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                          </svg>
+                        </div>
                       </div>
-                    </div>
+                    </Link>
                   ))}
                 </div>
 

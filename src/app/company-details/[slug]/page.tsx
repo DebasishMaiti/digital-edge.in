@@ -194,6 +194,38 @@ const caseStudiesMetadata: Record<string, { title: string; description: string }
   "velvet-box": {
     title: "Velvet Box Case Study | Digital Edge 360°",
     description: "How Digital Edge 360 built a high-converting luxury mobile shopping app for Velvet Box fine jewelry with 360-degree product inspection and biometric checkout."
+  },
+  "aladeen": {
+    title: "Aladeen Bangkok Case Study | Digital Edge 360°",
+    description: "How Digital Edge 360 engineered a high-performance restaurant website and mobile ordering app for Aladeen Bangkok, driving +340% direct online orders."
+  },
+  "aladeen-bangkok": {
+    title: "Aladeen Bangkok Case Study | Digital Edge 360°",
+    description: "How Digital Edge 360 engineered a high-performance restaurant website and mobile ordering app for Aladeen Bangkok, driving +340% direct online orders."
+  },
+  "united-by-blue": {
+    title: "United By Blue Case Study | Digital Edge 360°",
+    description: "How Digital Edge 360 engineered a high-converting sustainable e-commerce web platform for United By Blue bags and outdoor gear, driving +380% online sales."
+  },
+  "unitedbyblue": {
+    title: "United By Blue Case Study | Digital Edge 360°",
+    description: "How Digital Edge 360 engineered a high-converting sustainable e-commerce web platform for United By Blue bags and outdoor gear, driving +380% online sales."
+  },
+  "melfort": {
+    title: "Melfort Case Study | Digital Edge 360°",
+    description: "How Digital Edge 360 designed and developed a bespoke, high-converting e-commerce storefront for contemporary menswear brand Melfort."
+  },
+  "sabjiking": {
+    title: "Sabji King Case Study | Digital Edge 360°",
+    description: "How Digital Edge 360 engineered the Sabji King quick-commerce mobile application for farm-fresh grocery and daily vegetable delivery."
+  },
+  "sabji-king": {
+    title: "Sabji King Case Study | Digital Edge 360°",
+    description: "How Digital Edge 360 engineered the Sabji King quick-commerce mobile application for farm-fresh grocery and daily vegetable delivery."
+  },
+  "chris-louis": {
+    title: "Chris Louis Case Study | Digital Edge 360°",
+    description: "How Digital Edge 360 built Chris Louis a premier high-conversion digital e-commerce storefront and online brand experience."
   }
 };
 

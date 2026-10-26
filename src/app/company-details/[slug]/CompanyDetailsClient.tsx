@@ -269,7 +269,7 @@ export default function CompanyDetailsClient({ story, slug }: { story: SuccessSt
 
           {/* Dynamic 6-Stats Ribbon bar */}
           <motion.div variants={itemVariants} className="w-full bg-gradient-to-r from-blue-100/60 via-white/80 to-indigo-100/60 backdrop-blur-md border border-slate-200/55 rounded-[32px] p-8 shadow-[0_15px_40px_rgba(0,0,0,0.03)]">
-            <div className={`grid grid-cols-2 ${story.customStats && story.customStats.length > 0 ? `md:grid-cols-${Math.min(story.customStats.length, 5)}` : "md:grid-cols-6"} gap-6 md:gap-4 divide-y md:divide-y-0 md:divide-x divide-slate-200/80`}>
+            <div className={`grid grid-cols-2 ${story.customStats && story.customStats.length > 0 ? `md:grid-cols-${Math.min(story.customStats.length, 5)}` : "md:grid-cols-6"} gap-6 md:gap-4 md:divide-x divide-slate-200/80`}>
               {(story.customStats && story.customStats.length > 0
                 ? story.customStats.map((item, idx) => {
                     const icons = [<TrendingUp key="1" className="w-5 h-5 text-blue-500" />, <Users key="2" className="w-5 h-5 text-violet-500" />, <Eye key="3" className="w-5 h-5 text-pink-500" />, <CheckCircle2 key="4" className="w-5 h-5 text-emerald-500" />, <Gauge key="5" className="w-5 h-5 text-amber-500" />];
@@ -290,7 +290,7 @@ export default function CompanyDetailsClient({ story, slug }: { story: SuccessSt
                     { label: "Traffic & Engagement", val: "Higher", icon: <TrendingUp className="w-5 h-5 text-indigo-500" />, colorClass: "from-indigo-600 to-blue-500" }
                   ]
               ).map((stat, i) => (
-                <div key={i} className={`flex flex-col items-center text-center px-4 ${i > 0 && "pt-4 md:pt-0"}`}>
+                <div key={i} className={`flex flex-col items-center text-center px-4 ${i >= 2 ? "border-t border-slate-200/80 pt-4 md:border-t-0 md:pt-0" : ""}`}>
                   <div className="flex items-center gap-1.5 justify-center">
                     {stat.icon}
                     <span className={`text-xl font-black leading-normal pb-1 bg-gradient-to-r ${stat.colorClass} bg-clip-text text-transparent`}>

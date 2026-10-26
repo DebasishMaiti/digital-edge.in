@@ -842,9 +842,11 @@ export default function Home() {
             >
               {/* Single map with duplicated items for infinite scroll */}
               {[...portfolioItems, ...portfolioItems].map((item, index) => (
-                <div
+                <Link
                   key={index}
-                  className="w-[240px] sm:w-[320px] shrink-0 group relative pb-8 transition-all duration-300 transform hover:scale-105"
+                  href={item.link || "#"}
+                  onClick={(e) => e.stopPropagation()}
+                  className="w-[240px] sm:w-[320px] shrink-0 group relative pb-8 transition-all duration-300 transform hover:scale-105 block cursor-pointer"
                 >
                   {/* Phone Mockup Frame */}
                   <div className="w-full aspect-[1/2] rounded-[36px] sm:rounded-[48px] bg-[#0c101a] p-2 sm:p-2.5 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] border border-[#1f293d] relative overflow-visible transition-all duration-300 group-hover:shadow-[0_40px_80px_-20px_rgba(36,67,171,0.4)] group-hover:border-[#2443ab]/50">
@@ -867,11 +869,12 @@ export default function Home() {
                     </div>
 
                     {/* Bottom Card Tag overlapping the bezel */}
-                    <div className="absolute -bottom-8 left-3 right-3 sm:left-6 sm:right-6 bg-[#fafbfc] rounded-[18px] sm:rounded-[24px] p-3 sm:p-5 flex items-center justify-center shadow-[0_20px_40px_-5px_rgba(0,0,0,0.18)] border border-slate-200/80 z-30 transition-all duration-300 group-hover:bg-white">
-                      <span className="text-xs sm:text-base font-extrabold text-[#0d1b3e] tracking-tight text-center">{item.name}</span>
+                    <div className="absolute -bottom-8 left-3 right-3 sm:left-6 sm:right-6 bg-[#fafbfc] rounded-[18px] sm:rounded-[24px] p-3 sm:p-5 flex items-center justify-center gap-2 shadow-[0_20px_40px_-5px_rgba(0,0,0,0.18)] border border-slate-200/80 z-30 transition-all duration-300 group-hover:bg-white group-hover:border-[#2443ab]/40">
+                      <span className="text-xs sm:text-base font-extrabold text-[#0d1b3e] tracking-tight text-center group-hover:text-[#2443ab] transition-colors">{item.name}</span>
+                      <ArrowRight className="w-3.5 h-3.5 text-[#2443ab] opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
                     </div>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
