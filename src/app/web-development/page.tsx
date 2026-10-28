@@ -110,13 +110,6 @@ const webDevShowcases: ShowcaseItem[] = [
     logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/nayantara.jpg"
   },
   {
-    name: "Truboy BBQ",
-    link: "/company-details/truboy-bbq",
-    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/Trueboybbq.jpg",
-    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/7.jpg",
- 
-  },
-  {
     name: "Creative Ecotech",
     link: "/company-details/creative-ecotech",
     image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/creative-echotech.jpg",
@@ -148,12 +141,6 @@ const webDevShowcases: ShowcaseItem[] = [
     logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/Sree_Vedics_Logo.jpg"
   },
   {
-    name: "No End Fashion",
-    link: "/company-details/no-end",
-    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/web-development-img/no-end.png",
-    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/no-end-logo.png"
-  },
-  {
     name: "Kaamdham",
     link: "/company-details/kaamdham",
     image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800&auto=format&fit=crop",
@@ -166,16 +153,28 @@ const webDevShowcases: ShowcaseItem[] = [
     logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/instayaar-logo.jpg"
   },
   {
-    name: "Aladeen Bangkok",
-    link: "/company-details/aladeen",
-    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/web-development-img/Aladeen_Bangkok.png",
-    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/aladeen.jpg"
+    name: "Paaro Lifestyle",
+    link: "/company-details/paaro-lifestyle",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/paro.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/Paro-logo.png"
   },
   {
-    name: "United By Blue",
-    link: "/company-details/united-by-blue",
-    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/web-development-img/united_by_blue.png",
-    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/united%20by%20blue.png"
+    name: "Kashvii",
+    link: "/company-details/kashvii",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/kashvi.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/kashvi-logo.png"
+  },
+  {
+    name: "Rebel Fashion",
+    link: "/company-details/rebel-fashion",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/rebel-fashion.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/rebel-fashion-logo.png"
+  },
+  {
+    name: "Manas",
+    link: "/company-details/manas",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/manas.jpg",
+    logo: "https://cdn.shopify.com/s/files/1/0859/1150/3140/files/Manash_Ghorai_logo.png"
   }
 ];
 
@@ -488,15 +487,15 @@ export default function WebDevelopment() {
                         className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                       />
                       {/* Shadow overlay at bottom */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent pointer-events-none group-hover:from-black/90 transition-colors duration-300" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent pointer-events-none transition-colors duration-300" />
 
                       {/* Caption & Call to action */}
                       <div className="absolute bottom-6 left-6 right-6 sm:bottom-8 sm:left-8 sm:right-8 flex items-end justify-between z-20">
                         <div className="text-left">
                           <span className="text-[11px] sm:text-xs font-bold text-blue-400 tracking-wider uppercase">Case Study</span>
-                          <h3 className="text-xl sm:text-2xl font-black text-white mt-1 group-hover:text-blue-200 transition-colors">{image.title}</h3>
+                          <h3 className="text-xl sm:text-2xl font-black text-white mt-1 transition-colors">{image.title}</h3>
                         </div>
-                        <div className="flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-white text-xs sm:text-sm font-semibold group-hover:bg-[#2443ab] group-hover:border-[#2443ab] transition-all duration-300 shadow-lg">
+                        <div className="flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-white text-xs sm:text-sm font-semibold transition-all duration-300 shadow-lg">
                           <span>View Details</span>
                           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />

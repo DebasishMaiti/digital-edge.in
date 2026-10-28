@@ -252,8 +252,8 @@ export default function PhotographyVideography() {
 
         {/* Success Stories Section */}
         <section className="relative z-10 w-full py-32 sm:py-40 bg-[#fafbfc] border-b border-slate-100/80 overflow-hidden">
-          <div className="max-w-[1400px] mx-auto px-8 sm:px-16 lg:px-24">
-            
+          <div className="max-w-full mx-auto px-8 sm:px-16 lg:px-24">
+
             {/* Section Header */}
             <div className="max-w-3xl mx-auto mb-16 text-center space-y-4">
               <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-200 bg-blue-50/50 px-4 py-2 text-[10px] sm:text-xs font-black tracking-[0.2em] text-[#2443ab] uppercase shadow-sm">

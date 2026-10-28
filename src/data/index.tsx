@@ -66,7 +66,7 @@ export const services = [
   {
     title: "Marketplace Growth",
     href: "/marketplace-optimization",
-    bgImage: "https://ik.imagekit.io/digitaledge360/digitaledge-in/home-bentogrid/marketplace-growth.png",
+    bgImage: "https://ik.imagekit.io/digitaledge360/digitaledge-in/home-bentogrid/marketplace-growth.jpg",
 
   },
   {

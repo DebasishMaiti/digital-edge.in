@@ -2617,6 +2617,134 @@ export const storiesData: Record<string, SuccessStoryData> = {
       { title: "84% Re-order Rate", desc: "High repeat customer retention powered by smart daily vegetable baskets", icon: "users" },
       { title: "4.8★ App Rating", desc: "Top consumer satisfaction rating on Google Play Store and Apple App Store", icon: "shield" }
     ]
+  },
+  "paaro-lifestyle": {
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/Paro-logo.png",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/paro.jpg",
+    title: "Paaro Lifestyle",
+    subtitle: "Celebrated Indian Saree & Contemporary Ethnic Fashion Storefront",
+    emoji: "🥻",
+    description: "Paaro Lifestyle is an exquisite Indian ethnic wear and saree brand celebrating the timeless artistry of heritage weaves, fine craftsmanship, and contemporary festive attire. Digital Edge 360 engineered a modern, high-converting e-commerce web platform for Paaro Lifestyle, featuring rapid page speeds, rich product visual showcases, and an effortless mobile checkout experience tailored for ethnic fashion connoisseurs.",
+    websiteUrl: "https://paarolifestyle.com/",
+    stats: {
+      estimatedTime: "22 Days",
+      bugsFixing: "140 +",
+      security: "99.99%",
+      projectCompletion: "22 Days",
+      trafficSpikes: "340%",
+      trafficSpikesLabel: "Store Visits & Saree Orders"
+    },
+    about: "Paaro Lifestyle celebrates the rich tradition of Indian attire with a contemporary soul. Curating masterfully crafted sarees ranging from Banarasi and Kanjivaram silks to lightweight organza, georgette, and linen weaves, Paaro Lifestyle caters to modern women seeking poise, cultural authenticity, and artisanal luxury for festive celebrations and everyday elegance.",
+    challenge: "Establishing a commanding digital presence in the competitive online saree and ethnic wear landscape. Paaro Lifestyle required an ultra-responsive, mobile-first storefront capable of displaying intricate fabric textures and high-resolution drape photography without slowing down load times, alongside intuitive catalog filtering and frictionless payment checkout.",
+    workflow: [
+      "Crafted an elegant, bespoke UI/UX theme designed to highlight delicate saree weaves and craftsmanship.",
+      "Engineered a high-performance, mobile-optimized storefront architecture ensuring lightning-fast product loading.",
+      "Integrated smart collection filters (by fabric, weave, occasion, color) and seamless cart management.",
+      "Optimized the checkout funnel with streamlined payment gateways to minimize drop-offs and drive higher conversions."
+    ],
+    timeline: [
+      { label: "Concept & Catalog Strategy", day: "4 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "Bespoke Storefront UI/UX", day: "10 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "Frontend & Catalog Architecture", day: "17 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "Mobile Optimization & QA", day: "20 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
+      { label: "Store Launch & Live", day: "22 Day", color: "border-emerald-500 bg-emerald-50 text-emerald-600" }
+    ]
+  },
+  "kashvii": {
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/kashvi-logo.png",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/kashvi.jpg",
+    title: "Kashvii",
+    subtitle: "Artisanal Silk, Georgette & Mulmul Saree Collections for the Modern Woman",
+    emoji: "🥻",
+    description: "Kashvii is a Kolkata-based premium D2C ethnic fashion and saree brand dedicated to the artistry of Indian weaves, from pure silks and lightweight georgettes to breathable mulmul cottons and festive satins. Digital Edge 360 built an ultra-fast, visually captivating e-commerce storefront for Kashvii, showcasing its vibrant saree collections with high-resolution fabric photography, intuitive draping guides, and frictionless mobile checkout.",
+    websiteUrl: "https://kashvii.com/",
+    stats: {
+      estimatedTime: "24 Days",
+      bugsFixing: "135 +",
+      security: "99.99%",
+      projectCompletion: "24 Days",
+      trafficSpikes: "380%",
+      trafficSpikesLabel: "Increase in Online Saree Orders"
+    },
+    about: "Rooted in Kolkata's rich textile heritage, Kashvii blends timeless Indian craftsmanship with contemporary silhouettes and digital artistry. Offering an extensive palette of pure silk, satin crepe, festive georgette, and handcrafted mulmul cotton sarees, Kashvii celebrates women who cherish grace, everyday comfort, and refined festive elegance.",
+    challenge: "Creating a seamless direct-to-consumer e-commerce shopping experience that effectively communicates the tactile quality, rich color palettes, and intricate weave patterns of Kashvii’s sarees. The brand required a mobile-first architecture capable of handling heavy visual catalogs with sub-second load times, smooth filter navigation across fabric types and occasions, and an optimized conversion funnel to reduce cart abandonment.",
+    workflow: [
+      "Designed a luxurious, minimalist storefront layout that accentuates fabric texture, pallu details, and drape aesthetics.",
+      "Engineered an ultra-fast Shopify architecture with optimized asset delivery and responsive mobile navigation.",
+      "Built multi-faceted collection filters allowing shoppers to filter by fabric (Mulmul, Georgette, Silk, Satin), occasion, and color.",
+      "Integrated simplified checkout flows, express payment methods, and automated WhatsApp/email recovery pipelines."
+    ],
+    timeline: [
+      { label: "Textile & Brand Discovery", day: "4 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "Bespoke UI/UX & Wireframes", day: "10 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "Full-Stack Storefront Development", day: "18 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "Mobile Performance & Checkout QA", day: "22 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
+      { label: "Store Launch & Growth Tracking", day: "24 Day", color: "border-emerald-500 bg-emerald-50 text-emerald-600" }
+    ]
+  },
+  "rebel-fashion": {
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/rebel-fashion-logo.png",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/rebel-fashion.jpg",
+    title: "Rebel Fashion",
+    subtitle: "Bold, Trend-Forward Women's Western Apparel & Statement Fashion Storefront",
+    emoji: "👗",
+    description: "Rebel Fashion is a contemporary women’s western apparel brand engineered for confident, trend-driven fashion lovers. From sculpting bodycon dresses and co-ord sets to chic jumpsuits and statement date night edits, Rebel Fashion redefines accessible luxury. Digital Edge 360 engineered a dynamic, mobile-first e-commerce storefront for Rebel Fashion, pairing high-impact visual aesthetics with rapid page loads, intuitive size curation, and frictionless checkout.",
+    websiteUrl: "https://rebelfashionz.com/",
+    stats: {
+      estimatedTime: "22 Days",
+      bugsFixing: "128 +",
+      security: "99.99%",
+      projectCompletion: "22 Days",
+      trafficSpikes: "360%",
+      trafficSpikesLabel: "Increase in Online Fashion Orders"
+    },
+    about: "Rebel Fashion is built around individuality, fearless self-expression, and modern elegance. Catering to women seeking standout looks that effortlessly transition from daytime chic to vibrant evening glamour, the brand curates premium dresses, sleek co-ords, trendy tops, and partywear crafted with high-grade fabrics and trendsetting silhouettes.",
+    challenge: "Developing an ultra-fast, visually immersive e-commerce storefront that captures the electric energy of modern western fashion. Rebel Fashion needed seamless mobile shopping navigation for rapid drop discovery, dynamic variant and size selectors, instant add-to-cart interactions, and optimized conversion pathways to convert trend-savvy visitors into loyal repeat customers.",
+    workflow: [
+      "Designed an editorial-grade, mobile-optimized visual layout highlighting fit, silhouette details, and styling inspirations.",
+      "Engineered a high-performance storefront architecture optimized for rapid image rendering and zero layout shift.",
+      "Built intuitive collection categorizations for quick filtering by occasion (Party Wear, Summer Edit, Date Night, Co-ords).",
+      "Integrated express mobile checkout, smart cart upsells, and automated customer retention funnels."
+    ],
+    timeline: [
+      { label: "Brand Vision & Catalog Strategy", day: "4 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "High-Fashion UI/UX Prototyping", day: "9 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "Storefront Development & Architecture", day: "16 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "Mobile Speed & Funnel QA", day: "20 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
+      { label: "Launch & Analytics Deployment", day: "22 Day", color: "border-emerald-500 bg-emerald-50 text-emerald-600" }
+    ]
+  },
+  "manas": {
+    logo: "https://cdn.shopify.com/s/files/1/0859/1150/3140/files/Manash_Ghorai_logo.png",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/manas.jpg",
+    title: "Manas",
+    subtitle: "Reimagining Bengal Craftsmanship & Heritage Indian Ethnic Wear",
+    emoji: "🥻",
+    description: "Manas (Manas Ghorai) is an acclaimed designer Indian ethnic wear and artisanal textile label celebrating the timeless heritage of Bengal craftsmanship. Weaving traditional handloom techniques with modern design sensitivity, the brand curates exquisite handcrafted sarees, Vastra, Paridhan kurtas, dupattas, and bespoke bridal ensembles. Digital Edge 360 engineered a luxury-grade, high-converting e-commerce web storefront for Manas, combining editorial visual storytelling with lightning-fast catalog navigation and effortless global checkout.",
+    websiteUrl: "https://manasghorai.com/",
+    stats: {
+      estimatedTime: "25 Days",
+      bugsFixing: "145 +",
+      security: "99.99%",
+      projectCompletion: "25 Days",
+      trafficSpikes: "320%",
+      trafficSpikesLabel: "Increase in Online D2C Sales"
+    },
+    about: "Manas breathes new life into Bengal's illustrious textile heritage. Operating at the confluence of textile research, fine art, and contemporary fashion, the brand collaborates closely with rural artisan clusters to produce sustainable, handcrafted sarees, intricate blouses, handcrafted kurtas, and artisanal jewellery. Every creation narrates a story of heritage, emotional resonance, and socio-economic artisan empowerment.",
+    challenge: "Translating the tactile depth, rich heritage narratives, and intricate craftsmanship of Bengal handloom into a high-converting digital storefront. Manas needed an ultra-responsive web platform capable of showcasing complex textile textures and high-resolution lookbooks without performance latency, alongside seamless multi-currency support for international patrons and intuitive occasion-based collection discovery.",
+    workflow: [
+      "Bespoke Luxury UI/UX: Designed an editorial-inspired layout emphasizing artisan stories, handloom details, and curated collections (Yali, Pallav, Nutan, Vastra).",
+      "High-Performance Architecture: Engineered an ultra-fast storefront optimized for rapid mobile load times, fluid transitions, and zero layout shift.",
+      "Advanced Catalog & Visual Discovery: Implemented intuitive categorization across Sarees, Dupattas & Stoles, Paridhan Kurtas, Cholis, and Alankar jewellery.",
+      "Seamless Global & Domestic Checkout: Integrated secure multi-currency payment gateways, automated fulfillment tracking, and streamlined customer communication funnels."
+    ],
+    timeline: [
+      { label: "Artisan Heritage & Brand Discovery", day: "5 Day", color: "border-blue-500 bg-blue-50 text-blue-600" },
+      { label: "Editorial UI/UX Design & Wireframing", day: "11 Day", color: "border-purple-500 bg-purple-50 text-purple-600" },
+      { label: "Full-Stack Storefront Development", day: "19 Day", color: "border-teal-500 bg-teal-50 text-teal-600" },
+      { label: "Global Checkout & Mobile Speed QA", day: "23 Day", color: "border-rose-500 bg-rose-50 text-rose-600" },
+      { label: "Store Launch & Growth Tracking", day: "25 Day", color: "border-emerald-500 bg-emerald-50 text-emerald-600" }
+    ]
   }
 };
 
@@ -2631,6 +2759,15 @@ storiesData["chrislouis"] = storiesData["chris-louis"];
 storiesData["truboybbq"] = storiesData["truboy-bbq"];
 storiesData["peachtassels"] = storiesData["peach-tassels"];
 storiesData["velvetbox"] = storiesData["velvet-box"];
+storiesData["paaro"] = storiesData["paaro-lifestyle"];
+storiesData["paarolifestyle"] = storiesData["paaro-lifestyle"];
+storiesData["kasvii"] = storiesData["kashvii"];
+storiesData["kashvi"] = storiesData["kashvii"];
+storiesData["rebelfashion"] = storiesData["rebel-fashion"];
+storiesData["rebelfashionz"] = storiesData["rebel-fashion"];
+storiesData["rebel-fashionz"] = storiesData["rebel-fashion"];
+storiesData["manas-ghorai"] = storiesData["manas"];
+storiesData["manasghorai"] = storiesData["manas"];
 
 
 
