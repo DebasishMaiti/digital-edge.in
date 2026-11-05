@@ -31,7 +31,7 @@ export function AdminSidebar({ blogCount = 2, founderCount = 2 }: { blogCount?: 
           <Link href="/admin/blogs" className="flex items-center justify-center">
             <div className="relative w-36 h-10">
               <Image
-                src="https://ik.imagekit.io/digitaledge360/digitaledge-in/DE360-LOGO.png"
+                src="/DE360-LOGO.png"
                 alt="Digital Edge 360°"
                 fill
                 className="object-contain object-center"
