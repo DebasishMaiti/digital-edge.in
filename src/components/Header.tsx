@@ -133,8 +133,8 @@ export default function Header() {
 
   const [isLocationOpen, setIsLocationOpen] = useState(false);
   const [isMobileLocationOpen, setIsMobileLocationOpen] = useState(false);
-  const [isKolkataHovered, setIsKolkataHovered] = useState(false);
-  const kolkataHoverTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+
 
   const [isInsightsOpen, setIsInsightsOpen] = useState(false);
   const [isMobileInsightsOpen, setIsMobileInsightsOpen] = useState(false);
@@ -206,7 +206,7 @@ export default function Header() {
             setIsSolutionsOpen(false);
             setIsInsightsOpen(false);
             setIsLocationOpen(false);
-            setIsKolkataHovered(false);
+
           } else {
             // Scrolling up -> show header
             setIsVisible(true);
@@ -233,7 +233,7 @@ export default function Header() {
 
       if (locationDropdownRef.current && !locationDropdownRef.current.contains(e.target as Node)) {
         setIsLocationOpen(false);
-        setIsKolkataHovered(false);
+
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
@@ -244,7 +244,7 @@ export default function Header() {
     if (!isVisible) return;
     if (hoverTimeout.current) clearTimeout(hoverTimeout.current);
     setIsLocationOpen(false);
-    setIsKolkataHovered(false);
+
     setIsInsightsOpen(false);
     setIsSolutionsOpen(true);
   };
@@ -264,19 +264,7 @@ export default function Header() {
   const handleLocationMouseLeave = () => {
     locationHoverTimeout.current = setTimeout(() => {
       setIsLocationOpen(false);
-      setIsKolkataHovered(false);
-    }, 180);
-  };
-
-  const handleKolkataMouseEnter = () => {
-    if (kolkataHoverTimeout.current) clearTimeout(kolkataHoverTimeout.current);
-    if (locationHoverTimeout.current) clearTimeout(locationHoverTimeout.current);
-    setIsKolkataHovered(true);
-  };
-
-  const handleKolkataMouseLeave = () => {
-    kolkataHoverTimeout.current = setTimeout(() => {
-      setIsKolkataHovered(false);
+  
     }, 180);
   };
 
@@ -285,7 +273,7 @@ export default function Header() {
     if (insightsHoverTimeout.current) clearTimeout(insightsHoverTimeout.current);
     setIsSolutionsOpen(false);
     setIsLocationOpen(false);
-    setIsKolkataHovered(false);
+
     setIsInsightsOpen(true);
   };
 
@@ -309,7 +297,7 @@ export default function Header() {
         <div className="flex items-center pl-1 xl:pl-4">
           <Link href="/" className="flex items-center">
             <Image
-              src="https://ik.imagekit.io/digitaledge360/digitaledge-in/DE360-LOGO.png"
+              src="/DE360-LOGO.png"
               alt="DE360 Logo"
               width={160}
               height={44}
@@ -368,7 +356,7 @@ export default function Header() {
 
                   {/* Desktop Dropdown Panel for Location */}
                   <div
-                    className={`absolute top-[calc(100%+14px)] left-1/2 -translate-x-1/2 transition-all duration-200 origin-top z-50 ${
+                    className={`absolute top-[calc(100%+14px)] left-1/2 -translate-x-1/2 w-[520px] transition-all duration-200 origin-top z-50 ${
                       isLocationOpen
                         ? "opacity-100 scale-100 pointer-events-auto"
                         : "opacity-0 scale-95 pointer-events-none"
@@ -381,77 +369,95 @@ export default function Header() {
                     {/* Arrow tip (white with subtle border matching reference design) */}
                     <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3.5 h-3.5 rotate-45 bg-white border-l border-t border-slate-200/80 shadow-[-2px_-2px_4px_rgba(0,0,0,0.02)] z-30" />
 
-                    <div className="relative flex items-start">
+                    <div className="relative bg-white rounded-2xl border border-slate-200/80 shadow-[0_20px_50px_rgba(15,23,42,0.14)] overflow-hidden flex divide-x divide-slate-100">
                       {/* Left card: OUR LOCATIONS */}
-                      <div className="w-[245px] bg-white/95 backdrop-blur-xl rounded-2xl border border-slate-200/80 shadow-[0_20px_50px_rgba(15,23,42,0.12)] overflow-hidden p-3.5 z-20">
-                        <p className="text-[10px] font-extrabold uppercase tracking-wider text-slate-400 px-2 pb-2.5 border-b border-slate-100">
-                          Our Locations
-                        </p>
-                        <div className="pt-2.5 flex flex-col gap-1.5">
-                          {locationLinks.map((item) => (
-                            <div
-                              key={item.name}
-                              onMouseEnter={handleKolkataMouseEnter}
-                              onMouseLeave={handleKolkataMouseLeave}
-                              onClick={() => setIsKolkataHovered((v) => !v)}
-                              role="button"
-                              tabIndex={0}
-                              className={`group flex items-center justify-between rounded-xl border px-3.5 py-3 transition-all duration-200 shadow-2xs cursor-pointer select-none ${
-                                isKolkataHovered
-                                  ? "bg-blue-50/70 border-blue-200 text-[#2443ab]"
-                                  : "bg-slate-50/80 hover:bg-slate-100/90 border-slate-100 hover:border-slate-200"
-                              }`}
+                      <div className="w-[195px] bg-slate-50/70 p-3.5 flex flex-col justify-between shrink-0">
+                        <div>
+                          <p className="text-[10px] font-extrabold uppercase tracking-wider text-slate-400 px-2 pb-2.5">
+                            Our Locations
+                          </p>
+                          <div className="flex flex-col gap-1.5">
+                            <Link
+                              href="/digital-marketing-services-kolkata/"
+                              onClick={() => setIsLocationOpen(false)}
+                              className="group flex items-center justify-between rounded-xl px-3 py-2.5 bg-white border border-blue-200/90 text-[#2443ab] shadow-xs hover:border-[#2443ab] transition-all duration-150 cursor-pointer"
                             >
-                              <div className="flex items-center gap-2.5">
-                                <MapPin className="h-4 w-4 text-[#2443ab]" />
-                                <span className="text-sm font-bold text-[#1e293b] group-hover:text-[#2443ab] transition-colors">
-                                  {item.name}
+                              <div className="flex items-center gap-2">
+                                <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-blue-50 text-[#2443ab]">
+                                  <MapPin className="h-3.5 w-3.5 text-[#2443ab]" />
+                                </div>
+                                <span className="text-xs font-bold text-slate-900 group-hover:text-[#2443ab] transition-colors">
+                                  Kolkata
                                 </span>
                               </div>
+                              <span className="flex h-2 w-2 relative">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                              </span>
+                            </Link>
+                          </div>
+                        </div>
 
-                              <div className="flex items-center">
-                                <ChevronRight className={`h-3.5 w-3.5 transition-transform duration-200 ${isKolkataHovered ? "translate-x-0.5 text-[#2443ab]" : "text-slate-400"}`} />
-                              </div>
-                            </div>
-                          ))}
+                        <div className="px-2 pt-3 border-t border-slate-200/60 mt-4">
+                          <p className="text-[10px] text-slate-400 font-medium leading-tight">
+                            Serving Kolkata, West Bengal & Pan-India
+                          </p>
                         </div>
                       </div>
 
-                      {/* Right Submenu / Flyout Panel for Services (shows on hovering Kolkata) */}
-                      <div
-                        onMouseEnter={handleKolkataMouseEnter}
-                        onMouseLeave={handleKolkataMouseLeave}
-                        className={`absolute left-[calc(100%-8px)] top-3 w-[320px] transition-all duration-200 origin-top-left z-20 before:absolute before:-left-3 before:top-0 before:w-4 before:h-full before:content-[''] ${
-                          isKolkataHovered
-                            ? "opacity-100 scale-100 pointer-events-auto translate-x-0"
-                            : "opacity-0 scale-95 pointer-events-none -translate-x-2"
-                        }`}
-                      >
-                        <div className="relative bg-white/98 backdrop-blur-xl rounded-3xl border border-slate-200/80 shadow-[0_20px_50px_rgba(15,23,42,0.16)] overflow-hidden p-3 flex flex-col gap-1">
+                      {/* Right: Services in Kolkata */}
+                      <div className="flex-1 p-4 bg-white flex flex-col justify-between">
+                        <div>
+                          <div className="flex items-center justify-between pb-2.5 border-b border-slate-100 px-1">
+                            <span className="text-[10px] font-extrabold uppercase tracking-wider text-slate-400">
+                              Services in Kolkata
+                            </span>
+                            <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200/60 px-2 py-0.5 rounded-full">
+                              ● Active Regional Hub
+                            </span>
+                          </div>
+
                           {kolkataServiceLinks.map((service) => (
                             <Link
                               key={service.name}
                               href={service.href}
-                              onClick={() => {
-                                setIsLocationOpen(false);
-                                setIsKolkataHovered(false);
-                              }}
+                              onClick={() => setIsLocationOpen(false)}
                               role="menuitem"
-                              className="group flex items-center gap-3 rounded-2xl p-2.5 hover:bg-slate-50 transition-all duration-150"
+                              className="group mt-2.5 flex items-start gap-3 rounded-xl p-3 hover:bg-blue-50/40 border border-slate-100 hover:border-blue-100 transition-all duration-150"
                             >
-                              <div className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl transition-transform duration-200 group-hover:scale-105 ${service.bg}`}>
-                                {service.icon}
+                              <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl transition-all duration-200 group-hover:scale-105 ${service.bg} group-hover:bg-[#2443ab] group-hover:text-white shadow-2xs`}>
+                                <Sparkles className="h-5 w-5" />
                               </div>
-                              <div>
-                                <p className="text-xs font-bold text-slate-800 group-hover:text-[#2443ab] transition-colors leading-snug">
-                                  {service.name}
-                                </p>
-                                <p className="text-[10px] text-slate-400 font-medium leading-tight mt-0.5">
+                              <div className="flex-1">
+                                <div className="flex items-center justify-between">
+                                  <p className="text-xs font-bold text-slate-900 group-hover:text-[#2443ab] transition-colors leading-snug">
+                                    {service.name}
+                                  </p>
+                                  <ChevronRight className="h-4 w-4 text-slate-400 group-hover:text-[#2443ab] group-hover:translate-x-0.5 transition-all" />
+                                </div>
+                                <p className="text-[11px] text-slate-500 font-medium leading-relaxed mt-1">
                                   {service.desc}
                                 </p>
                               </div>
                             </Link>
                           ))}
+                        </div>
+
+                        {/* Quick Capabilities & Link */}
+                        <div className="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between px-1">
+                          <div className="flex items-center gap-1.5 flex-wrap">
+                            <span className="text-[9px] font-semibold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-md">SEO</span>
+                            <span className="text-[9px] font-semibold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-md">Meta Ads</span>
+                            <span className="text-[9px] font-semibold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-md">Social Media</span>
+                            <span className="text-[9px] font-semibold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-md">Web Dev</span>
+                          </div>
+                          <Link
+                            href="/digital-marketing-services-kolkata/"
+                            onClick={() => setIsLocationOpen(false)}
+                            className="text-[11px] font-bold text-[#2443ab] hover:underline flex items-center gap-0.5"
+                          >
+                            Explore Hub →
+                          </Link>
                         </div>
                       </div>
                     </div>

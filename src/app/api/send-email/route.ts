@@ -212,7 +212,7 @@ Budget: ${budget}
       attachments: [
         {
           filename: "DE360-LOGO.png",
-          path: "https://ik.imagekit.io/digitaledge360/digitaledge-in/DE360-LOGO.png",
+          path: path.join(process.cwd(), "public", "DE360-LOGO.png"),
           cid: "logo",
         },
       ],

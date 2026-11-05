@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://ik.imagekit.io/digitaledge360/digitaledge-in/DE360-LOGO.png",
+        url: "/DE360-LOGO.png",
         width: 1200,
         height: 630,
         alt: "Digital Edge 360° Kolkata",

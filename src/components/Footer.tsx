@@ -67,7 +67,7 @@ export default function Footer() {
           <div className="flex flex-col items-start gap-5 text-left">
             <Link href="/" className="flex items-center">
               <Image
-                src="https://ik.imagekit.io/digitaledge360/digitaledge-in/DE360-LOGO.png"
+                src="/DE360-LOGO.png"
                 alt="DE360 Logo"
                 width={150}
                 height={42}

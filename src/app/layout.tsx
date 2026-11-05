@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: "Digital Edge 360° | Digital Marketing Agency in India",
   description: "Award-winning digital marketing agency in India offering web development, app development, SEO, PPC and social media marketing services.",
   icons: {
-    icon: "https://ik.imagekit.io/digitaledge360/digitaledge-in/icon.png",
+    icon: "/icon.png",
   },
   verification: {
     google: "JcKUhD0p_FBb2_5i8oBxXDXW33v1Zy14u3jf0JIRpRQ",
