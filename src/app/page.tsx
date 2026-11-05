@@ -56,39 +56,6 @@ const brandShowcases: ShowcaseBrandItem[] = [
     metricColor: "text-amber-600"
   },
   {
-    name: "Wire Communication",
-    link: "/company-details/wire-communication",
-    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/wire-comunication.jpg",
-    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/wire-comunication.jpg",
-    metric: "350%",
-    metricLabel: "Growth in B2B Inquiries",
-    metricColor: "text-sky-600"
-  },
-  {
-    name: "Arcesium",
-    link: "/company-details/arcesium",
-    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/arcesium.jpg",
-    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/arcesium.svg",
-    metric: "380%",
-    metricLabel: "Growth in Enterprise Leads",
-    metricColor: "text-violet-600"
-  },
-  {
-    name: "Era Residence",
-    link: "/company-details/era-residence",
-    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/era-resident.jpg",
-    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/era-resident-logo.png",
-    metric: "410%",
-    metricLabel: "Growth in Buyer Inquiries",
-    metricColor: "text-emerald-600"
-  },
-  {
-    name: "Likeson",
-    link: "/company-details/likeson",
-    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/likeson.jpg",
-    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/likeson.jpg"
-  },
-  {
     name: "OmniAstra",
     link: "/company-details/omniastra",
     image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/astra.jpg",
@@ -168,6 +135,42 @@ const brandShowcases: ShowcaseBrandItem[] = [
     metric: "320%",
     metricLabel: "Increase in Online Orders",
     metricColor: "text-indigo-600"
+  },
+  {
+    name: "Aladeen Bangkok",
+    link: "/company-details/aladeen",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/web-development-img/Aladeen_Bangkok.png",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/aladeen.jpg",
+    metric: "340%",
+    metricLabel: "Growth in Online Orders",
+    metricColor: "text-amber-600"
+  },
+  {
+    name: "Sacred Suta",
+    link: "/company-details/sacred-suta",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/brand-card-images/sacred-suta.jpg",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/sacred-suta.jpg",
+    metric: "450%",
+    metricLabel: "Growth in Handcrafted Saree Sales",
+    metricColor: "text-rose-600"
+  },
+  {
+    name: "Chris Louis",
+    link: "/company-details/chris-louis",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/web-development-img/Chris_Louis.png",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/20.jpg",
+    metric: "220%",
+    metricLabel: "Sales Growth",
+    metricColor: "text-blue-600"
+  },
+  {
+    name: "United By Blue",
+    link: "/company-details/united-by-blue",
+    image: "https://ik.imagekit.io/digitaledge360/digitaledge-in/web-development-img/united_by_blue.png",
+    logo: "https://ik.imagekit.io/digitaledge360/digitaledge-in/logos/united%20by%20blue.png",
+    metric: "380%",
+    metricLabel: "Growth in Eco Bag Orders",
+    metricColor: "text-teal-600"
   }
 ];
 
@@ -842,9 +845,11 @@ export default function Home() {
             >
               {/* Single map with duplicated items for infinite scroll */}
               {[...portfolioItems, ...portfolioItems].map((item, index) => (
-                <div
+                <Link
                   key={index}
-                  className="w-[240px] sm:w-[320px] shrink-0 group relative pb-8 transition-all duration-300 transform hover:scale-105"
+                  href={item.link || "#"}
+                  onClick={(e) => e.stopPropagation()}
+                  className="w-[240px] sm:w-[320px] shrink-0 group relative pb-8 transition-all duration-300 transform hover:scale-105 block cursor-pointer"
                 >
                   {/* Phone Mockup Frame */}
                   <div className="w-full aspect-[1/2] rounded-[36px] sm:rounded-[48px] bg-[#0c101a] p-2 sm:p-2.5 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] border border-[#1f293d] relative overflow-visible transition-all duration-300 group-hover:shadow-[0_40px_80px_-20px_rgba(36,67,171,0.4)] group-hover:border-[#2443ab]/50">
@@ -867,11 +872,12 @@ export default function Home() {
                     </div>
 
                     {/* Bottom Card Tag overlapping the bezel */}
-                    <div className="absolute -bottom-8 left-3 right-3 sm:left-6 sm:right-6 bg-[#fafbfc] rounded-[18px] sm:rounded-[24px] p-3 sm:p-5 flex items-center justify-center shadow-[0_20px_40px_-5px_rgba(0,0,0,0.18)] border border-slate-200/80 z-30 transition-all duration-300 group-hover:bg-white">
-                      <span className="text-xs sm:text-base font-extrabold text-[#0d1b3e] tracking-tight text-center">{item.name}</span>
+                    <div className="absolute -bottom-8 left-3 right-3 sm:left-6 sm:right-6 bg-[#fafbfc] rounded-[18px] sm:rounded-[24px] p-3 sm:p-5 flex items-center justify-center gap-2 shadow-[0_20px_40px_-5px_rgba(0,0,0,0.18)] border border-slate-200/80 z-30 transition-all duration-300 group-hover:bg-white group-hover:border-[#2443ab]/40">
+                      <span className="text-xs sm:text-base font-extrabold text-[#0d1b3e] tracking-tight text-center group-hover:text-[#2443ab] transition-colors">{item.name}</span>
+                      <ArrowRight className="w-3.5 h-3.5 text-[#2443ab] opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
                     </div>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
@@ -993,7 +999,7 @@ export default function Home() {
 
         {/* What We Do - Full-Stack Growth & Digital Architecture Section */}
         <section className="relative z-10 w-full py-12 md:py-16 bg-gradient-to-br from-indigo-100/40 via-purple-100/40 to-indigo-50/40 border-y border-slate-200/60 overflow-hidden">
-          <div className="mx-auto max-w-full px-8 sm:px-16 lg:px-24">
+          <div className="mx-auto max-w-[1700px] px-8 sm:px-16 lg:px-24">
 
             {/* Header container */}
             <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8">
@@ -1013,41 +1019,41 @@ export default function Home() {
             </div>
 
             {/* Bento Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-[minmax(280px,_auto)]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:auto-rows-[minmax(280px,_auto)]">
               {services.map((service, index) => {
                 let gridClass = "";
                 let cardBg = "bg-white";
                 let isSolidBrand = false;
 
                 if (index === 0) {
-                  // Web Dev: 1x1 Square Image
-                  gridClass = "lg:col-start-1 lg:row-start-1 lg:col-span-1 lg:row-span-1 min-h-[260px]";
+                  // Web Dev: 1x1 Square Image (1:1 ratio)
+                  gridClass = "aspect-square sm:aspect-square sm:col-start-1 sm:row-start-1 sm:col-span-1 lg:aspect-auto lg:col-start-1 lg:row-start-1 lg:col-span-1 lg:row-span-1 lg:min-h-[260px]";
                 } else if (index === 1) {
-                  // WooCommerce: 1x1 Solid Blue Card
-                  gridClass = "lg:col-start-2 lg:row-start-1 lg:col-span-1 lg:row-span-1 min-h-[260px]";
+                  // WooCommerce: 1x1 Square Card (1:1 ratio)
+                  gridClass = "aspect-square sm:aspect-square sm:col-start-2 sm:row-start-1 sm:col-span-1 lg:aspect-auto lg:col-start-2 lg:row-start-1 lg:col-span-1 lg:row-span-1 lg:min-h-[260px]";
                   isSolidBrand = false;
                 } else if (index === 2) {
-                  // App Dev: 2x1 Wide Image Card
-                  gridClass = "lg:col-start-3 lg:row-start-1 lg:col-span-2 lg:row-span-1 min-h-[310px]";
+                  // App Dev: 2x1 Wide Image Card (2:1 ratio)
+                  gridClass = "aspect-[2/1] sm:aspect-[2/1] sm:col-start-1 sm:row-start-2 sm:col-span-2 lg:aspect-auto lg:col-start-3 lg:row-start-1 lg:col-span-2 lg:row-span-1 lg:min-h-[310px]";
                 } else if (index === 3) {
-                  // Performance Ads: 1x2 Tall Vertical Card
-                  gridClass = "lg:col-start-1 lg:row-start-2 lg:col-span-1 lg:row-span-2 min-h-[500px]";
+                  // Performance Ads: 1x2 Tall Vertical Card (1:2 ratio)
+                  gridClass = "aspect-[1/2] sm:aspect-[1/2] sm:col-start-1 sm:row-start-3 sm:col-span-1 lg:aspect-auto lg:col-start-1 lg:row-start-2 lg:col-span-1 lg:row-span-2 lg:min-h-[500px]";
                 } else if (index === 4) {
-                  // SEO: 2x1 Wide Dark Card
-                  gridClass = "lg:col-start-2 lg:row-start-2 lg:col-span-2 lg:row-span-1 min-h-[310px]";
+                  // SEO: 2x1 Wide Card (2:1 ratio)
+                  gridClass = "aspect-[2/1] sm:aspect-[2/1] sm:col-start-1 sm:row-start-4 sm:col-span-2 lg:aspect-auto lg:col-start-2 lg:row-start-2 lg:col-span-2 lg:row-span-1 lg:min-h-[310px]";
                 } else if (index === 5) {
-                  // Marketplace: 1x1 Square Image
-                  gridClass = "lg:col-start-4 lg:row-start-2 lg:col-span-1 lg:row-span-1 min-h-[240px]";
+                  // Marketplace: 1x2 Tall Vertical Card (1:2 ratio)
+                  gridClass = "aspect-[1/2] sm:aspect-[1/2] sm:col-start-2 sm:row-start-3 sm:col-span-1 lg:aspect-auto lg:col-start-4 lg:row-start-2 lg:col-span-1 lg:row-span-2 lg:min-h-[500px]";
                 } else if (index === 6) {
-                  // AI Integration: 2x1 Wide Image Card
-                  gridClass = "lg:col-start-2 lg:row-start-3 lg:col-span-2 lg:row-span-1 min-h-[310px]";
+                  // AI / Video Marketing: 2x1 Wide Image Card (2:1 ratio)
+                  gridClass = "aspect-[2/1] sm:aspect-[2/1] sm:col-start-1 sm:row-start-5 sm:col-span-2 lg:aspect-auto lg:col-start-2 lg:row-start-3 lg:col-span-2 lg:row-span-1 lg:min-h-[310px]";
                 }
 
                 return (
                   <Link
                     key={index}
                     href={service.href}
-                    className={`rounded-[32px] p-6 pb-1 border border-slate-100 shadow-lg hover:shadow-2xl hover:border-slate-200/80 transition-all duration-500 ease-out flex flex-col justify-between group relative overflow-hidden cursor-pointer transform-gpu will-change-transform text-left ${cardBg} ${gridClass}`}
+                    className={`rounded-[32px] p-4 sm:p-6 pb-1 border border-slate-100 shadow-lg hover:shadow-2xl hover:border-slate-200/80 transition-all duration-500 ease-out flex flex-col justify-between group relative overflow-hidden cursor-pointer transform-gpu will-change-transform text-left ${cardBg} ${gridClass}`}
                   >
                     {/* Image Background */}
                     <div
@@ -2283,7 +2289,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row items-center gap-4">
                 <span className="text-slate-400 font-bold text-sm tracking-wider uppercase">Value:</span>
                 <span className="text-slate-400/80 font-bold line-through text-lg">₹25,000</span>
-                 <span className="inline-flex items-center gap-1.5 bg-emerald-50 border border-emerald-100 px-3.5 py-1.5 rounded-full text-xs font-black tracking-wider text-emerald-600 uppercase">
+                <span className="inline-flex items-center gap-1.5 bg-emerald-50 border border-emerald-100 px-3.5 py-1.5 rounded-full text-xs font-black tracking-wider text-emerald-600 uppercase">
                   Today: Free for qualified businesses
                 </span>
               </div>
@@ -2416,11 +2422,11 @@ export default function Home() {
 
         {/* Testimonials Section */}
         <section className="relative z-10 w-full py-12 md:py-16 bg-gradient-to-b from-white to-[#fafbfc] border-t border-slate-100 overflow-hidden">
- 
+
           <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none z-0" />
 
           <div className="relative z-10 max-w-full mx-auto px-6 sm:px-8 lg:px-12 mb-8">
- 
+
             <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 max-w-6xl mx-auto">
               <div className="text-left space-y-3">
                 <span className="block text-[10px] sm:text-xs font-black tracking-[0.25em] text-[#2443ab] uppercase">TESTIMONIALS</span>
@@ -2431,10 +2437,10 @@ export default function Home() {
             </div>
           </div>
 
- 
+
           <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 mt-6 md:mt-8">
             <div className="relative flex items-center justify-between h-[680px] sm:h-[580px] md:h-[490px]">
- 
+
               <button
                 onClick={() => setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length)}
                 className="absolute left-[-20px] lg:left-[-70px] z-20 w-12 h-12 rounded-full bg-white border border-slate-200/80 shadow-md flex items-center justify-center text-slate-600 hover:text-slate-900 hover:shadow-lg hover:scale-105 transition-all duration-300 group"
@@ -2496,12 +2502,12 @@ export default function Home() {
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: -40 }}
                         transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                        className="rounded-[32px] shadow-[0_20px_50px_rgba(0,0,0,0.04)] flex flex-col justify-between text-left relative overflow-hidden group w-full h-[640px] sm:h-[540px] md:h-[450px]"
+                        className="rounded-[32px] flex flex-col justify-between text-left relative overflow-hidden group w-full h-[640px] sm:h-[540px] md:h-[450px]"
                       >
                         <div className="bg-white rounded-[32px] p-6 sm:p-10 md:p-14 flex flex-col md:flex-row gap-6 md:gap-12 items-center text-left relative overflow-hidden w-full h-full">
- 
+
                           <div className={`absolute -top-20 -right-20 w-96 h-96 bg-radial ${accent.glowBg} blur-3xl pointer-events-none opacity-60 group-hover:opacity-90 transition-all duration-700 z-0`} />
- 
+
                           <div className="relative w-44 h-44 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-[28px] overflow-hidden shadow-lg ring-4 ring-slate-100 shrink-0 bg-slate-50 flex items-center justify-center z-10 transition-transform duration-500 group-hover:scale-[1.02]">
                             {t.image ? (
                               <Image
@@ -2518,10 +2524,10 @@ export default function Home() {
                               </div>
                             )}
                           </div>
- 
+
                           <div className="flex-grow flex flex-col justify-between h-full relative z-10 w-full overflow-hidden">
                             <div className="flex-1 flex flex-col justify-start overflow-hidden">
- 
+
                               <div className="flex flex-wrap items-center justify-between gap-4 shrink-0">
 
                                 <div className="inline-flex items-center gap-0.5 px-3.5 py-1.5 rounded-full bg-amber-500/5 border border-amber-500/10">
@@ -2529,7 +2535,7 @@ export default function Home() {
                                     <span key={i} className="text-amber-500 text-sm sm:text-base font-bold">★</span>
                                   ))}
                                 </div>
- 
+
                                 {t.metric && (
                                   <div className={`flex items-center gap-1.5 px-4.5 py-2 rounded-full text-xs font-black uppercase tracking-wider border shadow-sm ${accent.metricBg}`}>
                                     {accent.metricIcon}
@@ -2537,7 +2543,7 @@ export default function Home() {
                                   </div>
                                 )}
                               </div>
- 
+
                               <div className="mt-4 sm:mt-6 flex-1 flex items-center overflow-y-auto no-scrollbar">
                                 <p className="text-xs sm:text-[17px] md:text-[18px] text-slate-600 font-semibold leading-[1.85] italic relative pl-5">
                                   <span className={`absolute left-0 top-0 text-base md:text-lg font-serif font-black ${accent.quoteColor} leading-none`}>“</span>
@@ -2547,7 +2553,7 @@ export default function Home() {
                               </div>
                             </div>
 
- 
+
                             <div className="mt-6 pt-5 border-t border-slate-100 shrink-0">
                               <div className="flex items-center gap-4">
                                 <div className={`h-11 w-[3.5px] rounded-full ${accent.lineBg}`} />
@@ -2572,7 +2578,7 @@ export default function Home() {
               </button>
 
             </div>
- 
+
             <div className="flex justify-center gap-2 mt-8">
               {testimonials.map((_, dotIdx) => {
                 const isActive = dotIdx === currentTestimonial;

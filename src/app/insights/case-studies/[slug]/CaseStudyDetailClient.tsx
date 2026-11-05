@@ -179,9 +179,9 @@ export default function CaseStudyDetailClient({ slug }: ClientProps) {
               <h3 className="text-xs font-black tracking-[0.2em] text-[#2443ab] uppercase mb-2">The Six-Month Performance</h3>
               <h2 className="text-2xl sm:text-3xl font-black text-[#0d1b3e] tracking-tight">{study.metricsTitle}</h2>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6 text-center divide-y md:divide-y-0 md:divide-x divide-slate-100">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6 text-center md:divide-x divide-slate-100">
               {study.metrics.map((metric, index) => (
-                <div key={index} className="pt-6 md:pt-0">
+                <div key={index} className={`${index >= 2 ? "border-t border-slate-100 pt-6 md:border-t-0 md:pt-0" : ""}`}>
                   <div className="flex justify-center mb-2">
                     <div className="w-10 h-10 rounded-full bg-[#2443ab]/10 flex items-center justify-center text-[#2443ab]">
                       {getMetricIcon(index)}
