@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-const JWT_SECRET = process.env.JWT_SECRET || "digital-edge-super-secure-jwt-secret-key-2026";
+const JWT_SECRET = process.env.DE_IN_JWT_SECRET || "digital-edge-super-secure-jwt-secret-key-2026";
 
 /**
  * Base64 URL decoding helper compatible with Next.js Edge runtime

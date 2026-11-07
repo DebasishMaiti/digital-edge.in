@@ -17,12 +17,12 @@ export async function POST(request: Request) {
 
     // Configure transporter
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: parseInt(process.env.SMTP_PORT || "587"),
-      secure: process.env.SMTP_PORT === "465",
+      host: process.env.DE_IN_SMTP_HOST,
+      port: parseInt(process.env.DE_IN_SMTP_PORT || "587"),
+      secure: process.env.DE_IN_SMTP_PORT === "465",
       auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASSWORD,
+        user: process.env.DE_IN_SMTP_USER,
+        pass: process.env.DE_IN_SMTP_PASSWORD,
       },
     });
 
