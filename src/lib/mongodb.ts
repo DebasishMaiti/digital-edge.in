@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
 
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/digitaledge";
+const MONGODB_URI = process.env.DE_IN_MONGODB_URI || "mongodb://localhost:27017/digitaledge";
 
-interface MongooseCache {
+interface MongooseCache {   
   conn: typeof mongoose | null;
   promise: Promise<typeof mongoose> | null;
 }
